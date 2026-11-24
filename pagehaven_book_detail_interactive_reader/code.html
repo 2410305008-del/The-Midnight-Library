@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#fffbff", "secondary-container": "#c3e6e7", "secondary": "#436465", "primary-fixed-dim": "#ffb77d", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "on-tertiary-fixed-variant": "#8a1c10", "on-secondary-fixed-variant": "#2b4c4d", "secondary-fixed-dim": "#aacdce", "on-secondary-container": "#476869", "secondary-fixed": "#c6e9ea", "on-secondary-fixed": "#002021", "surface-tint": "#904d00", "on-primary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#410100", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#6e3900", "surface-container-low": "#f1f3ff", "error": "#ba1a1a", "background": "#faf8ff", "tertiary": "#a83223", "on-error": "#ffffff", "inverse-surface": "#2a303f", "on-primary": "#ffffff", "on-surface-variant": "#554336", "tertiary-container": "#c94a38", "tertiary-fixed": "#ffdad4", "primary-container": "#b15f00", "primary-fixed": "#ffdcc3", "surface-dim": "#d4d9ed", "on-error-container": "#93000a", "on-surface": "#151b29", "surface-variant": "#dde2f6", "surface-container-high": "#e2e8fc", "on-primary-fixed": "#2f1500", "outline": "#887364", "surface-container": "#e9edff", "surface-bright": "#faf8ff", "on-background": "#151b29", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "primary": "#8d4b00", "tertiary-fixed-dim": "#ffb4a8", "inverse-on-surface": "#edf0ff", "outline-variant": "#dbc2b0", "surface-container-highest": "#dde2f6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-sm": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "margin": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": ["Newsreader"], "headline-md": ["Newsreader"], "headline-lg": ["Newsreader"], "display": ["Newsreader"], "label-lg": ["Manrope"], "body-sm": ["Manrope"], "body-lg": ["Manrope"], "display-mobile": ["Newsreader"], "headline-lg-mobile": ["Newsreader"], "label-md": ["Manrope"], "body-md": ["Manrope"], "label-sm": ["Manrope"], "title-editorial": ["Newsreader"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="A beautiful, elegant book logo emblem for PageHaven. An open hardcover book with graceful flowing golden-amber deckled pages, forming an elegant sanctuary arch or beacon of knowledge, minimalist modern vector style with subtle warm amber, gold, and deep ink accents.. Brand logo. - Primary color: #d97706
+- Font: newsreader
+- Mode: light
+- Roundness: rounded-sm
+" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WdjjKZMCJAvODphv46zQPuppr3R2xAaPReWtVmVHiKb6qW0vREn9yjHldgPqAT37ylcxRltUucpugJLmafg3oASFhFFIJ451s2NZ1sIc7IbybFgu4GtGa5a9UGf4j1vceVUwGKeujFvlIKhWMzsrZPWfn2VkCT4fRupYZvY4c04PPmVGptJj5W1XKsUaHIbgBdQ1BDqiXT5W8CF6Fu_9-dsAa_7yXxKmmKslLKjc-wGQjNSub2Ea6r_4I"/><h1 class="font-title-editorial text-title-editorial text-on-surface truncate font-medium">Book Details</h1></div><div class="flex items-center gap-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida/AEtjO1UzMjpsfpPGw1_MRih2mKJi5Kf3BhsToHmoxDKO0jSr0MPNqSvcaR7r7sJFNV1XCNNXWh64Q15AV89QY9N1v2_u9GHJEsqjyhJPnWy-xXcUthR7k0Me6cTYF4WSJn7vE1uyFDyYr2qyah0405fWxI4nmAPJ1ZbSWSPXhyVW5tXmFumPoVatBluuUzjUGOy1sLJ54FqkxutxEyalKIeQdXrqHjr41_3wSpPz3wh5t3Wk2uXuq0ERQT9HRDCT"/></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Top Ambient Banner & Badges -->
+<div class="px-gutter-sm pt-space-sm pb-space-xs flex flex-wrap gap-space-xs items-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+      Bestseller #1
+    </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+      Mind &amp; Habits
+    </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+      Archival Edition
+    </span>
+</div>
+<!-- Book Showcase Section -->
+<section class="px-gutter-sm pt-space-xs pb-space-md">
+<div class="flex flex-col items-center text-center">
+<!-- Book Cover with Book Binding Spine Shadow Effect -->
+<div class="relative w-48 aspect-[3/4] rounded-lg shadow-2xl overflow-hidden group">
+<img alt="Atomic Habits by James Clear Book Cover" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC40JDRJEgYFaOdFYUVGlYxTC0NXBv2lzeu4UqF8DuPzGasgqIoxxKLGfBnltr5SDTQD60migm9Z1bdNyNm9qLPMNs3lWT7O4IwcNVwLQOTHw5oCLSFQ5onDRYvKD9r0YfGFjD7Ouo7XkzrNuXlIm8uV4Y3svOt9rnObl09xsJA0bdfjaLVg6UfN0fQwIkkbzblfGqfDJ0_wjagv-2z-0Dvx6Ztti6iLlf1Plx1xB4dgF2owiU6-TXz6Q"/>
+<!-- Spine lighting overlay -->
+<div class="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none"></div>
+<div class="absolute inset-y-0 right-0 w-1 bg-gradient-to-l from-black/20 to-transparent pointer-events-none"></div>
+</div>
+<!-- Quick Action Under Cover -->
+<div class="mt-space-sm flex items-center justify-center gap-space-sm">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md shadow-sm transition-all active:scale-95" id="open-sample-btn">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+          Read 1st Chapter
+        </button>
+<button class="relative inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-sm transition-all active:scale-95" id="toggle-cart-btn">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+          View Bag
+          <span class="ml-0.5 px-1.5 py-0.2 bg-primary text-on-primary rounded-full text-[10px] font-bold" id="bag-count-badge">2</span>
+</button>
+</div>
+<!-- Book Metadata -->
+<div class="mt-space-md w-full text-left">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-medium leading-tight">
+          Atomic Habits
+        </h2>
+<p class="font-title-editorial text-title-editorial text-primary mt-1 italic">
+          An Easy &amp; Proven Way to Build Good Habits &amp; Break Bad Ones
+        </p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1.5">
+          By <span class="text-on-surface font-semibold underline decoration-primary/40 underline-offset-4">James Clear</span> • Penguin Life Books
+        </p>
+<!-- Rating & Social Proof -->
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(110k reviews)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">98% Recommended</span>
+</div>
+<!-- Verified Reader Editorial Pullquote -->
+<div class="mt-space-sm pl-3 bg-surface-container-lowest/60 rounded-lg p-2.5 shadow-sm">
+<p class="font-headline-sm text-body-sm italic text-on-surface-variant line-clamp-2">
+            "A supremely practical guide. Tiny changes produce truly compound interest over years."
+          </p>
+<div class="mt-1 flex items-center gap-1 text-[11px] font-label-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+            Mark R., Verified Literary Guild Patron
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive 5-min Audio Excerpt Player -->
+<section class="px-gutter-sm mb-space-md">
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">headphones</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Narrated Excerpt</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Voiced by James Clear • 5:20 min</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md active:scale-90 transition-transform" id="audio-play-btn">
+<span class="material-symbols-outlined text-[20px]" id="audio-icon" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Playback scrub track -->
+<div class="space-y-1">
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden relative cursor-pointer" id="audio-track">
+<div class="h-full bg-primary rounded-full transition-all duration-300" id="audio-progress" style="width: 28%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-[10px] text-on-surface-variant">
+<span id="audio-time">1:30</span>
+<span>5:20</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Format Selection Carousel / Radio Cards -->
+<section class="px-gutter-sm pb-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-title-editorial text-title-editorial font-medium text-on-surface">Select Edition &amp; Media</h3>
+<span class="font-label-sm text-label-sm text-primary underline">Guaranteed archival quality</span>
+</div>
+<div class="space-y-space-sm" id="format-options-container">
+<!-- Option 1: Collector Hardcover -->
+<div class="format-card selected-card p-space-md rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer relative" data-format="hardcover" data-price="21.00" data-title="Collector Hardcover">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary radio-bullet">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Collector Hardcover</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-[10px] rounded-full">Heirloom</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Embossed linen binding, custom gold bookmark ribbon, archival 120gsm Swedish cream paper.
+              </p>
+<div class="mt-2 flex items-center gap-3 text-secondary text-[12px] font-label-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Free 2-Day Air
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span> 18 left in stock
+                </span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0 ml-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">$21.00</span>
+<span class="block text-[11px] text-on-surface-variant line-through">$28.00</span>
+</div>
+</div>
+</div>
+<!-- Option 2: Digital E-Book -->
+<div class="format-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-lowest shadow-sm transition-all cursor-pointer relative" data-format="ebook" data-price="8.99" data-title="Digital E-Book">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-transparent radio-bullet">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Instant E-Book</span>
+<span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] rounded-full">Cloud Delivery</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Instant delivery to PageHaven Cloud &amp; Kindle. Whispersync audio match ready.
+              </p>
+<div class="mt-2 flex items-center gap-2 text-secondary text-[12px] font-label-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> Immediate Download
+                </span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0 ml-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">$8.99</span>
+<span class="block text-[11px] text-on-surface-variant line-through">$14.99</span>
+</div>
+</div>
+</div>
+<!-- Option 3: Dual Collector Bundle -->
+<div class="format-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-lowest shadow-sm transition-all cursor-pointer relative" data-format="bundle" data-price="24.99" data-title="Dual Collector Bundle">
+<div class="absolute -top-2.5 right-4 bg-tertiary text-on-tertiary px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm">
+          Save 20%
+        </div>
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="mt-0.5 w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-transparent radio-bullet">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Dual Collector Bundle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Linen hardcover physical copy sent to your doorstep + instant e-book in your library now.
+              </p>
+<div class="mt-2 flex items-center gap-2 text-primary font-label-sm text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">card_giftcard</span> Best Patron Value
+              </div>
+</div>
+</div>
+<div class="text-right flex-shrink-0 ml-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">$24.99</span>
+<span class="block text-[11px] text-on-surface-variant line-through">$32.99</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Purchase Controls & Quantity Selector -->
+<div class="mt-space-md p-space-md bg-surface-container-lowest rounded-xl shadow-md">
+<div class="flex items-center justify-between gap-space-md">
+<!-- Quantity Stepper -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1">
+<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface active:scale-95 transition-transform" id="qty-minus">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-8 text-center font-label-lg text-label-lg font-bold text-on-surface" id="qty-display">1</span>
+<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface active:scale-95 transition-transform" id="qty-plus">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<!-- Add to Cart Primary Button -->
+<button class="flex-1 py-3 px-space-md rounded-lg bg-inverse-surface hover:bg-primary text-inverse-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-lg active:scale-98 transition-all" id="add-to-basket-btn">
+<span class="material-symbols-outlined text-[20px]">local_mall</span>
+<span id="btn-text">Add to Basket • $21.00</span>
+</button>
+</div>
+<!-- Patron Guarantee Badges -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-around text-center text-on-surface-variant text-[11px] font-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span> 30-Day Guarantee
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">eco</span> Forest Stewardship Certified
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">cloud_done</span> Instant Library Sync
+        </span>
+</div>
+</div>
+</section>
+<!-- Editorial Companion Overview / Book Details -->
+<section class="px-gutter-sm pb-space-xl">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium">Synopsis &amp; Themes</h4>
+</div>
+<span class="text-[11px] font-label-sm text-primary uppercase font-bold tracking-wider">Chapter 1 Preview</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        No matter your goals, <em>Atomic Habits</em> provides a proven framework for improving every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that teach you exactly how to form good habits, break bad ones, and master tiny behaviors that lead to remarkable results.
+      </p>
+<div class="mt-space-sm grid grid-cols-2 gap-2 text-on-surface">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest">
+<div class="text-[11px] text-on-surface-variant uppercase font-label-sm">Key Methodology</div>
+<div class="font-label-md text-label-md font-semibold mt-0.5">The 4 Laws of Behavior Change</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest">
+<div class="text-[11px] text-on-surface-variant uppercase font-label-sm">Reading Pace</div>
+<div class="font-label-md text-label-md font-semibold mt-0.5">approx. 4.5 Hours • 320 pp.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- MODAL 1: INSTANT SAMPLE READER (Drawer overlay)          -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300 flex flex-col justify-end" id="sample-modal">
+<!-- Backdrop scrim -->
+<div class="absolute inset-0 bg-inverse-surface/60 backdrop-blur-sm cursor-pointer" id="sample-backdrop"></div>
+<!-- Drawer container -->
+<div class="relative w-full max-h-[88vh] h-[88vh] bg-surface-container-lowest rounded-t-2xl shadow-2xl flex flex-col transform translate-y-full transition-transform duration-300 ease-out z-10 overflow-hidden" id="reader-container">
+<!-- Drawer Drag Handle & Reader Controls -->
+<div class="px-space-md pt-3 pb-2 bg-surface-container-low flex flex-col gap-2">
+<div class="w-10 h-1 bg-outline-variant/60 rounded-full mx-auto"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_library</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Chapter 1 Excerpt</span>
+</div>
+<!-- Font and Theme Toggles -->
+<div class="flex items-center gap-space-xs">
+<!-- Theme Toggles: Light, Sepia, Dark -->
+<div class="flex items-center bg-surface-container rounded-full p-0.5">
+<button class="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center text-[12px] text-on-surface active:scale-95" id="theme-light-btn" title="Light theme">L</button>
+<button class="w-6 h-6 rounded-full bg-[#f4ecd8] text-[#5b4636] flex items-center justify-center text-[12px] font-bold active:scale-95" id="theme-sepia-btn" title="Sepia theme">S</button>
+<button class="w-6 h-6 rounded-full bg-[#1b202c] text-white flex items-center justify-center text-[12px] font-bold active:scale-95" id="theme-dark-btn" title="Dark theme">D</button>
+</div>
+<!-- Typography Family Toggle -->
+<button class="px-2 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface text-[12px] font-label-md rounded font-semibold active:scale-95" id="font-family-toggle">
+              Aa Serif
+            </button>
+<!-- Close Reader -->
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface active:scale-90" id="close-reader-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Scrollable Book Reading Body -->
+<div class="flex-1 overflow-y-auto p-space-lg font-headline-sm text-body-lg text-on-surface space-y-space-md transition-colors duration-200" id="reader-content-body">
+<div class="text-center pb-space-sm">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-primary">The Fundamentals</span>
+<h2 class="font-display-mobile text-display-mobile text-on-surface mt-1">The Surprising Power of Atomic Habits</h2>
+<p class="font-title-editorial text-title-editorial text-on-surface-variant italic mt-1">How small routines compound into profound transformations</p>
+</div>
+<p class="leading-relaxed">
+          The fate of British Cycling changed one day in 2003. The organization, which was the governing body for professional cycling in Great Britain, had recently hired Dave Brailsford as its new performance director. At the time, professional cyclists in Great Britain had endured nearly one hundred years of mediocrity.
+        </p>
+<p class="leading-relaxed">
+          Since 1908, British riders had won just a single gold medal at the Olympic Games, and they had fared even worse in cycling’s biggest race, the Tour de France. In 110 years, no British cyclist had ever won the event. In fact, the performance of British riders had been so underwhelming that one of the top bike manufacturers in Europe refused to sell bikes to the team because they were afraid that it would hurt sales if other professionals saw the Brits using their gear.
+        </p>
+<div class="my-space-md p-space-md bg-surface-container-high/40 rounded-xl">
+<p class="font-headline-sm text-headline-sm italic text-primary">
+            "The aggregation of marginal gains: searching for a tiny margin of improvement in everything you do."
+          </p>
+</div>
+<p class="leading-relaxed">
+          Brailsford had been hired to put British Cycling on a new trajectory. What made him different from previous coaches was his relentless commitment to a strategy that he referred to as “the aggregation of marginal gains,” which was the philosophy of searching for a tiny margin of improvement in everything you do.
+        </p>
+<p class="leading-relaxed">
+          Brailsford said, “The whole principle came from the idea that if you broke down everything you could think of that goes into riding a bike, and then improve it by 1 percent, you will get a significant increase when you put them all together.”
+        </p>
+<!-- Prompt to buy remaining book -->
+<div class="mt-space-lg p-space-md bg-surface-container rounded-xl text-center space-y-2">
+<span class="material-symbols-outlined text-primary text-[28px]">bookmark_added</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Enjoyed this chapter preview?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continue James Clear's complete framework with instant cloud delivery or collector print.</p>
+<button class="w-full py-2.5 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg shadow-md mt-2" id="reader-buy-now-btn">
+            Add to Basket &amp; Keep Reading
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ======================================================== -->
+<!-- MODAL 2: INTERACTIVE CART DRAWER                         -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300 flex justify-end" id="cart-drawer-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-inverse-surface/60 backdrop-blur-sm cursor-pointer" id="cart-backdrop"></div>
+<!-- Drawer Panel (Slides from Right or Bottom on Mobile) -->
+<div class="relative w-full max-w-md h-full bg-surface-container-lowest shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out z-10" id="cart-panel">
+<!-- Drawer Header -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">shopping_bag</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Your Literary Basket</h3>
+<span class="ml-1 px-2 py-0.5 bg-primary/10 text-primary text-[11px] font-bold rounded-full" id="cart-drawer-pill">2 items</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface active:scale-90" id="close-cart-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Free Shipping Milestone Progress Bar -->
+<div class="px-space-md py-2.5 bg-surface-container-high/50 flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-label-sm text-[11px]">
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Patrons Free Delivery Qualified!
+          </span>
+<span class="font-bold text-primary">$0.00 Delivery</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Cart Items List (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-space-md space-y-space-sm" id="cart-items-container">
+<!-- Item 1: Atomic Habits -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-3 shadow-sm" id="item-atomic">
+<div class="w-12 h-16 rounded overflow-hidden flex-shrink-0 shadow-inner">
+<img alt="Atomic Habits Thumb" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC40JDRJEgYFaOdFYUVGlYxTC0NXBv2lzeu4UqF8DuPzGasgqIoxxKLGfBnltr5SDTQD60migm9Z1bdNyNm9qLPMNs3lWT7O4IwcNVwLQOTHw5oCLSFQ5onDRYvKD9r0YfGFjD7Ouo7XkzrNuXlIm8uV4Y3svOt9rnObl09xsJA0bdfjaLVg6UfN0fQwIkkbzblfGqfDJ0_wjagv-2z-0Dvx6Ztti6iLlf1Plx1xB4dgF2owiU6-TXz6Q"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-label-md text-label-md font-bold text-on-surface truncate">Atomic Habits</h4>
+<p class="font-label-sm text-[11px] text-on-surface-variant" id="cart-atomic-format-label">Collector Hardcover</p>
+<div class="mt-1 flex items-center gap-2">
+<span class="font-label-sm text-[11px] text-on-surface-variant font-medium">Qty: <span id="cart-atomic-qty">1</span></span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-label-md text-label-md font-bold text-primary" id="cart-atomic-price">$21.00</span>
+</div>
+</div>
+<button class="remove-cart-item text-on-surface-variant hover:text-error transition-colors p-1" onclick="removeItem('item-atomic', 21.00)">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Item 2: The Midnight Library E-Book -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-3 shadow-sm" id="item-midnight">
+<div class="w-12 h-16 rounded bg-surface-container-high flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[24px]">book_2</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-label-md text-label-md font-bold text-on-surface truncate">The Midnight Library</h4>
+<p class="font-label-sm text-[11px] text-on-surface-variant">Instant Cloud E-Book</p>
+<div class="mt-1 flex items-center gap-2">
+<span class="font-label-sm text-[11px] text-on-surface-variant font-medium">Qty: 1</span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-label-md text-label-md font-bold text-primary">$7.99</span>
+</div>
+</div>
+<button class="remove-cart-item text-on-surface-variant hover:text-error transition-colors p-1" onclick="removeItem('item-midnight', 7.99)">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Promo Code Section -->
+<div class="px-space-md py-space-xs bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg font-label-md text-label-md text-on-surface focus:outline-none uppercase font-bold tracking-wider" id="promo-input" placeholder="Patron code" type="text" value="PAGE25"/>
+<span class="absolute right-2 top-2 text-primary font-label-sm text-[11px] font-bold">25% OFF</span>
+</div>
+<button class="px-3.5 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold rounded-lg transition-colors" id="apply-promo-btn">
+            Applied
+          </button>
+</div>
+</div>
+<!-- Financial Breakdown & Checkout -->
+<div class="p-space-md bg-surface-container-low space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Items Subtotal</span>
+<span id="cart-raw-subtotal">$28.99</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-primary font-medium">
+<span>Patron Appreciation (PAGE25)</span>
+<span id="cart-discount-value">-$7.25</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Archival Shipping &amp; Handling</span>
+<span class="text-secondary font-bold">FREE ($0.00)</span>
+</div>
+<div class="pt-2 flex justify-between items-baseline font-headline-sm text-headline-sm font-bold text-on-surface">
+<span>Estimated Total</span>
+<span class="text-primary" id="cart-final-total">$21.74</span>
+</div>
+<!-- Checkout Action Button -->
+<button class="w-full py-3.5 px-space-md rounded-lg bg-inverse-surface hover:bg-primary text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-xl active:scale-98 transition-all mt-2" id="checkout-button">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Proceed to Secure Checkout</span>
+</button>
+<p class="text-center font-label-sm text-[10px] text-on-surface-variant">
+          256-bit SSL Encrypted • 30-Day Happiness Return Guarantee
+        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Scripting -->
+<script>
+  (function initBookHavenDetail() {
+    // State management
+    let state = {
+      selectedFormat: 'hardcover',
+      selectedPrice: 21.00,
+      selectedTitle: 'Collector Hardcover',
+      quantity: 1,
+      isPlayingAudio: false,
+      midnightInCart: true,
+      atomicInCart: true,
+      promoApplied: true,
+      audioSeconds: 90
+    };
+
+    // DOM Elements
+    const formatCards = document.querySelectorAll('.format-card');
+    const qtyDisplay = document.getElementById('qty-display');
+    const qtyMinus = document.getElementById('qty-minus');
+    const qtyPlus = document.getElementById('qty-plus');
+    const btnText = document.getElementById('btn-text');
+    const addToBasketBtn = document.getElementById('add-to-basket-btn');
+
+    // Cart Modal Elements
+    const cartModal = document.getElementById('cart-drawer-modal');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartBackdrop = document.getElementById('cart-backdrop');
+    const openCartBtn = document.getElementById('toggle-cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const cartAtomicQty = document.getElementById('cart-atomic-qty');
+    const cartAtomicPrice = document.getElementById('cart-atomic-price');
+    const cartAtomicFormatLabel = document.getElementById('cart-atomic-format-label');
+    const cartRawSubtotal = document.getElementById('cart-raw-subtotal');
+    const cartDiscountValue = document.getElementById('cart-discount-value');
+    const cartFinalTotal = document.getElementById('cart-final-total');
+    const bagCountBadge = document.getElementById('bag-count-badge');
+    const cartDrawerPill = document.getElementById('cart-drawer-pill');
+
+    // Sample Reader Elements
+    const sampleModal = document.getElementById('sample-modal');
+    const sampleBackdrop = document.getElementById('sample-backdrop');
+    const readerContainer = document.getElementById('reader-container');
+    const openSampleBtn = document.getElementById('open-sample-btn');
+    const closeReaderBtn = document.getElementById('close-reader-btn');
+    const readerBuyBtn = document.getElementById('reader-buy-now-btn');
+    const readerContentBody = document.getElementById('reader-content-body');
+    const themeLightBtn = document.getElementById('theme-light-btn');
+    const themeSepiaBtn = document.getElementById('theme-sepia-btn');
+    const themeDarkBtn = document.getElementById('theme-dark-btn');
+    const fontFamilyToggle = document.getElementById('font-family-toggle');
+
+    // Audio Player Elements
+    const audioPlayBtn = document.getElementById('audio-play-btn');
+    const audioIcon = document.getElementById('audio-icon');
+    const audioProgress = document.getElementById('audio-progress');
+    const audioTime = document.getElementById('audio-time');
+
+    // Helper: update price button & totals
+    function updateMainButton() {
+      const total = (state.selectedPrice * state.quantity).toFixed(2);
+      btnText.textContent = `Add to Basket • $${total}`;
+    }
+
+    function calculateCartTotals() {
+      let subtotal = 0;
+      let count = 0;
+      if (state.atomicInCart) {
+        subtotal += state.selectedPrice * state.quantity;
+        count += state.quantity;
+      }
+      if (state.midnightInCart) {
+        subtotal += 7.99;
+        count += 1;
+      }
+
+      const discount = state.promoApplied ? (subtotal * 0.25) : 0;
+      const finalTotal = Math.max(0, subtotal - discount);
+
+      if (cartRawSubtotal) cartRawSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+      if (cartDiscountValue) cartDiscountValue.textContent = `-$${discount.toFixed(2)}`;
+      if (cartFinalTotal) cartFinalTotal.textContent = `$${finalTotal.toFixed(2)}`;
+      if (bagCountBadge) bagCountBadge.textContent = count;
+      if (cartDrawerPill) cartDrawerPill.textContent = `${count} item${count === 1 ? '' : 's'}`;
+
+      if (cartAtomicQty) cartAtomicQty.textContent = state.quantity;
+      if (cartAtomicPrice) cartAtomicPrice.textContent = `$${(state.selectedPrice * state.quantity).toFixed(2)}`;
+      if (cartAtomicFormatLabel) cartAtomicFormatLabel.textContent = state.selectedTitle;
+    }
+
+    // Format selection click handler
+    formatCards.forEach(card => {
+      card.addEventListener('click', () => {
+        formatCards.forEach(c => {
+          c.classList.remove('selected-card', 'bg-surface-container-lowest', 'shadow-md');
+          c.classList.add('bg-surface-container-low', 'shadow-sm');
+          const bullet = c.querySelector('.radio-bullet');
+          if (bullet) {
+            bullet.classList.remove('bg-primary', 'text-on-primary');
+            bullet.classList.add('bg-surface-container-high', 'text-transparent');
+          }
+        });
+
+        card.classList.add('selected-card', 'bg-surface-container-lowest', 'shadow-md');
+        card.classList.remove('bg-surface-container-low', 'shadow-sm');
+        const bullet = card.querySelector('.radio-bullet');
+        if (bullet) {
+          bullet.classList.add('bg-primary', 'text-on-primary');
+          bullet.classList.remove('bg-surface-container-high', 'text-transparent');
+        }
+
+        state.selectedFormat = card.dataset.format;
+        state.selectedPrice = parseFloat(card.dataset.price);
+        state.selectedTitle = card.dataset.title;
+
+        updateMainButton();
+        calculateCartTotals();
+      });
+    });
+
+    // Quantity Stepper
+    qtyMinus.addEventListener('click', () => {
+      if (state.quantity > 1) {
+        state.quantity--;
+        qtyDisplay.textContent = state.quantity;
+        updateMainButton();
+        calculateCartTotals();
+      }
+    });
+
+    qtyPlus.addEventListener('click', () => {
+      if (state.quantity < 10) {
+        state.quantity++;
+        qtyDisplay.textContent = state.quantity;
+        updateMainButton();
+        calculateCartTotals();
+      }
+    });
+
+    // Cart Drawer Toggle
+    function openCart() {
+      cartModal.classList.remove('pointer-events-none', 'opacity-0');
+      cartModal.classList.add('opacity-100');
+      cartPanel.classList.remove('translate-x-full');
+      cartPanel.classList.add('translate-x-0');
+      calculateCartTotals();
+    }
+
+    function closeCart() {
+      cartPanel.classList.remove('translate-x-0');
+      cartPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        cartModal.classList.add('pointer-events-none', 'opacity-0');
+        cartModal.classList.remove('opacity-100');
+      }, 250);
+    }
+
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartBackdrop.addEventListener('click', closeCart);
+
+    addToBasketBtn.addEventListener('click', () => {
+      state.atomicInCart = true;
+      const atomicNode = document.getElementById('item-atomic');
+      if (atomicNode) atomicNode.style.display = 'flex';
+      calculateCartTotals();
+      openCart();
+    });
+
+    // Global item removal
+    window.removeItem = function(id, price) {
+      const node = document.getElementById(id);
+      if (node) {
+        node.style.display = 'none';
+        if (id === 'item-atomic') state.atomicInCart = false;
+        if (id === 'item-midnight') state.midnightInCart = false;
+        calculateCartTotals();
+      }
+    };
+
+    // Reader Modal Toggle
+    function openReader() {
+      sampleModal.classList.remove('pointer-events-none', 'opacity-0');
+      sampleModal.classList.add('opacity-100');
+      readerContainer.classList.remove('translate-y-full');
+      readerContainer.classList.add('translate-y-0');
+    }
+
+    function closeReader() {
+      readerContainer.classList.remove('translate-y-0');
+      readerContainer.classList.add('translate-y-full');
+      setTimeout(() => {
+        sampleModal.classList.add('pointer-events-none', 'opacity-0');
+        sampleModal.classList.remove('opacity-100');
+      }, 250);
+    }
+
+    openSampleBtn.addEventListener('click', openReader);
+    closeReaderBtn.addEventListener('click', closeReader);
+    sampleBackdrop.addEventListener('click', closeReader);
+
+    readerBuyBtn.addEventListener('click', () => {
+      closeReader();
+      setTimeout(openCart, 300);
+    });
+
+    // Theme Switcher in Reader
+    themeLightBtn.addEventListener('click', () => {
+      readerContentBody.className = "flex-1 overflow-y-auto p-space-lg font-headline-sm text-body-lg text-on-surface bg-surface-container-lowest space-y-space-md transition-colors duration-200";
+    });
+
+    themeSepiaBtn.addEventListener('click', () => {
+      readerContentBody.className = "flex-1 overflow-y-auto p-space-lg font-headline-sm text-body-lg text-[#3c2f2f] bg-[#fbf0d9] space-y-space-md transition-colors duration-200";
+    });
+
+    themeDarkBtn.addEventListener('click', () => {
+      readerContentBody.className = "flex-1 overflow-y-auto p-space-lg font-headline-sm text-body-lg text-inverse-on-surface bg-inverse-surface space-y-space-md transition-colors duration-200";
+    });
+
+    // Font toggle (Serif vs Sans)
+    let isSans = false;
+    fontFamilyToggle.addEventListener('click', () => {
+      isSans = !isSans;
+      if (isSans) {
+        readerContentBody.classList.remove('font-headline-sm');
+        readerContentBody.classList.add('font-body-md');
+        fontFamilyToggle.textContent = 'Aa Sans';
+      } else {
+        readerContentBody.classList.remove('font-body-md');
+        readerContentBody.classList.add('font-headline-sm');
+        fontFamilyToggle.textContent = 'Aa Serif';
+      }
+    });
+
+    // Audio Player Micro-interaction
+    let audioTimer = null;
+    audioPlayBtn.addEventListener('click', () => {
+      state.isPlayingAudio = !state.isPlayingAudio;
+      if (state.isPlayingAudio) {
+        audioIcon.textContent = 'pause';
+        audioTimer = setInterval(() => {
+          if (state.audioSeconds < 320) {
+            state.audioSeconds++;
+            const pct = (state.audioSeconds / 320) * 100;
+            audioProgress.style.width = pct + '%';
+            const m = Math.floor(state.audioSeconds / 60);
+            const s = (state.audioSeconds % 60).toString().padStart(2, '0');
+            audioTime.textContent = `${m}:${s}`;
+          } else {
+            clearInterval(audioTimer);
+            state.isPlayingAudio = false;
+            audioIcon.textContent = 'play_arrow';
+          }
+        }, 1000);
+      } else {
+        audioIcon.textContent = 'play_arrow';
+        if (audioTimer) clearInterval(audioTimer);
+      }
+    });
+
+    // Checkout button delight feedback
+    const checkoutBtn = document.getElementById('checkout-button');
+    checkoutBtn.addEventListener('click', () => {
+      const orig = checkoutBtn.innerHTML;
+      checkoutBtn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> Directing to Sanctuary Checkout...`;
+      setTimeout(() => {
+        checkoutBtn.innerHTML = `<span class="material-symbols-outlined text-[20px]">done_all</span> Order Prepared!`;
+        setTimeout(() => {
+          checkoutBtn.innerHTML = orig;
+          closeCart();
+        }, 1200);
+      }, 1000);
+    });
+
+    // Initial price compute
+    calculateCartTotals();
+  })();
+</script></main></body></html>

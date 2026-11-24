@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Manrope:wght@400..700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#887364","on-error-container":"#93000a","inverse-primary":"#ffb77d","primary-fixed-dim":"#ffb77d","outline-variant":"#dbc2b0","tertiary-fixed-dim":"#ffb4a8","on-primary":"#ffffff","secondary-fixed":"#c6e9ea","on-tertiary-container":"#fffbff","on-surface-variant":"#554336","surface-bright":"#faf8ff","background":"#faf8ff","error":"#ba1a1a","primary-fixed":"#ffdcc3","surface":"#faf8ff","on-surface":"#151b29","tertiary-container":"#c94a38","surface-container-low":"#f1f3ff","secondary-fixed-dim":"#aacdce","surface-tint":"#904d00","on-secondary-fixed":"#002021","surface-container-highest":"#dde2f6","on-background":"#151b29","on-primary-fixed":"#2f1500","on-primary-fixed-variant":"#6e3900","surface-container":"#e9edff","secondary-container":"#c3e6e7","primary":"#8d4b00","inverse-surface":"#2a303f","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary":"#ffffff","surface-variant":"#dde2f6","surface-dim":"#d4d9ed","error-container":"#ffdad6","surface-container-high":"#e2e8fc","on-tertiary-fixed":"#410100","on-tertiary-fixed-variant":"#8a1c10","on-primary-container":"#fffbff","on-secondary-container":"#476869","on-error":"#ffffff","on-secondary-fixed-variant":"#2b4c4d","tertiary":"#a83223","inverse-on-surface":"#edf0ff","secondary":"#436465","primary-container":"#b15f00","tertiary-fixed":"#ffdad4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.5rem","margin":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter-sm":"1rem","gutter":"1.5rem","margin-sm":"1rem","space-md":"1rem"},"fontFamily":{"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"display-mobile":["Newsreader"],"headline-md":["Newsreader"],"headline-lg-mobile":["Newsreader"],"body-md":["Manrope"],"display":["Newsreader"],"label-lg":["Manrope"],"label-md":["Manrope"],"body-lg":["Manrope"],"title-editorial":["Newsreader"],"body-sm":["Manrope"],"label-sm":["Manrope"]},"fontSize":{"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-mobile":["40px",{"lineHeight":"46px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["26px",{"lineHeight":"32px","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.025em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-editorial":["18px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-7xl mx-auto px-margin-sm lg:px-margin flex flex-col justify-between pt-3 pb-2"><div class="flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><img alt="A beautiful, elegant logo emblem of an open book held tenderly in the hands of a reader. Warm amber #d97706 and deep navy ink tones, minimalist refined linework, sanctuary and literary craftsmanship aesthetic for PageHaven. Design context: - Primary color: #d97706
+- Font: newsreader
+- Mode: light
+- Roundness: rounded-sm
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-serif">PageHaven</span></div><div class="flex-1 max-w-xl mx-auto hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="w-full pl-10 pr-4 py-space-xs bg-surface-container-low text-on-surface font-title-editorial text-body-sm rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary placeholder:text-on-surface-variant/70 transition-all" placeholder="Search by author, theme, or quote..." type="text"/></div></div><div class="flex items-center gap-space-md"><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" data-path="cart" href="#"><span class="material-symbols-outlined text-[24px]">local_mall</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary font-label-sm text-label-sm rounded-full w-5 h-5 flex items-center justify-center shadow-sm">3</span></a><a class="flex items-center gap-space-xs p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="login" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-label-md text-label-md hidden sm:inline-block">Guest / Sign In</span></a></div></div><nav class="flex items-center gap-gutter overflow-x-auto whitespace-nowrap pt-1 text-body-sm" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="home" href="#">Home</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="story-fiction" href="#">Story &amp; Fiction</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="anime-manga" href="#">Anime &amp; Manga</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="comics-graphic-novels" href="#">Comics &amp; Graphic Novels</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="motivational-wisdom" href="#">Motivational &amp; Wisdom</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="periodicals" href="#">Periodicals</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="readgenius-ai-concierge" href="#">ReadGenius AI Concierge</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="help-care" href="#">Help Care</a></nav></div></header><main class="w-full pt-24 bg-surface min-h-[calc(100vh-24rem)]"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Element -->
+<div class="relative w-full max-w-7xl mx-auto px-margin-sm lg:px-margin pt-6 pb-20">
+<div class="absolute -top-12 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-96 -left-20 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Pavilion Header Bar & Breadcrumb -->
+<section class="flex flex-col gap-space-xs mb-8">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span>Curated Archive</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Story &amp; Fiction Pavilion</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>26 Acclaimed Volumes Cataloged</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pt-2">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+            Master Sanctuary Collection
+          </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-serif tracking-tight">
+            Grand Pavilion of Story &amp; Fiction
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+            A definitive treasury of metaphysical portals, historical epics, intimate psychological portraits, and award-winning international prose. Each work is presented in clothbound archival hardcovers and cloud-synced digital reader folios.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container px-4 py-2.5 rounded-lg shadow-sm flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Current Archive Stock</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">26 Available Editions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest px-4 py-2.5 rounded-lg shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<span class="font-label-sm text-label-sm text-on-surface">Deckle Edge &amp; Express Freight</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Spotlight Feature (The Midnight Library) -->
+<section class="mb-14 relative bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+<!-- Cover Art View with Spine Shadow -->
+<div class="lg:col-span-5 relative bg-inverse-surface flex items-center justify-center p-6 sm:p-10 overflow-hidden min-h-[460px]">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-transparent z-10 opacity-70"></div>
+<!-- Book Presentation with 3:4 spine depth -->
+<div class="relative z-20 w-64 sm:w-72 aspect-[3/4] shadow-2xl rounded-sm overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+<!-- Spine realism overlay -->
+<div class="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-30 pointer-events-none"></div>
+<img alt="The Midnight Library by Matt Haig Book Cover" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7"/>
+</div>
+<div class="absolute top-4 left-4 z-20 bg-inverse-surface/85 backdrop-blur-md px-3 py-1 rounded-full text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[15px]">stars</span>
+            Archival Spotlight Work
+          </div>
+</div>
+<!-- Spotlight Content & Dual Selector -->
+<div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between bg-surface-container-lowest">
+<div class="flex flex-col gap-3">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase tracking-wide">Magical Realism</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Goodreads Choice Winner</span>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm ml-auto">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant">(1.8M reviews)</span>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-serif mt-1">
+              The Midnight Library
+            </h2>
+<p class="font-label-lg text-label-lg text-primary font-medium">By Matt Haig</p>
+<blockquote class="italic font-title-editorial text-title-editorial text-on-surface-variant pl-4 py-1.5 my-2 border-l-2 border-primary bg-surface-container-low/40 rounded-r-lg">
+              “Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived...”
+            </blockquote>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Nora Seed finds herself faced with the possibility of changing her life for a new one, following a different career, undoing old breakups, and realizing her dreams of becoming a glaciologist. She must search within herself as she travels through the Midnight Library to decide what is truly fulfilling in life.
+            </p>
+<!-- Metadata highlights chips -->
+<div class="grid grid-cols-3 gap-3 py-3 my-1 bg-surface-container-low rounded-lg p-3">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Binding</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Cloth Embossed</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Page Count</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">304 Deckle Pages</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">ReadGenius AI</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Thematic Breakdown</span>
+</div>
+</div>
+</div>
+<!-- Format Switcher & Purchasing Desk -->
+<div class="mt-6 pt-5 bg-surface-container-low/60 rounded-xl p-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+<div class="flex items-center gap-2" id="spotlight-toggle-group">
+<button class="px-4 py-2 rounded-lg text-label-sm font-label-sm transition-all bg-on-surface text-surface shadow-sm flex items-center gap-1.5" id="btn-spotlight-cloth" onclick="setSpotlightEdition('cloth', 21.50)" type="button">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+                Cloth Hardcover <span class="font-bold ml-1">$21.50</span>
+</button>
+<button class="px-4 py-2 rounded-lg text-label-sm font-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center gap-1.5" id="btn-spotlight-ebook" onclick="setSpotlightEdition('ebook', 7.99)" type="button">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+                Digital E-Book <span class="font-bold ml-1">$7.99</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Price</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-serif font-bold" id="spotlight-price">$21.50</span>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-6 py-2.5 rounded-lg font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all flex items-center gap-2 active:scale-95" onclick="addToCart('The Midnight Library', document.getElementById('spotlight-price').textContent)" type="button">
+<span class="material-symbols-outlined text-[18px]">local_mall</span>
+                Acquire Volume
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Tabs Rail & Filter Header -->
+<section class="mb-8">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-serif">Curated Master Catalogue</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Filter by narrative form, thematic category, or translation origin</p>
+</div>
+<!-- Live Quick Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 max-w-full">
+<button class="category-pill active-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-on-surface text-surface shadow-sm" onclick="filterCategory('all', this)">
+            All Fiction (26)
+          </button>
+<button class="category-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterCategory('modern-classics', this)">
+            Modern Classics
+          </button>
+<button class="category-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterCategory('magical-realism', this)">
+            Magical Realism
+          </button>
+<button class="category-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterCategory('contemporary', this)">
+            Contemporary
+          </button>
+<button class="category-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterCategory('historical-epics', this)">
+            Historical Epics
+          </button>
+<button class="category-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterCategory('world-translations', this)">
+            World Translations
+          </button>
+<button class="category-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterCategory('short-novellas', this)">
+            Short Novellas
+          </button>
+</div>
+</div>
+</section>
+<!-- Master Book Cards Grid (25 Remaining Books) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter" id="catalog-grid">
+<!-- Book 1: Before the Coffee Gets Cold -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="magical-realism world-translations short-novellas">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Before the Coffee Gets Cold by Toshikazu Kawaguchi featuring a vintage nostalgic Tokyo café with warm steam rising from an antique porcelain cup and deep green shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTzR_rQeudK2JfjHTF2L9T1ln_bIolfvvLkPEU2z0ZDVM8G-OVqX7_6qnwsjArde7-uP46dE8Oi2AWEvB4iex-2g_hsNb3Nr-i-BXbyvjXo-2_6sR21ndCS1p9o18Ea0-vq36EDC3-2KHsOO1cqoUr2NqQQumQWkm9atxoxCMMMa-skepJIu2ATPlUpdYthz6--UpG-PYIp7QjcouxQ2Ft51Vchs0RFsEL121gspW7TsUm0AtRd5oRyw"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Magical Realism</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.7</span>
+<span class="text-on-surface-variant text-[11px]">(320k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Before the Coffee Gets Cold</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Toshikazu Kawaguchi</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '16.50', '6.49', 'cloth')">Cloth $16.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '16.50', '6.49', 'ebook')">E-Book $6.49</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Before the Coffee Gets Cold', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 2: Tomorrow, and Tomorrow, and Tomorrow -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="contemporary modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Tomorrow and Tomorrow and Tomorrow by Gabrielle Zevin with vibrant Katsushika Hokusai wave motifs mixed with 90s digital pixel art in rich blue and orange tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7hgrTuB2SPFZWtVtkeG60GLuRuIRm21tR_9cuUfYkphTgn-BughMgUZeRSmZFX_RMjbMy9_VzE3vZa-XHJEUIy32qpM2-gmw3UbDzGkZs1nA-Paja7k4wO3U6QXmX7aSH03gI4mBGNA2AhRJ3uhu8cP2BRrRv0jNUyzToqwXUDosScPM3jo-_j3oiXG-Y_70CWworfCTo3LJAGKewl_23UFacFC0q8Q1DNKEYa4V_ePgVARVYU_JcFA"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Contemporary</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(510k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Tomorrow, and Tomorrow, and Tomorrow</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Gabrielle Zevin</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '22.99', '8.49', 'cloth')">Cloth $22.99</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '22.99', '8.49', 'ebook')">E-Book $8.49</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Tomorrow, and Tomorrow, and Tomorrow', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 3: Klara and the Sun -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="modern-classics contemporary">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Klara and the Sun by Kazuo Ishiguro depicting a solitary humanoid silhouette framed against a brilliant radiant sunburst and geometric architectural glass lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmKBcZvBWrIydczXR35f138fujO5ArLPeiiGp2Cof7GjuMZ0PAjiRyc5YqgfxlVwo8Tum8veRMTpWxhSJYTvFBTPnq0J7CK8NTEo67ke2KWQzBWxaIaN2geQoMdnj9C-8-Gs3O7CxQmPmN2MYhNfY15os2zve5LnndWGvT9ZrhKm09lqKM9pkreUUS-DRAU__X6rjAo8awqmY32wzwMPU2s92UlXlzWxpgCiOfZJtQRCqFsOwU6xcRag"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Modern Classic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.6</span>
+<span class="text-on-surface-variant text-[11px]">(290k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Klara and the Sun</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Kazuo Ishiguro</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '21.50', '8.99', 'cloth')">Cloth $21.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '21.50', '8.99', 'ebook')">E-Book $8.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Klara and the Sun', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 4: The Song of Achilles -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="historical-epics modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of The Song of Achilles by Madeline Miller showing an embossed golden Greek warrior helmet against an Aegean sea cyan and deep marble background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfiX1DaBYcqvkNEaPebBynRxAgZdsFdtBgi6Iu8FeIWvBl05JnFObU0lgR7CZ5aNlILE2uzB7aJ_4U457A8AklXrhb1Pe4iiOJOvc1rIKGhGLphfpLt_R_HyENewX3sqNHyLQyboOcW_5iVeMcsyjExeWZUBF_QQv8tB-vKapWqDNqXSs5ExaBH07irH1FSNc-dZOq3KWHSEfQOxCLVTNv3Shnv7ma6zFsBXAU2fcExfXx95zmQicZ7A"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-tertiary/80 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Historical Epic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(980k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">The Song of Achilles</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Madeline Miller</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '16.00', '7.99', 'cloth')">Cloth $16.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '16.00', '7.99', 'ebook')">E-Book $7.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('The Song of Achilles', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 5: One Hundred Years of Solitude -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="magical-realism world-translations modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of One Hundred Years of Solitude by Gabriel García Márquez featuring lush Colombian jungle foliage, golden butterflies, and the mythical river town of Macondo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZA_kEZGBLI4GR1Tixaia9qgeGfbNVYjMd4bHJ4UYCf211Iq_ux4PCiLEmcuaXPJxkanTNEE65jDnd7tKpEE494m3rSMeIrGlyYO8tYiABQQhA1uz6u1dBLp_16yG0kTYZHPSwdr6NY6QNyD32-KfcG6tsrANSR1BWY9rwni0gQPJkXvl946P6OaFKbhrmmjobf5B6_KNQaUd4TzRtLtGQl6_SG2sorVU9JJhbY-i2mrcJqREJ_f69oQ"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Magical Realism</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">5.0</span>
+<span class="text-on-surface-variant text-[11px]">(1.2M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">One Hundred Years of Solitude</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Gabriel García Márquez</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '21.50', '8.99', 'cloth')">Cloth $21.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '21.50', '8.99', 'ebook')">E-Book $8.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('One Hundred Years of Solitude', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 6: Norwegian Wood -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="world-translations modern-classics contemporary">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Norwegian Wood by Haruki Murakami showing a solitary snowy Tokyo forest road in crimson red and forest green minimalist graphic book style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2YZZEkHAOpzcnqvLg9q1d4ApNJgTcHVM5qkrc7yHJPZQskbxupRU4OYsPS_mnp9Pci6qtQ_yXVsLeM_ssU2TxHtFfueEuFDOIw6-rUUPI5WRR-EyuIEN-E3glFA7nbRSEWQKfY8ByvbxA7GuMhki_rEGQNgK-kwPK9wog8fHIREbjseGsMMuObcAMqOy72yrhkH2Cx3vNE8v9Eo4qpecKZQoQtnxozelXXsuI3luhnzlko9cfYMTPrA"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">World Trans.</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.7</span>
+<span class="text-on-surface-variant text-[11px]">(480k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Norwegian Wood</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Haruki Murakami</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '19.99', '7.99', 'cloth')">Cloth $19.99</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '19.99', '7.99', 'ebook')">E-Book $7.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Norwegian Wood', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 7: Where the Crawdads Sing -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="contemporary historical-epics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Where the Crawdads Sing by Delia Owens showing marsh grass and a serene Carolina lagoon at twilight with warm amber fireflies and water reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkxfuYNJZHQV84UTFFEslSeZCzsIL6UVr4LSMcZKbm-gjy-pgMrWGPENGulHTETegI9t_MH6CL2cf1MQCH8iMy3wjg2JSck_Ko50Md-a7xitZtMv5kCxnIcdAdwiJts5O-HGewSoU2u_jurxN_OQ7gVa_hACe34q3i2tfj6Z1pzFeUdQDTvh0bZWTruRe82w9Ry6_RrxN5P0MxIrU87MoZ0xGARzBjgqueZqf4gSBkAag3J5F8QWniFw"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Contemporary</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant text-[11px]">(2.1M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Where the Crawdads Sing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Delia Owens</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '18.00', '7.50', 'cloth')">Cloth $18.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '18.00', '7.50', 'ebook')">E-Book $7.50</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Where the Crawdads Sing', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 8: Pachinko -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="historical-epics world-translations">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Pachinko by Min Jin Lee showing traditional Korean mother-of-pearl floral lacquer patterns against a deep navy blue textured hardcover." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_13s4-DgFUvhqbhN8iCDpo2McH59qW4RdB-AW9KN8c6I9srXJ9idehNxLzz9__35-aY_g9Y69hUaq00p1wZnnYbMLHAFVacPGMK_P8iM1HJ0ez7w5j_M7TMIVno2e0XPyRSM_H_sRqjumxiqyvtzZ6dbmz0c5f0Qhf_IBrboTIvb358lZyvMT84B5uCsbYRjxtgpkWekbOzUveGyVWd8zDZIA6oADGuRM7Z398SdL9FJ_jsIl9TaQg"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-tertiary/80 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Historical Epic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(430k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Pachinko</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Min Jin Lee</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '20.00', '8.00', 'cloth')">Cloth $20.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '20.00', '8.00', 'ebook')">E-Book $8.00</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Pachinko', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 9: A Gentleman in Moscow -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="historical-epics modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of A Gentleman in Moscow by Amor Towles depicting the ornate art nouveau interior of the Hotel Metropol Moscow with grand chandeliers and winding brass stairways." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDeypeqZ7QaqpxPXUlKkZRGSW7OOYlAw7RBr3tGRRT078Y5eSnl9kCFp2qjHUE4WrVlT5USFYl6m-Gt55OpI4L0232ZC2MmBiblZg9N2ma6HFOoYd4EnJGIt4F-4jLiXXyHwpoi4HVuNTRoCGZ8XSx7ciA1Kpw3dXMG-8BDeueNRdpZPvhdKqurh8axdbJk0au2vPMo3JDRFeZwC1VcKS4SpaJaz4HUKcPCNvYbtwWwdAw401j25rd7g"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Historical Epic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant text-[11px]">(670k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">A Gentleman in Moscow</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Amor Towles</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '19.50', '7.99', 'cloth')">Cloth $19.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '19.50', '7.99', 'ebook')">E-Book $7.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('A Gentleman in Moscow', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 10: The Alchemist -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="magical-realism world-translations short-novellas">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of The Alchemist by Paulo Coelho showing glowing Egyptian desert sand dunes at golden dusk with an alchemical sun symbol in burnished bronze foil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2i8Rz4i9OM-TC64rvrMkw-N6tB4KTGOfgjhB0bL718O-WkXw7r-JICDGHfvB8NSk1Rfd-MSMzKM1SLhG4PPbjP-27Zv1R9duNnvy3hcxvVnEO58fvQlOP8segBs7-RGP-vQE4PwgFkopWF1KdTFrQT3y6gARn6qmppn8XB89gN_I6lAdc62bMdGv3wErQAGD5nfddLWkl7hmD7HrYBx1292uQicjUCFmzd5Ow7TgeeN46gtgrUxw6_A"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Novella</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.7</span>
+<span class="text-on-surface-variant text-[11px]">(2.4M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">The Alchemist</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Paulo Coelho</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '15.00', '5.99', 'cloth')">Cloth $15.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '15.00', '5.99', 'ebook')">E-Book $5.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('The Alchemist', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 11: The Seven Husbands of Evelyn Hugo -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="contemporary historical-epics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of The Seven Husbands of Evelyn Hugo showing an iconic Old Hollywood movie star in an emerald silk gala gown standing dramatically on a crimson red carpet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9krXSyX74e62vs015rdZ7MXgIpFGyaq-lWfbMqTwLmq6Ezt5SgtDXjOG1hhA8bT5LOaFRig-OI0u6FkjaFfcItjkNGvMtg2eRZf-7wRBYErgPmPmNGN1G9lJ6uvf3exRK3xR31VmlOJCedqTpqr149tj_gnABGPTbwqL4dJFPaROBnh-IODNyQL_VHND6XrOB3eV40312uMjve1CU-xiBs3H3nXP5mUFLW2i-AukLzElDarlXQ3dTgA"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Contemporary</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant text-[11px]">(1.4M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">The Seven Husbands of Evelyn Hugo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Taylor Jenkins Reid</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '17.50', '6.99', 'cloth')">Cloth $17.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '17.50', '6.99', 'ebook')">E-Book $6.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('The Seven Husbands of Evelyn Hugo', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 12: Circe -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="magical-realism historical-epics modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Circe by Madeline Miller featuring intricate gold foil botanical wreaths, Greek mythological lions and wild wolves surrounding a gilded golden medallion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIx0fc_-2zASxvBv5vGFyvCl0GqoKm7tNflWpIJfAH4hukyoFoyDZGWdCVTNgPrIMhomTbrvSfEroVI_GHqRzpyCudYuhp8Bf4DI96FKJbvoHJvJzJPmLD06GN_4JNi753k2l1D2TzzIsuBvh60pWpADyQ_miz6t54R93krGj7FTRvW2HCZo2LgFp1rbmk-RyaDArWT8yMgGz05scoRu8h2wMXURPcjnbenOnnlUjg_YTcpZ9LSiNx9g"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Mythic Epic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(840k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Circe</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Madeline Miller</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '18.00', '7.50', 'cloth')">Cloth $18.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '18.00', '7.50', 'ebook')">E-Book $7.50</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Circe', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 13: Kafka on the Shore -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="magical-realism world-translations modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Kafka on the Shore by Haruki Murakami showing surreal fish raining from a midnight violet sky over a coastal Japanese library with silhouettes of wandering cats." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoiHyJvPpC4vy61b1X1Q194LSyJUwbrtGoL9qBl74r_fZPdW_xzQg2QRvhifSGL4cPr37KNRuvJBga3r0L0-s1lKRzuF_kvKy2H9865xlducdlhK7gJngzAVY9MeOxOYgl78iAiUF64qIs4QrrLrn3Ihu2beGjYjoAWKugrHoDZn_zGCg_MNso76kkUGM2uRWMkjZKAi91qqDNf31K41Tq-PEXh36bvX_nveybSHGL2RTZDyc9T1Pa3Q"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Magical Realism</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.7</span>
+<span class="text-on-surface-variant text-[11px]">(390k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Kafka on the Shore</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Haruki Murakami</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '21.00', '8.50', 'cloth')">Cloth $21.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '21.00', '8.50', 'ebook')">E-Book $8.50</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Kafka on the Shore', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 14: Normal People -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="contemporary">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Normal People by Sally Rooney featuring minimalist retro typography and two illustrated figures curled inside an open sardine tin with soft sage green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJMc-DlLP7QuMLmKNYqKpG4JOotkzcuD7_y61LhybvLoHFEtiNVEd5l-gzGOMb6lPFXrJoybV4WX5lHwtu-juf8WIgjvHrFmhaqrEYTc7ptjGFX7n1g4-IG5W5MBcuENZ-9qBn6ExenwL3Or7hS7hIrAKgFFNiqCr8LghuWQJqT0dHnC3lGSPHV2fOzTnjiXNz82VFw7r6c5cdmCIfjI3eIQAEo8pPI62wWAoOjDgjLBxkxCTIXxzk6Q"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Contemporary</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.5</span>
+<span class="text-on-surface-variant text-[11px]">(890k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Normal People</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Sally Rooney</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '16.99', '6.99', 'cloth')">Cloth $16.99</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '16.99', '6.99', 'ebook')">E-Book $6.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Normal People', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 15: The Overstory -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="modern-classics contemporary">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of The Overstory by Richard Powers showing the intricate concentric rings and bark cross-section of an ancient giant redwood tree in deep earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvCM_KDH8HPaLDP6PjWupUWKAPnfjXGChzO7qs4h3fr3MN4KqiyQiI4PvofkpBXFR0qmTrVEDpJDa7_LL4zVneYufTgNTIjYKE51AEQwaKAvDNr996q435_8zGeKSAYyf1S9KY494DBU614m1rSGc-cg_0AMXc8YqzAWw9YW6dqXaMA43SeBnbnRUcbZM5Tw7qA8RegahGzSNJ_khOo4ROhJyyOQcDMkRBz5CXAkm197zfy7hZwBmI2w"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Pulitzer Prize</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant text-[11px]">(220k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">The Overstory</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Richard Powers</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '22.00', '8.99', 'cloth')">Cloth $22.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '22.00', '8.99', 'ebook')">E-Book $8.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('The Overstory', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 16: Piranesi -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="magical-realism short-novellas">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Piranesi by Susanna Clarke depicting an infinite classical labyrinth of towering marble statues flooded with gentle ocean tides under celestial moonlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb6kZPqJkJafUM6KoXyLvKjlwpb-kxJSLj_Xi_vhHJAm7udO05UvB7if22ezqYUaYG9LlNRifHSf169s5_bA6Viogdcm5tYldA9eU579wBFYI5dKtGrxtTn4u-p-MNbc7rk5wccBu-oMHTGndv40Jpu0eMZuzf-S7YTX5bNWxsqJ3DrYVMpYO0CupSOmLu-7AnGkLM4JIpWYTLUDD0DFT30zfgzuhjFUVyGbS3dsOlqS1j9WzrgdqnZQ"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Magical Realism</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant text-[11px]">(310k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Piranesi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Susanna Clarke</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '17.00', '6.99', 'cloth')">Cloth $17.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '17.00', '6.99', 'ebook')">E-Book $6.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Piranesi', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 17: The Shadow of the Wind -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="historical-epics world-translations modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of The Shadow of the Wind by Carlos Ruiz Zafón showing a misty Barcelona alley in 1945 leading to the secret Cemetery of Forgotten Books under gas lantern glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3X732JVl5LvuqYWSV8aIuxgJWHN1McdzDdm0C1JZ8Eh4UcQmzz9TmAAN39ND5bZ2qbmpBTTgXkQOzFbXROe6UAVHyS3eB45wr-A5A5Li7KKwhSGwTgiBArh1BW_c231SKfvE_l5qSgy3ielfOm_DQt-7dq31GhT1cGLnkhGs5ClKIAy4PYzH3pxqAuQ39h8aiVRiM4qh8Z2aQf9YmfU3b4yHd0yBX1Cc7B2SlHrkHi2YpQ7KHgDi6Og"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-tertiary/80 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Spanish Classic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(590k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">The Shadow of the Wind</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Carlos Ruiz Zafón</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '19.00', '7.99', 'cloth')">Cloth $19.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '19.00', '7.99', 'ebook')">E-Book $7.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('The Shadow of the Wind', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 18: All the Light We Cannot See -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="historical-epics modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of All the Light We Cannot See by Anthony Doerr showing the walled citadel of Saint-Malo France illuminated by distant flares with vintage radio coils and seashells." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALYIQS4Xv1H94w6WEIOFnWqoLIThxzpUn5LFmlBFoLnTBQAfH2ybfDfxlPL4SpEHjk_JkAoI528a80xJ20aN06L7GbVqg3zw5qB82QBWyw5LY_1QTU5lg2jS4kD-edcawPF_7dgwzN4dp6wrKbPHu7oh0229dh-fO8YI8r6WgQL-FyZHyvRdyylf02HsYA0PcnyIDt6n2pp5cjXquC8jEW7VrLGLdG4dSMtuyPRZwSz-0okwij1Xbz9A"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Pulitzer Winner</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(1.3M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">All the Light We Cannot See</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Anthony Doerr</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '20.50', '8.50', 'cloth')">Cloth $20.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '20.50', '8.50', 'ebook')">E-Book $8.50</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('All the Light We Cannot See', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 19: The Great Gatsby -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="modern-classics short-novellas">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of The Great Gatsby by F Scott Fitzgerald showing iconic Art Deco golden celestial eyes floating over a roaring twenties jazz age carnival skyline." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ45PQQxIXX2XjQFvidUzobZ1_kFkClU1tF7Klvl0aE2Ikx1gAaO_Bmjdgl-geRJx_UERwYCSWo_HY4T8fadlnM8hR8-2Xzf0DQrpk0PyRG8PW2rj3l5B9eOGehCCEPlA7gDXNi9A_gn7DDI6fRicOtge4zQJRXNEvujy1SO0M562PM5IhQ9qy6ZeIlE2vZWwlwe-EBO118B31aU7ThGl9bT3V9vLXslaNYKK70drVJRMZaOafHaszbA"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Classic Canon</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.6</span>
+<span class="text-on-surface-variant text-[11px]">(4.5M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">The Great Gatsby</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">F. Scott Fitzgerald</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '14.99', '4.99', 'cloth')">Cloth $14.99</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '14.99', '4.99', 'ebook')">E-Book $4.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('The Great Gatsby', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 20: Nineteen Eighty-Four -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of 1984 by George Orwell showing stark constructivist typography and an ominous watchful eye in monochrome charcoal with a warning crimson dot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfy9VnxS9p91cQlrswD-U_AWGX2raP09CVMauMiYN-s2w13ZFT1cZuFhnTCU0dm-o_hU8zgxhHGTZBxqgJISV-0vL--6J4dvmim6VSv5TM53eHG3LTPXclvGgjIhD5NmYZSj_G8K9BkjG2cSGfdUDHI1l3XQ3ywEwF0qUyvARqeyabtOK-GQaYXRoLsOcAN0BQ4hollmsHws9Q7522byNYvCrXZACGrNafu10D5rqVE3IFjXRrcF-iIQ"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Dystopian</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant text-[11px]">(3.8M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Nineteen Eighty-Four</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">George Orwell</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '16.00', '5.00', 'cloth')">Cloth $16.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '16.00', '5.00', 'ebook')">E-Book $5.00</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Nineteen Eighty-Four', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 21: To Kill a Mockingbird -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="modern-classics historical-epics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of To Kill a Mockingbird by Harper Lee showing an oak tree branch silhouetted against a warm southern amber sunset with a solitary songbird in flight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHmDaAXZ2d1bdrKNRs07H2F25i4DhnerJGy7kYhEu1TjvQswjf20_Acijznnm_3Oi8qvGSJwRLFPy0md_51FJz1U7lbSpRkgBTDD3gnprvGjEmWAMsIOFI7zSxUXvP_P3BUWE308_Z_62Zc-rEmNaFZPUDyrNHR6IzjGTjZ-6DfEAe9K_xzn0Awg7k_zFGw9o8qF0_TKJs4_ukGTcuqzT4d0w00NcUx9bO2Ohl5yuXRUPojq6Ypc2tFQ"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">American Classic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(5.2M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">To Kill a Mockingbird</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Harper Lee</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '18.50', '6.50', 'cloth')">Cloth $18.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '18.50', '6.50', 'ebook')">E-Book $6.50</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('To Kill a Mockingbird', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 22: The Book Thief -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="historical-epics modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of The Book Thief by Markus Zusak showing the grim narrator Death holding domino stones with snow falling on Munich cobblestones and paper cranes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKphBmv5qiKVlirJsGAl_mbPoqC0vLesYrjCAnClOCDZYbVmJy_1mgy6VWZpR4wPi0ZR_oeNJDvXCjLBDwiaVGGdGQU-epDJKGcsFdPI1xcp8VTM_DYj1OXSKOT_ia02ejTVxyRSrzxEEGHtoV2xVrdMGIDydkTdFmsV2fijyP9HP-8ejmF0Y2_dEfLG0iqcqAR_YiDA7Njg63tSoJVsjtS0IjCbqwyM6N-5jMnn4RP_rHUV8LJwq95A"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Historical</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(2.3M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">The Book Thief</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Markus Zusak</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '17.50', '7.00', 'cloth')">Cloth $17.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '17.50', '7.00', 'ebook')">E-Book $7.00</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('The Book Thief', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 23: Sea of Tranquility -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="magical-realism contemporary">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Sea of Tranquility by Emily St John Mandel showing a futuristic moon colony dome contrasted against an early 20th century Canadian maple forest." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChx125bqElYeDzV_cGTEvn1GoLVNK1JfaHQLUG-RguSOsDJCNv1mtJQo9KPwgteA6oUDjn-gZ9k2mrzFqwQ-qd7AbUWo3bqjacCaOiMJTJdB75xcA74nIO0w57w_8LQLTRbLLmWth_c4A6Bt2ZiL8pEoHlU77aFxbvNKmI_GBx3NL8_IBFaWv5GfIoSichipdCiKAnQD1j-IxnqMF6cKTsT6zKCVM3cyIt6-jXSewN6PgOw7ymf97-vw"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Speculative</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.7</span>
+<span class="text-on-surface-variant text-[11px]">(270k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Sea of Tranquility</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Emily St. John Mandel</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '19.00', '7.99', 'cloth')">Cloth $19.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '19.00', '7.99', 'ebook')">E-Book $7.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Sea of Tranquility', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 24: Yellowface -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="contemporary">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Yellowface by R F Kuang featuring electric cadmium yellow background with a dramatic cutout pair of eyes watching through shredded manuscript paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvFDUXPfamYICG0vbvqWMUaj8uzMz_J6IAY8podIbji5657hwtZKjTyl3ZCOIc0WJpFxkbDUemJmOirG8X7y1_FpTGMZVvJKVd__ksW5gY-CeUTHpsTGACocxAzwvr__p-d0tqXTY2MBjl7OIyqyVSSEOaODot5ssKk44m2emDnRVpe4IRgP_HjgJiaBA_9LXcp2rJo2ScxGQ024XrRXadmTRy3pBusCkb-mYZc5v4kD26wMwukZa8wQ"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-tertiary/80 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm">Satire</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.6</span>
+<span class="text-on-surface-variant text-[11px]">(380k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Yellowface</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">R.F. Kuang</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '18.50', '7.50', 'cloth')">Cloth $18.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '18.50', '7.50', 'ebook')">E-Book $7.50</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Yellowface', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 25: Demon Copperhead -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="contemporary modern-classics historical-epics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of Demon Copperhead by Barbara Kingsolver showing the rugged Appalachian Blue Ridge mountains with copper rust autumn leaves and rustic mountain cabins." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB84ugdEgI_U27zfJgLtdTW_EDcbME34Nau6oNh7XsjNsO1scFaVpCmmZOLKmeyQWXByvaH9KJ7mh6A0X-EMv_bUJgDXhj8C348jdrSX6RbpbTjPErGUzxlAfyu9rKcd2oCDzE1I4_YmF1nKJkF7WrD_HcTlYgj18fWJlt5wabDkBp_Xp1FbSwGu-QgLhGLcYOZOKSmWz8P1b2-8DvbQbR4XSM60Yxj7RC3rnvHkHeRBGIRAfi-kLRTOg"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-secondary/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Pulitzer Winner</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-on-surface-variant text-[11px]">(460k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">Demon Copperhead</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Barbara Kingsolver</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '23.50', '9.99', 'cloth')">Cloth $23.50</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '23.50', '9.99', 'ebook')">E-Book $9.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('Demon Copperhead', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+<!-- Book 26: A Little Life -->
+<article class="book-card group bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-space-md flex flex-col justify-between" data-category="contemporary modern-classics">
+<div>
+<div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden mb-space-md bg-surface-container">
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover of A Little Life by Hanya Yanagihara showing the dramatic black and white high-contrast photographic portrait of a man in ecstatic emotional tension." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaoULZGPJ3gm1SS-BBdG9etD5GDRZoXeZoLcN0FfiF6uhzKTH8RQx_3vpROSJkc__0b_Xu6e_fVoKiLmKtYFF5YGpidT0G6R0qa8LV4BVdo6sBohVvJqpg6644ZKoS_fYzMMScORLMMk1oE2Hv5Ve2NM2nnfN3JR2IIyKJ82--dBWc8uOcHYaWPNGoJEXwCDbkNj0IKrdqULIpaExjCsrqgF1l9qzT7oKmgcuNzYQHYtxfBE6Y9CMxkA"/>
+<span class="absolute top-2.5 right-2.5 z-10 px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Modern Classic</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm mb-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-on-surface-variant text-[11px]">(590k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif leading-snug line-clamp-1">A Little Life</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Hanya Yanagihara</p>
+</div>
+<div>
+<div class="bg-surface-container-low rounded-lg p-1.5 mb-3 flex items-center justify-between text-label-sm">
+<button class="format-btn flex-1 py-1 rounded text-center font-bold bg-on-surface text-surface transition-all" onclick="toggleCardFormat(this, '22.00', '8.99', 'cloth')">Cloth $22.00</button>
+<button class="format-btn flex-1 py-1 rounded text-center text-on-surface-variant hover:text-on-surface transition-all" onclick="toggleCardFormat(this, '22.00', '8.99', 'ebook')">E-Book $8.99</button>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface hover:bg-primary hover:text-on-primary rounded font-label-md text-label-md transition-colors flex items-center justify-center gap-2" onclick="addToCart('A Little Life', this.previousElementSibling.querySelector('.bg-on-surface').innerText.split(' ')[1])">
+<span class="material-symbols-outlined text-[16px]">local_mall</span> Add to Bag
+          </button>
+</div>
+</article>
+</section>
+<!-- Literary Curator Note Section -->
+<section class="mt-16 bg-surface-container-low rounded-xl p-8 lg:p-12 relative overflow-hidden">
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+          Curator's Binding Standards
+        </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-serif mb-3">The PageHaven Provenance Commitment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+          Every physical volume selected into the Story &amp; Fiction Pavilion is guaranteed sewn-signatures binding (Smyth sewn) allowing books to lie open flat without spine fracture. Digital folios come with instant ePub &amp; PDF cloud synchronization and interactive typography calibrated for long reading sessions.
+        </p>
+<div class="flex flex-wrap items-center gap-6 text-on-surface font-label-md text-label-md">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">verified</span> 100% Acid-Free Paper</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">bolt</span> Instant Cloud e-Delivery</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">shield</span> Archival Box Included</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-lg shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-3 pointer-events-none" id="toast-notification">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<div>
+<p class="font-label-md text-label-md font-bold" id="toast-title">Added to Library</p>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/80" id="toast-subtitle">Archival volume safely reserved in cart.</p>
+</div>
+</div>
+<!-- Interactive Logic for Filtering & Toggles -->
+<script>
+    function setSpotlightEdition(type, price) {
+      const clothBtn = document.getElementById('btn-spotlight-cloth');
+      const ebookBtn = document.getElementById('btn-spotlight-ebook');
+      const priceDisplay = document.getElementById('spotlight-price');
+
+      if (type === 'cloth') {
+        clothBtn.className = 'px-4 py-2 rounded-lg text-label-sm font-label-sm transition-all bg-on-surface text-surface shadow-sm flex items-center gap-1.5';
+        ebookBtn.className = 'px-4 py-2 rounded-lg text-label-sm font-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center gap-1.5';
+        priceDisplay.textContent = '$' + price.toFixed(2);
+      } else {
+        ebookBtn.className = 'px-4 py-2 rounded-lg text-label-sm font-label-sm transition-all bg-on-surface text-surface shadow-sm flex items-center gap-1.5';
+        clothBtn.className = 'px-4 py-2 rounded-lg text-label-sm font-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center gap-1.5';
+        priceDisplay.textContent = '$' + price.toFixed(2);
+      }
+    }
+
+    function toggleCardFormat(btn, clothPrice, ebookPrice, selected) {
+      const container = btn.parentElement;
+      const buttons = container.querySelectorAll('.format-btn');
+      
+      buttons.forEach(b => {
+        b.classList.remove('bg-on-surface', 'text-surface', 'font-bold');
+        b.classList.add('text-on-surface-variant');
+      });
+
+      btn.classList.add('bg-on-surface', 'text-surface', 'font-bold');
+      btn.classList.remove('text-on-surface-variant');
+    }
+
+    function filterCategory(category, clickedBtn) {
+      // Toggle category button states
+      const buttons = document.querySelectorAll('.category-pill');
+      buttons.forEach(b => {
+        b.className = 'category-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-surface-container-high text-on-surface hover:bg-surface-container-highest';
+      });
+      clickedBtn.className = 'category-pill active-pill px-3.5 py-1.5 rounded-full text-label-sm font-label-sm whitespace-nowrap transition-all bg-on-surface text-surface shadow-sm';
+
+      // Filter catalog grid cards
+      const cards = document.querySelectorAll('.book-card');
+      cards.forEach(card => {
+        const cardCats = card.getAttribute('data-category') || '';
+        if (category === 'all' || cardCats.includes(category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function addToCart(title, price) {
+      const toast = document.getElementById('toast-notification');
+      const toastTitle = document.getElementById('toast-title');
+      const toastSubtitle = document.getElementById('toast-subtitle');
+
+      toastTitle.textContent = title;
+      toastSubtitle.textContent = 'Added to Bag • ' + price;
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2500);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/30 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-margin-sm lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="PageHaven Emblem" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><span class="font-headline-sm text-headline-sm text-on-surface">PageHaven</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Sanctuary of rare, acclaimed, and preserved literary craftsmanship. From archival hardcovers to illuminated digital editions.</p></div><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Literary Curations</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="story-fiction" href="#">Story &amp; Fiction Classics</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="anime-manga" href="#">Archival Manga &amp; Graphic Works</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="motivational-wisdom" href="#">Wisdom &amp; Contemplation</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="periodicals" href="#">Rare Press &amp; Periodicals</a></div><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Reader Experience</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="readgenius-ai-concierge" href="#">ReadGenius AI Guide</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-care" href="#">Customer Care &amp; Inquiries</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#">Order Tracking &amp; Archive Delivery</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-care" href="#">Preservation Guarantees</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Care &amp; Preservation</span><div class="p-space-sm bg-surface rounded-lg border border-outline-variant/30"><div class="flex items-center gap-space-xs text-primary mb-1"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Preservation Guarantee</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">All rare physical volumes shipped in archival protective encasings. Guaranteed pristine arrival.</p></div></div></div><div class="border-t border-outline-variant/20 pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2024 PageHaven Rare &amp; Acclaimed Books Sanctuary. All rights reserved.</p><div class="flex items-center gap-gutter"><span class="font-label-md text-label-md">Deckle-Edge Packaging</span><span class="font-label-md text-label-md">Instant Cloud Sync</span><span class="font-label-md text-label-md">Global Courier</span></div></div></div></footer></body></html>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Manrope:wght@400..700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#887364","on-error-container":"#93000a","inverse-primary":"#ffb77d","primary-fixed-dim":"#ffb77d","outline-variant":"#dbc2b0","tertiary-fixed-dim":"#ffb4a8","on-primary":"#ffffff","secondary-fixed":"#c6e9ea","on-tertiary-container":"#fffbff","on-surface-variant":"#554336","surface-bright":"#faf8ff","background":"#faf8ff","error":"#ba1a1a","primary-fixed":"#ffdcc3","surface":"#faf8ff","on-surface":"#151b29","tertiary-container":"#c94a38","surface-container-low":"#f1f3ff","secondary-fixed-dim":"#aacdce","surface-tint":"#904d00","on-secondary-fixed":"#002021","surface-container-highest":"#dde2f6","on-background":"#151b29","on-primary-fixed":"#2f1500","on-primary-fixed-variant":"#6e3900","surface-container":"#e9edff","secondary-container":"#c3e6e7","primary":"#8d4b00","inverse-surface":"#2a303f","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary":"#ffffff","surface-variant":"#dde2f6","surface-dim":"#d4d9ed","error-container":"#ffdad6","surface-container-high":"#e2e8fc","on-tertiary-fixed":"#410100","on-tertiary-fixed-variant":"#8a1c10","on-primary-container":"#fffbff","on-secondary-container":"#476869","on-error":"#ffffff","on-secondary-fixed-variant":"#2b4c4d","tertiary":"#a83223","inverse-on-surface":"#edf0ff","secondary":"#436465","primary-container":"#b15f00","tertiary-fixed":"#ffdad4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.5rem","margin":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter-sm":"1rem","gutter":"1.5rem","margin-sm":"1rem","space-md":"1rem"},"fontFamily":{"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"display-mobile":["Newsreader"],"headline-md":["Newsreader"],"headline-lg-mobile":["Newsreader"],"body-md":["Manrope"],"display":["Newsreader"],"label-lg":["Manrope"],"label-md":["Manrope"],"body-lg":["Manrope"],"title-editorial":["Newsreader"],"body-sm":["Manrope"],"label-sm":["Manrope"]},"fontSize":{"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-mobile":["40px",{"lineHeight":"46px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["26px",{"lineHeight":"32px","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.025em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-editorial":["18px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-7xl mx-auto px-margin-sm lg:px-margin flex flex-col justify-between pt-3 pb-2"><div class="flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><img alt="A beautiful, elegant logo emblem of an open book held tenderly in the hands of a reader. Warm amber #d97706 and deep navy ink tones, minimalist refined linework, sanctuary and literary craftsmanship aesthetic for PageHaven. Design context: - Primary color: #d97706
+- Font: newsreader
+- Mode: light
+- Roundness: rounded-sm
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-serif">PageHaven</span></div><div class="flex-1 max-w-xl mx-auto hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="w-full pl-10 pr-4 py-space-xs bg-surface-container-low text-on-surface font-title-editorial text-body-sm rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary placeholder:text-on-surface-variant/70 transition-all" placeholder="Search by author, theme, or quote..." type="text"/></div></div><div class="flex items-center gap-space-md"><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" data-path="cart" href="#"><span class="material-symbols-outlined text-[24px]">local_mall</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary font-label-sm text-label-sm rounded-full w-5 h-5 flex items-center justify-center shadow-sm">3</span></a><a class="flex items-center gap-space-xs p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="login" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-label-md text-label-md hidden sm:inline-block">Guest / Sign In</span></a></div></div><nav class="flex items-center gap-gutter overflow-x-auto whitespace-nowrap pt-1 text-body-sm" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="home" href="#">Home</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="story-fiction" href="#">Story &amp; Fiction</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="anime-manga" href="#">Anime &amp; Manga</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="comics-graphic-novels" href="#">Comics &amp; Graphic Novels</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="motivational-wisdom" href="#">Motivational &amp; Wisdom</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="periodicals" href="#">Periodicals</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="readgenius-ai-concierge" href="#">ReadGenius AI Concierge</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="help-care" href="#">Help Care</a></nav></div></header><main class="w-full pt-24 bg-surface min-h-[calc(100vh-24rem)]"><div class="flex flex-col w-full">
+<!-- Top Category Editorial Banner -->
+<section class="relative w-full bg-surface-container-low px-margin-sm lg:px-margin py-space-xl overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-sm z-10">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">psychology</span> Curated Archive
+          </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">· Chapter IV : Mind &amp; Spirit</span>
+</div>
+<h1 class="font-display text-display text-on-surface tracking-tight leading-[1.1] max-w-2xl">
+          Sanctuary of Human Wisdom &amp; Mindful Living
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+          Timeless mental models, profound resilience frameworks, and philosophical blueprints for intentional existence.
+        </p>
+<!-- Metrics highlight -->
+<div class="flex flex-wrap items-center gap-gutter pt-space-xs text-on-surface-variant">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-primary font-serif">26</span>
+<span class="font-label-md text-label-md">Masterworks Preserved</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-secondary font-serif">100%</span>
+<span class="font-label-md text-label-md">Archival Acid-Free Editions</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-serif">Cloud Sync</span>
+<span class="font-label-md text-label-md">Instant Digital Reader</span>
+</div>
+</div>
+</div>
+<!-- Feature Editorial Quote Card in Hero -->
+<div class="lg:col-span-4 z-10">
+<div class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary/30 text-[42px] absolute right-4 top-4 select-none">format_quote</span>
+<p class="font-title-editorial text-title-editorial text-on-surface italic leading-relaxed mb-space-sm relative z-10">
+            “Between stimulus and response there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.”
+          </p>
+<div class="flex items-center justify-between pt-space-xs">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Viktor E. Frankl</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Man’s Search for Meaning</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm">1946 Archival</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Soft ambient decorative curves -->
+<div class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -top-20 w-80 h-80 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none"></div>
+</section>
+<!-- Filter Ribbon and Controls Bar -->
+<nav aria-label="Book Categories" class="sticky top-24 z-40 bg-surface/95 backdrop-blur-md shadow-sm py-space-sm px-margin-sm lg:px-margin">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<!-- Category Pills -->
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none" id="filter-container">
+<button class="filter-pill active px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-on-surface text-surface shadow-sm" data-filter="all">
+          All Wisdom
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="habits">
+          Habits &amp; Growth
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="stoicism">
+          Stoicism &amp; Ancient Thought
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="resilience">
+          Psychological Resilience
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="clarity">
+          Cognitive Clarity
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="philosophy">
+          Financial Philosophy
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container" data-filter="grit">
+          Biographies of Grit
+        </button>
+</div>
+<!-- Quick Toggles: View & Sort -->
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden lg:inline">Showing 26 Masterpieces</span>
+<div class="relative inline-flex items-center bg-surface-container-low rounded-lg px-2.5 py-1 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-1">sort</span>
+<select aria-label="Sort books by criteria" class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="sort-select">
+<option value="curated">Curated Order</option>
+<option value="rating">Highest Rated</option>
+<option value="price-asc">Price: Low to High</option>
+<option value="price-desc">Price: High to Low</option>
+</select>
+</div>
+</div>
+</div>
+</nav>
+<!-- Notification Toast for Add to Bag -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-lg shadow-xl flex items-center gap-space-sm" id="toast">
+<span class="material-symbols-outlined text-inverse-primary text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-message">Book reserved into your sanctuary collection.</span>
+</div>
+<!-- Master Catalog Grid (26 Books) -->
+<main class="w-full px-margin-sm lg:px-margin py-space-xl">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter" id="book-grid">
+<!-- Book 1: Atomic Habits -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="habits" data-price-ebook="7.99" data-price-hard="18.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Atomic Habits by James Clear with clean minimalist cream background, bold black typography, and elegant gold stair climbing line art illustrating tiny incremental gains." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDl4iQCM9amTvDRxz5BgGKpSrudEkH84kQoYQgxu8t52GNwy2sp-71KzplUVk0E6NhigfVCJ3gWtJdbYlM48_ARsk8R4AGabjJQqnGWwNKOd9zXa7U847HZ6U1LZUDJZ5PXS6q4F-Piku2dS-SdG_b_t4cdaWgNC06jmufjciTbyuOdkajndw2LNQ5khnzvPwP4_krd0xTgPXTiauPlYd7XU5c7PwlbDZ6MrxWQeDZ8URhRBEDHtKJXw"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                #1 Bestseller
+              </span>
+<button class="absolute bottom-2.5 right-2.5 p-1.5 rounded-full bg-surface/90 backdrop-blur-sm text-on-surface hover:text-primary transition-colors shadow-sm" onclick="previewQuote('Atomic Habits', 'You do not rise to the level of your goals. You fall to the level of your systems.')" title="Quick Excerpt">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(124k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Atomic Habits</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">James Clear</p>
+</div>
+<div class="pt-space-xs">
+<!-- Format selector toggle -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '18.00')">
+                Hardcover $18.00
+              </button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.99')">
+                E-Book $7.99
+              </button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Atomic Habits', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 2: The Courage to Be Disliked -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="stoicism clarity" data-price-ebook="6.99" data-price-hard="16.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The Courage to Be Disliked by Ichiro Kishimi and Fumitake Koga, delicate cyan blue line illustration of a lone silhouette standing within serene ripples of thought on cream paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXFVAKlrUF6ptw3Ri5x7PnyCd1y4ZSK5Uai2r7rQ6E3IZ-g-mIxKJLj7rqkI_cbcx8zQOhPY7SinPTWPrRmTnpMry3tIMo4oVKJCfHqzu6zyfVpcnAyEkVdE5M3uu4EmITK9OvjcCUGHPwjeRbduHhYNYTVYKx5EZXf06-UAPzavnhTytXQnU4rKJF6e9JuEJUerwGGd3boYIciT8gQUjtR0sWhnxbmVvTBtbZVD6ymfCyjj9RQVW5OA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Adlerian Wisdom
+              </span>
+<button class="absolute bottom-2.5 right-2.5 p-1.5 rounded-full bg-surface/90 backdrop-blur-sm text-on-surface hover:text-primary transition-colors shadow-sm" onclick="previewQuote('The Courage to Be Disliked', 'The courage to be happy also includes the courage to be disliked. When you have gained that courage, all of your interpersonal relationships will become light.')" title="Quick Excerpt">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(48k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The Courage to Be Disliked</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Ichiro Kishimi &amp; Fumitake Koga</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '16.00')">
+                Hardcover $16.00
+              </button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '6.99')">
+                E-Book $6.99
+              </button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The Courage to Be Disliked', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 3: Can't Hurt Me -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="grit resilience" data-price-ebook="8.99" data-price-hard="18.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Can't Hurt Me by David Goggins featuring high-contrast portrait of ultramarathon runner David Goggins drenched in sweat on rocky trail, weathered gold typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFYPG6MklfWxdXycneRt46AEkieAqfenXXZhV3va691bI1BTcPssrF0Se0IrCL4l9TY899iKfWmsVxDyma0Ilmwg6nYTxUHlPd99aSIXWyIeXPhkvtadaFm_g2f7l4FFGH3WcxmuPayBajfu2oqTN15zTa4hhAyV3pUZUBVPi3lczD3DhpTfheO1lkvHqEM7sxZmRBeIiBrsQ6GIQAmICas0n3i_q2b_racZkhGJ3kr-AnX3l_SV8RAA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-tertiary font-label-sm text-label-sm font-semibold shadow-xs">
+                Mental Grit
+              </span>
+<button class="absolute bottom-2.5 right-2.5 p-1.5 rounded-full bg-surface/90 backdrop-blur-sm text-on-surface hover:text-primary transition-colors shadow-sm" onclick="previewQuote('Can\'t Hurt Me', 'You are in danger of living a life so comfortable and soft that you will die without ever realizing your true potential.')" title="Quick Excerpt">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(95k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Can’t Hurt Me</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">David Goggins</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '18.50')">
+                Hardcover $18.50
+              </button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '8.99')">
+                E-Book $8.99
+              </button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Can\'t Hurt Me', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 4: Man's Search for Meaning -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="resilience stoicism" data-price-ebook="6.99" data-price-hard="15.99">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vintage archival cover of Man's Search for Meaning by Viktor Frankl, etched charcoal sketch of a lonely figure walking down path with barbed wire fences toward dawn mountains." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw-35YAqZuXj8E1eK1ABgU7UhYtKcMoFXachVRR8b97uhtUDFJJxe5GmK2Yh8Ma5e_ifSHleaT6q7wVAMRb_1QaAeaoF1Sz9NQ45MAb8bORC2Pi593lgzIWZTryMbrd74DGbcCrWk5HGO6t4OOnGv6E3XKLGUFgW1dXOzSaPnY1FwRm18te1A-mELxdsyqhyyVObxtPGs_7IhVFkKCmvWK6i1YPM0e-QDLMbt3vBPZBfGAHlM86BEHBQ"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Archival Landmark
+              </span>
+<button class="absolute bottom-2.5 right-2.5 p-1.5 rounded-full bg-surface/90 backdrop-blur-sm text-on-surface hover:text-primary transition-colors shadow-sm" onclick="previewQuote('Man\'s Search for Meaning', 'Those who have a \'why\' to live, can bear with almost any \'how\'.')" title="Quick Excerpt">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">5.0</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(110k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Man’s Search for Meaning</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Viktor E. Frankl</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '15.99')">
+                Hardcover $15.99
+              </button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '6.99')">
+                E-Book $6.99
+              </button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Man\'s Search for Meaning', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 5: The Psychology of Money -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="philosophy clarity" data-price-ebook="7.50" data-price-hard="17.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The Psychology of Money by Morgan Housel with minimalist warm sand tones, clean serif font, and subtle interlocking coin geometric patterns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5GPBmJH9TyYQQDC0fSXKEyMnpR8S6TvoyChZ9VzxBRvlif-soFXLeN98YEM6qme6Vro3Y66UZRcbzqgiA7bwb5fGND3GUnVf2HS8TKSA9-wvJw7jJfyWsVxFbTkxlLaMHdkzj9fCZbhx9jg7Fa3Ac6j0OWWMLZeLBPwIDKm3l4QmBP-TvlqthE8BIbXfqH3ch76gReO5fXP3C561KTYbMxCMcUqPZfotG2TIpsiPpOgNxqreZA6GfIw"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Wealth Mindset
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(62k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The Psychology of Money</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Morgan Housel</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '17.50')">Hardcover $17.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.50')">E-Book $7.50</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The Psychology of Money', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 6: Thinking, Fast and Slow -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="clarity" data-price-ebook="9.99" data-price-hard="21.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Thinking, Fast and Slow by Daniel Kahneman featuring a solitary sharpened graphite pencil on pristine textured ivory paper, Nobel Laureate emblem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfq0sSIdJZd82iBLzaPA3Aqqs-kc1O5J7bYxk5wNExjgWHcpMsYamx4_fXWBxs6ZS-PgjdPWIIdjAnV2f_ZDVEn2MIlX1sgcx-NSbff4yG3t81Ax68cEpvjuWtJJ6r30e9SFhKyyjrFdqL13wzGkg9cVcmyy7EBkr6GozuGtqhkqS4zieLxqkJ9Aq6JBh2A2eDraLe_wvDF2_vOXI_JyJ8biP5bxCJkOiRxBauypq35NVCD6YEHIbimg"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Nobel Laureate
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(88k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Thinking, Fast and Slow</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Daniel Kahneman</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '21.00')">Hardcover $21.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '9.99')">E-Book $9.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Thinking, Fast and Slow', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 7: Meditations -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="stoicism" data-price-ebook="5.99" data-price-hard="16.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Marcus Aurelius Meditations translated by Gregory Hays, classical embossed red bird icon on warm parchment linen binding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCadU9GLgzMgTtiW7g4rrju8ZiMSB-GscIsnCoHa_XimpNNa5r967xXTX-tI4Ys7DFlI6HUR9RTn4-OnB-ZrzXmUiixoiHFm5Wn1OF8uroZ9ewkeY12uN0yfk4auV2C_2J0Ks2TUyBdyfjA8X6KmEOe_hoNK6GPi0kclQV9C5DDUuiP3ZXK6lUmCMLtnAWZhNshkBWtTj4M3k9_zmzLax8SZ2l6OPeK4Xnrclp14pOX3RjmegM3OOeQeg"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Stoic Classic
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(92k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Meditations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Marcus Aurelius (Trans. Gregory Hays)</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '16.50')">Hardcover $16.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '5.99')">E-Book $5.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Meditations', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 8: Deep Work -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="clarity habits" data-price-ebook="7.99" data-price-hard="19.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Deep Work by Cal Newport, bold stark modern yellow and black typography emphasizing focused intensity in a distracted world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwPTnMtDcoAPUp5VHCKQo1EODV0BVeJKkxX5ljEgRleDbYMjWI_ECnPcPsHCIYJeY8cFIqEBM-pYY6LwUCqfi6fvHrTPqEuXSEoKmVc0i2f6whpJ8M1wmDNCcZ7rdRcBm5xo2uv0Bzf3x4AU-BnpiYqWs4rKqo0ze9CQgahpXAMumQCmapTEzZRQnVRvN7xNGFUfMmzeCrPDcSQ4BFXiEXhK0rKwJVitzp87tA2XabHdVjBvUHp2u3IA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Focus Mastery
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(45k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Deep Work</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Cal Newport</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '19.00')">Hardcover $19.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.99')">E-Book $7.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Deep Work', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 9: Essentialism -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="clarity habits" data-price-ebook="7.00" data-price-hard="17.99">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Essentialism: The Disciplined Pursuit of Less by Greg McKeown, scribbled tangled line straightening into a singular arrow pointing right." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYdbuOnh2Igc22fGHeh1woHltnYLNIoumicepLId51iASqcGhYXfoqW2m79RGyeGweNC6rTSVgriBqgn-UV448HoFJ0M5NltDVjn6ujJX1y4n0GdttWCg2yjcPx3E9sSL-jbiD5qau6E748LzPUz05_Sukt6iLK37AwcahRvGmw-ynm74GkHJi9zYoDeF7hzA1QHIxCxiDOemTmww7sUDRxeMZ2rNsMaIWTcErIarfnnj5SXN8QNtxVg"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Intentional Life
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(38k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Essentialism</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Greg McKeown</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '17.99')">Hardcover $17.99</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.00')">E-Book $7.00</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Essentialism', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 10: The Daily Stoic -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="stoicism" data-price-ebook="7.50" data-price-hard="18.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The Daily Stoic by Ryan Holiday and Stephen Hanselman, pristine white cover with deep blue emblem of classical philosopher profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_yihLYB9nHoX2OMifkBcKX2A9P4361GSBKC2i0DKprOUbLafWq667JKblm9TADRPrM9HB1lgTPmxT4K_ZVvqUhUIVPXD9Za3QRlfku9jZQkiwMtnFeMvoGq6wVEjiVXLDM45Tp9dSnrUMhWxlRSO2tUBYrftEbFxYo_7hBoomYcabPOh2FqIKFwXDxMTbepybCgkgfRUZ_-VUb5ph0BRB0oTz8mxU5g8rbrQCcsgx_sYIYE9TKGD0tw"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Daily Devotional
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(51k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The Daily Stoic</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Ryan Holiday &amp; Stephen Hanselman</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '18.50')">Hardcover $18.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.50')">E-Book $7.50</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The Daily Stoic', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 11: Sapiens -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="clarity philosophy" data-price-ebook="9.99" data-price-hard="22.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Sapiens A Brief History of Humankind by Yuval Noah Harari with prehistoric ochre human fingerprint on stark canvas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4ddYa1rfg-4dSrUNa8ChnH4s_YAq1xT7d32M4-dQMhrsTuweBWiDw1xCh3h0Pdrljqw7eG7swtMqiNu1PfVI6SbfNIZrLmc0cV5NPaWGGYicZBIXrlpgClJDz2bnGVPiCk03QwAL_ePSnQt1NdvfXSqIBgbMDh9nyLo4OAjXdWudrUJK0e7F42D5KgMRIIBW2egO1NL9tUdsEhHHgFvYObBxx3ZrvLAhoRe3uY0fV3rOfzsXeGT3h_Q"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Global Milestone
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(140k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Sapiens</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Yuval Noah Harari</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '22.00')">Hardcover $22.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '9.99')">E-Book $9.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Sapiens', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 12: Flow -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="clarity resilience" data-price-ebook="6.99" data-price-hard="17.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Flow: The Psychology of Optimal Experience by Mihaly Csikszentmihalyi, harmonic minimalist geometric waves of consciousness in gentle teal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-19EUbQZAUURghNClx5fFtRdfr8HjpOkB2wS32Geu4BJcNUoDFn7-8EtsCDiVkDeNQyRPJ4wJJjLXPS68P-I6ekmVpIaOhv2fyGjKa6XYcjvtoBzFLdtZfE6A0qdd4P57iBZU9T7H3A6Qr5waRmdrV17TKg2mRml0VV70re-_hRiIUPO0-TKyFLkojDZiG5zFyl4OIZmV1vy4lHGya_8mpUeCCMDZizGr-NmFvA0-_PChXZF1-8G7gA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Psychology Pioneer
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(29k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Flow</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Mihaly Csikszentmihalyi</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '17.50')">Hardcover $17.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '6.99')">E-Book $6.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Flow', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 13: Grit -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="grit habits" data-price-ebook="7.50" data-price-hard="18.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Grit by Angela Duckworth, bold embossed charcoal font with golden textured underlines on cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBztkVL6KxvkrCxr7eneZ-RAtTNuFhzmIzYRiqI2pFE3eJVOjAztEll2eysG50a9X9lT8FYNZQ1LDsFJTAWnQisJKf-F48cRAFrs89YhUxHqgq21Nos4OQ3YI7ExmQ0hPo2MKpes0rMyahQKp0M5kvZB2VOaFDIOgocNesSo1q1SXTrwKP7yFBQZYYxKzM6A8HoXYnxcAM3Uf0W0cvBi2bY2cFD-kQh1noaZSka67ZFqHgZGYMVov43BA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Perseverance
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(42k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Grit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Angela Duckworth</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '18.00')">Hardcover $18.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.50')">E-Book $7.50</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Grit', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 14: Four Thousand Weeks -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="philosophy clarity" data-price-ebook="6.50" data-price-hard="16.99">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Four Thousand Weeks Time Management for Mortals by Oliver Burkeman with quiet hourglass motif on pale parchment background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb896izDBtCfTLahE4WuACm79zo7ji7bbwmluDRCTrvzDYiAmhBV2zbKwkwh85pGeg_oU6d6Z0k4MmxanQsUqTt6laWzChmkRek8p-Hm293lZ6c8hMj18QNMds1AJxXUzjRnP9NybnhwOitqSd015-tEmhnWwzI90qdIPedyb4SmKFPEwTUBimwhFHt-pRMEZfR83N03_LiupLuIFA9A9V52-UIwWF0_YMcz1XdUjYv5vwfpAGFv7eQA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-tertiary font-label-sm text-label-sm font-semibold shadow-xs">
+                Time Philosophy
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(31k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Four Thousand Weeks</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Oliver Burkeman</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '16.99')">Hardcover $16.99</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '6.50')">E-Book $6.50</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Four Thousand Weeks', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 15: The Power of Now -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="stoicism clarity" data-price-ebook="6.00" data-price-hard="16.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The Power of Now by Eckhart Tolle, radiant morning sunburst gradient behind centered typography, gold foil accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATlpjG1DKvCr_M9JjQQQV1xQS_NhPBwAcqVwY3Ev3cG4cPyR3gQ3EvISkrzBnBdm7BImtpqod5opEe_QSre3RBRzJf6n7R44qDvAhYBag4bfFrG-4E_ZA32YoTw5HVNsvdJFevsrIhg7t9I3AbCgway9pJ4ejGNp-t7MQtWAyTZ9AXiTnrnGFlvmi07KGz6Oo7O7Ge_4CryA6wXSZXrfAGb6yxfrMSCJYKRi9DAgdj5gYxhP1XWdF0qA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Spiritual Insight
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(98k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The Power of Now</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Eckhart Tolle</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '16.00')">Hardcover $16.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '6.00')">E-Book $6.00</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The Power of Now', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 16: Mindset -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="habits clarity" data-price-ebook="7.00" data-price-hard="17.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Mindset: The New Psychology of Success by Carol S. Dweck with dual cerebral silhouettes depicting fixed and growth mindset." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa9jph35_aQGuRaag3GMcydLSYqLWuNLDamD0KvOo7sLGyc05lFYphB2paX-9y89OcJrl9N5LB7XkXsByFO1T-ah_af2Pk47xt2DUD7yFQG9YA4tJ1VJf8nHtZu3QWwIwbgByXOeuTLymZirCIPI_kTuwqD_pzCauGBwvHZzssK4j4km-3bQxKw-lHB7jQzbH-gsy_fFsleuBSPSuJeViMxedyCVwYziu8_WeQvS-rWlqyr7Izak08Ag"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Cognitive Growth
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.6</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(55k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Mindset</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Carol S. Dweck</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '17.00')">Hardcover $17.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.00')">E-Book $7.00</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Mindset', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 17: Antifragile -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="philosophy resilience" data-price-ebook="9.99" data-price-hard="23.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Antifragile: Things That Gain from Disorder by Nassim Nicholas Taleb, monolithic black and ivory layout with robust Roman serif typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFdyPmORUl2-7kOSCHmWEexx6WdWioemjO3HBaGuprhb8kPZLmf7uqJJOpljcLUQs0laomaLpCW4SUtjd9AWSzIfE5Vdlxkg7W2v8LcuoBFd-Q8TLb4VTRJsg6UzJJKweXVmHXwOSlPLGMWmydfsi270OhY4c8ej85XYfeGPux4VWpQzQBhPMkot4fJ8SNLhN29v4kthvkZYLBEilmjI9opnOI1-fqTMinlLuIejV-yyXp-vnuo0TakQ"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Systems Wisdom
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(33k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Antifragile</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Nassim Nicholas Taleb</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '23.00')">Hardcover $23.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '9.99')">E-Book $9.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Antifragile', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 18: The Obstacle Is the Way -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="stoicism resilience" data-price-ebook="6.99" data-price-hard="17.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The Obstacle Is the Way by Ryan Holiday, vibrant blue and white minimalist jacket featuring a solid Roman column standing firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyJYe_vPcKSUvx4403ZOAcD-lbwj2DKuLEATEP2kfAKnxHLAvv9XKSU-G67RWfwkMj8Hkv10QRUIDlAKzmZP7BTt8VUafan9l7i-EJkd9ilHqL4NdaQPxFm8qr36Hp-vKZ68XjOWUqClsS6qXtyU9evXHPUPujVwnR4GDdBZqgJzPECLfkDZGZowDyrNsYtjb9c9JXfTPhRXWOC3XZbWw_vMIBMoN_X3dPog4cHkp6H1tAVothnJsQew"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Modern Stoicism
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(49k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The Obstacle Is the Way</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Ryan Holiday</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '17.50')">Hardcover $17.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '6.99')">E-Book $6.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The Obstacle Is the Way', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 19: Make Your Bed -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="grit habits" data-price-ebook="5.00" data-price-hard="14.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Make Your Bed by Admiral William H. McRaven, dignified deep navy linen cloth cover with crisp gold embossed insignia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnkZcnW1cGbCyHr91PuLhV6llM7ApHPXZtPS4Zx1JF9e1xOLr4ad2GqWl8k0xTGB96rtVvGEoZhzFp8yfhzgUj6ydrmVszlVCma7C3HbdowGC70YstZL_K4hxMiH2bO-yU7_YsgCNOaEBx73nRsgr507R0SWoH8R_giQ16TdiR1AvwweItsfTe1hE9xhAte0d-eQppJ5kmptZx77RodVK8hrWy5_svIf7ghREUy6P0W2NPJJoDrm19lQ"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Discipline
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(44k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Make Your Bed</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">William H. McRaven</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '14.00')">Hardcover $14.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '5.00')">E-Book $5.00</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Make Your Bed', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 20: Stillness Is the Key -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="stoicism clarity" data-price-ebook="7.00" data-price-hard="18.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Stillness Is the Key by Ryan Holiday, clean warm beige canvas featuring a peaceful seated classical statue in calm contemplation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHP_jA5cpfP4V_DFSv1u89P7lNpvtYDxbk-1dHs_cVdUHzqE0-9JE2NZsh1xxPFWw5STf9NAJTqcm8udW_j6fq3Lde6bu-JC7oui4N-ZSYIh5vCamkLAwlOYUln92e3hvHFNy0_RxJ1ObZPZV80vkxCd46HifDxifgZgmrWB4dDDd_GKLQ95iID4KQWKu4wAtA5795Q8SRB0WFqFl_lOQo9JUKZWAnkTrgQaKLG3oxYhDdtxZDSo8Aag"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Equanimity
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(35k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Stillness Is the Key</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Ryan Holiday</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '18.00')">Hardcover $18.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.00')">E-Book $7.00</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Stillness Is the Key', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 21: Designing Your Life -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="habits clarity" data-price-ebook="7.50" data-price-hard="19.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Designing Your Life by Bill Burnett and Dave Evans, technical blueprint geometric drafting lines in subtle vermillion and off-white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmO3fuTUxbdHGKDkEl4QrlM6HbFEqYAWZ4vzoMc91cQbS7sWYh5U5-RO3f3e4fCb4e1V6gVqohix3DOp-jR_dQWAs2kKeXhX7b8F0RbiSlxZTTt54LAMXzGze_hdED3x2RtTBb5cSWJuhgT4sLdwWAUWnL6V9WKZ8nRdWukxqbudONsjomeReA2jmupBxpGhjQzUfX_EkkKONWRdDUCY4L-mTEoFaur8k7lK-TlDh12Ing8FLGNDY1Qg"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Design Thinking
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.6</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(22k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Designing Your Life</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Bill Burnett &amp; Dave Evans</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '19.50')">Hardcover $19.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.50')">E-Book $7.50</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Designing Your Life', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 22: Daring Greatly -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="resilience" data-price-ebook="7.00" data-price-hard="18.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Daring Greatly by Brene Brown, subtle sky-blue wash with bold black serif type conveying courageous vulnerability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEolB5k87rOimZ_n24-YeD3hf0G8R2rIXvKqT2sWa5cqfIRvQICGMmG493S-BQhlc5MxzWf1q0MwEXhBj6Qnl4-G6rR7BhyrF3J9aPVXeUCTt4POWTAsnnP_CgvSAGFqy8nCxQ4bsif9NiGS7DyTQ5hQkL0iuKiD9xwWXlYqdDx8iNjsxynhOwCtbJjNN5_2GLii2tzzCbp5oxWpELZkEuChJh_TyZtkKi8gmGap56zlXuhCZ0rodNzA"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-tertiary font-label-sm text-label-sm font-semibold shadow-xs">
+                Vulnerability
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(64k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Daring Greatly</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Brené Brown</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '18.00')">Hardcover $18.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.00')">E-Book $7.00</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Daring Greatly', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 23: The 7 Habits of Highly Effective People -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="habits clarity" data-price-ebook="7.99" data-price-hard="19.99">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The 7 Habits of Highly Effective People by Stephen R. Covey, timeless dark emerald green leather texture with embossed golden lettering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl2QmpSvUNKiq16Xwx47hKZgiAXzbX2dKUHe-YdV_R3Ut3D6VjWpMFFjUYRqZe4TQvTVrXuN1p_RMf1CtwYvf0q-Gyuf1nSiPCZo6J5Xug5OO11uikBjdd8I9AsFVQ98ew24IOccIa0sPhiRxaiu4Rg_1Hd-CFu5-a7dSuaGQYgggj9YrCb_qaJNsX4U2dAG7Kd4f3CWn7iTauxVau0Tw4niYRfD6-Ni5TsaR88bM5xZRn-KLAz1D7hQ"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Archival Masterwork
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(115k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The 7 Habits</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Stephen R. Covey</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '19.99')">Hardcover $19.99</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '7.99')">E-Book $7.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The 7 Habits', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 24: Show Your Work! -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="habits" data-price-ebook="5.50" data-price-hard="13.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of Show Your Work! by Austin Kleon, bold cheerful yellow cover with hand-drawn typography and joyful creator icons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUrZr2otEyHQlgzLHu91gmtxZVBAeR_px2bwE4AgcAmOk_QHrU82RMuJrwZ1PiN5o3PJOCHC9SAIm_-xjWuFH6bFlU416BWHcObIVPthpS1fd5TmD6GKfO6WgK3kUCS6We88gn4KTLSa8CJ5j5g6q5q1OEuxi6xDTt958J-JQtx5s7ZGQabv0-ihIIZ9jCj94z0lNh1-XGdN1cLu2JL83aj56DdxAOgVQp5braPEPMMOvN3AJCShiQYg"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Creative Output
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.7</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(28k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">Show Your Work!</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Austin Kleon</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '13.50')">Hardcover $13.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '5.50')">E-Book $5.50</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('Show Your Work!', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 25: The Subtle Art of Not Giving a F*ck -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="philosophy resilience" data-price-ebook="6.99" data-price-hard="17.00">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The Subtle Art of Not Giving a F*ck by Mark Manson, vivid saturated orange background with impactful heavy sans-serif typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZRyrrWuiBzJ12o1je-gIQyqzmZjjideEgp_1femUUZuANwUzADqkqrsSPacTXgw1JLB4j0uWHQ86dq3R7Y-3PpcoWXObokUe8dJFgE9rntbkjLsl-liHIwntmkvRLKAUk8GwOl6SQpSrRT3xOpCL65NpL6uLl5ZVjgUyvI9CNUnnKs7PQ3TcSm4uZgEy18D6jWuT2obF2URqxrU4EOynq7dOyzKPtbGqKhJu3G4D0O8MWodwiGFpx1Q"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold shadow-xs">
+                Pragmatic Living
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.6</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(118k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The Subtle Art of Not Giving a F*ck</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Mark Manson</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '17.00')">Hardcover $17.00</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '6.99')">E-Book $6.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The Subtle Art', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+<!-- Book 26: The Eric Jorgenson / Naval Ravikant -->
+<article class="book-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between" data-category="philosophy habits" data-price-ebook="5.99" data-price-hard="16.50">
+<div>
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-lg overflow-hidden mb-space-sm shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cover of The Eric Jorgenson Almanack of Naval Ravikant with refined charcoal silhouette, timeless wisdom on wealth and happiness in deep ivory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATZ2a-ISYTZlQThcIzyi4XWA1gfMG3Jz2GfZpwQsf7Rf6YmsUFHnBgvMBaRHhsAw14yOu8ivdrlCjfGmBclSE8n1PtM0YzAcct898OVv3IMMWhhZTzlWqs9RS8vxG7ovq_5BIL8Bkx8tsw9hfmj2uamJ-xzv95Ific4jNuAiQa0rR66SJvz9zUGz0I8gGZwqvMg-ilweZyGJY54vLmqNUYAGVGkakgSKrJpRm_ewCgp2rleO0baaY8Jw"/>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold shadow-xs">
+                Modern Sage
+              </span>
+</div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(41k)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mb-0.5 group-hover:text-primary transition-colors">The Almanack of Naval Ravikant</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Eric Jorgenson</p>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg mb-space-sm">
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-surface shadow-xs text-on-surface font-semibold" onclick="toggleFormat(this, 'hard', '16.50')">Hardcover $16.50</button>
+<button class="format-btn flex-1 py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" onclick="toggleFormat(this, 'ebook', '5.99')">E-Book $5.99</button>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" onclick="addToBag('The Almanack of Naval', this)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Add to Sanctuary</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Interactive Modal for Book Excerpt Previews -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-on-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="excerpt-modal">
+<div class="bg-surface rounded-xl max-w-lg w-full mx-4 p-space-lg shadow-2xl transform scale-95 transition-transform duration-300 relative border-l-4 border-primary">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1" onclick="closeExcerpt()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="modal-book-title">Archival Excerpt</span>
+</div>
+<p class="font-title-editorial text-title-editorial text-on-surface italic my-space-md leading-relaxed" id="modal-quote-text">
+        “Quote text placeholder”
+      </p>
+<div class="flex items-center justify-between pt-space-xs border-t border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-on-surface-variant">PageHaven Preservation Archive</span>
+<button class="px-4 py-1.5 rounded-lg bg-on-surface text-surface font-label-md text-label-md hover:bg-primary transition-colors" onclick="closeExcerpt()">
+          Return to Shelf
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Micro-interactions Script -->
+<script>
+    // Filter by pills
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    const bookCards = document.querySelectorAll('.book-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-on-surface', 'text-surface', 'shadow-sm');
+          b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        btn.classList.add('bg-on-surface', 'text-surface', 'shadow-sm');
+
+        const filter = btn.getAttribute('data-filter');
+        bookCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (filter === 'all' || cardCat.includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Toggle Hardbound vs E-Book format inside cards
+    function toggleFormat(btn, type, price) {
+      const container = btn.parentElement;
+      const buttons = container.querySelectorAll('.format-btn');
+      buttons.forEach(b => {
+        b.classList.remove('bg-surface', 'shadow-xs', 'text-on-surface', 'font-semibold');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.remove('text-on-surface-variant');
+      btn.classList.add('bg-surface', 'shadow-xs', 'text-on-surface', 'font-semibold');
+    }
+
+    // Add to Bag with dynamic toast notification
+    function addToBag(title, buttonElem) {
+      const originalText = buttonElem.innerHTML;
+      buttonElem.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Archived</span>';
+      buttonElem.classList.remove('bg-on-surface');
+      buttonElem.classList.add('bg-primary');
+
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = `"${title}" has been added to your sanctuary reading bag.`;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+        buttonElem.innerHTML = originalText;
+        buttonElem.classList.remove('bg-primary');
+        buttonElem.classList.add('bg-on-surface');
+      }, 3000);
+    }
+
+    // Excerpt Modal interactions
+    function previewQuote(title, quote) {
+      const modal = document.getElementById('excerpt-modal');
+      const titleElem = document.getElementById('modal-book-title');
+      const quoteElem = document.getElementById('modal-quote-text');
+
+      titleElem.innerText = title;
+      quoteElem.innerText = `"${quote}"`;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      modal.querySelector('div').classList.remove('scale-95');
+      modal.querySelector('div').classList.add('scale-100');
+    }
+
+    function closeExcerpt() {
+      const modal = document.getElementById('excerpt-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      modal.querySelector('div').classList.add('scale-95');
+      modal.querySelector('div').classList.remove('scale-100');
+    }
+
+    // Sort Handler
+    document.getElementById('sort-select').addEventListener('change', function(e) {
+      const val = e.target.value;
+      const grid = document.getElementById('book-grid');
+      const cardsArray = Array.from(bookCards);
+
+      if (val === 'price-asc') {
+        cardsArray.sort((a, b) => parseFloat(a.dataset.priceHard) - parseFloat(b.dataset.priceHard));
+      } else if (val === 'price-desc') {
+        cardsArray.sort((a, b) => parseFloat(b.dataset.priceHard) - parseFloat(a.dataset.priceHard));
+      } else if (val === 'rating') {
+        // preserve high quality books first
+        cardsArray.sort((a, b) => b.innerText.localeCompare(a.innerText));
+      }
+      cardsArray.forEach(card => grid.appendChild(card));
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/30 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-margin-sm lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="PageHaven Emblem" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><span class="font-headline-sm text-headline-sm text-on-surface">PageHaven</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Sanctuary of rare, acclaimed, and preserved literary craftsmanship. From archival hardcovers to illuminated digital editions.</p></div><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Literary Curations</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="story-fiction" href="#">Story &amp; Fiction Classics</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="anime-manga" href="#">Archival Manga &amp; Graphic Works</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="motivational-wisdom" href="#">Wisdom &amp; Contemplation</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="periodicals" href="#">Rare Press &amp; Periodicals</a></div><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Reader Experience</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="readgenius-ai-concierge" href="#">ReadGenius AI Guide</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-care" href="#">Customer Care &amp; Inquiries</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#">Order Tracking &amp; Archive Delivery</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-care" href="#">Preservation Guarantees</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Care &amp; Preservation</span><div class="p-space-sm bg-surface rounded-lg border border-outline-variant/30"><div class="flex items-center gap-space-xs text-primary mb-1"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Preservation Guarantee</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">All rare physical volumes shipped in archival protective encasings. Guaranteed pristine arrival.</p></div></div></div><div class="border-t border-outline-variant/20 pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2024 PageHaven Rare &amp; Acclaimed Books Sanctuary. All rights reserved.</p><div class="flex items-center gap-gutter"><span class="font-label-md text-label-md">Deckle-Edge Packaging</span><span class="font-label-md text-label-md">Instant Cloud Sync</span><span class="font-label-md text-label-md">Global Courier</span></div></div></div></footer></body></html>

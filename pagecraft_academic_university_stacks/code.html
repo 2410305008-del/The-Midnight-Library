@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#ffffff", "surface-bright": "#faf8ff", "surface-dim": "#d4d9ed", "tertiary-fixed": "#ffdad4", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "secondary-container": "#c3e6e7", "tertiary-container": "#c94a38", "primary-container": "#b15f00", "on-primary-fixed-variant": "#6e3900", "on-tertiary-fixed": "#410100", "surface-variant": "#dde2f6", "surface-container-highest": "#dde2f6", "background": "#faf8ff", "surface-container-low": "#f1f3ff", "on-secondary-fixed-variant": "#2b4c4d", "secondary": "#436465", "secondary-fixed-dim": "#aacdce", "primary": "#8d4b00", "on-primary-fixed": "#2f1500", "surface-container-high": "#e2e8fc", "on-surface": "#151b29", "outline": "#887364", "on-surface-variant": "#554336", "on-tertiary-fixed-variant": "#8a1c10", "on-background": "#151b29", "primary-fixed-dim": "#ffb77d", "surface-container": "#e9edff", "secondary-fixed": "#c6e9ea", "primary-fixed": "#ffdcc3", "tertiary-fixed-dim": "#ffb4a8", "on-secondary-fixed": "#002021", "on-error-container": "#93000a", "on-secondary-container": "#476869", "outline-variant": "#dbc2b0", "on-primary-container": "#fffbff", "inverse-surface": "#2a303f", "on-error": "#ffffff", "error": "#ba1a1a", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fffbff", "surface-tint": "#904d00", "inverse-on-surface": "#edf0ff", "tertiary": "#a83223", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2.5rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "title-editorial": ["Newsreader"], "body-lg": ["Manrope"], "headline-md": ["Newsreader"], "label-lg": ["Manrope"], "body-md": ["Manrope"], "body-sm": ["Manrope"], "headline-lg-mobile": ["Newsreader"], "display": ["Newsreader"], "label-sm": ["Manrope"], "label-md": ["Manrope"], "display-mobile": ["Newsreader"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><img alt="PageCraft Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">PageCraft</span><span class="hidden">Browse</span></div><div class="flex items-center gap-1"><a aria-label="Search Catalog" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><button aria-label="Open Shopping Cart" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary text-on-primary font-label-sm text-[10px] flex items-center justify-center shadow-[0_0_8px_rgba(141,75,0,0.4)]">2</span></button><a aria-label="User Account" class="w-11 h-11 flex items-center justify-center" data-path="account" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Academic Intro Banner & Search -->
+<section class="px-4 pt-3 pb-4 flex flex-col gap-3">
+<!-- Breadcrumb & Tag -->
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">school</span>
+<span class="tracking-wide uppercase font-semibold text-primary">Department of Stacks</span>
+</div>
+<span class="bg-secondary-container/50 text-on-secondary-container px-2.5 py-0.5 rounded-full font-label-sm text-label-sm">
+        Fall &amp; Spring 2025
+      </span>
+</div>
+<!-- Editorial Header Title -->
+<div class="flex flex-col gap-1">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">
+        Academic &amp; University Stacks
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Curated collegiate textbooks, high-school curriculum guides, research compendiums, and competitive exam preps.
+      </p>
+</div>
+<!-- Conversational Search Bar -->
+<div class="relative w-full mt-1">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-11 pr-10 rounded-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/70 placeholder:italic font-body-md text-body-md shadow-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-0 transition-all" id="academic-search-input" placeholder="Search by subject, ISBN, professor, course code..." type="text"/>
+<button aria-label="Scan Textbook Barcode" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-surface-container-high/60 flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform" onclick="triggerBarcodeToast()">
+<span class="material-symbols-outlined text-[17px]">barcode_scanner</span>
+</button>
+</div>
+<!-- Level Segmented Switcher -->
+<div class="flex p-1 bg-surface-container-low rounded-xl gap-1 overflow-x-auto no-scrollbar" id="level-filter-group">
+<button class="flex-1 py-1.5 px-3 rounded-lg font-label-md text-label-md text-center whitespace-nowrap transition-all bg-surface-container-lowest text-primary shadow-sm font-semibold active-level-tab" onclick="switchLevel(this, 'all')">
+        All Levels (2,450)
+      </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg font-label-md text-label-md text-center whitespace-nowrap transition-all text-on-surface-variant hover:text-on-surface" onclick="switchLevel(this, 'collegiate')">
+        Collegiate &amp; Univ (1,680)
+      </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg font-label-md text-label-md text-center whitespace-nowrap transition-all text-on-surface-variant hover:text-on-surface" onclick="switchLevel(this, 'prep')">
+        Prep &amp; High School (770)
+      </button>
+</div>
+<!-- Discipline Horizontal Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar -mx-4 px-4 pt-1">
+<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-primary text-on-primary whitespace-nowrap shadow-sm discipline-tab">
+        All Disciplines
+      </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap discipline-tab">
+        STEM &amp; Physics
+      </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap discipline-tab">
+        Medicine &amp; Biology
+      </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap discipline-tab">
+        Law &amp; Governance
+      </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap discipline-tab">
+        Economics &amp; Business
+      </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface whitespace-nowrap discipline-tab">
+        Engineering &amp; CompSci
+      </button>
+</div>
+</section>
+<!-- Student Discount Notice Bar -->
+<section class="px-4 py-1.5">
+<div class="w-full bg-gradient-to-r from-secondary/15 via-secondary-container/40 to-primary-fixed/30 rounded-xl p-3 flex items-start gap-3 shadow-sm">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex-shrink-0 flex items-center justify-center shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[19px]">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-secondary font-bold tracking-tight">Verified Campus Privilege</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded font-semibold">Save 20%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5 leading-snug">
+          20% off all textbook orders with campus <code class="font-semibold text-primary bg-surface-container-lowest px-1 rounded">.edu</code> email. Use voucher code <strong class="text-on-surface font-semibold underline decoration-primary/40">SCHOLAR20</strong>.
+        </p>
+</div>
+</div>
+</section>
+<!-- SECTION 1: Featured University Course Essentials -->
+<section class="px-4 pt-5 pb-3">
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<h2 class="font-title-editorial text-title-editorial text-on-surface font-bold tracking-tight">
+          Featured University Course Essentials
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standard syllabi references adopted across 140+ faculties</p>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">4 Titles</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Book Card 1: Campbell Biology -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative overflow-hidden transition-all" data-title="Campbell Biology &amp; Molecular Genetics">
+<div class="flex gap-3.5">
+<!-- Realistic Spine Cover Container -->
+<div class="relative w-28 h-36 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container-high shadow-md">
+<img class="w-full h-full object-cover" data-alt="Photorealistic textbook cover of Campbell Biology and Molecular Genetics Global Edition, in high detail with intricate cellular nucleus and glowing double-helix DNA strand floating in deep indigo science background, gold and white typography by Pearson Academic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWS5PacPPdwcQ7NEd1ToOXx4a3ktfYflvNub66A9lM5GN1EXEa-2wkUBN1I5Sry0f3vQJVvurCjB3rjWVqwU3opT6UI7d1Cg_8qj5orWI2RUiBVO-olwIeyeXYCA_E8updXqM9JC0RTGT4AASi0dM0gxFpLNxYsFbmNPptKrH5gp_1wgjUU8f1E4Yknvojy_BlBYdAPdosZbEAQEOskYspBhifiW4fGEL-dznZGQN7iEuXtAc-vkBZFA"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none"></div>
+<div class="absolute top-1.5 left-1.5 bg-on-surface/85 backdrop-blur-sm text-surface px-1.5 py-0.5 rounded font-label-sm text-[9px] font-semibold">
+              Pearson
+            </div>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap gap-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  Undergrad Core
+                </span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  12th Edition
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug pt-0.5">
+                Campbell Biology &amp; Molecular Genetics
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Reece, Urry, Cain, Wasserman et al.
+              </p>
+</div>
+<!-- Star Rating & Syllabus -->
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md pt-1">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold ml-0.5 text-on-surface">4.9</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span>1.8k reviews</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">Bio 101</span>
+</div>
+</div>
+</div>
+<!-- Format Selector & Purchase Line -->
+<div class="pt-2 bg-surface-container-low/50 rounded-lg p-2.5 flex flex-col gap-2.5">
+<!-- Segmented Format Control -->
+<div class="flex bg-surface-container rounded-lg p-0.5" data-book="campbell">
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-xs font-semibold flex items-center justify-center gap-1 format-btn active-format" onclick="selectFormat(this, 'campbell', 'hardcover', 88.50)">
+<span class="material-symbols-outlined text-[14px] text-secondary">menu_book</span>
+              Hardcover
+            </button>
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface font-medium flex items-center justify-center gap-1 format-btn" onclick="selectFormat(this, 'campbell', 'ebook', 34.00)">
+<span class="material-symbols-outlined text-[14px] text-primary">cloud_download</span>
+              Instant E-Book
+            </button>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Selected Price</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-campbell">$88.50</span>
+<span class="font-label-sm text-label-sm text-outline line-through" id="orig-price-campbell">$115.00</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold ml-1" id="format-badge-campbell">Clothbound Hardcover</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center hover:text-primary active:scale-95 transition-transform" onclick="showAiCompanionModal('Campbell Biology: Molecular Core', 'Includes cell signaling pathways, Mendelian inheritance proofs, and recombinant DNA lab protocols.')" title="AI Chapter Syllabus Companion">
+<span class="material-symbols-outlined text-[19px]">psychology</span>
+</button>
+<button class="px-4 py-2 bg-on-surface text-surface rounded-lg font-label-md text-label-md font-semibold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all hover:bg-primary" onclick="addToBasket('Campbell Biology (12th Ed.)', 88.50)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                Add to Basket
+              </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Book Card 2: Principles of Modern Physics -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative overflow-hidden transition-all" data-title="Principles of Modern Physics &amp; Quantum Mechanics">
+<div class="flex gap-3.5">
+<!-- Realistic Spine Cover Container -->
+<div class="relative w-28 h-36 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container-high shadow-md">
+<img class="w-full h-full object-cover" data-alt="Book cover of Principles of Modern Physics and Quantum Mechanics by Cambridge Academic Press, standing on dark walnut table, showing quantum wave function graph, laser split refraction optical beam, and glowing Schrödinger equation in chalk aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEaWStMJ0dI_zySuAuEHXTaFQ0nOTgCqetsLaO3bQrAalURg90Z4uZ7qNW_kM7jCDvkT_LSMWFkIUVZiJ0b4uSTQ1twYfoPiAKgR40nszNv4nzQigEd8MAW2uyNrImLgFSV061BVdIP3nkgLM0QBb4AE0FJBroZD2JRA8CAdgeDZ8DooLxZLWbSK40Hly_L1X9E9YMA3uMpM6VN19THKRxPd8_2QsLpUHfvY0Ma4RuuXLjovAi1Ov3DQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none"></div>
+<div class="absolute top-1.5 left-1.5 bg-on-surface/85 backdrop-blur-sm text-surface px-1.5 py-0.5 rounded font-label-sm text-[9px] font-semibold">
+              Cambridge
+            </div>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap gap-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  Physics &amp; Engineering
+                </span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  Grad Level
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug pt-0.5">
+                Principles of Modern Physics &amp; Quantum Mechanics
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Alistair H. Davies &amp; Eleanor R. Vance
+              </p>
+</div>
+<!-- Star Rating & Syllabus -->
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md pt-1">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold ml-0.5 text-on-surface">4.9</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span>940 reviews</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">Phys 402</span>
+</div>
+</div>
+</div>
+<!-- Format Selector & Purchase Line -->
+<div class="pt-2 bg-surface-container-low/50 rounded-lg p-2.5 flex flex-col gap-2.5">
+<div class="flex bg-surface-container rounded-lg p-0.5" data-book="physics">
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-xs font-semibold flex items-center justify-center gap-1 format-btn active-format" onclick="selectFormat(this, 'physics', 'hardcover', 74.00)">
+<span class="material-symbols-outlined text-[14px] text-secondary">menu_book</span>
+              Hardcover
+            </button>
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface font-medium flex items-center justify-center gap-1 format-btn" onclick="selectFormat(this, 'physics', 'ebook', 28.50)">
+<span class="material-symbols-outlined text-[14px] text-primary">cloud_download</span>
+              Digital E-Book
+            </button>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Selected Price</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-physics">$74.00</span>
+<span class="font-label-sm text-label-sm text-outline line-through" id="orig-price-physics">$96.00</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold ml-1" id="format-badge-physics">Hardcover Edition</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center hover:text-primary active:scale-95 transition-transform" onclick="showAiCompanionModal('Modern Physics &amp; Quantum Theory', 'Covers Hilbert space formalism, perturbation matrices, and relativistic Dirac equations with step-by-step mathematical proofs.')" title="AI Chapter Syllabus Companion">
+<span class="material-symbols-outlined text-[19px]">psychology</span>
+</button>
+<button class="px-4 py-2 bg-on-surface text-surface rounded-lg font-label-md text-label-md font-semibold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all hover:bg-primary" onclick="addToBasket('Principles of Modern Physics', 74.00)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                Add to Basket
+              </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Book Card 3: Microeconomics -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative overflow-hidden transition-all" data-title="Microeconomics: Theory &amp; Public Applications">
+<div class="flex gap-3.5">
+<!-- Realistic Spine Cover Container -->
+<div class="relative w-28 h-36 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container-high shadow-md">
+<img class="w-full h-full object-cover" data-alt="Microeconomics and Public Applications by Stiglitz and Walsh university textbook cover on clean background, showing financial chart graphics, geometric market equilibrium vectors in slate cyan and pale amber ink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMRwOjokADW7kNLm9_hCBsqK8Of5RD3qgDuMdqw4hB9zOwlEvJ13d3VFNkxtyAnyoQMX-KcHcsE9mmjKd2ZdMOvLe1iAey0vbf8KZMWj4qsE47bmK4DdTXlsVROjnBWv8QjXyKBMTDnCFyY3JTlcmbzoWXiu7KoI7pDaefl32im8Y4qMOlZ8BchnZ8yKgnaNg3jrOkew2N-ngjxMfddS-Q3XHql8CwnEMQ2fI0Bwy2nWP0kL4wRVn5Jw"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none"></div>
+<div class="absolute top-1.5 left-1.5 bg-on-surface/85 backdrop-blur-sm text-surface px-1.5 py-0.5 rounded font-label-sm text-[9px] font-semibold">
+              WW Norton
+            </div>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap gap-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  Economics &amp; Finance
+                </span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-bold px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  Semester 1 Essential
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug pt-0.5">
+                Microeconomics: Theory &amp; Public Applications
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Joseph E. Stiglitz &amp; Carl E. Walsh
+              </p>
+</div>
+<!-- Star Rating & Syllabus -->
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md pt-1">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold ml-0.5 text-on-surface">4.8</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span>1.2k reviews</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">Econ 201</span>
+</div>
+</div>
+</div>
+<!-- Format Selector & Purchase Line -->
+<div class="pt-2 bg-surface-container-low/50 rounded-lg p-2.5 flex flex-col gap-2.5">
+<div class="flex bg-surface-container rounded-lg p-0.5" data-book="econ">
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-xs font-semibold flex items-center justify-center gap-1 format-btn active-format" onclick="selectFormat(this, 'econ', 'hardcover', 62.00)">
+<span class="material-symbols-outlined text-[14px] text-secondary">menu_book</span>
+              Hardcover
+            </button>
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface font-medium flex items-center justify-center gap-1 format-btn" onclick="selectFormat(this, 'econ', 'ebook', 24.99)">
+<span class="material-symbols-outlined text-[14px] text-primary">cloud_download</span>
+              Instant E-Book
+            </button>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Selected Price</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-econ">$62.00</span>
+<span class="font-label-sm text-label-sm text-outline line-through" id="orig-price-econ">$79.99</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold ml-1" id="format-badge-econ">Standard Hardcover</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center hover:text-primary active:scale-95 transition-transform" onclick="showAiCompanionModal('Microeconomics: Theory &amp; Policy', 'Features elasticity models, consumer surplus calculations, and game-theoretic market failure critiques.')" title="AI Chapter Syllabus Companion">
+<span class="material-symbols-outlined text-[19px]">psychology</span>
+</button>
+<button class="px-4 py-2 bg-on-surface text-surface rounded-lg font-label-md text-label-md font-semibold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all hover:bg-primary" onclick="addToBasket('Microeconomics: Theory &amp; Applications', 62.00)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                Add to Basket
+              </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Book Card 4: Constitutional Law -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative overflow-hidden transition-all" data-title="Constitutional Law &amp; Jurisprudence">
+<div class="flex gap-3.5">
+<!-- Realistic Spine Cover Container -->
+<div class="relative w-28 h-36 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container-high shadow-md">
+<img class="w-full h-full object-cover" data-alt="Burgundy leather bound legal casebook titled Constitutional Law and Jurisprudence Principles and Cases by Professor Eliza Harrison, gilded gold embossed seal of justice scales, university law library oak backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXgVoPVrj_FUCTxk2oOw10kPHE00urR8q10WE8T6HUeb08i4ZfKG4tYLlBfFaOCEo2MbfIGS3eK6N7xB-ItmQxSJ5p8fTh4IoN8S6H1D3tmkA02GC2kNpS_Lnq-uuyN92RSnDb7oyW0DfxWWB-fYEeNwBeKIqJUvWNW0JEeosekrzV_y1Ce1RMQ4dZbFhtMErppb9oCaM25amuah-NsGD1wKe2RY15q8My8Woq-nRK8EaR3s2zv8OeoQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none"></div>
+<div class="absolute top-1.5 left-1.5 bg-on-surface/85 backdrop-blur-sm text-surface px-1.5 py-0.5 rounded font-label-sm text-[9px] font-semibold">
+              Univ Press
+            </div>
+</div>
+<!-- Metadata & Details -->
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap gap-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  Law &amp; Justice
+                </span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                  Casebook Series
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 leading-snug pt-0.5">
+                Constitutional Law &amp; Jurisprudence
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Prof. Eliza J. Harrison &amp; Robert Chen
+              </p>
+</div>
+<!-- Star Rating & Syllabus -->
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md pt-1">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold ml-0.5 text-on-surface">4.9</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span>810 reviews</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">1L Required</span>
+</div>
+</div>
+</div>
+<!-- Format Selector & Purchase Line -->
+<div class="pt-2 bg-surface-container-low/50 rounded-lg p-2.5 flex flex-col gap-2.5">
+<div class="flex bg-surface-container rounded-lg p-0.5" data-book="law">
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-xs font-semibold flex items-center justify-center gap-1 format-btn active-format" onclick="selectFormat(this, 'law', 'hardcover', 92.00)">
+<span class="material-symbols-outlined text-[14px] text-secondary">menu_book</span>
+              Hardcover
+            </button>
+<button class="flex-1 py-1 rounded-md text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface font-medium flex items-center justify-center gap-1 format-btn" onclick="selectFormat(this, 'law', 'ebook', 39.50)">
+<span class="material-symbols-outlined text-[14px] text-primary">cloud_download</span>
+              Instant E-Book
+            </button>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Selected Price</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-law">$92.00</span>
+<span class="font-label-sm text-label-sm text-outline line-through" id="orig-price-law">$124.00</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold ml-1" id="format-badge-law">Clothbound Casebook</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center hover:text-primary active:scale-95 transition-transform" onclick="showAiCompanionModal('Constitutional Jurisprudence', 'Integrated case briefs, judicial dissenting opinions from Marbury through Dobbs, and doctrinal flowcharts.')" title="AI Chapter Syllabus Companion">
+<span class="material-symbols-outlined text-[19px]">psychology</span>
+</button>
+<button class="px-4 py-2 bg-on-surface text-surface rounded-lg font-label-md text-label-md font-semibold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all hover:bg-primary" onclick="addToBasket('Constitutional Law &amp; Jurisprudence', 92.00)">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                Add to Basket
+              </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Bundle Opportunity Card -->
+<section class="px-4 py-2">
+<div class="bg-surface-container-high rounded-xl p-4 flex flex-col gap-2 relative overflow-hidden shadow-sm">
+<div class="flex items-center justify-between">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase px-2 py-0.5 rounded">
+          Semester Bundle Pack
+        </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-semibold">Bonus $45 Value</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">
+        Exam Semester Bundle — Free Digital Solution Manuals
+      </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Purchase any 3 physical textbooks and receive cloud access to fully-worked exercise answer keys, test bank samples, and interactive practice flashcards at no extra charge.
+      </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center -space-x-1.5">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-[10px] font-bold">1</span>
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-[10px] font-bold">2</span>
+<span class="w-6 h-6 rounded-full bg-on-surface text-surface flex items-center justify-center font-label-sm text-[10px] font-bold">3</span>
+</div>
+<button class="font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:underline" onclick="claimBundleToast()">
+          Activate Bundle Auto-Apply
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 2: High School & College Prep Stacks -->
+<section class="px-4 pt-4 pb-6">
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<h2 class="font-title-editorial text-title-editorial text-on-surface font-bold tracking-tight">
+          High School &amp; College Prep Stacks
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Targeted drill books, global compendiums, and test readiness</p>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">3 Titles</span>
+</div>
+<div class="grid grid-cols-1 gap-3.5">
+<!-- Prep Card 1: Calculus Advanced Prep -->
+<article class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex gap-3 items-center">
+<!-- Visual Accent Pill / Math Illustration -->
+<div class="w-20 h-28 rounded-lg bg-surface-container flex-shrink-0 flex flex-col items-center justify-center text-center p-1.5 relative overflow-hidden">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">functions</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-none font-bold">∫ dx</span>
+<span class="font-label-sm text-[9px] uppercase tracking-wider text-on-surface-variant mt-1 font-semibold">AP / IB Calc</span>
+<div class="absolute inset-y-0 left-0 w-1.5 bg-secondary"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<div class="flex flex-wrap gap-1">
+<span class="bg-secondary-container/70 text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-[10px] font-semibold">
+              Includes Solution Key
+            </span>
+<span class="bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded font-label-sm text-[10px]">
+              AP / IB Level
+            </span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-bold truncate">
+            Calculus &amp; Advanced Mathematical Prep
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            Dr. Aris Thorne (Oxford Scholar Series)
+          </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$34.99</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(E-Book $12.50)</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 active:scale-95 transition-all hover:bg-primary hover:text-on-primary" onclick="addToBasket('Calculus &amp; Advanced Math Prep', 34.99)">
+<span class="material-symbols-outlined text-[15px]">add</span>
+              Basket
+            </button>
+</div>
+</div>
+</article>
+<!-- Prep Card 2: World Factbook 2025 -->
+<article class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex gap-3 items-center">
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-xs">
+<img alt="The World Factbook &amp; Global Knowledge Compendium 2025" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VUKF4LnPjmPi5D1emT0oiCDFJp53K2rc29Bz5UPhwaJub8zlMVIWQMLRZdkV8v7EmtlWvwWwpqBlwRmRhDcwtxN8D-TLm-ijCFCe06j7s_Gy9FuXMfZR_YnlkRfYYkxY-8cQNhYNurcvATucElTdSYdLvCTTUNs3w7U2TIwXx8E_bXfB6sTe9Ae3DLEAvPVFCGB_XgBWwZJTjsmqllwx4A02ywBC0rQdMsSr4Y58huiDOjQRITwA4Ebb1q"/>
+<div class="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-r from-black/40 to-transparent pointer-events-none"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<div class="flex flex-wrap gap-1">
+<span class="bg-secondary-container/70 text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-[10px] font-semibold">
+              General Knowledge &amp; UPSC
+            </span>
+<span class="bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded font-label-sm text-[10px]">
+              2025 Ed.
+            </span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-bold truncate">
+            The World Factbook &amp; Global Knowledge 2025
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            International Editorial Stacks
+          </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$24.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(E-Book $9.99)</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 active:scale-95 transition-all hover:bg-primary hover:text-on-primary" onclick="addToBasket('World Factbook Compendium 2025', 24.00)">
+<span class="material-symbols-outlined text-[15px]">add</span>
+              Basket
+            </button>
+</div>
+</div>
+</article>
+<!-- Prep Card 3: Current Affairs Yearbook -->
+<article class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex gap-3 items-center">
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-xs">
+<img alt="Current Affairs Yearbook 2025 &amp; Global Geopolitics" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XhwwYQS1lVyHJiqtau5IjuOcd-muSYalbwboW058cnEOImx4iINrH86QOoqDAiy2AUg4xamClaumPIfjuerHyZmbloL34mqUXByE0T8HwyVbQUO_6DBvsM7gWpBvqNGqVwr-bZJrs4oBoajihuSRueqx3rRZtDxFROP4YAJCW30NJ79t3hGAPLPG6u8pI-gRa9_OJ-fSAw1pjXBCwg9hYJ2mnRrgiJ5zggcPLHICT5CyckNY7VpSszX90"/>
+<div class="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-r from-black/40 to-transparent pointer-events-none"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<div class="flex flex-wrap gap-1">
+<span class="bg-secondary-container/70 text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-[10px] font-semibold">
+              International Relations
+            </span>
+<span class="bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded font-label-sm text-[10px]">
+              Annual Digest
+            </span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-bold truncate">
+            Current Affairs Yearbook &amp; Global Geopolitics
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            PageCraft Research Desk
+          </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$18.50</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(E-Book $6.50)</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 active:scale-95 transition-all hover:bg-primary hover:text-on-primary" onclick="addToBasket('Current Affairs Yearbook 2025', 18.50)">
+<span class="material-symbols-outlined text-[15px]">add</span>
+              Basket
+            </button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Interactive Syllabus AI Companion Popover Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm flex items-end justify-center hidden" id="ai-modal" onclick="closeAiModal(event)">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-t-2xl p-5 shadow-2xl flex flex-col gap-3.5 transform transition-transform" onclick="event.stopPropagation()">
+<div class="w-12 h-1.5 bg-surface-container-high rounded-full self-center"></div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">AI Syllabus Companion</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="modal-book-title">Course Digest</h3>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" onclick="hideAiCompanionModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">analytics</span>
+          Thematic Difficulty Rating: <span class="text-primary font-bold ml-1">Collegiate Upper-Div (4.3/5.0)</span>
+</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="modal-book-desc">
+          Digest content details.
+        </p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Recommended Study Sequence</span>
+<div class="grid grid-cols-2 gap-2 text-on-surface font-label-md text-label-md">
+<div class="bg-surface-container-high/60 p-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">timer</span>
+<span>Est. 45 hrs study pace</span>
+</div>
+<div class="bg-surface-container-high/60 p-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">assignment_turned_in</span>
+<span>18 Chapter Reviews</span>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-label-md text-label-md font-semibold shadow-md active:scale-98 transition-transform flex items-center justify-center gap-2" onclick="hideAiCompanionModal(); showToast('Syllabus study schedule synced to My Library!')">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+        Sync Syllabus Digest to My Library
+      </button>
+</div>
+</div>
+<!-- Micro-interaction Action Toast Bar -->
+<div class="fixed bottom-20 inset-x-4 max-w-sm mx-auto z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-xl shadow-xl flex items-center justify-between opacity-0 pointer-events-none transition-all duration-300" id="action-toast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed" id="toast-icon">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-message">Added to your academic basket</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase font-bold ml-2">Undo</span>
+</div>
+<!-- Script for Micro-Interactions -->
+<script>
+    function selectFormat(btn, bookKey, format, price) {
+      const container = btn.closest('[data-book]');
+      const buttons = container.querySelectorAll('.format-btn');
+      buttons.forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs', 'font-semibold');
+        b.classList.add('text-on-surface-variant', 'font-medium');
+      });
+      btn.classList.remove('text-on-surface-variant', 'font-medium');
+      btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs', 'font-semibold');
+
+      // Update Price and Badge
+      const priceElem = document.getElementById('price-' + bookKey);
+      const badgeElem = document.getElementById('format-badge-' + bookKey);
+      if (priceElem) priceElem.innerText = '$' + price.toFixed(2);
+      if (badgeElem) {
+        badgeElem.innerText = format === 'ebook' ? 'Instant Cloud E-Book' : 'Hardcover Edition';
+      }
+    }
+
+    function switchLevel(tabBtn, level) {
+      const parent = document.getElementById('level-filter-group');
+      const tabs = parent.querySelectorAll('button');
+      tabs.forEach(t => {
+        t.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+        t.classList.add('text-on-surface-variant');
+      });
+      tabBtn.classList.remove('text-on-surface-variant');
+      tabBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+      showToast('Filtered: ' + tabBtn.innerText.split('(')[0].trim());
+    }
+
+    // Toggle Discipline Tabs
+    document.querySelectorAll('.discipline-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.discipline-tab').forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary');
+          b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        btn.classList.add('bg-primary', 'text-on-primary');
+        showToast('Browsing discipline: ' + btn.innerText.trim());
+      });
+    });
+
+    function addToBasket(title, price) {
+      // Find shell cart badge if accessible
+      const cartBadges = document.querySelectorAll('header button[aria-label="Open Shopping Cart"] span.rounded-full');
+      cartBadges.forEach(badge => {
+        let current = parseInt(badge.innerText, 10) || 0;
+        badge.innerText = current + 1;
+        badge.classList.add('scale-125');
+        setTimeout(() => badge.classList.remove('scale-125'), 200);
+      });
+
+      showToast(`Added: ${title} ($${price.toFixed(2)})`);
+    }
+
+    function showAiCompanionModal(title, desc) {
+      document.getElementById('modal-book-title').innerText = title;
+      document.getElementById('modal-book-desc').innerText = desc;
+      const modal = document.getElementById('ai-modal');
+      modal.classList.remove('hidden');
+    }
+
+    function hideAiCompanionModal() {
+      const modal = document.getElementById('ai-modal');
+      modal.classList.add('hidden');
+    }
+
+    function closeAiModal(e) {
+      hideAiCompanionModal();
+    }
+
+    function triggerBarcodeToast() {
+      showToast('Opening camera scanner for ISBN / Course Code...');
+    }
+
+    function claimBundleToast() {
+      showToast('Exam Bundle Discount active! Add 3 textbooks to qualify.');
+    }
+
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById('action-toast');
+      const text = document.getElementById('toast-message');
+      if (!toast || !text) return;
+      text.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2600);
+    }
+  </script>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md font-semibold"><div class="flex justify-around items-center h-16 px-2"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm">Browse</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-sm text-label-sm">AI Assistant</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-library" href="#"><span class="material-symbols-outlined text-[22px]">local_library</span><span class="font-label-sm text-label-sm">My Library</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="account" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Account</span></a></div></nav></body></html>

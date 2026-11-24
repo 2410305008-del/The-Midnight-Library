@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>PageHaven — Sanctuary of Rare Books</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: { 50: '#fffbeb', 100: '#fef3c7', 600: '#d97706', 700: '#b45309', 800: '#92400e' },
+            parchment: { 50: '#fbfbf9', 100: '#f7f6f2', 200: '#efece4' },
+            ink: { 900: '#1c1917', 700: '#44403c', 500: '#78716c', 200: '#e7e5e4', 100: '#f5f5f4' }
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Manrope', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #faf9f6; color: #1c1917; font-family: 'Manrope', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; animation: fadeIn 0.2s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#faf9f6] text-ink-900 selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-[#faf9f6]/95 backdrop-blur-md border-b border-ink-200">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <!-- Brand -->
+      <a href="javascript:void(0)" onclick="switchTab('home')" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl border border-amber-600/30 bg-amber-50 flex items-center justify-center p-1.5 shadow-xs">
+          <span class="material-symbols-outlined text-amber-700 text-2xl">auto_stories</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-serif text-xl font-bold tracking-tight group-hover:text-amber-700 transition-colors">PageHaven</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+          </div>
+          <p class="text-[10px] text-ink-500 font-medium tracking-wide">Sanctuary of Rare Books</p>
+        </div>
+      </a>
+
+      <!-- Search -->
+      <div class="relative flex-1 max-w-sm hidden sm:block">
+        <span class="material-symbols-outlined absolute left-3 top-2.5 text-ink-500 text-[18px]">search</span>
+        <input id="searchInput" type="text" placeholder="Search books, authors, manga, topics..." oninput="handleSearch(this.value)" class="w-full pl-9 pr-8 py-2 bg-white rounded-full border border-ink-200 text-xs text-ink-900 placeholder-ink-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-600 transition-all"/>
+        <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-2.5 top-2.5 text-ink-500 hover:text-ink-900">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
+      </div>
+
+      <!-- Action Items -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleCart()" aria-label="Open reading bag" class="relative w-10 h-10 rounded-full flex items-center justify-center bg-white border border-ink-200 hover:border-amber-600/50 text-ink-700 transition-all">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span id="cartCountBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-amber-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-xs">3</span>
+        </button>
+        <button onclick="openAuthModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-ink-200 hover:border-amber-600/50 text-ink-700 hover:text-amber-700 text-xs font-semibold shadow-xs transition-all">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+          <span class="hidden md:inline">Sign In / Join</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= NAVIGATION PILLS ================= -->
+  <nav class="sticky top-16 z-30 bg-[#faf9f6]/95 backdrop-blur-md border-b border-ink-200/80">
+    <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar">
+      <button onclick="switchTab('home')" id="nav-home" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-amber-600 text-white shadow-xs transition-all">
+        <span class="material-symbols-outlined text-[16px]">cottage</span> Home
+      </button>
+      <button onclick="switchTab('fiction')" id="nav-fiction" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all">
+        <span class="material-symbols-outlined text-[16px]">auto_stories</span> Story &amp; Fiction
+      </button>
+      <button onclick="switchTab('manga')" id="nav-manga" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all">
+        <span class="material-symbols-outlined text-[16px]">brush</span> Anime &amp; Manga
+      </button>
+      <button onclick="switchTab('comics')" id="nav-comics" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all">
+        <span class="material-symbols-outlined text-[16px]">palette</span> Comics &amp; Novels
+      </button>
+      <button onclick="switchTab('wisdom')" id="nav-wisdom" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all">
+        <span class="material-symbols-outlined text-[16px]">psychology</span> Motivational Wisdom
+      </button>
+      <button onclick="switchTab('magazines')" id="nav-magazines" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all">
+        <span class="material-symbols-outlined text-[16px]">newspaper</span> Magazines
+      </button>
+      <button onclick="switchTab('ai')" id="nav-ai" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all">
+        <span class="material-symbols-outlined text-[16px] text-amber-600">neurology</span> ReadGenius AI
+      </button>
+      <button onclick="switchTab('care')" id="nav-care" class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all">
+        <span class="material-symbols-outlined text-[16px]">support_agent</span> Help Care
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= SEARCH OVERLAY ================= -->
+  <div id="searchView" class="hidden max-w-6xl mx-auto px-4 py-6 w-full">
+    <div class="flex items-center justify-between mb-4 pb-2 border-b border-ink-200">
+      <h2 class="font-serif text-lg font-bold" id="searchHeader">Search Results</h2>
+      <button onclick="clearSearch()" class="text-xs font-semibold text-amber-700 hover:underline">Close Search</button>
+    </div>
+    <div id="searchResultsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+  </div>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main id="mainContainer" class="flex-1 max-w-6xl mx-auto w-full px-4 py-6">
+
+    <!-- 1. HOME TAB -->
+    <section id="pane-home" class="tab-pane active flex flex-col gap-6">
+      <!-- Promotional Banner -->
+      <div class="rounded-2xl bg-gradient-to-r from-amber-50 via-white to-amber-50/40 p-5 md:p-6 border border-amber-600/20 shadow-xs relative overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="max-w-xl">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider mb-2">
+              <span class="material-symbols-outlined text-[12px]">local_fire_department</span> Autumn Salon Privilege
+            </span>
+            <h2 class="font-serif text-xl sm:text-2xl font-bold leading-snug">Curate your personal library with 25% off hardbound titles.</h2>
+            <p class="text-xs sm:text-sm text-ink-700 mt-1">Smyth-sewn bindings, acid-free archival parchment, and collector editions.</p>
+            <div class="mt-3.5 inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-amber-600/30 shadow-xs">
+              <span class="text-xs text-ink-500 font-medium">Coupon:</span>
+              <span class="font-mono text-sm font-bold text-amber-700 tracking-wider">PAGE25</span>
+              <button onclick="copyCoupon('PAGE25')" class="text-ink-500 hover:text-amber-700 flex items-center p-0.5" title="Copy coupon">
+                <span class="material-symbols-outlined text-[16px]">content_copy</span>
+              </button>
+            </div>
+          </div>
+          <div class="w-24 h-32 rounded-xl bg-amber-100 border border-amber-200 shadow-sm flex flex-col items-center justify-center p-2 text-center shrink-0">
+            <span class="material-symbols-outlined text-amber-700 text-4xl mb-1">auto_stories</span>
+            <span class="font-serif text-[11px] font-bold text-ink-900 leading-tight">Sanctuary Folio</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Department Cards -->
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-serif text-lg font-bold">Explore Curations</h3>
+          <span class="text-xs font-semibold text-amber-700">6 Dedicated Departments</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <button onclick="switchTab('fiction')" class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-ink-200 hover:border-amber-600/50 hover:shadow-xs transition-all text-center group">
+            <div class="w-11 h-11 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <span class="material-symbols-outlined text-[22px]">book_2</span>
+            </div>
+            <span class="text-xs font-bold text-ink-900 group-hover:text-amber-700">Story Fiction</span>
+            <span class="text-[10px] text-ink-500 mt-0.5">Masterpieces</span>
+          </button>
+          <button onclick="switchTab('manga')" class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-ink-200 hover:border-amber-600/50 hover:shadow-xs transition-all text-center group">
+            <div class="w-11 h-11 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <span class="material-symbols-outlined text-[22px]">brush</span>
+            </div>
+            <span class="text-xs font-bold text-ink-900 group-hover:text-amber-700">Anime Manga</span>
+            <span class="text-[10px] text-ink-500 mt-0.5">Tankōbon Vault</span>
+          </button>
+          <button onclick="switchTab('comics')" class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-ink-200 hover:border-amber-600/50 hover:shadow-xs transition-all text-center group">
+            <div class="w-11 h-11 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <span class="material-symbols-outlined text-[22px]">palette</span>
+            </div>
+            <span class="text-xs font-bold text-ink-900 group-hover:text-amber-700">Comics</span>
+            <span class="text-[10px] text-ink-500 mt-0.5">Graphic Novels</span>
+          </button>
+          <button onclick="switchTab('wisdom')" class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-ink-200 hover:border-amber-600/50 hover:shadow-xs transition-all text-center group">
+            <div class="w-11 h-11 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <span class="material-symbols-outlined text-[22px]">psychology</span>
+            </div>
+            <span class="text-xs font-bold text-ink-900 group-hover:text-amber-700">Wisdom</span>
+            <span class="text-[10px] text-ink-500 mt-0.5">Mind &amp; Habits</span>
+          </button>
+          <button onclick="switchTab('magazines')" class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-ink-200 hover:border-amber-600/50 hover:shadow-xs transition-all text-center group">
+            <div class="w-11 h-11 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <span class="material-symbols-outlined text-[22px]">newspaper</span>
+            </div>
+            <span class="text-xs font-bold text-ink-900 group-hover:text-amber-700">Magazines</span>
+            <span class="text-[10px] text-ink-500 mt-0.5">Periodicals</span>
+          </button>
+          <button onclick="switchTab('ai')" class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-ink-200 hover:border-amber-600/50 hover:shadow-xs transition-all text-center group">
+            <div class="w-11 h-11 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <span class="material-symbols-outlined text-[22px]">neurology</span>
+            </div>
+            <span class="text-xs font-bold text-ink-900 group-hover:text-amber-700">ReadGenius AI</span>
+            <span class="text-[10px] text-amber-700 font-semibold mt-0.5">Live Guide</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Spotlight: The Midnight Library -->
+      <div class="p-5 rounded-2xl bg-white border border-ink-200 shadow-xs flex flex-col gap-4">
+        <div class="flex items-center justify-between border-b border-ink-100 pb-3">
+          <span class="text-xs font-bold text-amber-700 flex items-center gap-1.5 uppercase tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+            Curator's Choice • October Salon
+          </span>
+          <span class="text-xs bg-amber-50 text-amber-900 px-2.5 py-0.5 rounded-full font-bold">4.8 ★ (12,480 reviews)</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
+          <div class="w-28 h-40 rounded-xl bg-gradient-to-br from-amber-800 to-ink-900 text-white flex flex-col justify-end p-3 shrink-0 shadow-xs cursor-pointer" onclick="openExcerpt('The Midnight Library', 'Matt Haig', 'Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. To see how things would be if you had made other choices... Would you have done anything different, if you had the chance to undo your regrets?', 21.50)">
+            <span class="text-[9px] uppercase tracking-wider opacity-80">Matt Haig</span>
+            <h4 class="font-serif text-sm font-bold leading-tight">The Midnight Library</h4>
+          </div>
+          <div class="flex-1">
+            <h4 class="font-serif text-xl font-bold leading-tight">The Midnight Library</h4>
+            <p class="text-xs text-ink-500 font-medium mt-0.5">By Matt Haig • Contemporary Philosophical Fiction</p>
+            <p class="text-xs text-ink-700 italic mt-2 leading-relaxed">"Between life and death there is a library where the shelves go on forever. Every book holds an opportunity to experience an alternate version of yourself."</p>
+            <div class="flex items-center justify-between pt-3 mt-2 border-t border-ink-100">
+              <span class="text-lg font-serif font-bold text-ink-900">$21.50 <span class="text-xs font-sans text-ink-500 line-through ml-1">$28.00</span></span>
+              <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold">Hardbound Cloth Folio</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-2.5 pt-1">
+          <button onclick="openExcerpt('The Midnight Library', 'Matt Haig', 'Between life and death there is a library, and within that library, the shelves go on forever...', 21.50)" class="flex-1 py-2.5 rounded-xl bg-ink-100 hover:bg-ink-200 text-ink-900 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+            <span class="material-symbols-outlined text-[16px]">visibility</span> Read Excerpt
+          </button>
+          <button onclick="addToBag('The Midnight Library', 'Matt Haig', 'Hardbound Collector', 21.50)" class="flex-1 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-colors">
+            <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+          </button>
+        </div>
+      </div>
+
+      <!-- Best-Sellers Grid -->
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-serif text-lg font-bold">Archival Best-Sellers</h3>
+          <button onclick="switchTab('fiction')" class="text-xs font-bold text-amber-700 hover:underline">View All Catalogue</button>
+        </div>
+        <div id="homeBestSellers" class="grid grid-cols-2 sm:grid-cols-4 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- 2. STORY & FICTION TAB -->
+    <section id="pane-fiction" class="tab-pane flex flex-col gap-5">
+      <div class="rounded-2xl bg-amber-50/70 border border-amber-200 p-5">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">Literary Fiction</span>
+        <h2 class="font-serif text-2xl font-bold mt-2">Acclaimed Fiction &amp; Masterpiece Novels</h2>
+        <p class="text-xs sm:text-sm text-ink-700 mt-1">Smyth-sewn bindings, debossed foil spines, and timeless stories curated for discerning readers.</p>
+      </div>
+      <div id="fictionGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- 3. ANIME & MANGA TAB -->
+    <section id="pane-manga" class="tab-pane flex flex-col gap-5">
+      <div class="rounded-2xl bg-amber-50/70 border border-amber-200 p-5">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">Manga Pavilion</span>
+        <h2 class="font-serif text-2xl font-bold mt-2">Anime &amp; Manga Vault</h2>
+        <p class="text-xs sm:text-sm text-ink-700 mt-1">Authentic tankōbon releases, box sets, and bilingual collector volumes direct from Tokyo publishers.</p>
+      </div>
+      <div id="mangaGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- 4. COMICS & NOVELS TAB -->
+    <section id="pane-comics" class="tab-pane flex flex-col gap-5">
+      <div class="rounded-2xl bg-amber-50/70 border border-amber-200 p-5">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">Graphic Pavilion</span>
+        <h2 class="font-serif text-2xl font-bold mt-2">Comics &amp; Graphic Masterpieces</h2>
+        <p class="text-xs sm:text-sm text-ink-700 mt-1">Eisner award winners, oversized collector omnibuses, and influential visual narratives.</p>
+      </div>
+      <div id="comicsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- 5. MOTIVATIONAL WISDOM TAB -->
+    <section id="pane-wisdom" class="tab-pane flex flex-col gap-5">
+      <div class="rounded-2xl bg-amber-50/70 border border-amber-200 p-5">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">Human Wisdom</span>
+        <h2 class="font-serif text-2xl font-bold mt-2">Motivational &amp; Mindful Living</h2>
+        <p class="text-xs sm:text-sm text-ink-700 mt-1">Enduring blueprints on cognitive systems, discipline, resilience, and stoic philosophy.</p>
+      </div>
+      <div id="wisdomGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- 6. MAGAZINES TAB -->
+    <section id="pane-magazines" class="tab-pane flex flex-col gap-5">
+      <div class="rounded-2xl bg-amber-50/70 border border-amber-200 p-5">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">Periodical Lounge</span>
+        <h2 class="font-serif text-2xl font-bold mt-2">Curated Magazines &amp; Periodicals</h2>
+        <p class="text-xs sm:text-sm text-ink-700 mt-1">Independent architecture anthologies, lifestyle folios, and global business intelligence.</p>
+      </div>
+      <div id="magazinesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- 7. READGENIUS AI TAB -->
+    <section id="pane-ai" class="tab-pane flex flex-col gap-5">
+      <div class="rounded-2xl bg-amber-50/80 border border-amber-200 p-5">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">Librarian Intelligence</span>
+        <h2 class="font-serif text-2xl font-bold mt-2">ReadGenius AI Assistant</h2>
+        <p class="text-xs sm:text-sm text-ink-700 mt-1">Ask for personalized reading syllabi, thematic recommendations, or order inquiries.</p>
+        
+        <!-- Prompt catalysts -->
+        <div class="flex flex-wrap gap-2 mt-3">
+          <button onclick="sendPresetPrompt('Recommend books like The Midnight Library with philosophical depth')" class="px-3 py-1.5 rounded-xl bg-white border border-ink-200 text-xs font-semibold text-ink-800 hover:border-amber-600 hover:text-amber-700 shadow-xs transition-all">✨ Books like The Midnight Library</button>
+          <button onclick="sendPresetPrompt('Compare Atomic Habits with Stoic principles')" class="px-3 py-1.5 rounded-xl bg-white border border-ink-200 text-xs font-semibold text-ink-800 hover:border-amber-600 hover:text-amber-700 shadow-xs transition-all">🏛️ Habits vs Stoicism</button>
+          <button onclick="sendPresetPrompt('What makes Frieren such a touching fantasy manga?')" class="px-3 py-1.5 rounded-xl bg-white border border-ink-200 text-xs font-semibold text-ink-800 hover:border-amber-600 hover:text-amber-700 shadow-xs transition-all">🌸 Why read Frieren?</button>
+          <button onclick="sendPresetPrompt('What is your return and doorstep exchange policy?')" class="px-3 py-1.5 rounded-xl bg-white border border-ink-200 text-xs font-semibold text-ink-800 hover:border-amber-600 hover:text-amber-700 shadow-xs transition-all">📦 Return &amp; Guarantee Policy</button>
+        </div>
+      </div>
+
+      <!-- Live Chat Console -->
+      <div class="rounded-2xl bg-white border border-ink-200 shadow-xs overflow-hidden flex flex-col h-[460px]">
+        <div class="px-4 py-3 bg-amber-50/50 border-b border-ink-100 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-xs font-bold text-ink-900">ReadGenius Literary Concierge v4.2</span>
+          </div>
+          <button onclick="resetAiChat()" class="text-xs font-semibold text-amber-700 hover:underline">Reset Session</button>
+        </div>
+        <div id="aiChatStream" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#faf9f6]/40">
+          <div class="flex items-start gap-3">
+            <div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 text-xs font-bold">RG</div>
+            <div class="bg-white p-3.5 rounded-2xl rounded-tl-sm border border-ink-200 text-xs text-ink-900 shadow-xs max-w-lg leading-relaxed">
+              Greetings, bibliophile! I am your curated literary guide at PageHaven. Whether you seek contemplative fiction, rare tankōbon manga, or habit-building frameworks, I'm here to illuminate your path. How may I assist your shelf today?
+            </div>
+          </div>
+        </div>
+        <form onsubmit="handleAiSubmit(event)" class="p-3 bg-white border-t border-ink-200 flex gap-2">
+          <input id="aiInput" type="text" placeholder="Ask about books, themes, authors, order assistance..." class="flex-1 px-4 py-2 bg-ink-100/60 rounded-xl text-xs text-ink-900 border border-transparent focus:border-amber-600 focus:bg-white focus:outline-none transition-all"/>
+          <button type="submit" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold flex items-center gap-1 shadow-xs transition-colors">
+            <span>Consult</span>
+            <span class="material-symbols-outlined text-[15px]">send</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 8. HELP CARE TAB -->
+    <section id="pane-care" class="tab-pane flex flex-col gap-5">
+      <div class="rounded-2xl bg-amber-50/70 border border-amber-200 p-5">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider">Sanctuary Guarantee</span>
+        <h2 class="font-serif text-2xl font-bold mt-2">Help Centre &amp; Customer Care</h2>
+        <p class="text-xs sm:text-sm text-ink-700 mt-1">Every volume is backed by our 14-day archival satisfaction guarantee.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-4 rounded-2xl bg-white border border-ink-200 shadow-xs">
+          <span class="material-symbols-outlined text-amber-700 text-3xl mb-2">assignment_return</span>
+          <h4 class="font-serif text-base font-bold">14-Day Returns</h4>
+          <p class="text-xs text-ink-500 mt-1">Complimentary courier doorstep pickup for pristine or unread physical volumes.</p>
+          <button onclick="alert('Return request initiated for Order #PH-89412. Courier pickup scheduled.')" class="mt-3 text-xs font-bold text-amber-700 hover:underline">Start Return →</button>
+        </div>
+        <div class="p-4 rounded-2xl bg-white border border-ink-200 shadow-xs">
+          <span class="material-symbols-outlined text-amber-700 text-3xl mb-2">local_shipping</span>
+          <h4 class="font-serif text-base font-bold">Track Shipment</h4>
+          <p class="text-xs text-ink-500 mt-1">Active parcel: <b>#PH-89412</b> is in transit via Express Archival Courier.</p>
+          <button onclick="alert('Order #PH-89412: Out for delivery today with protective acid-free wrapping.')" class="mt-3 text-xs font-bold text-amber-700 hover:underline">View Live Map →</button>
+        </div>
+        <div class="p-4 rounded-2xl bg-white border border-ink-200 shadow-xs">
+          <span class="material-symbols-outlined text-amber-700 text-3xl mb-2">menu_book</span>
+          <h4 class="font-serif text-base font-bold">Damaged Replacement</h4>
+          <p class="text-xs text-ink-500 mt-1">Instant replacement if a cover or deckled page is creased in transit.</p>
+          <button onclick="alert('Replacement claim form opened. Upload proof to receive immediate dispatch.')" class="mt-3 text-xs font-bold text-amber-700 hover:underline">Report Defect →</button>
+        </div>
+        <div class="p-4 rounded-2xl bg-white border border-ink-200 shadow-xs">
+          <span class="material-symbols-outlined text-amber-700 text-3xl mb-2">support_agent</span>
+          <h4 class="font-serif text-base font-bold">Toll-Free Concierge</h4>
+          <p class="text-xs text-ink-500 mt-1">Direct support 7 days a week: 1-800-PAGEHAVEN (9 AM - 8 PM EST).</p>
+          <button onclick="alert('Connecting to PageHaven Toll-Free Concierge: 1-800-PAGEHAVEN')" class="mt-3 text-xs font-bold text-amber-700 hover:underline">Call Desk →</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SLIDE-OVER READING BAG (CART) ================= -->
+  <div id="cartDrawerBackdrop" class="fixed inset-0 z-50 bg-black/30 backdrop-blur-xs transition-opacity duration-300 opacity-0 pointer-events-none" onclick="toggleCart()"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300">
+    <div class="p-4 border-b border-ink-200 flex items-center justify-between bg-amber-50/40">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-amber-700">local_mall</span>
+        <h3 class="font-serif text-lg font-bold">Your Reading Bag</h3>
+        <span id="cartHeaderBadge" class="text-xs font-semibold text-ink-500">(3 items)</span>
+      </div>
+      <button onclick="toggleCart()" class="w-8 h-8 rounded-full flex items-center justify-center text-ink-500 hover:text-ink-900 hover:bg-white transition-colors">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div id="cartItemsList" class="flex-1 p-4 overflow-y-auto space-y-3"></div>
+    <div class="p-4 border-t border-ink-200 bg-[#faf9f6] flex flex-col gap-3">
+      <!-- Coupon input -->
+      <div class="flex gap-2">
+        <input id="couponInput" type="text" placeholder="Promo code (e.g. PAGE25)" class="flex-1 px-3 py-1.5 bg-white border border-ink-200 rounded-xl text-xs uppercase font-mono tracking-wider focus:outline-none focus:border-amber-600"/>
+        <button onclick="applyCoupon()" class="px-3.5 py-1.5 bg-ink-900 text-white text-xs font-bold rounded-xl hover:bg-amber-700 transition-colors">Apply</button>
+      </div>
+      <div id="couponAppliedMsg" class="hidden text-xs text-amber-700 font-semibold flex items-center gap-1">
+        <span class="material-symbols-outlined text-[15px]">check_circle</span> 25% Autumn Salon voucher applied!
+      </div>
+      <!-- Totals -->
+      <div class="space-y-1 text-xs text-ink-700">
+        <div class="flex justify-between"><span>Subtotal</span><span id="cartSubtotal" class="font-bold text-ink-900">$49.00</span></div>
+        <div class="flex justify-between text-emerald-700" id="discountRow" style="display:none;"><span>Privilege Discount</span><span id="cartDiscount">-$0.00</span></div>
+        <div class="flex justify-between"><span>Doorstep Packaging &amp; Courier</span><span class="text-emerald-700 font-bold">Complimentary</span></div>
+        <div class="flex justify-between text-base font-serif font-bold text-ink-900 pt-2 border-t border-ink-200">
+          <span>Total</span>
+          <span id="cartGrandTotal">$49.00</span>
+        </div>
+      </div>
+      <button onclick="openCheckoutModal()" class="w-full py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-colors">
+        <span class="material-symbols-outlined text-[18px]">lock</span>
+        <span>Proceed to Secure Checkout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= EXCERPT PREVIEW MODAL ================= -->
+  <div id="excerptModal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 border border-ink-200 shadow-xl flex flex-col gap-4 transform scale-95 transition-transform duration-200" id="excerptModalBox">
+      <div class="flex items-start justify-between border-b border-ink-100 pb-3">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-amber-700 tracking-wider">Archival Chapter Excerpt</span>
+          <h3 id="excerptTitle" class="font-serif text-xl font-bold leading-tight mt-0.5">The Midnight Library</h3>
+          <p id="excerptAuthor" class="text-xs text-ink-500">By Matt Haig</p>
+        </div>
+        <button onclick="closeExcerpt()" class="text-ink-500 hover:text-ink-900 p-1">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-600/10">
+        <p id="excerptText" class="text-xs text-ink-800 leading-relaxed font-serif italic"></p>
+      </div>
+      <div class="flex items-center justify-between pt-2">
+        <div>
+          <span class="text-xs text-ink-500 font-medium">Acquisition Price</span>
+          <div id="excerptPrice" class="font-serif text-lg font-bold text-ink-900">$21.50</div>
+        </div>
+        <button id="excerptAddBtn" class="px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors">
+          <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= GUEST SIGN IN / JOIN MODAL ================= -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 border border-ink-200 shadow-xl flex flex-col gap-4">
+      <div class="flex items-center justify-between border-b border-ink-100 pb-3">
+        <div>
+          <h3 class="font-serif text-lg font-bold text-ink-900">Welcome to PageHaven</h3>
+          <p class="text-xs text-ink-500">Sign in or create a complimentary reader account</p>
+        </div>
+        <button onclick="closeAuthModal()" class="text-ink-500 hover:text-ink-900 p-1">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <form onsubmit="handleAuthSubmit(event)" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-bold text-ink-700 uppercase mb-1">Email Address</label>
+          <input type="email" required placeholder="reader@havenbooks.org" class="w-full px-3.5 py-2 bg-ink-100/50 border border-ink-200 rounded-xl text-xs text-ink-900 focus:outline-none focus:border-amber-600"/>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold text-ink-700 uppercase mb-1">Password</label>
+          <input type="password" required placeholder="••••••••••••" class="w-full px-3.5 py-2 bg-ink-100/50 border border-ink-200 rounded-xl text-xs text-ink-900 focus:outline-none focus:border-amber-600"/>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors shadow-xs">
+          Sign In / Enter Sanctuary
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-ink-900 text-white px-4 py-2.5 rounded-full text-xs font-semibold shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 flex items-center gap-2">
+    <span class="material-symbols-outlined text-[17px] text-amber-500">check_circle</span>
+    <span id="toastMsg">Added to your Reading Bag</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Master Bookstore Catalog Data
+    const booksData = [
+      // Fiction
+      { id: 1, title: 'The Midnight Library', author: 'Matt Haig', category: 'fiction', price: 21.50, format: 'Hardcover', tag: 'Curator Pick', desc: 'Between life and death there is a library where the shelves go on forever...' },
+      { id: 2, title: 'Before the Coffee Gets Cold', author: 'Toshikazu Kawaguchi', category: 'fiction', price: 16.50, format: 'Paperback', tag: 'Japanese Lit', desc: 'In a small Tokyo back alley, a quaint café offers visitors the chance to travel through time.' },
+      { id: 3, title: 'Tomorrow, and Tomorrow, and Tomorrow', author: 'Gabrielle Zevin', category: 'fiction', price: 22.99, format: 'Hardcover', tag: 'Bestseller', desc: 'Two friends who find intimacy, heartbreak, and greatness designing legendary virtual worlds.' },
+      { id: 4, title: 'Klara and the Sun', author: 'Kazuo Ishiguro', category: 'fiction', price: 21.50, format: 'Hardcover', tag: 'Nobel Winner', desc: 'A thrilling look at our rapidly changing world through the unforgettable eyes of an Artificial Friend.' },
+      { id: 5, title: 'The Song of Achilles', author: 'Madeline Miller', category: 'fiction', price: 16.00, format: 'Paperback', tag: 'Mythology', desc: 'A breathtaking and heart-wrenching retelling of Homer’s Iliad.' },
+      { id: 6, title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', category: 'fiction', price: 21.50, format: 'Hardcover', tag: 'Masterwork', desc: 'The brilliant chronicle of the rise and fall of the mythical town of Macondo.' },
+      // Manga
+      { id: 7, title: "Frieren: Beyond Journey's End", author: 'Kanehito Yamada', category: 'manga', price: 12.99, format: 'Tankōbon', tag: 'Award Winner', desc: 'An emotional, bittersweet odyssey following an elf mage learning the weight of human bonds.' },
+      { id: 8, title: 'One Piece: Wano Climax', author: 'Eiichiro Oda', category: 'manga', price: 14.00, format: 'Tankōbon', tag: 'Epic Shonen', desc: 'Luffy unleashes the mythical Sun God Gear 5 form in the legendary clash of Onigashima.' },
+      { id: 9, title: 'Chainsaw Man: Vol 13', author: 'Tatsuki Fujimoto', category: 'manga', price: 11.50, format: 'Tankōbon', tag: 'Action', desc: 'The chaotic and razor-sharp continuation of the devil hunters in Tokyo.' },
+      { id: 10, title: 'Attack on Titan Omnibus', author: 'Hajime Isayama', category: 'manga', price: 24.99, format: 'Hardcover', tag: 'Dark Fantasy', desc: 'The monumental battle for freedom and truth that spans towering walls and generations.' },
+      { id: 11, title: 'Spy x Family: Mission 10', author: 'Tatsuya Endo', category: 'manga', price: 11.50, format: 'Tankōbon', tag: 'Comedy', desc: 'Master spy Twilight navigates dangerous covert missions while keeping an eccentric found family together.' },
+      // Comics
+      { id: 12, title: 'Watchmen: DC Compact', author: 'Alan Moore', category: 'comics', price: 19.99, format: 'Deluxe HC', tag: 'Hugo Winner', desc: 'A groundbreaking deconstruction of superhero mythos that altered graphic literature forever.' },
+      { id: 13, title: 'Lore Olympus: Volume 1', author: 'Rachel Smythe', category: 'comics', price: 22.00, format: 'Full Color HC', tag: 'Myth Romance', desc: 'A vibrant, modern retelling of Hades and Persephone in breathtaking watercolor art.' },
+      { id: 14, title: 'The Sandman: Preludes', author: 'Neil Gaiman', category: 'comics', price: 25.00, format: 'Deluxe HC', tag: 'Dark Fantasy', desc: 'The Lord of Dreams is imprisoned for seven decades before embarking on an epic restoration of his realm.' },
+      { id: 15, title: 'Batman: Year One', author: 'Frank Miller', category: 'comics', price: 18.50, format: 'Collector HC', tag: 'Noir Classic', desc: 'The foundational graphic novel detailing Bruce Wayne and Jim Gordon’s earliest days in Gotham.' },
+      // Wisdom
+      { id: 16, title: 'Atomic Habits', author: 'James Clear', category: 'wisdom', price: 18.00, format: 'Hardcover', tag: '#1 Bestseller', desc: 'You do not rise to the level of your goals. You fall to the level of your systems.' },
+      { id: 17, title: 'The Courage to Be Disliked', author: 'Ichiro Kishimi', category: 'wisdom', price: 19.95, format: 'Hardcover', tag: 'Philosophy', desc: 'How to free yourself from past trauma, interpersonal burdens, and find true agency.' },
+      { id: 18, title: 'Meditations', author: 'Marcus Aurelius', category: 'wisdom', price: 20.00, format: 'Clothbound', tag: 'Stoic Canon', desc: 'Intimate personal reflections on stoic virtue, duty, and quiet resilience.' },
+      { id: 19, title: "Man's Search for Meaning", author: 'Viktor E. Frankl', category: 'wisdom', price: 15.99, format: 'Hardcover', tag: 'Resilience', desc: 'Frankl’s timeless account of surviving the camps and uncovering deep, purpose-driven logotherapy.' },
+      { id: 20, title: 'The Psychology of Money', author: 'Morgan Housel', category: 'wisdom', price: 17.50, format: 'Hardcover', tag: 'Mindset', desc: 'Timeless lessons on wealth, greed, and happiness through nineteen short stories.' },
+      // Magazines
+      { id: 21, title: 'Solace & Living (Issue 48)', author: 'Scandinavian Editorial', category: 'magazines', price: 9.50, format: 'Print Folio', tag: 'Design', desc: 'Minimalist Nordic architecture, tactile wabi-sabi homes, and mindful interiors.' },
+      { id: 22, title: 'Forbes Global Leaders', author: 'Forbes Editorial', category: 'magazines', price: 10.00, format: 'Dossier', tag: 'Business', desc: 'Annual dossier exploring sustainable infrastructure and pioneer literary philanthropists.' },
+      { id: 23, title: 'Vogue Style: New Wave', author: 'Vogue Editorial', category: 'magazines', price: 9.99, format: 'High-Gloss', tag: 'Fashion', desc: 'Haute couture editorial spotlights, sustainable fabrics, and avant-garde runway profiles.' }
+    ];
+
+    // Shopping Bag State
+    let cart = [
+      { id: 1, title: 'The Midnight Library', author: 'Matt Haig', format: 'Hardbound Collector', price: 21.50, qty: 1 },
+      { id: 16, title: 'Atomic Habits', author: 'James Clear', format: 'Hardcover Edition', price: 18.00, qty: 1 },
+      { id: 21, title: 'Solace & Living (Issue 48)', author: 'Scandinavian Editorial', format: 'Print Folio', price: 9.50, qty: 1 }
+    ];
+    let discountRate = 0;
+
+    // Render Cards Utility
+    function createCardHTML(b) {
+      return `
+        <div class="p-3.5 rounded-2xl bg-white border border-ink-200 shadow-xs hover:shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-xl bg-gradient-to-br from-amber-700 to-ink-900 text-white p-3 flex flex-col justify-between mb-2.5 cursor-pointer shadow-xs" onclick="openExcerpt('${b.title}', '${b.author}', '${b.desc}', ${b.price})">
+              <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-white/20 w-fit backdrop-blur-xs">${b.tag}</span>
+              <div>
+                <h4 class="font-serif text-sm font-bold leading-tight">${b.title}</h4>
+                <p class="text-[10px] opacity-80 mt-0.5">${b.author}</p>
+              </div>
+            </div>
+            <h4 class="font-serif text-sm font-bold truncate text-ink-900">${b.title}</h4>
+            <p class="text-[11px] text-ink-500">${b.author}</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-ink-100">
+            <div class="flex items-center justify-between text-xs font-bold text-ink-900 mb-2">
+              <span>$${b.price.toFixed(2)}</span>
+              <span class="text-[10px] text-amber-700 font-semibold">${b.format}</span>
+            </div>
+            <button onclick="addToBag('${b.title}', '${b.author}', '${b.format}', ${b.price})" class="w-full py-2 rounded-xl bg-amber-50 hover:bg-amber-600 hover:text-white text-amber-900 text-xs font-bold flex items-center justify-center gap-1 transition-all">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $${b.price.toFixed(2)}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderCatalogs() {
+      // Home best-sellers
+      const homeBS = booksData.filter(b => [1, 7, 12, 16].includes(b.id));
+      document.getElementById('homeBestSellers').innerHTML = homeBS.map(createCardHTML).join('');
+      // Categories
+      document.getElementById('fictionGrid').innerHTML = booksData.filter(b => b.category === 'fiction').map(createCardHTML).join('');
+      document.getElementById('mangaGrid').innerHTML = booksData.filter(b => b.category === 'manga').map(createCardHTML).join('');
+      document.getElementById('comicsGrid').innerHTML = booksData.filter(b => b.category === 'comics').map(createCardHTML).join('');
+      document.getElementById('wisdomGrid').innerHTML = booksData.filter(b => b.category === 'wisdom').map(createCardHTML).join('');
+      document.getElementById('magazinesGrid').innerHTML = booksData.filter(b => b.category === 'magazines').map(createCardHTML).join('');
+    }
+
+    // Tab Navigation
+    function switchTab(tabId) {
+      clearSearch();
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(b => {
+        b.className = 'nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white text-ink-700 border border-ink-200 hover:bg-ink-100 transition-all';
+      });
+      const activePane = document.getElementById(`pane-${tabId}`);
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activePane) activePane.classList.add('active');
+      if (activeNav) {
+        activeNav.className = 'nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-amber-600 text-white shadow-xs transition-all';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Shopping Bag Logic
+    function renderCart() {
+      const container = document.getElementById('cartItemsList');
+      const badge = document.getElementById('cartCountBadge');
+      const headerBadge = document.getElementById('cartHeaderBadge');
+      const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+      badge.textContent = totalCount;
+      headerBadge.textContent = `(${totalCount} items)`;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="h-64 flex flex-col items-center justify-center text-center p-6 text-ink-500">
+            <span class="material-symbols-outlined text-4xl mb-2 text-ink-300">remove_shopping_cart</span>
+            <p class="text-xs font-bold text-ink-700">Your Reading Bag is empty</p>
+            <p class="text-[11px] mt-1">Discover rare hardbounds or manga from our curated collections.</p>
+            <button onclick="toggleCart(); switchTab('fiction');" class="mt-4 px-4 py-2 rounded-xl bg-amber-600 text-white text-xs font-bold">Explore Books</button>
+          </div>
+        `;
+      } else {
+        container.innerHTML = cart.map((item, idx) => `
+          <div class="p-3 rounded-xl bg-[#faf9f6] border border-ink-200 flex items-center justify-between gap-3">
+            <div class="flex-1">
+              <h4 class="font-serif text-xs font-bold text-ink-900 leading-tight">${item.title}</h4>
+              <p class="text-[10px] text-ink-500">${item.author} • ${item.format}</p>
+              <span class="text-xs font-bold text-ink-900 mt-1 inline-block">$${(item.price * item.qty).toFixed(2)}</span>
+            </div>
+            <div class="flex items-center gap-1 bg-white px-2 py-1 rounded-lg border border-ink-200">
+              <button onclick="changeQty(${idx}, -1)" class="w-5 h-5 flex items-center justify-center text-ink-700 hover:text-amber-700 font-bold text-sm">-</button>
+              <span class="text-xs font-bold px-1.5">${item.qty}</span>
+              <button onclick="changeQty(${idx}, 1)" class="w-5 h-5 flex items-center justify-center text-ink-700 hover:text-amber-700 font-bold text-sm">+</button>
+            </div>
+            <button onclick="removeCartItem(${idx})" class="text-ink-400 hover:text-rose-600 p-1">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        `).join('');
+      }
+
+      // Calculations
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const discount = subtotal * discountRate;
+      const grandTotal = Math.max(0, subtotal - discount);
+
+      document.getElementById('cartSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('cartDiscount').textContent = `-$${discount.toFixed(2)}`;
+      document.getElementById('cartGrandTotal').textContent = `$${grandTotal.toFixed(2)}`;
+      document.getElementById('discountRow').style.display = discountRate > 0 ? 'flex' : 'none';
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        backdrop.classList.remove('opacity-100');
+      } else {
+        renderCart();
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100');
+      }
+    }
+
+    function addToBag(title, author, format, price) {
+      const existing = cart.find(i => i.title === title && i.format === format);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: Date.now(), title, author, format, price, qty: 1 });
+      }
+      renderCart();
+      showToast(`Added "${title}" to your Reading Bag`);
+    }
+
+    function changeQty(idx, delta) {
+      if (cart[idx]) {
+        cart[idx].qty += delta;
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+        renderCart();
+      }
+    }
+
+    function removeCartItem(idx) {
+      if (cart[idx]) {
+        const itemTitle = cart[idx].title;
+        cart.splice(idx, 1);
+        renderCart();
+        showToast(`Removed "${itemTitle}" from Bag`);
+      }
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('couponInput').value.trim().toUpperCase();
+      if (code === 'PAGE25') {
+        discountRate = 0.25;
+        document.getElementById('couponAppliedMsg').classList.remove('hidden');
+        renderCart();
+        showToast('Voucher PAGE25 applied: 25% off subtotal!');
+      } else {
+        alert('Invalid coupon. Try using code PAGE25 for 25% off!');
+      }
+    }
+
+    function copyCoupon(code) {
+      navigator.clipboard.writeText(code);
+      showToast(`Coupon ${code} copied to clipboard!`);
+    }
+
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        alert('Your Reading Bag is empty. Please add titles before checkout.');
+        return;
+      }
+      toggleCart();
+      alert(`Proceeding to checkout! Order total: ${document.getElementById('cartGrandTotal').textContent}. Order tracking ID #PH-98432 generated.`);
+    }
+
+    // Excerpt Reader Modal
+    function openExcerpt(title, author, text, price) {
+      document.getElementById('excerptTitle').textContent = title;
+      document.getElementById('excerptAuthor').textContent = `By ${author}`;
+      document.getElementById('excerptText').textContent = `"${text}"`;
+      document.getElementById('excerptPrice').textContent = `$${price.toFixed(2)}`;
+      document.getElementById('excerptAddBtn').onclick = () => {
+        addToBag(title, author, 'Hardbound Collector', price);
+        closeExcerpt();
+      };
+
+      const modal = document.getElementById('excerptModal');
+      const box = document.getElementById('excerptModalBox');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      box.classList.remove('scale-95');
+      box.classList.add('scale-100');
+    }
+
+    function closeExcerpt() {
+      const modal = document.getElementById('excerptModal');
+      const box = document.getElementById('excerptModalBox');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      box.classList.add('scale-95');
+      box.classList.remove('scale-100');
+    }
+
+    // Search Logic
+    function handleSearch(q) {
+      const query = q.trim().toLowerCase();
+      const searchView = document.getElementById('searchView');
+      const mainContainer = document.getElementById('mainContainer');
+      const clearBtn = document.getElementById('clearSearchBtn');
+
+      if (!query) {
+        clearSearch();
+        return;
+      }
+      clearBtn.classList.remove('hidden');
+      searchView.classList.remove('hidden');
+      mainContainer.classList.add('hidden');
+
+      const matches = booksData.filter(b => 
+        b.title.toLowerCase().includes(query) || 
+        b.author.toLowerCase().includes(query) || 
+        b.desc.toLowerCase().includes(query)
+      );
+
+      document.getElementById('searchHeader').textContent = `Search results for "${q}" (${matches.length} books)`;
+      document.getElementById('searchResultsGrid').innerHTML = matches.length > 0 
+        ? matches.map(createCardHTML).join('') 
+        : `<p class="col-span-4 text-xs text-ink-500 py-8 text-center">No volumes matching "${q}". Try searching for 'Fiction', 'Manga', or 'Habits'.</p>`;
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      document.getElementById('searchView').classList.add('hidden');
+      document.getElementById('mainContainer').classList.remove('hidden');
+    }
+
+    // AI Chat Concierge
+    function handleAiSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('aiInput');
+      const query = input.value.trim();
+      if (!query) return;
+      appendUserMessage(query);
+      input.value = '';
+
+      setTimeout(() => {
+        generateAiResponse(query);
+      }, 400);
+    }
+
+    function sendPresetPrompt(text) {
+      switchTab('ai');
+      appendUserMessage(text);
+      setTimeout(() => {
+        generateAiResponse(text);
+      }, 400);
+    }
+
+    function appendUserMessage(text) {
+      const stream = document.getElementById('aiChatStream');
+      const userDiv = document.createElement('div');
+      userDiv.className = 'flex justify-end';
+      userDiv.innerHTML = `
+        <div class="bg-amber-600 text-white p-3 rounded-2xl rounded-tr-sm text-xs shadow-xs max-w-lg leading-relaxed">
+          ${text}
+        </div>
+      `;
+      stream.appendChild(userDiv);
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    function generateAiResponse(query) {
+      const q = query.toLowerCase();
+      let reply = "That is a wonderful literary inquiry! Based on our curated stacks, I recommend exploring our Story & Acclaimed Fiction collection or consulting our Motivational Wisdom library for deep insights.";
+
+      if (q.includes('midnight library') || q.includes('philosophical') || q.includes('regret')) {
+        reply = "If you resonated with <b>The Midnight Library</b>, you will love <b>Before the Coffee Gets Cold</b> by Toshikazu Kawaguchi ($16.50) and <b>Klara and the Sun</b> by Kazuo Ishiguro ($21.50). Both explore second chances, gentle melancholy, and finding light within grief.";
+      } else if (q.includes('atomic habits') || q.includes('stoic') || q.includes('habit')) {
+        reply = "Fascinating comparison! In <b>Atomic Habits</b>, James Clear emphasizes that 'you do not rise to your goals, you fall to your systems.' Marcus Aurelius echoes this in <b>Meditations</b>: our happiness relies on the discipline of our inner constitution rather than external storms. Reading both concurrently offers a profound masterclass in modern stoic action.";
+      } else if (q.includes('frieren') || q.includes('manga') || q.includes('anime')) {
+        reply = "<b>Frieren: Beyond Journey's End</b> ($12.99) is exceptional because it begins where most fantasy epics conclude. It explores the passage of time, mortal companionship through an immortal's eyes, and small, quiet kindnesses. Highly recommended in our authentic tankōbon print edition!";
+      } else if (q.includes('return') || q.includes('exchange') || q.includes('policy')) {
+        reply = "PageHaven offers an unconditional <b>14-Day Sanctuary Guarantee</b>. If any edition arrives with bumped corners or doesn't meet your expectations, we provide complimentary doorstep courier pickup and replacement. You can also track active order <b>#PH-89412</b> directly under our Help Care tab.";
+      }
+
+      const stream = document.getElementById('aiChatStream');
+      const aiDiv = document.createElement('div');
+      aiDiv.className = 'flex items-start gap-3';
+      aiDiv.innerHTML = `
+        <div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 text-xs font-bold">RG</div>
+        <div class="bg-white p-3.5 rounded-2xl rounded-tl-sm border border-ink-200 text-xs text-ink-900 shadow-xs max-w-lg leading-relaxed">
+          ${reply}
+        </div>
+      `;
+      stream.appendChild(aiDiv);
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    function resetAiChat() {
+      const stream = document.getElementById('aiChatStream');
+      stream.innerHTML = `
+        <div class="flex items-start gap-3">
+          <div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 text-xs font-bold">RG</div>
+          <div class="bg-white p-3.5 rounded-2xl rounded-tl-sm border border-ink-200 text-xs text-ink-900 shadow-xs max-w-lg leading-relaxed">
+            Session refreshed! How may I guide your literary exploration today? Feel free to ask for recommendations across fiction, manga, philosophy, or periodicals.
+          </div>
+        </div>
+      `;
+    }
+
+    // Auth Modal
+    function openAuthModal() {
+      const modal = document.getElementById('authModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function closeAuthModal() {
+      const modal = document.getElementById('authModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      closeAuthModal();
+      showToast('Welcome to PageHaven! Reader profile active with 25% welcome credit.');
+    }
+
+    // Toast Notification
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 2500);
+    }
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCatalogs();
+      renderCart();
+    });
+  </script>
+</body>
+</html>

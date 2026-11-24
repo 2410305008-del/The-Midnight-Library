@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#ffffff", "surface-bright": "#faf8ff", "surface-dim": "#d4d9ed", "tertiary-fixed": "#ffdad4", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "secondary-container": "#c3e6e7", "tertiary-container": "#c94a38", "primary-container": "#b15f00", "on-primary-fixed-variant": "#6e3900", "on-tertiary-fixed": "#410100", "surface-variant": "#dde2f6", "surface-container-highest": "#dde2f6", "background": "#faf8ff", "surface-container-low": "#f1f3ff", "on-secondary-fixed-variant": "#2b4c4d", "secondary": "#436465", "secondary-fixed-dim": "#aacdce", "primary": "#8d4b00", "on-primary-fixed": "#2f1500", "surface-container-high": "#e2e8fc", "on-surface": "#151b29", "outline": "#887364", "on-surface-variant": "#554336", "on-tertiary-fixed-variant": "#8a1c10", "on-background": "#151b29", "primary-fixed-dim": "#ffb77d", "surface-container": "#e9edff", "secondary-fixed": "#c6e9ea", "primary-fixed": "#ffdcc3", "tertiary-fixed-dim": "#ffb4a8", "on-secondary-fixed": "#002021", "on-error-container": "#93000a", "on-secondary-container": "#476869", "outline-variant": "#dbc2b0", "on-primary-container": "#fffbff", "inverse-surface": "#2a303f", "on-error": "#ffffff", "error": "#ba1a1a", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fffbff", "surface-tint": "#904d00", "inverse-on-surface": "#edf0ff", "tertiary": "#a83223", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2.5rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "title-editorial": ["Newsreader"], "body-lg": ["Manrope"], "headline-md": ["Newsreader"], "label-lg": ["Manrope"], "body-md": ["Manrope"], "body-sm": ["Manrope"], "headline-lg-mobile": ["Newsreader"], "display": ["Newsreader"], "label-sm": ["Manrope"], "label-md": ["Manrope"], "display-mobile": ["Newsreader"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2 min-w-0"><button aria-label="Go back" class="w-11 h-11 -ml-2 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="PageCraft Logo" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Pagecraft   Help Centre &amp; Support</h1></div><div class="flex items-center gap-1"><a aria-label="Help &amp; Support" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" data-path="pagecraft-help-centre-support" href="#"><span class="material-symbols-outlined text-[22px]">help_outline</span></a><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><a aria-label="Account Profile" class="w-8 h-8 rounded-full overflow-hidden ml-1 flex-shrink-0" data-path="pagecraft-account-library-hub" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full pb-10 space-y-6">
+<!-- 1. Warm Greeting & Conversational Search -->
+<section class="px-4 pt-4">
+<div class="bg-surface-container-low rounded-xl p-5 shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary-fixed opacity-40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary">Care &amp; Sanctuary</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-2">
+        How can we assist your reading journey today?
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+        From archival parcel inquiries to digital sync assistance, our curators and support specialists are here.
+      </p>
+<!-- Search Bar -->
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full pl-10 pr-10 py-3 bg-surface-container-lowest text-on-surface font-title-editorial text-title-editorial rounded-lg placeholder:text-on-surface-variant/60 placeholder:italic focus:outline-none focus:ring-1 focus:ring-primary shadow-sm transition-all" id="support-search" placeholder="Search order issue, return policy, download help..." type="text"/>
+<button aria-label="Clear search" class="absolute inset-y-0 right-3 flex items-center text-on-surface-variant hover:text-primary transition-colors" onclick="document.getElementById('support-search').value = ''" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Quick Suggested Queries -->
+<div class="flex items-center gap-2 mt-3 overflow-x-auto no-scrollbar py-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex-shrink-0">Frequent:</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-container-high transition-colors" type="button">Deckle-edge replacement</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-container-high transition-colors" type="button">Sync EPUB on Kindle</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-container-high transition-colors" type="button">Courier delayed</button>
+</div>
+</div>
+</section>
+<!-- 2. Quick Action Tiles (2x2 Grid) -->
+<section class="px-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Quick Resolution Portals</h3>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Self-Service</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Tile 1: Returns & Exchanges -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold mb-1">Returns &amp; Exchanges</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Instant 14-day replacement or refund for damaged or misprinted editions.</p>
+</div>
+<div class="pt-3 mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold">14-Day Guarantee</span>
+<span class="material-symbols-outlined text-[16px] text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Tile 2: Order & Tracking -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold mb-1">Order &amp; Tracking</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Live courier status, customs milestones, and dispatch notifications.</p>
+</div>
+<div class="pt-3 mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">Live Tracking</span>
+<span class="material-symbols-outlined text-[16px] text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Tile 3: E-Book & Download Help -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">devices_fold</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold mb-1">E-Book &amp; Sync</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Direct EPUB/PDF download links, cloud sync errors, and font fixes.</p>
+</div>
+<div class="pt-3 mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Instant Delivery</span>
+<span class="material-symbols-outlined text-[16px] text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Tile 4: Book & Service Review -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[22px]">rate_review</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold mb-1">Book Reviews</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Evaluate paper weight, binding craft, delivery speed, and reader joy.</p>
+</div>
+<div class="pt-3 mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Earn 50 Pts</span>
+<span class="material-symbols-outlined text-[16px] text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Recent Orders Quick-Action Card -->
+<section class="px-4">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">package_2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Order Resolution</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Order #PC-89412</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<!-- Status Strip -->
+<div class="flex items-center justify-between pb-3 mb-3 bg-surface-container-low/60 -mx-4 -mt-4 px-4 pt-3 rounded-t-xl">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Delivered 2 days ago</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+          Exchange eligible until Oct 28
+        </span>
+</div>
+<!-- Item list preview -->
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="flex items-center gap-3">
+<div class="w-12 h-16 rounded-md overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Editorial photograph of Atomic Habits hardcover edition book cover in warm amber natural light, sitting on an oak wood literary desk with crisp typography and tactile paper texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvPvOPAMtX-TZOnwXbnY7fmeAyyCfN2eI4d7ZPnUoST90DWduuTM7-HuSJafo8o5YFA3JcZCf0S7_GX6A0gZaen3FoOOc0nJ5BCu7UMM5VzU7xa03uieexCe9GvCdvHCnWbi47rlL2QD7E8N-IgaeNSn058iV5TNNL0nIqQybr-XTqXkXuSzpVfvVXKV3wIxbX9QdAK2puDIhr6p9pbAh7O15sNqnyihlN9GMULEllZ_PaEAK_a5oWkQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm">Hardcover</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Qty: 1</span>
+</div>
+<h5 class="font-title-editorial text-title-editorial text-on-surface truncate font-medium">Atomic Habits (Collector's Hardcover)</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">James Clear • Dispatched via Royal Courier</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-3 pt-2">
+<div class="w-12 h-16 rounded-md overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Modern manga cover art illustration of Jujutsu Kaisen Volume 1 digital e-book reader preview on parchment texture backdrop with deep obsidian inks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl7LPbsY9zh4zpfc1yWJPsX5rzCQy7fKw3Vm-284gI6XF8U3bn6tCrZxAl9esb4u2PHOJYNpoH7ScD0SfLkYb4PxYo_sc0j6OsAfVI1tIi4zHgfOukJHW6E0FTHWBFAYZ6xw6-MS00aICHS3dXcC4iOI211Cwr6m7wbAsIEFmrmU97OP0W6kyMy_yhkbq0iWLqYwgvH1TpPfHpOd_H4KWCt_Jr5RKG4yVUBP_MKLo6ISMO-V51pvvINw"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm">E-Book</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Ready in Library</span>
+</div>
+<h5 class="font-title-editorial text-title-editorial text-on-surface truncate font-medium">Jujutsu Kaisen, Vol. 1</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gege Akutami • Cloud Sync Complete</p>
+</div>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="grid grid-cols-1 gap-2 pt-4 mt-3">
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="selectCategory('Return &amp; Refund'); document.getElementById('issue-form').scrollIntoView({behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">swap_horiz</span>
+            Request Return / Exchange
+          </button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="selectCategory('Product Condition / Misprint'); document.getElementById('issue-form').scrollIntoView({behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">broken_image</span>
+            Report Damaged Book
+          </button>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary-fixed transition-colors" onclick="selectCategory('General Review / Compliment'); document.getElementById('issue-form').scrollIntoView({behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+          Write Product &amp; Delivery Review
+        </button>
+</div>
+</div>
+</section>
+<!-- 4. Active Tickets & Status Tracker -->
+<section class="px-4">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">confirmation_number</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Active Support Case</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold animate-pulse">1 Active</span>
+</div>
+<!-- Ticket Accordion / Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm" id="ticket-card">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Ticket #TCK-3091</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant/40"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Opened Yesterday</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold">
+            Book Replacement Pending
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Dune (Folio Deluxe) • Scuffed Spine Corner
+          </p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm">
+          In Progress
+        </span>
+</div>
+<!-- Progress Trackers -->
+<div class="mt-4 pt-3 bg-surface-container-low rounded-lg p-3">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+            Dispatched via Express Courier
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">AWB: 99420188</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 65%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Claim Validated</span>
+<span class="text-primary font-bold">Courier In-Transit</span>
+<span>Delivery (Oct 26)</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Handled by Specialist Eleanor V.</span>
+<button class="font-label-md text-label-md text-primary hover:text-on-primary-fixed-variant flex items-center gap-1" type="button">
+<span>View Detailed Timeline</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 5. Interactive Issue & Feedback Submission Form -->
+<section class="px-4" id="issue-form">
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<div class="mb-4">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Direct Resolution Form</span>
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight mt-0.5">
+          Submit an Issue or Share Your Experience
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Tell us about physical condition defects, delivery roadblocks, or celebrate an exceptional book package.
+        </p>
+</div>
+<!-- Category Filter Chips -->
+<div class="mb-4">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-2">
+          Select Category
+        </label>
+<div class="flex flex-wrap gap-2" id="category-chips">
+<button class="chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-primary text-on-primary font-semibold shadow-sm" data-category="Order / Delivery Issue" onclick="selectChip(this)" type="button">
+            Order / Delivery Issue
+          </button>
+<button class="chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-category="Return &amp; Refund" onclick="selectChip(this)" type="button">
+            Return &amp; Refund
+          </button>
+<button class="chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-category="Product Condition / Misprint" onclick="selectChip(this)" type="button">
+            Product Condition / Misprint
+          </button>
+<button class="chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-category="Digital Softcopy Bug" onclick="selectChip(this)" type="button">
+            Digital Softcopy Bug
+          </button>
+<button class="chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-category="General Review / Compliment" onclick="selectChip(this)" type="button">
+            General Review / Compliment
+          </button>
+</div>
+</div>
+<!-- Order Number Input -->
+<div class="mb-4">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1" for="order-num">
+          Associated Order Number <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(Optional)</span>
+</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" id="order-num" type="text" value="#PC-89412"/>
+</div>
+</div>
+<!-- Star Rating Component -->
+<div class="mb-4 p-3 bg-surface-container-low rounded-lg">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1.5">
+          Overall Experience with PageCraft
+        </label>
+<div class="flex items-center gap-1" id="star-rating-container">
+<button aria-label="1 star" class="star-btn p-1 text-primary focus:outline-none transition-transform hover:scale-110" onclick="setRating(1)" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="2 stars" class="star-btn p-1 text-primary focus:outline-none transition-transform hover:scale-110" onclick="setRating(2)" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="3 stars" class="star-btn p-1 text-primary focus:outline-none transition-transform hover:scale-110" onclick="setRating(3)" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="4 stars" class="star-btn p-1 text-primary focus:outline-none transition-transform hover:scale-110" onclick="setRating(4)" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="5 stars" class="star-btn p-1 text-on-surface-variant/30 focus:outline-none transition-transform hover:scale-110" onclick="setRating(5)" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<span class="ml-2 font-label-sm text-label-sm text-on-surface-variant font-medium" id="rating-label">Very Satisfied (4/5)</span>
+</div>
+</div>
+<!-- Textarea Input -->
+<div class="mb-4">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1" for="issue-description">
+          Describe the situation or feedback
+        </label>
+<textarea class="w-full p-3 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/60" id="issue-description" placeholder="Describe what went wrong, damage location (e.g. spine, page 42 misprint), or tell us about your courier experience..." rows="3"></textarea>
+</div>
+<!-- Media Upload Preview Card -->
+<div class="mb-5">
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">
+          Photo Evidence / Screenshot Proof
+        </label>
+<div class="flex items-center gap-3">
+<!-- Upload Trigger Button -->
+<button class="flex-shrink-0 w-20 h-20 rounded-lg bg-surface-container-low hover:bg-surface-container flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="triggerMockUpload()" type="button">
+<span class="material-symbols-outlined text-[26px]">add_a_photo</span>
+<span class="font-label-sm text-label-sm mt-1">Attach</span>
+</button>
+<!-- Uploaded Preview Item -->
+<div class="relative w-20 h-20 rounded-lg overflow-hidden bg-surface-container shadow-sm flex-shrink-0" id="preview-thumbnail">
+<img class="w-full h-full object-cover" data-alt="Macro close-up photograph of a book spine corner with slight paper creasing under warm ambient indoor lamp lighting for customer support proof" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGXnDTeJ18cfvVvgmfryavroHKfhvAfxM1TidQUXH46P-z4yoI6MCmXzAZZNJWGSPOVTIPQhn0eZUg3ziNLHX1NxUvTfpf6dP6SR0mLlo8-E3f0IgqIqyFcl_b23xh-YDkE-0FVyt5cB9V880AUOWy0PryZ-twXGKUG8X4DYZxtSe83IqnsLuGRWN9o8nKnSizOr1psYHCqq6N04u6StH28J2SRxstkY1LbGYaMjeOBbI3GB9OFm95rw"/>
+<button aria-label="Remove photo" class="absolute top-1 right-1 w-5 h-5 rounded-full bg-inverse-surface/80 text-inverse-on-surface flex items-center justify-center hover:bg-tertiary transition-colors" onclick="document.getElementById('preview-thumbnail').style.display='none'" type="button">
+<span class="material-symbols-outlined text-[12px]">close</span>
+</button>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/70 text-inverse-on-surface font-label-sm text-label-sm text-center py-0.5">
+              spine_c.jpg
+            </div>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Photo Proof Guidelines</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-tight">
+              Attach clear shots of damaged dust jackets, torn deckle pages, or unreadable digital sync codes.
+            </p>
+</div>
+</div>
+</div>
+<!-- Primary Action CTA -->
+<button class="w-full py-3 px-4 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-primary transition-all active:scale-[0.99]" id="submit-btn" onclick="simulateSubmit()" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">mark_email_read</span>
+<span>Submit Support Ticket &amp; Experience</span>
+</button>
+<!-- Confirmation Toast Placeholder -->
+<div class="hidden mt-3 p-3 bg-secondary-container text-on-secondary-container rounded-lg flex items-center gap-2" id="confirmation-banner">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md font-semibold">Ticket logged! Our book conservator will reply within 4 hours.</span>
+</div>
+</div>
+</section>
+<!-- 6. Live Assistance Channels -->
+<section class="px-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Live Assistance Channels</h3>
+<div class="space-y-2.5">
+<!-- AI Companion Channel -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-secondary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">ReadGenius Support AI</h4>
+<span class="px-1.5 py-0.2 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">24/7 Live</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Instant answer on returns, reading formats &amp; sync</p>
+</div>
+</div>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-colors" type="button">
+          Start Chat
+        </button>
+</div>
+<!-- WhatsApp Channel -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">Dedicated Desk Concierge</h4>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">&lt; 5 min reply</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">WhatsApp support for physical order updates</p>
+</div>
+</div>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-secondary-container hover:text-on-secondary-container transition-colors" type="button">
+          Message
+        </button>
+</div>
+<!-- Toll-Free Phone Channel -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">call</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate">Toll-Free Book Concierge</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">1-800-PAGECRAFT (9 AM - 8 PM EST)</p>
+</div>
+</div>
+<a class="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" href="tel:18007243272">
+          Call Now
+        </a>
+</div>
+</div>
+</section>
+<!-- 7. Archival Promise Footer Note -->
+<section class="px-6 text-center pt-2">
+<div class="inline-flex items-center justify-center gap-1.5 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">The PageCraft Guarantee</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 italic">
+      "Every reader deserves pristine pages. If an edition falls short of archival standards, we make it whole without friction."
+    </p>
+</section>
+</div>
+<script>
+  function selectCategory(categoryName) {
+    const chips = document.querySelectorAll('#category-chips .chip-btn');
+    chips.forEach(btn => {
+      if (btn.getAttribute('data-category') === categoryName) {
+        btn.className = "chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-primary text-on-primary font-semibold shadow-sm";
+      } else {
+        btn.className = "chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high";
+      }
+    });
+  }
+
+  function selectChip(btn) {
+    const chips = document.querySelectorAll('#category-chips .chip-btn');
+    chips.forEach(c => {
+      c.className = "chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-surface-container text-on-surface hover:bg-surface-container-high";
+    });
+    btn.className = "chip-btn px-3 py-1.5 rounded-full text-left font-label-sm text-label-sm transition-all bg-primary text-on-primary font-semibold shadow-sm";
+  }
+
+  const ratingLabels = [
+    "Unsatisfied (1/5)",
+    "Fair (2/5)",
+    "Good (3/5)",
+    "Very Satisfied (4/5)",
+    "Delighted (5/5)"
+  ];
+
+  function setRating(rating) {
+    const stars = document.querySelectorAll('#star-rating-container .star-btn');
+    stars.forEach((s, idx) => {
+      if (idx < rating) {
+        s.className = "star-btn p-1 text-primary focus:outline-none transition-transform hover:scale-110";
+      } else {
+        s.className = "star-btn p-1 text-on-surface-variant/30 focus:outline-none transition-transform hover:scale-110";
+      }
+    });
+    const label = document.getElementById('rating-label');
+    if (label && ratingLabels[rating - 1]) {
+      label.textContent = ratingLabels[rating - 1];
+    }
+  }
+
+  function triggerMockUpload() {
+    const preview = document.getElementById('preview-thumbnail');
+    if (preview) {
+      preview.style.display = 'block';
+    }
+  }
+
+  function simulateSubmit() {
+    const submitBtn = document.getElementById('submit-btn');
+    const banner = document.getElementById('confirmation-banner');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+      <span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+      <span>Logging Archival Ticket...</span>
+    `;
+
+    setTimeout(() => {
+      submitBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px] text-secondary">check</span>
+        <span>Ticket Registered Successfully</span>
+      `;
+      submitBtn.className = "w-full py-3 px-4 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2";
+      if (banner) {
+        banner.classList.remove('hidden');
+      }
+    }, 900);
+  }
+</script></main></body></html>

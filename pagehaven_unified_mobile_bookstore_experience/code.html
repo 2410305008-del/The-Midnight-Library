@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#ffdcc3", "tertiary-container": "#c94a38", "secondary-fixed-dim": "#aacdce", "inverse-primary": "#ffb77d", "on-background": "#151b29", "on-tertiary-fixed-variant": "#8a1c10", "inverse-on-surface": "#edf0ff", "outline-variant": "#dbc2b0", "on-tertiary-fixed": "#410100", "on-tertiary-container": "#fffbff", "surface-container-highest": "#dde2f6", "on-error-container": "#93000a", "on-secondary-container": "#476869", "surface-container-high": "#e2e8fc", "on-primary-fixed": "#2f1500", "surface-dim": "#d4d9ed", "error": "#ba1a1a", "surface-tint": "#904d00", "error-container": "#ffdad6", "surface-container-low": "#f1f3ff", "on-secondary-fixed-variant": "#2b4c4d", "background": "#faf8ff", "secondary-fixed": "#c6e9ea", "tertiary-fixed": "#ffdad4", "primary-container": "#b15f00", "tertiary-fixed-dim": "#ffb4a8", "surface-container-lowest": "#ffffff", "secondary": "#436465", "primary": "#8d4b00", "surface-bright": "#faf8ff", "tertiary": "#a83223", "primary-fixed-dim": "#ffb77d", "inverse-surface": "#2a303f", "on-surface-variant": "#554336", "outline": "#887364", "surface-variant": "#dde2f6", "on-primary-container": "#fffbff", "on-surface": "#151b29", "on-error": "#ffffff", "surface-container": "#e9edff", "on-secondary": "#ffffff", "surface": "#faf8ff", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#6e3900", "secondary-container": "#c3e6e7", "on-primary": "#ffffff", "on-secondary-fixed": "#002021" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2.5rem", "space-xs": "0.25rem", "margin-sm": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "space-lg": "1.5rem" }, "fontFamily": { "display-mobile": [ "Newsreader" ], "headline-lg": [ "Newsreader" ], "display": [ "Newsreader" ], "label-md": [ "Manrope" ], "body-sm": [ "Manrope" ], "label-lg": [ "Manrope" ], "body-lg": [ "Manrope" ], "body-md": [ "Manrope" ], "label-sm": [ "Manrope" ], "headline-sm": [ "Newsreader" ], "title-editorial": [ "Newsreader" ], "headline-lg-mobile": [ "Newsreader" ], "headline-md": [ "Newsreader" ] }, "fontSize": { "display-mobile": [ "40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "display": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "title-editorial": [ "18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-md": [ "26px", { "lineHeight": "32px", "fontWeight": "500" } ] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="A beautiful, elegant logo emblem of an open book held tenderly in the hands of a reader. Warm amber #d97706 and deep navy ink tones, minimalist refined linework, sanctuary and literary craftsmanship aesthetic for PageHaven. Design context: - Primary color: #d97706
+- Font: newsreader
+- Mode: light
+- Roundness: rounded-sm
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><div class="flex flex-col min-w-0"><span class="font-title-editorial text-title-editorial text-primary tracking-tight truncate leading-none">PageHaven</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Home</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search catalog" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Shopping cart" class="relative w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">local_mall</span><span class="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] px-1 bg-primary text-on-primary font-label-sm text-[10px] leading-[18px] text-center rounded-full shadow-[0_0_12px_rgba(217,119,6,0.35)]">3</span></button><a aria-label="User Profile" class="w-11 h-11 flex items-center justify-center" data-path="account-and-cart" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida/AEtjO1UzMjpsfpPGw1_MRih2mKJi5Kf3BhsToHmoxDKO0jSr0MPNqSvcaR7r7sJFNV1XCNNXWh64Q15AV89QY9N1v2_u9GHJEsqjyhJPnWy-xXcUthR7k0Me6cTYF4WSJn7vE1uyFDyYr2qyah0405fWxI4nmAPJ1ZbSWSPXhyVW5tXmFumPoVatBluuUzjUGOy1sLJ54FqkxutxEyalKIeQdXrqHjr41_3wSpPz3wh5t3Wk2uXuq0ERQT9HRDCT"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Interactive Category Navigation Pills -->
+<div class="sticky top-0 z-30 bg-surface/95 backdrop-blur-md px-4 py-2.5 shadow-sm">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md transition-all flex items-center gap-1.5 shrink-0 bg-primary text-on-primary shadow-sm" id="tab-btn-home" onclick="switchAppTab('home')">
+<span class="material-symbols-outlined text-[16px]">cottage</span>
+<span>Home</span>
+</button>
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md transition-all flex items-center gap-1.5 shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface" id="tab-btn-fiction" onclick="switchAppTab('fiction')">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+<span>Fiction &amp; Manga</span>
+</button>
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md transition-all flex items-center gap-1.5 shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface" id="tab-btn-magazines" onclick="switchAppTab('magazines')">
+<span class="material-symbols-outlined text-[16px]">newspaper</span>
+<span>Magazines</span>
+</button>
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md transition-all flex items-center gap-1.5 shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface" id="tab-btn-lessons" onclick="switchAppTab('lessons')">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span>Lessons &amp; GK</span>
+</button>
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md transition-all flex items-center gap-1.5 shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface" id="tab-btn-cart" onclick="switchAppTab('cart')">
+<span class="material-symbols-outlined text-[16px]">local_mall</span>
+<span>Bag &amp; Profile</span>
+</button>
+</div>
+</div>
+<!-- TAB 1: HOME & DISCOVER -->
+<section class="tab-pane flex flex-col gap-6 px-4 py-3" id="pane-home">
+<!-- Archival Welcome Ribbon & Seasonal Voucher -->
+<div class="rounded-xl bg-gradient-to-r from-primary/10 via-surface-container to-surface-container-high p-4 relative overflow-hidden shadow-sm">
+<div class="flex items-start justify-between relative z-10">
+<div class="flex-1 pr-3">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">AUTUMN SALON</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Until Sunday</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Curate your study with 25% off hardbound classics.</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Use voucher code below at checkout.</p>
+<div class="mt-3 inline-flex items-center gap-2 bg-surface px-3 py-1.5 rounded-lg shadow-sm">
+<span class="font-label-md text-label-md font-semibold text-primary tracking-widest">PAGE25</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center" onclick="copyPromo('PAGE25')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="w-20 h-24 shrink-0 rounded-lg overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="A vintage hardcover antique book bound in burnt orange textured morocco leather resting under soft focused reading lamp illumination, archival bookstore aesthetic, warm amber tones, 35mm film photography grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTH7muE93YWrr9X-J2Ggq-kKQPlB8YFwC6N0jghPq1cddVsfVboMb4P6SxdbF-reOCPrWHLIZxLDvw09tX7u6ZK7Kx4R5Ctfv5hpxSIczQYWhTg39L9Tq1coSCn-_ETfjq4Mers9TPxvDqljo7xgFBfFS-pQfUk1h-kZqRt_1RXPuKJyAbGn1HO_jMD-0Tvql2JxHpT50cgfkqckmG07Sku8TNdSw81UOMpzQvbhcge85ibwQoCcqbEg"/>
+</div>
+</div>
+</div>
+<!-- Quick Genre Jump Shelf -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Explore Curations</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">6 Departments</span>
+</div>
+<div class="grid grid-cols-3 gap-2.5">
+<button class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all" onclick="switchAppTab('fiction')">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">book_2</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Novels</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fiction</span>
+</button>
+<button class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all" onclick="switchAppTab('fiction')">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">brush</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Manga</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tankōbon</span>
+</button>
+<button class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all" onclick="switchAppTab('magazines')">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Magazines</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Editorial</span>
+</button>
+<button class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all" onclick="switchAppTab('lessons')">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">self_improvement</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Life Lessons</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wisdom</span>
+</button>
+<button class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all" onclick="switchAppTab('lessons')">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">General GK</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yearbooks</span>
+</button>
+<button class="flex flex-col items-center text-center p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all" onclick="openModal('civil-quiz')">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center mb-1.5">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Daily Drill</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quiz</span>
+</button>
+</div>
+</div>
+<!-- Featured Spotlight: Handpicked Book of the Month -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Curator's Spotlight</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">October Choice</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-4">
+<div class="flex gap-3.5">
+<div class="relative w-28 h-40 shrink-0 rounded-lg overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Cover of The Midnight Library novel by Matt Haig, featuring a magical glowing clock tower surrounded by cosmic starry constellations in deep ink indigo and warm amber hues, editorial book cover design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOXHF2uRq8fCB8skdF5Yj2SPFVwiV_S5sXT2WZJUReZng4V-f7auphomFB6Y_s-Tl6bfyEdikJLLPBosHy8doMrdhNQc5YBElvTRvVCls67dU-O3feqtxwbaNQfHP9rxOERDvqrQlRW-uGuzOXAt4rQEgPPqpJd6r_gw97mxZnvjUXkbxDIlUGbpsO4C85eZwm7sfLUDPldsDYdyYa2N_UFfFN8fF3SzLIqUqKXPCo9hxsoih2Q35IhA"/>
+<span class="absolute top-2 left-2 font-label-sm text-[9px] px-1.5 py-0.5 rounded bg-surface/90 text-on-surface backdrop-blur-sm shadow-sm">4.8 ★</span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-wide uppercase">Philosophical Fiction</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">The Midnight Library</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Matt Haig</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1 italic">"Between life and death there is a library, and within that library, the shelves go on forever."</p>
+</div>
+<!-- Price & Format Pill Select -->
+<div class="flex items-center justify-between pt-2">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Format price</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="spotlight-price">$21.50</span>
+</div>
+<div class="flex bg-surface-container rounded-full p-0.5 text-label-sm font-label-sm">
+<button class="px-2.5 py-1 rounded-full bg-surface text-on-surface shadow-sm font-semibold" id="spotlight-btn-hard" onclick="setFormat('spotlight', 'hard', 21.50)">Hard</button>
+<button class="px-2.5 py-1 rounded-full text-on-surface-variant" id="spotlight-btn-digital" onclick="setFormat('spotlight', 'digital', 11.20)">E-Book</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-2 pt-1">
+<button class="flex-1 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors" onclick="quickPreview('The Midnight Library', 'Matt Haig', 'Philosophical Fiction', 'Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. To see how things would be if you had made other choices... Would you have done anything different, if you had the chance to undo your regrets?', 21.50)">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Read Excerpt</span>
+</button>
+<button class="flex-1 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition-opacity" onclick="addToCart('The Midnight Library', 21.50, 'Hardbound Collector', 'Matt Haig')">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Trending Readers Carousel / Row -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Archival Best-Sellers</h3>
+<button class="font-label-md text-label-md text-primary font-semibold flex items-center" onclick="switchAppTab('fiction')">
+          View All <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<div class="flex gap-3.5 overflow-x-auto no-scrollbar pb-1">
+<!-- Card 1: Atomic Habits -->
+<div class="w-44 shrink-0 rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-full h-44 rounded-lg overflow-hidden relative shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of Atomic Habits by James Clear with minimal white background, subtle golden circular atomic orbits, and crisp modernist black serif typography, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy-602xdVTUr_9gBujFB-ne4zapbTGjh3-Wn14b8D70ff8BUzYUnjeg9E1-gpEYgAWUUsp4h-AVLf_sYMe8b498-JgK9_Iw35LOU4206rOqSv97SNBtKAh-lXAzbafdi4kbiMKD4Ebbqpw5IkXCBMM5x36tIpnY0FE-Kj5dkaKKkZmotQOSQBZWxrgAbdT4NFgnWivQwy17aKy51iXX2Zsf2x6YHiT4Cf9nmS4hkAOmQcVFAPcHJ8Lfw"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-[9px] text-on-surface">Self-Growth</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Atomic Habits</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">James Clear</p>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">$18.00</span>
+<span class="font-label-sm text-label-sm text-secondary">Hardcopy</span>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="addToCart('Atomic Habits', 18.00, 'Hardbound', 'James Clear')">
+<span class="material-symbols-outlined text-[15px]">shopping_bag</span> Add $18
+            </button>
+</div>
+</div>
+<!-- Card 2: Before the Coffee Gets Cold -->
+<div class="w-44 shrink-0 rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-full h-44 rounded-lg overflow-hidden relative shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of Before the Coffee Gets Cold by Toshikazu Kawaguchi, a vintage Tokyo alley café with steaming coffee cup, warm paper texture, serene literary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZofkGRmcmArZb9e9tv-lHtEtvpx-W1gRZaIzEGazTajWE6CQiuLhaB6OCnBlqTbMQLCQ1ahLELILUWc-dsTdF5RUbsBaG33PvJ1Vz0wmJZR8smfczYScFQUDF8s9H5o8_OetWyMASze7Y9ijfzcckL27hLIvmFtxloZRTDDSxgQEP5mhgtQI-vgzITjEpXXNyPyxyW-4JkhdEjFDLg7L6Bj2tE6dQftvTPZAwUwiXdC-p5emj5W-5BA"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-[9px] text-on-surface">Japanese Lit</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Before Coffee Gets Cold</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Toshikazu Kawaguchi</p>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">$16.50</span>
+<span class="font-label-sm text-label-sm text-secondary">Paperback</span>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="addToCart('Before the Coffee Gets Cold', 16.50, 'Paperback', 'Toshikazu Kawaguchi')">
+<span class="material-symbols-outlined text-[15px]">shopping_bag</span> Add $16.50
+            </button>
+</div>
+</div>
+<!-- Card 3: The Courage to Be Disliked -->
+<div class="w-44 shrink-0 rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-full h-44 rounded-lg overflow-hidden relative shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of The Courage to Be Disliked by Ichiro Kishimi, serene blue background with subtle Japanese calligraphy, minimalist design book cover, soft museum lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuCzShy12SlI8yT9svfGMXqXdJ3B6NbLRQVjvM9vMqMiuksCLhjda6kg0rM0vkEmqPNgcfgFmax3Dztbysm6u9TTf_9koPXd0_em7bJIMIwwFqv9vLCFFjjTFwWk8f_KxacrDE4maRfg0ziiWXX9MqS-sK3jvD-o0MUc02-gdAFwmQ0Gnzo_ZdsnfhTgkOX3NFzzU-i49BJkTDSuXERxnR7RvMSWZ3vd6dHE3tPIc8gttLJZNwP4v2RA"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-[9px] text-on-surface">Philosophy</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Courage to Be Disliked</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Ichiro Kishimi</p>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">$19.95</span>
+<span class="font-label-sm text-label-sm text-secondary">Hardcopy</span>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="addToCart('The Courage to Be Disliked', 19.95, 'Hardbound', 'Ichiro Kishimi')">
+<span class="material-symbols-outlined text-[15px]">shopping_bag</span> Add $19.95
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 2: FICTION & MANGA -->
+<section class="tab-pane hidden flex-col gap-6 px-4 py-3" id="pane-fiction">
+<!-- Header Banner -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary/15 text-primary font-label-sm text-label-sm">FICTION ARCHIVE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Volumes &amp; Tankōbon</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Literary Fiction &amp; Manga</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">From grand epic adventures to intimate slice-of-life illustrated serials.</p>
+</div>
+<!-- Fiction Sub-filter chips -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="f-chip px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary text-on-primary shrink-0" onclick="filterFiction('all')">All Works</button>
+<button class="f-chip px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface shrink-0" onclick="filterFiction('manga')">Manga Tankōbon</button>
+<button class="f-chip px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface shrink-0" onclick="filterFiction('novel')">Literary Fiction</button>
+<button class="f-chip px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface shrink-0" onclick="filterFiction('graphic')">Graphic Novels</button>
+</div>
+<!-- Manga & Fiction Grid -->
+<div class="grid grid-cols-2 gap-3" id="fiction-grid">
+<!-- Item 1: Frieren Beyond Journey's End -->
+<div class="fiction-card flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between" data-cat="manga">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of Frieren Beyond Journeys End manga volume 1, anime elf mage with staff standing in a picturesque grassy meadow under ancient ruins, serene pastel watercolor aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAJFrcl_C9FLkywfWFRQhajO6FNSmK7vJxkNvcdlJyrh4uXstKYJo_oHuqki1uCfnX9Val3kyVx9Tsdt5a-DGSsQKsrCkIRc3F83z0xfm0M-OyrzbQwmwF6GpscrPl4NvQlLvQWYLyKCPpvzgHrbXi2SkqOp-u_H_nocfziYzUmKjoChEbM2-iPFe1Dca3_M_0zhQWFEWBz8_nFmb7Y1RSLkzbNEU1O-ns7n5mJG93vfGvdeYp7ASbPg"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-[9px] text-on-surface">Vol. 1</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Frieren: Journey's End</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Kanehito Yamada</p>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-2">
+<span class="font-semibold text-on-surface" id="price-frieren">$12.99</span>
+<div class="flex bg-surface-container rounded-md p-0.5 text-[10px]">
+<button class="px-1.5 py-0.5 rounded bg-surface text-on-surface font-semibold" onclick="setCardFormat('frieren', 'Print', 12.99)">Print</button>
+<button class="px-1.5 py-0.5 text-on-surface-variant" onclick="setCardFormat('frieren', 'E-Pub', 7.99)">E-Pub</button>
+</div>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-center gap-1 shadow-sm" onclick="addToCart('Frieren: Journey\'s End Vol 1', 12.99, 'Tankōbon Print', 'Kanehito Yamada')">
+<span class="material-symbols-outlined text-[15px]">add</span> Add
+          </button>
+</div>
+</div>
+<!-- Item 2: Chainsaw Man -->
+<div class="fiction-card flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between" data-cat="manga">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of Chainsaw Man manga volume by Tatsuki Fujimoto, raw expressive comic ink illustration in bold orange and dark charcoal black, dynamic graphic typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Z1UyHifHflVwmX0CyF81AmZ-pi6tNtBmyblbJgkPRugCaebLQLWCW9GNQw3_zmF395Uayl1glVa3vLoou3qTI1qS1vCBqE3nsU4Ztk5XjA6YAIpA-ywoA88_P-OjFhANIW67sMLPuumzPxZNbKd7ZO2X6WhHrLBH5SkDmkxncZpKpxsgn7fKybd8uuwvATIDfEzfM-iOODmPLCFSTB7V9jGnWOrZsh6eGZx7da0vyyFYzVzXcjuzaQ"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-[9px] text-on-surface">Vol. 12</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Chainsaw Man</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Tatsuki Fujimoto</p>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-2">
+<span class="font-semibold text-on-surface" id="price-csm">$11.50</span>
+<div class="flex bg-surface-container rounded-md p-0.5 text-[10px]">
+<button class="px-1.5 py-0.5 rounded bg-surface text-on-surface font-semibold" onclick="setCardFormat('csm', 'Print', 11.50)">Print</button>
+<button class="px-1.5 py-0.5 text-on-surface-variant" onclick="setCardFormat('csm', 'E-Pub', 6.99)">E-Pub</button>
+</div>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-center gap-1 shadow-sm" onclick="addToCart('Chainsaw Man Vol 12', 11.50, 'Tankōbon Print', 'Tatsuki Fujimoto')">
+<span class="material-symbols-outlined text-[15px]">add</span> Add
+          </button>
+</div>
+</div>
+<!-- Item 3: One Piece 100 -->
+<div class="fiction-card flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between" data-cat="manga">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of One Piece volume 100 showing Luffy with pirate hat and the straw hat crew in vibrant archival comic style, ocean sea adventure, master linework." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvJqmbPaGyE65IODmF8M2lFaYTytZk9g6A12hz8sbopkr9-NTQZRuQbm7gZyuZDfhYfF0JD0G_IZ2LQAl1EreJ3Q_Spx85Th-MJHN7jxcDbQobS_txlZc0BoN3BqhzTVXuIm_EXhvWq_2dishYfzYYULC9nbP65yHQaBXt8EAAH2uJwJQnlVxs1SHsMhhRA4cFgw1a0L2Vpj1teNbKC1k1EFAA_2N7BseTPNNsmuI69cuf3ffQybL8xw"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-[9px] text-on-surface">Vol. 100</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">One Piece: Dawn</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Eiichiro Oda</p>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-2">
+<span class="font-semibold text-on-surface" id="price-op">$14.00</span>
+<div class="flex bg-surface-container rounded-md p-0.5 text-[10px]">
+<button class="px-1.5 py-0.5 rounded bg-surface text-on-surface font-semibold" onclick="setCardFormat('op', 'Print', 14.00)">Print</button>
+<button class="px-1.5 py-0.5 text-on-surface-variant" onclick="setCardFormat('op', 'E-Pub', 8.50)">E-Pub</button>
+</div>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-center gap-1 shadow-sm" onclick="addToCart('One Piece Vol 100', 14.00, 'Collector Edition', 'Eiichiro Oda')">
+<span class="material-symbols-outlined text-[15px]">add</span> Add
+          </button>
+</div>
+</div>
+<!-- Item 4: Attack on Titan Colossal -->
+<div class="fiction-card flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between" data-cat="manga">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of Attack on Titan manga omnibus with Colossal titan peering over stone fortress walls, moody dark atmospheric artwork, fine Japanese manga hatching." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2YdFt93DnWfTQjmmEZGoi2ZQJAX_kdFT7VD5-Q__RwblaV9h9xWGupsS34sxpXepq9O_BZFSeOCGScWHdxU3ZZOtViwmc2T9Eb7kKaJw_BnYjgMi3nJgLiuqx9sqiV7OmiahyhDQMCPG-s2vriiM7gHAjYxvUqyvTYAhPA0NMkf7SGpx8xG3oypP8-BqgNUptT9jf7QZB4HkNB4JR3Gxh14V2dscnfvYe1_pMKgI5TmfQRi5soSWALw"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-[9px] text-on-surface">Omnibus</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Attack on Titan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Hajime Isayama</p>
+</div>
+<div class="mt-3">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-2">
+<span class="font-semibold text-on-surface" id="price-aot">$24.99</span>
+<div class="flex bg-surface-container rounded-md p-0.5 text-[10px]">
+<button class="px-1.5 py-0.5 rounded bg-surface text-on-surface font-semibold" onclick="setCardFormat('aot', 'Print', 24.99)">Print</button>
+<button class="px-1.5 py-0.5 text-on-surface-variant" onclick="setCardFormat('aot', 'E-Pub', 14.99)">E-Pub</button>
+</div>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm flex items-center justify-center gap-1 shadow-sm" onclick="addToCart('Attack on Titan Omnibus', 24.99, 'Deluxe Hardbound', 'Hajime Isayama')">
+<span class="material-symbols-outlined text-[15px]">add</span> Add
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 3: MAGAZINES LOUNGE -->
+<section class="tab-pane hidden flex-col gap-6 px-4 py-3" id="pane-magazines">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">PERIODICAL SALON</span>
+<span class="font-label-sm text-label-sm text-primary">Bi-Weekly Issues</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Magazines Lounge</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Curated high-gloss journalism, architecture monographs, and literary chronicles.</p>
+</div>
+<!-- Unlimited 14-Day Reading Pass Card -->
+<div class="p-4 rounded-xl bg-surface-container flex flex-col gap-3 shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">All-Access Reader Pass</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Read unlimited periodicals.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Enjoy digital issues of Solace, Forbes Global, Vogue Style &amp; Apex on all devices.</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface">$4.99 / 14-Days</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Cancel anytime</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:opacity-95" onclick="addToCart('PageHaven 14-Day Magazine Pass', 4.99, 'Digital Pass', 'PageHaven Lounge')">
+          Activate Pass
+        </button>
+</div>
+</div>
+<!-- Periodical Shelf Grid -->
+<div class="grid grid-cols-2 gap-3.5">
+<!-- Magazine 1: Solace & Living -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of Solace and Living Magazine featuring a warm minimalist wabi-sabi living room with linen sofa, earthenware ceramics, and morning sunlight casting long shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcCtt8-04nN_W9gyBLHadQtOTW5LNtB6palnVtuGp1b6cOdCXxV1-8Mud2iI_hnYwPELO8feQuRVISYHz3sxhuKCPb_8a-f77j-5NpYKCjOxBGA05Qla1deMLicpKUZLcdk-Z5LxSGemx75Sic5TwucGQEFi_QU2JATqmRATWw7SY7X9Pg4cq7-IeaOl04iG2Mwcjz7WLSQ0GKKNu1EXXuuAdbe3HJCkkMBKLKUy9ZMF_Deqb-3qIc5g"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-sm text-[10px]">Issue 48</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Solace &amp; Living</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">The Scandinavian Retreat</p>
+</div>
+<div class="mt-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">$9.50</span>
+<button class="font-label-sm text-label-sm text-primary underline" onclick="quickPreview('Solace &amp; Living (Issue 48)', 'Solace Editorial', 'Architecture &amp; Living', 'The warmth of unprocessed pine, the scent of morning cedar, and the cadence of unhurried mornings. In this autumn portfolio, we step into the silent lake retreats of northern Dalarna, where light defines architecture.', 9.50)">Preview</button>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="addToCart('Solace &amp; Living Issue 48', 9.50, 'Print Edition', 'Solace Editorial')">
+<span class="material-symbols-outlined text-[15px]">shopping_bag</span> Add Issue
+          </button>
+</div>
+</div>
+<!-- Magazine 2: Forbes Global Leaders -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Cover of Forbes Global Leaders Magazine with an inspiring portrait of a visionary founder, dramatic chiaroscuro studio lighting, sharp typography and business editorial aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ky2VAcEYjmIGjvB8l4WmN56I3HjA8WJmlkAL71hFAkDBFE64xl0Rh6ifsj8aci9Q3GmHJ-OENnm0AFbfi_w-IuvI0iLU1oBFh3kzlvqJtvfVoXNiWgVtl0wmfoAJOFNBve1wtbkp0IxPvlilr9Hnfrw4IwO1VoSq4Qr8LUiC8JosPKeUWup8M-WbrnFLdR53f4CraOBCHbswWi3YuDc53ihqd07ipA_RVM680iL3jhCjBLIU6lw1IQ"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-sm text-[10px]">Oct 2025</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Forbes Global</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Architects of Tomorrow</p>
+</div>
+<div class="mt-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">$10.00</span>
+<button class="font-label-sm text-label-sm text-primary underline" onclick="quickPreview('Forbes Global Leaders', 'Forbes Press', 'Business &amp; Leadership', 'Behind the scenes of the next quantum infrastructure boom. How twelve European laboratories are rewiring high-frequency analytics and redefining the energy paradigm of computation.', 10.00)">Preview</button>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="addToCart('Forbes Global Leaders Oct', 10.00, 'Print Edition', 'Forbes Press')">
+<span class="material-symbols-outlined text-[15px]">shopping_bag</span> Add Issue
+          </button>
+</div>
+</div>
+<!-- Magazine 3: Vogue Style Edit -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Editorial fashion magazine cover featuring high fashion autumn knitwear collection in Paris, haute couture editorial styling, moody sepia and amber color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN66eI2xiSgIKvf13ne1xTcod0pAAipdEwNQDRbrWIUPfaDVi0dUyW-QP9ErHVjv7Kp67hNTS3jcLId0fxZXQvNu5IxoOvJVIu_dKmXfaqKnKxBZdt0r2FiNF7aRM76hqbri4GxWB8AcigZcBdkxn8HrsJlXgfB3v1ZqHqAdeKWi3xdKfON7ukDTLkZM-wk8SD1EFOa0YSVOtnp1cIGtDwoVP9Wg-fAIdwZ3yWgak65Tk4jCjp-vTv4A"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-sm text-[10px]">Autumn Look</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Vogue Style Edit</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">The Silk &amp; Wool Monologue</p>
+</div>
+<div class="mt-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">$11.20</span>
+<button class="font-label-sm text-label-sm text-primary underline" onclick="quickPreview('Vogue Style Edit', 'Condé Nast', 'Haute Couture', 'Texture as philosophy: when bespoke tailoring encounters hand-spun raw silk. A photographic journey through Milanese workshops preserving heirloom weaving techniques.', 11.20)">Preview</button>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="addToCart('Vogue Style Edit Autumn', 11.20, 'Print Edition', 'Condé Nast')">
+<span class="material-symbols-outlined text-[15px]">shopping_bag</span> Add Issue
+          </button>
+</div>
+</div>
+<!-- Magazine 4: Supercar Apex -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-3 shadow-sm justify-between">
+<div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden shadow-inner mb-2.5">
+<img class="w-full h-full object-cover" data-alt="Sleek modern automotive magazine cover showing a hand-built prototype supercar carved of carbon fiber on an alpine mountain pass at sunset, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUVuZesEolezrAoUY-dB9AQPOqTRIThBluUMMpmAyB48IwCrCQIMZ2HjZ4xhXKHj5frpcVC43ralweC8rknRxHHhj2VYQfOCOY6QQlExkdWuRaRqPHoAaKMAlJETwG8C4VWFgztb2JNDAsmBKVChwysfDj6MYa-Yq-LWuv5drbLpIL7Itw-7M6VudKGheNmN1BmVeUcmsY7Ku5DGPypqVTW-zeR7j9MgCH0MnXOP5gfKpR4ebo-wcEBg"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-sm text-[10px]">Vol. 89</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Supercar Apex</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Atmospheric V12 Chronicles</p>
+</div>
+<div class="mt-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">$12.50</span>
+<button class="font-label-sm text-label-sm text-primary underline" onclick="quickPreview('Supercar Apex Vol 89', 'Apex Motorsport', 'Automotive', 'The final swan song of naturally aspirated Italian engines on the twisty roads of the Dolomites. 9,000 RPM recorded on high-fidelity telemetry.', 12.50)">Preview</button>
+</div>
+<button class="w-full py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1" onclick="addToCart('Supercar Apex Vol 89', 12.50, 'Print Edition', 'Apex Motorsport')">
+<span class="material-symbols-outlined text-[15px]">shopping_bag</span> Add Issue
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 4: LESSONS & GENERAL KNOWLEDGE (GK) -->
+<section class="tab-pane hidden flex-col gap-6 px-4 py-3" id="pane-lessons">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">INTELLECTUAL RIGOR</span>
+<span class="font-label-sm text-label-sm text-tertiary">2025 Editions</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Lessons &amp; General Knowledge</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inner philosophy for mindful character alongside rigorous reference books for civil exams.</p>
+</div>
+<!-- Live Daily Civil Exam Drill Widget -->
+<div class="p-4 rounded-xl bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-lowest shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Daily Civil Exam Drill</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary text-on-primary">Question of the Day</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Which constitutional amendment established the Right to Education as a fundamental right in India?</p>
+<div class="flex flex-col gap-2 pt-1" id="quiz-options-container">
+<button class="w-full text-left p-3 rounded-lg bg-surface hover:bg-surface-container-highest transition-colors flex items-center justify-between text-body-sm font-body-sm text-on-surface shadow-sm" onclick="answerQuiz(this, false)">
+<span>A) 44th Constitutional Amendment (1978)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">radio_button_unchecked</span>
+</button>
+<button class="w-full text-left p-3 rounded-lg bg-surface hover:bg-surface-container-highest transition-colors flex items-center justify-between text-body-sm font-body-sm text-on-surface shadow-sm" onclick="answerQuiz(this, true)">
+<span>B) 86th Constitutional Amendment (2002)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">radio_button_unchecked</span>
+</button>
+<button class="w-full text-left p-3 rounded-lg bg-surface hover:bg-surface-container-highest transition-colors flex items-center justify-between text-body-sm font-body-sm text-on-surface shadow-sm" onclick="answerQuiz(this, false)">
+<span>C) 73rd Constitutional Amendment (1992)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">radio_button_unchecked</span>
+</button>
+</div>
+<div class="hidden p-2.5 rounded-lg text-body-sm font-body-sm transition-all" id="quiz-feedback"></div>
+</div>
+<!-- Section A: General Knowledge Yearbooks -->
+<div class="flex flex-col gap-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">General Knowledge &amp; Compendiums</h3>
+<div class="flex flex-col gap-3">
+<!-- Item 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex gap-3.5 items-center">
+<div class="w-20 h-28 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Cover of Current Affairs Yearbook 2025 with gold foil geographic globe emblem, dark navy leather cover texture, academic reference book aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1bPnQd846VLIjo6pj2AouS6iCAe68B9or6Q-IdtaMY0aowRvYtd4gzSA6k3CUQ6nJUQJNAQLEWu_fDPiW9Bm4mfmRUWXldp9dqVc2_a-4HRTyD0CpIlC6ZAjCP1svcnJQVZ-_EoRt6XOZljEvAVc7aLuqMCeQIwzt6NOGUXpFNKEZQIo2v1zKte4ykIqTeTcMDY7ekc_sEKuwwiQ7gneZjw1CKl2gZ73YT6eO0yBXJjE7GG5E3RZqRQ"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between h-28 py-0.5">
+<div>
+<span class="font-label-sm text-label-sm text-primary">Reference &amp; Civil Service</span>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate">Current Affairs Yearbook 2025</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Manorama Research Group</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$24.00</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm" onclick="addToCart('Current Affairs Yearbook 2025', 24.00, 'Paperback Reference', 'Manorama Group')">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+              </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex gap-3.5 items-center">
+<div class="w-20 h-28 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Cover of The World Factbook &amp; Macroeconomic Survey 2025, dark green cover with gold typographic chart line, archival scholarly manual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJcex1NNKJ8UXp-HEkFhyByFlr4ldEfDW0yQjLamohTbVuvtYqwA-NRUQBSOp2LlQpAOkybZa99KVZ4KseEwH0WbHOzwFK_OlLwl1WttXReJ7Ec6FKhzaaw4us5cyIcOyhGsagwI-eY4wekOICr1dJ5Rb6G8HsqnqD_9spW5zE5kkLgz0mFVRX4QrVFyx066I8tMrSDT0btVp7ewOTxP5bJ9E9GCbEG_G6UXCrGRBlWDvBnVWroSNZhw"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between h-28 py-0.5">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Economics &amp; Polity</span>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate">The World Factbook 2025</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Global Intelligence Bureau</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$28.50</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm" onclick="addToCart('The World Factbook 2025', 28.50, 'Hardbound Reference', 'Global Bureau')">
+<span class="material-symbols-outlined text-[16px]">add</span> Add
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section B: Life Lessons & Mindful Character -->
+<div class="flex flex-col gap-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Life Lessons &amp; Mindful Living</h3>
+<div class="grid grid-cols-2 gap-3">
+<!-- Lesson 1 -->
+<div class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="w-full h-40 rounded-lg overflow-hidden shadow-inner mb-2">
+<img class="w-full h-full object-cover" data-alt="Minimalist book cover for The Art of Intentional Growth, quiet Japanese stone garden with raked sand, warm neutral tones, zen typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv9FSmzxEY78fC585AvMBBsf9Jj07J1xuVY-lU--u9jnLFfvmzfPbq3-ngbB09KN-dSHJ2jjF8Iq9jniVuvRxgBhYJLJN1aYsYEOugLq8fmmQGGQF7PEPqFlhweGNwK6wvG4o9FsI1xkbuKt19hU6ARQ2nNQ4r0cV6Mpl_ebwpC1d9uujgzODzDEZSbVKQ6C_IK3X4KMiJsWDkW18ap_I1hB7Lhlpk0zIqAmCU4SvfuFFzLLfcL3gbwQ"/>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Intentional Growth</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Ken M. Tanaka</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">$17.50</span>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface text-label-sm font-label-sm transition-colors" onclick="addToCart('The Art of Intentional Growth', 17.50, 'Paperback', 'Ken M. Tanaka')">
+              Add
+            </button>
+</div>
+</div>
+<!-- Lesson 2 -->
+<div class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="w-full h-40 rounded-lg overflow-hidden shadow-inner mb-2">
+<img class="w-full h-full object-cover" data-alt="Cover of Principles of Inner Fortitude, featuring an ancient marble Greek bust bathed in amber study sunlight, timeless Stoic philosophy book cover." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAozKUXrV8L7gHKVq8RUp5eC211IWCcaEnrlvQ3XCSoFQoVsgNYuxWgRs75Ql1QGjFDqlfmZS0ZOngxi2C6NbVRMhMU4S2W3LJXhOMSXfW3F767MyO3A-G7N2It0-3B7nFbTBj1Y7MmwFUC8yiLlp3a_tQRnn-qnIYdqe6BMXsw6TqNuYgWtmdWT585M-2ts17n-IxbOFVuOhpirrGqqD4rZl1VjHWlr2jzX0HKCU9JgYQt_x_Jszq2ww"/>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface line-clamp-1">Inner Fortitude</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Elena Vance</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">$19.00</span>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface text-label-sm font-label-sm transition-colors" onclick="addToCart('Principles of Inner Fortitude', 19.00, 'Clothbound', 'Elena Vance')">
+              Add
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 5: CART & ACCOUNT HUB -->
+<section class="tab-pane hidden flex-col gap-6 px-4 py-3" id="pane-cart">
+<!-- User Sanctuary Card -->
+<div class="p-4 rounded-xl bg-surface-container flex items-center gap-3.5 shadow-sm">
+<div class="w-14 h-14 rounded-full bg-primary/20 text-primary flex items-center justify-center font-title-editorial text-headline-sm font-bold shadow-sm">
+        PH
+      </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Eleanor Vance</h3>
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">Reader Tier</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">eleanor.vance@haven.library</p>
+<div class="flex items-center gap-3 mt-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<span>📚 14 Books Owned</span>
+<span>•</span>
+<span>⚡ 3 Active Passes</span>
+</div>
+</div>
+</div>
+<!-- Active Bag / Orders Section -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Your Reading Basket</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant" id="cart-item-count-label">2 items</span>
+</div>
+<!-- Item List Container -->
+<div class="flex flex-col gap-2.5" id="cart-items-container">
+<!-- Default Item 1 -->
+<div class="cart-row p-3 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between" data-price="21.50">
+<div class="flex items-center gap-3 min-w-0 flex-1">
+<div class="w-10 h-14 rounded bg-surface-container shrink-0 flex items-center justify-center text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">book</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface truncate">The Midnight Library</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Hardbound Collector</p>
+<span class="font-label-sm text-label-sm text-primary font-bold">$21.50</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1.5" onclick="removeCartItem(this, 21.50)">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Default Item 2 -->
+<div class="cart-row p-3 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between" data-price="12.99">
+<div class="flex items-center gap-3 min-w-0 flex-1">
+<div class="w-10 h-14 rounded bg-surface-container shrink-0 flex items-center justify-center text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">menu_book</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface truncate">Frieren: Journey's End Vol 1</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Tankōbon Print</p>
+<span class="font-label-sm text-label-sm text-primary font-bold">$12.99</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1.5" onclick="removeCartItem(this, 12.99)">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Voucher Promo Field -->
+<div class="flex gap-2 mt-1">
+<input class="flex-1 px-3.5 py-2.5 rounded-lg bg-surface-container text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm outline-none focus:bg-surface-container-highest transition-colors uppercase" id="promo-input" placeholder="Enter coupon (e.g. PAGE25)" type="text"/>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary font-label-md text-label-md transition-colors" onclick="applyVoucher()">
+          Apply
+        </button>
+</div>
+<div class="hidden text-label-sm font-label-sm px-1" id="voucher-msg"></div>
+<!-- Subtotal Calculation Card -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2 mt-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Subtotal</span>
+<span id="summary-subtotal">$34.49</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Archival Delivery</span>
+<span class="text-secondary font-medium">Free (Standard)</span>
+</div>
+<div class="hidden items-center justify-between text-body-sm font-body-sm text-tertiary" id="summary-discount-row">
+<span>Discount Applied</span>
+<span id="summary-discount">-$0.00</span>
+</div>
+<div class="h-px bg-surface-container my-1"></div>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Order Total</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="summary-total">$34.49</span>
+</div>
+<button class="w-full mt-2 py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-semibold shadow-md hover:opacity-95 transition-opacity flex items-center justify-center gap-2" onclick="startCheckout()">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Complete Literary Purchase</span>
+</button>
+</div>
+</div>
+<!-- Quick Settings & Cloud Sync -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Reading Ecosystem</span>
+<div class="rounded-xl bg-surface-container divide-y divide-surface/20">
+<div class="flex items-center justify-between p-3">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary">cloud_sync</span>
+<span class="font-body-md text-body-md text-on-surface">Whispersync Bookmarks</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Active</span>
+</div>
+<div class="flex items-center justify-between p-3">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary">brightness_medium</span>
+<span class="font-body-md text-body-md text-on-surface">Amber Night Filter</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto at 8 PM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FLOATING READGENIUS AI ASSISTANT TRIGGER -->
+<button class="fixed bottom-20 right-4 z-40 px-3.5 py-2.5 rounded-full bg-gradient-to-r from-primary to-tertiary text-on-primary shadow-lg flex items-center gap-2 hover:scale-105 active:scale-95 transition-all" onclick="toggleAiDrawer()">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">ReadGenius AI</span>
+</button>
+<!-- AI DRAWER / CONCIERGE MODAL -->
+<div class="fixed inset-x-0 bottom-0 z-50 bg-surface rounded-t-2xl shadow-2xl p-4 transform translate-y-full transition-transform duration-300 max-h-[724px] flex flex-col" id="ai-drawer">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-none">PageHaven AI Companion</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Literature &amp; Curriculum Advisor</span>
+</div>
+</div>
+<button class="p-1 rounded-full text-on-surface-variant hover:text-on-surface" onclick="toggleAiDrawer()">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Interactive Query Prompts -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar py-2">
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm shrink-0" onclick="askAi('What should I read if I loved Before the Coffee Gets Cold?')">
+        "Like Toshikazu Kawaguchi?"
+      </button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm shrink-0" onclick="askAi('Best civil service books for modern Indian Polity?')">
+        "Polity Preparation 2025"
+      </button>
+<button class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm shrink-0" onclick="askAi('Recommend me a poignant manga with deep character growth.')">
+        "Poignant Manga"
+      </button>
+</div>
+<!-- AI Chat Messages Scroll Area -->
+<div class="flex-1 overflow-y-auto flex flex-col gap-3 py-3 pr-1 my-2 min-h-[160px]" id="ai-chat-messages">
+<div class="p-3 rounded-xl bg-surface-container text-body-sm font-body-sm text-on-surface leading-relaxed">
+        Greetings, reader. I am your PageHaven archivist. Ask me for thematic parallels, historical context for exams, or a tailored reading queue for a cozy autumn evening.
+      </div>
+</div>
+<!-- AI Input -->
+<div class="flex items-center gap-2 pt-2">
+<input class="flex-1 px-3.5 py-2 rounded-lg bg-surface-container text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm outline-none focus:bg-surface-container-high" id="ai-user-input" placeholder="Ask about plots, themes, or exam drills..." type="text"/>
+<button class="p-2 rounded-lg bg-primary text-on-primary flex items-center justify-center" onclick="submitAiUser()">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+<!-- BOOK PREVIEW MODAL -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden items-end justify-center p-0 transition-opacity" id="preview-modal">
+<div class="w-full bg-surface rounded-t-2xl max-h-[751px] flex flex-col p-5 overflow-hidden shadow-2xl">
+<div class="flex items-start justify-between pb-3">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase" id="preview-cat">Fiction</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="preview-title">Book Title</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="preview-author">Author Name</p>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface" onclick="closeModal('preview-modal')">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto py-3 pr-1">
+<h5 class="font-label-md text-label-md text-on-surface font-semibold mb-1">Archival Excerpt:</h5>
+<div class="p-4 rounded-xl bg-surface-container font-body-md text-body-md text-on-surface italic leading-relaxed shadow-inner" id="preview-text">
+          Excerpt content...
+        </div>
+</div>
+<div class="pt-4 flex items-center justify-between gap-3">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Acquisition</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="preview-price">$0.00</span>
+</div>
+<button class="flex-1 py-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-md" id="preview-add-btn">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Add Volume to Bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CIVIL EXAM DRILL MODAL (From Quick Jump) -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden items-center justify-center p-4" id="modal-civil-quiz">
+<div class="w-full max-w-sm bg-surface rounded-2xl p-5 shadow-2xl flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Civil Exam Drill</h4>
+<button class="text-on-surface-variant" onclick="closeModal('modal-civil-quiz')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Take the 3-minute timed daily quiz from the General Knowledge department to sharpen your memory.</p>
+<div class="p-3 rounded-lg bg-surface-container text-body-sm font-body-sm text-on-surface">
+        Today's module covers Indian Polity, Monetary Policy, and 2025 Science Advances.
+      </div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold" onclick="closeModal('modal-civil-quiz'); switchAppTab('lessons');">
+        Proceed to Daily Drill
+      </button>
+</div>
+</div>
+<!-- FLOATING TOAST NOTIFICATION -->
+<div class="fixed top-20 inset-x-4 z-50 pointer-events-none transform -translate-y-6 opacity-0 transition-all duration-300 flex items-center justify-center" id="app-toast">
+<div class="px-4 py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface shadow-xl flex items-center gap-2.5 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span id="toast-text">Volume added to your basket</span>
+</div>
+</div>
+</div>
+<!-- Interactive Client-Side Router & Cart Logic -->
+<script>
+  // Tab Switcher Router
+  function switchAppTab(tabId) {
+    const tabs = ['home', 'fiction', 'magazines', 'lessons', 'cart'];
+    tabs.forEach(t => {
+      const pane = document.getElementById('pane-' + t);
+      const btn = document.getElementById('tab-btn-' + t);
+      if (pane) {
+        if (t === tabId) {
+          pane.classList.remove('hidden');
+          pane.classList.add('flex');
+        } else {
+          pane.classList.remove('flex');
+          pane.classList.add('hidden');
+        }
+      }
+      if (btn) {
+        if (t === tabId) {
+          btn.className = 'tab-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md transition-all flex items-center gap-1.5 shrink-0 bg-primary text-on-primary shadow-sm';
+        } else {
+          btn.className = 'tab-pill px-3.5 py-1.5 rounded-full text-label-md font-label-md transition-all flex items-center gap-1.5 shrink-0 bg-surface-container text-on-surface-variant hover:text-on-surface';
+        }
+      }
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Dual format switcher for Spotlight
+  function setFormat(item, format, price) {
+    const priceEl = document.getElementById('spotlight-price');
+    const btnHard = document.getElementById('spotlight-btn-hard');
+    const btnDigital = document.getElementById('spotlight-btn-digital');
+    if (priceEl) priceEl.innerText = '$' + price.toFixed(2);
+
+    if (format === 'hard') {
+      btnHard.className = 'px-2.5 py-1 rounded-full bg-surface text-on-surface shadow-sm font-semibold';
+      btnDigital.className = 'px-2.5 py-1 rounded-full text-on-surface-variant';
+    } else {
+      btnDigital.className = 'px-2.5 py-1 rounded-full bg-surface text-on-surface shadow-sm font-semibold';
+      btnHard.className = 'px-2.5 py-1 rounded-full text-on-surface-variant';
+    }
+  }
+
+  // Fiction dual format price switcher
+  function setCardFormat(cardId, type, price) {
+    const el = document.getElementById('price-' + cardId);
+    if (el) el.innerText = '$' + price.toFixed(2);
+    showToast('Switched to ' + type + ' edition ($' + price.toFixed(2) + ')');
+  }
+
+  // Fiction Filtering
+  function filterFiction(category) {
+    const cards = document.querySelectorAll('.fiction-card');
+    cards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-cat') === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const chips = document.querySelectorAll('.f-chip');
+    chips.forEach(c => {
+      c.className = 'f-chip px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface shrink-0';
+    });
+    event.currentTarget.className = 'f-chip px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary text-on-primary shrink-0';
+  }
+
+  // Cart & Checkout State
+  let cartTotal = 34.49;
+  let cartCount = 2;
+  let discountMultiplier = 1.0;
+
+  function addToCart(title, price, format, author) {
+    cartCount++;
+    cartTotal += price;
+
+    // Append to cart container
+    const container = document.getElementById('cart-items-container');
+    if (container) {
+      const row = document.createElement('div');
+      row.className = 'cart-row p-3 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between';
+      row.setAttribute('data-price', price);
+      row.innerHTML = `
+        <div class="flex items-center gap-3 min-w-0 flex-1">
+          <div class="w-10 h-14 rounded bg-surface-container shrink-0 flex items-center justify-center text-on-surface-variant font-label-sm">
+            <span class="material-symbols-outlined text-[20px] text-primary">bookmark</span>
+          </div>
+          <div class="min-w-0 flex-1">
+            <h4 class="font-label-md text-label-md font-semibold text-on-surface truncate">${title}</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">${format}</p>
+            <span class="font-label-sm text-label-sm text-primary font-bold">$${price.toFixed(2)}</span>
+          </div>
+        </div>
+        <button onclick="removeCartItem(this, ${price})" class="text-on-surface-variant hover:text-error transition-colors p-1.5">
+          <span class="material-symbols-outlined text-[18px]">delete</span>
+        </button>
+      `;
+      container.prepend(row);
+    }
+
+    updateCartUI();
+    showToast('Added "' + title + '" to your Bag');
+  }
+
+  function removeCartItem(btn, price) {
+    const row = btn.closest('.cart-row');
+    if (row) {
+      row.remove();
+      cartCount = Math.max(0, cartCount - 1);
+      cartTotal = Math.max(0, cartTotal - price);
+      updateCartUI();
+      showToast('Item removed from basket');
+    }
+  }
+
+  function updateCartUI() {
+    const label = document.getElementById('cart-item-count-label');
+    if (label) label.innerText = cartCount + (cartCount === 1 ? ' item' : ' items');
+
+    const subEl = document.getElementById('summary-subtotal');
+    if (subEl) subEl.innerText = '$' + cartTotal.toFixed(2);
+
+    const discountedTotal = cartTotal * discountMultiplier;
+    const totEl = document.getElementById('summary-total');
+    if (totEl) totEl.innerText = '$' + discountedTotal.toFixed(2);
+
+    const discRow = document.getElementById('summary-discount-row');
+    const discEl = document.getElementById('summary-discount');
+    if (discRow && discEl && discountMultiplier < 1.0) {
+      discRow.classList.remove('hidden');
+      discRow.classList.add('flex');
+      discEl.innerText = '-$' + (cartTotal - discountedTotal).toFixed(2);
+    }
+  }
+
+  // Voucher Logic
+  function applyVoucher() {
+    const input = document.getElementById('promo-input');
+    const msg = document.getElementById('voucher-msg');
+    if (!input || !msg) return;
+    const code = input.value.trim().toUpperCase();
+
+    if (code === 'PAGE25') {
+      discountMultiplier = 0.75;
+      msg.className = 'text-label-sm font-label-sm px-1 text-secondary font-semibold';
+      msg.innerText = '✓ PAGE25 Applied: 25% salon discount granted!';
+      msg.classList.remove('hidden');
+      updateCartUI();
+      showToast('25% Autumn discount applied!');
+    } else if (code === 'SCHOLAR20') {
+      discountMultiplier = 0.80;
+      msg.className = 'text-label-sm font-label-sm px-1 text-secondary font-semibold';
+      msg.innerText = '✓ SCHOLAR20 Applied: 20% Academic discount active.';
+      msg.classList.remove('hidden');
+      updateCartUI();
+      showToast('20% Academic discount applied!');
+    } else {
+      msg.className = 'text-label-sm font-label-sm px-1 text-error font-medium';
+      msg.innerText = 'Voucher invalid or expired. Try PAGE25.';
+      msg.classList.remove('hidden');
+    }
+  }
+
+  function copyPromo(code) {
+    navigator.clipboard?.writeText(code);
+    showToast('Copied "' + code + '" to clipboard!');
+  }
+
+  function startCheckout() {
+    showToast('Secure PageHaven checkout initiated...');
+    setTimeout(() => {
+      alert('Order Confirmed! Your books and digital downloads are synced to Eleanor\'s Library.');
+    }, 400);
+  }
+
+  // Quiz Interaction
+  function answerQuiz(btn, isCorrect) {
+    const fb = document.getElementById('quiz-feedback');
+    const opts = document.querySelectorAll('#quiz-options-container button');
+    opts.forEach(b => {
+      b.classList.remove('bg-primary/20', 'bg-tertiary/20');
+      b.querySelector('.material-symbols-outlined').innerText = 'radio_button_unchecked';
+    });
+
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (isCorrect) {
+      btn.classList.add('bg-secondary-fixed');
+      icon.innerText = 'check_circle';
+      fb.className = 'p-2.5 rounded-lg text-body-sm font-body-sm bg-secondary-fixed text-on-secondary-fixed';
+      fb.innerText = 'Correct! The 86th Amendment Act (2002) inserted Article 21A, making elementary education a fundamental right.';
+      fb.classList.remove('hidden');
+      showToast('Correct answer! +25 Scholar XP');
+    } else {
+      btn.classList.add('bg-error-container');
+      icon.innerText = 'cancel';
+      fb.className = 'p-2.5 rounded-lg text-body-sm font-body-sm bg-error-container text-on-error-container';
+      fb.innerText = 'Incorrect. It was the 86th Amendment in 2002. Try reviewing the 2025 Yearbook.';
+      fb.classList.remove('hidden');
+    }
+  }
+
+  // Excerpt Preview Modal
+  function quickPreview(title, author, category, excerpt, price) {
+    const modal = document.getElementById('preview-modal');
+    document.getElementById('preview-title').innerText = title;
+    document.getElementById('preview-author').innerText = author;
+    document.getElementById('preview-cat').innerText = category;
+    document.getElementById('preview-text').innerText = excerpt;
+    document.getElementById('preview-price').innerText = '$' + price.toFixed(2);
+
+    const btn = document.getElementById('preview-add-btn');
+    btn.onclick = function() {
+      addToCart(title, price, 'Selected Edition', author);
+      closeModal('preview-modal');
+    };
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function openModal(id) {
+    const m = document.getElementById('modal-' + id);
+    if (m) {
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+  }
+
+  function closeModal(id) {
+    const m = document.getElementById(id);
+    if (m) {
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+  }
+
+  // Toast System
+  function showToast(message) {
+    const toast = document.getElementById('app-toast');
+    const toastText = document.getElementById('toast-text');
+    if (!toast || !toastText) return;
+    toastText.innerText = message;
+    toast.classList.remove('opacity-0', '-translate-y-6');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', '-translate-y-6');
+    }, 2400);
+  }
+
+  // ReadGenius AI Drawer
+  let aiOpen = false;
+  function toggleAiDrawer() {
+    const drawer = document.getElementById('ai-drawer');
+    aiOpen = !aiOpen;
+    if (aiOpen) {
+      drawer.classList.remove('translate-y-full');
+      drawer.classList.add('translate-y-0');
+    } else {
+      drawer.classList.add('translate-y-full');
+      drawer.classList.remove('translate-y-0');
+    }
+  }
+
+  function askAi(question) {
+    const chat = document.getElementById('ai-chat-messages');
+    // User query bubble
+    const userBubble = document.createElement('div');
+    userBubble.className = 'self-end p-2.5 rounded-xl bg-primary text-on-primary text-body-sm font-body-sm max-w-[85%]';
+    userBubble.innerText = question;
+    chat.appendChild(userBubble);
+
+    // AI response response logic
+    setTimeout(() => {
+      const aiBubble = document.createElement('div');
+      aiBubble.className = 'self-start p-3 rounded-xl bg-surface-container text-body-sm font-body-sm text-on-surface leading-relaxed max-w-[90%] shadow-sm';
+      if (question.includes('Before the Coffee Gets Cold')) {
+        aiBubble.innerHTML = "If you enjoyed the temporal warmth of Toshikazu Kawaguchi, you'll love <strong>The Midnight Library</strong> by Matt Haig, or <strong>Sweet Bean Paste</strong> by Durian Sukegawa. Both center on redemption and quiet solace.";
+      } else if (question.includes('Polity') || question.includes('civil service')) {
+        aiBubble.innerHTML = "For 2025 examinations, begin with <strong>The World Factbook 2025</strong> and the <strong>Economic Survey Compendium</strong> available in our Lessons tab. Pay specific attention to recent constitutional benchmarks.";
+      } else {
+        aiBubble.innerHTML = "I highly recommend <strong>Frieren: Beyond Journey's End</strong>. It treats the aftermath of an epic quest as a meditative study on human memory, time perception, and grief.";
+      }
+      chat.appendChild(aiBubble);
+      chat.scrollTop = chat.scrollHeight;
+    }, 400);
+  }
+
+  function submitAiUser() {
+    const input = document.getElementById('ai-user-input');
+    if (!input || !input.value.trim()) return;
+    askAi(input.value.trim());
+    input.value = '';
+  }
+
+  // Intercept App Shell Footer tabs if clicked
+  document.addEventListener('DOMContentLoaded', () => {
+    const footerLinks = document.querySelectorAll('nav[data-active-classes] a');
+    footerLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const p = link.getAttribute('data-path');
+        if (p === 'home') switchAppTab('home');
+        else if (p === 'browse-catalog') switchAppTab('fiction');
+        else if (p === 'magazines') switchAppTab('magazines');
+        else if (p === 'lessons-and-gk') switchAppTab('lessons');
+        else if (p === 'account-and-cart') switchAppTab('cart');
+      });
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(18,24,38,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-stretch justify-around h-16 px-space-xs"><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-w-0 py-1 transition-colors text-primary font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">cottage</span><span class="font-label-sm text-label-sm truncate mt-0.5">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-0 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="browse-catalog" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm truncate mt-0.5">Browse</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-0 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="magazines" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm truncate mt-0.5">Magazines</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-0 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="lessons-and-gk" href="#"><span class="material-symbols-outlined text-[22px]">school</span><span class="font-label-sm text-label-sm truncate mt-0.5">Lessons &amp; GK</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-0 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="account-and-cart" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm truncate mt-0.5">Account</span></a></div></nav></body></html>

@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+    }
+    .typing-dot {
+      animation: typingBounce 1.2s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(1) { animation-delay: 0s; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    #chat-input-bar {
+      pointer-events: auto !important;
+      z-index: 50;
+    }
+    #chat-input {
+      pointer-events: auto !important;
+    }
+    #send-msg-btn {
+      pointer-events: auto !important;
+      cursor: pointer !important;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb4a8",
+            "surface-variant": "#dde2f6",
+            "on-surface": "#151b29",
+            "tertiary": "#a83223",
+            "secondary-container": "#c3e6e7",
+            "on-tertiary-fixed": "#410100",
+            "primary-fixed-dim": "#ffb77d",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e2e8fc",
+            "on-primary-container": "#fffbff",
+            "primary": "#8d4b00",
+            "surface-bright": "#faf8ff",
+            "on-secondary-fixed": "#002021",
+            "on-tertiary-fixed-variant": "#8a1c10",
+            "primary-container": "#b15f00",
+            "surface-dim": "#d4d9ed",
+            "on-background": "#151b29",
+            "inverse-primary": "#ffb77d",
+            "outline": "#887364",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#554336",
+            "on-primary-fixed-variant": "#6e3900",
+            "on-primary": "#ffffff",
+            "surface-container": "#e9edff",
+            "outline-variant": "#dbc2b0",
+            "secondary": "#436465",
+            "tertiary-container": "#c94a38",
+            "secondary-fixed-dim": "#aacdce",
+            "surface-container-highest": "#dde2f6",
+            "inverse-on-surface": "#edf0ff",
+            "secondary-fixed": "#c6e9ea",
+            "tertiary-fixed": "#ffdad4",
+            "on-secondary-fixed-variant": "#2b4c4d",
+            "surface-tint": "#904d00",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#ffdcc3",
+            "surface": "#faf8ff",
+            "error": "#ba1a1a",
+            "inverse-surface": "#2a303f",
+            "surface-container-low": "#f1f3ff",
+            "on-tertiary-container": "#fffbff",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#2f1500",
+            "on-secondary-container": "#476869"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin": "2.5rem",
+            "gutter-sm": "1rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Newsreader"],
+            "body-lg": ["Manrope"],
+            "label-lg": ["Manrope"],
+            "title-editorial": ["Newsreader"],
+            "label-md": ["Manrope"],
+            "display": ["Newsreader"],
+            "headline-lg-mobile": ["Newsreader"],
+            "body-sm": ["Manrope"],
+            "headline-sm": ["Newsreader"],
+            "body-md": ["Manrope"],
+            "headline-lg": ["Newsreader"],
+            "label-sm": ["Manrope"],
+            "display-mobile": ["Newsreader"]
+          },
+          "fontSize": {
+            "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }],
+            "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+<!-- Top App Bar -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-16 px-4 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<img alt="PageCraft Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"/>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">PageCraft</span>
+<span class="hidden">Ai Assistant</span>
+</div>
+<div class="flex items-center gap-1">
+<a aria-label="Search Catalog" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</a>
+<button aria-label="Open Book Basket" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="cart-nav-btn" onclick="openCartToast()" type="button">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary text-on-primary font-label-sm text-[10px] flex items-center justify-center shadow-[0_0_8px_rgba(141,75,0,0.4)]" id="basket-count">2</span>
+</button>
+<a aria-label="User Account" class="w-11 h-11 flex items-center justify-center" data-path="account" href="#">
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Chat Flow -->
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface">
+<div class="flex flex-col w-full">
+<!-- Interactive Top Action Subheader -->
+<section class="px-4 pt-3 pb-2 flex items-center justify-between bg-surface/90 backdrop-blur-sm sticky top-16 z-30">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-[17px] text-on-surface truncate font-semibold">ReadGenius AI</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] whitespace-nowrap">
+                Online &amp; BookGraph
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Archival semantic discovery engine</span>
+</div>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface-variant transition-all font-label-md text-label-md cursor-pointer pointer-events-auto" id="clear-chat-btn" onclick="resetChat()" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset</span>
+</button>
+</section>
+<!-- Message Stream Container -->
+<section class="flex flex-col gap-4 px-4 py-3 min-w-0" id="chat-stream">
+<!-- Date / Context Pill -->
+<div class="flex justify-center my-1" id="session-header-pill">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-3 py-1 rounded-full bg-surface-container-low shadow-sm">
+            Literary Session Started • Today
+          </span>
+</div>
+<!-- Initial Greeting & Suggested Queries -->
+<div class="flex items-start gap-2.5 max-w-[92%]" id="welcome-message-block">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                Hello Alex! I can help you discover your next captivating story, recommend manga series, locate academic study guides, or find motivational life lessons. What are you in the mood to read today?
+              </p>
+</div>
+<!-- Prompt Suggestion Chips -->
+<div class="flex flex-col gap-1.5 pt-1" id="suggestion-wrapper">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Suggested literary queries:</span>
+<div class="flex flex-wrap gap-1.5" id="suggestion-container">
+<button class="suggestion-btn text-left px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-95 text-on-surface-variant font-label-md text-label-md transition-all cursor-pointer pointer-events-auto" onclick="sendPresetQuery('Best motivational books like Atomic Habits')" type="button">
+                  “Best motivational books like Atomic Habits”
+                </button>
+<button class="suggestion-btn text-left px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-95 text-on-surface-variant font-label-md text-label-md transition-all cursor-pointer pointer-events-auto" onclick="sendPresetQuery('Beginner-friendly Anime &amp; Manga')" type="button">
+                  “Beginner-friendly Anime &amp; Manga”
+                </button>
+<button class="suggestion-btn text-left px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-95 text-on-surface-variant font-label-md text-label-md transition-all cursor-pointer pointer-events-auto" onclick="sendPresetQuery('Exam prep study guides')" type="button">
+                  “Exam prep study guides”
+                </button>
+<button class="suggestion-btn text-left px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-95 text-on-surface-variant font-label-md text-label-md transition-all cursor-pointer pointer-events-auto" onclick="sendPresetQuery('Short story collections under $10')" type="button">
+                  “Short story collections under $10”
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Live Message Flow Area -->
+<div class="flex flex-col gap-4" id="dynamic-conversation-container">
+<!-- Initial Sample Messages -->
+<div class="flex justify-end self-end max-w-[85%] ml-auto mt-2">
+<div class="p-3.5 rounded-2xl rounded-br-sm bg-[#1e293b] text-white shadow-md">
+<p class="font-body-md text-body-md leading-relaxed">
+                I want a gripping sci-fi story book available in hardcopy, plus a motivational e-book for daily routines.
+              </p>
+<div class="flex items-center justify-end gap-1 mt-1 text-slate-400 font-label-sm text-label-sm">
+<span>10:42 AM</span>
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 px-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              ReadGenius Graph Match • 2 Recommendations Found
+            </span>
+</div>
+<div class="flex items-start gap-2.5 max-w-full">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<div class="flex flex-col gap-3 w-full min-w-0">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Splendid pairing! Here are two hand-selected editions from our stacks that match your twin pursuits: an exhilarating hardbound interplanetary odyssey and an instant-read productivity guide tailored for morning systems.
+                </p>
+</div>
+<!-- Recommendation 1 -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+<div class="flex gap-3">
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+<img alt="Project Hail Mary" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt0m83ytZOO8ly58NCEy7dHkycRseL-vQgCT3XZaW02CTTd9VJH3B3PsWTgEjoTsrzM87_FhARX839Fe8mrMFax9WB-ghlTcZ1Q1VqLUdnXLUZ8PPhqppDn4fOe9qc5ZTYWKOTpj0XH_0bm70yw2xudgKSWFCfxeT0MkTjjkm0IpUZNN5CbTPX5NIJTEedjOTQxjoTIaExzpu1cGVaafR8ZW9cT3RHXoATmcFVK7yY4M4M-3hxJ1ydFg"/>
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/25 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> Hardcover
+                        </span>
+<span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock
+                        </span>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        Project Hail Mary
+                      </h3>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">by Andy Weir</p>
+<div class="flex items-center gap-1.5 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(18.4k reviews)</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$22.00</span>
+<span class="font-label-sm text-label-sm line-through text-outline-variant">$29.99</span>
+</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low">
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “Engaging, deeply scientific, and heartwarming sci-fi thriller about a lone astronaut solving extinction-level orbital physics.”
+                  </p>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 transition-all shadow-sm cursor-pointer pointer-events-auto" onclick="addToCart(this, 'Project Hail Mary (Hardcopy)', 22.00)" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Add Hardcopy to Cart • $22.00</span>
+</button>
+</article>
+<!-- Recommendation 2 -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+<div class="flex gap-3">
+<div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+<img alt="Make Time" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBPsQ3Xlc7M8gUAcGGwLIxuWtEQbB32NdVYY2oqsXfj6Lg5YueDRneOnR-iyJQpQAns_AKSo43jNUreil7vo8jYWlBaqtxU_snzH3V5T7rFiT5eTTIElq-w68azZxBp9d5HH3BDzdfnlGQFMl4FjNATAb7TmGOfV5FexjjMKD3iWGSiBqX655sM52yYqb7jpKXnJWMPJyTQLs_xRkoAlkSXtCXUFuq6dHDvke9PzBbgVRiLlSeDHpY8Q"/>
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/25 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">bolt</span> E-Book
+                        </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">cloud_download</span> Instant Read
+                        </span>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        Make Time: Focus on What Matters
+                      </h3>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">by Jake Knapp &amp; John Zeratsky</p>
+<div class="flex items-center gap-1.5 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold">4.7</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(6.1k reviews)</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$7.99</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cloud ePub + PDF</span>
+</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low">
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “Actionable micro-habits and pragmatic tactics to redesign your daily screen habits and reclaim personal creative energy.”
+                  </p>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg active:scale-98 transition-all shadow-sm cursor-pointer pointer-events-auto" onclick="addToCart(this, 'Make Time (Soft Copy)', 7.99)" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Get Soft Copy • $7.99</span>
+</button>
+<button aria-label="Free Sample Preview" class="flex items-center justify-center p-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface active:scale-95 transition-all cursor-pointer pointer-events-auto" onclick="openSamplePreview('Make Time', 'Jake Knapp &amp; John Zeratsky', 'Why is it so hard to find time for what really matters? If you have ever felt overwhelmed by endless to-do lists, constant pinging notifications, and days that slip by without moving the needle on personal projects, you are caught in the busy trap. Make Time is not about superhuman productivity; it is about creating friction against defaults so you can reclaim your creative spark every single morning.')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</article>
+<!-- Companion Bundle -->
+<div class="p-3 rounded-xl bg-surface-container-high flex items-center justify-between gap-2 shadow-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">psychology_alt</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Combine both in a Bundle?</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Save 15% when purchased together today</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface text-primary font-label-md text-label-md font-bold whitespace-nowrap shadow-xs active:scale-95 transition-all cursor-pointer pointer-events-auto" onclick="addToCart(this, 'Bundle (Project Hail Mary + Make Time)', 25.50)" type="button">
+                  $25.50
+                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Bottom Input Deck -->
+<div class="fixed bottom-16 inset-x-0 z-50 px-3 py-2.5 bg-surface/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)]" id="chat-input-bar">
+<form class="flex items-center gap-2 w-full" id="chat-input-form" onsubmit="event.preventDefault(); sendMessage(); return false;">
+<button aria-label="Voice inquiry" class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant hover:text-primary active:scale-95 transition-all cursor-pointer pointer-events-auto" id="mic-btn" onclick="toggleMicrophone(this)" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<div class="relative flex-1 min-w-0 flex items-center">
+<input autocomplete="off" class="w-full h-11 pl-4 pr-10 rounded-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/70 font-body-sm text-body-sm shadow-inner border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all pointer-events-auto" id="chat-input" name="chat_query" onkeydown="if(event.key==='Enter'){ event.preventDefault(); sendMessage(); }" placeholder="Ask ReadGenius about any genre, author, exam..." type="text"/>
+<button aria-label="Clear input text" class="hidden absolute right-3 w-5 h-5 rounded-full text-on-surface-variant/60 hover:text-on-surface flex items-center justify-center cursor-pointer pointer-events-auto" id="clear-input-icon" onclick="clearInputField()" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+</button>
+</div>
+<button aria-label="Send message to ReadGenius" class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-primary text-on-primary shadow-[0_2px_8px_rgba(141,75,0,0.35)] hover:bg-primary-container active:scale-95 transition-all cursor-pointer pointer-events-auto" id="send-msg-btn" onclick="sendMessage()" type="submit">
+<span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+</button>
+</form>
+</div>
+</main>
+<!-- Toast Notification System -->
+<div class="fixed top-20 inset-x-4 z-50 pointer-events-none transform -translate-y-8 opacity-0 transition-all duration-300 flex justify-center" id="toast-banner">
+<div class="px-4 py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface shadow-xl flex items-center gap-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">auto_awesome</span>
+<span id="toast-message">Added to your Book Basket!</span>
+</div>
+</div>
+<!-- Sample Preview Modal -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" id="preview-modal">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] transform scale-95 transition-transform duration-200" id="preview-modal-box">
+<div class="p-4 border-b border-surface-variant flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+<h4 class="font-headline-sm text-[17px] text-on-surface truncate" id="modal-title">Sample Chapter</h4>
+</div>
+<button aria-label="Close modal" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-90 transition-all cursor-pointer pointer-events-auto" onclick="closeSamplePreview()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-4 overflow-y-auto space-y-3 font-body-md text-body-md text-on-surface">
+<p class="font-label-sm uppercase tracking-wider text-primary font-bold" id="modal-author">AUTHOR SAMPLE</p>
+<div class="font-display italic text-[17px] leading-relaxed text-on-surface bg-surface-container-low/60 p-3.5 rounded-xl border-l-4 border-primary" id="modal-text">
+          Sample excerpt loading...
+        </div>
+<p class="text-body-sm text-on-surface-variant">Full digital edition includes interactive bookmarking, offline sync, and audio narration track.</p>
+</div>
+<div class="p-3 border-t border-surface-variant bg-surface flex items-center gap-2">
+<button class="flex-1 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold cursor-pointer pointer-events-auto active:scale-98 transition-all" onclick="addToCart(this, 'Instant Digital Sample Access', 0); closeSamplePreview();" type="button">
+          Borrow Full eBook ($7.99)
+        </button>
+<button class="px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md cursor-pointer pointer-events-auto" onclick="closeSamplePreview()" type="button">
+          Close
+        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md font-semibold">
+<div class="flex justify-around items-center h-16 px-2">
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="browse" href="#">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<span class="font-label-sm text-label-sm">Browse</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 transition-colors text-primary font-label-md font-semibold" data-path="ai-assistant" href="#">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+<span class="font-label-sm text-label-sm">AI Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-library" href="#">
+<span class="material-symbols-outlined text-[22px]">local_library</span>
+<span class="font-label-sm text-label-sm">My Library</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="account" href="#">
+<span class="material-symbols-outlined text-[22px]">account_circle</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</div>
+</nav>
+<!-- Interactive Chat Script with Expanded Conversational Intelligence -->
+<script>
+    let cartCount = 2;
+
+    function updateCartBadge() {
+      const badge = document.getElementById('basket-count') || document.getElementById('cart-badge-count');
+      if (badge) {
+        badge.textContent = cartCount;
+        badge.classList.remove('scale-125');
+        void badge.offsetWidth;
+        badge.classList.add('scale-125');
+        setTimeout(() => badge.classList.remove('scale-125'), 200);
+      }
+    }
+
+    function openCartToast() {
+      showToast(`Book Basket: ${cartCount} items ready for checkout`);
+    }
+
+    function addToCart(btn, title, price) {
+      cartCount++;
+      updateCartBadge();
+      const priceTxt = price > 0 ? ` ($${Number(price).toFixed(2)})` : '';
+      showToast(`Added to your Book Basket! ${title}${priceTxt}`);
+      if (btn) {
+        btn.classList.add('opacity-75', 'scale-98');
+        setTimeout(() => btn.classList.remove('opacity-75', 'scale-98'), 200);
+      }
+    }
+
+    function showToast(message) {
+      const banner = document.getElementById('toast-banner');
+      const label = document.getElementById('toast-message');
+      if (!banner || !label) return;
+      label.textContent = message;
+      banner.classList.remove('-translate-y-8', 'opacity-0', 'pointer-events-none');
+      banner.classList.add('translate-y-0', 'opacity-100');
+      clearTimeout(banner._timeout);
+      banner._timeout = setTimeout(() => {
+        banner.classList.remove('translate-y-0', 'opacity-100');
+        banner.classList.add('-translate-y-8', 'opacity-0', 'pointer-events-none');
+      }, 2600);
+    }
+
+    function openSamplePreview(title, author, text) {
+      const modal = document.getElementById('preview-modal');
+      const box = document.getElementById('preview-modal-box');
+      const titleEl = document.getElementById('modal-title');
+      const authEl = document.getElementById('modal-author');
+      const textEl = document.getElementById('modal-text');
+
+      if (titleEl) titleEl.textContent = title;
+      if (authEl) authEl.textContent = author;
+      if (textEl) textEl.innerHTML = `“${text}”`;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      box.classList.remove('scale-95');
+      box.classList.add('scale-100');
+    }
+
+    function closeSamplePreview() {
+      const modal = document.getElementById('preview-modal');
+      const box = document.getElementById('preview-modal-box');
+      if (!modal || !box) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      box.classList.add('scale-95');
+      box.classList.remove('scale-100');
+    }
+
+    function sendPresetQuery(queryText) {
+      const cleaned = queryText.replace(/[\u201C\u201D"]/g, '').trim();
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (input) {
+        input.value = cleaned;
+        toggleClearIcon(true);
+      }
+      sendMessage();
+    }
+
+    function clearInputField() {
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (!input) return;
+      input.value = '';
+      input.focus();
+      toggleClearIcon(false);
+    }
+
+    function toggleClearIcon(show) {
+      const btn = document.getElementById('clear-input-icon');
+      if (!btn) return;
+      if (show) btn.classList.remove('hidden');
+      else btn.classList.add('hidden');
+    }
+
+    function getCurrentTime() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      const minStr = minutes < 10 ? '0' + minutes : minutes;
+      return `${hours}:${minStr} ${ampm}`;
+    }
+
+    function scrollChatToBottom() {
+      const container = document.getElementById('chat-stream');
+      if (container && container.scrollHeight > container.clientHeight) {
+        container.scrollTop = container.scrollHeight;
+      }
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (!input) return;
+      const text = input.value ? input.value.trim() : '';
+      if (!text) {
+        input.focus();
+        return;
+      }
+
+      const container = document.getElementById('dynamic-conversation-container');
+      if (!container) return;
+
+      // Append user bubble
+      const userDiv = document.createElement('div');
+      userDiv.className = 'flex justify-end self-end max-w-[85%] ml-auto mt-2 transition-all duration-300';
+      userDiv.innerHTML = `
+        <div class="p-3.5 rounded-2xl rounded-br-sm bg-[#1e293b] text-white shadow-md">
+          <p class="font-body-md text-body-md leading-relaxed">${escapeHtml(text)}</p>
+          <div class="flex items-center justify-end gap-1 mt-1 text-slate-400 font-label-sm text-label-sm">
+            <span>${getCurrentTime()}</span>
+            <span class="material-symbols-outlined text-[14px]">done_all</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(userDiv);
+
+      // Reset and refocus input
+      input.value = '';
+      toggleClearIcon(false);
+      input.focus();
+      scrollChatToBottom();
+
+      // Show ReadGenius typing indicator
+      const typingId = 'typing-' + Date.now();
+      const typingDiv = document.createElement('div');
+      typingDiv.id = typingId;
+      typingDiv.className = 'flex items-center gap-2.5 max-w-[92%] mt-1';
+      typingDiv.innerHTML = `
+        <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">psychology</span>
+        </div>
+        <div class="px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-2 border border-outline-variant/30">
+          <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">ReadGenius is consulting the stacks...</span>
+          <div class="flex items-center gap-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary typing-dot"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-primary typing-dot"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-primary typing-dot"></div>
+          </div>
+        </div>
+      `;
+      container.appendChild(typingDiv);
+      scrollChatToBottom();
+
+      // Realistic response delay 600ms - 800ms
+      setTimeout(() => {
+        const activeTyping = document.getElementById(typingId);
+        if (activeTyping) activeTyping.remove();
+        renderAIResponse(text, container);
+      }, 700);
+    }
+
+    // Expanded Conversational Intelligence Engine
+    function renderAIResponse(query, container) {
+      const q = query.toLowerCase().trim();
+      let responseHTML = '';
+
+      // Check 1: Greetings, pleasantries & capabilities
+      const isGreeting = /^(hi|hello|hey|greetings|good\s*(morning|afternoon|evening)|howdy|sup)\b/i.test(q) || 
+                         q.includes('how are you') || 
+                         q.includes('who are you') || 
+                         q.includes('what can you do') || 
+                         q.includes('help me') ||
+                         q.includes('thank') || 
+                         q.includes('bye') || 
+                         q.includes('see you');
+
+      // Check 2: Manga / Anime / Graphic novels
+      const isManga = /manga|anime|naruto|jujutsu|demon slayer|chainsaw|one piece|attack on titan|graphic novel|comics|tankobon|solo leveling/i.test(q);
+
+      // Check 3: Sci-Fi & Fantasy
+      const isSciFi = /sci-fi|scifi|science fiction|space|fantasy|dune|project hail mary|three body|three-body|star wars|interstellar|novel|midnight library|hail mary/i.test(q);
+
+      // Check 4: Motivational / Self-Help / Habits / Psychology
+      const isMotivational = /habit|atomic|money|motivation|motivational|focus|deep work|psychology|discipline|mindset|routine|productivity|life lesson|self help|self-help/i.test(q);
+
+      // Check 5: Academic / Study / Tech / Exam / Programming
+      const isStudy = /study|exam|code|coding|prep|calculus|math|computer science|gre|gk|general knowledge|textbook|interview|programming|data structure|test/i.test(q);
+
+      // Check 6: Customer Care / Tracking / Order / Refund / Delivery
+      const isCustomerCare = /track|order|shipping|refund|return|delivery|support|damaged|courier|where is my|cancel/i.test(q);
+
+      // Check 7: E-Book vs Hardcopy format specific
+      const isFormatInquiry = /ebook|e-book|kindle|pdf|digital|soft copy|audiobook|format|sync|cloud reader/i.test(q);
+
+      if (isGreeting && !isManga && !isSciFi && !isMotivational && !isStudy) {
+        if (q.includes('thank')) {
+          responseHTML = `
+            <div class="flex items-center gap-2 px-1">
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">PageCraft Concierge</span>
+            </div>
+            <div class="flex items-start gap-2.5 max-w-full">
+              <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">favorite</span>
+              </div>
+              <div class="flex flex-col gap-2.5 w-full min-w-0">
+                <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                  <p class="font-body-md text-body-md leading-relaxed">
+                    You're most welcome! It is always a pleasure helping readers find stories and knowledge that resonate. What would you like to explore next?
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <button onclick="sendPresetQuery('Inspiring memoirs under $15')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Inspiring memoirs under $15”</button>
+                  <button onclick="sendPresetQuery('Explore trending manga')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Explore trending manga”</button>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (q.includes('who are you') || q.includes('what can you do')) {
+          responseHTML = `
+            <div class="flex items-center gap-2 px-1">
+              <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+              <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">ReadGenius Discovery Engine</span>
+            </div>
+            <div class="flex items-start gap-2.5 max-w-full">
+              <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">psychology</span>
+              </div>
+              <div class="flex flex-col gap-3 w-full min-w-0">
+                <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                  <p class="font-body-md text-body-md leading-relaxed text-on-surface mb-2">
+                    I am <strong>ReadGenius</strong>, PageCraft's AI book curator and bibliographic discovery companion! Here is what I can do for you:
+                  </p>
+                  <ul class="text-body-sm text-on-surface-variant space-y-1.5 pl-1">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Recommend books by mood, genre, author, or theme</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Compare hardcover prints versus instant cloud e-books</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Find exam preps, tech guides, and academic stacks</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Assist with order statuses, delivery, and cart management</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <button onclick="sendPresetQuery('Top Sci-Fi thrillers')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Top Sci-Fi thrillers”</button>
+                  <button onclick="sendPresetQuery('Best books on building discipline')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Best books on building discipline”</button>
+                  <button onclick="sendPresetQuery('Track my active order')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Track my active order”</button>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          responseHTML = `
+            <div class="flex items-center gap-2 px-1">
+              <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-bold tracking-wide uppercase">PageCraft Concierge</span>
+            </div>
+            <div class="flex items-start gap-2.5 max-w-full">
+              <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">waving_hand</span>
+              </div>
+              <div class="flex flex-col gap-3 w-full min-w-0">
+                <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                  <p class="font-body-md text-body-md leading-relaxed">
+                    Hello! I'm delighted to assist you today. Tell me what kind of reading experience you are looking for—whether it's an immersive fantasy escape, sharp business habits, manga, or university study companions!
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <button onclick="sendPresetQuery('Recommend a thrilling sci-fi novel')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Recommend a thrilling sci-fi novel”</button>
+                  <button onclick="sendPresetQuery('Beginner manga series')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Beginner manga series”</button>
+                  <button onclick="sendPresetQuery('Life habits & focus')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md transition-all active:scale-95 cursor-pointer">“Life habits &amp; focus”</button>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      } else if (isCustomerCare) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">
+              Customer Care &amp; Order Status
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface mb-2">
+                  I checked your account records. Here is the live status of your latest package:
+                </p>
+                <div class="p-3 rounded-lg bg-surface-container-low border border-outline-variant/20 flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-md text-label-md font-bold text-on-surface">Order #PC-89412</span>
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-semibold">In Transit</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Courier: <strong>Royal Postal Air</strong> • Est. Arrival: <strong>Tomorrow, 2:00 PM</strong>
+                  </p>
+                  <p class="font-label-sm text-label-sm text-outline">Items: <em>Project Hail Mary (Hardcover) + 1 e-Book Sync</em></p>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                  Need a replacement or hassle-free refund? All PageCraft physical purchases include our <strong>30-Day Pristine Spine Guarantee</strong> with complimentary return shipping labels.
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="showToast('Tracking link sent to registered email!')" class="flex-1 py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md active:scale-98 transition-all cursor-pointer">
+                  Email Live Tracking Link
+                </button>
+                <button onclick="showToast('Support concierge pinged. An agent will respond in 2 min.')" class="py-2.5 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:text-on-surface cursor-pointer">
+                  Agent Chat
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (isFormatInquiry && !isMotivational && !isManga && !isSciFi) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              PageCraft Stacks • Format Comparison
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">cloud_sync</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed mb-2">
+                  At PageCraft, every book format is crafted for maximum reading comfort:
+                </p>
+                <div class="space-y-2 text-body-sm text-on-surface-variant">
+                  <div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">bolt</span>
+                    <div>
+                      <strong class="text-on-surface font-semibold">Instant E-Books ($5.99 – $9.99):</strong> Immediate cloud access, customizable typography, dark mode, offline synchronization across iOS &amp; Android, and whisper-sync page tracking.
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2">
+                    <span class="material-symbols-outlined text-secondary text-[18px]">menu_book</span>
+                    <div>
+                      <strong class="text-on-surface font-semibold">Hardcover &amp; Tankōbon:</strong> Archival grade acid-free papers, custom foil stamping, and tactile ribbon bookmarks.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <button onclick="sendPresetQuery('Best e-books under $8')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md cursor-pointer">“Best e-books under $8”</button>
+                <button onclick="sendPresetQuery('Collector hardcover editions')" class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary/10 hover:text-primary text-on-surface-variant font-label-md text-label-md cursor-pointer">“Collector hardcover editions”</button>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (isManga) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              ReadGenius Graph Match • Manga &amp; Graphic Novels
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">auto_stories</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Sensational choices! For exhilarating storytelling with legendary artwork and pulse-pounding supernatural battles, here are our staff's top manga picks:
+                </p>
+              </div>
+              <!-- Manga 1: Jujutsu Kaisen -->
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=300&q=80" alt="Jujutsu Kaisen manga cover" class="w-full h-full object-cover"/>
+                    <div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/25 to-transparent"></div>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <div class="flex items-center justify-between gap-1 mb-1">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                          <span class="material-symbols-outlined text-[12px]">import_contacts</span> Tankōbon Print
+                        </span>
+                        <span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-0.5">
+                          <span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock
+                        </span>
+                      </div>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        Jujutsu Kaisen, Vol. 1
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by Gege Akutami</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.92</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(22.8k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$11.99</span>
+                      <span class="font-label-sm text-label-sm line-through text-outline-variant">$14.99</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-surface-container-low">
+                  <p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “Yuji Itadori is resolved to save a classmate from cursed spirits by swallowing a rotting finger of the King of Curses Ryomen Sukuna.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'Jujutsu Kaisen Vol. 1 (Hardcopy)', 11.99)" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 transition-all shadow-sm cursor-pointer pointer-events-auto" type="button">
+                    <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    <span>Add Hardcopy • $11.99</span>
+                  </button>
+                  <button onclick="addToCart(this, 'Jujutsu Kaisen Vol. 1 (Digital)', 5.99)" class="py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md active:scale-98 transition-all cursor-pointer pointer-events-auto" type="button">
+                    E-Book $5.99
+                  </button>
+                </div>
+              </article>
+              <!-- Manga 2: Chainsaw Man -->
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300&q=80" alt="Chainsaw Man" class="w-full h-full object-cover"/>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm mb-1">
+                        <span class="material-symbols-outlined text-[12px]">local_fire_department</span> Best Seller
+                      </span>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        Chainsaw Man, Vol. 1: Dog &amp; Chainsaw
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by Tatsuki Fujimoto</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.88</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(19.4k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-primary font-bold">$10.99</span>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant">eBook $6.49</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'Chainsaw Man Vol. 1', 10.99)" class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    <span>Add to Cart • $10.99</span>
+                  </button>
+                  <button onclick="openSamplePreview('Chainsaw Man', 'Tatsuki Fujimoto', 'Denji was a small-time devil hunter just trying to survive in a harsh world. After being murdered by devils, he is revived by his pet devil-dog Pochita with a chainsaw heart.')" class="p-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer" title="Preview">
+                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        `;
+      } else if (isMotivational) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              ReadGenius Graph Match • Habits, Mindset &amp; Productivity
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">trending_up</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Here are the industry benchmarks for habit architecture, cognitive focus, and wealth psychology:
+                </p>
+              </div>
+              <!-- Book 1: Atomic Habits -->
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&q=80" alt="Atomic Habits" class="w-full h-full object-cover"/>
+                    <div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/25 to-transparent"></div>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <div class="flex items-center justify-between gap-1 mb-1">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                          <span class="material-symbols-outlined text-[12px]">auto_stories</span> Hardcover
+                        </span>
+                        <span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-0.5">
+                          <span class="material-symbols-outlined text-[14px]">verified</span> Global #1
+                        </span>
+                      </div>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        Atomic Habits
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by James Clear</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.96</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(64.1k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$21.00</span>
+                      <span class="font-label-sm text-label-sm line-through text-outline-variant">$27.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-surface-container-low">
+                  <p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “An easy and proven way to build good habits and break bad ones using 1% compounding daily improvements.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'Atomic Habits (Hardcover)', 21.00)" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 transition-all shadow-sm cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    <span>Add Hardcopy • $21.00</span>
+                  </button>
+                  <button onclick="addToCart(this, 'Atomic Habits (eBook)', 8.99)" class="py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md active:scale-98 transition-all cursor-pointer">
+                    E-Book $8.99
+                  </button>
+                </div>
+              </article>
+              <!-- Book 2: The Psychology of Money -->
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=300&q=80" alt="Psychology of Money" class="w-full h-full object-cover"/>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm mb-1">
+                        <span class="material-symbols-outlined text-[12px]">bolt</span> Instant Soft Copy
+                      </span>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        The Psychology of Money
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by Morgan Housel</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.8</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(21.3k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-primary font-bold">$7.50</span>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant">Hardcover: $17.50</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'The Psychology of Money (Soft Copy)', 7.50)" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg active:scale-98 transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">download</span>
+                    <span>Get Soft Copy • $7.50</span>
+                  </button>
+                  <button onclick="openSamplePreview('The Psychology of Money', 'Morgan Housel', 'Doing well with money has a little to do with how smart you are and a lot to do with how you behave. And behavior is hard to teach, even to really smart people.')" class="p-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer" title="Preview">
+                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        `;
+      } else if (isStudy) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              ReadGenius Graph Match • Computer Science &amp; Academics
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">school</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Equip yourself with comprehensive technical foundations and tested interview drills:
+                </p>
+              </div>
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&q=80" alt="Cracking the Coding Interview" class="w-full h-full object-cover"/>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <div class="flex items-center justify-between gap-1 mb-1">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                          <span class="material-symbols-outlined text-[12px]">code</span> FAANG Standard
+                        </span>
+                      </div>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        Cracking the Coding Interview
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by Gayle Laakmann McDowell</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.9</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(14.7k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$36.00</span>
+                      <span class="font-label-sm text-label-sm line-through text-outline-variant">$42.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-surface-container-low">
+                  <p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “189 programming questions and solutions covering algorithms, Big-O, systems design, and behavioral preparation.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'Cracking the Coding Interview (Hardcopy)', 36.00)" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    <span>Add Hardcopy • $36.00</span>
+                  </button>
+                  <button onclick="addToCart(this, 'Cracking the Coding Interview (eBook)', 19.99)" class="py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md active:scale-98 transition-all cursor-pointer">
+                    E-Book $19.99
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        `;
+      } else if (isSciFi) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              ReadGenius Graph Match • Speculative Fiction &amp; Sci-Fi
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Here is our celebrated modern philosophical fantasy alongside an epic hardcover space survival odyssey:
+                </p>
+              </div>
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&q=80" alt="The Midnight Library" class="w-full h-full object-cover"/>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <div class="flex items-center justify-between gap-1 mb-1">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                          <span class="material-symbols-outlined text-[12px]">menu_book</span> Hardcover
+                        </span>
+                        <span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-0.5">
+                          <span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock
+                        </span>
+                      </div>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        The Midnight Library
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by Matt Haig</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.85</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(31.2k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$18.99</span>
+                      <span class="font-label-sm text-label-sm line-through text-outline-variant">$26.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-surface-container-low">
+                  <p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “Between life and death there is a library where every book gives you a chance to try another life you could have lived.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'The Midnight Library (Hardcover)', 18.99)" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    <span>Add Hardcover • $18.99</span>
+                  </button>
+                  <button onclick="addToCart(this, 'The Midnight Library (eBook)', 7.99)" class="py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md active:scale-98 transition-all cursor-pointer">
+                    E-Book $7.99
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        `;
+      } else {
+        // Dynamic contextual response for general queries
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              ReadGenius Archival Discovery • Curated Pick
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">psychology</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  I indexed our repository for "<strong>${escapeHtml(query)}</strong>". Based on thematic affinity, narrative reviews, and archival relevance, here is our editor's choice:
+                </p>
+              </div>
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&q=80" alt="Curated Book" class="w-full h-full object-cover"/>
+                    <div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/25 to-transparent"></div>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <div class="flex items-center justify-between gap-1 mb-1">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                          <span class="material-symbols-outlined text-[12px]">auto_stories</span> Staff Spotlight
+                        </span>
+                        <span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-0.5">
+                          <span class="material-symbols-outlined text-[14px]">local_shipping</span> 1-Day Ship
+                        </span>
+                      </div>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        The Architecture of Focus
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by Marcus Vance</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.91</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(4.3k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$22.00</span>
+                      <span class="font-label-sm text-label-sm line-through text-outline-variant">$28.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-surface-container-low">
+                  <p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    “A profound synthesis of deep cognitive work habits, digital discipline, and everyday personal clarity.”
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'The Architecture of Focus (Hardcopy)', 22.00)" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 transition-all shadow-sm cursor-pointer pointer-events-auto" type="button">
+                    <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    <span>Add Hardcopy • $22.00</span>
+                  </button>
+                  <button onclick="addToCart(this, 'The Architecture of Focus (Soft Copy)', 7.99)" class="py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md active:scale-98 transition-all cursor-pointer pointer-events-auto" type="button">
+                    <span>Get Soft Copy • $7.99</span>
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        `;
+      }
+
+      const aiDiv = document.createElement('div');
+      aiDiv.className = 'flex flex-col gap-3 transition-opacity duration-300';
+      aiDiv.innerHTML = responseHTML;
+      container.appendChild(aiDiv);
+      scrollChatToBottom();
+    }
+
+    function resetChat() {
+      const container = document.getElementById('dynamic-conversation-container');
+      if (container) {
+        container.innerHTML = `
+          <div class="flex justify-center my-2">
+            <span class="font-label-sm text-label-sm text-on-surface-variant italic px-3 py-1 bg-surface-container rounded-full">
+              New session started. Ask about manga, sci-fi, study guides, or orders!
+            </span>
+          </div>
+        `;
+      }
+      showToast('Conversation refreshed to initial catalog state.');
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (input) {
+        input.value = '';
+        toggleClearIcon(false);
+        input.focus();
+      }
+    }
+
+    let isListening = false;
+    function toggleMicrophone(btn) {
+      isListening = !isListening;
+      if (isListening) {
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        btn.classList.add('bg-tertiary', 'text-on-tertiary', 'animate-pulse');
+        showToast('Listening... speak your literary inquiry');
+        setTimeout(() => {
+          if (isListening) {
+            toggleMicrophone(btn);
+            const sampleSpeech = "Recommend manga series with deep philosophical themes";
+            const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+            if (input) {
+              input.value = sampleSpeech;
+              sendMessage();
+            }
+          }
+        }, 2600);
+      } else {
+        btn.classList.remove('bg-tertiary', 'text-on-tertiary', 'animate-pulse');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      }
+    }
+
+    function initChatEngine() {
+      const form = document.getElementById('chat-input-form');
+      const input = document.getElementById('chat-input');
+      const sendBtn = document.getElementById('send-msg-btn');
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          sendMessage();
+          return false;
+        });
+      }
+
+      if (input) {
+        input.addEventListener('input', function(e) {
+          toggleClearIcon(e.target.value.length > 0);
+        });
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+      }
+
+      if (sendBtn) {
+        sendBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          sendMessage();
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initChatEngine);
+    } else {
+      initChatEngine();
+    }
+  </script>
+</body></html>

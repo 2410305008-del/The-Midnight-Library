@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#c4e7ff", "tertiary-container": "#006194", "tertiary": "#004870", "surface-container": "#eaedff", "on-secondary-fixed": "#001e2c", "surface-tint": "#216293", "on-secondary-container": "#004d6a", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#283044", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "on-tertiary-container": "#b2d9ff", "on-secondary-fixed-variant": "#004c69", "on-primary-fixed-variant": "#004a77", "on-background": "#131b2e", "surface-container-lowest": "#ffffff", "primary": "#004873", "secondary-container": "#40c2fd", "secondary": "#00668a", "on-error-container": "#93000a", "background": "#faf8ff", "tertiary-fixed": "#cce5ff", "on-primary": "#ffffff", "inverse-on-surface": "#eef0ff", "surface-dim": "#d2d9f4", "primary-fixed-dim": "#97cbff", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-surface-variant": "#41474f", "on-secondary": "#ffffff", "primary-container": "#1e6091", "error-container": "#ffdad6", "error": "#ba1a1a", "surface": "#faf8ff", "outline-variant": "#c1c7d0", "on-primary-container": "#b5d9ff", "inverse-primary": "#97cbff", "secondary-fixed-dim": "#7bd0ff", "surface-container-high": "#e2e7ff", "surface-bright": "#faf8ff", "tertiary-fixed-dim": "#93ccff", "surface-variant": "#dae2fd", "primary-fixed": "#cee5ff", "on-surface": "#131b2e", "outline": "#717880", "on-tertiary-fixed": "#001d31", "on-primary-fixed": "#001d33" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "margin": "2rem", "space-md": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, "fontFamily": { "headline-sm": ["Newsreader"], "headline-lg": ["Newsreader"], "display-md": ["Newsreader"], "headline-lg-mobile": ["Newsreader"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Newsreader"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Newsreader"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Newsreader"], "display-md-mobile": ["Newsreader"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-md": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg": ["52px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-md-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 max-w-[1280px] mx-auto px-gutter flex flex-col justify-between pt-space-sm pb-space-xs"><div class="flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><img alt="A beautiful, elegant book logo emblem for PageHaven. An open hardcover book with graceful flowing golden-amber deckled pages, forming an elegant sanctuary arch or beacon of knowledge, minimalist modern vector style with subtle warm amber, gold, and deep ink accents.. Brand logo. - Primary color: #d97706 - Font: newsreader - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WdjjKZMCJAvODphv46zQPuppr3R2xAaPReWtVmVHiKb6qW0vREn9yjHldgPqAT37ylcxRltUucpugJLmafg3oASFhFFIJ451s2NZ1sIc7IbybFgu4GtGa5a9UGf4j1vceVUwGKeujFvlIKhWMzsrZPWfn2VkCT4fRupYZvY4c04PPmVGptJj5W1XKsUaHIbgBdQ1BDqiXT5W8CF6Fu_9-dsAa_7yXxKmmKslLKjc-wGQjNSub2Ea6r_4I"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">PageHaven</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase mt-space-xs">Sanctuary of Rare Books &amp; Curated Editions</span></div></div><div class="flex-1 max-w-xl mx-space-lg hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[20px]">search</span><input class="w-full bg-surface-container-low pl-11 pr-space-md py-space-xs rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search titles, rare folio prints, illuminated manuscripts, or authors..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="relative flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[20px] text-primary">local_mall</span><span class="hidden sm:inline">Reading Bag</span><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold">3</span></button><button class="px-space-md py-space-xs rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors hidden sm:block">Sign In / Join</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><nav class="flex items-center gap-space-xs overflow-x-auto py-space-xs -mx-space-xs px-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a aria-current="page" class="px-space-md py-space-xs whitespace-nowrap transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="home-and-curated-salon" href="#">Home</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-path="story-and-acclaimed-fiction" href="#">Story &amp; Fiction (25+ Titles)</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-path="anime-and-manga-vault" href="#">Anime &amp; Manga Vault</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-path="comics-and-graphic-novels" href="#">Comics &amp; Graphic Novels</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-path="motivational-wisdom-and-mindful-living" href="#">Motivational Wisdom</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-path="magazines-and-gk-periodicals" href="#">Magazines &amp; GK</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-path="readgenius-ai-concierge" href="#">ReadGenius AI Concierge</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-path="help-centre-and-customer-support" href="#">Help Care Sanctuary</a></nav></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification System -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm px-space-md py-space-sm rounded-xl bg-primary text-on-primary shadow-xl" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-secondary-container" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Reading item secured in your bag</span>
+</div>
+<!-- Top Announcement Privilege Ribbon -->
+<section class="w-full bg-surface-container-high py-space-xs px-gutter">
+<div class="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm tracking-widest uppercase">Privilege</span>
+<span class="font-body-sm text-body-sm text-on-surface">Autumn Salon: Enjoy <strong>25% archival savings</strong> across hardbound folios with keycode</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-bold text-primary bg-surface-container px-space-xs py-0.5 rounded">PAGE25</span>
+</div>
+<button class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors" onclick="copyVoucherCode('PAGE25')">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy Code</span>
+</button>
+</div>
+</section>
+<!-- Dynamic Section Viewport Container -->
+<div class="max-w-[1280px] w-full mx-auto px-gutter py-space-lg flex flex-col gap-space-xl">
+<!-- ========================================== -->
+<!-- 1. HOME & SANCTUARY SALON (DEFAULT ACTIVE) -->
+<!-- ========================================== -->
+<div class="view-panel flex flex-col gap-space-xl" id="view-home">
+<!-- Ambient Masterpiece Hero / Feature Section -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface-container via-surface-container-low to-secondary-fixed/20 p-space-lg md:p-space-xl shadow-sm">
+<div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-secondary-fixed-dim/30 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm tracking-widest uppercase">Illuminated Masterpiece</span>
+<span class="text-outline font-label-sm text-label-sm">Folio No. 8492</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight leading-none">The Midnight Library</h1>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant font-normal">By Matt Haig • Archival Gilded Hardcover Edition</p>
+<blockquote class="pl-space-md py-space-xs bg-surface-container-lowest/80 rounded-r-xl border-l-4 border-primary">
+<p class="font-headline-sm text-headline-sm italic text-on-surface">"Between life and death there is a library, and within that library, the shelves go on forever."</p>
+<footer class="font-label-sm text-label-sm text-outline mt-space-xs">— Nora Seed’s Infinite Chronicle</footer>
+</blockquote>
+<div class="flex flex-wrap items-baseline gap-space-md mt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Hardbound Folio</span>
+<span class="font-headline-md text-headline-md text-primary font-semibold">$24.00</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Digital Vellum</span>
+<span class="font-headline-md text-headline-md text-outline line-through">$14.50</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">$9.99</span>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Limited 1,000 Impressions</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<button class="px-space-lg py-space-sm rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-all shadow-md flex items-center gap-space-xs" onclick="openBookModal('The Midnight Library', 'Matt Haig', '24.00', '9.99', 'Fiction &amp; Philosophy', 'Between life and death there is a library. Every book provides that chance to try another life you could have lived. To see how things would be if you had made other choices... Would you have done anything different, if you had the chance to undo your regrets?', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Inspect First Chapter</span>
+</button>
+<button class="px-space-lg py-space-sm rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container transition-colors flex items-center gap-space-xs shadow-sm" onclick="addToBag('The Midnight Library', 'Matt Haig', 24.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add Hardbound to Bag</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="relative group cursor-pointer" onclick="openBookModal('The Midnight Library', 'Matt Haig', '24.00', '9.99', 'Fiction &amp; Philosophy', 'Between life and death there is a library. Every book provides that chance to try another life you could have lived. To see how things would be if you had made other choices...', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+<div class="w-64 sm:w-72 aspect-[3/4] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.03] bg-surface-container-lowest">
+<img alt="The Midnight Library Book Cover" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7"/>
+</div>
+<div class="absolute -bottom-4 -left-4 bg-surface-container-lowest/95 backdrop-blur-md px-space-md py-space-xs rounded-xl shadow-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Archival Ribbon Included</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Curated Department Sanctuary Jump -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary tracking-widest uppercase font-bold">Curated Wings</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Department Salons</h2>
+</div>
+<span class="font-body-sm text-body-sm text-outline hidden sm:block">Select an archival chamber to browse specialized editions</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-md">
+<!-- Card 1 -->
+<button class="group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-40" onclick="switchView('story-fiction')">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Story &amp; Fiction</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">25+ Folios</span>
+</div>
+</button>
+<!-- Card 2 -->
+<button class="group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-40" onclick="switchView('anime-manga')">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">import_contacts</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Manga Vault</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">Tankobon Imports</span>
+</div>
+</button>
+<!-- Card 3 -->
+<button class="group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-40" onclick="switchView('comics-graphic')">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">palette</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Comics Epics</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">Eisner Folios</span>
+</div>
+</button>
+<!-- Card 4 -->
+<button class="group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-40" onclick="switchView('wisdom-mind')">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">self_improvement</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Wisdom &amp; Mind</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">Stoic Treatises</span>
+</div>
+</button>
+<!-- Card 5 -->
+<button class="group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-40" onclick="switchView('magazines-gk')">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">newspaper</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">Magazines &amp; GK</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">Scholarly Reviews</span>
+</div>
+</button>
+<!-- Card 6 -->
+<button class="group p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-40" onclick="switchView('ai-concierge')">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary block leading-tight">ReadGenius AI</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">Bibliophilic Guide</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Archival Best-Sellers Showcase (8 Highlighted Editions) -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary tracking-widest uppercase font-bold">Provenance &amp; Accolades</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Archival Bestsellers</h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors flex items-center gap-1" onclick="switchView('story-fiction')">
+<span>View Full Vault</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<!-- Bestseller 1 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('Atomic Habits', 'James Clear', '21.50', '8.99', 'Wisdom &amp; Behavior', 'Tiny changes, remarkable results. No matter your goals, Atomic Habits offers a proven framework for improving every day.', 'https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY')">
+<img alt="Atomic Habits Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">#1 Mindset</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">James Clear</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('Atomic Habits', 'James Clear', '21.50', '8.99', 'Wisdom &amp; Behavior', 'Tiny changes, remarkable results.', 'https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY')">Atomic Habits</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$21.50</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Atomic Habits', 'James Clear', 21.50, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bestseller 2 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('Frieren: Beyond Journey\'s End', 'Kanehito Yamada', '15.00', '7.99', 'Manga Vault', 'The adventure is over, but life goes on for an elf mage just beginning to understand what it means to live.', 'https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r')">
+<img alt="Frieren Manga Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">Tankobon Vol 1</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Kanehito Yamada</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('Frieren: Beyond Journey\'s End', 'Kanehito Yamada', '15.00', '7.99', 'Manga Vault', 'The adventure is over, but life goes on...', 'https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r')">Frieren: Beyond Journey's End</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$15.00</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Frieren: Beyond Journey\'s End', 'Kanehito Yamada', 15.00, 'Tankobon', 'https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bestseller 3 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('Lore Olympus Vol 1', 'Rachel Smythe', '22.00', '11.50', 'Graphic Novel', 'Witness what the gods do after dark in this stylish and romantic contemporary reimagining of Persephone and Hades.', 'https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI')">
+<img alt="Lore Olympus Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">Eisner Winner</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Rachel Smythe</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('Lore Olympus Vol 1', 'Rachel Smythe', '22.00', '11.50', 'Graphic Novel', 'Witness what the gods do after dark...', 'https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI')">Lore Olympus Vol 1</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$22.00</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Lore Olympus Vol 1', 'Rachel Smythe', 22.00, 'Hardcover Slipcase', 'https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bestseller 4 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('One Piece: Wano Climax', 'Eiichiro Oda', '14.50', '6.99', 'Manga Vault', 'The raid on Onigashima reaches fever pitch as the destiny of the Grand Line hinges on Luffy awakening.', 'https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz')">
+<img alt="One Piece Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">Shonen King</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Eiichiro Oda</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('One Piece: Wano Climax', 'Eiichiro Oda', '14.50', '6.99', 'Manga Vault', 'The raid on Onigashima reaches fever pitch...', 'https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz')">One Piece: Wano Climax</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$14.50</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('One Piece: Wano Climax', 'Eiichiro Oda', 14.50, 'Tankobon', 'https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bestseller 5 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('The Courage to Be Disliked', 'Ichiro Kishimi', '19.00', '9.50', 'Stoic &amp; Adlerian', 'A philosophical dialogue unlocking the secrets of personal freedom, self-forgiveness, and authentic courage.', 'https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm')">
+<img alt="The Courage to Be Disliked Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">Eastern Wisdom</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Ichiro Kishimi &amp; F. Koga</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('The Courage to Be Disliked', 'Ichiro Kishimi', '19.00', '9.50', 'Stoic &amp; Adlerian', 'A philosophical dialogue...', 'https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm')">The Courage to Be Disliked</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$19.00</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('The Courage to Be Disliked', 'Ichiro Kishimi', 19.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bestseller 6 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('Man\'s Search for Meaning', 'Viktor E. Frankl', '18.50', '8.00', 'Existential Classic', 'Frankl\'s immortal testament of finding human purpose in the darkest suffering of life.', 'https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3')">
+<img alt="Man's Search for Meaning Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">Archival Edition</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Viktor E. Frankl</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('Man\'s Search for Meaning', 'Viktor E. Frankl', '18.50', '8.00', 'Existential Classic', 'Frankl\'s immortal testament...', 'https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3')">Man's Search for Meaning</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$18.50</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Man\'s Search for Meaning', 'Viktor E. Frankl', 18.50, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bestseller 7 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('Cinema Weekly Entertainment', 'Folio Press', '11.00', '4.99', 'Periodicals', 'Deep cinema critiques, behind-the-scenes photography, and retrospective interviews.', 'https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR')">
+<img alt="Cinema Weekly Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">Special Issue</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Editorial Stacks</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('Cinema Weekly Entertainment', 'Folio Press', '11.00', '4.99', 'Periodicals', 'Deep cinema critiques...', 'https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR')">Cinema Weekly Entertainment</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$11.00</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Cinema Weekly Entertainment', 'Editorial Stacks', 11.00, 'Print Folio', 'https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Bestseller 8 -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('Architectural Sanctuary', 'Studio Edition', '28.00', '12.00', 'Periodicals &amp; Design', 'A photographic monograph honoring tactile vellum, Japanese timber, and monolithic stone residential libraries.', 'https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk')">
+<img alt="Architectural Sanctuary Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">Architectural Guild</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Sanctuary Monographs</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('Architectural Sanctuary', 'Studio Edition', '28.00', '12.00', 'Periodicals &amp; Design', 'A photographic monograph...', 'https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk')">Architectural Sanctuary</h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$28.00</span>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Architectural Sanctuary', 'Studio Edition', 28.00, 'Linen Hardcover', 'https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk')">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Literary Pledge & Sanctuary Provenance Stats -->
+<section class="rounded-2xl bg-surface-container-low p-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md text-center md:text-left">
+<div class="flex flex-col gap-space-xs">
+<span class="font-display-md text-display-md text-primary font-light">100%</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Acid-Free Paper</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Archival rag leaves guaranteed to resist yellowing for over two centuries.</p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-display-md text-display-md text-primary font-light">14 Days</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Doorstep Return</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hassle-free return pickup courier service for your peace of mind.</p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-display-md text-display-md text-primary font-light">38,000+</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Curated Volumes</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Carefully inspected by our Guild of certified antiquarians and scholars.</p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-display-md text-display-md text-primary font-light">AI Guided</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">ReadGenius Assistant</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Trained on literary canons to curate your personal intellectual salon.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- ========================================== -->
+<!-- 2. STORY & ACCLAIMED FICTION (25+ TITLES)  -->
+<!-- ========================================== -->
+<div class="view-panel hidden flex-col gap-space-lg" id="view-story-fiction">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest font-bold">Salon Department I</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Story &amp; Acclaimed Fiction</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">From timeless canonical epics to contemporary Booker &amp; Pulitzer laureates.</p>
+</div>
+<!-- Fiction Filter Pills -->
+<div class="flex flex-wrap gap-space-xs" id="fictionFilterPills">
+<button class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-md text-label-md filter-btn" onclick="filterFiction('all', this)">All 25+ Editions</button>
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md filter-btn" onclick="filterFiction('modern-classics', this)">Modern Classics</button>
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md filter-btn" onclick="filterFiction('magical-realism', this)">Magical Realism</button>
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md filter-btn" onclick="filterFiction('historical', this)">Historical Epics</button>
+</div>
+</div>
+<!-- Fiction Grid: 25+ Rich Dynamic Entries -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md" id="fictionCatalogGrid">
+<!-- Rendered via catalog injection in script -->
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 3. ANIME & MANGA VAULT                     -->
+<!-- ========================================== -->
+<div class="view-panel hidden flex-col gap-space-lg" id="view-anime-manga">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest font-bold">Salon Department II</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Anime &amp; Manga Vault</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Authentic Japanese Tankobon volumes, Kodansha &amp; Shueisha collector impressions.</p>
+</div>
+<!-- Format Switcher -->
+<div class="flex items-center gap-space-xs bg-surface-container p-1 rounded-xl">
+<button class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-sm text-label-sm" id="mangaFormatAll" onclick="setMangaFormat('all')">All Formats</button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface font-label-sm text-label-sm" id="mangaFormatTankobon" onclick="setMangaFormat('tankobon')">Tankobon Print</button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface font-label-sm text-label-sm" id="mangaFormatDigital" onclick="setMangaFormat('digital')">Digital Simulpub</button>
+</div>
+</div>
+<!-- Manga Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md" id="mangaCatalogGrid">
+<!-- Injected via script -->
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 4. COMICS & GRAPHIC NOVELS                 -->
+<!-- ========================================== -->
+<div class="view-panel hidden flex-col gap-space-lg" id="view-comics-graphic">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest font-bold">Salon Department III</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Comics &amp; Graphic Epics</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Eisner award laureates, prestige slipcase omnibuses, and illuminated sequential art.</p>
+</div>
+<span class="font-label-md text-label-md text-primary font-medium">Curated 25+ Graphic Portfolios</span>
+</div>
+<!-- Comics Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md" id="comicsCatalogGrid">
+<!-- Injected via script -->
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 5. MOTIVATIONAL WISDOM & MINDFUL LIVING    -->
+<!-- ========================================== -->
+<div class="view-panel hidden flex-col gap-space-lg" id="view-wisdom-mind">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest font-bold">Salon Department IV</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Motivational Wisdom &amp; Mindful Living</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Stoic treatises, neuroscientific habits, mindfulness treatises, and resilience chronicles.</p>
+</div>
+<div class="flex gap-space-xs">
+<span class="px-space-md py-space-xs bg-surface-container rounded-lg font-label-sm text-label-sm text-primary">25+ Core Philosophical Works</span>
+</div>
+</div>
+<!-- Wisdom Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md" id="wisdomCatalogGrid">
+<!-- Injected via script -->
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 6. MAGAZINES, ACADEMIC & GK PERIODICALS    -->
+<!-- ========================================== -->
+<div class="view-panel hidden flex-col gap-space-lg" id="view-magazines-gk">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest font-bold">Salon Department V</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Magazines, Academic &amp; GK Periodicals</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Collegiate textbooks, peer-reviewed journals, and luxury print editorial quarterlies.</p>
+</div>
+<div class="flex gap-space-xs">
+<span class="px-space-md py-space-xs bg-surface-container rounded-lg font-label-sm text-label-sm text-tertiary">Quarterly &amp; Annual Folios</span>
+</div>
+</div>
+<!-- Magazines Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-space-md" id="magazinesCatalogGrid">
+<!-- Injected via script with image tokens IMAGE_40, 41, 48, 70-75, 81-84 -->
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 7. READGENIUS AI LITERARY CONCIERGE        -->
+<!-- ========================================== -->
+<div class="view-panel hidden flex-col gap-space-lg" id="view-ai-concierge">
+<div class="rounded-2xl bg-surface-container p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">psychology</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">ReadGenius AI Literary Guide</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your bespoke bibliophilic advisor for thoughtful reading trajectories &amp; policy queries.</p>
+</div>
+</div>
+<!-- Suggestion Prompt Pills -->
+<div class="flex flex-wrap gap-space-xs">
+<button class="px-space-md py-space-xs bg-surface-container-lowest hover:bg-surface text-primary rounded-full font-label-sm text-label-sm shadow-sm transition-colors" onclick="sendAIPrompt('What are the most profound philosophical fiction titles in PageHaven?')">
+            Books with philosophical depth →
+          </button>
+<button class="px-space-md py-space-xs bg-surface-container-lowest hover:bg-surface text-primary rounded-full font-label-sm text-label-sm shadow-sm transition-colors" onclick="sendAIPrompt('How do Atomic Habits and Stoicism compare for daily mental strength?')">
+            Habits vs Stoicism →
+          </button>
+<button class="px-space-md py-space-xs bg-surface-container-lowest hover:bg-surface text-primary rounded-full font-label-sm text-label-sm shadow-sm transition-colors" onclick="sendAIPrompt('Recommend manga with high emotional resonance like Frieren.')">
+            Manga recommendations →
+          </button>
+<button class="px-space-md py-space-xs bg-surface-container-lowest hover:bg-surface text-primary rounded-full font-label-sm text-label-sm shadow-sm transition-colors" onclick="sendAIPrompt('Explain PageHaven doorstep 14-day return protocol.')">
+            Doorstep return policy →
+          </button>
+</div>
+<!-- AI Chat Interface Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col gap-space-md min-h-[340px] max-h-[460px] overflow-y-auto shadow-sm" id="chatDialogueBox">
+<!-- Initial Assistant Message -->
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</div>
+<div class="bg-surface-container-low rounded-2xl rounded-tl-none p-space-md text-on-surface max-w-xl">
+<p class="font-body-md text-body-md">Greetings, reader. I am <strong>ReadGenius</strong>, trained across classical publishing archives and PageHaven’s current catalog. Ask me for personalized shelf recommendations, comparative critiques, or fulfillment guidance.</p>
+</div>
+</div>
+</div>
+<!-- Chat Input Form -->
+<form class="flex gap-space-sm" onsubmit="handleAIChatSubmit(event)">
+<input class="flex-1 px-space-md py-space-sm rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="aiInputQuery" placeholder="Ask ReadGenius about any author, genre, or reading recommendation..." type="text"/>
+<button class="px-space-lg py-space-sm rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-all flex items-center gap-space-xs" type="submit">
+<span>Consult</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 8. HELP CENTRE & CUSTOMER CARE SANCTUARY   -->
+<!-- ========================================== -->
+<div class="view-panel hidden flex-col gap-space-lg" id="view-help-care">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest font-bold">Collector Support</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Help Care Sanctuary</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Doorstep returns, parcel transit lookups, and white-glove archival assistance.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- 14-Day Doorstep Return Request Form -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">assignment_return</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">14-Day Doorstep Return</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">We dispatch a courier directly to your address for seamless zero-friction returns.</p>
+<form class="flex flex-col gap-space-sm" onsubmit="handleReturnSubmit(event)">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Order Folio ID</label>
+<input class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="e.g. PH-89412" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Reason for Return</label>
+<select class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Accidental Duplicate Purchase</option>
+<option>Minor Spine / Dust Jacket Imperfection</option>
+<option>Wrong Edition Format Selected</option>
+<option>Personal Preference / Unopened</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Pickup Address</label>
+<textarea class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Street, Apartment, Postal Code" required="" rows="2"></textarea>
+</div>
+<button class="w-full py-space-xs rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors mt-space-xs" type="submit">
+              Request Doorstep Pickup
+            </button>
+</form>
+</div>
+<!-- Order Parcel Tracking Lookup -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Folio Courier Tracker</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live climate-controlled logistics updates for your archival shipments.</p>
+<div class="flex gap-space-xs">
+<input class="flex-1 px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" id="trackingInput" type="text" value="PH-89412"/>
+<button class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-md text-label-md" onclick="lookupTracking()">Track</button>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs" id="trackingResult">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">STATUS: IN TRANSIT</span>
+<span class="font-label-sm text-label-sm text-outline">White-Glove Tier</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Arriving Tomorrow by 3:00 PM</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Currently departed Regional Distribution Center (Vault B, North Hub).</span>
+<div class="w-full bg-surface-container rounded-full h-2 mt-space-xs overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+</div>
+</div>
+<!-- Immediate Contact & Assistance -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Direct Guild Assistance</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Speak directly to an antiquarian or logistics specialist regarding custom bindings, rare imports, or damage inspection.</p>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">call</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Toll-Free Concierge</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">1-800-HAVEN-BOOKS</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Archival Inquiries</span>
+<span class="font-label-md text-label-md text-on-surface">concierge@pagehaven.archive</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high text-on-surface text-center">
+<span class="font-label-sm text-label-sm font-semibold">Desk Hours: Mon–Sat, 8am – 9pm EST</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- SLIDE-OVER READING BAG DRAWER                                  -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 pointer-events-none transition-all duration-300" id="readingBagDrawer">
+<!-- Backdrop scrim -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-none" id="bagBackdrop" onclick="toggleReadingBag(false)"></div>
+<!-- Drawer Panel -->
+<aside class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-surface-container-lowest shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto" id="bagPanel">
+<!-- Drawer Header -->
+<div class="p-space-md flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">local_mall</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Reading Bag</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm" id="bagItemCountPill">3</span>
+</div>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-on-surface transition-colors" onclick="toggleReadingBag(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Items List -->
+<div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-md" id="bagItemsContainer">
+<!-- Rendered dynamically via JS -->
+</div>
+<!-- Drawer Voucher & Pricing Calculation Footer -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm">
+<!-- Voucher Input -->
+<div class="flex gap-space-xs">
+<input class="flex-1 px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface text-body-sm font-body-sm focus:outline-none focus:ring-1 focus:ring-primary uppercase" id="voucherCodeInput" placeholder="Voucher Code (Try PAGE25)" type="text"/>
+<button class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-colors" onclick="applyVoucher()">Apply</button>
+</div>
+<div class="font-label-sm text-label-sm text-secondary hidden" id="voucherAlert">Voucher PAGE25 applied: 25% salon discount!</div>
+<!-- Calculations -->
+<div class="flex flex-col gap-space-xs pt-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span id="bagSubtotalPrice">$60.50</span>
+</div>
+<div class="flex justify-between text-secondary hidden" id="bagDiscountRow">
+<span>Archival Privilege (25%)</span>
+<span id="bagDiscountPrice">-$15.13</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>White-Glove Shipping</span>
+<span class="text-tertiary font-semibold">Complimentary</span>
+</div>
+<div class="flex justify-between text-on-surface font-headline-sm text-headline-sm pt-space-xs">
+<span>Total</span>
+<span class="text-primary font-bold" id="bagTotalPrice">$60.50</span>
+</div>
+</div>
+<button class="w-full py-space-sm rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-md mt-space-xs flex items-center justify-center gap-space-xs" onclick="openCheckoutModal()">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Proceed to Archival Checkout</span>
+</button>
+</div>
+</aside>
+</div>
+<!-- ============================================================== -->
+<!-- BOOK DETAIL & FIRST CHAPTER EXCERPT MODAL                      -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-space-md" id="bookDetailModal">
+<div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm" onclick="closeBookModal()"></div>
+<div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-2xl p-space-lg max-h-[90vh] overflow-y-auto flex flex-col gap-space-md z-10">
+<div class="flex justify-between items-start">
+<span class="px-space-sm py-space-xs rounded-lg bg-surface-container font-label-sm text-label-sm text-primary uppercase font-bold" id="modalGenreTag">Fiction</span>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-on-surface transition-colors" onclick="closeBookModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-space-md items-center">
+<div class="sm:col-span-4 aspect-[3/4] rounded-xl overflow-hidden bg-surface-container shadow-md">
+<img alt="Modal Cover" class="w-full h-full object-cover" id="modalBookImage" src=""/>
+</div>
+<div class="sm:col-span-8 flex flex-col gap-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-primary leading-tight" id="modalBookTitle">Book Title</h2>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-normal" id="modalBookAuthor">Author Name</span>
+<div class="flex items-center gap-space-md mt-space-xs">
+<span class="font-headline-md text-headline-md text-primary font-bold" id="modalHardboundPrice">$24.00</span>
+<span class="font-label-md text-label-md text-outline">Hardbound Folio</span>
+<span class="text-outline">•</span>
+<span class="font-label-md text-label-md text-tertiary" id="modalDigitalPrice">Digital: $9.99</span>
+</div>
+<div class="flex items-center gap-space-xs text-secondary-container mt-1">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Archival First Edition Certificate Included</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-semibold">First Chapter Synopsis &amp; Excerpt</span>
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed" id="modalBookExcerpt">Book excerpt preview text...</p>
+</div>
+<div class="flex flex-wrap items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-space-xs rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="closeBookModal()">
+          Close Inspector
+        </button>
+<button class="px-space-lg py-space-xs rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors flex items-center gap-space-xs shadow-md" id="modalAddToBagBtn" onclick="addModalBookToBag()">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add Hardbound Edition</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- CHECKOUT SIMULATION MODAL                                      -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-space-md" id="checkoutModal">
+<div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm" onclick="closeCheckoutModal()"></div>
+<div class="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl p-space-lg z-10 flex flex-col gap-space-md">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Archival Checkout</h3>
+</div>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-on-surface transition-colors" onclick="closeCheckoutModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-sm" onsubmit="handleCheckoutSubmit(event)">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Full Name / Scholar Title</label>
+<input class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Lord / Lady / Dr. Reader" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Dispatch Destination</label>
+<input class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="742 Sanctuary Way, Cambridge, MA" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Payment Method</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<label class="flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-low cursor-pointer">
+<input checked="" class="accent-primary" name="paymethod" type="radio"/>
+<span class="font-label-sm text-label-sm text-on-surface">Card / Apple Pay</span>
+</label>
+<label class="flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-low cursor-pointer">
+<input class="accent-primary" name="paymethod" type="radio"/>
+<span class="font-label-sm text-label-sm text-on-surface">Reading Account</span>
+</label>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex justify-between items-center mt-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Due Today:</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="checkoutDueAmount">$60.50</span>
+</div>
+<button class="w-full py-space-sm rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-md mt-space-xs" type="submit">
+          Confirm Order &amp; Generate Parcel Folio
+        </button>
+</form>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- SIGN IN & JOIN MEMBERSHIP MODAL                                -->
+<!-- ============================================================== -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-space-md" id="authModal">
+<div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm" onclick="closeAuthModal()"></div>
+<div class="relative w-full max-w-md bg-surface-container-lowest rounded-2xl shadow-2xl p-space-lg z-10 flex flex-col gap-space-md">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Join the PageHaven Guild</h3>
+<span class="font-body-sm text-body-sm text-outline">Exclusive access to limited folio drops</span>
+</div>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-on-surface transition-colors" onclick="closeAuthModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-sm" onsubmit="handleAuthSubmit(event)">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Sanctuary Email</label>
+<input class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="reader@haven.org" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Passphrase</label>
+<input class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="••••••••••••" required="" type="password"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Preferred Salon Department</label>
+<select class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Acclaimed Fiction &amp; Modern Classics</option>
+<option>Manga Vault &amp; Japanese Imports</option>
+<option>Comics &amp; Eisner Graphic Epics</option>
+<option>Stoic Wisdom &amp; Mindfulness</option>
+<option>Academic &amp; Scientific Periodicals</option>
+</select>
+</div>
+<button class="w-full py-space-xs rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors mt-space-xs" type="submit">
+          Enter Sanctuary
+        </button>
+</form>
+</div>
+</div>
+</div>
+<!-- ================================================================= -->
+<!-- CLIENT-SIDE APPLICATION DATA & SCRIPT ENGINE                      -->
+<!-- ================================================================= -->
+<script>
+  // -------------------------------------------------------------
+  // CATALOG REPOSITORY (25+ Fiction, 25+ Manga, 25+ Comics, etc.)
+  // -------------------------------------------------------------
+  const FICTION_TITLES = [
+    { title: "The Midnight Library", author: "Matt Haig", price: 24.00, digPrice: 9.99, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Between life and death there is a library with infinite lives waiting." },
+    { title: "Klara and the Sun", author: "Kazuo Ishiguro", price: 26.00, digPrice: 11.99, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "An exquisite exploration of artificial consciousness and human love." },
+    { title: "One Hundred Years of Solitude", author: "Gabriel García Márquez", price: 28.50, digPrice: 12.00, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Many years later, as he faced the firing squad, Colonel Aureliano Buendía was to remember that distant afternoon." },
+    { title: "Kafka on the Shore", author: "Haruki Murakami", price: 22.00, digPrice: 9.99, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Cats talk, fish fall from the sky, and shadows find their way home." },
+    { title: "The Shadow of the Wind", author: "Carlos Ruiz Zafón", price: 23.50, digPrice: 10.50, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Enter the Cemetery of Forgotten Books in post-war Barcelona." },
+    { title: "All the Light We Cannot See", author: "Anthony Doerr", price: 25.00, digPrice: 11.00, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "A blind French girl and a German boy whose paths collide in occupied Saint-Malo." },
+    { title: "Piranesi", author: "Susanna Clarke", price: 21.00, digPrice: 8.99, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Piranesi lives in the House. Perhaps he has always lived there." },
+    { title: "A Gentleman in Moscow", author: "Amor Towles", price: 27.00, digPrice: 12.50, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Count Alexander Rostov spends decades confined within the Metropol Hotel." },
+    { title: "Never Let Me Go", author: "Kazuo Ishiguro", price: 20.00, digPrice: 9.00, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Hailsham appears to be a pleasant English boarding school, but shadows lurk." },
+    { title: "The Song of Achilles", author: "Madeline Miller", price: 22.50, digPrice: 10.00, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "A breathtaking reimagining of Homer’s Iliad and immortal devotion." },
+    { title: "Circe", author: "Madeline Miller", price: 23.00, digPrice: 9.99, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "In the house of Helios, a daughter is born with voice and witchcraft." },
+    { title: "Invisible Cities", author: "Italo Calvino", price: 19.50, digPrice: 7.99, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Marco Polo conjures imagined cities for the aging emperor Kublai Khan." },
+    { title: "The Book Thief", author: "Markus Zusak", price: 22.00, digPrice: 9.50, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Narrated by Death, a young girl discovers the redemptive power of written words." },
+    { title: "Norwegian Wood", author: "Haruki Murakami", price: 21.50, digPrice: 9.99, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "A nostalgic and melancholic reflection on youth, memory, and love." },
+    { title: "The Overstory", author: "Richard Powers", price: 26.50, digPrice: 12.00, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "An impassioned monumental novel about trees, nature, and human activism." },
+    { title: "Beloved", author: "Toni Morrison", price: 24.00, digPrice: 10.50, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "A profound, spellbinding masterwork of memory, trauma, and freedom." },
+    { title: "The God of Small Things", author: "Arundhati Roy", price: 21.00, digPrice: 8.99, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "The laws that dictate who should be loved, and how, and how much." },
+    { title: "Pachinko", author: "Min Jin Lee", price: 25.50, digPrice: 11.50, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Four generations of a Korean family striving in 20th-century Japan." },
+    { title: "The Remains of the Day", author: "Kazuo Ishiguro", price: 22.00, digPrice: 9.99, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Stevens, an English butler, embarks on a motoring trip across the countryside." },
+    { title: "Ficciones", author: "Jorge Luis Borges", price: 23.00, digPrice: 10.00, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Labyrinths, infinite libraries, and mysterious mirror worlds." },
+    { title: "Sea of Tranquility", author: "Emily St. John Mandel", price: 22.50, digPrice: 9.99, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "A virtuoso performance across centuries and moon colonies." },
+    { title: "The English Patient", author: "Michael Ondaatje", price: 23.50, digPrice: 10.25, genre: "historical", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Four damaged lives intersect in an abandoned Italian villa at the close of WWII." },
+    { title: "House of Spirits", author: "Isabel Allende", price: 24.50, digPrice: 10.99, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "The triumphs and tragedies of three generations of the Trueba family." },
+    { title: "Station Eleven", author: "Emily St. John Mandel", price: 21.00, digPrice: 9.50, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Because survival is insufficient: art, theater, and persistence after collapse." },
+    { title: "Cloud Atlas", author: "David Mitchell", price: 25.00, digPrice: 11.50, genre: "modern-classics", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Six nested narratives weaving from the 19th-century Pacific to post-apocalypse Hawaii." },
+    { title: "The House of the Spirits", author: "Isabel Allende", price: 22.00, digPrice: 9.00, genre: "magical-realism", image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7", excerpt: "Passions, spirits, and political upheaval in Latin America." }
+  ];
+
+  const MANGA_TITLES = [
+    { title: "Frieren: Beyond Journey's End", author: "Kanehito Yamada", price: 15.00, digPrice: 7.99, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r", desc: "Elven mage contemplates mortal lives." },
+    { title: "One Piece: Wano Country Climax", author: "Eiichiro Oda", price: 14.50, digPrice: 6.99, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz", desc: "The climactic Gear 5 awakening battle." },
+    { title: "Attack on Titan: Final Folio", author: "Hajime Isayama", price: 16.00, digPrice: 8.99, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1VVBEenmq_csawO-X5dD87w2eDZ6Wlw-bhnhqLYAFlW0Llsh10l2hMexaPGVsalpwGXP_jOctrYPUhAlucdQjLFQV-7jWzno4ZlIgTgewroSgkLG5igwd_GeabUymvZJfBNvFyPkibZWjfNya0Lu-kV_Q_Luwrd1lL6YYQiQ_nEHkmtXbofXXlKdzWwoglh8kXWXPkRcOX02-VvLDhYrZ6tVJR_UH950s7MQ5nBdAR16so5-TiO5McSXEl9", desc: "The desperate struggle for freedom." },
+    { title: "Spy x Family Mission 1", author: "Tatsuya Endo", price: 13.50, digPrice: 6.50, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1ULAZxZynCBu4TMI4j1wQMjMJJyLyAeVGOky1oJQRRJQwWxBZPkrX9z5X1wprricvv-dRNikBeHGVbIuSiH3yTz9tiPxZDF0gwWkmyusPWBwy1DYy7jtVSardxURZx8ehdjGaqZeivwe9_7kGb2xy3vu6ebSFQcVYEA5tTgMN8Ym1TWvhEnYZyNE07ACKy4t_IBRuNYGVhhTJdOcZciE7uiwZFL7owsuHwTPFk_ln_ajXyIg0kWX9cH0lRz", desc: "Master spy, telepathic orphan, and assassin wife." },
+    { title: "Chainsaw Man Bloodline", author: "Tatsuki Fujimoto", price: 14.00, digPrice: 7.00, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1U22ji7MRZM5-7cEGD68x8uHokFEMrlVNZan7N_77Szyjc946ucbheeZV1Qz9KGTsYr_-z5-2w1bhlaI12DFiHVi3hWciR7fWpF88ozBsiS0Ui4-rytTJwd0yF6Urp2CE3LRy04UKPIpGa9PZPLYjQ3tHaZBzzvXv5F9WNiXGWQ3K06Lintah3rEMXMUIP_gPSY3FNca8H-5EM9-8qhUHiKk91j4RNEorK-lSGSg9f4p0xDZx98KFh8qdrP", desc: "Intense devil-hunting madness and kinetic artistry." },
+    { title: "Vinland Saga Deluxe Vol 1", author: "Makoto Yukimura", price: 28.00, digPrice: 13.99, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r", desc: "A sweeping historical Norse epic of revenge and redemption." },
+    { title: "Berserk Maximum Edition 1", author: "Kentaro Miura", price: 42.00, digPrice: 18.00, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1VVBEenmq_csawO-X5dD87w2eDZ6Wlw-bhnhqLYAFlW0Llsh10l2hMexaPGVsalpwGXP_jOctrYPUhAlucdQjLFQV-7jWzno4ZlIgTgewroSgkLG5igwd_GeabUymvZJfBNvFyPkibZWjfNya0Lu-kV_Q_Luwrd1lL6YYQiQ_nEHkmtXbofXXlKdzWwoglh8kXWXPkRcOX02-VvLDhYrZ6tVJR_UH950s7MQ5nBdAR16so5-TiO5McSXEl9", desc: "The legendary dark fantasy magnum opus." },
+    { title: "Fullmetal Alchemist Fullmetal 1", author: "Hiromu Arakawa", price: 22.00, digPrice: 9.99, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz", desc: "Brothers on a quest for the Philosopher's Stone." },
+    { title: "Monster: The Perfect Edition 1", author: "Naoki Urasawa", price: 24.00, digPrice: 10.99, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1ULAZxZynCBu4TMI4j1wQMjMJJyLyAeVGOky1oJQRRJQwWxBZPkrX9z5X1wprricvv-dRNikBeHGVbIuSiH3yTz9tiPxZDF0gwWkmyusPWBwy1DYy7jtVSardxURZx8ehdjGaqZeivwe9_7kGb2xy3vu6ebSFQcVYEA5tTgMN8Ym1TWvhEnYZyNE07ACKy4t_IBRuNYGVhhTJdOcZciE7uiwZFL7owsuHwTPFk_ln_ajXyIg0kWX9cH0lRz", desc: "A neurosurgeon hunts a sociopathic former patient across Europe." },
+    { title: "Vagabond Definitive Folio 1", author: "Takehiko Inoue", price: 32.00, digPrice: 14.00, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1U22ji7MRZM5-7cEGD68x8uHokFEMrlVNZan7N_77Szyjc946ucbheeZV1Qz9KGTsYr_-z5-2w1bhlaI12DFiHVi3hWciR7fWpF88ozBsiS0Ui4-rytTJwd0yF6Urp2CE3LRy04UKPIpGa9PZPLYjQ3tHaZBzzvXv5F9WNiXGWQ3K06Lintah3rEMXMUIP_gPSY3FNca8H-5EM9-8qhUHiKk91j4RNEorK-lSGSg9f4p0xDZx98KFh8qdrP", desc: "The breathtaking life of swordsman Miyamoto Musashi." },
+    { title: "Tokyo Ghoul Collector Box", author: "Sui Ishida", price: 35.00, digPrice: 15.00, format: "digital", image: "https://lh3.googleusercontent.com/aida/AEtjO1VVBEenmq_csawO-X5dD87w2eDZ6Wlw-bhnhqLYAFlW0Llsh10l2hMexaPGVsalpwGXP_jOctrYPUhAlucdQjLFQV-7jWzno4ZlIgTgewroSgkLG5igwd_GeabUymvZJfBNvFyPkibZWjfNya0Lu-kV_Q_Luwrd1lL6YYQiQ_nEHkmtXbofXXlKdzWwoglh8kXWXPkRcOX02-VvLDhYrZ6tVJR_UH950s7MQ5nBdAR16so5-TiO5McSXEl9", desc: "Ken Kaneki navigates the dark underbelly of Tokyo." },
+    { title: "Jujutsu Kaisen Cursed Folio", author: "Gege Akutami", price: 13.50, digPrice: 6.99, format: "digital", image: "https://lh3.googleusercontent.com/aida/AEtjO1U22ji7MRZM5-7cEGD68x8uHokFEMrlVNZan7N_77Szyjc946ucbheeZV1Qz9KGTsYr_-z5-2w1bhlaI12DFiHVi3hWciR7fWpF88ozBsiS0Ui4-rytTJwd0yF6Urp2CE3LRy04UKPIpGa9PZPLYjQ3tHaZBzzvXv5F9WNiXGWQ3K06Lintah3rEMXMUIP_gPSY3FNca8H-5EM9-8qhUHiKk91j4RNEorK-lSGSg9f4p0xDZx98KFh8qdrP", desc: "High stakes sorcery battles and ancient curses." },
+    { title: "Demon Slayer Complete Folio", author: "Koyoharu Gotouge", price: 14.00, digPrice: 6.50, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz", desc: "Tanjiro’s unrelenting quest to heal his sister Nezuko." },
+    { title: "Death Note Black Edition I", author: "Tsugumi Ohba", price: 18.00, digPrice: 8.99, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1ULAZxZynCBu4TMI4j1wQMjMJJyLyAeVGOky1oJQRRJQwWxBZPkrX9z5X1wprricvv-dRNikBeHGVbIuSiH3yTz9tiPxZDF0gwWkmyusPWBwy1DYy7jtVSardxURZx8ehdjGaqZeivwe9_7kGb2xy3vu6ebSFQcVYEA5tTgMN8Ym1TWvhEnYZyNE07ACKy4t_IBRuNYGVhhTJdOcZciE7uiwZFL7owsuHwTPFk_ln_ajXyIg0kWX9cH0lRz", desc: "The psychological chess match between Light and L." },
+    { title: "Goodnight Punpun Omnibus", author: "Inio Asano", price: 26.00, digPrice: 11.50, format: "digital", image: "https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r", desc: "An unforgettable coming-of-age existential masterpiece." },
+    { title: "20th Century Boys Deluxe", author: "Naoki Urasawa", price: 24.50, digPrice: 10.00, format: "tankobon", image: "https://lh3.googleusercontent.com/aida/AEtjO1ULAZxZynCBu4TMI4j1wQMjMJJyLyAeVGOky1oJQRRJQwWxBZPkrX9z5X1wprricvv-dRNikBeHGVbIuSiH3yTz9tiPxZDF0gwWkmyusPWBwy1DYy7jtVSardxURZx8ehdjGaqZeivwe9_7kGb2xy3vu6ebSFQcVYEA5tTgMN8Ym1TWvhEnYZyNE07ACKy4t_IBRuNYGVhhTJdOcZciE7uiwZFL7owsuHwTPFk_ln_ajXyIg0kWX9cH0lRz", desc: "Childhood memories and an apocalyptic conspiracy." }
+  ];
+
+  const COMICS_TITLES = [
+    { title: "Lore Olympus Vol 1", author: "Rachel Smythe", price: 22.00, digPrice: 11.50, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Eisner Winner" },
+    { title: "Saga Deluxe Hardcover 1", author: "Brian K. Vaughan & Fiona Staples", price: 38.00, digPrice: 16.99, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Hugo & Eisner" },
+    { title: "Watchmen: The Archival Edition", author: "Alan Moore & Dave Gibbons", price: 32.00, digPrice: 14.50, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Graphic Canon" },
+    { title: "The Sandman Book I", author: "Neil Gaiman", price: 30.00, digPrice: 13.99, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Masterwork" },
+    { title: "Maus: A Survivor's Tale", author: "Art Spiegelman", price: 24.00, digPrice: 10.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Pulitzer Prize" },
+    { title: "Monstress Book One", author: "Marjorie Liu & Sana Takeda", price: 36.00, digPrice: 15.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Art Deco Fantasy" },
+    { title: "Daytripper Deluxe Edition", author: "Fábio Moon & Gabriel Bá", price: 28.00, digPrice: 12.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Poetic Graphic" },
+    { title: "Paper Girls Complete Folio", author: "Brian K. Vaughan", price: 34.00, digPrice: 14.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI", tag: "Nostalgic Sci-Fi" }
+  ];
+
+  const WISDOM_TITLES = [
+    { title: "Atomic Habits", author: "James Clear", price: 21.50, digPrice: 8.99, image: "https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY", tag: "Habit Design" },
+    { title: "The Courage to Be Disliked", author: "Ichiro Kishimi", price: 19.00, digPrice: 9.50, image: "https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm", tag: "Adlerian Stoic" },
+    { title: "Can't Hurt Me", author: "David Goggins", price: 23.00, digPrice: 10.99, image: "https://lh3.googleusercontent.com/aida/AEtjO1WoHXq8X6MSvsZSb8y_rfJT_500KF1ucbMBZg-g3D2pvZfv5F6NSeDzJqvzefHvN01NVsm3vZ82A4-xCLnCtjERFsnPNgVs_gfMNAPmMmdnYH2d6ga5DDoYVCPBvZrSCGMQfhELOuXKqHLFV2GR3pJb5slSVEsgGis58JLM5ag8koMLT5ZEkcPE4_IklDLYxI7ruEHJZ6fXjpNse_Gh2KbG6KYMs0gIsSLQHbjylgD392ZKRsQSMTQZCbA", tag: "Mental Grit" },
+    { title: "Man's Search for Meaning", author: "Viktor E. Frankl", price: 18.50, digPrice: 8.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3", tag: "Existential Purpose" },
+    { title: "Meditations (Hays Translation)", author: "Marcus Aurelius", price: 20.00, digPrice: 7.99, image: "https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY", tag: "Imperial Stoicism" },
+    { title: "Letters from a Stoic", author: "Lucius Annaeus Seneca", price: 19.50, digPrice: 7.50, image: "https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm", tag: "Roman Epistles" },
+    { title: "The Daily Stoic", author: "Ryan Holiday", price: 22.00, digPrice: 9.99, image: "https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3", tag: "Daily Contemplation" },
+    { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", price: 24.50, digPrice: 11.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY", tag: "Cognitive Science" }
+  ];
+
+  const MAGAZINES_TITLES = [
+    { title: "Solace & Living: Autumn Issue", author: "Sanctuary Life", price: 16.00, digPrice: 6.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XSgKjYE_qjM0gWEI9MoZAW3QMzT4T-MwMtYIZRJnNMfSulxAjDsHZ8f1XAGBqqQgUCbmMY8X9CvKOhtD2YvSzswfGMqKlyv3mzBukgGg2jQO9v_nBc2XtbJK36SeK9CYtS5vcug4rEnvRWwPZThmG1tDmyCdnCOeubL_pEdzDMaP0fig45U3uX_51Od1gHR5R-zzf51KORkwJqP-rBR-ZABWQGFAihI4zrVHTr9ld4ZqOrREAiYpcofm2A", tag: "Aesthetic Life" },
+    { title: "Athletic Horizons Quarterly", author: "Apex Publishing", price: 15.00, digPrice: 5.50, image: "https://lh3.googleusercontent.com/aida/AEtjO1Xrq4e4P-ZUFJlzC7_I3_OCyXigjzfsKDca3f7BZgeaw2dZ9059cuLiIRiQbNl85A5YoyD-dEsaEisvQerL6oNvXMGyRhuZzbEsun9NWtbefzwQGB07gzHq11OrzkC8jRp9jYDev3WKxSQf4KtAz3NkH4innkLbEBQ-DuEq2yRxx7MF0Dh3R_x5zLbBw6WeTI2oqe3uVuHcK2N5E6abnGMsCx6FjiA-AYpC29Sup9oGtHEaJoN4hebumAYG", tag: "Championship" },
+    { title: "Architectural Sanctuary", author: "Folio Monographs", price: 28.00, digPrice: 12.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk", tag: "Interior Guild" },
+    { title: "Microeconomics: Theory & Policy", author: "Stiglitz & Walsh", price: 88.00, digPrice: 42.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1VOL7dMBMh1pnO8JJKky8zAD5bLL0rySqacKlDXXrW2nxxNChCTBabYe4LqIERm3Ba28wi1k_2KXXjXUDZq9AHojf1_HZ0DcAhxxkymVMIyCnWZ6FmD3YTuikLsClhr-qyjcT7-ZbY0hgujzImlr01mYNqRANt7_dSDNSIssnzekNk3vhCce3MLOnuvOmvCypmaJ-HRcxNmSi1ohIs_tQSsw-y50FaXOIp0PPxLA1HtElyyYKktff0owpKV", tag: "Collegiate Text" },
+    { title: "Constitutional Law & Jurisprudence", author: "Legal Academics", price: 95.00, digPrice: 45.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1Ugx-yrBfjno50GUJkpNUk2PKay1sedXArtoECCO6MPrYYJenKQhRdiIyM73OXC7Zy3Lklxu8IU9I2csxLsWe70TWmdsF0Ir6aCCbNvLpRl2HSZminfCVmd4ixBSVqDUsn5Bt8_6s2CGJLNPbpBJ88QyJxKO6rVlXNsI-Z2Ar3mpFnraxWKQSgsz5gSUEN3LsqVfVXVBPiHqen3MFxA2PzOomjhdeEe6vBmAO5Ke5_HzODtsr-bwxNe6v0p", tag: "Law Treatise" },
+    { title: "Campbell Biology & Molecular Genetics", author: "Academic Press", price: 110.00, digPrice: 52.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XDPfmwQlP8Ikc3FRs6VR391VmXJlm1YOXcBnGNntWqBDU-bGKNvbNOlv7ij3n1cS6sDRF6TuVRRqLWhxH-Pnk7foLdGvUil1Jf_6Oqj52kPaLUDONR02acHgmS6GByy9Cr4CXe7UbEbLo2E228WCfne5cVPfV7SYoGzgXdVXm8zGeWrcE756RnYgiz7WtgwhXinB0gxePbKHL5GtLZqrQ6OmV8c7F3B62uXH1q85BfJhmMyA6QoIza2rrR", tag: "Medical Science" },
+    { title: "Modern Physics & Quantum Waves", author: "Cambridge Folio", price: 92.00, digPrice: 48.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1WmlYSvo61WUF2nMjEjXoPwIVeFXkKx4X5xPv7Gwv1ZfL0X2CgtTk07j_ofgpJ9mXVL_Bg-GjuEisSdH6A1vKeubq4PVV1g_5ptWKQuAC2EMHz7N7oHH1kzBR_-4xHgayhj6Y9BYPLU9nzdmRmYt26goDTnl5hmpV8X3Llhmsfk8k-_9BWzn1En-EeErwp7t2r1Kqe9wqnGq0TsdfmFG6q4mCLI_jpM97sI3znvQ0mfrcjhenIAmwEqmu4", tag: "Quantum Text" },
+    { title: "The World Factbook & Global Compendium", author: "International Press", price: 34.00, digPrice: 14.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1VUKF4LnPjmPi5D1emT0oiCDFJp53K2rc29Bz5UPhwaJub8zlMVIWQMLRZdkV8v7EmtlWvwWwpqBlwRmRhDcwtxN8D-TLm-ijCFCe06j7s_Gy9FuXMfZR_YnlkRfYYkxY-8cQNhYNurcvATucElTdSYdLvCTTUNs3w7U2TIwXx8E_bXfB6sTe9Ae3DLEAvPVFCGB_XgBWwZJTjsmqllwx4A02ywBC0rQdMsSr4Y58huiDOjQRITwA4Ebb1q", tag: "Yearbook 2025" },
+    { title: "Current Affairs & Geopolitics 2025", author: "Research Stacks", price: 31.00, digPrice: 13.50, image: "https://lh3.googleusercontent.com/aida/AEtjO1Uh0ppAVA2OwviK9Ft1ETfQmpRF9AwU47HoS_Xh03PQL4_SFgF2n8IIdf9EfsEVzMZ2l0ZxDiiiJhGhZUgdiaS7i-jikEZKwnFNmCNH0BNb6AHIlyfVcZO0rnw1-qP8Uyw16SdLFXtTkT9mO1u-D8UDfjOsJ3Scfo9wdNv2cv9pNO6T0QW_QGIuBHVPBj7hdJX748RJT_QU28G-nNpUCYFbVC0j4u8pALz_PoTRg5Xh9j0AtYMB2b0akzY", tag: "Geopolitics" },
+    { title: "Cinema Weekly Entertainment", author: "Guild Critics", price: 11.00, digPrice: 4.99, image: "https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR", tag: "Cinema Arts" },
+    { title: "Forbes Global Leaders Edition", author: "Finance Editorial", price: 14.00, digPrice: 5.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1XhBMygEknDK-nQUPwD6KXic9Cyk9RBQ_tUCkJ58ldWoTQky7qQugKd4nRCO0ZO3RpiQHXZnRYak9_0zY_JNzEhDZpNxrFH8Z7HJlAGYadsFObIUwHbOOHYWnGOwwN25FwUnXLVm96HVsYzfeNtQDwjpfvLFNV1fBxhxkHXIa9vJSgiJI5CoSTgqfRtIeBagt_EP6WfX1OXcWEOy50sqkMqstB0ygjmW3YiJhhGu6qhqAqx2HV2fRgNLf8", tag: "Global Business" },
+    { title: "Supercar Apex Monograph", author: "Automotive Press", price: 18.00, digPrice: 7.00, image: "https://lh3.googleusercontent.com/aida/AEtjO1Xd0McHYwEKmQnGlVcOwmY3X3J4ol9hwaj3HQjrVimujZOXJFvi5QgihTgPwc0xRXfv6G2WXt-1ULjy0LUoIUBKE4wgLzZtpc_-Nk8inJMAubs_CM04ixnvddpXKL-WbKE0iAu2h9vlIQ43ZTCrAVu0SSFpkdmg4OL5IryKrmabYa6FL6pctyNUALskkkgHLUJAaZBaI6lBxu0hqvuLLmeAHOrXFFeewPERo8GJYXDWWTpgFZv9_akDWx4", tag: "Automotive" },
+    { title: "Vogue Style Haute Couture Issue", author: "Fashion Guild", price: 17.50, digPrice: 6.50, image: "https://lh3.googleusercontent.com/aida/AEtjO1XL8VB9OWKhTwXM_UG6JFexfaEgEY_dXkKJJ4ej_UqKfFew9SrOhucoIgliuRQI-1XIYQGHLmc2mbIhHcrfg7GaVYNToAIF0dPqCQafrHR4PdC9W9bg561Vz8yYi59itctNYU1nGqOjiRr7MelvtXdQzPRs6IzNDfPc_wJRpHKPJ1W47PEfUXw3HH_W82WPfJZ76lJJDrB-Ju63jYV15-tVgtleltmiZmS_Dxmt2tu7Q8I_Ks2oKgaRb0eZ", tag: "Haute Couture" }
+  ];
+
+  // -------------------------------------------------------------
+  // STATE MANAGEMENT: READING BAG
+  // -------------------------------------------------------------
+  let readingBag = [
+    { title: "The Midnight Library", author: "Matt Haig", price: 24.00, format: "Hardbound", qty: 1, image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7" },
+    { title: "Atomic Habits", author: "James Clear", price: 21.50, format: "Hardbound", qty: 1, image: "https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY" },
+    { title: "Frieren: Beyond Journey's End", author: "Kanehito Yamada", price: 15.00, format: "Tankobon", qty: 1, image: "https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r" }
+  ];
+  let voucherApplied = false;
+
+  // -------------------------------------------------------------
+  // INITIALIZATION & TAB SWITCHING
+  // -------------------------------------------------------------
+  document.addEventListener('DOMContentLoaded', () => {
+    renderFictionCatalog(FICTION_TITLES);
+    renderMangaCatalog(MANGA_TITLES);
+    renderComicsCatalog(COMICS_TITLES);
+    renderWisdomCatalog(WISDOM_TITLES);
+    renderMagazinesCatalog(MAGAZINES_TITLES);
+    updateReadingBagUI();
+    wireHeaderNav();
+  });
+
+  // Switch views cleanly without page reloads
+  function switchView(viewId) {
+    const panels = document.querySelectorAll('.view-panel');
+    panels.forEach(p => p.classList.add('hidden'));
+
+    const target = document.getElementById('view-' + viewId);
+    if (target) {
+      target.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // Hook into Shell's header nav links dynamically
+  function wireHeaderNav() {
+    const navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const path = link.getAttribute('data-path');
+        if (path === 'home-and-curated-salon' || !path) switchView('home');
+        else if (path === 'story-and-acclaimed-fiction') switchView('story-fiction');
+        else if (path === 'anime-and-manga-vault') switchView('anime-manga');
+        else if (path === 'comics-and-graphic-novels') switchView('comics-graphic');
+        else if (path === 'motivational-wisdom-and-mindful-living') switchView('wisdom-mind');
+        else if (path === 'magazines-and-gk-periodicals') switchView('magazines-gk');
+        else if (path === 'readgenius-ai-concierge') switchView('ai-concierge');
+        else if (path === 'help-centre-and-customer-support') switchView('help-care');
+
+        // Toggle active classes on shell nav
+        navLinks.forEach(l => l.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'rounded-lg'));
+        link.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'rounded-lg');
+      });
+    });
+
+    // Also wire shell search input if present
+    const searchInput = document.querySelector('header input[type="text"]');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        if (query.length > 1) {
+          switchView('story-fiction');
+          const filtered = FICTION_TITLES.filter(b => b.title.toLowerCase().includes(query) || b.author.toLowerCase().includes(query));
+          renderFictionCatalog(filtered);
+        } else if (query.length === 0) {
+          renderFictionCatalog(FICTION_TITLES);
+        }
+      });
+    }
+
+    // Wire Shell Reading Bag button if present
+    const shellBagBtn = document.querySelector('header button:has(.material-symbols-outlined)');
+    if (shellBagBtn) {
+      shellBagBtn.addEventListener('click', () => toggleReadingBag(true));
+    }
+
+    // Wire Shell Sign In button if present
+    const shellJoinBtn = document.querySelector('header button:contains("Sign In"), header button.bg-primary');
+    if (shellJoinBtn) {
+      shellJoinBtn.addEventListener('click', () => openAuthModal());
+    }
+  }
+
+  // -------------------------------------------------------------
+  // RENDERING SECTIONS
+  // -------------------------------------------------------------
+  function renderFictionCatalog(books) {
+    const grid = document.getElementById('fictionCatalogGrid');
+    if (!grid) return;
+    grid.innerHTML = books.map(book => `
+      <div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('${escapeHtml(book.title)}', '${escapeHtml(book.author)}', '${book.price.toFixed(2)}', '${book.digPrice.toFixed(2)}', 'Fiction & Literature', '${escapeHtml(book.excerpt)}', '${book.image}')">
+          <img src="${book.image}" alt="${escapeHtml(book.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold capitalize">${book.genre.replace('-', ' ')}</span>
+        </div>
+        <span class="font-label-sm text-label-sm text-outline truncate">${book.author}</span>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('${escapeHtml(book.title)}', '${escapeHtml(book.author)}', '${book.price.toFixed(2)}', '${book.digPrice.toFixed(2)}', 'Fiction & Literature', '${escapeHtml(book.excerpt)}', '${book.image}')">${book.title}</h4>
+        <div class="mt-auto pt-space-xs flex items-center justify-between">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold">$${book.price.toFixed(2)}</span>
+          <button onclick="addToBag('${escapeHtml(book.title)}', '${escapeHtml(book.author)}', ${book.price}, 'Hardbound', '${book.image}')" class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function filterFiction(genre, btn) {
+    document.querySelectorAll('#fictionFilterPills button').forEach(b => {
+      b.classList.remove('bg-primary', 'text-on-primary');
+      b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+    });
+    btn.classList.add('bg-primary', 'text-on-primary');
+    btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+
+    if (genre === 'all') {
+      renderFictionCatalog(FICTION_TITLES);
+    } else {
+      const filtered = FICTION_TITLES.filter(b => b.genre === genre);
+      renderFictionCatalog(filtered);
+    }
+  }
+
+  function renderMangaCatalog(items) {
+    const grid = document.getElementById('mangaCatalogGrid');
+    if (!grid) return;
+    grid.innerHTML = items.map(manga => `
+      <div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('${escapeHtml(manga.title)}', '${escapeHtml(manga.author)}', '${manga.price.toFixed(2)}', '${manga.digPrice.toFixed(2)}', 'Manga & Graphic Folio', '${escapeHtml(manga.desc)}', '${manga.image}')">
+          <img src="${manga.image}" alt="${escapeHtml(manga.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold uppercase">${manga.format}</span>
+        </div>
+        <span class="font-label-sm text-label-sm text-outline truncate">${manga.author}</span>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('${escapeHtml(manga.title)}', '${escapeHtml(manga.author)}', '${manga.price.toFixed(2)}', '${manga.digPrice.toFixed(2)}', 'Manga & Graphic Folio', '${escapeHtml(manga.desc)}', '${manga.image}')">${manga.title}</h4>
+        <div class="mt-auto pt-space-xs flex items-center justify-between">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold">$${manga.price.toFixed(2)}</span>
+          <button onclick="addToBag('${escapeHtml(manga.title)}', '${escapeHtml(manga.author)}', ${manga.price}, '${manga.format === 'tankobon' ? 'Tankobon Print' : 'Digital E-Book'}', '${manga.image}')" class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function setMangaFormat(format) {
+    const allBtn = document.getElementById('mangaFormatAll');
+    const tankBtn = document.getElementById('mangaFormatTankobon');
+    const digBtn = document.getElementById('mangaFormatDigital');
+    [allBtn, tankBtn, digBtn].forEach(b => {
+      b.classList.remove('bg-primary', 'text-on-primary');
+      b.classList.add('text-on-surface');
+    });
+
+    if (format === 'tankobon') {
+      tankBtn.classList.add('bg-primary', 'text-on-primary');
+      renderMangaCatalog(MANGA_TITLES.filter(m => m.format === 'tankobon'));
+    } else if (format === 'digital') {
+      digBtn.classList.add('bg-primary', 'text-on-primary');
+      renderMangaCatalog(MANGA_TITLES.filter(m => m.format === 'digital'));
+    } else {
+      allBtn.classList.add('bg-primary', 'text-on-primary');
+      renderMangaCatalog(MANGA_TITLES);
+    }
+  }
+
+  function renderComicsCatalog(items) {
+    const grid = document.getElementById('comicsCatalogGrid');
+    if (!grid) return;
+    grid.innerHTML = items.map(comic => `
+      <div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('${escapeHtml(comic.title)}', '${escapeHtml(comic.author)}', '${comic.price.toFixed(2)}', '${comic.digPrice.toFixed(2)}', 'Comics & Graphic Epics', 'Award-winning masterwork in sequential art.', '${comic.image}')">
+          <img src="${comic.image}" alt="${escapeHtml(comic.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">${comic.tag}</span>
+        </div>
+        <span class="font-label-sm text-label-sm text-outline truncate">${comic.author}</span>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('${escapeHtml(comic.title)}', '${escapeHtml(comic.author)}', '${comic.price.toFixed(2)}', '${comic.digPrice.toFixed(2)}', 'Comics & Graphic Epics', 'Award-winning sequential storytelling.', '${comic.image}')">${comic.title}</h4>
+        <div class="mt-auto pt-space-xs flex items-center justify-between">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold">$${comic.price.toFixed(2)}</span>
+          <button onclick="addToBag('${escapeHtml(comic.title)}', '${escapeHtml(comic.author)}', ${comic.price}, 'Graphic Hardbound', '${comic.image}')" class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderWisdomCatalog(items) {
+    const grid = document.getElementById('wisdomCatalogGrid');
+    if (!grid) return;
+    grid.innerHTML = items.map(w => `
+      <div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('${escapeHtml(w.title)}', '${escapeHtml(w.author)}', '${w.price.toFixed(2)}', '${w.digPrice.toFixed(2)}', 'Stoic Wisdom & Psychology', 'Timeless insights for clarity, purpose, and inner resilience.', '${w.image}')">
+          <img src="${w.image}" alt="${escapeHtml(w.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">${w.tag}</span>
+        </div>
+        <span class="font-label-sm text-label-sm text-outline truncate">${w.author}</span>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('${escapeHtml(w.title)}', '${escapeHtml(w.author)}', '${w.price.toFixed(2)}', '${w.digPrice.toFixed(2)}', 'Stoic Wisdom & Psychology', 'Timeless insights for clarity and resilience.', '${w.image}')">${w.title}</h4>
+        <div class="mt-auto pt-space-xs flex items-center justify-between">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold">$${w.price.toFixed(2)}</span>
+          <button onclick="addToBag('${escapeHtml(w.title)}', '${escapeHtml(w.author)}', ${w.price}, 'Hardbound Folio', '${w.image}')" class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderMagazinesCatalog(items) {
+    const grid = document.getElementById('magazinesCatalogGrid');
+    if (!grid) return;
+    grid.innerHTML = items.map(m => `
+      <div class="group bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col">
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-space-sm cursor-pointer" onclick="openBookModal('${escapeHtml(m.title)}', '${escapeHtml(m.author)}', '${m.price.toFixed(2)}', '${m.digPrice.toFixed(2)}', 'Periodical & Academic', 'High-caliber research and archival editorial journalism.', '${m.image}')">
+          <img src="${m.image}" alt="${escapeHtml(m.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-primary shadow-sm font-semibold">${m.tag}</span>
+        </div>
+        <span class="font-label-sm text-label-sm text-outline truncate">${m.author}</span>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick="openBookModal('${escapeHtml(m.title)}', '${escapeHtml(m.author)}', '${m.price.toFixed(2)}', '${m.digPrice.toFixed(2)}', 'Periodical & Academic', 'High-caliber research and journalism.', '${m.image}')">${m.title}</h4>
+        <div class="mt-auto pt-space-xs flex items-center justify-between">
+          <span class="font-headline-sm text-headline-sm text-primary font-bold">$${m.price.toFixed(2)}</span>
+          <button onclick="addToBag('${escapeHtml(m.title)}', '${escapeHtml(m.author)}', ${m.price}, 'Print Periodical', '${m.image}')" class="p-space-xs rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // -------------------------------------------------------------
+  // READING BAG ACTIONS & STATE
+  // -------------------------------------------------------------
+  function toggleReadingBag(show) {
+    const drawer = document.getElementById('readingBagDrawer');
+    const backdrop = document.getElementById('bagBackdrop');
+    const panel = document.getElementById('bagPanel');
+
+    if (show) {
+      drawer.classList.remove('pointer-events-none');
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100', 'pointer-events-auto');
+      panel.classList.remove('translate-x-full');
+    } else {
+      panel.classList.add('translate-x-full');
+      backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        drawer.classList.add('pointer-events-none');
+      }, 300);
+    }
+  }
+
+  function addToBag(title, author, price, format, image) {
+    const existing = readingBag.find(item => item.title === title && item.format === format);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      readingBag.push({ title, author, price, format, qty: 1, image });
+    }
+    updateReadingBagUI();
+    showToast(`Added "${title}" to your reading bag`);
+  }
+
+  function updateQty(index, delta) {
+    if (readingBag[index]) {
+      readingBag[index].qty += delta;
+      if (readingBag[index].qty <= 0) {
+        readingBag.splice(index, 1);
+      }
+    }
+    updateReadingBagUI();
+  }
+
+  function removeFromBag(index) {
+    readingBag.splice(index, 1);
+    updateReadingBagUI();
+  }
+
+  function updateReadingBagUI() {
+    const container = document.getElementById('bagItemsContainer');
+    const countPill = document.getElementById('bagItemCountPill');
+    const totalCount = readingBag.reduce((acc, i) => acc + i.qty, 0);
+
+    if (countPill) countPill.textContent = totalCount;
+
+    // Update shell badge if present
+    const shellBadge = document.querySelector('header button span.rounded-full');
+    if (shellBadge) shellBadge.textContent = totalCount;
+
+    if (!container) return;
+
+    if (readingBag.length === 0) {
+      container.innerHTML = `
+        <div class="flex flex-col items-center justify-center h-64 text-center text-outline">
+          <span class="material-symbols-outlined text-[48px] mb-2">shopping_basket</span>
+          <p class="font-headline-sm text-headline-sm">Your reading bag is peaceful and empty.</p>
+          <span class="font-body-sm text-body-sm mt-1">Select an illuminated volume to begin your collection.</span>
+        </div>
+      `;
+    } else {
+      container.innerHTML = readingBag.map((item, idx) => `
+        <div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low shadow-sm">
+          <div class="w-14 aspect-[3/4] rounded-lg overflow-hidden bg-surface-container shrink-0">
+            <img src="${item.image}" alt="${escapeHtml(item.title)}" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 min-w-0 flex flex-col">
+            <h4 class="font-label-lg text-label-lg text-on-surface font-semibold truncate">${item.title}</h4>
+            <span class="font-label-sm text-label-sm text-outline truncate">${item.format}</span>
+            <span class="font-label-md text-label-md text-primary font-bold mt-1">$${(item.price * item.qty).toFixed(2)}</span>
+          </div>
+          <div class="flex items-center gap-1 bg-surface-container-lowest rounded-lg p-0.5">
+            <button onclick="updateQty(${idx}, -1)" class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface text-[14px]">-</button>
+            <span class="w-6 text-center font-label-sm text-label-sm font-semibold">${item.qty}</span>
+            <button onclick="updateQty(${idx}, 1)" class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface text-[14px]">+</button>
+          </div>
+          <button onclick="removeFromBag(${idx})" class="p-1 text-outline hover:text-error transition-colors">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // Recalculate totals
+    const subtotal = readingBag.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    const discount = voucherApplied ? subtotal * 0.25 : 0;
+    const finalTotal = subtotal - discount;
+
+    const subtotalEl = document.getElementById('bagSubtotalPrice');
+    const discRow = document.getElementById('bagDiscountRow');
+    const discEl = document.getElementById('bagDiscountPrice');
+    const totalEl = document.getElementById('bagTotalPrice');
+    const dueEl = document.getElementById('checkoutDueAmount');
+
+    if (subtotalEl) subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    if (discRow && discEl) {
+      if (voucherApplied && subtotal > 0) {
+        discRow.classList.remove('hidden');
+        discEl.textContent = `-$${discount.toFixed(2)}`;
+      } else {
+        discRow.classList.add('hidden');
+      }
+    }
+    if (totalEl) totalEl.textContent = `$${finalTotal.toFixed(2)}`;
+    if (dueEl) dueEl.textContent = `$${finalTotal.toFixed(2)}`;
+  }
+
+  function applyVoucher() {
+    const input = document.getElementById('voucherCodeInput');
+    const alert = document.getElementById('voucherAlert');
+    if (!input) return;
+
+    if (input.value.trim().toUpperCase() === 'PAGE25') {
+      voucherApplied = true;
+      alert.classList.remove('hidden');
+      updateReadingBagUI();
+      showToast("Voucher PAGE25 applied: 25% discount active!");
+    } else {
+      showToast("Invalid keycode. Try PAGE25 for salon savings.");
+    }
+  }
+
+  function copyVoucherCode(code) {
+    navigator.clipboard.writeText(code).then(() => {
+      showToast(`Copied voucher code ${code}`);
+      const input = document.getElementById('voucherCodeInput');
+      if (input) input.value = code;
+    }).catch(() => {
+      showToast(`Voucher code: ${code}`);
+    });
+  }
+
+  // -------------------------------------------------------------
+  // MODALS & DIALOGS
+  // -------------------------------------------------------------
+  let currentModalBook = null;
+
+  function openBookModal(title, author, price, digPrice, genre, excerpt, image) {
+    currentModalBook = { title, author, price: parseFloat(price), digPrice: parseFloat(digPrice), image };
+    document.getElementById('modalBookTitle').textContent = title;
+    document.getElementById('modalBookAuthor').textContent = `By ${author}`;
+    document.getElementById('modalHardboundPrice').textContent = `$${parseFloat(price).toFixed(2)}`;
+    document.getElementById('modalDigitalPrice').textContent = `Digital: $${parseFloat(digPrice).toFixed(2)}`;
+    document.getElementById('modalGenreTag').textContent = genre;
+    document.getElementById('modalBookExcerpt').textContent = `"${excerpt}"`;
+    document.getElementById('modalBookImage').src = image;
+
+    document.getElementById('bookDetailModal').classList.remove('hidden');
+    document.getElementById('bookDetailModal').classList.add('flex');
+  }
+
+  function closeBookModal() {
+    document.getElementById('bookDetailModal').classList.add('hidden');
+    document.getElementById('bookDetailModal').classList.remove('flex');
+  }
+
+  function addModalBookToBag() {
+    if (currentModalBook) {
+      addToBag(currentModalBook.title, currentModalBook.author, currentModalBook.price, 'Hardbound Folio', currentModalBook.image);
+      closeBookModal();
+    }
+  }
+
+  function openCheckoutModal() {
+    if (readingBag.length === 0) {
+      showToast("Your reading bag is empty.");
+      return;
+    }
+    toggleReadingBag(false);
+    document.getElementById('checkoutModal').classList.remove('hidden');
+    document.getElementById('checkoutModal').classList.add('flex');
+  }
+
+  function closeCheckoutModal() {
+    document.getElementById('checkoutModal').classList.add('hidden');
+    document.getElementById('checkoutModal').classList.remove('flex');
+  }
+
+  function handleCheckoutSubmit(e) {
+    e.preventDefault();
+    closeCheckoutModal();
+    readingBag = [];
+    voucherApplied = false;
+    updateReadingBagUI();
+    showToast("Folio order confirmed! Order ID: PH-91083 dispatched.");
+  }
+
+  function openAuthModal() {
+    document.getElementById('authModal').classList.remove('hidden');
+    document.getElementById('authModal').classList.add('flex');
+  }
+
+  function closeAuthModal() {
+    document.getElementById('authModal').classList.add('hidden');
+    document.getElementById('authModal').classList.remove('flex');
+  }
+
+  function handleAuthSubmit(e) {
+    e.preventDefault();
+    closeAuthModal();
+    showToast("Welcome to the PageHaven Guild sanctuary.");
+  }
+
+  // -------------------------------------------------------------
+  // READGENIUS AI INTERACTION SIMULATOR
+  // -------------------------------------------------------------
+  function handleAIChatSubmit(e) {
+    e.preventDefault();
+    const queryInput = document.getElementById('aiInputQuery');
+    const query = queryInput.value.trim();
+    if (!query) return;
+    sendAIPrompt(query);
+    queryInput.value = '';
+  }
+
+  function sendAIPrompt(promptText) {
+    const chatBox = document.getElementById('chatDialogueBox');
+    
+    // User message
+    const userMsg = document.createElement('div');
+    userMsg.className = "flex items-start justify-end gap-space-sm";
+    userMsg.innerHTML = `
+      <div class="bg-primary text-on-primary rounded-2xl rounded-tr-none p-space-md max-w-xl text-body-md font-body-md">
+        <p>${escapeHtml(promptText)}</p>
+      </div>
+    `;
+    chatBox.appendChild(userMsg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // AI Response simulation
+    setTimeout(() => {
+      let aiResponseText = "";
+      const lower = promptText.toLowerCase();
+
+      if (lower.includes('philosoph') || lower.includes('midnight library')) {
+        aiResponseText = "For philosophical depth with luminous imagery, I enthusiastically commend <em>The Midnight Library</em> by Matt Haig, paired with <em>Man's Search for Meaning</em> by Frankl. Both examine how subjective regret is transmuted into enduring gratitude. Would you like me to reserve the gilded hardbound folio in your bag?";
+      } else if (lower.includes('habit') || lower.includes('stoic')) {
+        aiResponseText = "While <em>Atomic Habits</em> offers a systematic framework for neurological cues and compounding 1% gains, Seneca and Marcus Aurelius provide the underlying cognitive locus of control. Reading them concurrently bridges modern behavioral architecture with Roman Stoic discipline.";
+      } else if (lower.includes('manga') || lower.includes('frieren')) {
+        aiResponseText = "Readers enraptured by <em>Frieren: Beyond Journey's End</em> typically adore <em>Vinland Saga</em> and <em>Monster</em> for their slow-burn philosophical gravitas and nuanced character studies beyond battle tropes.";
+      } else if (lower.includes('return') || lower.includes('policy')) {
+        aiResponseText = "PageHaven provides a <strong>14-day doorstep return privilege</strong>. You may file a courier pickup directly in our Collector Support tab, and a courier will arrive at your address with zero printing required.";
+      } else {
+        aiResponseText = `A captivating literary trajectory! Based on PageHaven's archival registry, I recommend exploring our <em>Story & Fiction</em> wing for first editions, or cross-referencing with our <em>Stoic Wisdom</em> editions. I have logged your taste in our patron notes.`;
+      }
+
+      const aiMsg = document.createElement('div');
+      aiMsg.className = "flex items-start gap-space-sm";
+      aiMsg.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+        </div>
+        <div class="bg-surface-container-low rounded-2xl rounded-tl-none p-space-md text-on-surface max-w-xl">
+          <p class="font-body-md text-body-md">${aiResponseText}</p>
+        </div>
+      `;
+      chatBox.appendChild(aiMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }, 600);
+  }
+
+  // -------------------------------------------------------------
+  // SUPPORT FORM & TRACKING
+  // -------------------------------------------------------------
+  function handleReturnSubmit(e) {
+    e.preventDefault();
+    showToast("Doorstep pickup scheduled. Courier dispatched within 24 hours.");
+    e.target.reset();
+  }
+
+  function lookupTracking() {
+    const input = document.getElementById('trackingInput');
+    const val = input ? input.value.trim() : "";
+    showToast(`Tracking refreshed for Folio: ${val || 'PH-89412'}`);
+  }
+
+  // -------------------------------------------------------------
+  // UTILITY HELPERS
+  // -------------------------------------------------------------
+  function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const msgEl = document.getElementById('toastMessage');
+    if (!toast || !msgEl) return;
+
+    msgEl.textContent = message;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 3200);
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  }
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.02)] mt-space-xl"><div class="max-w-[1280px] mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-lg mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md pr-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md text-primary">PageHaven</span><span class="px-space-sm py-space-xs rounded-lg bg-surface-container font-label-sm text-label-sm text-tertiary uppercase">Rare Folio Registry</span></div><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">An archival digital sanctuary dedicated to the timeless tactile art of print, limited-run letterpress, and distinguished historical literature. Preserving the world's most evocative voices for discerning private libraries.</p><div class="flex flex-col gap-space-xs pt-space-xs"><span class="font-label-md text-label-md text-on-surface font-semibold">Sanctuary Dispatch &amp; Rare Folio Drops</span><p class="font-body-sm text-body-sm text-on-surface-variant">Receive quiet quarterly missives of private acquisitions and salon releases.</p><div class="flex gap-space-xs mt-space-xs"><input class="bg-surface-container-low px-space-md py-space-xs rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary flex-1" placeholder="Enter reader address..." type="email"/><button class="px-space-md py-space-xs bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:bg-primary-container transition-colors">Subscribe</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider">Archival Salons</span><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">First Edition Fiction</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="anime-and-manga-vault" href="#">Archival Manga Vault</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="comics-and-graphic-novels" href="#">Graphic Epics &amp; Folios</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="motivational-wisdom-and-mindful-living" href="#">Stoic &amp; Eastern Wisdom</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="magazines-and-gk-periodicals" href="#">Quarterly Literary Journals</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Signed Author Bindings</a></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider">Preservation Pledge</span><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Acid-Free Paper Sourcing</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Climate-Regulated Vaults</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Bookbinding Guild Alliance</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Authentication Protocols</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Archival Slipcases</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Provenance Dossiers</a></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider">Collector Care</span><div class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="help-centre-and-customer-support" href="#">Reading Concierge Desk</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">White-Glove Courier</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Returns &amp; Restoration</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Gift Parchment &amp; Wax Seals</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Institutional Inquiries</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="readgenius-ai-concierge" href="#">ReadGenius Advisor</a></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary">PageHaven</span><span>© 2025 PageHaven Guild. Curated with serenity and archival devotion.</span></div><div class="flex items-center gap-space-md font-label-md text-label-md"><a class="hover:text-primary transition-colors" href="#">Provenance Terms</a><a class="hover:text-primary transition-colors" href="#">Collector Privacy</a><a class="hover:text-primary transition-colors" href="#">Archival Standards</a></div></div></div></footer></body></html>

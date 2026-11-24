@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PageHaven — Sanctuary of Rare Books &amp; Curated Editions</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+              deep: '#1e6091',
+              navy: '#0f172a'
+            },
+            surface: {
+              base: '#f8fafc',
+              card: '#ffffff',
+              border: '#dbeafe',
+              subtle: '#eff6ff'
+            }
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body { background-color: #f8fafc; color: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; animation: fadeIn 0.22s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .book-card {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .book-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.12), 0 8px 10px -6px rgba(2, 132, 199, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 selection:bg-brand-100 selection:text-brand-900">
+<!-- ================= TOP HEADER ================= -->
+<header class="sticky top-0 z-40 bg-[#f8fafc]/95 backdrop-blur-md border-b border-brand-100/90 shadow-[0_1px_3px_rgba(2,132,199,0.05)]">
+<div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group" href="javascript:void(0)" onclick="switchTab('home')">
+<div class="w-10 h-10 rounded-xl border border-brand-200 bg-brand-50 flex items-center justify-center p-2 text-brand-600 shadow-xs group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
+<svg class="w-6 h-6 stroke-current fill-none stroke-[1.8]" viewbox="0 0 24 24">
+<path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-serif text-xl font-bold tracking-tight text-slate-900 group-hover:text-brand-600 transition-colors">PageHaven</span>
+<span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+</div>
+<p class="text-[10.5px] text-slate-500 font-medium tracking-wide">Sanctuary of Rare Books &amp; Curated Editions</p>
+</div>
+</a>
+<!-- Live Search Bar -->
+<div class="relative flex-1 max-w-sm hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-brand-700/60 text-[18px]">search</span>
+<input class="w-full pl-9 pr-8 py-2 bg-white rounded-full border border-brand-200/90 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400/40 focus:border-brand-600 transition-all shadow-xs" id="searchInput" oninput="handleSearch(this.value)" placeholder="Search 100+ books, authors, topics..." type="text"/>
+<button class="hidden absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-800" id="clearSearchBtn" onclick="clearSearch()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Action Items -->
+<div class="flex items-center gap-2.5">
+<button aria-label="Open reading bag" class="relative w-10 h-10 rounded-full flex items-center justify-center bg-white border border-brand-200 hover:border-brand-400 hover:bg-brand-50 text-slate-700 hover:text-brand-600 transition-all shadow-xs" onclick="toggleCart()">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-5 h-5 bg-brand-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-xs" id="cartCountBadge">3</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-brand-200 hover:border-brand-400 hover:bg-brand-50 text-slate-700 hover:text-brand-700 text-xs font-semibold shadow-xs transition-all" onclick="openAuthModal()">
+<span class="material-symbols-outlined text-[18px] text-brand-600">account_circle</span>
+<span class="hidden md:inline">Sign In / Join</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ================= NAVIGATION PILLS (LIGHT BLUE SPA ROUTER) ================= -->
+<nav class="sticky top-16 z-30 bg-[#f8fafc]/95 backdrop-blur-md border-b border-brand-100/80">
+<div class="max-w-6xl mx-auto px-4 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar">
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-brand-600 text-white shadow-xs transition-all" id="nav-home" onclick="switchTab('home')">
+<span class="material-symbols-outlined text-[16px]">cottage</span> Home
+      </button>
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all" id="nav-fiction" onclick="switchTab('fiction')">
+<span class="material-symbols-outlined text-[16px] text-brand-600">auto_stories</span> Story &amp; Fiction
+      </button>
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all" id="nav-manga" onclick="switchTab('manga')">
+<span class="material-symbols-outlined text-[16px] text-brand-600">brush</span> Anime &amp; Manga
+      </button>
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all" id="nav-comics" onclick="switchTab('comics')">
+<span class="material-symbols-outlined text-[16px] text-brand-600">palette</span> Comics &amp; Graphic Novels
+      </button>
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all" id="nav-wisdom" onclick="switchTab('wisdom')">
+<span class="material-symbols-outlined text-[16px] text-brand-600">psychology</span> Motivational Wisdom
+      </button>
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all" id="nav-magazines" onclick="switchTab('magazines')">
+<span class="material-symbols-outlined text-[16px] text-brand-600">newspaper</span> Magazines
+      </button>
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all" id="nav-ai" onclick="switchTab('ai')">
+<span class="material-symbols-outlined text-[16px] text-brand-600">neurology</span> ReadGenius AI
+      </button>
+<button class="nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all" id="nav-care" onclick="switchTab('care')">
+<span class="material-symbols-outlined text-[16px] text-brand-600">support_agent</span> Help Care
+      </button>
+</div>
+</nav>
+<!-- ================= SEARCH OVERLAY ================= -->
+<div class="hidden max-w-6xl mx-auto px-4 py-6 w-full" id="searchView">
+<div class="flex items-center justify-between mb-4 pb-2 border-b border-brand-200">
+<h2 class="font-serif text-lg font-bold text-slate-900" id="searchHeader">Search Results</h2>
+<button class="text-xs font-semibold text-brand-600 hover:text-brand-800 hover:underline" onclick="clearSearch()">Close Search</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="searchResultsGrid"></div>
+</div>
+<!-- ================= MAIN CONTENT WRAPPER ================= -->
+<main class="flex-1 max-w-6xl mx-auto w-full px-4 py-6" id="mainContainer">
+<!-- 1. HOME TAB -->
+<section class="tab-pane active flex flex-col gap-6" id="pane-home">
+<!-- Promotional Banner (Light Blue & Cerulean Gradient) -->
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 via-white to-brand-100/50 p-5 md:p-6 border border-brand-200 shadow-xs relative overflow-hidden">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="max-w-xl">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[13px]">verified</span> Curated Autumn Salon Privilege
+            </span>
+<h2 class="font-serif text-xl sm:text-2xl font-bold leading-snug text-slate-900">Curate your personal sanctuary with 25% off hardbound titles.</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Smyth-sewn bindings, acid-free archival parchment, and numbered collector editions.</p>
+<div class="mt-3.5 inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-brand-200 shadow-xs">
+<span class="text-xs text-slate-500 font-medium">Privilege Voucher:</span>
+<span class="font-mono text-sm font-bold text-brand-600 tracking-wider">PAGE25</span>
+<button class="text-slate-400 hover:text-brand-600 flex items-center p-0.5" onclick="copyCoupon('PAGE25')" title="Copy coupon">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="w-28 h-32 rounded-xl bg-gradient-to-br from-brand-100 to-white border border-brand-200 shadow-xs flex flex-col items-center justify-center p-2 text-center shrink-0">
+<span class="material-symbols-outlined text-brand-600 text-4xl mb-1">auto_stories</span>
+<span class="font-serif text-[11px] font-bold text-slate-900 leading-tight">Sanctuary Folio</span>
+<span class="text-[9px] text-brand-700 font-semibold mt-0.5">Est. 1984</span>
+</div>
+</div>
+</div>
+<!-- 6 Department Cards -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-serif text-lg font-bold text-slate-900">Explore Curations</h3>
+<span class="text-xs font-semibold text-brand-600">6 Dedicated Departments</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+<button class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-brand-100 hover:border-brand-400 hover:bg-brand-50/50 shadow-xs transition-all text-center group cursor-pointer" onclick="switchTab('fiction')">
+<div class="w-11 h-11 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center mb-2 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white transition-all duration-200">
+<span class="material-symbols-outlined text-[22px]">book_2</span>
+</div>
+<span class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Story Fiction</span>
+<span class="text-[10px] text-slate-500 mt-0.5">25+ Masterpieces</span>
+</button>
+<button class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-brand-100 hover:border-brand-400 hover:bg-brand-50/50 shadow-xs transition-all text-center group cursor-pointer" onclick="switchTab('manga')">
+<div class="w-11 h-11 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center mb-2 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white transition-all duration-200">
+<span class="material-symbols-outlined text-[22px]">brush</span>
+</div>
+<span class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Anime Manga</span>
+<span class="text-[10px] text-slate-500 mt-0.5">Tankōbon Vault</span>
+</button>
+<button class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-brand-100 hover:border-brand-400 hover:bg-brand-50/50 shadow-xs transition-all text-center group cursor-pointer" onclick="switchTab('comics')">
+<div class="w-11 h-11 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center mb-2 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white transition-all duration-200">
+<span class="material-symbols-outlined text-[22px]">palette</span>
+</div>
+<span class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Comics</span>
+<span class="text-[10px] text-slate-500 mt-0.5">Graphic Novels</span>
+</button>
+<button class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-brand-100 hover:border-brand-400 hover:bg-brand-50/50 shadow-xs transition-all text-center group cursor-pointer" onclick="switchTab('wisdom')">
+<div class="w-11 h-11 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center mb-2 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white transition-all duration-200">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+</div>
+<span class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Wisdom</span>
+<span class="text-[10px] text-slate-500 mt-0.5">Mind &amp; Habits</span>
+</button>
+<button class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-brand-100 hover:border-brand-400 hover:bg-brand-50/50 shadow-xs transition-all text-center group cursor-pointer" onclick="switchTab('magazines')">
+<div class="w-11 h-11 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center mb-2 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white transition-all duration-200">
+<span class="material-symbols-outlined text-[22px]">newspaper</span>
+</div>
+<span class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Magazines</span>
+<span class="text-[10px] text-slate-500 mt-0.5">Periodicals</span>
+</button>
+<button class="flex flex-col items-center p-3.5 rounded-2xl bg-white border border-brand-200 hover:border-brand-400 hover:bg-brand-50/50 shadow-xs transition-all text-center group cursor-pointer" onclick="switchTab('ai')">
+<div class="w-11 h-11 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center mb-2 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white transition-all duration-200">
+<span class="material-symbols-outlined text-[22px]">neurology</span>
+</div>
+<span class="text-xs font-bold text-slate-800 group-hover:text-brand-600">ReadGenius AI</span>
+<span class="text-[10px] text-brand-600 font-semibold mt-0.5">Interactive Guide</span>
+</button>
+</div>
+</div>
+<!-- Spotlight: The Midnight Library -->
+<div class="p-5 rounded-2xl bg-white border border-brand-200 shadow-xs flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-brand-100 pb-3">
+<span class="text-xs font-bold text-brand-600 flex items-center gap-1.5 uppercase tracking-wide">
+<span class="w-2 h-2 rounded-full bg-brand-500"></span>
+            Curator's Choice • Autumn Salon
+          </span>
+<span class="text-xs bg-brand-50 text-brand-700 px-2.5 py-0.5 rounded-full font-bold border border-brand-100">4.8 ★ (12,480 reviews)</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 sm:items-center">
+<div class="w-28 h-40 rounded-xl bg-gradient-to-br from-brand-900 to-brand-700 text-white flex flex-col justify-end p-3 shrink-0 shadow-md cursor-pointer hover:opacity-95 transition-opacity" onclick="openExcerpt('The Midnight Library', 'Matt Haig', 'Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. To see how things would be if you had made other choices... Would you have done anything different, if you had the chance to undo your regrets?', 21.50)">
+<span class="text-[9px] uppercase tracking-wider opacity-80 text-brand-200">Matt Haig</span>
+<h4 class="font-serif text-sm font-bold leading-tight">The Midnight Library</h4>
+</div>
+<div class="flex-1">
+<h4 class="font-serif text-xl font-bold leading-tight text-slate-900">The Midnight Library</h4>
+<p class="text-xs text-slate-500 font-medium mt-0.5">By Matt Haig • Contemporary Philosophical Fiction</p>
+<p class="text-xs text-slate-700 italic mt-2 leading-relaxed">"Between life and death there is a library where the shelves go on forever. Every book holds an opportunity to experience an alternate version of yourself."</p>
+<div class="flex items-center justify-between pt-3 mt-2 border-t border-brand-100">
+<span class="text-lg font-serif font-bold text-slate-900">$21.50 <span class="text-xs font-sans text-slate-400 line-through ml-1">$28.00</span></span>
+<span class="text-[10px] px-2.5 py-0.5 rounded-full bg-brand-50 text-brand-700 font-bold border border-brand-200">Hardbound Cloth Folio</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2.5 pt-1">
+<button class="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors border border-slate-200/80" onclick="openExcerpt('The Midnight Library', 'Matt Haig', 'Between life and death there is a library, and within that library, the shelves go on forever...', 21.50)">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Read Excerpt
+          </button>
+<button class="flex-1 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-colors" onclick="addToBag('The Midnight Library', 'Matt Haig', 'Hardbound Collector', 21.50)">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+          </button>
+</div>
+</div>
+<!-- Best-Sellers Grid -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-serif text-lg font-bold text-slate-900">Archival Best-Sellers</h3>
+<button class="text-xs font-bold text-brand-600 hover:text-brand-800 hover:underline" onclick="switchTab('fiction')">View All Catalogue →</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="homeBestSellers"></div>
+</div>
+</section>
+<!-- 2. STORY & FICTION TAB (25+ TITLES WITH FILTER PILLS) -->
+<section class="tab-pane flex flex-col gap-5" id="pane-fiction">
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 to-white border border-brand-200 p-5">
+<span class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">Literary Fiction</span>
+<h2 class="font-serif text-2xl font-bold mt-2 text-slate-900">Acclaimed Fiction &amp; Masterpiece Novels</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Smyth-sewn bindings, debossed foil spines, and timeless stories curated for discerning readers.</p>
+<!-- Filter pills -->
+<div class="flex flex-wrap gap-2 mt-4 pt-3 border-t border-brand-100">
+<button class="fiction-filter px-3 py-1 rounded-full text-xs font-bold bg-brand-600 text-white shadow-xs" onclick="filterFiction('All')">All Fiction (25)</button>
+<button class="fiction-filter px-3 py-1 rounded-full text-xs font-semibold bg-white text-slate-600 border border-brand-200 hover:bg-brand-50" onclick="filterFiction('Modern Classics')">Modern Classics</button>
+<button class="fiction-filter px-3 py-1 rounded-full text-xs font-semibold bg-white text-slate-600 border border-brand-200 hover:bg-brand-50" onclick="filterFiction('Magical Realism')">Magical Realism</button>
+<button class="fiction-filter px-3 py-1 rounded-full text-xs font-semibold bg-white text-slate-600 border border-brand-200 hover:bg-brand-50" onclick="filterFiction('Contemporary')">Contemporary</button>
+<button class="fiction-filter px-3 py-1 rounded-full text-xs font-semibold bg-white text-slate-600 border border-brand-200 hover:bg-brand-50" onclick="filterFiction('Historical')">Historical</button>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="fictionGrid"></div>
+</section>
+<!-- 3. ANIME & MANGA TAB (25+ TITLES WITH TANKŌBON / E-BOOK TOGGLE) -->
+<section class="tab-pane flex flex-col gap-5" id="pane-manga">
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 to-white border border-brand-200 p-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">Manga Pavilion</span>
+<h2 class="font-serif text-2xl font-bold mt-2 text-slate-900">Anime &amp; Manga Vault</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Authentic tankōbon releases, box sets, and bilingual collector volumes direct from Tokyo publishers.</p>
+</div>
+<!-- Format Switcher -->
+<div class="inline-flex p-1 bg-brand-100/70 rounded-xl border border-brand-200 shrink-0 self-start sm:self-center">
+<button class="px-3 py-1 rounded-lg text-xs font-bold bg-white text-brand-700 shadow-xs transition-all" id="fmtTankobon" onclick="setMangaFormat('tankobon')">Physical Tankōbon</button>
+<button class="px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-brand-700 transition-all" id="fmtDigital" onclick="setMangaFormat('digital')">Digital E-Book</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="mangaGrid"></div>
+</section>
+<!-- 4. COMICS & NOVELS TAB (25+ TITLES) -->
+<section class="tab-pane flex flex-col gap-5" id="pane-comics">
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 to-white border border-brand-200 p-5">
+<span class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">Graphic Pavilion</span>
+<h2 class="font-serif text-2xl font-bold mt-2 text-slate-900">Comics &amp; Graphic Masterpieces</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Eisner award winners, oversized collector omnibuses, and influential visual narratives.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="comicsGrid"></div>
+</section>
+<!-- 5. MOTIVATIONAL WISDOM TAB (25+ TITLES) -->
+<section class="tab-pane flex flex-col gap-5" id="pane-wisdom">
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 to-white border border-brand-200 p-5">
+<span class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">Human Wisdom</span>
+<h2 class="font-serif text-2xl font-bold mt-2 text-slate-900">Motivational &amp; Mindful Living</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Enduring blueprints on cognitive systems, discipline, resilience, and stoic philosophy.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="wisdomGrid"></div>
+</section>
+<!-- 6. MAGAZINES TAB -->
+<section class="tab-pane flex flex-col gap-5" id="pane-magazines">
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 to-white border border-brand-200 p-5">
+<span class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">Periodical Lounge</span>
+<h2 class="font-serif text-2xl font-bold mt-2 text-slate-900">Curated Magazines &amp; Periodicals</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Independent architecture anthologies, lifestyle folios, and global intelligence.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="magazinesGrid"></div>
+</section>
+<!-- 7. READGENIUS AI TAB (INTERACTIVE CONCIERGE) -->
+<section class="tab-pane flex flex-col gap-5" id="pane-ai">
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 via-white to-brand-100/60 border border-brand-200 p-5">
+<span class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">Librarian Intelligence</span>
+<h2 class="font-serif text-2xl font-bold mt-2 text-slate-900">ReadGenius AI Literary Guide</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Ask for tailored reading syllabi, thematic recommendations, or order inquiries.</p>
+<!-- Prompt catalysts -->
+<div class="flex flex-wrap gap-2 mt-3">
+<button class="px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs font-semibold text-slate-700 hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50/50 shadow-xs transition-all" onclick="sendPresetPrompt('Recommend books like The Midnight Library with philosophical depth')">✨ Books like The Midnight Library</button>
+<button class="px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs font-semibold text-slate-700 hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50/50 shadow-xs transition-all" onclick="sendPresetPrompt('Compare Atomic Habits with Stoic principles')">🏛️ Habits vs Stoicism</button>
+<button class="px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs font-semibold text-slate-700 hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50/50 shadow-xs transition-all" onclick="sendPresetPrompt('What makes Frieren such a touching fantasy manga?')">🌸 Why read Frieren?</button>
+<button class="px-3 py-1.5 rounded-xl bg-white border border-brand-200 text-xs font-semibold text-slate-700 hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50/50 shadow-xs transition-all" onclick="sendPresetPrompt('What is your return and doorstep exchange policy?')">📦 Return &amp; Guarantee Policy</button>
+</div>
+</div>
+<!-- Live Chat Console -->
+<div class="rounded-2xl bg-white border border-brand-200 shadow-xs overflow-hidden flex flex-col h-[460px]">
+<div class="px-4 py-3 bg-brand-50/60 border-b border-brand-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-xs font-bold text-slate-800">ReadGenius Literary Concierge v4.2</span>
+</div>
+<button class="text-xs font-semibold text-brand-600 hover:text-brand-800 hover:underline" onclick="resetAiChat()">Reset Session</button>
+</div>
+<div class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#f8fafc]/50" id="aiChatStream">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 text-xs font-bold border border-brand-200">RG</div>
+<div class="bg-white p-3.5 rounded-2xl rounded-tl-sm border border-brand-100 text-xs text-slate-800 shadow-xs max-w-lg leading-relaxed">
+              Greetings, bibliophile! I am your curated literary guide at PageHaven. Whether you seek contemplative fiction, rare tankōbon manga, or habit-building frameworks, I'm here to illuminate your path. How may I assist your shelf today?
+            </div>
+</div>
+</div>
+<form class="p-3 bg-white border-t border-brand-100 flex gap-2" onsubmit="handleAiSubmit(event)">
+<input class="flex-1 px-4 py-2 bg-brand-50/40 rounded-xl text-xs text-slate-900 border border-brand-200 focus:border-brand-600 focus:bg-white focus:outline-none transition-all" id="aiInput" placeholder="Ask about books, themes, authors, order assistance..." type="text"/>
+<button class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold flex items-center gap-1 shadow-xs transition-colors" type="submit">
+<span>Consult</span>
+<span class="material-symbols-outlined text-[15px]">send</span>
+</button>
+</form>
+</div>
+</section>
+<!-- 8. HELP CARE TAB -->
+<section class="tab-pane flex flex-col gap-5" id="pane-care">
+<div class="rounded-2xl bg-gradient-to-r from-brand-50 to-white border border-brand-200 p-5">
+<span class="px-2.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider">Sanctuary Guarantee</span>
+<h2 class="font-serif text-2xl font-bold mt-2 text-slate-900">Help Centre &amp; Customer Care</h2>
+<p class="text-xs sm:text-sm text-slate-600 mt-1">Every volume is backed by our 14-day archival satisfaction guarantee.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-4 rounded-2xl bg-white border border-brand-200 shadow-xs hover:border-brand-400 transition-all">
+<span class="material-symbols-outlined text-brand-600 text-3xl mb-2">assignment_return</span>
+<h4 class="font-serif text-base font-bold text-slate-900">14-Day Returns</h4>
+<p class="text-xs text-slate-500 mt-1">Complimentary courier doorstep pickup for pristine or unread physical volumes.</p>
+<button class="mt-3 text-xs font-bold text-brand-600 hover:underline" onclick="alert('Return request initiated for Order #PH-89412. Courier pickup scheduled.')">Start Return →</button>
+</div>
+<div class="p-4 rounded-2xl bg-white border border-brand-200 shadow-xs hover:border-brand-400 transition-all">
+<span class="material-symbols-outlined text-brand-600 text-3xl mb-2">local_shipping</span>
+<h4 class="font-serif text-base font-bold text-slate-900">Track Shipment</h4>
+<p class="text-xs text-slate-500 mt-1">Active parcel: <b>#PH-89412</b> is in transit via Express Archival Courier.</p>
+<button class="mt-3 text-xs font-bold text-brand-600 hover:underline" onclick="alert('Order #PH-89412: Out for delivery today with protective acid-free wrapping.')">View Live Map →</button>
+</div>
+<div class="p-4 rounded-2xl bg-white border border-brand-200 shadow-xs hover:border-brand-400 transition-all">
+<span class="material-symbols-outlined text-brand-600 text-3xl mb-2">menu_book</span>
+<h4 class="font-serif text-base font-bold text-slate-900">Damaged Replacement</h4>
+<p class="text-xs text-slate-500 mt-1">Instant replacement if a cover or deckled page is creased in transit.</p>
+<button class="mt-3 text-xs font-bold text-brand-600 hover:underline" onclick="alert('Replacement claim form opened. Upload photo to receive immediate dispatch.')">Report Defect →</button>
+</div>
+<div class="p-4 rounded-2xl bg-white border border-brand-200 shadow-xs hover:border-brand-400 transition-all">
+<span class="material-symbols-outlined text-brand-600 text-3xl mb-2">support_agent</span>
+<h4 class="font-serif text-base font-bold text-slate-900">Toll-Free Concierge</h4>
+<p class="text-xs text-slate-500 mt-1">Direct support 7 days a week: 1-800-PAGEHAVEN (9 AM - 8 PM EST).</p>
+<button class="mt-3 text-xs font-bold text-brand-600 hover:underline" onclick="alert('Connecting to PageHaven Toll-Free Concierge: 1-800-PAGEHAVEN')">Call Desk →</button>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= SLIDE-OVER READING BAG (CART) ================= -->
+<div class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs transition-opacity duration-300 opacity-0 pointer-events-none" id="cartDrawerBackdrop" onclick="toggleCart()"></div>
+<aside class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300" id="cartDrawer">
+<div class="p-4 border-b border-brand-100 flex items-center justify-between bg-brand-50/60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-600">local_mall</span>
+<h3 class="font-serif text-lg font-bold text-slate-900">Your Reading Bag</h3>
+<span class="text-xs font-semibold text-slate-500" id="cartHeaderBadge">(3 items)</span>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-800 hover:bg-white transition-colors" onclick="toggleCart()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex-1 p-4 overflow-y-auto space-y-3" id="cartItemsList"></div>
+<div class="p-4 border-t border-brand-100 bg-[#f8fafc] flex flex-col gap-3">
+<!-- Coupon input -->
+<div class="flex gap-2">
+<input class="flex-1 px-3 py-1.5 bg-white border border-brand-200 rounded-xl text-xs uppercase font-mono tracking-wider focus:outline-none focus:border-brand-600" id="couponInput" placeholder="Promo code (e.g. PAGE25)" type="text"/>
+<button class="px-3.5 py-1.5 bg-brand-600 text-white text-xs font-bold rounded-xl hover:bg-brand-700 transition-colors" onclick="applyCoupon()">Apply</button>
+</div>
+<div class="hidden text-xs text-emerald-700 font-semibold flex items-center gap-1" id="couponAppliedMsg">
+<span class="material-symbols-outlined text-[15px]">check_circle</span> 25% Autumn Salon voucher applied!
+      </div>
+<!-- Totals -->
+<div class="space-y-1 text-xs text-slate-600">
+<div class="flex justify-between"><span>Subtotal</span><span class="font-bold text-slate-900" id="cartSubtotal">$49.00</span></div>
+<div class="flex justify-between text-emerald-700" id="discountRow" style="display:none;"><span>Privilege Discount (25%)</span><span id="cartDiscount">-$0.00</span></div>
+<div class="flex justify-between"><span>Doorstep Packaging &amp; Courier</span><span class="text-emerald-700 font-bold">Complimentary</span></div>
+<div class="flex justify-between text-base font-serif font-bold text-slate-900 pt-2 border-t border-brand-100">
+<span>Total</span>
+<span id="cartGrandTotal">$49.00</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer" onclick="openCheckoutModal()">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Proceed to Secure Checkout</span>
+</button>
+</div>
+</aside>
+<!-- ================= EXCERPT PREVIEW MODAL ================= -->
+<div class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" id="excerptModal">
+<div class="bg-white rounded-2xl max-w-lg w-full p-6 border border-brand-200 shadow-xl flex flex-col gap-4 transform scale-95 transition-transform duration-200" id="excerptModalBox">
+<div class="flex items-start justify-between border-b border-brand-100 pb-3">
+<div>
+<span class="text-[10px] uppercase font-bold text-brand-600 tracking-wider">Archival Chapter Excerpt</span>
+<h3 class="font-serif text-xl font-bold leading-tight mt-0.5 text-slate-900" id="excerptTitle">The Midnight Library</h3>
+<p class="text-xs text-slate-500" id="excerptAuthor">By Matt Haig</p>
+</div>
+<button class="text-slate-400 hover:text-slate-700 p-1" onclick="closeExcerpt()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
+<p class="text-xs text-slate-700 leading-relaxed font-serif italic" id="excerptText"></p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div>
+<span class="text-xs text-slate-500 font-medium">Acquisition Price</span>
+<div class="font-serif text-lg font-bold text-slate-900" id="excerptPrice">$21.50</div>
+</div>
+<button class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer" id="excerptAddBtn">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+        </button>
+</div>
+</div>
+</div>
+<!-- ================= GUEST SIGN IN / JOIN MODAL ================= -->
+<div class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" id="authModal">
+<div class="bg-white rounded-2xl max-w-md w-full p-6 border border-brand-200 shadow-xl flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-brand-100 pb-3">
+<div>
+<h3 class="font-serif text-lg font-bold text-slate-900">Welcome to PageHaven</h3>
+<p class="text-xs text-slate-500">Sign in or create a complimentary reader profile</p>
+</div>
+<button class="text-slate-400 hover:text-slate-700 p-1" onclick="closeAuthModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="space-y-3" onsubmit="handleAuthSubmit(event)">
+<div>
+<label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Email Address</label>
+<input class="w-full px-3.5 py-2 bg-brand-50/40 border border-brand-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-brand-600" placeholder="reader@havenbooks.org" required="" type="email"/>
+</div>
+<div>
+<label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Password</label>
+<input class="w-full px-3.5 py-2 bg-brand-50/40 border border-brand-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-brand-600" placeholder="••••••••••••" required="" type="password"/>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold transition-colors shadow-xs" type="submit">
+          Sign In / Enter Sanctuary
+        </button>
+</form>
+</div>
+</div>
+<!-- ================= CHECKOUT SUCCESS MODAL ================= -->
+<div class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" id="checkoutSuccessModal">
+<div class="bg-white rounded-2xl max-w-md w-full p-6 border border-brand-200 shadow-2xl flex flex-col items-center text-center gap-3">
+<div class="w-12 h-12 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">check_circle</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-slate-900">Order Confirmed!</h3>
+<p class="text-xs text-slate-600 leading-relaxed">Thank you for your order with PageHaven. Tracking ID <b class="font-mono text-brand-700">#PH-98432</b> has been created and sent to your email.</p>
+<div class="w-full p-3 rounded-xl bg-brand-50 border border-brand-100 text-xs text-slate-700 flex justify-between font-semibold mt-1">
+<span>Dispatched to courier:</span>
+<span class="text-brand-700">Expected in 48 hours</span>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-xl bg-brand-600 text-white font-bold text-xs hover:bg-brand-700 transition-colors" onclick="closeCheckoutModal()">Return to Sanctuary</button>
+</div>
+</div>
+<!-- ================= TOAST NOTIFICATION ================= -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-full text-xs font-semibold shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 flex items-center gap-2" id="toast">
+<span class="material-symbols-outlined text-[17px] text-brand-400">check_circle</span>
+<span id="toastMsg">Added to your Reading Bag</span>
+</div>
+<!-- ================= JAVASCRIPT LOGIC ================= -->
+<script>
+    // Master Bookstore Catalog Data with 25+ items in main categories
+    const booksData = [
+      // 1. STORY & FICTION (25 books)
+      { id: 1, title: 'The Midnight Library', author: 'Matt Haig', category: 'fiction', subcategory: 'Contemporary', price: 21.50, format: 'Hardcover', tag: 'Curator Pick', desc: 'Between life and death there is a library where the shelves go on forever...' },
+      { id: 2, title: 'Before the Coffee Gets Cold', author: 'Toshikazu Kawaguchi', category: 'fiction', subcategory: 'Magical Realism', price: 16.50, format: 'Paperback', tag: 'Japanese Lit', desc: 'In a small Tokyo back alley, a quaint café offers visitors the chance to travel through time.' },
+      { id: 3, title: 'Tomorrow, and Tomorrow, and Tomorrow', author: 'Gabrielle Zevin', category: 'fiction', subcategory: 'Contemporary', price: 22.99, format: 'Hardcover', tag: 'Bestseller', desc: 'Two friends who find intimacy, heartbreak, and greatness designing legendary virtual worlds.' },
+      { id: 4, title: 'Klara and the Sun', author: 'Kazuo Ishiguro', category: 'fiction', subcategory: 'Modern Classics', price: 21.50, format: 'Hardcover', tag: 'Nobel Winner', desc: 'A thrilling look at our rapidly changing world through the unforgettable eyes of an Artificial Friend.' },
+      { id: 5, title: 'The Song of Achilles', author: 'Madeline Miller', category: 'fiction', subcategory: 'Historical', price: 16.00, format: 'Paperback', tag: 'Mythology', desc: 'A breathtaking and heart-wrenching retelling of Homer’s Iliad.' },
+      { id: 6, title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', category: 'fiction', subcategory: 'Magical Realism', price: 21.50, format: 'Hardcover', tag: 'Masterwork', desc: 'The brilliant chronicle of the rise and fall of the mythical town of Macondo.' },
+      { id: 24, title: 'Norwegian Wood', author: 'Haruki Murakami', category: 'fiction', subcategory: 'Modern Classics', price: 17.50, format: 'Paperback', tag: 'Literary Classic', desc: 'A nostalgic and poignant story of loss and burgeoning sexuality in 1960s Tokyo.' },
+      { id: 25, title: 'Pachinko', author: 'Min Jin Lee', category: 'fiction', subcategory: 'Historical', price: 19.99, format: 'Hardcover', tag: 'Epic Saga', desc: 'A deeply moving story of love, sacrifice, and ambition spanning four generations of Korean immigrants.' },
+      { id: 26, title: 'Circe', author: 'Madeline Miller', category: 'fiction', subcategory: 'Historical', price: 17.00, format: 'Paperback', tag: 'Myth Reimagined', desc: 'An exhilarating and empowering mythological tale of a fierce sorceress defying the Olympian gods.' },
+      { id: 27, title: 'Never Let Me Go', author: 'Kazuo Ishiguro', category: 'fiction', subcategory: 'Modern Classics', price: 16.99, format: 'Paperback', tag: 'Dystopian', desc: 'A haunting mystery about memory and the fragility of what makes us profoundly human.' },
+      { id: 28, title: 'The Shadow of the Wind', author: 'Carlos Ruiz Zafón', category: 'fiction', subcategory: 'Magical Realism', price: 18.50, format: 'Hardcover', tag: 'Gothic Mystery', desc: 'Barcelona, 1945: A boy is led to the secret Cemetery of Forgotten Books.' },
+      { id: 29, title: 'A Gentleman in Moscow', author: 'Amor Towles', category: 'fiction', subcategory: 'Historical', price: 20.00, format: 'Hardcover', tag: 'Acclaimed', desc: 'Count Alexander Rostov is sentenced to pass his life inside the luxurious Hotel Metropol.' },
+      { id: 30, title: 'The Overstory', author: 'Richard Powers', category: 'fiction', subcategory: 'Contemporary', price: 18.99, format: 'Paperback', tag: 'Pulitzer Prize', desc: 'An impassioned work of natural activism and interconnected human destinies.' },
+      { id: 31, title: 'Beloved', author: 'Toni Morrison', category: 'fiction', subcategory: 'Modern Classics', price: 17.00, format: 'Hardcover', tag: 'Masterpiece', desc: 'A spellbinding, transcendent novel examining the destructive legacy of slavery.' },
+      { id: 32, title: 'If on a Winter’s Night a Traveler', author: 'Italo Calvino', category: 'fiction', subcategory: 'Modern Classics', price: 16.50, format: 'Paperback', tag: 'Postmodern', desc: 'A brilliant labyrinthine novel about the hypnotic magic and mystery of reading itself.' },
+      { id: 33, title: 'The God of Small Things', author: 'Arundhati Roy', category: 'fiction', subcategory: 'Modern Classics', price: 16.00, format: 'Paperback', tag: 'Booker Winner', desc: 'An astonishing, lyrical story of family secrets, taboo love, and innocence shattered.' },
+      { id: 34, title: 'Piranesi', author: 'Susanna Clarke', category: 'fiction', subcategory: 'Magical Realism', price: 18.00, format: 'Hardcover', tag: 'Enchanting', desc: 'Piranesi lives in the House with infinite rooms, thousands of statues, and tides surging up staircases.' },
+      { id: 35, title: 'Normal People', author: 'Sally Rooney', category: 'fiction', subcategory: 'Contemporary', price: 15.99, format: 'Paperback', tag: 'Phenomenon', desc: 'The subtle, exquisite friction of two people who try not to be together and cannot be apart.' },
+      { id: 36, title: 'Cloud Cuckoo Land', author: 'Anthony Doerr', category: 'fiction', subcategory: 'Historical', price: 22.50, format: 'Hardcover', tag: 'Epic Wonder', desc: 'A testament to hope and human resilience through an ancient manuscript across time.' },
+      { id: 37, title: 'All the Light We Cannot See', author: 'Anthony Doerr', category: 'fiction', subcategory: 'Historical', price: 21.00, format: 'Hardcover', tag: 'Pulitzer Prize', desc: 'A blind French girl and a German boy whose paths collide in occupied France.' },
+      { id: 38, title: 'The Book Thief', author: 'Markus Zusak', category: 'fiction', subcategory: 'Historical', price: 16.99, format: 'Hardcover', tag: 'Unforgettable', desc: 'Narrated by Death, the story of Liesel Meminger discovering the immortal power of words.' },
+      { id: 39, title: 'Kafka on the Shore', author: 'Haruki Murakami', category: 'fiction', subcategory: 'Magical Realism', price: 18.00, format: 'Paperback', tag: 'Surrealist', desc: 'A teenager runs away from an oedipal curse into a world of talking cats and fish raining from skies.' },
+      { id: 40, title: 'The Remains of the Day', author: 'Kazuo Ishiguro', category: 'fiction', subcategory: 'Modern Classics', price: 16.50, format: 'Paperback', tag: 'Booker Winner', desc: 'An English butler reflects on blind service, lost love, and unexamined loyalty.' },
+      { id: 41, title: 'Demon Copperhead', author: 'Barbara Kingsolver', category: 'fiction', subcategory: 'Contemporary', price: 23.00, format: 'Hardcover', tag: 'Pulitzer Prize', desc: 'A fierce Appalachian reimagining of David Copperfield for our modern century.' },
+      { id: 42, title: 'The Great Gatsby: Archival Folio', author: 'F. Scott Fitzgerald', category: 'fiction', subcategory: 'Modern Classics', price: 24.50, format: 'Clothbound', tag: 'Century Edition', desc: 'The definitive luxury cloth edition of the jazz age tragedy.' },
+
+      // 2. ANIME & MANGA (25 books)
+      { id: 7, title: "Frieren: Beyond Journey's End", author: 'Kanehito Yamada', category: 'manga', price: 12.99, format: 'Tankōbon', tag: 'Award Winner', desc: 'An emotional odyssey following an elf mage learning the deep weight of human bonds.' },
+      { id: 8, title: 'One Piece: Wano Climax', author: 'Eiichiro Oda', category: 'manga', price: 14.00, format: 'Tankōbon', tag: 'Epic Shonen', desc: 'Luffy unleashes the mythical Sun God Gear 5 form in the legendary clash of Onigashima.' },
+      { id: 9, title: 'Chainsaw Man: Vol 13', author: 'Tatsuki Fujimoto', category: 'manga', price: 11.50, format: 'Tankōbon', tag: 'Action', desc: 'The razor-sharp continuation of the devil hunters in Tokyo.' },
+      { id: 10, title: 'Attack on Titan Omnibus', author: 'Hajime Isayama', category: 'manga', price: 24.99, format: 'Hardcover', tag: 'Dark Fantasy', desc: 'The monumental battle for freedom and truth that spans towering walls and generations.' },
+      { id: 11, title: 'Spy x Family: Mission 10', author: 'Tatsuya Endo', category: 'manga', price: 11.50, format: 'Tankōbon', tag: 'Comedy', desc: 'Master spy Twilight navigates covert missions with an eccentric telepath daughter and assassin wife.' },
+      { id: 43, title: 'Berserk: Deluxe Edition 1', author: 'Kentaro Miura', category: 'manga', price: 44.99, format: 'Deluxe HC', tag: 'Grimdark Canon', desc: 'The oversized leatherette folio edition of Guts the Black Swordsman’s vengeful path.' },
+      { id: 44, title: 'Demon Slayer: Complete Arc', author: 'Koyoharu Gotouge', category: 'manga', price: 13.50, format: 'Tankōbon', tag: 'Bestseller', desc: 'Tanjiro Kamado wields Sun Breathing to restore his sister Nezuko’s humanity.' },
+      { id: 45, title: 'Tokyo Ghoul: Monster Edition', author: 'Sui Ishida', category: 'manga', price: 29.99, format: 'Hardcover', tag: 'Psychological', desc: 'Ken Kaneki struggles between predatory ghouls and surviving human societies.' },
+      { id: 46, title: 'Vinland Saga: Book 1', author: 'Makoto Yukimura', category: 'manga', price: 19.99, format: 'Hardcover', tag: 'Historical Epic', desc: 'Thorfinn seeks revenge against the Viking commander who slaughtered his noble father.' },
+      { id: 47, title: 'Jujutsu Kaisen: Shibuya Arc', author: 'Gege Akutami', category: 'manga', price: 12.00, format: 'Tankōbon', tag: 'Supernatural', desc: 'Cursed spirits lock Shibuya in devastation while Gojo Satoru enters the frontlines.' },
+      { id: 48, title: 'Goodnight Punpun: Vol 1', author: 'Inio Asano', category: 'manga', price: 17.50, format: 'Tankōbon', tag: 'Masterwork', desc: 'A deeply visceral, heartbreaking coming-of-age chronicle disguised in surreal bird iconography.' },
+      { id: 49, title: 'Vagabond: VizBig 1', author: 'Takehiko Inoue', category: 'manga', price: 22.00, format: 'Deluxe PB', tag: 'Samurai Epic', desc: 'The life of the peerless sword saint Miyamoto Musashi rendered in transcendent brushstrokes.' },
+      { id: 50, title: 'Monster: Perfect Edition 1', author: 'Naoki Urasawa', category: 'manga', price: 18.50, format: 'Deluxe PB', tag: 'Mystery Thriller', desc: 'Brain surgeon Dr. Tenma saves a young boy who grows into a merciless sociopath.' },
+      { id: 51, title: 'Fullmetal Alchemist: Fullmetal 1', author: 'Hiromu Arakawa', category: 'manga', price: 19.99, format: 'Hardcover', tag: 'Classic Shonen', desc: 'Two brothers pay a terrible price for forbidden human transmutation.' },
+      { id: 52, title: 'Death Note: Black Edition I', author: 'Tsugumi Ohba', category: 'manga', price: 16.99, format: 'Deluxe PB', tag: 'Psychological', desc: 'Light Yagami obtains the notebook of a Shinigami to enforce his own divine justice.' },
+      { id: 53, title: 'Neon Genesis Evangelion: Vol 1', author: 'Yoshiyuki Sadamoto', category: 'manga', price: 18.00, format: 'Omnibus', tag: 'Sci-Fi Classic', desc: 'Shinji Ikari is summoned to pilot Eva Unit 01 against apocalyptic Angels.' },
+      { id: 54, title: 'Akira 35th Anniversary 1', author: 'Katsuhiro Otomo', category: 'manga', price: 26.50, format: 'Hardcover', tag: 'Cyberpunk', desc: 'Neo-Tokyo erupts in psionic fury in Otomo’s world-renowned masterwork.' },
+      { id: 55, title: 'Blue Period: Vol 1', author: 'Tsubasa Yamaguchi', category: 'manga', price: 12.99, format: 'Tankōbon', tag: 'Fine Art Drama', desc: 'A popular high schooler finds true passion and raw identity in oil painting.' },
+      { id: 56, title: 'Overtake & Haikyu!! Special', author: 'Haruichi Furudate', category: 'manga', price: 11.99, format: 'Tankōbon', tag: 'Sports', desc: 'Hinata and Kageyama push Karasuno High to the National Volleyball arena.' },
+      { id: 57, title: 'My Hero Academia: Final War', author: 'Kohei Horikoshi', category: 'manga', price: 11.50, format: 'Tankōbon', tag: 'Superhero', desc: 'Deku confronts All For One in the ultimate showdown for hero society.' },
+      { id: 58, title: 'Dungeon Meshi: Vol 1', author: 'Ryoko Kui', category: 'manga', price: 14.00, format: 'Tankōbon', tag: 'Culinary Fantasy', desc: 'Adventurers sustain themselves deep in the dungeon by cooking monstrous delicacies.' },
+      { id: 59, title: 'JoJo’s Bizarre Adventure: Part 1', author: 'Hirohiko Araki', category: 'manga', price: 19.99, format: 'Hardcover', tag: 'Cult Classic', desc: 'Jonathan Joestar battles his vampiric foster brother Dio Brando in Victorian England.' },
+      { id: 60, title: '20th Century Boys: Vol 1', author: 'Naoki Urasawa', category: 'manga', price: 19.00, format: 'Deluxe PB', tag: 'Sci-Fi Mystery', desc: 'Childhood apocalypse games turn terrifyingly real under the shadow of Friend.' },
+      { id: 61, title: 'Witch Hat Atelier: Vol 1', author: 'Kamome Shirahama', category: 'manga', price: 13.00, format: 'Tankōbon', tag: 'Fantasy Art', desc: 'Coco discovers the forbidden method of drawing genuine magic in ink.' },
+      { id: 62, title: 'Sailor Moon: Eternal Edition 1', author: 'Naoko Takeuchi', category: 'manga', price: 27.99, format: 'Deluxe HC', tag: 'Magical Girl', desc: 'Usagi Tsukino transforms into the warrior of love and justice in glittering archival print.' },
+
+      // 3. COMICS & GRAPHIC NOVELS (25 books)
+      { id: 12, title: 'Watchmen: DC Compact', author: 'Alan Moore', category: 'comics', price: 19.99, format: 'Deluxe HC', tag: 'Hugo Winner', desc: 'A groundbreaking deconstruction of superhero mythos that altered graphic literature forever.' },
+      { id: 13, title: 'Lore Olympus: Volume 1', author: 'Rachel Smythe', category: 'comics', price: 22.00, format: 'Full Color HC', tag: 'Myth Romance', desc: 'A vibrant, modern retelling of Hades and Persephone in breathtaking watercolor art.' },
+      { id: 14, title: 'The Sandman: Preludes', author: 'Neil Gaiman', category: 'comics', price: 25.00, format: 'Deluxe HC', tag: 'Dark Fantasy', desc: 'The Lord of Dreams is imprisoned for seven decades before embarking on an epic restoration.' },
+      { id: 15, title: 'Batman: Year One', author: 'Frank Miller', category: 'comics', price: 18.50, format: 'Collector HC', tag: 'Noir Classic', desc: 'The foundational graphic novel detailing Bruce Wayne and Jim Gordon’s earliest days in Gotham.' },
+      { id: 63, title: 'Saga: Book One Deluxe', author: 'Brian K. Vaughan', category: 'comics', price: 34.99, format: 'Deluxe HC', tag: 'Space Fantasy', desc: 'Two star-crossed soldiers from warring extraterrestrial races fight to raise their child.' },
+      { id: 64, title: 'Maus: Complete Hardcover', author: 'Art Spiegelman', category: 'comics', price: 27.50, format: 'Hardcover', tag: 'Pulitzer Prize', desc: 'The survivor’s tale of the Holocaust depicted with Jews as mice and Nazis as cats.' },
+      { id: 65, title: 'Monstress: Book One', author: 'Marjorie Liu', category: 'comics', price: 39.99, format: 'Deluxe HC', tag: 'Hugo Winner', desc: 'Maika Halfwolf navigates an alternate matriarchal 1900s Asia haunted by ancient gods.' },
+      { id: 66, title: 'Heartstopper: Volume 1', author: 'Alice Oseman', category: 'comics', price: 14.99, format: 'Hardcover', tag: 'Romance', desc: 'A heartwarming, gentle graphic novel about Charlie and Nick discovering friendship and love.' },
+      { id: 67, title: 'Invincible: Compendium 1', author: 'Robert Kirkman', category: 'comics', price: 42.00, format: 'Compendium', tag: 'Superhero', desc: 'Mark Grayson discovers his heroic heritage in this brutal, unforgettable superhero epic.' },
+      { id: 68, title: 'V for Vendetta: Deluxe', author: 'Alan Moore', category: 'comics', price: 26.50, format: 'Deluxe HC', tag: 'Dystopian', desc: 'In a totalitarian England, an enigmatic anarchist in a Guy Fawkes mask sparks revolution.' },
+      { id: 69, title: 'Kingdom Come: 20th Anniversary', author: 'Mark Waid', category: 'comics', price: 29.99, format: 'Deluxe HC', tag: 'DC Masterwork', desc: 'Alex Ross’s photorealistic painted masterpiece of traditional heroes vs ruthless vigilantes.' },
+      { id: 70, title: 'Persepolis: Complete', author: 'Marjane Satrapi', category: 'comics', price: 18.00, format: 'Paperback', tag: 'Memoir', desc: 'A courageous, witty memoir of growing up in Iran during and after the Islamic Revolution.' },
+      { id: 71, title: 'Blankets', author: 'Craig Thompson', category: 'comics', price: 24.00, format: 'Deluxe HC', tag: 'Autobiography', desc: 'An intimate, snowy coming-of-age memoir of first love and spiritual crisis.' },
+      { id: 72, title: 'Paper Girls: The Complete Story', author: 'Brian K. Vaughan', category: 'comics', price: 32.00, format: 'Deluxe HC', tag: '80s Mystery', desc: 'Four 12-year-old newspaper deliverers stumble into a war between time travelers.' },
+      { id: 73, title: 'Black Hammer: Library Edition 1', author: 'Jeff Lemire', category: 'comics', price: 39.99, format: 'Library HC', tag: 'Eisner Winner', desc: 'Forgotten Golden Age superheroes trapped in an eerie, timeless timeless rural purgatory.' },
+      { id: 74, title: 'Daredevil: Born Again', author: 'Frank Miller', category: 'comics', price: 21.00, format: 'Hardcover', tag: 'Marvel Classic', desc: 'Matt Murdock is systematically dismantled by the Kingpin in the peak of 80s comic storytelling.' },
+      { id: 75, title: 'Hellboy: Seed of Destruction', author: 'Mike Mignola', category: 'comics', price: 20.00, format: 'Hardcover', tag: 'Occult Mystery', desc: 'The Bureau for Paranormal Research and Defense confronts demonic horrors.' },
+      { id: 76, title: 'Scott Pilgrim: Color Collection 1', author: 'Bryan Lee O’Malley', category: 'comics', price: 22.50, format: 'Hardcover', tag: 'Cult Classic', desc: 'Scott must defeat Ramona Flowers’s seven evil exes to win her love.' },
+      { id: 77, title: 'Daytripper: Deluxe Edition', author: 'Fábio Moon & Gabriel Bá', category: 'comics', price: 24.99, format: 'Deluxe HC', tag: 'Philosophical', desc: 'Brás de Oliva Domingos writes obituaries while meditating on the chapters of life.' },
+      { id: 78, title: 'Nimona: Collector Hardbound', author: 'ND Stevenson', category: 'comics', price: 19.99, format: 'Hardcover', tag: 'Fantasy', desc: 'A mischievous shape-shifter allies with Lord Ballister Blackheart.' },
+      { id: 79, title: 'All-Star Superman: Absolute', author: 'Grant Morrison', category: 'comics', price: 28.00, format: 'Hardcover', tag: 'Masterpiece', desc: 'A mythic, celebratory distillation of the Man of Tomorrow in his final days.' },
+      { id: 80, title: 'Locke & Key: Master Edition 1', author: 'Joe Hill', category: 'comics', price: 35.00, format: 'Hardcover', tag: 'Dark Fantasy', desc: 'Keyhouse holds magical keys that unlock reality, doors, and ancestral horrors.' },
+      { id: 81, title: 'Gideon Falls: Book One', author: 'Jeff Lemire', category: 'comics', price: 29.50, format: 'Deluxe HC', tag: 'Cosmic Horror', desc: 'A washed-up Catholic priest and a troubled recluse encounter the Black Barn.' },
+      { id: 82, title: 'Something is Killing the Children 1', author: 'James Tynion IV', category: 'comics', price: 14.99, format: 'Paperback', tag: 'Eisner Winner', desc: 'Erica Slaughter hunts the child-eating monsters that only youth can perceive.' },
+      { id: 83, title: 'Batman: The Long Halloween', author: 'Jeph Loeb', category: 'comics', price: 23.50, format: 'Hardcover', tag: 'Detective Noir', desc: 'A mysterious serial killer strikes only on holidays as Gotham mob wars ignite.' },
+
+      // 4. MOTIVATIONAL WISDOM (25 books)
+      { id: 16, title: 'Atomic Habits', author: 'James Clear', category: 'wisdom', price: 18.00, format: 'Hardcover', tag: '#1 Bestseller', desc: 'You do not rise to the level of your goals. You fall to the level of your systems.' },
+      { id: 17, title: 'The Courage to Be Disliked', author: 'Ichiro Kishimi', category: 'wisdom', price: 19.95, format: 'Hardcover', tag: 'Philosophy', desc: 'How to free yourself from past trauma, interpersonal burdens, and find true agency.' },
+      { id: 18, title: 'Meditations', author: 'Marcus Aurelius', category: 'wisdom', price: 20.00, format: 'Clothbound', tag: 'Stoic Canon', desc: 'Intimate personal reflections on stoic virtue, duty, and quiet resilience.' },
+      { id: 19, title: "Man's Search for Meaning", author: 'Viktor E. Frankl', category: 'wisdom', price: 15.99, format: 'Hardcover', tag: 'Resilience', desc: 'Frankl’s timeless account of surviving the camps and uncovering deep, purpose-driven logotherapy.' },
+      { id: 20, title: 'The Psychology of Money', author: 'Morgan Housel', category: 'wisdom', price: 17.50, format: 'Hardcover', tag: 'Mindset', desc: 'Timeless lessons on wealth, greed, and happiness through nineteen short stories.' },
+      { id: 84, title: "Can't Hurt Me", author: 'David Goggins', category: 'wisdom', price: 19.99, format: 'Hardcover', tag: 'Grit', desc: 'Master your mind and defy the odds: the 40% rule to shatter self-imposed limitations.' },
+      { id: 85, title: 'Thinking, Fast and Slow', author: 'Daniel Kahneman', category: 'wisdom', price: 21.00, format: 'Paperback', tag: 'Cognition', desc: 'Nobel laureate’s analysis of System 1 intuition versus System 2 deliberate calculation.' },
+      { id: 86, title: 'Deep Work', author: 'Cal Newport', category: 'wisdom', price: 18.50, format: 'Hardcover', tag: 'Focus', desc: 'Rules for focused success in a distracted world, building rare and valuable skillsets.' },
+      { id: 87, title: 'The Daily Stoic', author: 'Ryan Holiday', category: 'wisdom', price: 20.00, format: 'Hardcover', tag: 'Daily Practice', desc: '366 meditations on wisdom, perseverance, and the art of living.' },
+      { id: 88, title: 'Essentialism', author: 'Greg McKeown', category: 'wisdom', price: 18.00, format: 'Hardcover', tag: 'Clarity', desc: 'The disciplined pursuit of less: doing only what is truly vital and eliminating trivia.' },
+      { id: 89, title: 'Four Thousand Weeks', author: 'Oliver Burkeman', category: 'wisdom', price: 17.00, format: 'Hardcover', tag: 'Time Wisdom', desc: 'Time management for mortals: accepting your finitude and making peace with limitation.' },
+      { id: 90, title: 'Show Your Work!', author: 'Austin Kleon', category: 'wisdom', price: 14.95, format: 'Paperback', tag: 'Creativity', desc: '10 ways to share your creativity and get discovered without self-promotion anxiety.' },
+      { id: 91, title: 'Ego Is the Enemy', author: 'Ryan Holiday', category: 'wisdom', price: 18.50, format: 'Hardcover', tag: 'Stoic Path', desc: 'The silent opponent in your ascent, success, and inevitable setbacks.' },
+      { id: 92, title: 'Range', author: 'David Epstein', category: 'wisdom', price: 19.00, format: 'Hardcover', tag: 'Generalist', desc: 'Why generalists triumph in a specialized world by cross-pollinating diverse domains.' },
+      { id: 93, title: 'Make Time', author: 'Jake Knapp & John Zeratsky', category: 'wisdom', price: 16.50, format: 'Paperback', tag: 'Focus', desc: 'How to focus on what matters every single day with tactile behavioral experiments.' },
+      { id: 94, title: 'The Antidote: Happiness for People Who Can’t Stand Positive Thinking', author: 'Oliver Burkeman', category: 'wisdom', price: 16.99, format: 'Paperback', tag: 'Reality', desc: 'Embracing negative capability, uncertainty, and stoic contemplation.' },
+      { id: 95, title: 'Principles', author: 'Ray Dalio', category: 'wisdom', price: 25.00, format: 'Hardcover', tag: 'Life & Work', desc: 'Unconventional principles for life and systemic decision-making by Bridgewater founder.' },
+      { id: 96, title: 'Grit: The Power of Passion', author: 'Angela Duckworth', category: 'wisdom', price: 17.50, format: 'Paperback', tag: 'Tenacity', desc: 'Why talent counts once while effort counts twice in reaching genuine mastery.' },
+      { id: 97, title: 'Letters from a Stoic', author: 'Seneca', category: 'wisdom', price: 19.50, format: 'Clothbound', tag: 'Roman Stoic', desc: 'Lucid guidance on friendship, wealth, mortality, and tranquil inner serenity.' },
+      { id: 98, title: 'Mindset: The New Psychology of Success', author: 'Carol S. Dweck', category: 'wisdom', price: 16.00, format: 'Paperback', tag: 'Growth', desc: 'The transformative power of cultivating a growth mindset across work and learning.' },
+      { id: 99, title: 'So Good They Can’t Ignore You', author: 'Cal Newport', category: 'wisdom', price: 17.00, format: 'Hardcover', tag: 'Craft', desc: 'Why craftsmanship and career capital trump passion in discovering work you adore.' },
+      { id: 100, title: 'Stillness Is the Key', author: 'Ryan Holiday', category: 'wisdom', price: 18.50, format: 'Hardcover', tag: 'Stillness', desc: 'Drawing on Eastern and Western philosophy to conquer overwhelm with calm clarity.' },
+      { id: 101, title: 'The Practicing Mind', author: 'Thomas M. Sterner', category: 'wisdom', price: 15.00, format: 'Paperback', tag: 'Process', desc: 'Developing focus and discipline in your everyday life through process-oriented mindfulness.' },
+      { id: 102, title: 'Quiet: The Power of Introverts', author: 'Susan Cain', category: 'wisdom', price: 18.00, format: 'Paperback', tag: 'Insight', desc: 'Uncovering the underrated strengths of introverts in a world that can’t stop talking.' },
+      { id: 103, title: 'Digital Minimalism', author: 'Cal Newport', category: 'wisdom', price: 17.95, format: 'Hardcover', tag: 'Calm Tech', desc: 'Choosing a focused, intentional life in an increasingly noisy digital universe.' },
+
+      // 5. MAGAZINES (Periodicals)
+      { id: 21, title: 'Solace & Living (Issue 48)', author: 'Scandinavian Editorial', category: 'magazines', price: 9.50, format: 'Print Folio', tag: 'Design', desc: 'Minimalist Nordic architecture, tactile wabi-sabi homes, and mindful interiors.' },
+      { id: 22, title: 'Forbes Global Leaders', author: 'Forbes Editorial', category: 'magazines', price: 10.00, format: 'Dossier', tag: 'Business', desc: 'Annual dossier exploring sustainable infrastructure and pioneer literary philanthropists.' },
+      { id: 23, title: 'Vogue Style: New Wave', author: 'Vogue Editorial', category: 'magazines', price: 9.99, format: 'High-Gloss', tag: 'Fashion', desc: 'Haute couture editorial spotlights, sustainable fabrics, and avant-garde runway profiles.' },
+      { id: 104, title: 'Kinfolk Gallery (Vol. 32)', author: 'Kinfolk Studios', category: 'magazines', price: 18.00, format: 'Monograph', tag: 'Culture', desc: 'Slow living aesthetics, reflective essays on solitude, and artistic workspaces.' },
+      { id: 105, title: 'The Gentlewoman (Issue 26)', author: 'Gentlewoman Press', category: 'magazines', price: 14.50, format: 'Biannual', tag: 'Interviews', desc: 'Insightful conversations with women of exceptional style, purpose, and intellect.' }
+    ];
+
+    // Shopping Bag State
+    let cart = [
+      { id: 1, title: 'The Midnight Library', author: 'Matt Haig', format: 'Hardbound Collector', price: 21.50, qty: 1 },
+      { id: 16, title: 'Atomic Habits', author: 'James Clear', format: 'Hardcover Edition', price: 18.00, qty: 1 },
+      { id: 21, title: 'Solace & Living (Issue 48)', author: 'Scandinavian Editorial', format: 'Print Folio', price: 9.50, qty: 1 }
+    ];
+    let discountRate = 0;
+    let currentMangaFormat = 'tankobon';
+
+    // Render Cards Utility
+    function createCardHTML(b) {
+      return `
+        <div class="book-card p-3 rounded-2xl bg-white border border-brand-100/90 shadow-xs hover:border-brand-300 flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-600 text-white p-3 flex flex-col justify-between mb-2.5 cursor-pointer shadow-xs hover:brightness-105 transition-all" onclick="openExcerpt('${escapeQuotes(b.title)}', '${escapeQuotes(b.author)}', '${escapeQuotes(b.desc)}', ${b.price})">
+              <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-white/20 w-fit backdrop-blur-xs text-brand-50">${b.tag}</span>
+              <div>
+                <h4 class="font-serif text-sm font-bold leading-tight line-clamp-2 text-white">${b.title}</h4>
+                <p class="text-[10.5px] opacity-80 mt-0.5 text-brand-100 truncate">${b.author}</p>
+              </div>
+            </div>
+            <h4 class="font-serif text-sm font-bold truncate text-slate-900" title="${b.title}">${b.title}</h4>
+            <p class="text-[11px] text-slate-500 truncate">${b.author}</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-brand-100">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-900 mb-2">
+              <span class="text-brand-900 font-serif text-sm">$${b.price.toFixed(2)}</span>
+              <span class="text-[10px] text-brand-600 font-semibold px-2 py-0.5 rounded bg-brand-50 border border-brand-100">${b.format}</span>
+            </div>
+            <button onclick="addToBag('${escapeQuotes(b.title)}', '${escapeQuotes(b.author)}', '${escapeQuotes(b.format)}', ${b.price})" class="w-full py-2 rounded-xl bg-brand-50 hover:bg-brand-600 hover:text-white text-brand-700 text-xs font-bold flex items-center justify-center gap-1 transition-all border border-brand-200 hover:border-brand-600 cursor-pointer">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $${b.price.toFixed(2)}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function escapeQuotes(str) {
+      return (str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    }
+
+    function renderCatalogs() {
+      // Home Best-Sellers (Curated selection)
+      const homeBS = booksData.filter(b => [1, 7, 12, 16, 2, 8, 18, 64].includes(b.id));
+      document.getElementById('homeBestSellers').innerHTML = homeBS.map(createCardHTML).join('');
+      // Categories with 25+ items rendered
+      document.getElementById('fictionGrid').innerHTML = booksData.filter(b => b.category === 'fiction').map(createCardHTML).join('');
+      document.getElementById('mangaGrid').innerHTML = booksData.filter(b => b.category === 'manga').map(createCardHTML).join('');
+      document.getElementById('comicsGrid').innerHTML = booksData.filter(b => b.category === 'comics').map(createCardHTML).join('');
+      document.getElementById('wisdomGrid').innerHTML = booksData.filter(b => b.category === 'wisdom').map(createCardHTML).join('');
+      document.getElementById('magazinesGrid').innerHTML = booksData.filter(b => b.category === 'magazines').map(createCardHTML).join('');
+    }
+
+    // Story Fiction Sub-Filter
+    function filterFiction(subcategory) {
+      document.querySelectorAll('.fiction-filter').forEach(btn => {
+        btn.className = 'fiction-filter px-3 py-1 rounded-full text-xs font-semibold bg-white text-slate-600 border border-brand-200 hover:bg-brand-50';
+      });
+      event.target.className = 'fiction-filter px-3 py-1 rounded-full text-xs font-bold bg-brand-600 text-white shadow-xs';
+      
+      const filtered = subcategory === 'All' 
+        ? booksData.filter(b => b.category === 'fiction') 
+        : booksData.filter(b => b.category === 'fiction' && b.subcategory === subcategory);
+      
+      document.getElementById('fictionGrid').innerHTML = filtered.map(createCardHTML).join('');
+    }
+
+    // Manga Format Toggle
+    function setMangaFormat(fmt) {
+      currentMangaFormat = fmt;
+      const btnTank = document.getElementById('fmtTankobon');
+      const btnDigi = document.getElementById('fmtDigital');
+      if (fmt === 'tankobon') {
+        btnTank.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-brand-700 shadow-xs transition-all';
+        btnDigi.className = 'px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-brand-700 transition-all';
+      } else {
+        btnDigi.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-brand-700 shadow-xs transition-all';
+        btnTank.className = 'px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-brand-700 transition-all';
+      }
+      showToast(`Showing ${fmt === 'tankobon' ? 'Physical Tankōbon Vault' : 'Instant E-Book Editions'}`);
+    }
+
+    // Tab Navigation Router (SPA)
+    function switchTab(tabId) {
+      clearSearch();
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(b => {
+        b.className = 'nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-white/90 text-slate-700 border border-brand-200/80 hover:bg-brand-50 transition-all';
+      });
+      const activePane = document.getElementById(`pane-${tabId}`);
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activePane) activePane.classList.add('active');
+      if (activeNav) {
+        activeNav.className = 'nav-tab px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-brand-600 text-white shadow-xs transition-all';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Shopping Bag Logic
+    function renderCart() {
+      const container = document.getElementById('cartItemsList');
+      const badge = document.getElementById('cartCountBadge');
+      const headerBadge = document.getElementById('cartHeaderBadge');
+      const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+      badge.textContent = totalCount;
+      headerBadge.textContent = `(${totalCount} items)`;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="h-64 flex flex-col items-center justify-center text-center p-6 text-slate-400">
+            <span class="material-symbols-outlined text-4xl mb-2 text-brand-200">remove_shopping_cart</span>
+            <p class="text-xs font-bold text-slate-700">Your Reading Bag is empty</p>
+            <p class="text-[11px] mt-1 text-slate-500">Discover rare hardbounds or manga from our curated collections.</p>
+            <button onclick="toggleCart(); switchTab('fiction');" class="mt-4 px-4 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold hover:bg-brand-700 transition-colors">Explore Books</button>
+          </div>
+        `;
+      } else {
+        container.innerHTML = cart.map((item, idx) => `
+          <div class="p-3 rounded-xl bg-white border border-brand-100 flex items-center justify-between gap-3 shadow-xs">
+            <div class="flex-1">
+              <h4 class="font-serif text-xs font-bold text-slate-900 leading-tight">${item.title}</h4>
+              <p class="text-[10px] text-slate-500">${item.author} • ${item.format}</p>
+              <span class="text-xs font-bold text-brand-700 mt-1 inline-block">$${(item.price * item.qty).toFixed(2)}</span>
+            </div>
+            <div class="flex items-center gap-1 bg-brand-50 px-2 py-1 rounded-lg border border-brand-100">
+              <button onclick="changeQty(${idx}, -1)" class="w-5 h-5 flex items-center justify-center text-slate-700 hover:text-brand-700 font-bold text-sm">-</button>
+              <span class="text-xs font-bold px-1.5 text-slate-900">${item.qty}</span>
+              <button onclick="changeQty(${idx}, 1)" class="w-5 h-5 flex items-center justify-center text-slate-700 hover:text-brand-700 font-bold text-sm">+</button>
+            </div>
+            <button onclick="removeCartItem(${idx})" class="text-slate-400 hover:text-rose-600 p-1 transition-colors">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        `).join('');
+      }
+
+      // Calculations
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+      const discount = subtotal * discountRate;
+      const grandTotal = Math.max(0, subtotal - discount);
+
+      document.getElementById('cartSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('cartDiscount').textContent = `-$${discount.toFixed(2)}`;
+      document.getElementById('cartGrandTotal').textContent = `$${grandTotal.toFixed(2)}`;
+      document.getElementById('discountRow').style.display = discountRate > 0 ? 'flex' : 'none';
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        backdrop.classList.remove('opacity-100');
+      } else {
+        renderCart();
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100');
+      }
+    }
+
+    function addToBag(title, author, format, price) {
+      const existing = cart.find(i => i.title === title && i.format === format);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: Date.now(), title, author, format, price, qty: 1 });
+      }
+      renderCart();
+      showToast(`Added "${title}" to your Reading Bag`);
+      // Auto-open drawer slightly to show feedback
+      toggleCart();
+    }
+
+    function changeQty(idx, delta) {
+      if (cart[idx]) {
+        cart[idx].qty += delta;
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+        renderCart();
+      }
+    }
+
+    function removeCartItem(idx) {
+      if (cart[idx]) {
+        const itemTitle = cart[idx].title;
+        cart.splice(idx, 1);
+        renderCart();
+        showToast(`Removed "${itemTitle}" from Bag`);
+      }
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('couponInput').value.trim().toUpperCase();
+      if (code === 'PAGE25') {
+        discountRate = 0.25;
+        document.getElementById('couponAppliedMsg').classList.remove('hidden');
+        renderCart();
+        showToast('Voucher PAGE25 applied: 25% off subtotal!');
+      } else {
+        alert('Invalid coupon. Try using code PAGE25 for 25% off!');
+      }
+    }
+
+    function copyCoupon(code) {
+      navigator.clipboard.writeText(code);
+      showToast(`Coupon ${code} copied to clipboard!`);
+    }
+
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        alert('Your Reading Bag is empty. Please add titles before checkout.');
+        return;
+      }
+      toggleCart();
+      const modal = document.getElementById('checkoutSuccessModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkoutSuccessModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      cart = [];
+      renderCart();
+    }
+
+    // Excerpt Reader Modal
+    function openExcerpt(title, author, text, price) {
+      document.getElementById('excerptTitle').textContent = title;
+      document.getElementById('excerptAuthor').textContent = `By ${author}`;
+      document.getElementById('excerptText').textContent = `"${text}"`;
+      document.getElementById('excerptPrice').textContent = `$${price.toFixed(2)}`;
+      document.getElementById('excerptAddBtn').onclick = () => {
+        addToBag(title, author, 'Hardbound Collector', price);
+        closeExcerpt();
+      };
+
+      const modal = document.getElementById('excerptModal');
+      const box = document.getElementById('excerptModalBox');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      box.classList.remove('scale-95');
+      box.classList.add('scale-100');
+    }
+
+    function closeExcerpt() {
+      const modal = document.getElementById('excerptModal');
+      const box = document.getElementById('excerptModalBox');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      box.classList.add('scale-95');
+      box.classList.remove('scale-100');
+    }
+
+    // Search Logic
+    function handleSearch(q) {
+      const query = q.trim().toLowerCase();
+      const searchView = document.getElementById('searchView');
+      const mainContainer = document.getElementById('mainContainer');
+      const clearBtn = document.getElementById('clearSearchBtn');
+
+      if (!query) {
+        clearSearch();
+        return;
+      }
+      clearBtn.classList.remove('hidden');
+      searchView.classList.remove('hidden');
+      mainContainer.classList.add('hidden');
+
+      const matches = booksData.filter(b => 
+        b.title.toLowerCase().includes(query) || 
+        b.author.toLowerCase().includes(query) || 
+        b.desc.toLowerCase().includes(query) ||
+        b.category.toLowerCase().includes(query)
+      );
+
+      document.getElementById('searchHeader').textContent = `Search results for "${q}" (${matches.length} books)`;
+      document.getElementById('searchResultsGrid').innerHTML = matches.length > 0 
+        ? matches.map(createCardHTML).join('') 
+        : `<p class="col-span-4 text-xs text-slate-500 py-8 text-center bg-white rounded-xl border border-brand-100">No volumes matching "${q}". Try searching for 'Fiction', 'Manga', 'Watchmen', or 'Habits'.</p>`;
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      document.getElementById('searchView').classList.add('hidden');
+      document.getElementById('mainContainer').classList.remove('hidden');
+    }
+
+    // ReadGenius AI Concierge
+    function handleAiSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('aiInput');
+      const query = input.value.trim();
+      if (!query) return;
+      appendUserMessage(query);
+      input.value = '';
+
+      setTimeout(() => {
+        generateAiResponse(query);
+      }, 400);
+    }
+
+    function sendPresetPrompt(text) {
+      switchTab('ai');
+      appendUserMessage(text);
+      setTimeout(() => {
+        generateAiResponse(text);
+      }, 400);
+    }
+
+    function appendUserMessage(text) {
+      const stream = document.getElementById('aiChatStream');
+      const userDiv = document.createElement('div');
+      userDiv.className = 'flex justify-end';
+      userDiv.innerHTML = `
+        <div class="bg-brand-600 text-white p-3 rounded-2xl rounded-tr-sm text-xs shadow-xs max-w-lg leading-relaxed">
+          ${text}
+        </div>
+      `;
+      stream.appendChild(userDiv);
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    function generateAiResponse(query) {
+      const q = query.toLowerCase();
+      let reply = "That is a wonderful literary inquiry! Based on our stacks, I recommend exploring our Story & Acclaimed Fiction collection or consulting our Motivational Wisdom library for deep insights.";
+
+      if (q.includes('midnight library') || q.includes('philosophical') || q.includes('regret')) {
+        reply = "If you resonated with <b>The Midnight Library</b>, you will love <b>Before the Coffee Gets Cold</b> by Toshikazu Kawaguchi ($16.50) and <b>Klara and the Sun</b> by Kazuo Ishiguro ($21.50). Both explore second chances, gentle melancholy, and finding light within grief.";
+      } else if (q.includes('atomic habits') || q.includes('stoic') || q.includes('habit')) {
+        reply = "Fascinating comparison! In <b>Atomic Habits</b>, James Clear emphasizes that 'you do not rise to your goals, you fall to your systems.' Marcus Aurelius echoes this in <b>Meditations</b>: our happiness relies on the discipline of our inner constitution rather than external storms. Reading both concurrently offers a profound masterclass in modern stoic action.";
+      } else if (q.includes('frieren') || q.includes('manga') || q.includes('anime')) {
+        reply = "<b>Frieren: Beyond Journey's End</b> ($12.99) is exceptional because it begins where most fantasy epics conclude. It explores the passage of time, mortal companionship through an immortal's eyes, and small, quiet kindnesses. Highly recommended in our authentic tankōbon print edition!";
+      } else if (q.includes('return') || q.includes('exchange') || q.includes('policy')) {
+        reply = "PageHaven offers an unconditional <b>14-Day Sanctuary Guarantee</b>. If any edition arrives with bumped corners or doesn't meet your expectations, we provide complimentary doorstep courier pickup and replacement. You can also track active order <b>#PH-89412</b> directly under our Help Care tab.";
+      }
+
+      const stream = document.getElementById('aiChatStream');
+      const aiDiv = document.createElement('div');
+      aiDiv.className = 'flex items-start gap-3';
+      aiDiv.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 text-xs font-bold border border-brand-200">RG</div>
+        <div class="bg-white p-3.5 rounded-2xl rounded-tl-sm border border-brand-100 text-xs text-slate-800 shadow-xs max-w-lg leading-relaxed">
+          ${reply}
+        </div>
+      `;
+      stream.appendChild(aiDiv);
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    function resetAiChat() {
+      const stream = document.getElementById('aiChatStream');
+      stream.innerHTML = `
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 text-xs font-bold border border-brand-200">RG</div>
+          <div class="bg-white p-3.5 rounded-2xl rounded-tl-sm border border-brand-100 text-xs text-slate-800 shadow-xs max-w-lg leading-relaxed">
+            Session refreshed! How may I guide your literary exploration today? Feel free to ask for recommendations across fiction, manga, philosophy, or periodicals.
+          </div>
+        </div>
+      `;
+    }
+
+    // Auth Modal
+    function openAuthModal() {
+      const modal = document.getElementById('authModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function closeAuthModal() {
+      const modal = document.getElementById('authModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      closeAuthModal();
+      showToast('Welcome to PageHaven! Reader profile active with 25% welcome credit.');
+    }
+
+    // Toast Notification
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 2500);
+    }
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCatalogs();
+      renderCart();
+    });
+  </script>
+</body></html>

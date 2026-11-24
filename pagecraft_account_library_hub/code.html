@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#ffffff", "surface-bright": "#faf8ff", "surface-dim": "#d4d9ed", "tertiary-fixed": "#ffdad4", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "secondary-container": "#c3e6e7", "tertiary-container": "#c94a38", "primary-container": "#b15f00", "on-primary-fixed-variant": "#6e3900", "on-tertiary-fixed": "#410100", "surface-variant": "#dde2f6", "surface-container-highest": "#dde2f6", "background": "#faf8ff", "surface-container-low": "#f1f3ff", "on-secondary-fixed-variant": "#2b4c4d", "secondary": "#436465", "secondary-fixed-dim": "#aacdce", "primary": "#8d4b00", "on-primary-fixed": "#2f1500", "surface-container-high": "#e2e8fc", "on-surface": "#151b29", "outline": "#887364", "on-surface-variant": "#554336", "on-tertiary-fixed-variant": "#8a1c10", "on-background": "#151b29", "primary-fixed-dim": "#ffb77d", "surface-container": "#e9edff", "secondary-fixed": "#c6e9ea", "primary-fixed": "#ffdcc3", "tertiary-fixed-dim": "#ffb4a8", "on-secondary-fixed": "#002021", "on-error-container": "#93000a", "on-secondary-container": "#476869", "outline-variant": "#dbc2b0", "on-primary-container": "#fffbff", "inverse-surface": "#2a303f", "on-error": "#ffffff", "error": "#ba1a1a", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fffbff", "surface-tint": "#904d00", "inverse-on-surface": "#edf0ff", "tertiary": "#a83223", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2.5rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "title-editorial": ["Newsreader"], "body-lg": ["Manrope"], "headline-md": ["Newsreader"], "label-lg": ["Manrope"], "body-md": ["Manrope"], "body-sm": ["Manrope"], "headline-lg-mobile": ["Newsreader"], "display": ["Newsreader"], "label-sm": ["Manrope"], "label-md": ["Manrope"], "display-mobile": ["Newsreader"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><img alt="PageCraft Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">PageCraft</span><span class="hidden">Account</span></div><div class="flex items-center gap-1"><a aria-label="Search Catalog" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><button aria-label="Open Shopping Cart" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary text-on-primary font-label-sm text-[10px] flex items-center justify-center shadow-[0_0_8px_rgba(141,75,0,0.4)]">2</span></button><a aria-label="User Account" class="w-11 h-11 flex items-center justify-center" data-path="account" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Background Layer -->
+<div class="relative w-full px-4 pt-2 pb-6 space-y-4">
+<!-- Profile Editorial Identity Card -->
+<section class="relative bg-surface-container-lowest rounded-xl p-4 shadow-sm overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-primary-fixed/30 blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-3.5 relative z-10">
+<!-- Avatar with illuminated aura -->
+<div class="relative flex-shrink-0">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-md">
+<img alt="Alex Morgan profile portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[12px] shadow-sm" title="Verified Member">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+</span>
+</div>
+<!-- Identity Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Alex Morgan</h1>
+<button aria-label="Edit Profile" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+<span>Edit</span>
+</button>
+</div>
+<div class="mt-0.5 flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+              Bibliophile Member (PageCraft Plus)
+            </span>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant truncate">alex.morgan@example.com</p>
+</div>
+</div>
+<!-- Quick Reader Vitals Micro-Bar -->
+<div class="mt-4 pt-3.5 flex items-center justify-between bg-surface-container-low rounded-lg p-2.5">
+<div class="flex flex-col items-center flex-1">
+<span class="font-headline-sm text-headline-sm text-primary">34</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Read in 2024</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col items-center flex-1">
+<span class="font-headline-sm text-headline-sm text-secondary">18 d</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reading Streak</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col items-center flex-1">
+<span class="font-headline-sm text-headline-sm text-primary-container">4,820</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Craft Points</span>
+</div>
+</div>
+</section>
+<!-- Master Hub Tab Switcher -->
+<nav aria-label="Account sections" class="flex p-1 bg-surface-container-high rounded-full overflow-x-auto no-scrollbar shadow-inner">
+<button class="flex-1 py-2 px-3 rounded-full text-center font-label-md text-label-md transition-all duration-200 bg-surface text-on-surface shadow-sm font-semibold whitespace-nowrap" id="tab-btn-account" onclick="switchHubTab('account')" type="button">
+        Account &amp; Info
+      </button>
+<button class="flex-1 py-2 px-3 rounded-full text-center font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface whitespace-nowrap" id="tab-btn-library" onclick="switchHubTab('library')" type="button">
+        Digital E-Library
+      </button>
+<button class="flex-1 py-2 px-3 rounded-full text-center font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface whitespace-nowrap flex items-center justify-center gap-1" id="tab-btn-orders" onclick="switchHubTab('orders')" type="button">
+<span>Orders</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</button>
+</nav>
+<!-- SECTION 1: ACCOUNT & PERSONAL INFO -->
+<div class="space-y-4" id="panel-account">
+<!-- Delivery Addresses for Hardcopies -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<h2 class="font-title-editorial text-title-editorial text-on-surface">Hardcopy Deliveries</h2>
+</div>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+            Add New
+          </button>
+</div>
+<div class="space-y-2.5">
+<!-- Address 1: Default Home -->
+<div class="p-3 bg-surface-container-low rounded-lg relative transition-all">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface">The Brownstone (Home)</span>
+<span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded-full">Default</span>
+</div>
+<button aria-label="Edit Home Address" class="text-on-surface-variant hover:text-primary transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">452 Waverly Pl, Apt 3B, Greenwich Village, NY 10014</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">doorbell</span>
+              Gate Code: #4829 • Leave at mail vestibule
+            </p>
+</div>
+<!-- Address 2: Studio / Office -->
+<div class="p-3 bg-surface-container-low rounded-lg relative transition-all">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface">Design Studio (Office)</span>
+</div>
+<button aria-label="Edit Office Address" class="text-on-surface-variant hover:text-primary transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">118 Mercer St, Floor 4, SoHo, NY 10012</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Mon-Fri deliveries only, 9am - 6pm</p>
+</div>
+</div>
+</section>
+<!-- Payment Methods & Security -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">credit_card</span>
+<h2 class="font-title-editorial text-title-editorial text-on-surface">Saved Payment Vault</h2>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+            256-bit Encrypted
+          </span>
+</div>
+<div class="space-y-2">
+<!-- Visa ending 4242 -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-7 rounded bg-surface-container-highest flex items-center justify-center font-headline-sm text-[11px] font-bold text-on-surface tracking-wider">
+                VISA
+              </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface">Visa ending in 4242</span>
+<span class="px-1.5 py-0.2 bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] rounded-full">Primary</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Expires 09/27 • One-Click 1-Tap Enabled</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- PayPal -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-7 rounded bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface">PayPal Express</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Connected: a.morgan.design@...</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Reading Preferences & Curation Pillars -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<h2 class="font-title-editorial text-title-editorial text-on-surface">Reading Preferences</h2>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline" type="button">Customize</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Your bespoke curated bookshelf and companion suggestions align to:</p>
+<div class="flex flex-wrap gap-2">
+<!-- Story Books -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Story Books &amp; Fiction</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<!-- Manga -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">import_contacts</span>
+<span>Manga &amp; Graphic Novels</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<!-- Tech & GK -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>Tech &amp; General Knowledge</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<!-- Motivation -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span>Motivation &amp; Mastery</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+</section>
+<!-- Account Security & Auth Switcher -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">shield_person</span>
+<h2 class="font-title-editorial text-title-editorial text-on-surface">Security &amp; Account Access</h2>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 space-y-2 mb-3">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Connected Identity:</span>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Google Authentication
+            </span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primary Email:</span>
+<span class="font-label-md text-label-md text-on-surface">alex.morgan@example.com</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Multi-Factor Status:</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-2 py-0.5 rounded-full">Active (Authenticator app)</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">switch_account</span>
+<span>Switch Account</span>
+</button>
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-md text-label-md text-center transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Sign In / Register</span>
+</button>
+</div>
+<button class="w-full mt-2.5 py-2 px-3 rounded-lg bg-surface-container-low text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container font-label-sm text-label-sm text-center transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">logout</span>
+<span>Log Out of All Connected Devices</span>
+</button>
+</section>
+</div>
+<!-- SECTION 2: MY DIGITAL E-LIBRARY (Soft Copies) -->
+<div class="hidden space-y-4" id="panel-library">
+<!-- Reading In Progress Highlight -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">local_fire_department</span>
+<h2 class="font-title-editorial text-title-editorial text-on-surface">Currently Reading</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">cloud_done</span>
+            Synced
+          </span>
+</div>
+<!-- Featured E-Book Card with progress -->
+<div class="bg-surface-container-low rounded-lg p-3.5 space-y-3">
+<div class="flex gap-3">
+<!-- Spine-simulated Book Cover Mock -->
+<div class="w-16 h-24 bg-gradient-to-r from-stone-900 to-stone-800 rounded shadow-md flex-shrink-0 relative overflow-hidden flex flex-col justify-between p-1.5">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-white/20"></div>
+<span class="font-label-sm text-[8px] text-amber-300 font-bold uppercase tracking-wider">MATT HAIG</span>
+<p class="font-headline-sm text-[10px] leading-tight text-white font-medium">The Midnight Library</p>
+<span class="font-label-sm text-[7px] text-stone-400">Novel • 288p</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">The Midnight Library</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Matt Haig • Chapter 14: The Polar Bear</p>
+</div>
+<!-- Reading progress bar -->
+<div class="space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Overall Progress</span>
+<span class="text-primary font-bold">64% completed</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 64%;"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 px-4 rounded bg-on-surface text-surface-bright hover:bg-primary transition-all flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chrome_reader_mode</span>
+<span class="font-label-lg text-label-lg font-medium">Open E-Reader (Page 184)</span>
+</button>
+</div>
+</section>
+<!-- Digital Library Shelf -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<h2 class="font-title-editorial text-title-editorial text-on-surface">Purchased E-Books (3)</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offline ready</span>
+</div>
+<div class="space-y-3">
+<!-- Book 1 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-14 bg-gradient-to-r from-stone-900 to-stone-800 rounded shadow-sm flex-shrink-0 flex items-center justify-center p-1 text-center">
+<span class="font-headline-sm text-[8px] text-white leading-tight">Midnight Library</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-headline-sm text-[16px] text-on-surface truncate">The Midnight Library</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Matt Haig • EPUB (4.2 MB)</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold">64% read</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-secondary">Notes: 12</span>
+</div>
+</div>
+</div>
+<button aria-label="Read book" class="p-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+<!-- Book 2 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-14 bg-gradient-to-r from-emerald-950 to-teal-900 rounded shadow-sm flex-shrink-0 flex items-center justify-center p-1 text-center">
+<span class="font-headline-sm text-[8px] text-emerald-200 leading-tight">Psychology of Money</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-headline-sm text-[16px] text-on-surface truncate">The Psychology of Money</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Morgan Housel • Audio + E-Book</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">100% Completed</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Archived</span>
+</div>
+</div>
+</div>
+<button aria-label="Read book" class="p-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+<!-- Book 3 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-14 bg-gradient-to-r from-amber-950 to-stone-900 rounded shadow-sm flex-shrink-0 flex items-center justify-center p-1 text-center">
+<span class="font-headline-sm text-[8px] text-amber-200 leading-tight">Deep Work</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-headline-sm text-[16px] text-on-surface truncate">Deep Work: Focused Success</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Cal Newport • Interactive Edition</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold">22% read</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-secondary">AI Summaries (5)</span>
+</div>
+</div>
+</div>
+<button aria-label="Read book" class="p-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+</div>
+</section>
+<!-- AI Companion Insights Drawer Teaser -->
+<section class="bg-gradient-to-br from-surface-container-lowest to-surface-container-low rounded-xl p-4 shadow-sm border-l-4 border-primary">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<span class="font-title-editorial text-title-editorial text-on-surface">PageCraft AI Digest</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-2 py-0.5 rounded-full font-semibold">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+          Your reading companion prepared 3 thematic reflections from “The Midnight Library” on regret mitigation.
+        </p>
+<button class="mt-3 font-label-md text-label-md text-primary font-semibold flex items-center gap-1 hover:underline" type="button">
+<span>Read Reflection Cards</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</section>
+</div>
+<!-- SECTION 3: PHYSICAL ORDERS (Hardcopies) -->
+<div class="hidden space-y-4" id="panel-orders">
+<!-- Active Shipment Live Tracker -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+              Out for Delivery
+            </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1.5">Order #PC-88492</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Atomic Habits Hardcover (Collector’s Edition)</p>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Estimated Arrival</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">Today by 5:00 PM</span>
+</div>
+</div>
+<!-- Book mini preview thumbnail & details -->
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg mt-3">
+<div class="w-12 h-16 bg-gradient-to-r from-stone-900 to-amber-950 rounded shadow flex items-center justify-center p-1 text-center flex-shrink-0">
+<span class="font-headline-sm text-[8px] text-amber-200 uppercase font-bold leading-tight">Atomic Habits</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-1.5 py-0.5 rounded">Hardcopy Clothbound</span>
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate mt-1">James Clear • 1 Copy</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Courier: USPS Priority Express (#94001092)</p>
+</div>
+</div>
+<!-- 4-Stage Stepper Tracker -->
+<div class="mt-4 pt-2">
+<div class="relative flex items-center justify-between">
+<!-- Connecting tracking line -->
+<div class="absolute top-3 left-4 right-4 h-1 bg-surface-container-highest -z-0"></div>
+<div class="absolute top-3 left-4 w-5/6 h-1 bg-primary -z-0 transition-all"></div>
+<!-- Step 1: Ordered -->
+<div class="flex flex-col items-center z-10">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface font-semibold mt-1">Ordered</span>
+</div>
+<!-- Step 2: Packed -->
+<div class="flex flex-col items-center z-10">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface font-semibold mt-1">Packed</span>
+</div>
+<!-- Step 3: Shipped -->
+<div class="flex flex-col items-center z-10">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface font-semibold mt-1">Shipped</span>
+</div>
+<!-- Step 4: Out for Delivery -->
+<div class="flex flex-col items-center z-10">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] ring-4 ring-primary-fixed shadow-md animate-pulse">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+</div>
+<span class="font-label-sm text-[10px] text-primary font-bold mt-1">Out for Delivery</span>
+</div>
+</div>
+</div>
+<!-- Live Courier Status Note -->
+<div class="mt-4 p-2.5 bg-surface-container rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">near_me</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-medium">Carrier is 4 stops away from Greenwich Village</p>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Last scanned at Brooklyn Sorting Facility • 1:45 PM</span>
+</div>
+</div>
+</section>
+<!-- Past Hardcopy Deliveries (Delivered) -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<h2 class="font-title-editorial text-title-editorial text-on-surface mb-3">Past Hardcopies</h2>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface">Order #PC-77310</span>
+<span class="font-label-sm text-[10px] text-secondary bg-secondary-container px-2 py-0.5 rounded-full">Delivered</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Klara and the Sun (First Edition Hardcover)</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Delivered Oct 14, 2024 • $28.50</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5" type="button">
+<span>Invoice</span>
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  function switchHubTab(tabName) {
+    const tabs = ['account', 'library', 'orders'];
+    tabs.forEach(t => {
+      const panel = document.getElementById('panel-' + t);
+      const btn = document.getElementById('tab-btn-' + t);
+      if (t === tabName) {
+        panel.classList.remove('hidden');
+        btn.classList.add('bg-surface', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        btn.classList.remove('text-on-surface-variant');
+      } else {
+        panel.classList.add('hidden');
+        btn.classList.remove('bg-surface', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        btn.classList.add('text-on-surface-variant');
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md font-semibold"><div class="flex justify-around items-center h-16 px-2"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm">Browse</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-sm text-label-sm">AI Assistant</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-library" href="#"><span class="material-symbols-outlined text-[22px]">local_library</span><span class="font-label-sm text-label-sm">My Library</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 transition-colors text-primary font-label-md font-semibold" data-path="account" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Account</span></a></div></nav></body></html>

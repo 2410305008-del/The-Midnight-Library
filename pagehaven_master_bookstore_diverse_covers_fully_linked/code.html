@@ -1,0 +1,1555 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#c4e7ff", "tertiary-container": "#006194", "tertiary": "#004870", "surface-container": "#eaedff", "on-secondary-fixed": "#001e2c", "surface-tint": "#216293", "on-secondary-container": "#004d6a", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#283044", "surface-container-highest": "#dae2fd", "surface-container-low": "#f2f3ff", "on-tertiary-container": "#b2d9ff", "on-secondary-fixed-variant": "#004c69", "on-primary-fixed-variant": "#004a77", "on-background": "#131b2e", "surface-container-lowest": "#ffffff", "primary": "#004873", "secondary-container": "#40c2fd", "secondary": "#00668a", "on-error-container": "#93000a", "background": "#faf8ff", "tertiary-fixed": "#cce5ff", "on-primary": "#ffffff", "inverse-on-surface": "#eef0ff", "surface-dim": "#d2d9f4", "primary-fixed-dim": "#97cbff", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-surface-variant": "#41474f", "on-secondary": "#ffffff", "primary-container": "#1e6091", "error-container": "#ffdad6", "error": "#ba1a1a", "surface": "#faf8ff", "outline-variant": "#c1c7d0", "on-primary-container": "#b5d9ff", "inverse-primary": "#97cbff", "secondary-fixed-dim": "#7bd0ff", "surface-container-high": "#e2e7ff", "surface-bright": "#faf8ff", "tertiary-fixed-dim": "#93ccff", "surface-variant": "#dae2fd", "primary-fixed": "#cee5ff", "on-surface": "#131b2e", "outline": "#717880", "on-tertiary-fixed": "#001d31", "on-primary-fixed": "#001d33" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "fontFamily": { "headline-sm": ["Newsreader"], "headline-lg": ["Newsreader"], "display-md": ["Newsreader"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg": ["Newsreader"] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased">
+<!-- Header with brand logo, search, bag trigger and user profile -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="h-28 max-w-[1280px] mx-auto px-6 flex flex-col justify-between pt-2 pb-2">
+    <div class="flex items-center justify-between gap-6">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('home')">
+        <img alt="PageHaven Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI">
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-xl text-primary font-bold tracking-tight leading-none">PageHaven</span>
+          <span class="font-label-sm text-xs text-outline tracking-wider uppercase mt-1">Sanctuary of Rare Books &amp; Curated Editions</span>
+        </div>
+      </div>
+      <div class="flex-1 max-w-xl mx-6 hidden md:block">
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-[20px]">search</span>
+          <input class="w-full bg-surface-container-low pl-10 pr-4 py-1.5 rounded-xl text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search titles, rare folios, graphic novels, or authors..." type="text" oninput="handleSearch(this.value)">
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="relative flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface text-sm font-semibold transition-colors" onclick="toggleReadingBag(true)">
+          <span class="material-symbols-outlined text-[20px] text-primary">local_mall</span>
+          <span class="hidden sm:inline">Reading Bag</span>
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-on-primary text-xs font-bold" id="shellBagBadge">3</span>
+        </button>
+        <button class="px-3 py-1.5 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:bg-primary-container transition-colors hidden sm:block" id="headerAuthBtn" onclick="openAuthModal()">Sign In / Join</button>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer" onclick="openAuthModal()">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+    <nav class="flex items-center gap-2 overflow-x-auto py-1">
+      <button class="nav-tab px-3 py-1 text-sm font-semibold rounded-lg bg-primary-container text-on-primary-container whitespace-nowrap transition-colors" data-view="home" onclick="switchView('home')">Home</button>
+      <button class="nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-view="story-fiction" onclick="switchView('story-fiction')">Story &amp; Fiction</button>
+      <button class="nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-view="comics-graphic" onclick="switchView('comics-graphic')">Comics &amp; Graphic Novels</button>
+      <button class="nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-view="anime-manga" onclick="switchView('anime-manga')">Anime &amp; Manga Vault</button>
+      <button class="nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-view="wisdom-mind" onclick="switchView('wisdom-mind')">Motivational Wisdom</button>
+      <button class="nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-view="magazines-gk" onclick="switchView('magazines-gk')">Magazines &amp; GK</button>
+      <button class="nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-view="ai-concierge" onclick="switchView('ai-concierge')">ReadGenius AI Concierge</button>
+      <button class="nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" data-view="help-care" onclick="switchView('help-care')">Help Care Sanctuary</button>
+    </nav>
+  </div>
+</header>
+
+<main class="w-full pt-32 pb-16 bg-background min-h-screen">
+  <!-- Toast Notification -->
+  <div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-on-primary shadow-xl" id="toastNotification">
+    <span class="material-symbols-outlined text-[20px] text-secondary-container" id="toastIcon">check_circle</span>
+    <span class="text-sm font-medium" id="toastMessage">Folio added to your bag</span>
+  </div>
+
+  <!-- Announcement Ribbon -->
+  <section class="w-full bg-surface-container-high py-1.5 px-6 mb-6">
+    <div class="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+      <div class="flex items-center gap-2">
+        <span class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold tracking-widest uppercase text-[10px]">Privilege</span>
+        <span class="">Autumn Salon: Enjoy <strong>25% archival savings</strong> across folios with keycode</span>
+        <span class="font-bold text-primary bg-surface-container px-1.5 py-0.5 rounded">PAGE25</span>
+      </div>
+      <button class="text-primary hover:underline flex items-center gap-1 font-semibold" onclick="copyCode('PAGE25')">
+        <span class="material-symbols-outlined text-[14px]">content_copy</span>
+        <span class="">Copy Code</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="max-w-[1280px] w-full mx-auto px-6 flex flex-col gap-10">
+    <!-- VIEW 1: HOME -->
+    <div class="view-panel flex flex-col gap-10" id="view-home">
+      <!-- Spotlight Hero -->
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface-container via-surface-container-low to-secondary-fixed/30 p-6 md:p-10 shadow-sm">
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary font-bold text-xs uppercase tracking-wider">Illuminated Masterpiece</span>
+              <span class="text-xs text-outline">Folio No. 8492</span>
+            </div>
+            <h1 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-primary font-semibold tracking-tight">The Midnight Library</h1>
+            <p class="font-headline-sm text-lg text-on-surface-variant font-normal">By Matt Haig • Archival Gilded Hardcover Edition</p>
+            <blockquote class="pl-4 py-2 bg-surface-container-lowest/80 rounded-r-xl border-l-4 border-primary my-2">
+              <p class="font-headline-sm italic text-on-surface text-base">"Between life and death there is a library, and within that library, the shelves go on forever."</p>
+              <footer class="text-xs text-outline mt-1">— Nora Seed’s Infinite Chronicle</footer>
+            </blockquote>
+            <div class="flex items-baseline gap-4 mt-2">
+              <div>
+                <span class="text-[11px] text-outline uppercase block font-semibold">Hardbound Folio</span>
+                <span class="text-2xl font-bold text-primary">$24.00</span>
+              </div>
+              <div>
+                <span class="text-[11px] text-outline uppercase block font-semibold">Digital Vellum</span>
+                <span class="text-xs line-through text-outline">$14.50</span>
+                <span class="text-sm font-bold text-tertiary">$9.99</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold">Limited 1,000 Impressions</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-semibold text-sm hover:bg-primary-container transition-all flex items-center gap-2 shadow" onclick="openBookModal('The Midnight Library', 'Matt Haig', '24.00', '9.99', 'Fiction &amp; Philosophy', 'Between life and death there is a library. Every book provides that chance to try another life you could have lived.', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+                <span class="material-symbols-outlined text-[18px]">menu_book</span>
+                <span class="">Inspect First Chapter</span>
+              </button>
+              <button class="px-5 py-2.5 rounded-xl bg-surface-container-lowest text-primary font-semibold text-sm hover:bg-surface-container transition-colors flex items-center gap-2 shadow-sm" onclick="addToBag('The Midnight Library', 'Matt Haig', 24.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                <span class="">Add Hardbound to Bag</span>
+              </button>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+            <div class="relative group cursor-pointer" onclick="openBookModal('The Midnight Library', 'Matt Haig', '24.00', '9.99', 'Fiction &amp; Philosophy', 'Between life and death there is a library.', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+              <div class="w-64 aspect-[3/4] rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 group-hover:scale-105 bg-surface-container-lowest">
+                <img alt="The Midnight Library" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7">
+              </div>
+              <div class="absolute -bottom-3 -left-3 bg-surface-container-lowest/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-1.5 text-xs font-bold text-on-surface">
+                <span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+                <span class="">Archival Ribbon Included</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department Jump Cards -->
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-tertiary uppercase">Curated Wings</span>
+            <h2 class="font-headline-lg text-2xl text-primary font-bold">Department Salons</h2>
+          </div>
+          <span class="text-xs text-outline hidden sm:block">Select an archival chamber to browse specialized editions</span>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <button class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-36" onclick="switchView('story-fiction')">
+            <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[20px]">auto_stories</span>
+            </div>
+            <div>
+              <span class="font-headline-sm text-base text-primary font-bold block leading-tight">Story &amp; Fiction</span>
+              <span class="text-xs text-outline mt-1 block">8 Masterworks</span>
+            </div>
+          </button>
+          <button class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-36" onclick="switchView('comics-graphic')">
+            <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[20px]">palette</span>
+            </div>
+            <div>
+              <span class="font-headline-sm text-base text-primary font-bold block leading-tight">Comics Epics</span>
+              <span class="text-xs text-outline mt-1 block">Eisner Folios</span>
+            </div>
+          </button>
+          <button class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-36" onclick="switchView('anime-manga')">
+            <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[20px]">import_contacts</span>
+            </div>
+            <div>
+              <span class="font-headline-sm text-base text-primary font-bold block leading-tight">Manga Vault</span>
+              <span class="text-xs text-outline mt-1 block">Tankobon Imports</span>
+            </div>
+          </button>
+          <button class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-36" onclick="switchView('wisdom-mind')">
+            <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[20px]">self_improvement</span>
+            </div>
+            <div>
+              <span class="font-headline-sm text-base text-primary font-bold block leading-tight">Wisdom &amp; Mind</span>
+              <span class="text-xs text-outline mt-1 block">Stoic Treatises</span>
+            </div>
+          </button>
+          <button class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-36" onclick="switchView('magazines-gk')">
+            <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[20px]">newspaper</span>
+            </div>
+            <div>
+              <span class="font-headline-sm text-base text-primary font-bold block leading-tight">Magazines &amp; GK</span>
+              <span class="text-xs text-outline mt-1 block">Scholarly Reviews</span>
+            </div>
+          </button>
+          <button class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all text-left shadow-sm flex flex-col justify-between h-36" onclick="switchView('ai-concierge')">
+            <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[20px]">psychology</span>
+            </div>
+            <div>
+              <span class="font-headline-sm text-base text-primary font-bold block leading-tight">ReadGenius AI</span>
+              <span class="text-xs text-outline mt-1 block">Literary Concierge</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- Archival Bestsellers Grid -->
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-tertiary uppercase">Provenance &amp; Accolades</span>
+            <h2 class="font-headline-lg text-2xl text-primary font-bold">Archival Bestsellers</h2>
+          </div>
+          <button class="text-sm font-semibold text-primary hover:underline flex items-center gap-1" onclick="switchView('story-fiction')">
+            <span class="">View Full Salon</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- 1: Atomic Habits -->
+          <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col">
+            <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Atomic Habits', 'James Clear', '21.50', '8.99', 'Wisdom &amp; Habits', 'Tiny changes, remarkable results.', 'https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY')">
+              <img alt="Atomic Habits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-xs text-primary font-bold shadow-sm">#1 Mindset</span>
+            </div>
+            <span class="text-xs text-outline">James Clear</span>
+            <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Atomic Habits</h3>
+            <div class="mt-auto pt-2 flex items-center justify-between">
+              <span class="text-base font-bold text-primary">$21.50</span>
+              <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Atomic Habits', 'James Clear', 21.50, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY')">
+                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+          <!-- 2: Frieren -->
+          <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col">
+            <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Frieren: Beyond Journey\'s End', 'Kanehito Yamada', '15.00', '7.99', 'Manga Vault', 'The adventure is over, but life goes on for an elf mage.', 'https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r')">
+              <img alt="Frieren" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-xs text-primary font-bold shadow-sm">Award Winner</span>
+            </div>
+            <span class="text-xs text-outline">Kanehito Yamada</span>
+            <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Frieren: Beyond Journey's End</h3>
+            <div class="mt-auto pt-2 flex items-center justify-between">
+              <span class="text-base font-bold text-primary">$15.00</span>
+              <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Frieren: Beyond Journey\'s End', 'Kanehito Yamada', 15.00, 'Tankobon', 'https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r')">
+                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+          <!-- 3: Lore Olympus -->
+          <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col">
+            <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Lore Olympus Vol 1', 'Rachel Smythe', '22.00', '11.50', 'Graphic Novel', 'Witness what the gods do after dark.', 'https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI')">
+              <img alt="Lore Olympus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-xs text-primary font-bold shadow-sm">Eisner Winner</span>
+            </div>
+            <span class="text-xs text-outline">Rachel Smythe</span>
+            <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Lore Olympus Vol 1</h3>
+            <div class="mt-auto pt-2 flex items-center justify-between">
+              <span class="text-base font-bold text-primary">$22.00</span>
+              <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Lore Olympus Vol 1', 'Rachel Smythe', 22.00, 'Hardcover', 'https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI')">
+                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+          <!-- 4: One Piece -->
+          <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col">
+            <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('One Piece: Wano Climax', 'Eiichiro Oda', '14.50', '6.99', 'Manga Vault', 'The raid on Onigashima reaches fever pitch.', 'https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz')">
+              <img alt="One Piece" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-xs text-primary font-bold shadow-sm">Shonen King</span>
+            </div>
+            <span class="text-xs text-outline">Eiichiro Oda</span>
+            <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">One Piece: Wano Climax</h3>
+            <div class="mt-auto pt-2 flex items-center justify-between">
+              <span class="text-base font-bold text-primary">$14.50</span>
+              <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('One Piece: Wano Climax', 'Eiichiro Oda', 14.50, 'Tankobon', 'https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz')">
+                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Pillars -->
+      <section class="rounded-2xl bg-surface-container-low p-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
+          <div class="flex flex-col gap-1">
+            <span class="font-display-md text-3xl text-primary font-light">100%</span>
+            <span class="text-sm font-bold text-on-surface">Acid-Free Paper</span>
+            <p class="text-xs text-on-surface-variant">Archival rag leaves guaranteed to resist yellowing for centuries.</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-display-md text-3xl text-primary font-light">14 Days</span>
+            <span class="text-sm font-bold text-on-surface">Doorstep Return</span>
+            <p class="text-xs text-on-surface-variant">Complimentary courier pickup directly from your doorstep.</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-display-md text-3xl text-primary font-light">38,000+</span>
+            <span class="text-sm font-bold text-on-surface">Curated Volumes</span>
+            <p class="text-xs text-on-surface-variant">Carefully inspected by our Guild of certified antiquarians.</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-display-md text-3xl text-primary font-light">AI Guided</span>
+            <span class="text-sm font-bold text-on-surface">ReadGenius Assistant</span>
+            <p class="text-xs text-on-surface-variant">Trained on literary canons to curate your intellectual journey.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 2: STORY & FICTION (WITH AUTHENTIC DIVERSE COVERS) -->
+    <div class="view-panel hidden flex-col gap-6" id="view-story-fiction">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 pb-2 border-b border-surface-container">
+        <div>
+          <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Salon Department I</span>
+          <h2 class="font-headline-lg text-3xl text-primary font-bold">Story &amp; Acclaimed Fiction</h2>
+          <p class="text-sm text-on-surface-variant">Canonical literary epics and contemporary masterworks with dedicated cover art.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold">8 Curated Folios</span>
+          <span class="px-3 py-1 rounded-lg bg-surface-container text-primary text-xs font-semibold">Archival Hardbound &amp; E-Book</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" id="fictionGrid">
+        <!-- Book 1: The Midnight Library -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('The Midnight Library', 'Matt Haig', '24.00', '9.99', 'Modern Classics', 'Between life and death there is a library where shelves go on forever.', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+            <img alt="The Midnight Library" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Gilded Spine</span>
+          </div>
+          <span class="text-xs text-outline">Matt Haig</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">The Midnight Library</h3>
+          <span class="text-xs text-tertiary">E-Book: $9.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$24.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('The Midnight Library', 'Matt Haig', 24.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Book 2: Before the Coffee Gets Cold -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Before the Coffee Gets Cold', 'Toshikazu Kawaguchi', '21.00', '8.99', 'Magical Realism', 'In a back alley in Tokyo, a coffee shop lets customers travel back in time.', 'https://lh3.googleusercontent.com/aida/AEtjO1XwvZ0PGarwC1kdcB5rjqVeha5kSB43zcm3tiGvoDWgFl8m683-0uxYSfzIn1XTx4dQ1PeBp8QqlApa7Rnd7_gJw4ga2UuqE7q0dJCUb6zQw-am7QO33wLnZEyyDQ0azf85EELzBmlIwAiSxWL_xUwgZlTW3eDT1dvSOkTpCGKGpPCxExKNXvzI0m0QsqOFdd1QW0xBARYMl7HrIs5Ob3g4II2Dw0zGESthuZ0fxlTv43fXtHTNZ4YmRC3D')">
+            <img alt="Before the Coffee Gets Cold" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XwvZ0PGarwC1kdcB5rjqVeha5kSB43zcm3tiGvoDWgFl8m683-0uxYSfzIn1XTx4dQ1PeBp8QqlApa7Rnd7_gJw4ga2UuqE7q0dJCUb6zQw-am7QO33wLnZEyyDQ0azf85EELzBmlIwAiSxWL_xUwgZlTW3eDT1dvSOkTpCGKGpPCxExKNXvzI0m0QsqOFdd1QW0xBARYMl7HrIs5Ob3g4II2Dw0zGESthuZ0fxlTv43fXtHTNZ4YmRC3D">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Cozy Tokyo Cafe</span>
+          </div>
+          <span class="text-xs text-outline">Toshikazu Kawaguchi</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Before the Coffee Gets Cold</h3>
+          <span class="text-xs text-tertiary">E-Book: $8.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$21.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Before the Coffee Gets Cold', 'Toshikazu Kawaguchi', 21.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XwvZ0PGarwC1kdcB5rjqVeha5kSB43zcm3tiGvoDWgFl8m683-0uxYSfzIn1XTx4dQ1PeBp8QqlApa7Rnd7_gJw4ga2UuqE7q0dJCUb6zQw-am7QO33wLnZEyyDQ0azf85EELzBmlIwAiSxWL_xUwgZlTW3eDT1dvSOkTpCGKGpPCxExKNXvzI0m0QsqOFdd1QW0xBARYMl7HrIs5Ob3g4II2Dw0zGESthuZ0fxlTv43fXtHTNZ4YmRC3D')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Book 3: Tomorrow, and Tomorrow, and Tomorrow -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Tomorrow, and Tomorrow, and Tomorrow', 'Gabrielle Zevin', '26.00', '11.50', 'Contemporary Fiction', 'Two friends create groundbreaking video games over thirty years.', 'https://lh3.googleusercontent.com/aida/AEtjO1XNcOVWtCoP2KSNK9J56URmKdZLwpfTcomP76D2YoW1HPpSzySC07UlRAyxNyGDVyFcYqy8VFxxUaSSI-PH8lPDqa2CUF_AYzvb_M4v2MwLZj45URMBvnurH5MM9qS5AiSGSdX_yLme4o2vctTVbRZ9ykB0CMyNK7PyPkPQ98mXJXWd7cr4KaS8tY-wlXrMFTsXp1cN6bCmG_t7-x7JBQjEJXg2XeN6zLiVkWywgxlQbw3jqjwPwaLl774R')">
+            <img alt="Tomorrow, and Tomorrow, and Tomorrow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XNcOVWtCoP2KSNK9J56URmKdZLwpfTcomP76D2YoW1HPpSzySC07UlRAyxNyGDVyFcYqy8VFxxUaSSI-PH8lPDqa2CUF_AYzvb_M4v2MwLZj45URMBvnurH5MM9qS5AiSGSdX_yLme4o2vctTVbRZ9ykB0CMyNK7PyPkPQ98mXJXWd7cr4KaS8tY-wlXrMFTsXp1cN6bCmG_t7-x7JBQjEJXg2XeN6zLiVkWywgxlQbw3jqjwPwaLl774R">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Woodblock Wave</span>
+          </div>
+          <span class="text-xs text-outline">Gabrielle Zevin</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Tomorrow, and Tomorrow...</h3>
+          <span class="text-xs text-tertiary">E-Book: $11.50</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$26.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Tomorrow, and Tomorrow, and Tomorrow', 'Gabrielle Zevin', 26.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XNcOVWtCoP2KSNK9J56URmKdZLwpfTcomP76D2YoW1HPpSzySC07UlRAyxNyGDVyFcYqy8VFxxUaSSI-PH8lPDqa2CUF_AYzvb_M4v2MwLZj45URMBvnurH5MM9qS5AiSGSdX_yLme4o2vctTVbRZ9ykB0CMyNK7PyPkPQ98mXJXWd7cr4KaS8tY-wlXrMFTsXp1cN6bCmG_t7-x7JBQjEJXg2XeN6zLiVkWywgxlQbw3jqjwPwaLl774R')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Book 4: Klara and the Sun -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Klara and the Sun', 'Kazuo Ishiguro', '26.00', '11.99', 'Nobel Laureate', 'An Artificial Friend with remarkable empathy watches the human world.', 'https://lh3.googleusercontent.com/aida/AEtjO1UmIJMeLT55_VUlNj_rfrgw-iuNbxbkw7P3Ztvbdd7ZyWRC8_ut6zWtMkyEjMZjAvPtCPio2s-iT_eyBmxIEg6V2CtEvJsHB9FH4a1YQIRv9v6LzMKHCdv9yNesTfgSruhmQKXfPmJDc3Q1iC8war5bLntNYHAGP7P1-Jy1bU9jVHr_tfFEx3dAsi3FyQgqdGRc1j-rT1efJSl7_fM_MEKYQ6zE0ziDx9E278b0fPF__Kg0nk4qifacXQQ0')">
+            <img alt="Klara and the Sun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UmIJMeLT55_VUlNj_rfrgw-iuNbxbkw7P3Ztvbdd7ZyWRC8_ut6zWtMkyEjMZjAvPtCPio2s-iT_eyBmxIEg6V2CtEvJsHB9FH4a1YQIRv9v6LzMKHCdv9yNesTfgSruhmQKXfPmJDc3Q1iC8war5bLntNYHAGP7P1-Jy1bU9jVHr_tfFEx3dAsi3FyQgqdGRc1j-rT1efJSl7_fM_MEKYQ6zE0ziDx9E278b0fPF__Kg0nk4qifacXQQ0">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Nobel Prize</span>
+          </div>
+          <span class="text-xs text-outline">Kazuo Ishiguro</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Klara and the Sun</h3>
+          <span class="text-xs text-tertiary">E-Book: $11.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$26.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Klara and the Sun', 'Kazuo Ishiguro', 26.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1UmIJMeLT55_VUlNj_rfrgw-iuNbxbkw7P3Ztvbdd7ZyWRC8_ut6zWtMkyEjMZjAvPtCPio2s-iT_eyBmxIEg6V2CtEvJsHB9FH4a1YQIRv9v6LzMKHCdv9yNesTfgSruhmQKXfPmJDc3Q1iC8war5bLntNYHAGP7P1-Jy1bU9jVHr_tfFEx3dAsi3FyQgqdGRc1j-rT1efJSl7_fM_MEKYQ6zE0ziDx9E278b0fPF__Kg0nk4qifacXQQ0')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Book 5: The Song of Achilles -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('The Song of Achilles', 'Madeline Miller', '22.50', '10.00', 'Greek Epic', 'A tale of gods, kings, immortal fame, and the human heart.', 'https://lh3.googleusercontent.com/aida/AEtjO1VYGez24HwPgZjW74Q0VqoYvcuDicDDFT_Et765-e6N9v67U0DBjv6Jt-JXFR2D6OfbFDKPrJ0msQPqHPGV8oxOMKpetqLSFMuqNbQlhfANgf7RYWK0hE1Tk9q29hR1Txpc5OV56FPuq7epuJN_fIOZHXjA4pOrL3fhYPF8KYxxWrApysgAtDWaxfRIxCD5Q4s8mCqv2j7Nb7otMwjHZpaYqb2hJZyp241HovLf2tuq5oCjEeYJ9Otvp724')">
+            <img alt="The Song of Achilles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1VYGez24HwPgZjW74Q0VqoYvcuDicDDFT_Et765-e6N9v67U0DBjv6Jt-JXFR2D6OfbFDKPrJ0msQPqHPGV8oxOMKpetqLSFMuqNbQlhfANgf7RYWK0hE1Tk9q29hR1Txpc5OV56FPuq7epuJN_fIOZHXjA4pOrL3fhYPF8KYxxWrApysgAtDWaxfRIxCD5Q4s8mCqv2j7Nb7otMwjHZpaYqb2hJZyp241HovLf2tuq5oCjEeYJ9Otvp724">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Golden Helmet</span>
+          </div>
+          <span class="text-xs text-outline">Madeline Miller</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">The Song of Achilles</h3>
+          <span class="text-xs text-tertiary">E-Book: $10.00</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$22.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('The Song of Achilles', 'Madeline Miller', 22.50, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1VYGez24HwPgZjW74Q0VqoYvcuDicDDFT_Et765-e6N9v67U0DBjv6Jt-JXFR2D6OfbFDKPrJ0msQPqHPGV8oxOMKpetqLSFMuqNbQlhfANgf7RYWK0hE1Tk9q29hR1Txpc5OV56FPuq7epuJN_fIOZHXjA4pOrL3fhYPF8KYxxWrApysgAtDWaxfRIxCD5Q4s8mCqv2j7Nb7otMwjHZpaYqb2hJZyp241HovLf2tuq5oCjEeYJ9Otvp724')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Book 6: One Hundred Years of Solitude -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('One Hundred Years of Solitude', 'Gabriel García Márquez', '25.00', '11.00', 'Magical Realism', 'The multi-generational chronicle of the Buendía family in Macondo.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFd5KAxutO4DAJr_8fXFCHz9ERySobqNwcctgXEUU88g90DBkfltruDoX194BJ1XOHtTGI-TTMqzZ78mh-KokhpY1xGoUV34RcV-0qBQxCIB69tWg2uhbtuuDD_f2Y4XER8UqlqmFpWe1FX3iGojL0neT8catQF-H1P5vbqtX3T1mWgNYIoW2LVwpTu1xcvxnONdVUupXF4E4enPLJE4FNCs_pp0wOrTaPFqua_l9BCxR4Ze9Ae3xULw')">
+            <img alt="One Hundred Years of Solitude" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFd5KAxutO4DAJr_8fXFCHz9ERySobqNwcctgXEUU88g90DBkfltruDoX194BJ1XOHtTGI-TTMqzZ78mh-KokhpY1xGoUV34RcV-0qBQxCIB69tWg2uhbtuuDD_f2Y4XER8UqlqmFpWe1FX3iGojL0neT8catQF-H1P5vbqtX3T1mWgNYIoW2LVwpTu1xcvxnONdVUupXF4E4enPLJE4FNCs_pp0wOrTaPFqua_l9BCxR4Ze9Ae3xULw">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Golden Butterflies</span>
+          </div>
+          <span class="text-xs text-outline">Gabriel García Márquez</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">One Hundred Years of Solitude</h3>
+          <span class="text-xs text-tertiary">E-Book: $11.00</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$25.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('One Hundred Years of Solitude', 'Gabriel García Márquez', 25.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFd5KAxutO4DAJr_8fXFCHz9ERySobqNwcctgXEUU88g90DBkfltruDoX194BJ1XOHtTGI-TTMqzZ78mh-KokhpY1xGoUV34RcV-0qBQxCIB69tWg2uhbtuuDD_f2Y4XER8UqlqmFpWe1FX3iGojL0neT8catQF-H1P5vbqtX3T1mWgNYIoW2LVwpTu1xcvxnONdVUupXF4E4enPLJE4FNCs_pp0wOrTaPFqua_l9BCxR4Ze9Ae3xULw')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Book 7: Kafka on the Shore -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Kafka on the Shore', 'Haruki Murakami', '23.00', '10.50', 'Japanese Literature', 'A surreal voyage blending teenage angst, talking cats, and raining fish.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCTACfc9BnBdk84bZd0UIwVri6PMDptaFNW3lPgeBQ7_2v1xxYMh-6zh8VnnSNk6l7A_pGcodO6JS4b1a1GBxUDr35SBmkLmVmkU6QBTllE6XKcdCfa6sY8Rxkn1ClxU17BeRsp_tucfY62xARupNxuqIvHKnL6oD3CMFaZ7jWj7pQftze8bQ0whhSR5zzmjC2fw4nz3YTlTTdHX-B7m0RsFpCkRroUlZVbDVh37_5phdGUVdyuOlVoxA')">
+            <img alt="Kafka on the Shore" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTACfc9BnBdk84bZd0UIwVri6PMDptaFNW3lPgeBQ7_2v1xxYMh-6zh8VnnSNk6l7A_pGcodO6JS4b1a1GBxUDr35SBmkLmVmkU6QBTllE6XKcdCfa6sY8Rxkn1ClxU17BeRsp_tucfY62xARupNxuqIvHKnL6oD3CMFaZ7jWj7pQftze8bQ0whhSR5zzmjC2fw4nz3YTlTTdHX-B7m0RsFpCkRroUlZVbDVh37_5phdGUVdyuOlVoxA">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Crescent Moon &amp; Cat</span>
+          </div>
+          <span class="text-xs text-outline">Haruki Murakami</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Kafka on the Shore</h3>
+          <span class="text-xs text-tertiary">E-Book: $10.50</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$23.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Kafka on the Shore', 'Haruki Murakami', 23.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCTACfc9BnBdk84bZd0UIwVri6PMDptaFNW3lPgeBQ7_2v1xxYMh-6zh8VnnSNk6l7A_pGcodO6JS4b1a1GBxUDr35SBmkLmVmkU6QBTllE6XKcdCfa6sY8Rxkn1ClxU17BeRsp_tucfY62xARupNxuqIvHKnL6oD3CMFaZ7jWj7pQftze8bQ0whhSR5zzmjC2fw4nz3YTlTTdHX-B7m0RsFpCkRroUlZVbDVh37_5phdGUVdyuOlVoxA')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Book 8: The Shadow of the Wind -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('The Shadow of the Wind', 'Carlos Ruiz Zafón', '24.50', '10.99', 'Gothic Mystery', 'In post-war Barcelona, a young boy discovers the Cemetery of Forgotten Books.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzWtOPBpX_iouHYtk97GQHTLDE3mz7wR8qMbP5sC0JHa2RQx2dYsbV_ulhbWUcVQ7MAdLLtszgmW7j1w2oo0Wgc1cIKeYBlkJ3s3PEeUBdv7YEvKuWUv-bmjP8hy0DRFOXoF4XtG0otGPyu3CTHJx08KahEDyEZ_qTgnKp7KLNi9kofjn8NT3hWhNYJkprHKU2bLOSGg-bcqMnjvPxRqh97bLLRfuFLwYqMgSFlsTDJEJkAzlfprlfMw')">
+            <img alt="The Shadow of the Wind" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzWtOPBpX_iouHYtk97GQHTLDE3mz7wR8qMbP5sC0JHa2RQx2dYsbV_ulhbWUcVQ7MAdLLtszgmW7j1w2oo0Wgc1cIKeYBlkJ3s3PEeUBdv7YEvKuWUv-bmjP8hy0DRFOXoF4XtG0otGPyu3CTHJx08KahEDyEZ_qTgnKp7KLNi9kofjn8NT3hWhNYJkprHKU2bLOSGg-bcqMnjvPxRqh97bLLRfuFLwYqMgSFlsTDJEJkAzlfprlfMw">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Forgotten Books</span>
+          </div>
+          <span class="text-xs text-outline">Carlos Ruiz Zafón</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">The Shadow of the Wind</h3>
+          <span class="text-xs text-tertiary">E-Book: $10.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$24.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('The Shadow of the Wind', 'Carlos Ruiz Zafón', 24.50, 'Hardbound', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzWtOPBpX_iouHYtk97GQHTLDE3mz7wR8qMbP5sC0JHa2RQx2dYsbV_ulhbWUcVQ7MAdLLtszgmW7j1w2oo0Wgc1cIKeYBlkJ3s3PEeUBdv7YEvKuWUv-bmjP8hy0DRFOXoF4XtG0otGPyu3CTHJx08KahEDyEZ_qTgnKp7KLNi9kofjn8NT3hWhNYJkprHKU2bLOSGg-bcqMnjvPxRqh97bLLRfuFLwYqMgSFlsTDJEJkAzlfprlfMw')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 3: COMICS & GRAPHIC NOVELS (WITH AUTHENTIC DIVERSE COVERS) -->
+    <div class="view-panel hidden flex-col gap-6" id="view-comics-graphic">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 pb-2 border-b border-surface-container">
+        <div>
+          <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Salon Department II</span>
+          <h2 class="font-headline-lg text-3xl text-primary font-bold">Comics &amp; Graphic Epics</h2>
+          <p class="text-sm text-on-surface-variant">Eisner award winners, prestige omnibuses, and illuminated sequential art with dedicated covers.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold">6 Masterworks</span>
+          <span class="px-3 py-1 rounded-lg bg-surface-container text-primary text-xs font-semibold">Prestige Hardcover &amp; Digital</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5" id="comicsGrid">
+        <!-- Comic 1: Lore Olympus -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Lore Olympus Vol 1', 'Rachel Smythe', '22.00', '11.50', 'Graphic Novel', 'Witness what the gods do after dark in this stylish contemporary Greek mythology reimagining.', 'https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI')">
+            <img alt="Lore Olympus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Eisner Winner</span>
+          </div>
+          <span class="text-xs text-outline">Rachel Smythe</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Lore Olympus Vol 1</h3>
+          <span class="text-xs text-tertiary">Digital: $11.50</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$22.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Lore Olympus Vol 1', 'Rachel Smythe', 22.00, 'Hardcover', 'https://lh3.googleusercontent.com/aida/AEtjO1XMurMBIH3xY_NQ-QpYBYCUblPl9CXRYp4gBix6GpknXKvETp3xG_0lPLdeyK79gT7Lu9ob9mg-Fvcrnw50WDpZ25a_HGW9LUSHiBYlYd58R1SH2LhN7Ap5OUcdQEbpBa4wUBEKgdywztFJCZVmfI7Yr8OWY1BsfvTDqk2nxL_gy-qGZgBiRKaR3Eq4jpesCSqmdCcqfnYNsl8frUIghfcaZP-P-nWjEaG_43jBwYfv9XEmWVjQbMAdTgI')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Comic 2: Watchmen -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Watchmen: Deluxe Edition', 'Alan Moore &amp; Dave Gibbons', '29.99', '11.99', 'Dystopian Noir', 'The landmark graphic novel that deconstructed the superhero genre.', 'https://lh3.googleusercontent.com/aida/AEtjO1V2-Gw0S-KmCH86EvhMoyJLG5ByoT-XnGIedDNO0jN0jDT7Y2LWMTkDy9fv03w-XwgFYA5zpOgYJc0tdkEwoir3qFDW5BEpIwaWqceWpHeoCIUJrMl7TQLz2zc0l2B36XM8OYmNMYyJmx-HbZREQrHTr5MNOA9Rt2BYXyjFT_4fBUhSbjkpMGNSHUrcz-C6MaMN5OdKQGjf_nhQ6rj2akWF4bVQNKoBjhyIiTSuFQX-6dadjRKRSoYfIXOI')">
+            <img alt="Watchmen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1V2-Gw0S-KmCH86EvhMoyJLG5ByoT-XnGIedDNO0jN0jDT7Y2LWMTkDy9fv03w-XwgFYA5zpOgYJc0tdkEwoir3qFDW5BEpIwaWqceWpHeoCIUJrMl7TQLz2zc0l2B36XM8OYmNMYyJmx-HbZREQrHTr5MNOA9Rt2BYXyjFT_4fBUhSbjkpMGNSHUrcz-C6MaMN5OdKQGjf_nhQ6rj2akWF4bVQNKoBjhyIiTSuFQX-6dadjRKRSoYfIXOI">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Hugo Winner</span>
+          </div>
+          <span class="text-xs text-outline">Alan Moore &amp; Dave Gibbons</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Watchmen: Deluxe Edition</h3>
+          <span class="text-xs text-tertiary">Digital: $11.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$29.99</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Watchmen: Deluxe Edition', 'Alan Moore', 29.99, 'Collector Hardcover', 'https://lh3.googleusercontent.com/aida/AEtjO1V2-Gw0S-KmCH86EvhMoyJLG5ByoT-XnGIedDNO0jN0jDT7Y2LWMTkDy9fv03w-XwgFYA5zpOgYJc0tdkEwoir3qFDW5BEpIwaWqceWpHeoCIUJrMl7TQLz2zc0l2B36XM8OYmNMYyJmx-HbZREQrHTr5MNOA9Rt2BYXyjFT_4fBUhSbjkpMGNSHUrcz-C6MaMN5OdKQGjf_nhQ6rj2akWF4bVQNKoBjhyIiTSuFQX-6dadjRKRSoYfIXOI')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Comic 3: Batman: Year One -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Batman: Year One', 'Frank Miller &amp; David Mazzucchelli', '19.99', '7.99', 'Crime Noir', 'A gritty cinematic reinvention of the Dark Knight and Lieutenant Gordon.', 'https://lh3.googleusercontent.com/aida/AEtjO1VYW7YyeADcywdLLO1V1GfcoAzXr0HKBQ8ILEL_LTUpZm6MR9vyaEp6yE1h6BJdC4RJJBRWXJThv1QxE7qqODrNwICXrljGnQ0M8o4INTpyab6C5r-35GmAmp7NBbHJBfooxm27GgDeg80rNXr3jAstdOAwJ_M1ggW_w4y3rJrh90e4c16BsiN29joHmG8-SgtvIEagybfTZsGgbxJCKX_bvRyaJq-Lf-35r3G6FVook3Q2z4cqB_Wb52g')">
+            <img alt="Batman: Year One" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1VYW7YyeADcywdLLO1V1GfcoAzXr0HKBQ8ILEL_LTUpZm6MR9vyaEp6yE1h6BJdC4RJJBRWXJThv1QxE7qqODrNwICXrljGnQ0M8o4INTpyab6C5r-35GmAmp7NBbHJBfooxm27GgDeg80rNXr3jAstdOAwJ_M1ggW_w4y3rJrh90e4c16BsiN29joHmG8-SgtvIEagybfTZsGgbxJCKX_bvRyaJq-Lf-35r3G6FVook3Q2z4cqB_Wb52g">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">DC Noir Classic</span>
+          </div>
+          <span class="text-xs text-outline">Frank Miller</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Batman: Year One</h3>
+          <span class="text-xs text-tertiary">Digital: $7.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$19.99</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Batman: Year One', 'Frank Miller', 19.99, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1VYW7YyeADcywdLLO1V1GfcoAzXr0HKBQ8ILEL_LTUpZm6MR9vyaEp6yE1h6BJdC4RJJBRWXJThv1QxE7qqODrNwICXrljGnQ0M8o4INTpyab6C5r-35GmAmp7NBbHJBfooxm27GgDeg80rNXr3jAstdOAwJ_M1ggW_w4y3rJrh90e4c16BsiN29joHmG8-SgtvIEagybfTZsGgbxJCKX_bvRyaJq-Lf-35r3G6FVook3Q2z4cqB_Wb52g')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Comic 4: The Sandman -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('The Sandman: Preludes &amp; Nocturnes', 'Neil Gaiman', '26.50', '9.99', 'Dark Fantasy', 'Morpheus, the Lord of Dreams, is captured and begins his quest to reclaim power.', 'https://lh3.googleusercontent.com/aida/AEtjO1UY6Y_8aBNli4BpoLR7-4REqV8qWV2zT2-hnwRH-ZP_b-lOTL56qXf1o6Zm2kOF6lrkmMKXQLwm010ZFfH-CZhKeRrkws11S0VCV8nWdv0NJfsn3KxjiIYYk6xb6ggL5aTtPTwR4S28Ybtifn43oWmri4wPgp78OSxm_kPGxyqK3cNOgJcba0Hc0PKpEAjuusYHizA0vG9fhXIAmDUde5mOtH1t3SCMKllmyx2g1C4jgvIuj4HM-vUuW25O')">
+            <img alt="The Sandman" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UY6Y_8aBNli4BpoLR7-4REqV8qWV2zT2-hnwRH-ZP_b-lOTL56qXf1o6Zm2kOF6lrkmMKXQLwm010ZFfH-CZhKeRrkws11S0VCV8nWdv0NJfsn3KxjiIYYk6xb6ggL5aTtPTwR4S28Ybtifn43oWmri4wPgp78OSxm_kPGxyqK3cNOgJcba0Hc0PKpEAjuusYHizA0vG9fhXIAmDUde5mOtH1t3SCMKllmyx2g1C4jgvIuj4HM-vUuW25O">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Gothic Masterpiece</span>
+          </div>
+          <span class="text-xs text-outline">Neil Gaiman</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">The Sandman: Preludes</h3>
+          <span class="text-xs text-tertiary">Digital: $9.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$26.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('The Sandman: Preludes', 'Neil Gaiman', 26.50, 'Deluxe HC', 'https://lh3.googleusercontent.com/aida/AEtjO1UY6Y_8aBNli4BpoLR7-4REqV8qWV2zT2-hnwRH-ZP_b-lOTL56qXf1o6Zm2kOF6lrkmMKXQLwm010ZFfH-CZhKeRrkws11S0VCV8nWdv0NJfsn3KxjiIYYk6xb6ggL5aTtPTwR4S28Ybtifn43oWmri4wPgp78OSxm_kPGxyqK3cNOgJcba0Hc0PKpEAjuusYHizA0vG9fhXIAmDUde5mOtH1t3SCMKllmyx2g1C4jgvIuj4HM-vUuW25O')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Comic 5: Heartstopper -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Heartstopper: Volume 1', 'Alice Oseman', '14.50', '6.99', 'Young Romance', 'Boy meets boy. Boys become friends. Boys fall in love.', 'https://lh3.googleusercontent.com/aida/AEtjO1VIYwBuEPp6DmXDn-sIoqGFj8uj22XJo7FTmNQTbcvwKCYKGSdapETxByTKY_3vzqb01y9zDX6cXOa3xUITosJhh68wwlopMd6POb4xiK43yAzq7WM6o7lNPq-Bzr1NE1dxj_5bFEST23w2wkSJgugqdz9B3Ts3lUq5rHX1jbBzdXmTX0rnq-WDR71uU0ViF0-25BMKwxlmtev0j0Qd9oO495vqXuWIrl0aCNKtUZSH5urB9eC-FAe5lEtx')">
+            <img alt="Heartstopper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1VIYwBuEPp6DmXDn-sIoqGFj8uj22XJo7FTmNQTbcvwKCYKGSdapETxByTKY_3vzqb01y9zDX6cXOa3xUITosJhh68wwlopMd6POb4xiK43yAzq7WM6o7lNPq-Bzr1NE1dxj_5bFEST23w2wkSJgugqdz9B3Ts3lUq5rHX1jbBzdXmTX0rnq-WDR71uU0ViF0-25BMKwxlmtev0j0Qd9oO495vqXuWIrl0aCNKtUZSH5urB9eC-FAe5lEtx">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Wholesome Graphic Novel</span>
+          </div>
+          <span class="text-xs text-outline">Alice Oseman</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Heartstopper: Volume 1</h3>
+          <span class="text-xs text-tertiary">Digital: $6.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$14.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Heartstopper: Volume 1', 'Alice Oseman', 14.50, 'Paperback', 'https://lh3.googleusercontent.com/aida/AEtjO1VIYwBuEPp6DmXDn-sIoqGFj8uj22XJo7FTmNQTbcvwKCYKGSdapETxByTKY_3vzqb01y9zDX6cXOa3xUITosJhh68wwlopMd6POb4xiK43yAzq7WM6o7lNPq-Bzr1NE1dxj_5bFEST23w2wkSJgugqdz9B3Ts3lUq5rHX1jbBzdXmTX0rnq-WDR71uU0ViF0-25BMKwxlmtev0j0Qd9oO495vqXuWIrl0aCNKtUZSH5urB9eC-FAe5lEtx')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Comic 6: Saga -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Saga: Deluxe Edition', 'Brian K. Vaughan &amp; Fiona Staples', '34.99', '14.99', 'Space Fantasy', 'An interplanetary space opera about two soldiers on opposite sides who fall in love.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQDFep7htr_NXFGl1qFzLHhdiRh6GY045j4RA08wMJZI3S6wkHXTiUOhyIBbUYwy0VvIDfsVCEt3R7HFw8R5U-K7oT_hPhJ3pRiKZWD3MtgjfsRSKwf04-dEAJr51VC0rx4wDYkV6FdNwgepZI2mVNFA7KIxHfxNIfP3PPaw93j-3qhveWXViIWV-1ezIOyi49Qs5AC8mNpgA6dYQgkJs-YCecFkO5j8gNs4TBKSsx-U321YHqRUjCOQ')">
+            <img alt="Saga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQDFep7htr_NXFGl1qFzLHhdiRh6GY045j4RA08wMJZI3S6wkHXTiUOhyIBbUYwy0VvIDfsVCEt3R7HFw8R5U-K7oT_hPhJ3pRiKZWD3MtgjfsRSKwf04-dEAJr51VC0rx4wDYkV6FdNwgepZI2mVNFA7KIxHfxNIfP3PPaw93j-3qhveWXViIWV-1ezIOyi49Qs5AC8mNpgA6dYQgkJs-YCecFkO5j8gNs4TBKSsx-U321YHqRUjCOQ">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Space Fantasy Epic</span>
+          </div>
+          <span class="text-xs text-outline">Brian K. Vaughan &amp; Fiona Staples</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Saga: Deluxe Edition</h3>
+          <span class="text-xs text-tertiary">Digital: $14.99</span>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$34.99</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Saga: Deluxe Edition', 'Brian K. Vaughan', 34.99, 'Deluxe HC', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQDFep7htr_NXFGl1qFzLHhdiRh6GY045j4RA08wMJZI3S6wkHXTiUOhyIBbUYwy0VvIDfsVCEt3R7HFw8R5U-K7oT_hPhJ3pRiKZWD3MtgjfsRSKwf04-dEAJr51VC0rx4wDYkV6FdNwgepZI2mVNFA7KIxHfxNIfP3PPaw93j-3qhveWXViIWV-1ezIOyi49Qs5AC8mNpgA6dYQgkJs-YCecFkO5j8gNs4TBKSsx-U321YHqRUjCOQ')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 4: ANIME & MANGA VAULT -->
+    <div class="view-panel hidden flex-col gap-6" id="view-anime-manga">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 pb-2 border-b border-surface-container">
+        <div>
+          <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Salon Department III</span>
+          <h2 class="font-headline-lg text-3xl text-primary font-bold">Anime &amp; Manga Vault</h2>
+          <p class="text-sm text-on-surface-variant">Authentic Japanese Tankobon volumes, Kodansha &amp; Shueisha collector prints.</p>
+        </div>
+        <span class="px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold">Direct Tokyo Importers</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <!-- Manga 1: One Piece -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('One Piece: Wano Climax', 'Eiichiro Oda', '14.50', '6.99', 'Manga', 'Luffy Gear 5 awakening at Onigashima.', 'https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz')">
+            <img alt="One Piece" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Shonen Jump</span>
+          </div>
+          <span class="text-xs text-outline">Eiichiro Oda</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">One Piece: Wano Climax</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$14.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('One Piece: Wano Climax', 'Eiichiro Oda', 14.50, 'Tankobon', 'https://lh3.googleusercontent.com/aida/AEtjO1X4O6LnwjhA8aqvcNXaL2mACg0dDXHmAKjueYMS2pqVLI0870BJ6oRxA2Ah6cb-DWGJFwbVRWYthSX6idYACPoqZn4HdtzOqdvAdQSPPmkpQlIp6SYrrjrjI-uVcgaTye-K0mGTPhl-U8nICkSdVNtDMoPjiXbpNRF_XpLyDpt4w8JAiOJrg5zzKAg76n4NCbBZIbF5HipJbsuzSZJ0_UajcnS_HMRTDpLZ8M8wgTuqC30CRmBDcWrQMjDz')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Manga 2: Frieren -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Frieren: Beyond Journey\'s End', 'Kanehito Yamada', '15.00', '7.99', 'Manga', 'An elf mage pondering the value of human bonds.', 'https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r')">
+            <img alt="Frieren" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Award Winner</span>
+          </div>
+          <span class="text-xs text-outline">Kanehito Yamada</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Frieren: Beyond Journey's End</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$15.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Frieren: Beyond Journey\'s End', 'Kanehito Yamada', 15.00, 'Tankobon', 'https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Manga 3: Attack on Titan -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Attack on Titan Final Season', 'Hajime Isayama', '22.00', '8.50', 'Manga', 'The apocalyptic clash between humanity and Titans reaches its fateful conclusion.', 'https://lh3.googleusercontent.com/aida/AEtjO1VVBEenmq_csawO-X5dD87w2eDZ6Wlw-bhnhqLYAFlW0Llsh10l2hMexaPGVsalpwGXP_jOctrYPUhAlucdQjLFQV-7jWzno4ZlIgTgewroSgkLG5igwd_GeabUymvZJfBNvFyPkibZWjfNya0Lu-kV_Q_Luwrd1lL6YYQiQ_nEHkmtXbofXXlKdzWwoglh8kXWXPkRcOX02-VvLDhYrZ6tVJR_UH950s7MQ5nBdAR16so5-TiO5McSXEl9')">
+            <img alt="Attack on Titan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1VVBEenmq_csawO-X5dD87w2eDZ6Wlw-bhnhqLYAFlW0Llsh10l2hMexaPGVsalpwGXP_jOctrYPUhAlucdQjLFQV-7jWzno4ZlIgTgewroSgkLG5igwd_GeabUymvZJfBNvFyPkibZWjfNya0Lu-kV_Q_Luwrd1lL6YYQiQ_nEHkmtXbofXXlKdzWwoglh8kXWXPkRcOX02-VvLDhYrZ6tVJR_UH950s7MQ5nBdAR16so5-TiO5McSXEl9">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Kodansha</span>
+          </div>
+          <span class="text-xs text-outline">Hajime Isayama</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Attack on Titan: Final</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$22.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Attack on Titan: Final', 'Hajime Isayama', 22.00, 'Omnibus', 'https://lh3.googleusercontent.com/aida/AEtjO1VVBEenmq_csawO-X5dD87w2eDZ6Wlw-bhnhqLYAFlW0Llsh10l2hMexaPGVsalpwGXP_jOctrYPUhAlucdQjLFQV-7jWzno4ZlIgTgewroSgkLG5igwd_GeabUymvZJfBNvFyPkibZWjfNya0Lu-kV_Q_Luwrd1lL6YYQiQ_nEHkmtXbofXXlKdzWwoglh8kXWXPkRcOX02-VvLDhYrZ6tVJR_UH950s7MQ5nBdAR16so5-TiO5McSXEl9')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Manga 4: Spy x Family -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Spy x Family Vol 10', 'Tatsuya Endo', '11.50', '5.99', 'Manga', 'A spy, an assassin, and a telepath form an unexpected family.', 'https://lh3.googleusercontent.com/aida/AEtjO1ULAZxZynCBu4TMI4j1wQMjMJJyLyAeVGOky1oJQRRJQwWxBZPkrX9z5X1wprricvv-dRNikBeHGVbIuSiH3yTz9tiPxZDF0gwWkmyusPWBwy1DYy7jtVSardxURZx8ehdjGaqZeivwe9_7kGb2xy3vu6ebSFQcVYEA5tTgMN8Ym1TWvhEnYZyNE07ACKy4t_IBRuNYGVhhTJdOcZciE7uiwZFL7owsuHwTPFk_ln_ajXyIg0kWX9cH0lRz')">
+            <img alt="Spy x Family" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1ULAZxZynCBu4TMI4j1wQMjMJJyLyAeVGOky1oJQRRJQwWxBZPkrX9z5X1wprricvv-dRNikBeHGVbIuSiH3yTz9tiPxZDF0gwWkmyusPWBwy1DYy7jtVSardxURZx8ehdjGaqZeivwe9_7kGb2xy3vu6ebSFQcVYEA5tTgMN8Ym1TWvhEnYZyNE07ACKy4t_IBRuNYGVhhTJdOcZciE7uiwZFL7owsuHwTPFk_ln_ajXyIg0kWX9cH0lRz">
+            <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 text-[10px] text-primary font-bold shadow-sm">Jump Comics</span>
+          </div>
+          <span class="text-xs text-outline">Tatsuya Endo</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Spy x Family Vol 10</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$11.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Spy x Family Vol 10', 'Tatsuya Endo', 11.50, 'Tankobon', 'https://lh3.googleusercontent.com/aida/AEtjO1ULAZxZynCBu4TMI4j1wQMjMJJyLyAeVGOky1oJQRRJQwWxBZPkrX9z5X1wprricvv-dRNikBeHGVbIuSiH3yTz9tiPxZDF0gwWkmyusPWBwy1DYy7jtVSardxURZx8ehdjGaqZeivwe9_7kGb2xy3vu6ebSFQcVYEA5tTgMN8Ym1TWvhEnYZyNE07ACKy4t_IBRuNYGVhhTJdOcZciE7uiwZFL7owsuHwTPFk_ln_ajXyIg0kWX9cH0lRz')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 5: MOTIVATIONAL WISDOM -->
+    <div class="view-panel hidden flex-col gap-6" id="view-wisdom-mind">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 pb-2 border-b border-surface-container">
+        <div>
+          <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Salon Department IV</span>
+          <h2 class="font-headline-lg text-3xl text-primary font-bold">Motivational Wisdom &amp; Mindful Living</h2>
+          <p class="text-sm text-on-surface-variant">Cognitive frameworks, resilience memoirs, and Stoic philosophy.</p>
+        </div>
+        <span class="px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold">Transformative Treatises</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <!-- Wisdom 1: Atomic Habits -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Atomic Habits', 'James Clear', '21.50', '8.99', 'Mindset', 'Improve 1% every day.', 'https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY')">
+            <img alt="Atomic Habits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY">
+          </div>
+          <span class="text-xs text-outline">James Clear</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Atomic Habits</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$21.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Atomic Habits', 'James Clear', 21.50, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Wisdom 2: The Courage to Be Disliked -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('The Courage to Be Disliked', 'Ichiro Kishimi', '19.00', '9.50', 'Philosophy', 'Adlerian psychology dialogue.', 'https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm')">
+            <img alt="The Courage to Be Disliked" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm">
+          </div>
+          <span class="text-xs text-outline">Ichiro Kishimi &amp; F. Koga</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">The Courage to Be Disliked</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$19.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('The Courage to Be Disliked', 'Ichiro Kishimi', 19.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1V2KXIwMhioGNm5HVWqtP9XE2MtsqOU1u9DZ-cLFw6YR2EnfdtYE97JWNanBskMN96TxMxIdEoTJD4dEKGXX7qWWXlqv97681PYt2nolNpf6HpoU1JCQiI66sCeD2vpjhj8ciW11Y4bw3VN0gsC-T9AA1fD7A2T0u4aR066jF9_nBdSIkQbXoVXtIpX3tMuU47S6Wc-CkJrYBHALYmhOSD-jRBaFxiWTG570aRf4YV0sCvse6_CBJu-vZKm')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Wisdom 3: Man's Search for Meaning -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Man\'s Search for Meaning', 'Viktor E. Frankl', '18.50', '8.00', 'Classic', 'Finding purpose through suffering.', 'https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3')">
+            <img alt="Man's Search for Meaning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3">
+          </div>
+          <span class="text-xs text-outline">Viktor E. Frankl</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Man's Search for Meaning</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$18.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Man\'s Search for Meaning', 'Viktor E. Frankl', 18.50, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1Uu33QVtLs6zyrow0O4kPiBQKrL2Rr7Cpt-4mOCLYxMxW6V9-J36dvPbvur2z0Nq5S43jMlJa6e6j9bcggfXL-mRBQyGViPCXznv78zuHBZHtpnun3VGgupzTBy7guhCoc3mcRvMFslBxPQ6HNVCz17GSgVO0xC4T21jKKmRitm_6_T0mtaOQPvN8dql6RxCqMUfB12uJWoDIYKviJSKsHWwOeQgrtFGB9o0DuB4MYNL_57FE_ER7y8rZS3')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Wisdom 4: Can't Hurt Me -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Can\'t Hurt Me', 'David Goggins', '20.00', '9.99', 'Memoir', 'Master your mind and defy the odds.', 'https://lh3.googleusercontent.com/aida/AEtjO1WoHXq8X6MSvsZSb8y_rfJT_500KF1ucbMBZg-g3D2pvZfv5F6NSeDzJqvzefHvN01NVsm3vZ82A4-xCLnCtjERFsnPNgVs_gfMNAPmMmdnYH2d6ga5DDoYVCPBvZrSCGMQfhELOuXKqHLFV2GR3pJb5slSVEsgGis58JLM5ag8koMLT5ZEkcPE4_IklDLYxI7ruEHJZ6fXjpNse_Gh2KbG6KYMs0gIsSLQHbjylgD392ZKRsQSMTQZCbA')">
+            <img alt="Can't Hurt Me" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WoHXq8X6MSvsZSb8y_rfJT_500KF1ucbMBZg-g3D2pvZfv5F6NSeDzJqvzefHvN01NVsm3vZ82A4-xCLnCtjERFsnPNgVs_gfMNAPmMmdnYH2d6ga5DDoYVCPBvZrSCGMQfhELOuXKqHLFV2GR3pJb5slSVEsgGis58JLM5ag8koMLT5ZEkcPE4_IklDLYxI7ruEHJZ6fXjpNse_Gh2KbG6KYMs0gIsSLQHbjylgD392ZKRsQSMTQZCbA">
+          </div>
+          <span class="text-xs text-outline">David Goggins</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Can't Hurt Me</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$20.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Can\'t Hurt Me', 'David Goggins', 20.00, 'Hardbound', 'https://lh3.googleusercontent.com/aida/AEtjO1WoHXq8X6MSvsZSb8y_rfJT_500KF1ucbMBZg-g3D2pvZfv5F6NSeDzJqvzefHvN01NVsm3vZ82A4-xCLnCtjERFsnPNgVs_gfMNAPmMmdnYH2d6ga5DDoYVCPBvZrSCGMQfhELOuXKqHLFV2GR3pJb5slSVEsgGis58JLM5ag8koMLT5ZEkcPE4_IklDLYxI7ruEHJZ6fXjpNse_Gh2KbG6KYMs0gIsSLQHbjylgD392ZKRsQSMTQZCbA')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 6: MAGAZINES & GK -->
+    <div class="view-panel hidden flex-col gap-6" id="view-magazines-gk">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 pb-2 border-b border-surface-container">
+        <div>
+          <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Salon Department V</span>
+          <h2 class="font-headline-lg text-3xl text-primary font-bold">Magazines, Academic &amp; GK Periodicals</h2>
+          <p class="text-sm text-on-surface-variant">Editorial quarterlies, university textbooks, and global compendiums.</p>
+        </div>
+        <span class="px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold">Editorial Stacks</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <!-- Mag 1: Architectural Sanctuary -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Architectural Sanctuary', 'Studio Edition', '28.00', '12.00', 'Design', 'Brutalist wood &amp; stone library aesthetics.', 'https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk')">
+            <img alt="Architectural Sanctuary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk">
+          </div>
+          <span class="text-xs text-outline">Sanctuary Monographs</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Architectural Sanctuary</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$28.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Architectural Sanctuary', 'Studio Edition', 28.00, 'Print Folio', 'https://lh3.googleusercontent.com/aida/AEtjO1W30PvXvTeYBEaL4YSEx24IeY9Cp5JRsS8pE_Njypl8DkcAiqLwUvgg9Sho0polC2_6pC2JfUHNAvC59DXZJsOj4caSEb77Gk-9HmbrxI_SJEybBNeTjyDq7CjOC7eqvnipOHciQ9-xH-SNThh71qyn49JmByTaC3LI2b-boiXsO0KbnCpmliK23Mi8hMJTnMIOi4Q8xm7xV9d41jeRwUkewJ8TUsti8H5uKL-3CxRf83GggPhxb0epXwXk')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mag 2: Cinema Weekly -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Cinema Weekly Entertainment', 'Folio Press', '11.00', '4.99', 'Periodicals', 'Hollywood premiere retrospective.', 'https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR')">
+            <img alt="Cinema Weekly" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR">
+          </div>
+          <span class="text-xs text-outline">Editorial Stacks</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Cinema Weekly</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$11.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Cinema Weekly', 'Editorial Stacks', 11.00, 'Print Issue', 'https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mag 3: Forbes Global Leaders -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('Forbes Global Leaders', 'Forbes Press', '12.50', '5.99', 'Business', 'Visionaries reshaping the global economy.', 'https://lh3.googleusercontent.com/aida/AEtjO1XhBMygEknDK-nQUPwD6KXic9Cyk9RBQ_tUCkJ58ldWoTQky7qQugKd4nRCO0ZO3RpiQHXZnRYak9_0zY_JNzEhDZpNxrFH8Z7HJlAGYadsFObIUwHbOOHYWnGOwwN25FwUnXLVm96HVsYzfeNtQDwjpfvLFNV1fBxhxkHXIa9vJSgiJI5CoSTgqfRtIeBagt_EP6WfX1OXcWEOy50sqkMqstB0ygjmW3YiJhhGu6qhqAqx2HV2fRgNLf8')">
+            <img alt="Forbes Global Leaders" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XhBMygEknDK-nQUPwD6KXic9Cyk9RBQ_tUCkJ58ldWoTQky7qQugKd4nRCO0ZO3RpiQHXZnRYak9_0zY_JNzEhDZpNxrFH8Z7HJlAGYadsFObIUwHbOOHYWnGOwwN25FwUnXLVm96HVsYzfeNtQDwjpfvLFNV1fBxhxkHXIa9vJSgiJI5CoSTgqfRtIeBagt_EP6WfX1OXcWEOy50sqkMqstB0ygjmW3YiJhhGu6qhqAqx2HV2fRgNLf8">
+          </div>
+          <span class="text-xs text-outline">Forbes Editorial</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Forbes Global Leaders</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$12.50</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('Forbes Global Leaders', 'Forbes Press', 12.50, 'Print Folio', 'https://lh3.googleusercontent.com/aida/AEtjO1XhBMygEknDK-nQUPwD6KXic9Cyk9RBQ_tUCkJ58ldWoTQky7qQugKd4nRCO0ZO3RpiQHXZnRYak9_0zY_JNzEhDZpNxrFH8Z7HJlAGYadsFObIUwHbOOHYWnGOwwN25FwUnXLVm96HVsYzfeNtQDwjpfvLFNV1fBxhxkHXIa9vJSgiJI5CoSTgqfRtIeBagt_EP6WfX1OXcWEOy50sqkMqstB0ygjmW3YiJhhGu6qhqAqx2HV2fRgNLf8')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mag 4: World Factbook 2025 -->
+        <div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-all flex flex-col border border-surface-container">
+          <div class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container mb-2 cursor-pointer" onclick="openBookModal('The World Factbook 2025', 'International Stacks', '32.00', '14.00', 'GK &amp; Reference', 'Authoritative international reference.', 'https://lh3.googleusercontent.com/aida/AEtjO1VUKF4LnPjmPi5D1emT0oiCDFJp53K2rc29Bz5UPhwaJub8zlMVIWQMLRZdkV8v7EmtlWvwWwpqBlwRmRhDcwtxN8D-TLm-ijCFCe06j7s_Gy9FuXMfZR_YnlkRfYYkxY-8cQNhYNurcvATucElTdSYdLvCTTUNs3w7U2TIwXx8E_bXfB6sTe9Ae3DLEAvPVFCGB_XgBWwZJTjsmqllwx4A02ywBC0rQdMsSr4Y58huiDOjQRITwA4Ebb1q')">
+            <img alt="World Factbook" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1VUKF4LnPjmPi5D1emT0oiCDFJp53K2rc29Bz5UPhwaJub8zlMVIWQMLRZdkV8v7EmtlWvwWwpqBlwRmRhDcwtxN8D-TLm-ijCFCe06j7s_Gy9FuXMfZR_YnlkRfYYkxY-8cQNhYNurcvATucElTdSYdLvCTTUNs3w7U2TIwXx8E_bXfB6sTe9Ae3DLEAvPVFCGB_XgBWwZJTjsmqllwx4A02ywBC0rQdMsSr4Y58huiDOjQRITwA4Ebb1q">
+          </div>
+          <span class="text-xs text-outline">Editorial Stacks</span>
+          <h3 class="font-headline-sm text-sm text-on-surface font-semibold truncate group-hover:text-primary transition-colors">World Factbook 2025</h3>
+          <div class="mt-auto pt-2 flex items-center justify-between">
+            <span class="text-base font-bold text-primary">$32.00</span>
+            <button class="p-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToBag('The World Factbook 2025', 'Editorial Stacks', 32.00, 'Hardcover Compendium', 'https://lh3.googleusercontent.com/aida/AEtjO1VUKF4LnPjmPi5D1emT0oiCDFJp53K2rc29Bz5UPhwaJub8zlMVIWQMLRZdkV8v7EmtlWvwWwpqBlwRmRhDcwtxN8D-TLm-ijCFCe06j7s_Gy9FuXMfZR_YnlkRfYYkxY-8cQNhYNurcvATucElTdSYdLvCTTUNs3w7U2TIwXx8E_bXfB6sTe9Ae3DLEAvPVFCGB_XgBWwZJTjsmqllwx4A02ywBC0rQdMsSr4Y58huiDOjQRITwA4Ebb1q')">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 7: READGENIUS AI CONCIERGE -->
+    <div class="view-panel hidden flex-col gap-6" id="view-ai-concierge"><div class="rounded-2xl bg-surface-container p-6 flex flex-col gap-4 shadow-sm border border-surface-container"><div class="flex items-center gap-3 justify-between"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[24px]">psychology</span></div><div class="flex flex-col"><h2 class="font-headline-md text-2xl text-primary font-bold leading-tight">ReadGenius AI Literary Guide</h2><p class="text-xs sm:text-sm text-on-surface-variant">Your bespoke bibliophilic advisor for curated readings, literary analysis &amp; concierge queries.</p></div></div><button class="px-3 py-1.5 bg-surface-container-lowest hover:bg-surface text-primary rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all" onclick="handleAiReset()" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span><span class="">Reset Conversation</span></button></div><div class="flex flex-wrap items-center gap-2 pt-1"><span class="text-[11px] font-bold text-outline uppercase tracking-wider">Suggested Queries:</span><button type="button" class="px-3 py-1 bg-surface-container-lowest hover:bg-surface text-primary rounded-full text-xs shadow-sm transition-colors border border-surface-container" onclick="handleAiPrompt('What books explore philosophical depth like The Midnight Library?')">Books like The Midnight Library →</button><button type="button" class="px-3 py-1 bg-surface-container-lowest hover:bg-surface text-primary rounded-full text-xs shadow-sm transition-colors border border-surface-container" onclick="handleAiPrompt('Which graphic novel should I start with for rich sequential storytelling?')">Graphic Novel Recommendations →</button><button type="button" class="px-3 py-1 bg-surface-container-lowest hover:bg-surface text-primary rounded-full text-xs shadow-sm transition-colors border border-surface-container" onclick="handleAiPrompt('How does PageHaven 14-day doorstep return service work?')">Doorstep Returns Policy →</button><button type="button" class="px-3 py-1 bg-surface-container-lowest hover:bg-surface text-primary rounded-full text-xs shadow-sm transition-colors border border-surface-container" onclick="handleAiPrompt('What are the best motivational and mindset folios available?')">Mindset &amp; Stoicism Picks →</button></div><div class="bg-surface-container-lowest rounded-xl p-4 flex flex-col gap-3 min-h-[340px] max-h-[460px] overflow-y-auto shadow-inner border border-surface-container" id="chatDialogueBox"><div class="flex items-start gap-3"><div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs sm:text-sm leading-relaxed"><p class="">Greetings, bibliophile. I am <strong>ReadGenius</strong>, trained on PageHaven's rare archives and canonical publishing records. Click any suggested query above or ask about literary themes, folio editions, or order policies.</p></div></div></div><form id="aiChatForm" class="flex gap-2" onsubmit="handleAiSend(event)"><input class="flex-1 px-4 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface text-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-sm border border-surface-container" id="aiInput" name="query" placeholder="Ask ReadGenius about authors, themes, archival editions, or return policies..." type="text" autocomplete="off" onkeydown="if(event.key==='Enter'){handleAiSend(event);}"><button id="aiSendBtn" class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-semibold text-sm hover:bg-primary-container flex items-center gap-1.5 shadow transition-all shrink-0" type="submit"><span class="">Consult</span><span class="material-symbols-outlined text-[18px]">send</span></button></form></div></div>
+
+    <!-- VIEW 8: HELP CARE SANCTUARY -->
+    <div class="view-panel hidden flex-col gap-6" id="view-help-care">
+      <div class="flex flex-col gap-1">
+        <span class="text-xs font-bold text-tertiary uppercase tracking-widest">Collector Support</span>
+        <h2 class="font-headline-lg text-3xl text-primary font-bold">Help Care Sanctuary</h2>
+        <p class="text-sm text-on-surface-variant">Doorstep returns, climate-controlled logistics, and white-glove archival assistance.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Doorstep Returns Form -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-4 border border-surface-container">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[24px]">assignment_return</span>
+            <h3 class="font-headline-sm text-lg text-primary font-bold">14-Day Doorstep Return</h3>
+          </div>
+          <p class="text-xs text-on-surface-variant">Direct courier collection at your doorstep with no packing hassle.</p>
+          <form class="flex flex-col gap-3" onsubmit="handleReturnSubmit(event)">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface mb-1">Order Folio ID</label>
+              <input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="e.g. PH-89412" required="" type="text">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface mb-1">Reason</label>
+              <select class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+                <option>Accidental Duplicate Purchase</option>
+                <option>Minor Spine / Dust Jacket Imperfection</option>
+                <option>Wrong Edition Format Selected</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface mb-1">Pickup Address</label>
+              <textarea class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Address, City, Postal Code" required="" rows="2"></textarea>
+            </div>
+            <button class="w-full py-2 rounded-xl bg-primary text-on-primary text-xs font-bold hover:bg-primary-container" type="submit">Schedule Doorstep Courier</button>
+          </form>
+        </div>
+
+        <!-- Parcel Tracking -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-4 border border-surface-container">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
+            <h3 class="font-headline-sm text-lg text-primary font-bold">Folio Courier Tracker</h3>
+          </div>
+          <p class="text-xs text-on-surface-variant">Live climate-controlled logistics status.</p>
+          <div class="flex gap-2">
+            <input class="flex-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none focus:ring-1 focus:ring-primary" id="trackingInput" type="text" value="PH-89412">
+            <button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-bold" onclick="lookupTracking()">Track</button>
+          </div>
+          <div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5" id="trackingResult">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-primary">STATUS: IN TRANSIT</span>
+              <span class="text-xs text-outline">White-Glove Tier</span>
+            </div>
+            <p class="text-sm font-semibold text-on-surface">Arriving Tomorrow by 3:00 PM</p>
+            <span class="text-xs text-on-surface-variant">Departed Regional Vault B Hub.</span>
+            <div class="w-full bg-surface-container rounded-full h-2 mt-2 overflow-hidden">
+              <div class="bg-primary h-full w-3/4"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Guild Support -->
+        <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col justify-between gap-4 border border-surface-container">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
+              <h3 class="font-headline-sm text-lg text-primary font-bold">Direct Guild Assistance</h3>
+            </div>
+            <p class="text-xs text-on-surface-variant">Speak directly to an antiquarian or logistics specialist regarding rare editions or custom slipcases.</p>
+            <div class="flex flex-col gap-2 pt-2">
+              <div class="p-3 rounded-lg bg-surface-container-low flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary">call</span>
+                <div class="flex flex-col">
+                  <span class="text-[10px] text-outline">Toll-Free Concierge</span>
+                  <span class="text-sm font-bold text-on-surface">1-800-HAVEN-BOOKS</span>
+                </div>
+              </div>
+              <div class="p-3 rounded-lg bg-surface-container-low flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary">mail</span>
+                <div class="flex flex-col">
+                  <span class="text-[10px] text-outline">Archival Inquiries</span>
+                  <span class="text-xs text-on-surface font-medium">concierge@pagehaven.archive</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-surface-container-high text-on-surface text-center text-xs font-semibold">
+            Desk Hours: Mon–Sat, 8am – 9pm EST
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="fixed bottom-6 right-6 z-40 flex items-center gap-2"><button id="floatingAiBtn" class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-on-primary shadow-2xl hover:bg-primary-container transition-all text-xs sm:text-sm font-semibold border border-white/20" onclick="switchView('ai-concierge')" title="Open ReadGenius AI Literary Guide"><span class="material-symbols-outlined text-[20px] text-secondary-container">psychology</span><span class="">Ask ReadGenius AI</span><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span></button></div></main>
+
+<!-- SLIDE-OVER READING BAG DRAWER -->
+<div class="fixed inset-0 z-50 pointer-events-none transition-all duration-300" id="readingBagDrawer">
+  <div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-none" id="bagBackdrop" onclick="toggleReadingBag(false)"></div>
+  <aside class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-surface-container-lowest shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto" id="bagPanel">
+    <div class="p-4 flex items-center justify-between bg-surface-container-low border-b border-surface-container">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[24px]">local_mall</span>
+        <h3 class="font-headline-sm text-lg text-primary font-bold">Reading Bag</h3>
+        <span class="px-2 py-0.5 rounded-full bg-primary text-on-primary text-xs font-bold" id="bagItemCountPill">3</span>
+      </div>
+      <button class="p-1 rounded-lg hover:bg-surface-container text-on-surface" onclick="toggleReadingBag(false)">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-3" id="bagItemsContainer">
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-surface-container">
+            <div class="w-12 h-16 rounded overflow-hidden bg-surface-container shrink-0">
+              <img src="https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7" alt="The Midnight Library" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-on-surface truncate">The Midnight Library</h4>
+              <span class="text-[11px] text-outline block">Matt Haig • Hardbound</span>
+              <span class="text-xs font-bold text-primary mt-1 block">$24.00</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <button onclick="updateBagQty(0, -1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">-</button>
+              <span class="text-xs font-bold px-1.5">1</span>
+              <button onclick="updateBagQty(0, 1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">+</button>
+              <button onclick="removeBagItem(0)" class="w-6 h-6 text-error text-xs flex items-center justify-center ml-1">
+                <span class="material-symbols-outlined text-[16px]">delete</span>
+              </button>
+            </div>
+          </div>
+        
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-surface-container">
+            <div class="w-12 h-16 rounded overflow-hidden bg-surface-container shrink-0">
+              <img src="https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY" alt="Atomic Habits" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-on-surface truncate">Atomic Habits</h4>
+              <span class="text-[11px] text-outline block">James Clear • Hardbound</span>
+              <span class="text-xs font-bold text-primary mt-1 block">$21.50</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <button onclick="updateBagQty(1, -1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">-</button>
+              <span class="text-xs font-bold px-1.5">1</span>
+              <button onclick="updateBagQty(1, 1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">+</button>
+              <button onclick="removeBagItem(1)" class="w-6 h-6 text-error text-xs flex items-center justify-center ml-1">
+                <span class="material-symbols-outlined text-[16px]">delete</span>
+              </button>
+            </div>
+          </div>
+        
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-surface-container">
+            <div class="w-12 h-16 rounded overflow-hidden bg-surface-container shrink-0">
+              <img src="https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r" alt="Frieren: Beyond Journey's End" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-on-surface truncate">Frieren: Beyond Journey's End</h4>
+              <span class="text-[11px] text-outline block">Kanehito Yamada • Tankobon</span>
+              <span class="text-xs font-bold text-primary mt-1 block">$15.00</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <button onclick="updateBagQty(2, -1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">-</button>
+              <span class="text-xs font-bold px-1.5">1</span>
+              <button onclick="updateBagQty(2, 1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">+</button>
+              <button onclick="removeBagItem(2)" class="w-6 h-6 text-error text-xs flex items-center justify-center ml-1">
+                <span class="material-symbols-outlined text-[16px]">delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    <div class="p-4 bg-surface-container-low flex flex-col gap-3 border-t border-surface-container">
+      <div class="flex gap-2">
+        <input class="flex-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-sm focus:outline-none focus:ring-1 focus:ring-primary uppercase" id="voucherCodeInput" placeholder="Voucher Code (PAGE25)" type="text">
+        <button class="px-4 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-bold hover:bg-primary-container" onclick="applyVoucher()">Apply</button>
+      </div>
+      <div class="text-xs text-secondary font-semibold hidden" id="voucherAlert">Voucher PAGE25 applied: 25% salon discount!</div>
+      <div class="flex flex-col gap-1.5 text-xs">
+        <div class="flex justify-between text-on-surface-variant">
+          <span class="">Subtotal</span>
+          <span id="bagSubtotalPrice" class="">$60.50</span>
+        </div>
+        <div class="flex justify-between text-secondary hidden" id="bagDiscountRow">
+          <span class="">Archival Privilege (25%)</span>
+          <span id="bagDiscountPrice" class="">-$15.13</span>
+        </div>
+        <div class="flex justify-between text-on-surface-variant">
+          <span class="">White-Glove Shipping</span>
+          <span class="text-tertiary font-semibold">Complimentary</span>
+        </div>
+        <div class="flex justify-between text-on-surface font-bold text-base pt-1 border-t border-surface-container">
+          <span class="">Total</span>
+          <span class="text-primary font-bold" id="bagTotalPrice">$60.50</span>
+        </div>
+      </div>
+      <button class="w-full py-2.5 rounded-xl bg-primary text-on-primary font-bold text-sm hover:bg-primary-container transition-all flex items-center justify-center gap-2 shadow" onclick="openCheckoutModal()">
+        <span class="material-symbols-outlined text-[18px]">lock</span>
+        <span class="">Proceed to Archival Checkout</span>
+      </button>
+    </div>
+  </aside>
+</div>
+
+<!-- BOOK DETAIL MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4" id="bookDetailModal">
+  <div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm" onclick="closeBookModal()"></div>
+  <div class="relative w-full max-w-xl bg-surface-container-lowest rounded-2xl shadow-2xl p-6 z-10 flex flex-col gap-4">
+    <div class="flex justify-between items-center">
+      <span class="px-2 py-0.5 rounded bg-surface-container text-primary font-bold text-xs uppercase" id="modalGenreTag">Fiction</span>
+      <button class="p-1 rounded-lg hover:bg-surface-container text-on-surface" onclick="closeBookModal()">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+      <div class="sm:col-span-4 aspect-[3/4] rounded-xl overflow-hidden bg-surface-container shadow">
+        <img alt="Book Cover" class="w-full h-full object-cover" id="modalBookImage" src="">
+      </div>
+      <div class="sm:col-span-8 flex flex-col gap-1.5">
+        <h2 class="font-headline-lg text-2xl text-primary font-bold" id="modalBookTitle">Title</h2>
+        <span class="text-sm text-on-surface-variant" id="modalBookAuthor">Author</span>
+        <div class="flex items-center gap-3 mt-1">
+          <span class="text-2xl font-bold text-primary" id="modalHardboundPrice">$24.00</span>
+          <span class="text-xs text-outline">Hardbound Folio</span>
+          <span class="text-outline">•</span>
+          <span class="text-xs text-tertiary font-semibold" id="modalDigitalPrice">Digital: $9.99</span>
+        </div>
+      </div>
+    </div>
+    <div class="bg-surface-container-low rounded-xl p-4">
+      <span class="text-xs font-bold text-tertiary uppercase block mb-1">First Chapter Synopsis</span>
+      <p class="text-xs leading-relaxed italic text-on-surface" id="modalBookExcerpt">Excerpt goes here...</p>
+    </div>
+    <div class="flex justify-end gap-2 pt-1">
+      <button class="px-4 py-1.5 rounded-xl bg-surface-container text-xs font-semibold" onclick="closeBookModal()">Close</button>
+      <button class="px-5 py-1.5 rounded-xl bg-primary text-on-primary text-xs font-bold hover:bg-primary-container" id="modalAddToBagBtn">Add Edition to Bag</button>
+    </div>
+  </div>
+</div>
+
+<!-- SIGN IN / JOIN MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4" id="authModal">
+  <div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm" onclick="closeAuthModal()"></div>
+  <div class="relative w-full max-w-md bg-surface-container-lowest rounded-2xl shadow-2xl p-6 z-10 flex flex-col gap-4">
+    <div class="flex justify-between items-center">
+      <div>
+        <h3 class="font-headline-sm text-xl text-primary font-bold">Sign In to PageHaven</h3>
+        <span class="text-xs text-outline">Access your curated folios &amp; reading sanctuary</span>
+      </div>
+      <button class="p-1 rounded-lg hover:bg-surface-container text-on-surface" onclick="closeAuthModal()">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="flex rounded-xl bg-surface-container-low p-1">
+      <button class="flex-1 py-1 rounded-lg bg-primary text-on-primary text-xs font-bold" id="authTabSignIn" onclick="switchAuthMode('signin')">Sign In</button>
+      <button class="flex-1 py-1 rounded-lg text-xs font-medium hover:bg-surface-container" id="authTabRegister" onclick="switchAuthMode('register')">Create Guild Account</button>
+    </div>
+    <form class="flex flex-col gap-3" onsubmit="handleAuthSubmit(event)">
+      <div class="hidden" id="authNameFieldGroup">
+        <label class="block text-xs font-semibold text-on-surface mb-1">Scholar / Reader Name</label>
+        <input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none focus:ring-1 focus:ring-primary" id="authNameInput" placeholder="Julian Thorne" type="text">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-on-surface mb-1">Sanctuary Email</label>
+        <input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none focus:ring-1 focus:ring-primary" required="" type="email" value="reader@pagehaven.org">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-on-surface mb-1">Passphrase</label>
+        <input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none focus:ring-1 focus:ring-primary" required="" type="password" value="arcane1234">
+      </div>
+      <button class="w-full py-2 rounded-xl bg-primary text-on-primary text-xs font-bold hover:bg-primary-container mt-2" id="authSubmitBtn" type="submit">Enter Sanctuary</button>
+    </form>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4" id="checkoutModal">
+  <div class="absolute inset-0 bg-inverse-surface/50 backdrop-blur-sm" onclick="closeCheckoutModal()"></div>
+  <div class="relative w-full max-w-md bg-surface-container-lowest rounded-2xl shadow-2xl p-6 z-10 flex flex-col gap-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-primary text-[22px]">verified_user</span>
+        <h3 class="font-headline-sm text-lg text-primary font-bold">Archival Checkout</h3>
+      </div>
+      <button class="p-1 rounded-lg hover:bg-surface-container" onclick="closeCheckoutModal()">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <form class="flex flex-col gap-3" onsubmit="handleCheckoutSubmit(event)">
+      <div>
+        <label class="block text-xs font-semibold mb-1">Recipient Name</label>
+        <input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none" placeholder="Eleanor Vance" required="" type="text">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold mb-1">Shipping Sanctuary Address</label>
+        <input class="w-full px-3 py-1.5 rounded-lg bg-surface-container-low text-sm focus:outline-none" placeholder="742 Cambridge Way, MA" required="" type="text">
+      </div>
+      <div class="p-3 rounded-xl bg-surface-container-low flex justify-between items-center">
+        <span class="text-xs text-on-surface-variant font-medium">Due Today:</span>
+        <span class="text-lg font-bold text-primary" id="checkoutDueAmount">$60.50</span>
+      </div>
+      <button class="w-full py-2 rounded-xl bg-primary text-on-primary text-xs font-bold hover:bg-primary-container" type="submit">Confirm Order &amp; Dispatch</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  let bagItems = [
+    { title: "The Midnight Library", author: "Matt Haig", price: 24.00, edition: "Hardbound", qty: 1, image: "https://lh3.googleusercontent.com/aida/AEtjO1XPHfc5_wxXw2HuqB1kZQAGT_QDLbNHng7h-TufModVGfPUALzzJotDe0Tm2673HEJ5Ll6hIrLHrMHqP5lymTVjXKyFpsYznnuK8NH225JU1haOaYr9daATjsAeZp0teWq0MFGfat977wa_08RDUkhbHYFamQfupLWekYV6ihhtvuXnWfWXc4sZ1O3f-EpuTkqNuU8dsm-OQK_rTRUtn2gTY-sn2x3Di64_xqysYZZ5LvXtDY7dwB1wIpu7" },
+    { title: "Atomic Habits", author: "James Clear", price: 21.50, edition: "Hardbound", qty: 1, image: "https://lh3.googleusercontent.com/aida/AEtjO1XBxNsWaLfgIgRPE20PTyL0MMuDPmIr7UaeF9jR-eNHLD5YEnCFeXr2-Cq-mszGFBlr1lz7-CXwYw1YyGWDGPL4Jy8IAUzdvy3rP6Cb9uQW9YEE_T0ftRqTEYxYiL1eKkWPKWYFSGK1niBmrnkPDc-L6m_MJWYjYCZSfmXXmMs30FRlHoa4kh6ae2HqjmUQgWL7EOQeUr2KXIOga04CTI-0X53aZuMz6Tlp31PcTpNMVU26sujaGM0NfIdY" },
+    { title: "Frieren: Beyond Journey's End", author: "Kanehito Yamada", price: 15.00, edition: "Tankobon", qty: 1, image: "https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r" }
+  ];
+  let voucherApplied = false;
+
+  function renderBag() {
+    const container = document.getElementById("bagItemsContainer");
+    if (!container) return;
+    container.innerHTML = "";
+    if (bagItems.length === 0) {
+      container.innerHTML = `<div class="p-8 text-center text-outline text-sm">Your reading bag is currently empty.</div>`;
+    } else {
+      bagItems.forEach((item, index) => {
+        container.innerHTML += `
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low border border-surface-container">
+            <div class="w-12 h-16 rounded overflow-hidden bg-surface-container shrink-0">
+              <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-on-surface truncate">${item.title}</h4>
+              <span class="text-[11px] text-outline block">${item.author} • ${item.edition}</span>
+              <span class="text-xs font-bold text-primary mt-1 block">$${(item.price * item.qty).toFixed(2)}</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <button onclick="updateBagQty(${index}, -1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">-</button>
+              <span class="text-xs font-bold px-1.5">${item.qty}</span>
+              <button onclick="updateBagQty(${index}, 1)" class="w-6 h-6 rounded bg-surface-container-lowest text-xs flex items-center justify-center hover:bg-surface-container">+</button>
+              <button onclick="removeBagItem(${index})" class="w-6 h-6 text-error text-xs flex items-center justify-center ml-1">
+                <span class="material-symbols-outlined text-[16px]">delete</span>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    const subtotal = bagItems.reduce((acc, it) => acc + (it.price * it.qty), 0);
+    const count = bagItems.reduce((acc, it) => acc + it.qty, 0);
+    const badge = document.getElementById("shellBagBadge");
+    const countPill = document.getElementById("bagItemCountPill");
+    if (badge) badge.innerText = count;
+    if (countPill) countPill.innerText = count;
+
+    const subtotalEl = document.getElementById("bagSubtotalPrice");
+    if (subtotalEl) subtotalEl.innerText = `$${subtotal.toFixed(2)}`;
+
+    let finalTotal = subtotal;
+    const discountRow = document.getElementById("bagDiscountRow");
+    const discountEl = document.getElementById("bagDiscountPrice");
+    if (voucherApplied) {
+      const discount = subtotal * 0.25;
+      finalTotal = subtotal - discount;
+      if (discountRow) discountRow.classList.remove("hidden");
+      if (discountEl) discountEl.innerText = `-$${discount.toFixed(2)}`;
+    } else {
+      if (discountRow) discountRow.classList.add("hidden");
+    }
+
+    const totalEl = document.getElementById("bagTotalPrice");
+    const dueEl = document.getElementById("checkoutDueAmount");
+    if (totalEl) totalEl.innerText = `$${finalTotal.toFixed(2)}`;
+    if (dueEl) dueEl.innerText = `$${finalTotal.toFixed(2)}`;
+  }
+
+  function updateBagQty(index, delta) {
+    if (bagItems[index]) {
+      bagItems[index].qty += delta;
+      if (bagItems[index].qty <= 0) {
+        bagItems.splice(index, 1);
+      }
+      renderBag();
+    }
+  }
+
+  function removeBagItem(index) {
+    if (bagItems[index]) {
+      const title = bagItems[index].title;
+      bagItems.splice(index, 1);
+      renderBag();
+      showToast(`Removed "${title}" from your bag`);
+    }
+  }
+
+  function addToBag(title, author, price, edition, image) {
+    const existing = bagItems.find(it => it.title === title && it.edition === edition);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      bagItems.push({ title, author, price: parseFloat(price), edition, qty: 1, image });
+    }
+    renderBag();
+    showToast(`Secured "${title}" in your reading bag`);
+    toggleReadingBag(true);
+  }
+
+  function toggleReadingBag(show) {
+    const drawer = document.getElementById("readingBagDrawer");
+    const backdrop = document.getElementById("bagBackdrop");
+    const panel = document.getElementById("bagPanel");
+    if (show) {
+      drawer.classList.remove("pointer-events-none");
+      backdrop.classList.remove("opacity-0", "pointer-events-none");
+      panel.classList.remove("translate-x-full");
+    } else {
+      panel.classList.add("translate-x-full");
+      backdrop.classList.add("opacity-0", "pointer-events-none");
+      setTimeout(() => drawer.classList.add("pointer-events-none"), 300);
+    }
+  }
+
+  function applyVoucher() {
+    const code = document.getElementById("voucherCodeInput").value.trim().toUpperCase();
+    if (code === "PAGE25") {
+      voucherApplied = true;
+      document.getElementById("voucherAlert").classList.remove("hidden");
+      renderBag();
+      showToast("Voucher PAGE25 applied: 25% discount!");
+    } else {
+      showToast("Invalid keycode. Try 'PAGE25'");
+    }
+  }
+
+  function switchView(viewId) {
+    document.querySelectorAll(".view-panel").forEach(p => {
+      p.classList.add("hidden");
+      p.classList.remove("flex");
+    });
+    const target = document.getElementById(`view-${viewId}`);
+    if (target) {
+      target.classList.remove("hidden");
+      target.classList.add("flex");
+    }
+    document.querySelectorAll(".nav-tab").forEach(tab => {
+      if (tab.getAttribute("data-view") === viewId) {
+        tab.className = "nav-tab px-3 py-1 text-sm font-semibold rounded-lg bg-primary-container text-on-primary-container whitespace-nowrap transition-colors";
+      } else {
+        tab.className = "nav-tab px-3 py-1 text-sm font-medium rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors";
+      }
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  let activeModalBook = {};
+  function openBookModal(title, author, price, digPrice, genre, excerpt, image) {
+    activeModalBook = { title, author, price, edition: "Hardbound", image };
+    document.getElementById("modalBookTitle").innerText = title;
+    document.getElementById("modalBookAuthor").innerText = `By ${author}`;
+    document.getElementById("modalHardboundPrice").innerText = `$${price}`;
+    document.getElementById("modalDigitalPrice").innerText = `Digital: $${digPrice}`;
+    document.getElementById("modalGenreTag").innerText = genre;
+    document.getElementById("modalBookExcerpt").innerText = `"${excerpt}"`;
+    document.getElementById("modalBookImage").src = image;
+    document.getElementById("modalAddToBagBtn").onclick = () => {
+      addToBag(title, author, price, "Hardbound", image);
+      closeBookModal();
+    };
+    const modal = document.getElementById("bookDetailModal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function closeBookModal() {
+    const modal = document.getElementById("bookDetailModal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+
+  function openAuthModal() {
+    const m = document.getElementById("authModal");
+    m.classList.remove("hidden");
+    m.classList.add("flex");
+  }
+
+  function closeAuthModal() {
+    const m = document.getElementById("authModal");
+    m.classList.add("hidden");
+    m.classList.remove("flex");
+  }
+
+  function switchAuthMode(mode) {
+    const nameField = document.getElementById("authNameFieldGroup");
+    const submitBtn = document.getElementById("authSubmitBtn");
+    const tSignIn = document.getElementById("authTabSignIn");
+    const tReg = document.getElementById("authTabRegister");
+    if (mode === 'register') {
+      nameField.classList.remove("hidden");
+      submitBtn.innerText = "Register Scholar Account";
+      tReg.className = "flex-1 py-1 rounded-lg bg-primary text-on-primary text-xs font-bold";
+      tSignIn.className = "flex-1 py-1 rounded-lg text-xs font-medium hover:bg-surface-container";
+    } else {
+      nameField.classList.add("hidden");
+      submitBtn.innerText = "Enter Sanctuary";
+      tSignIn.className = "flex-1 py-1 rounded-lg bg-primary text-on-primary text-xs font-bold";
+      tReg.className = "flex-1 py-1 rounded-lg text-xs font-medium hover:bg-surface-container";
+    }
+  }
+
+  function handleAuthSubmit(e) {
+    e.preventDefault();
+    closeAuthModal();
+    const name = document.getElementById("authNameInput")?.value || "Eleanor Vance";
+    const headerBtn = document.getElementById("headerAuthBtn");
+    if (headerBtn) headerBtn.innerText = `${name} (Active)`;
+    showToast(`Welcome to PageHaven, ${name}`);
+  }
+
+  function openCheckoutModal() {
+    toggleReadingBag(false);
+    const m = document.getElementById("checkoutModal");
+    m.classList.remove("hidden");
+    m.classList.add("flex");
+  }
+
+  function closeCheckoutModal() {
+    const m = document.getElementById("checkoutModal");
+    m.classList.add("hidden");
+    m.classList.remove("flex");
+  }
+
+  function handleCheckoutSubmit(e) {
+    e.preventDefault();
+    closeCheckoutModal();
+    bagItems = [];
+    renderBag();
+    showToast("Order Placed! Parcel Folio #PH-98214 generated.");
+  }
+
+  function handleReturnSubmit(e) {
+    e.preventDefault();
+    showToast("Doorstep courier scheduled for pickup tomorrow at 11:00 AM.");
+  }
+
+  function lookupTracking() {
+    showToast("Logistics updated: Parcel PH-89412 on delivery vehicle.");
+  }
+
+  function handleAIChatSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById("aiInputQuery");
+    const val = input.value.trim();
+    if (!val) return;
+    input.value = "";
+    appendChatMessage(val, true);
+    setTimeout(() => {
+      let reply = "I would recommend exploring our 'Story & Fiction' wing—titles like 'One Hundred Years of Solitude' and 'The Shadow of the Wind' share deep atmospheric mystery and gorgeous prose.";
+      if (val.toLowerCase().includes("return") || val.toLowerCase().includes("policy")) {
+        reply = "PageHaven provides a 14-day doorstep return service. Our courier picks up the book directly from your address at zero extra fee.";
+      } else if (val.toLowerCase().includes("comic") || val.toLowerCase().includes("graphic")) {
+        reply = "For graphic novel enthusiasts, 'Watchmen: Deluxe Edition' and Rachel Smythe's 'Lore Olympus' are outstanding choices in our Comics Epics salon.";
+      }
+      appendChatMessage(reply, false);
+    }, 600);
+  }
+
+  function sendAIPrompt(text) {
+    appendChatMessage(text, true);
+    setTimeout(() => {
+      let reply = "A wonderful inquiry. In PageHaven, both 'The Midnight Library' and 'Before the Coffee Gets Cold' delve into parallel possibilities and cherished moments with heartwarming depth.";
+      if (text.includes("return")) {
+        reply = "Our 14-day doorstep return service requires no printing or re-packaging. Simply enter your Folio ID in the Help Care Sanctuary tab.";
+      } else if (text.includes("graphic")) {
+        reply = "We recommend starting with 'Saga: Deluxe Edition' or 'Heartstopper: Volume 1' for memorable character journeys.";
+      }
+      appendChatMessage(reply, false);
+    }, 600);
+  }
+
+  function appendChatMessage(msg, isUser) {
+    const box = document.getElementById("chatDialogueBox");
+    if (!box) return;
+    const div = document.createElement("div");
+    div.className = isUser ? "flex items-start gap-3 justify-end" : "flex items-start gap-3";
+    div.innerHTML = isUser ? `
+      <div class="bg-primary text-on-primary rounded-2xl rounded-tr-none p-3 max-w-xl text-xs font-medium">${msg}</div>
+    ` : `
+      <div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+      </div>
+      <div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs">${msg}</div>
+    `;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function resetAIChat() {
+    const box = document.getElementById("chatDialogueBox");
+    if (box) {
+      box.innerHTML = `
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+          </div>
+          <div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs">
+            <p>Greetings, bibliophile. I am <strong>ReadGenius</strong>, trained on classical publishing archives and PageHaven's current catalog. Ask me for book suggestions, author critiques, or customer support.</p>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  function copyCode(code) {
+    navigator.clipboard?.writeText(code);
+    showToast(`Copied ${code} to clipboard`);
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById("toastNotification");
+    const m = document.getElementById("toastMessage");
+    if (t && m) {
+      m.innerText = msg;
+      t.classList.remove("opacity-0", "translate-y-24");
+      setTimeout(() => t.classList.add("opacity-0", "translate-y-24"), 3000);
+    }
+  }
+
+  function handleSearch(q) {
+    if (!q) return;
+    const lower = q.toLowerCase();
+    if (lower.includes("comic") || lower.includes("lore") || lower.includes("watchmen") || lower.includes("sandman")) {
+      switchView("comics-graphic");
+    } else if (lower.includes("manga") || lower.includes("one piece") || lower.includes("frieren")) {
+      switchView("anime-manga");
+    } else if (lower.includes("fiction") || lower.includes("library") || lower.includes("solitude") || lower.includes("coffee")) {
+      switchView("story-fiction");
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    renderBag();
+  });
+</script>
+
+
+<script class="">(function initReadGeniusAI() { window.scrollChatToBottom = function() { const box = document.getElementById('chatDialogueBox'); if (box) { box.scrollTop = box.scrollHeight; } }; window.appendChatMessage = function(msg, isUser) { const box = document.getElementById('chatDialogueBox'); if (!box) return; const div = document.createElement('div'); div.className = isUser ? 'flex items-start gap-3 justify-end' : 'flex items-start gap-3'; div.innerHTML = isUser ? '<div class="bg-primary text-on-primary rounded-2xl rounded-tr-none p-3 max-w-xl text-xs font-medium leading-relaxed shadow-sm">' + msg + '</div>' : '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs leading-relaxed shadow-sm">' + msg + '</div>'; box.appendChild(div); window.scrollChatToBottom(); }; window.showTypingIndicator = function() { const box = document.getElementById('chatDialogueBox'); if (!box) return null; const indicator = document.createElement('div'); indicator.id = 'aiTypingIndicator'; indicator.className = 'flex items-start gap-3'; indicator.innerHTML = '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">psychology</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none px-3.5 py-2.5 text-on-surface text-xs italic flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] animate-spin text-primary">progress_activity</span><span>ReadGenius is consulting the archive...</span></div>'; box.appendChild(indicator); window.scrollChatToBottom(); return indicator; }; window.removeTypingIndicator = function() { const indicator = document.getElementById('aiTypingIndicator'); if (indicator) indicator.remove(); }; window.generateAIAnswer = function(query) { const q = (query || '').toLowerCase(); if (q.includes('midnight library') || q.includes('philosoph')) { return 'For profound introspective narratives like <em>The Midnight Library</em>, I wholeheartedly recommend Toshikazu Kawaguchi’s <strong>Before the Coffee Gets Cold</strong> (time, regret, and forgiveness) or Kazuo Ishiguro’s <strong>Klara and the Sun</strong> (observational wisdom through artificial eyes).'; } if (q.includes('return') || q.includes('policy') || q.includes('doorstep') || q.includes('exchange')) { return 'PageHaven offers a <strong>14-Day Doorstep Return Sanctuary</strong>. Our courier collects the folio straight from your address with zero repackaging required. You can schedule a pickup directly under our <em>Help Care Sanctuary</em> tab!'; } if (q.includes('graphic') || q.includes('comic') || q.includes('manga') || q.includes('eisner')) { return 'In our Comics &amp; Manga Vault, delve into Neil Gaiman’s <strong>The Sandman: Preludes &amp; Nocturnes</strong> for gothic dreamscapes, Rachel Smythe’s <strong>Lore Olympus Vol 1</strong> for modern mythos, or <strong>Frieren: Beyond Journey’s End</strong> for reflective fantasy.'; } if (q.includes('habit') || q.includes('wisdom') || q.includes('mindset') || q.includes('stoic')) { return 'To elevate cognitive resilience, explore James Clear’s <strong>Atomic Habits</strong> alongside Viktor Frankl’s <strong>Man’s Search for Meaning</strong>—both provide grounded, timeless frameworks for self-mastery.'; } return 'Thank you for consulting PageHaven. Based on our rare collections, I recommend browsing our curated departments or checking out this month’s spotlight folios—each inspected with acid-free archival standards.'; }; window.dispatchAIQuery = function(text) { const trimmed = (text || '').trim(); if (!trimmed) return; window.appendChatMessage(trimmed, true); window.showTypingIndicator(); setTimeout(function() { window.removeTypingIndicator(); const reply = window.generateAIAnswer(trimmed); window.appendChatMessage(reply, false); }, 350); }; window.handleAIChatSubmit = function(e) { if (e && e.preventDefault) e.preventDefault(); const input = document.getElementById('aiInput') || document.getElementById('aiInputQuery'); if (!input) return; const val = input.value.trim(); if (!val) return; input.value = ''; window.dispatchAIQuery(val); }; window.sendAIPrompt = function(text) { const input = document.getElementById('aiInput') || document.getElementById('aiInputQuery'); if (input) input.value = ''; window.dispatchAIQuery(text); }; window.resetAIChat = function() { const box = document.getElementById('chatDialogueBox'); if (box) { box.innerHTML = '<div class="flex items-start gap-3"><div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs"><p>Greetings, bibliophile. I am <strong>ReadGenius</strong>, trained on classical publishing archives and PageHaven\'s current catalog. Ask me for book suggestions, author critiques, or customer support.</p></div></div>'; window.scrollChatToBottom(); } const input = document.getElementById('aiInput') || document.getElementById('aiInputQuery'); if (input) input.value = ''; if (typeof showToast === 'function') { showToast('ReadGenius dialogue reset.'); } }; const form = document.getElementById('aiChatForm'); if (form) { form.addEventListener('submit', window.handleAIChatSubmit); } const sendBtn = document.getElementById('aiSendBtn'); if (sendBtn) { sendBtn.addEventListener('click', window.handleAIChatSubmit); } })();</script><script class="">(function() {
+  window.sendAiMessage = function(userText) {
+    var text = (userText || '').trim();
+    if (!text) return;
+    var box = document.getElementById('chatDialogueBox');
+    if (!box) return;
+
+    var userDiv = document.createElement('div');
+    userDiv.className = 'flex items-start gap-3 justify-end';
+    userDiv.innerHTML = '<div class="bg-primary text-on-primary rounded-2xl rounded-tr-none p-3 max-w-xl text-xs font-medium shadow-sm leading-relaxed">' + text + '</div>';
+    box.appendChild(userDiv);
+    box.scrollTop = box.scrollHeight;
+
+    var indicator = document.createElement('div');
+    indicator.id = 'aiLiveThinkingIndicator';
+    indicator.className = 'flex items-start gap-3';
+    indicator.innerHTML = '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">psychology</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none px-3.5 py-2.5 text-on-surface text-xs italic flex items-center gap-1.5 shadow-sm"><span class="material-symbols-outlined text-[16px] animate-spin text-primary">progress_activity</span><span>ReadGenius is consulting the archive...</span></div>';
+    box.appendChild(indicator);
+    box.scrollTop = box.scrollHeight;
+
+    setTimeout(function() {
+      var activeIndicator = document.getElementById('aiLiveThinkingIndicator');
+      if (activeIndicator) activeIndicator.remove();
+
+      var lower = text.toLowerCase();
+      var reply = '';
+
+      if (lower.includes('midnight') || lower.includes('philosoph') || lower.includes('life')) {
+        reply = '<p class="mb-2">For introspective journeys resonating with <em>The Midnight Library</em>, our Guild curates two exquisite counterparts:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Before the Coffee Gets Cold</strong> by Toshikazu Kawaguchi ($21.00) — A Tokyo cafe where coffee allows heartfelt temporal reconnection.</li><li><strong>Klara and the Sun</strong> by Kazuo Ishiguro ($26.00) — A luminous Nobel Laureate masterpiece on love and humanity.</li></ul><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'story-fiction\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">View Fiction Salon &rarr;</button></div>';
+      } else if (lower.includes('graphic') || lower.includes('comic') || lower.includes('eisner') || lower.includes('manga') || lower.includes('storytelling')) {
+        reply = '<p class="mb-2">Sequential art holds some of modern literature\'s finest triumphs. We highly suggest starting with:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Watchmen: Deluxe Edition</strong> ($29.99) — Alan Moore\'s groundbreaking Hugo-award winning graphic novel.</li><li><strong>Lore Olympus Vol 1</strong> ($22.00) — Rachel Smythe\'s Eisner-award winning divine romance.</li><li><strong>The Sandman: Preludes & Nocturnes</strong> ($26.50) — Neil Gaiman\'s gothic masterpiece.</li></ul><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'comics-graphic\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Browse Comics Salon &rarr;</button></div>';
+      } else if (lower.includes('return') || lower.includes('doorstep') || lower.includes('exchange') || lower.includes('policy')) {
+        reply = '<p class="mb-2">PageHaven operates a complimentary <strong>14-Day Doorstep Return Sanctuary</strong>:</p><p class="mb-2">Our bonded couriers collect folios straight from your doorstep without packaging hassle or printing shipping labels.</p><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'help-care\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Open Return Sanctuary &rarr;</button></div>';
+      } else if (lower.includes('habit') || lower.includes('wisdom') || lower.includes('stoic') || lower.includes('mind')) {
+        reply = '<p class="mb-2">For mental clarity and purposeful living, explore:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Atomic Habits</strong> by James Clear ($21.50) — Transformative compound systems.</li><li><strong>Man\'s Search for Meaning</strong> by Viktor Frankl ($18.50) — Foundational existential psychology.</li></ul><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'wisdom-mind\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Explore Wisdom Wing &rarr;</button></div>';
+      } else {
+        reply = '<p class="mb-1.5">A profound query. PageHaven features archival hardbounds across <strong>Story & Fiction</strong>, <strong>Comics Epics</strong>, <strong>Manga</strong>, and <strong>Wisdom</strong>.</p><p class="mb-2">Try asking for recommendations on parallel lives, graphic epics, or details regarding our 14-day doorstep return service.</p><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'home\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Discover Spotlight Folios &rarr;</button></div>';
+      }
+
+      var aiDiv = document.createElement('div');
+      aiDiv.className = 'flex items-start gap-3';
+      aiDiv.innerHTML = '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs leading-relaxed shadow-sm">' + reply + '</div>';
+      box.appendChild(aiDiv);
+      box.scrollTop = box.scrollHeight;
+    }, 250);
+  };
+
+  window.submitChat = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var input = document.getElementById('aiInput') || document.getElementById('aiInputQuery');
+    if (!input) return;
+    var val = input.value.trim();
+    if (!val) return;
+    input.value = '';
+    window.sendAiMessage(val);
+  };
+
+  window.resetAIChat = function() {
+    var box = document.getElementById('chatDialogueBox');
+    if (box) {
+      box.innerHTML = '<div class="flex items-start gap-3"><div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-sm"><p>Greetings, bibliophile. I am <strong>ReadGenius</strong>, trained on classical publishing archives and PageHaven\'s current catalog. Ask me for book suggestions, author critiques, or customer support.</p></div></div>';
+      box.scrollTop = box.scrollHeight;
+    }
+    var input = document.getElementById('aiInput') || document.getElementById('aiInputQuery');
+    if (input) input.value = '';
+    if (typeof showToast === 'function') {
+      showToast('ReadGenius dialogue reset.');
+    }
+  };
+
+  window.sendAIPrompt = function(text) {
+    var input = document.getElementById('aiInput') || document.getElementById('aiInputQuery');
+    if (input) input.value = '';
+    window.sendAiMessage(text);
+  };
+})();</script><script class="">(function() {
+  window.sendChatMessage = function(customText) {
+    var input = document.getElementById('aiInput');
+    var text = (typeof customText === 'string' && customText.trim()) ? customText.trim() : (input ? input.value.trim() : '');
+    if (!text) return;
+    if (input) input.value = '';
+
+    var box = document.getElementById('chatDialogueBox');
+    if (!box) return;
+
+    var userDiv = document.createElement('div');
+    userDiv.className = 'flex items-start gap-3 justify-end';
+    userDiv.innerHTML = '<div class="bg-primary text-on-primary rounded-2xl rounded-tr-none p-3 max-w-xl text-xs font-medium shadow-sm leading-relaxed">' + text + '</div>';
+    box.appendChild(userDiv);
+    box.scrollTop = box.scrollHeight;
+
+    var indicator = document.createElement('div');
+    indicator.id = 'aiChatMessageIndicator';
+    indicator.className = 'flex items-start gap-3';
+    indicator.innerHTML = '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">psychology</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none px-3.5 py-2.5 text-on-surface text-xs italic flex items-center gap-1.5 shadow-sm"><span class="material-symbols-outlined text-[16px] animate-spin text-primary">progress_activity</span><span>ReadGenius is consulting the archive...</span></div>';
+    box.appendChild(indicator);
+    box.scrollTop = box.scrollHeight;
+
+    setTimeout(function() {
+      var activeInd = document.getElementById('aiChatMessageIndicator');
+      if (activeInd) activeInd.remove();
+
+      var lower = text.toLowerCase();
+      var reply = '';
+
+      if (lower.includes('midnight') || lower.includes('philosoph') || lower.includes('life')) {
+        reply = '<p class="mb-2">For introspective journeys resonating with <em>The Midnight Library</em>, our Guild curates two exquisite counterparts:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Before the Coffee Gets Cold</strong> by Toshikazu Kawaguchi ($21.00) — A Tokyo cafe where coffee allows heartfelt temporal reconnection.</li><li><strong>Klara and the Sun</strong> by Kazuo Ishiguro ($26.00) — A luminous Nobel Laureate masterpiece on love and humanity.</li></ul><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'story-fiction\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">View Fiction Salon &rarr;</button></div>';
+      } else if (lower.includes('graphic') || lower.includes('comic') || lower.includes('eisner') || lower.includes('manga') || lower.includes('storytelling')) {
+        reply = '<p class="mb-2">Sequential art holds some of modern literature\'s finest triumphs. We highly suggest starting with:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Watchmen: Deluxe Edition</strong> ($29.99) — Alan Moore\'s groundbreaking Hugo-award winning graphic novel.</li><li><strong>Lore Olympus Vol 1</strong> ($22.00) — Rachel Smythe\'s Eisner-award winning divine romance.</li><li><strong>The Sandman: Preludes & Nocturnes</strong> ($26.50) — Neil Gaiman\'s gothic masterpiece.</li></ul><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'comics-graphic\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Browse Comics Salon &rarr;</button></div>';
+      } else if (lower.includes('return') || lower.includes('doorstep') || lower.includes('exchange') || lower.includes('policy')) {
+        reply = '<p class="mb-2">PageHaven operates a complimentary <strong>14-Day Doorstep Return Sanctuary</strong>:</p><p class="mb-2">Our bonded couriers collect folios straight from your doorstep without packaging hassle or printing shipping labels.</p><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'help-care\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Open Return Sanctuary &rarr;</button></div>';
+      } else if (lower.includes('habit') || lower.includes('wisdom') || lower.includes('stoic') || lower.includes('mind')) {
+        reply = '<p class="mb-2">For mental clarity and purposeful living, explore:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Atomic Habits</strong> by James Clear ($21.50) — Transformative compound systems.</li><li><strong>Man\'s Search for Meaning</strong> by Viktor Frankl ($18.50) — Foundational existential psychology.</li></ul><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'wisdom-mind\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Explore Wisdom Wing &rarr;</button></div>';
+      } else {
+        reply = '<p class="mb-1.5">A profound inquiry. PageHaven features archival hardbounds across <strong>Story & Fiction</strong>, <strong>Comics Epics</strong>, <strong>Manga</strong>, and <strong>Wisdom</strong>.</p><p class="mb-2">Try asking for recommendations on parallel lives, graphic epics, or details regarding our 14-day doorstep return service.</p><div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container"><button onclick="switchView(\'home\')" class="px-2.5 py-1 rounded-lg bg-primary text-on-primary text-[11px] font-bold hover:bg-primary-container transition-colors">Discover Spotlight Folios &rarr;</button></div>';
+      }
+
+      var aiDiv = document.createElement('div');
+      aiDiv.className = 'flex items-start gap-3';
+      aiDiv.innerHTML = '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs sm:text-sm leading-relaxed shadow-sm">' + reply + '</div>';
+      box.appendChild(aiDiv);
+      box.scrollTop = box.scrollHeight;
+    }, 280);
+  };
+  window.sendAiMessage = window.sendChatMessage;
+  window.sendAIPrompt = window.sendChatMessage;
+  window.submitUserAiChat = function(e) { if (e && e.preventDefault) e.preventDefault(); window.sendChatMessage(); };
+})();</script><script>window.handleAiPrompt = function(promptText) { var input = document.getElementById('aiInput'); if (input) input.value = promptText; window.handleAiSend(); }; window.handleAiReset = function() { var box = document.getElementById('chatDialogueBox'); if (box) { box.innerHTML = '<div class="flex items-start gap-3"><div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs sm:text-sm leading-relaxed"><p>Greetings, bibliophile. I am <strong>ReadGenius</strong>, trained on PageHaven\'s rare archives and canonical publishing records. Click any suggested query above or ask about literary themes, folio editions, or order policies.</p></div></div>'; box.scrollTop = box.scrollHeight; } var input = document.getElementById('aiInput'); if (input) input.value = ''; if (typeof showToast === 'function') showToast('Conversation reset.'); }; window.handleAiSend = function(e) { if (e && e.preventDefault) e.preventDefault(); var input = document.getElementById('aiInput'); if (!input) return; var message = input.value.trim(); if (!message) return; input.value = ''; var box = document.getElementById('chatDialogueBox'); if (!box) return; var userNode = document.createElement('div'); userNode.className = 'flex items-start gap-3 justify-end'; userNode.innerHTML = '<div class="bg-primary text-on-primary rounded-2xl rounded-tr-none p-3 max-w-xl text-xs sm:text-sm font-medium shadow-sm leading-relaxed">' + message + '</div>'; box.appendChild(userNode); box.scrollTop = box.scrollHeight; var typingNode = document.createElement('div'); typingNode.id = 'aiChatIndicator'; typingNode.className = 'flex items-start gap-3'; typingNode.innerHTML = '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[18px]">psychology</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none px-3.5 py-2.5 text-on-surface text-xs italic flex items-center gap-2 shadow-sm"><span class="material-symbols-outlined text-[16px] animate-spin text-primary">progress_activity</span><span>ReadGenius is consulting the archives...</span></div>'; box.appendChild(typingNode); box.scrollTop = box.scrollHeight; setTimeout(function() { var indicator = document.getElementById('aiChatIndicator'); if (indicator) indicator.remove(); var q = message.toLowerCase(); var responseHtml = ''; if (q.includes('midnight') || q.includes('philosoph') || q.includes('life')) { responseHtml = '<p class="mb-2">For deep, introspective journeys echoing <em>The Midnight Library</em>, explore:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Before the Coffee Gets Cold</strong> ($21.00) — A magical Tokyo cafe offering tender temporal reconnection.</li><li><strong>Klara and the Sun</strong> ($26.00) — Kazuo Ishiguro\'s luminous meditation on empathy.</li></ul><button onclick="switchView(\'story-fiction\')" class="mt-1 px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container transition-colors">Browse Fiction Salon &rarr;</button>'; } else if (q.includes('graphic') || q.includes('comic') || q.includes('manga') || q.includes('eisner')) { responseHtml = '<p class="mb-2">Sequential art is rich with literary brilliance. Our foremost recommendations include:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Watchmen: Deluxe Edition</strong> ($29.99) — The definitive graphic novel deconstruction.</li><li><strong>Lore Olympus Vol 1</strong> ($22.00) — Rachel Smythe\'s Eisner-winning mythic romance.</li><li><strong>The Sandman: Preludes</strong> ($26.50) — Neil Gaiman\'s gothic opus.</li></ul><button onclick="switchView(\'comics-graphic\')" class="mt-1 px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container transition-colors">Explore Comics Salon &rarr;</button>'; } else if (q.includes('return') || q.includes('doorstep') || q.includes('policy') || q.includes('exchange')) { responseHtml = '<p class="mb-2">PageHaven features an effortless <strong>14-Day Doorstep Return Sanctuary</strong>:</p><p class="mb-2">Bonded couriers retrieve volumes directly from your doorstep with zero packaging or label printing required.</p><button onclick="switchView(\'help-care\')" class="mt-1 px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container transition-colors">Schedule Courier in Help Care &rarr;</button>'; } else if (q.includes('mindset') || q.includes('habit') || q.includes('wisdom') || q.includes('stoic')) { responseHtml = '<p class="mb-2">For cognitive fortitude and thoughtful living:</p><ul class="list-disc list-inside space-y-1 mb-2"><li><strong>Atomic Habits</strong> by James Clear ($21.50) — Compounding incremental progress.</li><li><strong>Man\'s Search for Meaning</strong> by Viktor Frankl ($18.50) — Unyielding existential purpose.</li></ul><button onclick="switchView(\'wisdom-mind\')" class="mt-1 px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container transition-colors">Visit Wisdom Department &rarr;</button>'; } else { responseHtml = '<p class="mb-2">A splendid bibliophilic inquiry. PageHaven curates museum-quality volumes across <strong>Story & Fiction</strong>, <strong>Comics Epics</strong>, <strong>Anime Manga</strong>, and <strong>Wisdom & Mind</strong>.</p><p class="mb-2">Feel free to ask about our 100% acid-free rag leaves, author backgrounds, or specific department folios!</p><button onclick="switchView(\'home\')" class="mt-1 px-3 py-1 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container transition-colors">View Spotlight Folios &rarr;</button>'; } var aiNode = document.createElement('div'); aiNode.className = 'flex items-start gap-3'; aiNode.innerHTML = '<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><div class="bg-surface-container-low rounded-2xl rounded-tl-none p-3.5 text-on-surface max-w-xl text-xs sm:text-sm leading-relaxed shadow-sm">' + responseHtml + '</div>'; box.appendChild(aiNode); box.scrollTop = box.scrollHeight; }, 320); }; window.sendChatMessage = window.handleAiSend; window.sendAIPrompt = window.handleAiPrompt; window.resetAIChat = window.handleAiReset;</script></body></html>

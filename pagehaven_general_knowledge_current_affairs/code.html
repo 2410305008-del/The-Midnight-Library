@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#fffbff", "secondary-container": "#c3e6e7", "secondary": "#436465", "primary-fixed-dim": "#ffb77d", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "on-tertiary-fixed-variant": "#8a1c10", "on-secondary-fixed-variant": "#2b4c4d", "secondary-fixed-dim": "#aacdce", "on-secondary-container": "#476869", "secondary-fixed": "#c6e9ea", "on-secondary-fixed": "#002021", "surface-tint": "#904d00", "on-primary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#410100", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#6e3900", "surface-container-low": "#f1f3ff", "error": "#ba1a1a", "background": "#faf8ff", "tertiary": "#a83223", "on-error": "#ffffff", "inverse-surface": "#2a303f", "on-primary": "#ffffff", "on-surface-variant": "#554336", "tertiary-container": "#c94a38", "tertiary-fixed": "#ffdad4", "primary-container": "#b15f00", "primary-fixed": "#ffdcc3", "surface-dim": "#d4d9ed", "on-error-container": "#93000a", "on-surface": "#151b29", "surface-variant": "#dde2f6", "surface-container-high": "#e2e8fc", "on-primary-fixed": "#2f1500", "outline": "#887364", "surface-container": "#e9edff", "surface-bright": "#faf8ff", "on-background": "#151b29", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "primary": "#8d4b00", "tertiary-fixed-dim": "#ffb4a8", "inverse-on-surface": "#edf0ff", "outline-variant": "#dbc2b0", "surface-container-highest": "#dde2f6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-sm": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "margin": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": ["Newsreader"], "headline-md": ["Newsreader"], "headline-lg": ["Newsreader"], "display": ["Newsreader"], "label-lg": ["Manrope"], "body-sm": ["Manrope"], "body-lg": ["Manrope"], "display-mobile": ["Newsreader"], "headline-lg-mobile": ["Newsreader"], "label-md": ["Manrope"], "body-md": ["Manrope"], "label-sm": ["Manrope"], "title-editorial": ["Newsreader"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="A beautiful, elegant book logo emblem for PageHaven. An open hardcover book with graceful flowing golden-amber deckled pages, forming an elegant sanctuary arch or beacon of knowledge, minimalist modern vector style with subtle warm amber, gold, and deep ink accents.. Brand logo. - Primary color: #d97706
+- Font: newsreader
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WdjjKZMCJAvODphv46zQPuppr3R2xAaPReWtVmVHiKb6qW0vREn9yjHldgPqAT37ylcxRltUucpugJLmafg3oASFhFFIJ451s2NZ1sIc7IbybFgu4GtGa5a9UGf4j1vceVUwGKeujFvlIKhWMzsrZPWfn2VkCT4fRupYZvY4c04PPmVGptJj5W1XKsUaHIbgBdQ1BDqiXT5W8CF6Fu_9-dsAa_7yXxKmmKslLKjc-wGQjNSub2Ea6r_4I"/><div class="flex flex-col"><span class="font-title-editorial text-title-editorial text-on-surface leading-tight font-semibold tracking-tight">PageHaven</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Browse</span></div></div><div class="flex items-center gap-space-xs"><a class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><a class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="basket-checkout" href="#"><span class="material-symbols-outlined text-[22px]">local_mall</span><span class="absolute top-2 right-2 flex items-center justify-center min-w-[16px] h-4 px-1 bg-primary text-on-primary font-label-sm text-[10px] leading-none rounded-full shadow-[0_0_8px_rgba(217,119,6,0.3)]">3</span></a><a class="w-11 h-11 flex items-center justify-center" data-path="account" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-outline-variant/40 hover:ring-primary transition-all" src="https://lh3.googleusercontent.com/aida/AEtjO1UzMjpsfpPGw1_MRih2mKJi5Kf3BhsToHmoxDKO0jSr0MPNqSvcaR7r7sJFNV1XCNNXWh64Q15AV89QY9N1v2_u9GHJEsqjyhJPnWy-xXcUthR7k0Me6cTYF4WSJn7vE1uyFDyYr2qyah0405fWxI4nmAPJ1ZbSWSPXhyVW5tXmFumPoVatBluuUzjUGOy1sLJ54FqkxutxEyalKIeQdXrqHjr41_3wSpPz3wh5t3Wk2uXuq0ERQT9HRDCT"/></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Toast Notification Banner -->
+<div class="fixed top-18 left-1/2 -translate-x-1/2 z-50 transform -translate-y-20 opacity-0 pointer-events-none transition-all duration-300 w-[90%] max-w-sm bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm" id="toast-notify">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-message">Added to your literary basket</span>
+</div>
+<!-- Main Content Body -->
+<div class="px-gutter-sm flex flex-col gap-space-lg pt-space-sm">
+<!-- Breadcrumb & Curatorial Stamp -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">Dossier Collection</span>
+<span class="text-outline/40">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2025 Edition</span>
+</div>
+<div class="flex items-center gap-1 bg-secondary-container/40 text-on-secondary-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">Editorial Verified</span>
+</div>
+</div>
+<!-- Editorial Spotlight Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-sm">
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs relative z-10">
+<div class="flex items-center gap-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider">Annual Digest</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Global Strategic Analysis</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-headline-md tracking-tight pt-1">
+          2025 General Knowledge &amp; Geopolitical Compendium
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Definitive encyclopedic records, multilateral treaties, sovereign macroeconomic indicators, and competitive examination syllabi curated for scholars and analysts.
+        </p>
+<!-- Search Bar with Literary Input Styling -->
+<div class="mt-space-sm relative flex items-center bg-surface-container-lowest rounded-full shadow-sm">
+<span class="material-symbols-outlined text-outline ml-3 text-[18px]">search</span>
+<input class="w-full bg-transparent py-2.5 pl-2 pr-4 text-on-surface font-body-sm text-body-sm placeholder:italic placeholder:font-title-editorial placeholder:text-outline/70 focus:outline-none" id="catalog-search" placeholder="Search treaties, UPSC 2025, world maps..." type="text"/>
+<button aria-label="Filter options" class="mr-1.5 p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors" id="filter-modal-btn">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Filter Category Chips (Horizontal Scroll) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 -mx-gutter-sm px-gutter-sm">
+<button class="filter-chip active flex-shrink-0 px-3 py-1.5 rounded-full font-label-md text-label-md bg-inverse-surface text-inverse-on-surface transition-all">
+        All Stacks (840)
+      </button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        World Affairs
+      </button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        National &amp; Geopolitics
+      </button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        Civil Services Prep
+      </button>
+<button class="filter-chip flex-shrink-0 px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        Science &amp; Space 2025
+      </button>
+</div>
+<!-- Interactive Format Global Filter Segment -->
+<div class="bg-surface-container-high/60 p-1 rounded-xl flex items-center justify-between gap-1">
+<button class="format-pref active flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-xs transition-all">
+        All Formats
+      </button>
+<button class="format-pref flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all">
+        Hardcopy Vol.
+      </button>
+<button class="format-pref flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all">
+        Digital PDF/ePub
+      </button>
+</div>
+<!-- Publications List Section -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Curated Annual Publications</h2>
+<span class="font-label-sm text-label-sm text-outline">Sorted by Authority</span>
+</div>
+<!-- Book Card 1: Current Affairs Yearbook 2025 -->
+<div class="publication-card bg-surface-container-lowest rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex gap-space-md">
+<!-- Book Cover with realistic binding edge -->
+<div class="relative w-28 h-40 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-md">
+<img alt="Current Affairs Yearbook 2025 by PageCraft Research" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Uh0ppAVA2OwviK9Ft1ETfQmpRF9AwU47HoS_Xh03PQL4_SFgF2n8IIdf9EfsEVzMZ2l0ZxDiiiJhGhZUgdiaS7i-jikEZKwnFNmCNH0BNb6AHIlyfVcZO0rnw1-qP8Uyw16SdLFXtTkT9mO1u-D8UDfjOsJ3Scfo9wdNv2cv9pNO6T0QW_QGIuBHVPBj7hdJX748RJT_QU28G-nNpUCYFbVC0j4u8pALz_PoTRg5Xh9j0AtYMB2b0akzY"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-white/10 to-transparent pointer-events-none"></div>
+<span class="absolute top-1.5 right-1.5 bg-primary text-on-primary font-label-sm text-[9px] px-1.5 py-0.5 rounded-sm font-bold shadow-xs">2025</span>
+</div>
+<!-- Publication Meta -->
+<div class="flex flex-col justify-between flex-grow min-w-0">
+<div>
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="bg-secondary-container/50 text-on-secondary-container font-label-sm text-[10px] px-2 py-0.5 rounded-full font-semibold">Geopolitics Core</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-1.5 py-0.5 rounded-full">Annual Digest</span>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold leading-snug line-clamp-2">
+                Current Affairs Yearbook 2025 &amp; Global Geopolitics
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">By PageCraft Research Desk</p>
+</div>
+<!-- Feature bullets -->
+<div class="flex flex-col gap-0.5 my-1.5 text-outline font-body-sm text-[11px] leading-tight">
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span>World Economy &amp; Trade Corridors</span>
+</div>
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span>Regional Security Pacts &amp; Summits</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-card-1">$18.50</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold" id="format-badge-card-1">Cloth Hardbound</span>
+</div>
+</div>
+</div>
+<!-- Format Selector Pills -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="format-btn active py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-xs transition-all" data-card="1" data-format="hardcopy" data-label="Cloth Hardbound" data-price="$18.50">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Hardbound ($18.50)</span>
+</button>
+<button class="format-btn py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-all" data-card="1" data-format="ebook" data-label="Instant E-Book PDF" data-price="$6.50">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>E-Book ($6.50)</span>
+</button>
+</div>
+<!-- Action CTAs -->
+<div class="flex items-center gap-2">
+<button class="sample-btn flex-1 py-2 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" data-sample="Current Affairs Yearbook 2025">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Sample (15p)</span>
+</button>
+<button class="add-to-cart-btn flex-[1.4] py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-[0.98]" data-format="Hardbound" data-price="18.50" data-title="Current Affairs Yearbook 2025">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Basket</span>
+</button>
+</div>
+</div>
+<!-- Book Card 2: The World Factbook 2025 -->
+<div class="publication-card bg-surface-container-lowest rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex gap-space-md">
+<div class="relative w-28 h-40 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-md">
+<img alt="The World Factbook 2025 Compendium" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VUKF4LnPjmPi5D1emT0oiCDFJp53K2rc29Bz5UPhwaJub8zlMVIWQMLRZdkV8v7EmtlWvwWwpqBlwRmRhDcwtxN8D-TLm-ijCFCe06j7s_Gy9FuXMfZR_YnlkRfYYkxY-8cQNhYNurcvATucElTdSYdLvCTTUNs3w7U2TIwXx8E_bXfB6sTe9Ae3DLEAvPVFCGB_XgBWwZJTjsmqllwx4A02ywBC0rQdMsSr4Y58huiDOjQRITwA4Ebb1q"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-white/10 to-transparent pointer-events-none"></div>
+<span class="absolute top-1.5 right-1.5 bg-tertiary text-on-tertiary font-label-sm text-[9px] px-1.5 py-0.5 rounded-sm font-bold shadow-xs">Bestseller</span>
+</div>
+<div class="flex flex-col justify-between flex-grow min-w-0">
+<div>
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] px-2 py-0.5 rounded-full font-semibold">General Knowledge</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-1.5 py-0.5 rounded-full">Global Profiles</span>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold leading-snug line-clamp-2">
+                The World Factbook &amp; Global Knowledge Compendium 2025
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">International Editorial Stacks</p>
+</div>
+<div class="flex flex-col gap-0.5 my-1.5 text-outline font-body-sm text-[11px] leading-tight">
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>195 Sovereign State Profiles &amp; Flags</span>
+</div>
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Demographics, Energy &amp; Mineral Reserves</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-card-2">$24.00</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold" id="format-badge-card-2">Embossed Hardcover</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="format-btn active py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-xs transition-all" data-card="2" data-format="hardcopy" data-label="Embossed Hardcover" data-price="$24.00">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Hardcover ($24.00)</span>
+</button>
+<button class="format-btn py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-all" data-card="2" data-format="ebook" data-label="Annotated E-Book" data-price="$9.99">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>E-Book ($9.99)</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="sample-btn flex-1 py-2 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" data-sample="The World Factbook 2025">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Sample (20p)</span>
+</button>
+<button class="add-to-cart-btn flex-[1.4] py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-[0.98]" data-format="Hardcover" data-price="24.00" data-title="The World Factbook 2025">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Basket</span>
+</button>
+</div>
+</div>
+<!-- Book Card 3: Ultimate General Knowledge 2025 Master Digest -->
+<div class="publication-card bg-surface-container-lowest rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex gap-space-md">
+<div class="relative w-28 h-40 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-md flex items-center justify-center">
+<div class="w-full h-full p-2 flex flex-col justify-between bg-gradient-to-br from-secondary/80 to-surface-container-highest text-on-secondary">
+<span class="font-label-sm text-[9px] uppercase tracking-wider font-bold">Exam Series</span>
+<div class="my-auto text-center">
+<span class="material-symbols-outlined text-[32px] text-primary-fixed">psychology_alt</span>
+<p class="font-headline-sm text-[13px] leading-tight font-bold mt-1 text-on-secondary">GK MASTER 2025</p>
+</div>
+<span class="font-label-sm text-[8px] text-on-secondary/80 text-center">Oxford Scholar Board</span>
+</div>
+<div class="absolute inset-y-0 left-0 w-2 bg-black/30 pointer-events-none"></div>
+</div>
+<div class="flex flex-col justify-between flex-grow min-w-0">
+<div>
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] px-2 py-0.5 rounded-full font-semibold">Competitive Prep</span>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold leading-snug line-clamp-2">
+                Ultimate General Knowledge 2025 Master Digest
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">By Oxford Scholar Board</p>
+</div>
+<div class="flex flex-col gap-0.5 my-1.5 text-outline font-body-sm text-[11px] leading-tight">
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span>5,000+ Verified Multiple-Choice Sets</span>
+</div>
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span>Chronological Event Milestones</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-card-3">$16.00</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold" id="format-badge-card-3">Standard Print</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="format-btn active py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-xs transition-all" data-card="3" data-format="hardcopy" data-label="Standard Print" data-price="$16.00">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Hardcopy ($16.00)</span>
+</button>
+<button class="format-btn py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-all" data-card="3" data-format="ebook" data-label="Digital Flash-Cards PDF" data-price="$5.00">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>E-Book ($5.00)</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="sample-btn flex-1 py-2 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" data-sample="Ultimate General Knowledge 2025">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Sample (10p)</span>
+</button>
+<button class="add-to-cart-btn flex-[1.4] py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-[0.98]" data-format="Hardcopy" data-price="16.00" data-title="Ultimate General Knowledge 2025">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Basket</span>
+</button>
+</div>
+</div>
+<!-- Book Card 4: Oxford World History & Geopolitical Atlas -->
+<div class="publication-card bg-surface-container-lowest rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex gap-space-md">
+<div class="relative w-28 h-40 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-md flex items-center justify-center">
+<div class="w-full h-full p-2 flex flex-col justify-between bg-gradient-to-br from-primary-container to-surface-dim text-on-primary-container">
+<span class="font-label-sm text-[9px] uppercase tracking-wider font-bold">Cartography</span>
+<div class="my-auto text-center">
+<span class="material-symbols-outlined text-[32px] text-secondary-container">public</span>
+<p class="font-headline-sm text-[12px] leading-tight font-bold mt-1 text-on-primary-container">ATLAS 2025</p>
+</div>
+<span class="font-label-sm text-[8px] text-on-primary-container/80 text-center">Oxford Cartographic</span>
+</div>
+<div class="absolute inset-y-0 left-0 w-2 bg-black/30 pointer-events-none"></div>
+</div>
+<div class="flex flex-col justify-between flex-grow min-w-0">
+<div>
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded-full font-semibold">Annotated Maps</span>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold leading-snug line-clamp-2">
+                Oxford World History &amp; Geopolitical Atlas 2025
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Oxford Cartographic Guild</p>
+</div>
+<div class="flex flex-col gap-0.5 my-1.5 text-outline font-body-sm text-[11px] leading-tight">
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span>Maritime Boundaries &amp; Polar Routes</span>
+</div>
+<div class="flex items-center gap-1 truncate">
+<span class="w-1 h-1 rounded-full bg-primary"></span>
+<span>Historical Boundary Shifts 1945–2025</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="price-card-4">$38.50</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold" id="format-badge-card-4">Folio Hardcover</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="format-btn active py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 bg-surface-container-lowest text-on-surface shadow-xs transition-all" data-card="4" data-format="hardcopy" data-label="Folio Hardcover" data-price="$38.50">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Hardcover ($38.50)</span>
+</button>
+<button class="format-btn py-1.5 px-2 rounded-md font-label-md text-label-md flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-all" data-card="4" data-format="ebook" data-label="High-Res Vector PDF" data-price="$14.00">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Vector PDF ($14.00)</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="sample-btn flex-1 py-2 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" data-sample="Oxford Geopolitical Atlas 2025">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Sample (8p)</span>
+</button>
+<button class="add-to-cart-btn flex-[1.4] py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-[0.98]" data-format="Hardcover" data-price="38.50" data-title="Oxford Geopolitical Atlas 2025">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Basket</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Section: Monthly Affairs Bulletin Subscription -->
+<div class="rounded-xl bg-gradient-to-br from-surface-container-high via-surface-container-low to-surface-container p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[20px]">mark_email_unread</span>
+</div>
+<div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold">Monthly Affairs Bulletin</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Cloud sync to PageHaven library every 1st</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="bulletin-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="bulletin-status-text">
+        Active subscription: Receive 48-page monthly digests with editorial briefings, executive summaries, and AI reader flashcards.
+      </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-md text-label-md text-primary font-semibold">$3.20 / month</span>
+<button class="font-label-sm text-label-sm text-secondary underline" id="manage-sub-btn">Manage Frequency</button>
+</div>
+</div>
+<!-- Interactive Daily Knowledge Quiz Widget -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">quiz</span>
+<h4 class="font-headline-sm text-[17px] text-on-surface font-semibold">Daily GK Knowledge Check</h4>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-container/60 text-on-secondary-container px-2 py-0.5 rounded-full font-bold">+50 Stacks XP</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium pt-1">
+        Which multilateral forum officially welcomed three new sovereign members during the recent Global Economic Summit?
+      </p>
+<div class="flex flex-col gap-2 pt-1" id="quiz-options">
+<button class="quiz-btn w-full text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-[13px] flex items-center justify-between transition-colors" data-correct="false">
+<span>A) ASEAN Development Council</span>
+<span class="status-icon material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+<button class="quiz-btn w-full text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-[13px] flex items-center justify-between transition-colors" data-correct="true">
+<span>B) BRICS Strategic Framework</span>
+<span class="status-icon material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+<button class="quiz-btn w-full text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-[13px] flex items-center justify-between transition-colors" data-correct="false">
+<span>C) Nordic Environmental Union</span>
+<span class="status-icon material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+</div>
+<div class="hidden font-body-sm text-[12px] p-2 rounded-lg bg-secondary-container/40 text-on-secondary-container" id="quiz-feedback">
+<strong>Correct!</strong> In the 2025 session, the geopolitical forum formalized membership for key energy-exporting states, examined in Chapter 4 of the Current Affairs Yearbook.
+      </div>
+</div>
+</div>
+<!-- Slide-out Basket Drawer / Modal Overlay -->
+<div class="fixed inset-0 bg-black/40 z-50 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs" id="cart-drawer-backdrop"></div>
+<div class="fixed bottom-0 left-0 right-0 max-h-[85vh] bg-surface rounded-t-2xl z-50 transform translate-y-full transition-transform duration-300 ease-out flex flex-col shadow-2xl" id="cart-drawer">
+<!-- Drawer Handle & Header -->
+<div class="pt-3 pb-2 px-space-md flex flex-col items-center border-b border-surface-container">
+<div class="w-12 h-1 rounded-full bg-surface-container-highest mb-3"></div>
+<div class="w-full flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">local_mall</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Literary Basket</h3>
+<span class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold" id="drawer-item-count">2 items</span>
+</div>
+<button aria-label="Close basket" class="p-1 rounded-full hover:bg-surface-container text-on-surface-variant" id="close-drawer-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Drawer Content Scroll -->
+<div class="overflow-y-auto p-space-md flex flex-col gap-space-md flex-grow">
+<!-- Item 1 in basket -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg shadow-xs">
+<div class="w-12 h-16 rounded overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Current Affairs Yearbook 2025" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Uh0ppAVA2OwviK9Ft1ETfQmpRF9AwU47HoS_Xh03PQL4_SFgF2n8IIdf9EfsEVzMZ2l0ZxDiiiJhGhZUgdiaS7i-jikEZKwnFNmCNH0BNb6AHIlyfVcZO0rnw1-qP8Uyw16SdLFXtTkT9mO1u-D8UDfjOsJ3Scfo9wdNv2cv9pNO6T0QW_QGIuBHVPBj7hdJX748RJT_QU28G-nNpUCYFbVC0j4u8pALz_PoTRg5Xh9j0AtYMB2b0akzY"/>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<h4 class="font-title-editorial text-[14px] text-on-surface font-semibold truncate">Current Affairs Yearbook 2025</h4>
+<span class="font-label-sm text-label-sm text-secondary">Cloth Hardbound</span>
+<span class="font-headline-sm text-[14px] text-primary font-bold mt-0.5">$18.50</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-2 py-1 rounded-md">
+<button class="cart-qty-minus text-on-surface-variant hover:text-on-surface text-[14px] font-bold">-</button>
+<span class="cart-qty-val font-label-md text-label-md text-on-surface">1</span>
+<button class="cart-qty-plus text-on-surface-variant hover:text-on-surface text-[14px] font-bold">+</button>
+</div>
+</div>
+<!-- Item 2 in basket -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg shadow-xs">
+<div class="w-12 h-16 rounded overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="The World Factbook 2025" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VUKF4LnPjmPi5D1emT0oiCDFJp53K2rc29Bz5UPhwaJub8zlMVIWQMLRZdkV8v7EmtlWvwWwpqBlwRmRhDcwtxN8D-TLm-ijCFCe06j7s_Gy9FuXMfZR_YnlkRfYYkxY-8cQNhYNurcvATucElTdSYdLvCTTUNs3w7U2TIwXx8E_bXfB6sTe9Ae3DLEAvPVFCGB_XgBWwZJTjsmqllwx4A02ywBC0rQdMsSr4Y58huiDOjQRITwA4Ebb1q"/>
+</div>
+<div class="flex flex-col flex-grow min-w-0">
+<h4 class="font-title-editorial text-[14px] text-on-surface font-semibold truncate">The World Factbook 2025</h4>
+<span class="font-label-sm text-label-sm text-secondary">Instant E-Book</span>
+<span class="font-headline-sm text-[14px] text-primary font-bold mt-0.5">$9.99</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-2 py-1 rounded-md">
+<button class="cart-qty-minus text-on-surface-variant hover:text-on-surface text-[14px] font-bold">-</button>
+<span class="cart-qty-val font-label-md text-label-md text-on-surface">1</span>
+<button class="cart-qty-plus text-on-surface-variant hover:text-on-surface text-[14px] font-bold">+</button>
+</div>
+</div>
+<!-- Promo code toggle -->
+<div class="flex items-center gap-2 pt-1">
+<input class="flex-grow bg-surface-container-low px-3 py-2 rounded-lg font-body-sm text-[12px] placeholder:italic focus:outline-none" placeholder="Promo / Institutional Code" type="text"/>
+<button class="px-3 py-2 bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md rounded-lg">Apply</button>
+</div>
+<!-- Summary calculations -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[13px]">
+<div class="flex justify-between text-on-surface-variant">
+<span>Publications Subtotal</span>
+<span>$28.49</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Digital Archival Delivery</span>
+<span class="text-secondary font-medium">Free</span>
+</div>
+<div class="flex justify-between text-on-surface font-bold text-headline-sm text-[16px] pt-1 border-t border-surface-container-highest">
+<span>Estimated Total</span>
+<span class="text-primary">$28.49</span>
+</div>
+</div>
+</div>
+<!-- Checkout Action Footer -->
+<div class="p-space-md bg-surface-container-lowest border-t border-surface-container flex flex-col gap-2 pb-safe">
+<button class="w-full py-3 rounded-lg bg-inverse-surface hover:bg-primary text-inverse-on-surface hover:text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all" id="checkout-action-btn">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Proceed to Secure Checkout ($28.49)</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-outline">
+        Instant cloud syncing to your PageHaven e-reader upon purchase.
+      </p>
+</div>
+</div>
+<!-- Interactive Reader Sample Modal -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" id="sample-modal">
+<div class="bg-surface-container-lowest w-full max-w-sm rounded-xl p-space-md flex flex-col gap-space-sm shadow-2xl">
+<div class="flex items-center justify-between pb-1 border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Previewing Sample</span>
+</div>
+<button class="p-1 rounded-full text-on-surface-variant hover:bg-surface-container" id="close-sample-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-[16px] text-on-surface font-semibold" id="sample-modal-title">Publication Title</h4>
+<span class="font-label-sm text-label-sm text-secondary">Table of Contents &amp; Executive Synthesis</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg max-h-48 overflow-y-auto font-body-sm text-[12px] leading-relaxed text-on-surface-variant">
+<p class="font-serif italic text-on-surface mb-2">"The contemporary global system is characterized by accelerating multipolarity, digital currency treaties, and redefined critical mineral maritime corridors..."</p>
+<ul class="list-disc pl-4 flex flex-col gap-1">
+<li>Chapter 1: Multilateral Strategic Summits 2024–2025</li>
+<li>Chapter 2: Energy Transition Accords &amp; Grid Geopolitics</li>
+<li>Chapter 3: Space Exploration &amp; Orbital Governance</li>
+<li>Appendix: Sovereign Macro Indicators at a Glance</li>
+</ul>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md" id="sample-add-basket-btn">
+          Add Full Edition
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    let basketCount = 2;
+
+    // Toast helper
+    function showToast(message) {
+      const toast = document.getElementById('toast-notify');
+      const toastMsg = document.getElementById('toast-message');
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', '-translate-y-20', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-20', 'pointer-events-none');
+      }, 2600);
+    }
+
+    // Format toggle buttons per card
+    document.querySelectorAll('.format-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const cardId = this.getAttribute('data-card');
+        const price = this.getAttribute('data-price');
+        const label = this.getAttribute('data-label');
+        
+        // Deactivate siblings in this card
+        const siblings = this.parentElement.querySelectorAll('.format-btn');
+        siblings.forEach(b => {
+          b.classList.remove('active', 'bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+          b.classList.add('text-on-surface-variant');
+        });
+        
+        // Activate this button
+        this.classList.add('active', 'bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+        this.classList.remove('text-on-surface-variant');
+
+        // Update card price & label
+        const priceEl = document.getElementById('price-card-' + cardId);
+        const badgeEl = document.getElementById('format-badge-card-' + cardId);
+        if (priceEl) priceEl.textContent = price;
+        if (badgeEl) badgeEl.textContent = label;
+
+        // Update corresponding Add-to-cart button attributes
+        const cardRoot = this.closest('.publication-card');
+        const cartBtn = cardRoot ? cardRoot.querySelector('.add-to-cart-btn') : null;
+        if (cartBtn) {
+          cartBtn.setAttribute('data-price', price.replace('$', ''));
+          cartBtn.setAttribute('data-format', label);
+        }
+      });
+    });
+
+    // Add to Basket Microinteraction
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const title = this.getAttribute('data-title') || 'Compendium';
+        const format = this.getAttribute('data-format') || 'Format';
+        basketCount++;
+
+        // Update header bag counter if present in DOM
+        const shellBadge = document.querySelector('header a[data-path="basket-checkout"] span.rounded-full');
+        if (shellBadge) {
+          shellBadge.textContent = basketCount;
+          shellBadge.classList.add('scale-125');
+          setTimeout(() => shellBadge.classList.remove('scale-125'), 200);
+        }
+
+        const drawerCount = document.getElementById('drawer-item-count');
+        if (drawerCount) {
+          drawerCount.textContent = basketCount + ' items';
+        }
+
+        showToast(`Added ${title} (${format}) to basket!`);
+      });
+    });
+
+    // Drawer opening & closing
+    const cartBackdrop = document.getElementById('cart-drawer-backdrop');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+
+    function openCartDrawer() {
+      if (!cartDrawer || !cartBackdrop) return;
+      cartBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      cartBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+      cartDrawer.classList.remove('translate-y-full');
+      cartDrawer.classList.add('translate-y-0');
+    }
+
+    function closeCartDrawer() {
+      if (!cartDrawer || !cartBackdrop) return;
+      cartBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      cartBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      cartDrawer.classList.add('translate-y-full');
+      cartDrawer.classList.remove('translate-y-0');
+    }
+
+    // Attach click to app shell header cart icon
+    const headerCartBtn = document.querySelector('header a[data-path="basket-checkout"]');
+    if (headerCartBtn) {
+      headerCartBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openCartDrawer();
+      });
+    }
+
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeCartDrawer);
+    if (cartBackdrop) cartBackdrop.addEventListener('click', closeCartDrawer);
+
+    // Filter Chips Toggle
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', function() {
+        document.querySelectorAll('.filter-chip').forEach(c => {
+          c.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+          c.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        this.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+        this.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        showToast('Filtering for: ' + this.textContent.trim());
+      });
+    });
+
+    // Format Preference Segments
+    document.querySelectorAll('.format-pref').forEach(pref => {
+      pref.addEventListener('click', function() {
+        document.querySelectorAll('.format-pref').forEach(p => {
+          p.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+          p.classList.add('text-on-surface-variant');
+        });
+        this.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+        this.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // Sample Modal interactions
+    const sampleModal = document.getElementById('sample-modal');
+    const closeSampleBtn = document.getElementById('close-sample-btn');
+    const sampleModalTitle = document.getElementById('sample-modal-title');
+    const sampleAddBasketBtn = document.getElementById('sample-add-basket-btn');
+
+    document.querySelectorAll('.sample-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const sampleName = this.getAttribute('data-sample');
+        if (sampleModalTitle) sampleModalTitle.textContent = sampleName;
+        if (sampleModal) {
+          sampleModal.classList.remove('opacity-0', 'pointer-events-none');
+          sampleModal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+      });
+    });
+
+    if (closeSampleBtn && sampleModal) {
+      closeSampleBtn.addEventListener('click', function() {
+        sampleModal.classList.add('opacity-0', 'pointer-events-none');
+        sampleModal.classList.remove('opacity-100', 'pointer-events-auto');
+      });
+    }
+
+    if (sampleAddBasketBtn && sampleModal) {
+      sampleAddBasketBtn.addEventListener('click', function() {
+        sampleModal.classList.add('opacity-0', 'pointer-events-none');
+        sampleModal.classList.remove('opacity-100', 'pointer-events-auto');
+        showToast('Full edition placed in basket');
+      });
+    }
+
+    // Daily Quiz Micro-interaction
+    const quizOptions = document.querySelectorAll('.quiz-btn');
+    const quizFeedback = document.getElementById('quiz-feedback');
+
+    quizOptions.forEach(opt => {
+      opt.addEventListener('click', function() {
+        const isCorrect = this.getAttribute('data-correct') === 'true';
+        const icon = this.querySelector('.status-icon');
+
+        quizOptions.forEach(o => {
+          o.disabled = true;
+          o.classList.remove('bg-secondary-container/60', 'bg-error-container/60');
+        });
+
+        if (isCorrect) {
+          this.classList.add('bg-secondary-container/80', 'text-on-secondary-container');
+          if (icon) {
+            icon.textContent = 'check_circle';
+            icon.classList.remove('opacity-0');
+            icon.classList.add('text-secondary', 'opacity-100');
+          }
+        } else {
+          this.classList.add('bg-error-container/50', 'text-on-error-container');
+          if (icon) {
+            icon.textContent = 'cancel';
+            icon.classList.remove('opacity-0');
+            icon.classList.add('text-error', 'opacity-100');
+          }
+        }
+
+        if (quizFeedback) quizFeedback.classList.remove('hidden');
+      });
+    });
+
+    // Bulletin toggle feedback
+    const bulletinToggle = document.getElementById('bulletin-toggle');
+    const bulletinStatusText = document.getElementById('bulletin-status-text');
+    if (bulletinToggle && bulletinStatusText) {
+      bulletinToggle.addEventListener('change', function() {
+        if (this.checked) {
+          bulletinStatusText.textContent = "Active subscription: Receive 48-page monthly digests with editorial briefings, executive summaries, and AI reader flashcards.";
+          showToast('Monthly Bulletin subscription enabled.');
+        } else {
+          bulletinStatusText.textContent = "Subscription paused. You will not receive automated monthly dispatch updates.";
+          showToast('Subscription paused.');
+        }
+      });
+    }
+
+    // Checkout button inside drawer
+    const checkoutBtn = document.getElementById('checkout-action-btn');
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener('click', function() {
+        showToast('Connecting with PageHaven Secure Payment Gateway...');
+        setTimeout(() => closeCartDrawer(), 800);
+      });
+    }
+
+    // Quantity buttons
+    document.querySelectorAll('.cart-qty-plus').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const valSpan = this.parentElement.querySelector('.cart-qty-val');
+        if (valSpan) {
+          let v = parseInt(valSpan.textContent, 10);
+          valSpan.textContent = v + 1;
+        }
+      });
+    });
+
+    document.querySelectorAll('.cart-qty-minus').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const valSpan = this.parentElement.querySelector('.cart-qty-val');
+        if (valSpan) {
+          let v = parseInt(valSpan.textContent, 10);
+          if (v > 1) valSpan.textContent = v - 1;
+        }
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(18,24,38,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">auto_stories</span><span class="font-label-md text-label-md">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-md text-label-md">Browse</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="stacks" href="#"><span class="material-symbols-outlined text-[24px]">collections_bookmark</span><span class="font-label-md text-label-md">Stacks</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="ai-tutor" href="#"><span class="material-symbols-outlined text-[24px]">psychology</span><span class="font-label-md text-label-md">AI Tutor</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="account" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-md text-label-md">Account</span></a></div></nav></body></html>

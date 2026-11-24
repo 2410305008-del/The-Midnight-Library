@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#fffbff", "secondary-container": "#c3e6e7", "secondary": "#436465", "primary-fixed-dim": "#ffb77d", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "on-tertiary-fixed-variant": "#8a1c10", "on-secondary-fixed-variant": "#2b4c4d", "secondary-fixed-dim": "#aacdce", "on-secondary-container": "#476869", "secondary-fixed": "#c6e9ea", "on-secondary-fixed": "#002021", "surface-tint": "#904d00", "on-primary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#410100", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#6e3900", "surface-container-low": "#f1f3ff", "error": "#ba1a1a", "background": "#faf8ff", "tertiary": "#a83223", "on-error": "#ffffff", "inverse-surface": "#2a303f", "on-primary": "#ffffff", "on-surface-variant": "#554336", "tertiary-container": "#c94a38", "tertiary-fixed": "#ffdad4", "primary-container": "#b15f00", "primary-fixed": "#ffdcc3", "surface-dim": "#d4d9ed", "on-error-container": "#93000a", "on-surface": "#151b29", "surface-variant": "#dde2f6", "surface-container-high": "#e2e8fc", "on-primary-fixed": "#2f1500", "outline": "#887364", "surface-container": "#e9edff", "surface-bright": "#faf8ff", "on-background": "#151b29", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "primary": "#8d4b00", "tertiary-fixed-dim": "#ffb4a8", "inverse-on-surface": "#edf0ff", "outline-variant": "#dbc2b0", "surface-container-highest": "#dde2f6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-sm": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "margin": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": ["Newsreader"], "headline-md": ["Newsreader"], "headline-lg": ["Newsreader"], "display": ["Newsreader"], "label-lg": ["Manrope"], "body-sm": ["Manrope"], "body-lg": ["Manrope"], "display-mobile": ["Newsreader"], "headline-lg-mobile": ["Newsreader"], "label-md": ["Manrope"], "body-md": ["Manrope"], "label-sm": ["Manrope"], "title-editorial": ["Newsreader"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="PageHaven logo emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WdjjKZMCJAvODphv46zQPuppr3R2xAaPReWtVmVHiKb6qW0vREn9yjHldgPqAT37ylcxRltUucpugJLmafg3oASFhFFIJ451s2NZ1sIc7IbybFgu4GtGa5a9UGf4j1vceVUwGKeujFvlIKhWMzsrZPWfn2VkCT4fRupYZvY4c04PPmVGptJj5W1XKsUaHIbgBdQ1BDqiXT5W8CF6Fu_9-dsAa_7yXxKmmKslLKjc-wGQjNSub2Ea6r_4I"/><div class="flex flex-col"><span class="font-title-editorial text-title-editorial text-on-surface leading-tight font-semibold tracking-tight">PageHaven</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Comics</span></div></div><div class="flex items-center gap-space-xs"><a class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><a class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="basket-checkout" href="#"><span class="material-symbols-outlined text-[22px]">shopping_basket</span><span class="absolute top-2 right-2 flex items-center justify-center min-w-[16px] h-4 px-1 bg-primary text-on-primary font-label-sm text-[10px] leading-none rounded-full shadow-[0_0_8px_rgba(217,119,6,0.3)]">3</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Toast Notification Container -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-300 transform -translate-y-4 opacity-0 flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-inverse-surface text-inverse-on-surface shadow-xl" id="toast-notification">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-text">Added to your basket</span>
+</div>
+<!-- Section Header -->
+<section class="px-gutter-sm pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[12px]">auto_awesome</span>
+        Illustrated Sanctuary
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">workspace_premium</span>
+        Eisner &amp; Harvey Laureates
+      </span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight mt-1">
+      Comics &amp; Graphic Novels
+    </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      Archival hardcover omnibus editions, legendary indie runs, and high-density digital panel editions.
+    </p>
+</section>
+<!-- Live Search Box -->
+<div class="px-gutter-sm mb-space-sm">
+<div class="relative flex items-center bg-surface-container-high rounded-full px-space-md py-2.5 shadow-sm transition-all focus-within:bg-surface-container-lowest focus-within:shadow-md">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">search</span>
+<input class="w-full bg-transparent border-0 outline-none text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm italic placeholder:font-display-mobile" id="search-input" placeholder="Search comic titles, artists, illustrators..." type="text"/>
+<button class="hidden text-on-surface-variant hover:text-on-surface" id="clear-search">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+</div>
+<!-- Category Pills (Horizontal Scroll) -->
+<div class="w-full overflow-x-auto no-scrollbar px-gutter-sm pb-space-xs flex items-center gap-space-xs">
+<button class="category-pill active whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors bg-on-surface text-surface" data-category="all">
+      All Comics
+    </button>
+<button class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors bg-surface-container text-on-surface-variant hover:bg-surface-container-high" data-category="graphic-novels">
+      Graphic Novels
+    </button>
+<button class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors bg-surface-container text-on-surface-variant hover:bg-surface-container-high" data-category="indie-webtoon">
+      Indie &amp; Webtoon
+    </button>
+<button class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors bg-surface-container text-on-surface-variant hover:bg-surface-container-high" data-category="dark-fantasy">
+      Dark Fantasy
+    </button>
+<button class="category-pill whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-colors bg-surface-container text-on-surface-variant hover:bg-surface-container-high" data-category="superhero-noir">
+      Superhero Noir
+    </button>
+</div>
+<!-- Format Switcher Sub-tabs -->
+<div class="px-gutter-sm mt-space-xs mb-space-md">
+<div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-xl">
+<button class="format-filter flex-1 py-1.5 rounded-lg font-label-sm text-label-sm text-center font-semibold transition-all bg-surface-container-lowest text-on-surface shadow-sm" data-format="all">
+        All Editions (420)
+      </button>
+<button class="format-filter flex-1 py-1.5 rounded-lg font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="hardcover">
+        Hardcover (280)
+      </button>
+<button class="format-filter flex-1 py-1.5 rounded-lg font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="digital">
+        Digital (140)
+      </button>
+</div>
+</div>
+<!-- Featured Spotlight Comic Hero Card -->
+<section class="px-gutter-sm mb-space-lg" id="spotlight-section">
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-md overflow-hidden">
+<!-- Ambient Gradient Glow -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md">
+<!-- Spotlight Book Spine & Cover Display -->
+<div class="relative w-32 shrink-0 aspect-[3/4] rounded-lg overflow-hidden shadow-lg bg-surface-container-high group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial book cover of Lore Olympus by Rachel Smythe. Mythological romance graphic novel in lush watercolor tones of neon pink Persephone and deep midnight blue Hades embraced against an ethereal Greek temple starry backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfu3e9iX9JY-8BjIg3-xBfQxftmSVi1DPEv8RxbAYkl6CTs3DsYP7KnWwjQj2B3YH7D4EoXx_qefTXV4c3Txw5MqR6c21fKKKUo4WmDPJznj9thsBpCq054hGHiaKmpxgCoi7tfFM0aAI-wsuAk5Rd59ZkYYFeNYDCyZDkhhK2OWZFhBAJg0mkZYj5uald96_pMhhfDqHKVbFkVu8XHDaxke0bcA2Xw8NOH1DZDtW5P3L5d7ET9_O2ew"/>
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-black/40 via-black/10 to-transparent pointer-events-none"></div>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-on-surface/85 backdrop-blur-md text-surface font-label-sm text-[9px] uppercase tracking-wider">
+            Spotlight
+          </span>
+</div>
+<!-- Metadata & Accolades -->
+<div class="flex flex-col min-w-0 flex-1 justify-between">
+<div>
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(54k)</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight leading-snug">
+              Lore Olympus: Volume 1
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">by Rachel Smythe</p>
+</div>
+<div class="flex flex-wrap gap-1 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/60 text-secondary font-label-sm text-[10px]">
+              Mythology
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-[10px]">
+              Webtoon Sensation
+            </span>
+</div>
+<div class="mt-2 text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">military_tech</span>
+            Harvey &amp; Eisner Winner
+          </div>
+</div>
+</div>
+<!-- Format Selector Pills for Hero Comic -->
+<div class="comic-card-interactive" data-base-digital="9.99" data-base-hardcover="24.99" data-title="Lore Olympus: Volume 1">
+<div class="flex items-center gap-2 p-1 bg-surface-container rounded-lg mb-space-sm">
+<button class="hero-format-btn flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm text-center font-semibold bg-on-surface text-surface transition-all flex items-center justify-center gap-1.5" data-format="hardcover" data-price="24.99">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+<span>Deluxe Hardcover • $24.99</span>
+</button>
+<button class="hero-format-btn flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm text-center text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1.5" data-format="digital" data-price="9.99">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>Instant Digital • $9.99</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="open-preview-btn flex-1 py-2 px-3 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Preview Issue</span>
+</button>
+<button class="add-to-basket-btn flex-1 py-2 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1 hover:bg-primary-container shadow-sm transition-all" data-format="Hardcover" data-price="24.99" data-title="Lore Olympus: Vol. 1">
+<span class="material-symbols-outlined text-[16px]">shopping_basket</span>
+<span class="hero-action-label">Add to Basket • $24.99</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- PanelSync Digital Reader Banner Promo -->
+<section class="px-gutter-sm mb-space-lg">
+<div class="bg-gradient-to-r from-secondary-container/70 via-surface-container-high to-surface-container p-space-md rounded-xl flex flex-col gap-2 relative overflow-hidden shadow-sm">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-secondary font-bold tracking-tight">PanelSync™ Digital Reader</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Guided loss-free panel transitions &amp; paper grain emulation</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-normal mt-1">
+        Seamlessly sync your reading position between desktop, Kindle, and mobile with lossless page tinting.
+      </p>
+<div class="mt-2 flex items-center justify-between">
+<button class="open-preview-btn px-3 py-1.5 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm font-semibold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[14px]">play_circle</span>
+          Test PanelSync Demo
+        </button>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Included Free</span>
+</div>
+</div>
+</section>
+<!-- Curated Catalog Section -->
+<section class="px-gutter-sm flex flex-col gap-space-md mb-space-xl">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+        Curated Masterworks
+      </h2>
+<span class="font-label-md text-label-md text-primary font-semibold" id="catalog-count">
+        3 Featured
+      </span>
+</div>
+<div class="flex flex-col gap-space-md" id="comic-catalog-list">
+<!-- Comic Item 1: Frieren (IMAGE_14) -->
+<article class="comic-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm" data-category="indie-webtoon dark-fantasy graphic-novels" data-has-digital="true" data-has-hardcover="true">
+<div class="flex gap-space-md items-start">
+<div class="relative w-24 shrink-0 aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-high shadow group">
+<img alt="Frieren: Beyond Journey's End Manga Cover" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XmOC80pyp4M37tBAtR4-yLGVCHUWzvrVNwpT4_AHCr9ol1761MTcKX4zdfVYqBnu2fslk9jtBhivOKVM_pusQkviCeO2EBX6RV7hDqW3_cfT4W5bWNXeVXDaqy4sn4J1bhzp33z3h5RZULkZopVTv7ZVupNybkf-WS9tRPg6qsn6jJHxpqfeIj1_IWjF-qq9nkHMCTkgvm8q1h70TTpzWXfi8vepZF394nOPDk1xv-jTl6c8WCBq3Ez21r"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/30 to-transparent pointer-events-none"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">5.0</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(42k)</span>
+</div>
+<h3 class="font-headline-sm text-[18px] leading-tight text-on-surface font-semibold truncate mt-0.5">
+              Frieren: Beyond Journey's End
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">Kanehito Yamada &amp; Tsukasa Abe</p>
+<div class="flex items-center gap-1.5 mt-2 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-secondary font-label-sm text-[10px]">
+                Fantasy Archive
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">
+                Manga Taisho
+              </span>
+</div>
+</div>
+</div>
+<!-- Format Selector & Action Row -->
+<div class="comic-card-interactive pt-2" data-base-digital="12.99" data-base-hardcover="29.99" data-title="Frieren: Beyond Journey's End">
+<div class="flex items-center gap-2 p-1 bg-surface-container rounded-lg mb-2">
+<button class="catalog-format-btn active flex-1 py-1 px-2 rounded-md font-label-sm text-label-sm font-semibold bg-on-surface text-surface transition-all" data-format="Hardcover" data-price="29.99">
+              Hardcover $29.99
+            </button>
+<button class="catalog-format-btn flex-1 py-1 px-2 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-format="Digital" data-price="12.99">
+              Digital $12.99
+            </button>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant">Selected Price</span>
+<span class="price-display font-title-editorial text-title-editorial font-bold text-primary">$29.99</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="open-preview-btn p-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors" title="Read Preview">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+<button class="add-to-basket-btn py-1.5 px-4 rounded-lg bg-on-surface text-surface font-label-md text-label-md font-semibold hover:bg-primary transition-colors active:scale-95 shadow-xs" data-format="Hardcover" data-price="29.99" data-title="Frieren: Beyond Journey's End">
+                Add to Basket
+              </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Comic Item 2: Batman Long Halloween Noir -->
+<article class="comic-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm" data-category="superhero-noir graphic-novels" data-has-digital="true" data-has-hardcover="true">
+<div class="flex gap-space-md items-start">
+<div class="relative w-24 shrink-0 aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-high shadow group">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Vintage dark noir comic cover art for Batman: The Long Halloween. Dramatic silhouette of the Caped Crusader against rain-slicked Gotham skyscraper gargoyles under pale amber moonlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Vd-MIdBR9raqklHAmaIsm06X4VWkpo_U6_lG6l6UnfGdFR9YQUx-Oid0kbIZ_ySoKoBCz0mqiajIr2BWObqwBU1_Zl9p4G1k3gq4PUxuf1nOeECFkJEALfH8RldBf-1-wCP_BoUBMmL3Ek0nXy4U5uVMpIfuqniugonb_IlHwlW7dlEjyJjs0UJqxYuRUxHRhv_gHj0z7cmJ_g6I0jj8-L1X0_5JufgKPQX6rxbgFdUrg4uinphqVQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/30 to-transparent pointer-events-none"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(68k)</span>
+</div>
+<h3 class="font-headline-sm text-[18px] leading-tight text-on-surface font-semibold truncate mt-0.5">
+              Batman: The Long Halloween
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">Jeph Loeb &amp; Tim Sale</p>
+<div class="flex items-center gap-1.5 mt-2 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-secondary font-label-sm text-[10px]">
+                Crime Noir
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">
+                DC Classic
+              </span>
+</div>
+</div>
+</div>
+<!-- Format Selector & Action Row -->
+<div class="comic-card-interactive pt-2" data-base-digital="8.99" data-base-hardcover="22.00" data-title="Batman: The Long Halloween">
+<div class="flex items-center gap-2 p-1 bg-surface-container rounded-lg mb-2">
+<button class="catalog-format-btn active flex-1 py-1 px-2 rounded-md font-label-sm text-label-sm font-semibold bg-on-surface text-surface transition-all" data-format="Hardcover" data-price="22.00">
+              Hardcover $22.00
+            </button>
+<button class="catalog-format-btn flex-1 py-1 px-2 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-format="Digital" data-price="8.99">
+              Digital $8.99
+            </button>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant">Selected Price</span>
+<span class="price-display font-title-editorial text-title-editorial font-bold text-primary">$22.00</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="open-preview-btn p-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors" title="Read Preview">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+<button class="add-to-basket-btn py-1.5 px-4 rounded-lg bg-on-surface text-surface font-label-md text-label-md font-semibold hover:bg-primary transition-colors active:scale-95 shadow-xs" data-format="Hardcover" data-price="22.00" data-title="Batman: The Long Halloween">
+                Add to Basket
+              </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Comic Item 3: One Piece Wano Climax (IMAGE_15) -->
+<article class="comic-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm" data-category="indie-webtoon dark-fantasy" data-has-digital="true" data-has-hardcover="true">
+<div class="flex gap-space-md items-start">
+<div class="relative w-24 shrink-0 aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-high shadow group">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Japanese manga cover for One Piece Volume 104 Gear 5 Wano Climax by Eiichiro Oda with vibrant Sun God Nika Luffy bursting in laughter over burning Onigashima fortress in warm ink tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pC1mdj9HD7VvLvjaUWutTX0bRxJN-ur79LF_mQA7-nTJtHIuBJjeR4udJc2YHxmBheWYXH8jVQoRpUBqmTHctGx5xoFP6DJUNhyKTjOI4-E5GUpUiuAFVTUi4Z3KbW-U1UzJuxe9gblX1eBCyNWLkXk2b8hdCGTRKYO1vQ0r7DA51bN9JzV4U6Ji-ZHX7HZmMLMfWjjqloc03iZ3JiRb2bHVODghiaxTUJO3WpHa4-mIVj6hWVyfoQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/30 to-transparent pointer-events-none"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(140k)</span>
+</div>
+<h3 class="font-headline-sm text-[18px] leading-tight text-on-surface font-semibold truncate mt-0.5">
+              One Piece: Wano Climax
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">Eiichiro Oda</p>
+<div class="flex items-center gap-1.5 mt-2 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-[10px]">
+                Shonen Jump
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">
+                Gear 5 Edition
+              </span>
+</div>
+</div>
+</div>
+<!-- Format Selector & Action Row -->
+<div class="comic-card-interactive pt-2" data-base-digital="6.99" data-base-hardcover="18.50" data-title="One Piece: Wano Climax">
+<div class="flex items-center gap-2 p-1 bg-surface-container rounded-lg mb-2">
+<button class="catalog-format-btn active flex-1 py-1 px-2 rounded-md font-label-sm text-label-sm font-semibold bg-on-surface text-surface transition-all" data-format="Hardcover" data-price="18.50">
+              Collector $18.50
+            </button>
+<button class="catalog-format-btn flex-1 py-1 px-2 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-format="Digital" data-price="6.99">
+              Digital $6.99
+            </button>
+</div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant">Selected Price</span>
+<span class="price-display font-title-editorial text-title-editorial font-bold text-primary">$18.50</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="open-preview-btn p-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors" title="Read Preview">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+<button class="add-to-basket-btn py-1.5 px-4 rounded-lg bg-on-surface text-surface font-label-md text-label-md font-semibold hover:bg-primary transition-colors active:scale-95 shadow-xs" data-format="Collector" data-price="18.50" data-title="One Piece: Wano Climax">
+                Add to Basket
+              </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Interactive Slide-over Cart Drawer Modal -->
+<div class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0 bg-black/40 backdrop-blur-xs flex justify-end" id="cart-drawer">
+<div class="w-full max-w-sm h-full bg-surface-bright shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto" id="cart-drawer-panel">
+<div class="p-space-md bg-surface-container flex items-center justify-between border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">shopping_basket</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Your Archival Basket</span>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" id="close-cart-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Cart Item List Container -->
+<div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-sm" id="cart-items-container">
+<!-- Initial seeded items -->
+<div class="cart-item flex items-center justify-between p-2.5 bg-surface-container-lowest rounded-lg shadow-xs" data-id="cart-item-1" data-unit-price="24.99">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Lore Olympus: Vol. 1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Format: Deluxe Hardcover</span>
+<span class="item-subtotal font-label-md text-primary font-bold mt-1">$24.99</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container rounded-lg p-1">
+<button class="cart-qty-btn decrease w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface font-bold text-xs">-</button>
+<span class="cart-qty-val font-label-md text-label-md font-bold px-1.5">1</span>
+<button class="cart-qty-btn increase w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface font-bold text-xs">+</button>
+</div>
+</div>
+<div class="cart-item flex items-center justify-between p-2.5 bg-surface-container-lowest rounded-lg shadow-xs" data-id="cart-item-2" data-unit-price="12.99">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Frieren: Beyond Journey's End</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Format: Digital Edition</span>
+<span class="item-subtotal font-label-md text-primary font-bold mt-1">$12.99</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container rounded-lg p-1">
+<button class="cart-qty-btn decrease w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface font-bold text-xs">-</button>
+<span class="cart-qty-val font-label-md text-label-md font-bold px-1.5">1</span>
+<button class="cart-qty-btn increase w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface font-bold text-xs">+</button>
+</div>
+</div>
+</div>
+<!-- Cart Footer / Subtotal -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm shadow-inner">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Packaging &amp; Acid-Free Sleeve</span>
+<span class="font-label-md text-label-md text-secondary font-bold">Complimentary</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-headline-sm text-headline-sm font-semibold">Subtotal</span>
+<span class="font-title-editorial text-[22px] font-bold text-primary" id="cart-drawer-total">$37.98</span>
+</div>
+<button class="w-full py-3 bg-on-surface text-surface rounded-xl font-label-lg text-label-lg font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-md" id="checkout-btn">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Proceed to Archival Checkout</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive PanelSync Preview Reader Modal -->
+<div class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300 bg-inverse-surface/90 backdrop-blur-md flex items-center justify-center p-gutter-sm" id="preview-reader-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300" id="preview-modal-panel">
+<!-- Modal Header -->
+<div class="px-space-md py-3 bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">auto_stories</span>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">PanelSync™ Reader Preview</h4>
+<p class="font-label-sm text-[11px] text-on-surface-variant" id="preview-page-indicator">Panel 1 of 3 • High-Fidelity Preview</p>
+</div>
+</div>
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high" id="close-preview-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Preview Panel Content Carousel -->
+<div class="relative w-full aspect-[4/5] bg-surface-container-highest overflow-hidden flex items-center justify-center">
+<!-- Panel 1 -->
+<div class="preview-slide absolute inset-0 transition-opacity duration-300 opacity-100 flex flex-col items-center justify-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[32px]">menu_book</span>
+</div>
+<span class="font-title-editorial text-[20px] font-bold text-on-surface mb-1">Act I: The Departure</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-3">
+            "A story that spans a century after the hero's demise. Journeying through quiet meadows remembering past fellowship."
+          </p>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-secondary font-label-sm text-label-sm font-semibold">
+            Tone: Melancholic &amp; Poetic
+          </span>
+</div>
+<!-- Panel 2 -->
+<div class="preview-slide absolute inset-0 transition-opacity duration-300 opacity-0 pointer-events-none flex flex-col items-center justify-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-secondary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[32px]">flare</span>
+</div>
+<span class="font-title-editorial text-[20px] font-bold text-on-surface mb-1">Act II: The Spell of Magic</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-3">
+            "The magic of creating a field of rare blue flowers. A spell deemed useless by supreme mages, yet cherished by friends."
+          </p>
+<span class="px-2.5 py-1 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+            Visual Layer: Archival Halftone Print
+          </span>
+</div>
+<!-- Panel 3 -->
+<div class="preview-slide absolute inset-0 transition-opacity duration-300 opacity-0 pointer-events-none flex flex-col items-center justify-center p-6 text-center">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[32px]">favorite</span>
+</div>
+<span class="font-title-editorial text-[20px] font-bold text-on-surface mb-1">Act III: Immortal Remembrance</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-3">
+            "Ten years is merely a blink of an eye for an elf. Yet why did those ten years with Himmel hurt so dearly to recall?"
+          </p>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">
+            End of Sample Excerpt
+          </span>
+</div>
+</div>
+<!-- Preview Reader Nav Controls -->
+<div class="p-space-md bg-surface flex items-center justify-between border-t border-surface-container">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 opacity-50 cursor-not-allowed" id="prev-panel-btn">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="preview-dot w-2 h-2 rounded-full bg-primary"></span>
+<span class="preview-dot w-2 h-2 rounded-full bg-surface-container-highest"></span>
+<span class="preview-dot w-2 h-2 rounded-full bg-surface-container-highest"></span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 hover:bg-primary-container" id="next-panel-btn">
+<span>Next Panel</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Behaviors -->
+<script>
+    (function initComicsVaultInteractions() {
+      // 1. Toast Notification Utility
+      const toast = document.getElementById('toast-notification');
+      const toastText = document.getElementById('toast-text');
+      let toastTimer = null;
+
+      function showToast(message) {
+        if (toastTimer) clearTimeout(toastTimer);
+        toastText.textContent = message;
+        toast.classList.remove('opacity-0', '-translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('opacity-100', 'translate-y-0');
+          toast.classList.add('opacity-0', '-translate-y-4');
+        }, 2200);
+      }
+
+      // 2. Global Basket Sync with Header Counter
+      let basketCount = 3;
+      const headerBasketCountEl = document.querySelector('header a[data-path="basket-checkout"] span.bg-primary');
+
+      function incrementBasket(title) {
+        basketCount += 1;
+        if (headerBasketCountEl) {
+          headerBasketCountEl.textContent = basketCount;
+          headerBasketCountEl.classList.add('scale-125');
+          setTimeout(() => headerBasketCountEl.classList.remove('scale-125'), 200);
+        }
+        showToast('Added ' + title + ' to basket');
+      }
+
+      // 3. Featured Hero Format Switcher
+      const heroFormatBtns = document.querySelectorAll('.hero-format-btn');
+      const heroActionLabel = document.querySelector('.hero-action-label');
+      const heroAddBtn = document.querySelector('.comic-card-interactive .add-to-basket-btn');
+
+      heroFormatBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          heroFormatBtns.forEach(b => {
+            b.classList.remove('bg-on-surface', 'text-surface', 'font-semibold');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-on-surface', 'text-surface', 'font-semibold');
+          btn.classList.remove('text-on-surface-variant');
+
+          const price = btn.dataset.price;
+          const format = btn.dataset.format === 'hardcover' ? 'Deluxe Hardcover' : 'Instant Digital';
+          heroActionLabel.textContent = `Add to Basket • $${price}`;
+          if (heroAddBtn) {
+            heroAddBtn.dataset.price = price;
+            heroAddBtn.dataset.format = format;
+          }
+        });
+      });
+
+      // 4. Catalog Card Format Switchers
+      const catalogCards = document.querySelectorAll('.comic-card');
+      catalogCards.forEach(card => {
+        const formatBtns = card.querySelectorAll('.catalog-format-btn');
+        const priceDisplay = card.querySelector('.price-display');
+        const addBtn = card.querySelector('.add-to-basket-btn');
+
+        formatBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            formatBtns.forEach(b => {
+              b.classList.remove('active', 'bg-on-surface', 'text-surface', 'font-semibold');
+              b.classList.add('text-on-surface-variant');
+            });
+            btn.classList.add('active', 'bg-on-surface', 'text-surface', 'font-semibold');
+            btn.classList.remove('text-on-surface-variant');
+
+            const price = btn.dataset.price;
+            const format = btn.dataset.format;
+            if (priceDisplay) priceDisplay.textContent = `$${price}`;
+            if (addBtn) {
+              addBtn.dataset.price = price;
+              addBtn.dataset.format = format;
+            }
+          });
+        });
+      });
+
+      // 5. 'Add to Basket' buttons handler
+      document.querySelectorAll('.add-to-basket-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const title = btn.dataset.title || 'Comic';
+          const price = parseFloat(btn.dataset.price || '19.99');
+          const format = btn.dataset.format || 'Standard';
+
+          incrementBasket(title);
+          addItemToCartDrawer(title, price, format);
+        });
+      });
+
+      // 6. Category Filtering
+      const categoryPills = document.querySelectorAll('.category-pill');
+      const catalogCount = document.getElementById('catalog-count');
+
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => {
+            p.classList.remove('bg-on-surface', 'text-surface', 'font-semibold');
+            p.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          pill.classList.add('bg-on-surface', 'text-surface', 'font-semibold');
+          pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+          const cat = pill.dataset.category;
+          let visibleCount = 0;
+
+          catalogCards.forEach(card => {
+            const cardCats = card.dataset.category || '';
+            if (cat === 'all' || cardCats.includes(cat)) {
+              card.style.display = 'flex';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (catalogCount) {
+            catalogCount.textContent = `${visibleCount} Title${visibleCount === 1 ? '' : 's'}`;
+          }
+        });
+      });
+
+      // 7. Format Filter Tabs (All / Hardcover / Digital)
+      const formatFilters = document.querySelectorAll('.format-filter');
+      formatFilters.forEach(tab => {
+        tab.addEventListener('click', () => {
+          formatFilters.forEach(t => {
+            t.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+          tab.classList.remove('text-on-surface-variant');
+
+          const fmt = tab.dataset.format;
+          catalogCards.forEach(card => {
+            if (fmt === 'all') {
+              card.style.display = 'flex';
+            } else if (fmt === 'hardcover') {
+              card.style.display = card.dataset.hasHardcover === 'true' ? 'flex' : 'none';
+            } else if (fmt === 'digital') {
+              card.style.display = card.dataset.hasDigital === 'true' ? 'flex' : 'none';
+            }
+          });
+        });
+      });
+
+      // 8. Search Filter
+      const searchInput = document.getElementById('search-input');
+      const clearSearchBtn = document.getElementById('clear-search');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase().trim();
+          if (val.length > 0) {
+            clearSearchBtn.classList.remove('hidden');
+          } else {
+            clearSearchBtn.classList.add('hidden');
+          }
+
+          let matched = 0;
+          catalogCards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (text.includes(val)) {
+              card.style.display = 'flex';
+              matched++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (catalogCount) {
+            catalogCount.textContent = `${matched} Match${matched === 1 ? '' : 'es'}`;
+          }
+        });
+
+        clearSearchBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          clearSearchBtn.classList.add('hidden');
+          catalogCards.forEach(card => card.style.display = 'flex');
+          if (catalogCount) catalogCount.textContent = `${catalogCards.length} Featured`;
+        });
+      }
+
+      // 9. Slide-over Cart Drawer Logic
+      const cartDrawer = document.getElementById('cart-drawer');
+      const cartDrawerPanel = document.getElementById('cart-drawer-panel');
+      const closeCartBtn = document.getElementById('close-cart-btn');
+      const cartItemsContainer = document.getElementById('cart-items-container');
+      const cartDrawerTotal = document.getElementById('cart-drawer-total');
+      const headerCartTrigger = document.querySelector('header a[data-path="basket-checkout"]');
+
+      function openCartDrawer() {
+        cartDrawer.classList.remove('pointer-events-none', 'opacity-0');
+        cartDrawer.classList.add('opacity-100');
+        cartDrawerPanel.classList.remove('translate-x-full');
+        updateCartTotal();
+      }
+
+      function closeCartDrawer() {
+        cartDrawer.classList.add('opacity-0');
+        cartDrawerPanel.classList.add('translate-x-full');
+        setTimeout(() => {
+          cartDrawer.classList.add('pointer-events-none');
+        }, 300);
+      }
+
+      if (headerCartTrigger) {
+        headerCartTrigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          openCartDrawer();
+        });
+      }
+
+      if (closeCartBtn) {
+        closeCartBtn.addEventListener('click', closeCartDrawer);
+      }
+
+      cartDrawer.addEventListener('click', (e) => {
+        if (e.target === cartDrawer) closeCartDrawer();
+      });
+
+      function updateCartTotal() {
+        let total = 0;
+        const items = cartItemsContainer.querySelectorAll('.cart-item');
+        items.forEach(item => {
+          const unitPrice = parseFloat(item.dataset.unitPrice || 0);
+          const qty = parseInt(item.querySelector('.cart-qty-val').textContent || '1');
+          total += unitPrice * qty;
+        });
+        if (cartDrawerTotal) {
+          cartDrawerTotal.textContent = `$${total.toFixed(2)}`;
+        }
+      }
+
+      function attachQtyEvents(itemRow) {
+        const decBtn = itemRow.querySelector('.decrease');
+        const incBtn = itemRow.querySelector('.increase');
+        const qtyEl = itemRow.querySelector('.cart-qty-val');
+        const subtotalEl = itemRow.querySelector('.item-subtotal');
+        const unitPrice = parseFloat(itemRow.dataset.unitPrice);
+
+        incBtn.addEventListener('click', () => {
+          let q = parseInt(qtyEl.textContent);
+          q++;
+          qtyEl.textContent = q;
+          subtotalEl.textContent = `$${(unitPrice * q).toFixed(2)}`;
+          updateCartTotal();
+        });
+
+        decBtn.addEventListener('click', () => {
+          let q = parseInt(qtyEl.textContent);
+          if (q > 1) {
+            q--;
+            qtyEl.textContent = q;
+            subtotalEl.textContent = `$${(unitPrice * q).toFixed(2)}`;
+          } else {
+            itemRow.remove();
+          }
+          updateCartTotal();
+        });
+      }
+
+      document.querySelectorAll('.cart-item').forEach(attachQtyEvents);
+
+      function addItemToCartDrawer(title, price, format) {
+        const itemRow = document.createElement('div');
+        itemRow.className = 'cart-item flex items-center justify-between p-2.5 bg-surface-container-lowest rounded-lg shadow-xs';
+        itemRow.dataset.unitPrice = price;
+        itemRow.innerHTML = `
+          <div class="flex flex-col min-w-0 pr-2">
+            <span class="font-label-md text-label-md text-on-surface font-semibold truncate">${title}</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Format: ${format}</span>
+            <span class="item-subtotal font-label-md text-primary font-bold mt-1">$${price.toFixed(2)}</span>
+          </div>
+          <div class="flex items-center gap-1.5 bg-surface-container rounded-lg p-1">
+            <button class="cart-qty-btn decrease w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface font-bold text-xs">-</button>
+            <span class="cart-qty-val font-label-md text-label-md font-bold px-1.5">1</span>
+            <button class="cart-qty-btn increase w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface font-bold text-xs">+</button>
+          </div>
+        `;
+        cartItemsContainer.prepend(itemRow);
+        attachQtyEvents(itemRow);
+        updateCartTotal();
+      }
+
+      const checkoutBtn = document.getElementById('checkout-btn');
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+          showToast('Navigating to Archival Checkout...');
+          closeCartDrawer();
+        });
+      }
+
+      // 10. PanelSync Preview Reader Modal Logic
+      const previewModal = document.getElementById('preview-reader-modal');
+      const previewModalPanel = document.getElementById('preview-modal-panel');
+      const closePreviewBtn = document.getElementById('close-preview-btn');
+      const prevPanelBtn = document.getElementById('prev-panel-btn');
+      const nextPanelBtn = document.getElementById('next-panel-btn');
+      const pageIndicator = document.getElementById('preview-page-indicator');
+      const slides = document.querySelectorAll('.preview-slide');
+      const dots = document.querySelectorAll('.preview-dot');
+      let currentSlide = 0;
+
+      function updateSlideView() {
+        slides.forEach((s, idx) => {
+          if (idx === currentSlide) {
+            s.classList.remove('opacity-0', 'pointer-events-none');
+            s.classList.add('opacity-100');
+          } else {
+            s.classList.add('opacity-0', 'pointer-events-none');
+            s.classList.remove('opacity-100');
+          }
+        });
+
+        dots.forEach((dot, idx) => {
+          if (idx === currentSlide) {
+            dot.classList.add('bg-primary');
+            dot.classList.remove('bg-surface-container-highest');
+          } else {
+            dot.classList.remove('bg-primary');
+            dot.classList.add('bg-surface-container-highest');
+          }
+        });
+
+        pageIndicator.textContent = `Panel ${currentSlide + 1} of ${slides.length} • High-Fidelity Preview`;
+
+        if (currentSlide === 0) {
+          prevPanelBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+          prevPanelBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        if (currentSlide === slides.length - 1) {
+          nextPanelBtn.innerHTML = '<span>Complete</span><span class="material-symbols-outlined text-[16px]">check</span>';
+        } else {
+          nextPanelBtn.innerHTML = '<span>Next Panel</span><span class="material-symbols-outlined text-[16px]">chevron_right</span>';
+        }
+      }
+
+      function openPreview() {
+        currentSlide = 0;
+        updateSlideView();
+        previewModal.classList.remove('pointer-events-none', 'opacity-0');
+        previewModal.classList.add('opacity-100', 'pointer-events-auto');
+        previewModalPanel.classList.remove('scale-95');
+        previewModalPanel.classList.add('scale-100');
+      }
+
+      function closePreview() {
+        previewModal.classList.remove('opacity-100', 'pointer-events-auto');
+        previewModal.classList.add('opacity-0', 'pointer-events-none');
+        previewModalPanel.classList.remove('scale-100');
+        previewModalPanel.classList.add('scale-95');
+      }
+
+      document.querySelectorAll('.open-preview-btn').forEach(b => {
+        b.addEventListener('click', openPreview);
+      });
+
+      if (closePreviewBtn) closePreviewBtn.addEventListener('click', closePreview);
+      previewModal.addEventListener('click', (e) => {
+        if (e.target === previewModal) closePreview();
+      });
+
+      if (nextPanelBtn) {
+        nextPanelBtn.addEventListener('click', () => {
+          if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            updateSlideView();
+          } else {
+            closePreview();
+            showToast('Preview finished. Ready to read in PanelSync!');
+          }
+        });
+      }
+
+      if (prevPanelBtn) {
+        prevPanelBtn.addEventListener('click', () => {
+          if (currentSlide > 0) {
+            currentSlide--;
+            updateSlideView();
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(18,24,38,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">auto_stories</span><span class="font-label-md text-label-md">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-md text-label-md">Browse</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 transition-colors text-primary font-semibold" data-path="comics" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-md text-label-md">Comics</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="magazines" href="#"><span class="material-symbols-outlined text-[24px]">newspaper</span><span class="font-label-md text-label-md">Magazines</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="account" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-md text-label-md">Account</span></a></div></nav></body></html>

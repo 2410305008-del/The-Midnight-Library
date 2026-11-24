@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#fffbff", "secondary-container": "#c3e6e7", "secondary": "#436465", "primary-fixed-dim": "#ffb77d", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "on-tertiary-fixed-variant": "#8a1c10", "on-secondary-fixed-variant": "#2b4c4d", "secondary-fixed-dim": "#aacdce", "on-secondary-container": "#476869", "secondary-fixed": "#c6e9ea", "on-secondary-fixed": "#002021", "surface-tint": "#904d00", "on-primary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#410100", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#6e3900", "surface-container-low": "#f1f3ff", "error": "#ba1a1a", "background": "#faf8ff", "tertiary": "#a83223", "on-error": "#ffffff", "inverse-surface": "#2a303f", "on-primary": "#ffffff", "on-surface-variant": "#554336", "tertiary-container": "#c94a38", "tertiary-fixed": "#ffdad4", "primary-container": "#b15f00", "primary-fixed": "#ffdcc3", "surface-dim": "#d4d9ed", "on-error-container": "#93000a", "on-surface": "#151b29", "surface-variant": "#dde2f6", "surface-container-high": "#e2e8fc", "on-primary-fixed": "#2f1500", "outline": "#887364", "surface-container": "#e9edff", "surface-bright": "#faf8ff", "on-background": "#151b29", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "primary": "#8d4b00", "tertiary-fixed-dim": "#ffb4a8", "inverse-on-surface": "#edf0ff", "outline-variant": "#dbc2b0", "surface-container-highest": "#dde2f6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-sm": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "gutter-sm": "1rem", "margin": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": ["Newsreader"], "headline-md": ["Newsreader"], "headline-lg": ["Newsreader"], "display": ["Newsreader"], "label-lg": ["Manrope"], "body-sm": ["Manrope"], "body-lg": ["Manrope"], "display-mobile": ["Newsreader"], "headline-lg-mobile": ["Newsreader"], "label-md": ["Manrope"], "body-md": ["Manrope"], "label-sm": ["Manrope"], "title-editorial": ["Newsreader"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="PageHaven logo emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WdjjKZMCJAvODphv46zQPuppr3R2xAaPReWtVmVHiKb6qW0vREn9yjHldgPqAT37ylcxRltUucpugJLmafg3oASFhFFIJ451s2NZ1sIc7IbybFgu4GtGa5a9UGf4j1vceVUwGKeujFvlIKhWMzsrZPWfn2VkCT4fRupYZvY4c04PPmVGptJj5W1XKsUaHIbgBdQ1BDqiXT5W8CF6Fu_9-dsAa_7yXxKmmKslLKjc-wGQjNSub2Ea6r_4I"/><div class="flex flex-col"><span class="font-title-editorial text-title-editorial text-on-surface leading-tight font-semibold tracking-tight">PageHaven</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Magazines</span></div></div><div class="flex items-center gap-space-xs"><a class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><a class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="basket-checkout" href="#"><span class="material-symbols-outlined text-[22px]">shopping_basket</span><span class="absolute top-2 right-2 flex items-center justify-center min-w-[16px] h-4 px-1 bg-primary text-on-primary font-label-sm text-[10px] leading-none rounded-full shadow-[0_0_8px_rgba(217,119,6,0.3)]">3</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Page Editorial Introduction -->
+<section class="px-gutter-sm pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+        Periodical Archive
+      </span>
+<span class="font-label-sm text-on-surface-variant">• Global Print &amp; Instant PDF</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1">
+      Magazines &amp; Periodicals
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+      Leading monthly journals, architectural folios, investigative reportage, and high-fashion editorials printed on archival heavy-stock or streamed instantly.
+    </p>
+</section>
+<!-- Filter & Genre Selection Bar -->
+<section class="w-full px-gutter-sm py-space-xs flex flex-col gap-space-sm">
+<!-- Genre Chips (Scrollable) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1.5 scrollbar-none" id="categoryFilterContainer">
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md transition-all shadow-sm shrink-0 flex items-center gap-1.5" data-category="all">
+<span class="material-symbols-outlined text-[16px]">apps</span>
+        All Issues
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md transition-all shrink-0 flex items-center gap-1.5" data-category="architecture">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+        Architecture &amp; Design
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md transition-all shrink-0 flex items-center gap-1.5" data-category="business">
+<span class="material-symbols-outlined text-[16px]">query_stats</span>
+        Business &amp; Tech
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md transition-all shrink-0 flex items-center gap-1.5" data-category="cinema">
+<span class="material-symbols-outlined text-[16px]">theaters</span>
+        Cinema &amp; Culture
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md transition-all shrink-0 flex items-center gap-1.5" data-category="fashion">
+<span class="material-symbols-outlined text-[16px]">styler</span>
+        High Fashion
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md transition-all shrink-0 flex items-center gap-1.5" data-category="automotive">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+        Automotive
+      </button>
+</div>
+<!-- Sub-Filter: Format Selector Strip -->
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2 rounded-xl text-on-surface-variant">
+<div class="flex items-center gap-1.5 font-label-sm uppercase tracking-wider text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+        Format:
+      </div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm">
+<button class="format-filter-btn px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-semibold shadow-xs" data-format="all">All (185)</button>
+<button class="format-filter-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface" data-format="print">Print Glossy</button>
+<button class="format-filter-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface" data-format="digital">Instant PDF</button>
+</div>
+</div>
+</section>
+<!-- Featured Spotlight: Architectural Sanctuary -->
+<section class="px-gutter-sm my-space-md">
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-md relative overflow-hidden" data-category="architecture" data-id="arch-sanctuary">
+<!-- Top Label Strip -->
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+          Featured Folio of the Month
+        </span>
+<span class="font-label-sm text-on-surface-variant">Vol. 45 • Nov 2024</span>
+</div>
+<!-- Hero Visual + Book Depth Structure -->
+<div class="relative w-full aspect-[3/4] max-h-[380px] rounded-lg overflow-hidden bg-surface-container-high shadow-lg">
+<img alt="Architectural Sanctuary Cover" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Architectural Sanctuary magazine cover showing a minimalist brutalist mountain library with towering floor-to-ceiling dark oak bookshelves, cast-concrete textured walls, warm directional sunlight, and a reader seated at a solid timber table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkUtnq9TNjllsWctBftdAkr2RXvGRVQs0qkuseousb5NQqTEX9T3c_9hxMLqDAmdxdY0s0i3E2l8natxpbiVux6wgHs0E7g08F-x-kZMyRT7xL-vulbvE7XajYk5eEovmz68iERewasRkmImzuvSSw_T92479RttMSaN_O8DO1vGU7WSJUSsQYVFzMUDAoyPBw_8qkabz6Pgd8QhIqcWmU2Dc6nQB2GTMo2nGt5YI7TxYTjAnXFQyHwQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent flex flex-col justify-end p-space-md text-surface-bright">
+<span class="font-label-sm uppercase tracking-widest text-primary-fixed">Special Monograph</span>
+<h2 class="font-headline-md text-headline-md text-surface-container-lowest leading-tight font-serif mt-0.5">
+            BRUTALIST GRACE
+          </h2>
+<p class="font-body-sm text-body-sm text-surface-container-high line-clamp-2 mt-1">
+            The quiet power of warm wood &amp; cast stone: inside a serene alpine reading room and the craft of slow living.
+          </p>
+</div>
+<button class="absolute top-3 right-3 bg-surface-bright/90 backdrop-blur-md text-on-surface p-2 rounded-full shadow-sm hover:text-primary transition-colors" onclick="openFlipbook('Architectural Sanctuary • Issue 45', 'https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&amp;fit=crop&amp;w=800&amp;q=80')" title="Inspect Interactive Flipbook">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</button>
+</div>
+<!-- Metadata & Edition Selection -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-baseline justify-between">
+<div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold">Architectural Sanctuary</h3>
+<span class="font-label-sm text-on-surface-variant">96 Heavy Satin Pages • Acid-Free Offset</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold item-price-display" data-digital="4.99" data-print="9.99">$9.99</span>
+<span class="block font-label-sm text-on-surface-variant edition-note">Print + Free PDF</span>
+</div>
+</div>
+<!-- Format Segmented Switcher -->
+<div class="grid grid-cols-2 gap-1.5 p-1 bg-surface-container rounded-lg">
+<button class="format-toggle-btn active-toggle flex items-center justify-center gap-1.5 py-1.5 rounded-md bg-surface-container-lowest font-label-md text-on-surface shadow-xs transition-all" data-format="print" data-price="9.99">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+            Print Copy ($9.99)
+          </button>
+<button class="format-toggle-btn flex items-center justify-center gap-1.5 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md transition-all" data-format="digital" data-price="4.99">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+            Instant PDF ($4.99)
+          </button>
+</div>
+<!-- Dual CTA -->
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-3 px-4 rounded bg-on-surface text-surface font-label-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm add-cart-btn" data-format="Print Edition" data-price="9.99" data-title="Architectural Sanctuary: Vol 45">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            Add to Basket
+          </button>
+<button class="py-3 px-3.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" onclick="openFlipbook('Architectural Sanctuary • Issue 45')" title="Preview digital excerpt">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- All-Access Periodical Pass Banner -->
+<section class="px-gutter-sm my-space-xs">
+<div class="bg-gradient-to-br from-primary-container via-primary to-on-surface p-space-md rounded-xl text-on-primary shadow-lg flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-bright/20 backdrop-blur-sm text-surface-bright font-label-sm uppercase tracking-wider">
+          All-Access Reader Pass
+        </span>
+<span class="material-symbols-outlined text-primary-fixed text-[26px]">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-surface-bright font-serif">
+          Unlimited Periodical Lounge
+        </h4>
+<p class="font-body-sm text-body-sm text-surface-container-high mt-1 leading-snug">
+          Read over 150+ contemporary monthly publications, architectural issues, and global news digests in lossless digital vector PDF for only $7.99/mo.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="px-4 py-2.5 bg-surface-bright text-primary font-label-md font-bold rounded-lg shadow hover:bg-primary-fixed transition-colors flex items-center gap-1.5" onclick="triggerMembershipModal()">
+<span>Start 14-Day Free Reading Pass</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<span class="font-label-sm text-primary-fixed-dim hidden sm:inline">Cancel Anytime</span>
+</div>
+</div>
+</section>
+<!-- Curated Collection Grid -->
+<section class="px-gutter-sm pt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Trending Periodicals</h2>
+<p class="font-label-sm text-on-surface-variant">Handpicked high-grade releases for this week</p>
+</div>
+<span class="font-label-sm text-primary font-semibold flex items-center gap-0.5 cursor-pointer hover:underline">
+        See All (185) <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+<!-- 2-Column Mobile Magazine Grid -->
+<div class="grid grid-cols-2 gap-space-sm mt-1" id="magazineGrid">
+<!-- Card 1: Cinema Weekly -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between" data-category="cinema" data-id="cinema-weekly">
+<div>
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-high mb-2">
+<img alt="Cinema Weekly Entertainment Magazine" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" data-alt="Cinema Weekly magazine cover featuring a glamorous Hollywood red carpet premiere night with film stars smiling, cameras flashing, and bold red and gold typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfwCLEuw4RFPTAHwL0dUTWEbPqw2Ga6E9GVdK7atO_4m4aBUEeyi9s4kOSHwqGKoLCkH_gqtQNO85l0RcRM4If5O_yn4_1OxWbMC1xNEeVV51cuFXb-A2TZOud41fYeb24Pm4iebbo4b8NFclA-Lt5EN3ivR7xRzPYvZBHTJ-74xNf6c2FW2W9Df8IhapySUu7zXvGYvcLDFXVPnNxGzr6sRtdKYWE5nyrQhQwyaE0O7qFasZ8AuAqAw"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-sm text-primary font-label-sm">
+              Issue 38
+            </span>
+<button class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:text-primary transition-colors shadow" onclick="openFlipbook('Cinema Weekly #38')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+<span class="font-label-sm text-secondary uppercase tracking-wider block">Film Culture</span>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 leading-snug">Cinema Weekly</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">
+            Dune: Part Two epic return, Oscars preview, and exclusive director panels.
+          </p>
+</div>
+<div class="mt-space-sm pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-2">
+<!-- Price and Format Toggle Mini -->
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold item-price-display" data-digital="3.50" data-print="6.99">$6.99</span>
+<span class="font-label-sm text-on-surface-variant format-label">Print Issue</span>
+</div>
+<div class="grid grid-cols-2 gap-1 bg-surface-container-lowest rounded p-0.5 text-center">
+<button class="format-mini-btn active-toggle py-1 rounded text-label-sm font-label-sm bg-surface-container-high font-semibold text-on-surface" data-format="print" data-price="6.99">Print</button>
+<button class="format-mini-btn py-1 rounded text-label-sm font-label-sm text-on-surface-variant" data-format="digital" data-price="3.50">PDF</button>
+</div>
+<button class="w-full py-2 px-2 rounded bg-on-surface text-surface font-label-md font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-1 add-cart-btn" data-format="Print Edition" data-price="6.99" data-title="Cinema Weekly: Dune II">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+            Add
+          </button>
+</div>
+</div>
+<!-- Card 2: Forbes Global Leaders -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between" data-category="business" data-id="forbes-leaders">
+<div>
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-high mb-2">
+<img alt="Forbes Global Leaders Magazine" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" data-alt="Forbes Global Leaders magazine cover showing a confident female international CEO in a tailored navy suit with sparkling city skyline and skyscraper twilight backdrop, bold serif metallic typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO2ebct3iopxLS-blx8dhhM5awpeloQY4UzwtARQWocPFAYAWq8xw_0YL5Vxfa51WBvTcFADa2Q1CYGDABnVwKnd6wZGXR4VSAGguAVJSdzULpSl9d0lFJ059-qHEL2x90p68tI9hNBprT_NqX_I2vzL1KgvopgpUNyHYQW8xIzGUvkjofF3Q1P13UMRqHJXFxUIWlgaWFoCe1vz3cN0LG2gocycsnLJjRvYfWSICQMwcWZxuPVDMF-g"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-sm text-secondary font-label-sm">
+              Global Ed.
+            </span>
+<button class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:text-primary transition-colors shadow" onclick="openFlipbook('Forbes Global Leaders 2024')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+<span class="font-label-sm text-secondary uppercase tracking-wider block">Economics &amp; Tech</span>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 leading-snug">Global Leaders</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">
+            50 visionaries reshaping the world economy, sovereign funds, &amp; frontier AI.
+          </p>
+</div>
+<div class="mt-space-sm pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-2">
+<!-- Price and Format Toggle Mini -->
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold item-price-display" data-digital="3.99" data-print="7.99">$7.99</span>
+<span class="font-label-sm text-on-surface-variant format-label">Print Issue</span>
+</div>
+<div class="grid grid-cols-2 gap-1 bg-surface-container-lowest rounded p-0.5 text-center">
+<button class="format-mini-btn active-toggle py-1 rounded text-label-sm font-label-sm bg-surface-container-high font-semibold text-on-surface" data-format="print" data-price="7.99">Print</button>
+<button class="format-mini-btn py-1 rounded text-label-sm font-label-sm text-on-surface-variant" data-format="digital" data-price="3.99">PDF</button>
+</div>
+<button class="w-full py-2 px-2 rounded bg-on-surface text-surface font-label-md font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-1 add-cart-btn" data-format="Print Edition" data-price="7.99" data-title="Forbes: Global Leaders 2024">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+            Add
+          </button>
+</div>
+</div>
+<!-- Card 3: Supercar Apex -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between" data-category="automotive" data-id="supercar-apex">
+<div>
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-high mb-2">
+<img alt="Supercar Apex Magazine" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Xd0McHYwEKmQnGlVcOwmY3X3J4ol9hwaj3HQjrVimujZOXJFvi5QgihTgPwc0xRXfv6G2WXt-1ULjy0LUoIUBKE4wgLzZtpc_-Nk8inJMAubs_CM04ixnvddpXKL-WbKE0iAu2h9vlIQ43ZTCrAVu0SSFpkdmg4OL5IryKrmabYa6FL6pctyNUALskkkgHLUJAaZBaI6lBxu0hqvuLLmeAHOrXFFeewPERo8GJYXDWWTpgFZv9_akDWx4"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-sm text-tertiary font-label-sm">
+              Quarterly
+            </span>
+<button class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:text-primary transition-colors shadow" onclick="openFlipbook('Supercar Apex • Issue 14')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+<span class="font-label-sm text-secondary uppercase tracking-wider block">Automotive Design</span>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 leading-snug">Supercar Apex</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">
+            Carbon monocoques, aero-sculpted concepts, and coast-to-coast grand tours.
+          </p>
+</div>
+<div class="mt-space-sm pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold item-price-display" data-digital="4.25" data-print="8.50">$8.50</span>
+<span class="font-label-sm text-on-surface-variant format-label">Print Issue</span>
+</div>
+<div class="grid grid-cols-2 gap-1 bg-surface-container-lowest rounded p-0.5 text-center">
+<button class="format-mini-btn active-toggle py-1 rounded text-label-sm font-label-sm bg-surface-container-high font-semibold text-on-surface" data-format="print" data-price="8.50">Print</button>
+<button class="format-mini-btn py-1 rounded text-label-sm font-label-sm text-on-surface-variant" data-format="digital" data-price="4.25">PDF</button>
+</div>
+<button class="w-full py-2 px-2 rounded bg-on-surface text-surface font-label-md font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-1 add-cart-btn" data-format="Print Edition" data-price="8.50" data-title="Supercar Apex: Vol 14">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+            Add
+          </button>
+</div>
+</div>
+<!-- Card 4: Vogue Style -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between" data-category="fashion" data-id="vogue-style">
+<div>
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-high mb-2">
+<img alt="Vogue Style Magazine" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XL8VB9OWKhTwXM_UG6JFexfaEgEY_dXkKJJ4ej_UqKfFew9SrOhucoIgliuRQI-1XIYQGHLmc2mbIhHcrfg7GaVYNToAIF0dPqCQafrHR4PdC9W9bg561Vz8yYi59itctNYU1nGqOjiRr7MelvtXdQzPRs6IzNDfPc_wJRpHKPJ1W47PEfUXw3HH_W82WPfJZ76lJJDrB-Ju63jYV15-tVgtleltmiZmS_Dxmt2tu7Q8I_Ks2oKgaRb0eZ"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-sm text-tertiary-container font-label-sm">
+              Autumn Run
+            </span>
+<button class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-surface-bright/90 backdrop-blur-sm flex items-center justify-center text-on-surface hover:text-primary transition-colors shadow" onclick="openFlipbook('Vogue Style • Haute Autumn')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+<span class="font-label-sm text-secondary uppercase tracking-wider block">Haute Couture</span>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 leading-snug">Vogue Style</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">
+            Architectural silhouettes, silk organza drapery, and Paris fashion diaries.
+          </p>
+</div>
+<div class="mt-space-sm pt-2 bg-surface-container-low rounded-lg p-2 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold item-price-display" data-digital="4.50" data-print="9.00">$9.00</span>
+<span class="font-label-sm text-on-surface-variant format-label">Print Issue</span>
+</div>
+<div class="grid grid-cols-2 gap-1 bg-surface-container-lowest rounded p-0.5 text-center">
+<button class="format-mini-btn active-toggle py-1 rounded text-label-sm font-label-sm bg-surface-container-high font-semibold text-on-surface" data-format="print" data-price="9.00">Print</button>
+<button class="format-mini-btn py-1 rounded text-label-sm font-label-sm text-on-surface-variant" data-format="digital" data-price="4.50">PDF</button>
+</div>
+<button class="w-full py-2 px-2 rounded bg-on-surface text-surface font-label-md font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-1 add-cart-btn" data-format="Print Edition" data-price="9.00" data-title="Vogue Style: Autumn Run">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+            Add
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Reader Care & Archival Pledge Strip -->
+<section class="px-gutter-sm my-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-primary font-semibold">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-label-lg text-label-lg">The PageHaven Periodical Guarantee</span>
+</div>
+<div class="grid grid-cols-1 gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Heavy 120gsm FSC-certified uncoated satin paper on all domestic print shipments.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Instant cloud PDF sync into your PageHaven Reader app immediately upon purchase.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Pristine cardboard-backed unbent protective protective postal wrapping.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Slide-over Cart Drawer -->
+<div class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0 flex justify-end" id="cartDrawer">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-on-surface/40 backdrop-blur-xs transition-opacity" id="cartBackdrop" onclick="toggleCartDrawer(false)"></div>
+<!-- Drawer Panel -->
+<div class="relative w-full max-w-sm bg-surface h-full shadow-2xl flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300 ease-out" id="cartContentPanel">
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">shopping_basket</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Your Reading Bag</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:text-primary" onclick="toggleCartDrawer(false)">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Items List -->
+<div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-sm" id="cartItemsList">
+<!-- Injected via JS -->
+</div>
+<!-- Footer / Totals -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between font-label-md text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-semibold text-on-surface" id="cartSubtotal">$0.00</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-on-surface-variant">
+<span>Domestic Book Mail</span>
+<span class="text-secondary font-semibold">FREE</span>
+</div>
+<div class="flex items-center justify-between font-headline-sm text-headline-sm text-on-surface font-semibold pt-1">
+<span>Total</span>
+<span class="text-primary" id="cartTotal">$0.00</span>
+</div>
+<button class="w-full py-3 rounded bg-on-surface text-surface font-label-lg font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow mt-1" onclick="simulateCheckout()">
+<span>Proceed to Secure Checkout</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Magazine Excerpt Flipbook Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-space-md bg-on-surface/80 backdrop-blur-md" id="flipbookModal">
+<div class="bg-surface rounded-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
+<div class="p-3 bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold truncate" id="flipbookTitle">Issue Flipbook</span>
+</div>
+<button class="p-1 text-on-surface-variant hover:text-primary" onclick="closeFlipbook()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Viewer Body -->
+<div class="relative flex-1 bg-surface-container-lowest p-space-md flex flex-col items-center justify-center min-h-[340px]">
+<div class="w-full aspect-[4/3] rounded bg-surface-container-high shadow-md flex items-center justify-center relative overflow-hidden" id="flipbookPageFrame">
+<div class="text-center p-4">
+<span class="material-symbols-outlined text-primary text-[44px] mb-2 animate-bounce">auto_stories</span>
+<h4 class="font-title-editorial text-title-editorial text-on-surface font-semibold" id="flipbookPageHeading">Double-Page Editorial Spread</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mx-auto mt-1" id="flipbookPageText">
+              "When monolithic concrete meets deep-grain Japanese cypress, the room begins to breathe an ancient hush."
+            </p>
+</div>
+<span class="absolute bottom-2 left-3 font-label-sm text-on-surface-variant" id="pageNumberIndicator">Pages 24 - 25</span>
+</div>
+</div>
+<!-- Flipbook Controls -->
+<div class="p-3 bg-surface-container-low flex items-center justify-between">
+<button class="px-3 py-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md flex items-center gap-1" onclick="flipPage(-1)">
+<span class="material-symbols-outlined text-[16px]">arrow_back_ios</span> Prev
+        </button>
+<span class="font-label-sm text-on-surface-variant">Archival High-Res Preview</span>
+<button class="px-3 py-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md flex items-center gap-1" onclick="flipPage(1)">
+          Next <span class="material-symbols-outlined text-[16px]">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Feedback -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-lg shadow-xl font-label-md flex items-center gap-2 pointer-events-none transition-all duration-300 opacity-0 translate-y-3" id="toastNotification">
+<span class="material-symbols-outlined text-inverse-primary text-[18px]">bookmark_added</span>
+<span id="toastMessage">Added to Basket</span>
+</div>
+</div>
+<script>
+  // Dynamic State
+  let cart = [
+    { title: "Architectural Sanctuary: Vol 45", format: "Print Edition", price: 9.99, qty: 1 }
+  ];
+  let currentPageIndex = 1;
+  const spreadQuotes = [
+    { p: "Cover & Masthead", t: "Exclusive Issue Opener: Modern Craft & Meditative Volumes", pages: "Pages 1 - 2" },
+    { p: "Double-Page Editorial Spread", t: "When monolithic concrete meets deep-grain Japanese cypress, the room begins to breathe an ancient hush.", pages: "Pages 24 - 25" },
+    { p: "Architectural Photogrammetry", t: "Full bled landscape photography over natural mountain rock formations and integrated skylights.", pages: "Pages 48 - 49" },
+    { p: "Thematic Reading Notes", t: "Curator reflections on mid-century timber preservation and modern thermal craftsmanship.", pages: "Pages 72 - 73" }
+  ];
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    bindCategoryFilters();
+    bindFormatToggles();
+    bindBasketButtons();
+    updateCartUI();
+  });
+
+  // Filter Handling
+  function bindCategoryFilters() {
+    const chips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('.magazine-card');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary');
+          c.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        chip.classList.add('bg-primary', 'text-on-primary');
+
+        const category = chip.getAttribute('data-category');
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Sub-format toggle buttons
+    const formatBtns = document.querySelectorAll('.format-filter-btn');
+    formatBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formatBtns.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-xs');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-xs');
+        btn.classList.remove('text-on-surface-variant');
+      });
+    });
+  }
+
+  // Format Toggles on Cards (Print vs Digital pricing)
+  function bindFormatToggles() {
+    // Feature Card Toggles
+    const featureToggles = document.querySelectorAll('.format-toggle-btn');
+    featureToggles.forEach(btn => {
+      btn.addEventListener('click', function() {
+        featureToggles.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+          b.classList.add('text-on-surface-variant');
+        });
+        this.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+        this.classList.remove('text-on-surface-variant');
+
+        const price = this.getAttribute('data-price');
+        const format = this.getAttribute('data-format');
+        const card = this.closest('.magazine-card');
+        const priceDisplay = card.querySelector('.item-price-display');
+        const editionNote = card.querySelector('.edition-note');
+        const cartBtn = card.querySelector('.add-cart-btn');
+
+        priceDisplay.textContent = '$' + price;
+        cartBtn.setAttribute('data-price', price);
+        cartBtn.setAttribute('data-format', format === 'print' ? 'Print Edition' : 'Digital PDF');
+        editionNote.textContent = format === 'print' ? 'Print + Free PDF' : 'Lossless Vector PDF';
+      });
+    });
+
+    // Mini Grid Card Toggles
+    const miniToggles = document.querySelectorAll('.format-mini-btn');
+    miniToggles.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const parent = this.parentElement;
+        parent.querySelectorAll('.format-mini-btn').forEach(b => {
+          b.classList.remove('bg-surface-container-high', 'font-semibold', 'text-on-surface');
+          b.classList.add('text-on-surface-variant');
+        });
+        this.classList.add('bg-surface-container-high', 'font-semibold', 'text-on-surface');
+        this.classList.remove('text-on-surface-variant');
+
+        const format = this.getAttribute('data-format');
+        const price = this.getAttribute('data-price');
+        const card = this.closest('.magazine-card');
+        const priceDisplay = card.querySelector('.item-price-display');
+        const formatLabel = card.querySelector('.format-label');
+        const cartBtn = card.querySelector('.add-cart-btn');
+
+        priceDisplay.textContent = '$' + price;
+        formatLabel.textContent = format === 'print' ? 'Print Issue' : 'Instant PDF';
+        cartBtn.setAttribute('data-price', price);
+        cartBtn.setAttribute('data-format', format === 'print' ? 'Print Edition' : 'Digital PDF');
+      });
+    });
+  }
+
+  // Cart Mechanics
+  function bindBasketButtons() {
+    document.querySelectorAll('.add-cart-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const title = this.getAttribute('data-title');
+        const price = parseFloat(this.getAttribute('data-price'));
+        const format = this.getAttribute('data-format');
+
+        const existing = cart.find(i => i.title === title && i.format === format);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ title, format, price, qty: 1 });
+        }
+
+        showToast(`Added: ${title} (${format})`);
+        updateCartUI();
+        toggleCartDrawer(true);
+      });
+    });
+
+    // Update Header cart counter if present in app shell
+    const shellCartBadge = document.querySelector('header span.bg-primary');
+    if (shellCartBadge) {
+      shellCartBadge.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleCartDrawer(true);
+      });
+    }
+  }
+
+  function updateCartUI() {
+    const list = document.getElementById('cartItemsList');
+    const subtotalEl = document.getElementById('cartSubtotal');
+    const totalEl = document.getElementById('cartTotal');
+    const shellCartBadge = document.querySelector('header span.bg-primary');
+
+    let totalCount = 0;
+    let totalPrice = 0;
+
+    list.innerHTML = '';
+
+    if (cart.length === 0) {
+      list.innerHTML = `
+        <div class="flex flex-col items-center justify-center py-12 text-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[48px] text-surface-dim mb-2">production_quantity_limits</span>
+          <span class="font-title-editorial text-title-editorial font-semibold text-on-surface">Your Reading Bag is Quiet</span>
+          <span class="font-body-sm text-body-sm max-w-xs mt-1">Explore our latest architectural monographs and cultural reportage.</span>
+        </div>
+      `;
+    } else {
+      cart.forEach((item, index) => {
+        totalCount += item.qty;
+        totalPrice += item.price * item.qty;
+
+        const row = document.createElement('div');
+        row.className = 'flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest shadow-xs';
+        row.innerHTML = `
+          <div class="flex flex-col max-w-[190px]">
+            <span class="font-title-editorial text-[14px] text-on-surface font-semibold leading-snug">${item.title}</span>
+            <span class="font-label-sm text-secondary">${item.format} • $${item.price.toFixed(2)}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center bg-surface-container rounded px-1.5 py-0.5">
+              <button class="text-on-surface font-bold px-1" onclick="adjustQty(${index}, -1)">-</button>
+              <span class="font-label-sm font-bold px-1.5">${item.qty}</span>
+              <button class="text-on-surface font-bold px-1" onclick="adjustQty(${index}, 1)">+</button>
+            </div>
+            <button class="text-on-surface-variant hover:text-error" onclick="removeItem(${index})">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    subtotalEl.textContent = '$' + totalPrice.toFixed(2);
+    totalEl.textContent = '$' + totalPrice.toFixed(2);
+
+    if (shellCartBadge) {
+      shellCartBadge.textContent = totalCount;
+    }
+  }
+
+  function adjustQty(index, change) {
+    if (!cart[index]) return;
+    cart[index].qty += change;
+    if (cart[index].qty <= 0) {
+      cart.splice(index, 1);
+    }
+    updateCartUI();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    updateCartUI();
+  }
+
+  function toggleCartDrawer(open) {
+    const drawer = document.getElementById('cartDrawer');
+    const panel = document.getElementById('cartContentPanel');
+    if (open) {
+      drawer.classList.remove('opacity-0', 'pointer-events-none');
+      panel.classList.remove('translate-x-full');
+    } else {
+      drawer.classList.add('opacity-0', 'pointer-events-none');
+      panel.classList.add('translate-x-full');
+    }
+  }
+
+  // Flipbook Modal
+  function openFlipbook(title) {
+    document.getElementById('flipbookTitle').textContent = title || 'Issue Excerpt';
+    currentPageIndex = 1;
+    renderSpread();
+    const modal = document.getElementById('flipbookModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeFlipbook() {
+    const modal = document.getElementById('flipbookModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function flipPage(direction) {
+    currentPageIndex += direction;
+    if (currentPageIndex < 0) currentPageIndex = 0;
+    if (currentPageIndex >= spreadQuotes.length) currentPageIndex = spreadQuotes.length - 1;
+    renderSpread();
+  }
+
+  function renderSpread() {
+    const current = spreadQuotes[currentPageIndex];
+    document.getElementById('flipbookPageHeading').textContent = current.p;
+    document.getElementById('flipbookPageText').textContent = `"${current.t}"`;
+    document.getElementById('pageNumberIndicator').textContent = current.pages;
+  }
+
+  // Toast feedback
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const msgEl = document.getElementById('toastMessage');
+    msgEl.textContent = msg;
+    toast.classList.remove('opacity-0', 'translate-y-3');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-3');
+    }, 2800);
+  }
+
+  function triggerMembershipModal() {
+    showToast("14-Day Free Reading Pass activated! Enjoy unlimited access.");
+  }
+
+  function simulateCheckout() {
+    if (cart.length === 0) {
+      showToast("Your reading bag is currently empty.");
+      return;
+    }
+    showToast("Opening Secure Editorial Dispatch Checkout...");
+    setTimeout(() => {
+      toggleCartDrawer(false);
+    }, 1200);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(18,24,38,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">auto_stories</span><span class="font-label-md text-label-md">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-md text-label-md">Browse</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="comics" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-md text-label-md">Comics</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 transition-colors text-primary font-semibold" data-path="magazines" href="#"><span class="material-symbols-outlined text-[24px]">newspaper</span><span class="font-label-md text-label-md">Magazines</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-full gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="account" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-md text-label-md">Account</span></a></div></nav></body></html>

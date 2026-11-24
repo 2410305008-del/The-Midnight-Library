@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#edf0ff", "on-secondary-fixed": "#002021", "surface-dim": "#d4d9ed", "surface": "#faf8ff", "surface-tint": "#904d00", "secondary": "#436465", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#2b4c4d", "secondary-fixed": "#c6e9ea", "on-secondary": "#ffffff", "outline-variant": "#dbc2b0", "on-tertiary-container": "#fffbff", "primary": "#8d4b00", "on-error": "#ffffff", "on-primary-fixed": "#2f1500", "on-secondary-container": "#476869", "surface-variant": "#dde2f6", "tertiary-fixed": "#ffdad4", "tertiary-fixed-dim": "#ffb4a8", "secondary-fixed-dim": "#aacdce", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#8a1c10", "background": "#faf8ff", "surface-container-low": "#f1f3ff", "primary-fixed": "#ffdcc3", "tertiary-container": "#c94a38", "tertiary": "#a83223", "on-primary-container": "#fffbff", "outline": "#887364", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "inverse-surface": "#2a303f", "on-surface-variant": "#554336", "on-primary-fixed-variant": "#6e3900", "inverse-primary": "#ffb77d", "primary-container": "#b15f00", "on-surface": "#151b29", "on-background": "#151b29", "primary-fixed-dim": "#ffb77d", "surface-container-high": "#e2e8fc", "surface-container-highest": "#dde2f6", "error": "#ba1a1a", "surface-bright": "#faf8ff", "on-tertiary-fixed": "#410100", "secondary-container": "#c3e6e7", "surface-container": "#e9edff", "on-primary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.5rem", "margin": "2.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "margin-sm": "1rem", "space-sm": "0.5rem", "gutter-sm": "1rem" }, "fontFamily": { "label-lg": ["Manrope"], "label-sm": ["Manrope"], "headline-lg-mobile": ["Newsreader"], "display": ["Newsreader"], "headline-sm": ["Newsreader"], "label-md": ["Manrope"], "display-mobile": ["Newsreader"], "title-editorial": ["Newsreader"], "body-md": ["Manrope"], "headline-md": ["Newsreader"], "headline-lg": ["Newsreader"], "body-sm": ["Manrope"], "body-lg": ["Manrope"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-sm flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="A beautiful, elegant logo emblem of an open book held tenderly in the hands of a reader. Warm amber #d97706 and deep navy ink tones, minimalist refined linework, sanctuary and literary craftsmanship aesthetic for PageHaven. Design context: - Primary color: #d97706
+- Font: newsreader
+- Mode: light
+- Roundness: rounded-sm
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight truncate leading-none">PageHaven</span><span class="font-label-sm text-label-sm text-outline truncate leading-none mt-0.5">Magazines</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Shopping Cart" class="relative w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-primary text-on-primary font-label-sm text-[10px] flex items-center justify-center leading-none shadow-[0_0_12px_rgba(217,119,6,0.35)]">3</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Top Editorial Masthead Banner -->
+<div class="relative px-gutter-sm pt-4 pb-5 bg-gradient-to-b from-surface-container-low to-surface">
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Archival Salon &amp; Newsstand</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-medium leading-tight">
+      Periodicals &amp; Folios
+    </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 line-clamp-2 max-w-sm">
+      Tactile heavy-stock glossies and ultra-crisp vector digital editions. Delivered to your doorstep or instantly synced to your reading slate.
+    </p>
+<!-- Category Filter Shelf -->
+<div class="flex items-center gap-2 overflow-x-auto pt-3 pb-1 -mx-gutter-sm px-gutter-sm no-scrollbar" id="categoryFilters">
+<button class="filter-pill active px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary text-on-primary shadow-sm transition-all" data-category="all">
+        All Curations
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface-variant transition-all hover:bg-surface-container-high" data-category="sports">
+        Sports &amp; Athletics
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface-variant transition-all hover:bg-surface-container-high" data-category="architecture">
+        Architecture &amp; Living
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface-variant transition-all hover:bg-surface-container-high" data-category="fashion">
+        Fashion &amp; Couture
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface-variant transition-all hover:bg-surface-container-high" data-category="business">
+        Global Business
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface-variant transition-all hover:bg-surface-container-high" data-category="automotive">
+        Automotive
+      </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container text-on-surface-variant transition-all hover:bg-surface-container-high" data-category="cinema">
+        Cinema &amp; Arts
+      </button>
+</div>
+</div>
+<!-- All-Access Periodical Pass Banner -->
+<div class="px-gutter-sm mt-3 mb-6">
+<div class="relative overflow-hidden rounded-xl bg-inverse-surface text-inverse-on-surface p-4 shadow-md">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-primary/20 blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10 gap-3">
+<div>
+<div class="flex items-center gap-1.5 mb-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold">Unlimited Reader Pass</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm leading-snug">Read 185+ monthly editions worldwide</h2>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/80 mt-1">
+            Unlimited lossless PDF folios, instant cloud issues, and companion digests.
+          </p>
+<div class="flex items-center gap-3 mt-3">
+<button class="px-4 py-2 rounded bg-primary text-on-primary font-label-lg text-label-lg transition-transform active:scale-95 shadow-sm" id="trialBtn">
+              Start 14-Day Free Trial
+            </button>
+<span class="font-label-sm text-label-sm text-inverse-on-surface/70">$8.99/mo after</span>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container-lowest/10">
+<span class="material-symbols-outlined text-primary-fixed text-[36px]">auto_stories</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section Title -->
+<div class="px-gutter-sm flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-4 rounded-full bg-primary"></span>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold tracking-tight">
+        Featured Issues &amp; Folios
+      </h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">6 Curations</span>
+</div>
+<!-- Periodicals Grid / List -->
+<div class="px-gutter-sm flex flex-col gap-5" id="periodicalList">
+<!-- Card 1: Solace & Living -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 transition-all" data-category="architecture">
+<div class="flex gap-3.5">
+<!-- Cover Art with Spine Effect -->
+<div class="relative w-28 flex-shrink-0 aspect-[3/4] rounded overflow-hidden shadow bg-surface-container-high">
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Magazine cover titled SOLACE &amp; LIVING, Modern Scandinavian Sanctuaries, July August 2024 issue. A serene woman in a linen dress sits by a pristine pool with minimalist architectural glass pavilion and lush pine gardens. Natural sunlight, muted earth tones and elegant typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjMvHqFtAxGoKaA4Lmyy9PlSAHQIidR2FMCdYw6FEGEyF_Zx1yyuC87X4A1uQ0eqGuI2YIEdoVvVnavaMLnLwisjyqM5DeDSSZPPBVVd79NMi_RDzDVDFtWXYJA_NSrNMJ77yAm64dqCjdCczsa6_X61vHv-hWndo9ge-TbLxvERtWzrPULth8w9FUti06DlJFb-fFqX7IVMf28zfPLAtZEbq-tEKRW7Kjp9fG1qtuUO47qe_2pbH5yw"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm">
+            Jul/Aug
+          </span>
+</div>
+<!-- Issue Metadata -->
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide font-medium">Architecture &amp; Design</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-semibold">4.8</span>
+</div>
+</div>
+<h4 class="font-title-editorial text-title-editorial font-medium text-on-surface leading-tight mt-0.5 truncate">
+              Solace &amp; Living: Scandinavian Sanctuaries
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Modern minimalist architectural homes, private poolside gardens, and dialogue with master Scandinavian designers.
+            </p>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-none price-display">$9.99</div>
+</div>
+<button class="preview-btn text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" data-sub="Vol. 24 • Modern Sanctuaries" data-title="Solace &amp; Living: Scandinavian Sanctuaries">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Excerpt
+            </button>
+</div>
+</div>
+</div>
+<!-- Segmented Format Control -->
+<div class="pt-2 border-t-0 bg-surface-container-low/60 rounded-lg p-1.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 flex-1 bg-surface-container-lowest rounded p-0.5">
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all bg-primary text-on-primary shadow-xs font-semibold" data-format="print" data-label="Glossy Archival Print" data-price="$9.99">
+            Glossy Print
+          </button>
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="digital" data-label="Instant Vector PDF" data-price="$4.99">
+            Digital PDF
+          </button>
+</div>
+<button class="add-basket-btn px-3 py-1.5 rounded bg-on-surface text-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform" data-title="Solace &amp; Living">
+<span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add
+        </button>
+</div>
+</div>
+<!-- Card 2: Athletic Horizons -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 transition-all" data-category="sports">
+<div class="flex gap-3.5">
+<div class="relative w-28 flex-shrink-0 aspect-[3/4] rounded overflow-hidden shadow bg-surface-container-high">
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Magazine cover titled ATHLETIC HORIZONS, Championship Issue No. 91. Featuring a world-class female sprinter in USA athletic kit accelerating intensely on an illuminated midnight track stadium with dynamic lens flares and crisp typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxvq8Gvr47mi24IOenc4XJSGZoEJUq-CfcnhkDEjuPma3v5deaYH7Sixj_xmXqkKRXS04DkwC1kWKmSYknMKjPCN6NTG27cRSZagYmQI6qDilhMnnt8_A1UbbzbmWF5JfJ5iO9FEYwfoT3Pz6aV2J_lP2vJBFgA_9vv863BOZluO_WPr0wqy7lyiJxO3_OwrY9FSKtbZAdlVzfFIj82PtUxbPi8ySUirlR46QrKemuSATVuJm4QN6hbw"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm">
+            Issue 91
+          </span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wide font-medium">Athletics &amp; Performance</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-semibold">4.9</span>
+</div>
+</div>
+<h4 class="font-title-editorial text-title-editorial font-medium text-on-surface leading-tight mt-0.5 truncate">
+              Athletic Horizons: The Unstoppable Force
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Sarah Johnson’s championship velocity journey, biomechanical performance breakdowns, and elite nutrition guides.
+            </p>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-none price-display">$8.99</div>
+</div>
+<button class="preview-btn text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" data-sub="Issue No. 91 • Track &amp; Velocity" data-title="Athletic Horizons: Championship Sprint">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Excerpt
+            </button>
+</div>
+</div>
+</div>
+<div class="pt-2 bg-surface-container-low/60 rounded-lg p-1.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 flex-1 bg-surface-container-lowest rounded p-0.5">
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all bg-primary text-on-primary shadow-xs font-semibold" data-format="print" data-label="Heavy Gloss Print" data-price="$8.99">
+            Gloss Print
+          </button>
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="digital" data-label="Vector Digital Edition" data-price="$3.99">
+            Digital PDF
+          </button>
+</div>
+<button class="add-basket-btn px-3 py-1.5 rounded bg-on-surface text-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform" data-title="Athletic Horizons">
+<span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add
+        </button>
+</div>
+</div>
+<!-- Card 3: Forbes Global Leaders -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 transition-all" data-category="business">
+<div class="flex gap-3.5">
+<div class="relative w-28 flex-shrink-0 aspect-[3/4] rounded overflow-hidden shadow bg-surface-container-high">
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of Forbes Global Leaders magazine featuring a distinguished female executive in a sharp navy tailored blazer standing on an evening balcony overlooking lit Manhattan skyscrapers. Gold headline typography 'Building the Next Era'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZo7TzRuibfzwYzK20fTnANqR33Cimt0mjlC5pAisSt-WaW6VqWN_1rL_denmOKkD8LJnY6omcBP_YxngPBO6wfYz_afke2c71ayXImHRrWam1cxUB9Ii17xTrzlA8NE6ekXqvB1Za9N2YUJJ_9uolJgxxU9PlFPiphDDwpoMZRNiSwfXuXnz9F0kFlzP7JygWawZrbOks5xUv4pOAg4NMlrFkvv7oflciDO8f24rrXe7dRPkHU1CqdQ"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm">
+            Global Ed.
+          </span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide font-medium">Business &amp; Finance</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-semibold">4.8</span>
+</div>
+</div>
+<h4 class="font-title-editorial text-title-editorial font-medium text-on-surface leading-tight mt-0.5 truncate">
+              Forbes: The Global Titans
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              50 trailblazing leaders defining sovereign capital, clean industrial transitions, and macroeconomic resilience.
+            </p>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-none price-display">$7.99</div>
+</div>
+<button class="preview-btn text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" data-sub="Vol. 210 • Global Macro" data-title="Forbes Global Leaders: The New Titans">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Excerpt
+            </button>
+</div>
+</div>
+</div>
+<div class="pt-2 bg-surface-container-low/60 rounded-lg p-1.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 flex-1 bg-surface-container-lowest rounded p-0.5">
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all bg-primary text-on-primary shadow-xs font-semibold" data-format="print" data-label="Standard Print" data-price="$7.99">
+            Print Issue
+          </button>
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="digital" data-label="Digital Dossier" data-price="$3.99">
+            Digital PDF
+          </button>
+</div>
+<button class="add-basket-btn px-3 py-1.5 rounded bg-on-surface text-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform" data-title="Forbes Global Leaders">
+<span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add
+        </button>
+</div>
+</div>
+<!-- Card 4: Vogue Style -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 transition-all" data-category="fashion">
+<div class="flex gap-3.5">
+<div class="relative w-28 flex-shrink-0 aspect-[3/4] rounded overflow-hidden shadow bg-surface-container-high">
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-alt="Cover of Vogue Style magazine with supermodel Adut Akech wearing an avant-garde dramatic black architectural ruffled couture gown inside a dimly lit luxury Parisian salon. High-fashion dramatic editorial lighting with bold white serif typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTErqXqLgblm3DyVJMU1mZ-ihBIsC5KJLZvcxgtvaeQMgOy79iK1xrGPuWfpph3Gv-unvPyqXQaENDc6ptf9_7oxeIPsL_pYffhcUyyqlt2EvmII52cFYT6cpbhh41OEOUsIBxv9Y9hOTOwr4sUTUaaqKlbUZmlfDF8ecbA9LAc52AhILC3WZUzo_j7R5Ejg9JAQHh3SaOgDZxFKIn0pNzr7japn27CUVttLr6c2YSRh3uHZQSWQgm1A"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm">
+            April 2024
+          </span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wide font-medium">Fashion &amp; Avant-Garde</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-semibold">4.7</span>
+</div>
+</div>
+<h4 class="font-title-editorial text-title-editorial font-medium text-on-surface leading-tight mt-0.5 truncate">
+              Vogue Style: The Revolutionaries
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Visionary silhouettes, sculptural couture craftsmanship, and 50 breathtaking looks redefining international ateliers.
+            </p>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-none price-display">$9.00</div>
+</div>
+<button class="preview-btn text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" data-sub="April 2024 • Haute Couture" data-title="Vogue Style: The Revolutionaries">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Excerpt
+            </button>
+</div>
+</div>
+</div>
+<div class="pt-2 bg-surface-container-low/60 rounded-lg p-1.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 flex-1 bg-surface-container-lowest rounded p-0.5">
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all bg-primary text-on-primary shadow-xs font-semibold" data-format="print" data-label="Heavy Coated Matte" data-price="$9.00">
+            Coated Print
+          </button>
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="digital" data-label="Lossless Retina PDF" data-price="$4.99">
+            Digital PDF
+          </button>
+</div>
+<button class="add-basket-btn px-3 py-1.5 rounded bg-on-surface text-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform" data-title="Vogue Style">
+<span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add
+        </button>
+</div>
+</div>
+<!-- Card 5: Supercar Apex -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 transition-all" data-category="automotive">
+<div class="flex gap-3.5">
+<div class="relative w-28 flex-shrink-0 aspect-[3/4] rounded overflow-hidden shadow bg-surface-container-high">
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Xd0McHYwEKmQnGlVcOwmY3X3J4ol9hwaj3HQjrVimujZOXJFvi5QgihTgPwc0xRXfv6G2WXt-1ULjy0LUoIUBKE4wgLzZtpc_-Nk8inJMAubs_CM04ixnvddpXKL-WbKE0iAu2h9vlIQ43ZTCrAVu0SSFpkdmg4OL5IryKrmabYa6FL6pctyNUALskkkgHLUJAaZBaI6lBxu0hqvuLLmeAHOrXFFeewPERo8GJYXDWWTpgFZv9_akDWx4"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm">
+            Speed Ed.
+          </span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wide font-medium">Automotive &amp; Engineering</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-semibold">4.9</span>
+</div>
+</div>
+<h4 class="font-title-editorial text-title-editorial font-medium text-on-surface leading-tight mt-0.5 truncate">
+              Supercar Apex: Future Shock
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              Next-gen hybrid hypercars, track tests along twisting Amalfi coastal cliffs, and carbon-chassis evolution.
+            </p>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-none price-display">$8.50</div>
+</div>
+<button class="preview-btn text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" data-sub="Vol. 18 • Hypercar Engineering" data-title="Supercar Apex: Future Shock">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Excerpt
+            </button>
+</div>
+</div>
+</div>
+<div class="pt-2 bg-surface-container-low/60 rounded-lg p-1.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 flex-1 bg-surface-container-lowest rounded p-0.5">
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all bg-primary text-on-primary shadow-xs font-semibold" data-format="print" data-label="Gloss Print Issue" data-price="$8.50">
+            Print Issue
+          </button>
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="digital" data-label="Digital Edition" data-price="$4.25">
+            Digital PDF
+          </button>
+</div>
+<button class="add-basket-btn px-3 py-1.5 rounded bg-on-surface text-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform" data-title="Supercar Apex">
+<span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add
+        </button>
+</div>
+</div>
+<!-- Card 6: Cinema Weekly -->
+<div class="magazine-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 transition-all" data-category="cinema">
+<div class="flex gap-3.5">
+<div class="relative w-28 flex-shrink-0 aspect-[3/4] rounded overflow-hidden shadow bg-surface-container-high">
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UcJkKuWgefzvpYtU8LodrKRxAb1gdJ8AXH4KQxXpMr_widJcNYI9ksId7O6rtcLbxOQYJ1DzZwOHnuy79ZDNk3q8I8kR_csq-o3NQvLd3_oPz3Ow-wxFSgRL8tZEnb40Uy2Xcf1eRIilEdxDzOqS-gxiyxbG8GOIWVViT3AnQ3iy5dvSqa_kNizvuZnm1jQlj7Ga_bls3tDNgTrW4Idrtu0NjFjbxC5o8dnKJs0nc8CC_WEaI5uaTEPCxR"/>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm">
+            Special No. 12
+          </span>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wide font-medium">Cinema &amp; Film Craft</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-semibold">4.8</span>
+</div>
+</div>
+<h4 class="font-title-editorial text-title-editorial font-medium text-on-surface leading-tight mt-0.5 truncate">
+              Cinema Weekly: Dune Part Two
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              IMAX 70mm cinematography analysis, desert sound design architecture, and director set conversations.
+            </p>
+</div>
+<div class="mt-2 flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Price</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-none price-display">$6.99</div>
+</div>
+<button class="preview-btn text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" data-sub="Issue 440 • Film Score &amp; Camera" data-title="Cinema Weekly: Dune Part Two">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Excerpt
+            </button>
+</div>
+</div>
+</div>
+<div class="pt-2 bg-surface-container-low/60 rounded-lg p-1.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 flex-1 bg-surface-container-lowest rounded p-0.5">
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all bg-primary text-on-primary shadow-xs font-semibold" data-format="print" data-label="Soft Matte Print" data-price="$6.99">
+            Print Issue
+          </button>
+<button class="format-toggle flex-1 py-1 px-2 rounded font-label-sm text-label-sm text-center transition-all text-on-surface-variant hover:text-on-surface" data-format="digital" data-label="Interactive Digital" data-price="$3.50">
+            Digital PDF
+          </button>
+</div>
+<button class="add-basket-btn px-3 py-1.5 rounded bg-on-surface text-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform" data-title="Cinema Weekly">
+<span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add
+        </button>
+</div>
+</div>
+</div>
+<!-- Editorial Companion Feature Callout -->
+<div class="px-gutter-sm mt-6">
+<div class="bg-surface-container-high rounded-xl p-4 flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-title-editorial text-title-editorial font-semibold text-on-surface">PageHaven Companion</h4>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-primary/10 text-primary uppercase font-bold">Smart Sync</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Every magazine purchase automatically unlocks audio readouts, article text extraction, and curated reading lists on your connected tablet.
+        </p>
+</div>
+</div>
+</div>
+<!-- Magazine Excerpt Drawer / Modal -->
+<div class="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="excerptModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-t-2xl p-5 shadow-2xl transform translate-y-full transition-transform duration-300 flex flex-col max-h-[85vh]">
+<div class="w-12 h-1 rounded-full bg-surface-variant mx-auto mb-3"></div>
+<div class="flex items-start justify-between gap-2 mb-3">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-primary font-semibold" id="modalSub">Preview Folio</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-medium" id="modalTitle">Article Excerpt</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" id="closeModalBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Spread Reader Preview -->
+<div class="overflow-y-auto space-y-3 pr-1">
+<div class="p-3.5 bg-surface-container-low rounded-lg">
+<p class="font-title-editorial text-title-editorial italic text-on-surface leading-relaxed">
+            "Design does not merely solve a functional dilemma; it orchestrates the emotional cadence of silence within modern living quarters."
+          </p>
+<span class="block mt-2 font-label-sm text-label-sm text-outline">— Curators’ Introductory Dispatch, Page 14</span>
+</div>
+<div class="space-y-2 text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+<p>
+            Leafing through these heavy archival pages reveals a nuanced balance of visual density and open margins. Our editors have collaborated with independent photographers worldwide to ensure every two-page spread functions as an autonomous gallery piece.
+          </p>
+<p>
+            Subscribers receiving the physical edition enjoy hot-foil stamped covers and deckled slipcases, while digital patrons benefit from 600-DPI high-fidelity vector zoom and embedded masterclass commentary.
+          </p>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div class="p-2.5 rounded bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+<div>
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">144 Pages</div>
+<div class="text-[11px] text-on-surface-variant">FSC-Certified Stock</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">cloud_download</span>
+<div>
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">Digital Folio</div>
+<div class="text-[11px] text-on-surface-variant">High-Res Vector PDF</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 mt-2 border-t border-transparent flex gap-3">
+<button class="flex-1 py-2.5 rounded bg-primary text-on-primary font-label-lg text-label-lg font-semibold shadow transition-transform active:scale-95" id="modalAddBtn">
+          Add Complete Edition
+        </button>
+</div>
+</div>
+</div>
+<!-- Micro-interaction Toast -->
+<div class="fixed bottom-20 inset-x-4 z-50 max-w-sm mx-auto bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-lg flex items-center justify-between opacity-0 pointer-events-none translate-y-3 transition-all duration-300" id="actionToast">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="font-label-md text-label-md truncate" id="toastMessage">Added to reading basket</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold uppercase tracking-wide ml-2">Saved</span>
+</div>
+</div>
+<script>
+  (function() {
+    // 1. Format Switcher Micro-Interactions (Glossy Print vs Digital PDF)
+    const cards = document.querySelectorAll('.magazine-card');
+    cards.forEach(card => {
+      const toggles = card.querySelectorAll('.format-toggle');
+      const priceEl = card.querySelector('.price-display');
+
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          toggles.forEach(t => {
+            t.classList.remove('bg-primary', 'text-on-primary', 'shadow-xs', 'font-semibold');
+            t.classList.add('text-on-surface-variant');
+          });
+
+          toggle.classList.add('bg-primary', 'text-on-primary', 'shadow-xs', 'font-semibold');
+          toggle.classList.remove('text-on-surface-variant');
+
+          const newPrice = toggle.getAttribute('data-price');
+          if (priceEl && newPrice) {
+            priceEl.textContent = newPrice;
+            // Quick price punch animation
+            priceEl.animate([
+              { transform: 'scale(1.15)', color: 'var(--tw-colors-primary)' },
+              { transform: 'scale(1)' }
+            ], { duration: 180, easing: 'ease-out' });
+          }
+        });
+      });
+    });
+
+    // 2. Category Filtering with Smooth Transition
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+        const cat = btn.getAttribute('data-category');
+        cards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+            card.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 200 });
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Basket Addition & Cart Count Header Interaction
+    const toast = document.getElementById('actionToast');
+    const toastMsg = document.getElementById('toastMessage');
+    let toastTimer;
+
+    function showToast(msg) {
+      if (!toast) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2400);
+    }
+
+    const addButtons = document.querySelectorAll('.add-basket-btn');
+    addButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const title = btn.getAttribute('data-title') || 'Periodical';
+        showToast(`Added "${title}" to your basket`);
+
+        // Find header badge counter and playfully increment
+        const cartBadge = document.querySelector('header .bg-primary.rounded-full');
+        if (cartBadge) {
+          const count = parseInt(cartBadge.textContent.trim(), 10) || 0;
+          cartBadge.textContent = count + 1;
+          cartBadge.animate([
+            { transform: 'scale(1.45)' },
+            { transform: 'scale(1)' }
+          ], { duration: 220, easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)' });
+        }
+      });
+    });
+
+    // 4. Excerpt Modal Behavior
+    const modal = document.getElementById('excerptModal');
+    const modalContent = modal?.querySelector('div');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSub = document.getElementById('modalSub');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalAddBtn = document.getElementById('modalAddBtn');
+
+    function openExcerpt(title, sub) {
+      if (!modal || !modalContent) return;
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalSub) modalSub.textContent = sub;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      modalContent.classList.remove('translate-y-full');
+      modalContent.classList.add('translate-y-0');
+    }
+
+    function closeExcerpt() {
+      if (!modal || !modalContent) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      modalContent.classList.add('translate-y-full');
+      modalContent.classList.remove('translate-y-0');
+    }
+
+    document.querySelectorAll('.preview-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-title') || 'Excerpt Preview';
+        const sub = btn.getAttribute('data-sub') || 'Curated Spread';
+        openExcerpt(title, sub);
+      });
+    });
+
+    closeModalBtn?.addEventListener('click', closeExcerpt);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) closeExcerpt();
+    });
+
+    modalAddBtn?.addEventListener('click', () => {
+      const title = modalTitle?.textContent || 'Curated Folio';
+      showToast(`Added "${title}" edition to cart`);
+      closeExcerpt();
+
+      const cartBadge = document.querySelector('header .bg-primary.rounded-full');
+      if (cartBadge) {
+        const count = parseInt(cartBadge.textContent.trim(), 10) || 0;
+        cartBadge.textContent = count + 1;
+      }
+    });
+
+    // 5. Unlimited Pass Trial Button
+    const trialBtn = document.getElementById('trialBtn');
+    trialBtn?.addEventListener('click', () => {
+      showToast('14-Day Free Reader Pass activated!');
+    });
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center flex-1 h-full min-w-0 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">cottage</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Home</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-0 text-on-surface-variant hover:text-on-surface transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Browse</span></a><a aria-current="page" class="flex flex-col items-center justify-center flex-1 h-full min-w-0 transition-colors text-primary font-semibold" data-path="magazines" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Magazines</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-0 text-on-surface-variant hover:text-on-surface transition-colors" data-path="life-lessons" href="#"><span class="material-symbols-outlined text-[22px]">lightbulb</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Lessons</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-0 text-on-surface-variant hover:text-on-surface transition-colors" data-path="account" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Account</span></a></div></nav></body></html>

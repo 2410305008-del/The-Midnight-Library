@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <meta name="shell-type" content="mobile_tab"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#d97706',
+            'primary-dark': '#b45309',
+            'primary-light': '#fef3c7',
+            secondary: '#436465',
+            'secondary-light': '#e6f0f0',
+            surface: '#faf8ff',
+            'surface-card': '#ffffff',
+            'surface-container': '#f3f4f8',
+            'surface-container-high': '#e7eaf2',
+            'on-surface': '#151b29',
+            'on-surface-variant': '#5b6478',
+            tertiary: '#b91c1c',
+            'tertiary-light': '#fee2e2'
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Manrope', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #faf8ff;
+      color: #151b29;
+      font-family: 'Manrope', sans-serif;
+      overscroll-behavior-y: none;
+      -webkit-tap-highlight-color: transparent;
+      min-height: 100vh;
+    }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+    .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    ::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-surface">
+
+  <!-- TOP HEADER -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-surface/95 backdrop-blur-md border-b border-surface-container-high/70 shadow-sm pt-safe">
+    <div class="h-16 px-4 flex items-center justify-between gap-2">
+      <!-- Brand Logo & Name -->
+      <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchTab('home')">
+        <div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center border border-primary/20 shadow-sm">
+          <span class="material-symbols-outlined text-primary text-[22px]">auto_stories</span>
+        </div>
+        <div>
+          <h1 class="font-serif text-[19px] font-bold text-primary leading-none tracking-tight">PageHaven</h1>
+          <span class="text-[10px] text-on-surface-variant font-medium tracking-wide">Sanctuary of Rare Books</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-1.5">
+        <!-- Search Trigger -->
+        <button onclick="showToast('Search catalog: type book, author, or ISBN')" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" aria-label="Search">
+          <span class="material-symbols-outlined text-[22px]">search</span>
+        </button>
+        <!-- Shopping Bag Trigger (Opens Drawer) -->
+        <button onclick="openCart()" class="relative w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" aria-label="Cart">
+          <span class="material-symbols-outlined text-[22px]">local_mall</span>
+          <span id="badge-count" class="absolute top-1.5 right-1 min-w-[18px] h-[18px] px-1 bg-primary text-white text-[10px] font-bold leading-[18px] text-center rounded-full shadow-sm">3</span>
+        </button>
+        <!-- Guest User Icon Button (No Mock Profile) -->
+        <button onclick="switchTab('account')" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-on-surface-variant hover:text-primary transition-colors" aria-label="Guest Profile">
+          <span class="material-symbols-outlined text-[21px]">person_outline</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATEGORY PILL NAVIGATION -->
+  <nav class="sticky top-16 z-30 bg-surface/95 backdrop-blur-md px-4 py-2 border-b border-surface-container-high/60 shadow-xs">
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+      <button id="pill-home" onclick="switchTab('home')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-primary text-white shadow-sm transition-all">
+        <span class="material-symbols-outlined text-[16px]">cottage</span> Home
+      </button>
+      <button id="pill-fiction" onclick="switchTab('fiction')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        <span class="material-symbols-outlined text-[16px]">menu_book</span> Fiction & Manga
+      </button>
+      <button id="pill-magazines" onclick="switchTab('magazines')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        <span class="material-symbols-outlined text-[16px]">newspaper</span> Magazines
+      </button>
+      <button id="pill-care" onclick="switchTab('care')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        <span class="material-symbols-outlined text-[16px]">support_agent</span> Help & Care
+      </button>
+      <button id="pill-account" onclick="switchTab('account')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface transition-all">
+        <span class="material-symbols-outlined text-[16px]">person</span> Sign In / Join
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN SCROLLABLE CONTENT -->
+  <main class="flex-1 w-full pb-24">
+
+    <!-- ==================== TAB 1: HOME ==================== -->
+    <section id="tab-home" class="flex flex-col gap-6 px-4 pt-3">
+      <!-- Autumn Seasonal Voucher Banner -->
+      <div class="rounded-2xl bg-gradient-to-br from-primary-light/80 via-white to-surface-container p-4 border border-primary/20 shadow-sm relative overflow-hidden">
+        <div class="flex items-start justify-between relative z-10">
+          <div class="flex-1 pr-3">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-primary text-white text-[10px] font-bold uppercase tracking-wider mb-1">Autumn Salon</span>
+            <h2 class="font-serif text-lg font-bold text-on-surface leading-snug">Curate your personal library with 25% off hardbound titles.</h2>
+            <p class="text-xs text-on-surface-variant mt-1">Use voucher code at checkout:</p>
+            <div class="mt-2.5 inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-primary/30 shadow-xs">
+              <span class="font-mono text-sm font-bold text-primary tracking-widest">PAGE25</span>
+              <button onclick="copyCode('PAGE25')" class="text-on-surface-variant hover:text-primary transition-colors flex items-center" title="Copy code">
+                <span class="material-symbols-outlined text-[16px]">content_copy</span>
+              </button>
+            </div>
+          </div>
+          <div class="w-20 h-24 rounded-xl overflow-hidden shadow-md bg-surface-container shrink-0 border border-primary/10">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTH7muE93YWrr9X-J2Ggq-kKQPlB8YFwC6N0jghPq1cddVsfVboMb4P6SxdbF-reOCPrWHLIZxLDvw09tX7u6ZK7Kx4R5Ctfv5hpxSIczQYWhTg39L9Tq1coSCn-_ETfjq4Mers9TPxvDqljo7xgFBfFS-pQfUk1h-kZqRt_1RXPuKJyAbGn1HO_jMD-0Tvql2JxHpT50cgfkqckmG07Sku8TNdSw81UOMpzQvbhcge85ibwQoCcqbEg" alt="Fine leatherbound volume" class="w-full h-full object-cover"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Curation Portals Grid -->
+      <div>
+        <div class="flex items-center justify-between mb-2.5">
+          <h3 class="font-serif text-base font-bold text-on-surface">Explore Curations</h3>
+          <span class="text-xs font-semibold text-primary">6 Departments</span>
+        </div>
+        <div class="grid grid-cols-3 gap-2.5">
+          <button onclick="switchTab('fiction')" class="flex flex-col items-center p-3 rounded-xl bg-surface-card border border-surface-container-high/80 shadow-xs hover:border-primary/40 transition-all text-center">
+            <div class="w-10 h-10 rounded-full bg-primary-light text-primary flex items-center justify-center mb-1.5">
+              <span class="material-symbols-outlined text-[20px]">book_2</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface">Novels</span>
+            <span class="text-[10px] text-on-surface-variant">Fiction</span>
+          </button>
+          <button onclick="switchTab('fiction')" class="flex flex-col items-center p-3 rounded-xl bg-surface-card border border-surface-container-high/80 shadow-xs hover:border-primary/40 transition-all text-center">
+            <div class="w-10 h-10 rounded-full bg-tertiary-light text-tertiary flex items-center justify-center mb-1.5">
+              <span class="material-symbols-outlined text-[20px]">brush</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface">Manga</span>
+            <span class="text-[10px] text-on-surface-variant">Tankōbon</span>
+          </button>
+          <button onclick="switchTab('magazines')" class="flex flex-col items-center p-3 rounded-xl bg-surface-card border border-surface-container-high/80 shadow-xs hover:border-primary/40 transition-all text-center">
+            <div class="w-10 h-10 rounded-full bg-secondary-light text-secondary flex items-center justify-center mb-1.5">
+              <span class="material-symbols-outlined text-[20px]">newspaper</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface">Magazines</span>
+            <span class="text-[10px] text-on-surface-variant">Periodicals</span>
+          </button>
+          <button onclick="openCart()" class="flex flex-col items-center p-3 rounded-xl bg-surface-card border border-surface-container-high/80 shadow-xs hover:border-primary/40 transition-all text-center">
+            <div class="w-10 h-10 rounded-full bg-primary-light text-primary flex items-center justify-center mb-1.5">
+              <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface">Your Bag</span>
+            <span class="text-[10px] text-primary font-semibold">View Items</span>
+          </button>
+          <button onclick="switchTab('care')" class="flex flex-col items-center p-3 rounded-xl bg-surface-card border border-surface-container-high/80 shadow-xs hover:border-primary/40 transition-all text-center">
+            <div class="w-10 h-10 rounded-full bg-secondary-light text-secondary flex items-center justify-center mb-1.5">
+              <span class="material-symbols-outlined text-[20px]">support_agent</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface">Help Care</span>
+            <span class="text-[10px] text-on-surface-variant">Returns & Track</span>
+          </button>
+          <button onclick="switchTab('account')" class="flex flex-col items-center p-3 rounded-xl bg-surface-card border border-surface-container-high/80 shadow-xs hover:border-primary/40 transition-all text-center">
+            <div class="w-10 h-10 rounded-full bg-surface-container text-on-surface flex items-center justify-center mb-1.5">
+              <span class="material-symbols-outlined text-[20px]">person_add</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface">Sign In</span>
+            <span class="text-[10px] text-on-surface-variant">New User</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Curator's Spotlight: The Midnight Library -->
+      <div class="p-4 rounded-2xl bg-surface-card border border-surface-container-high/90 shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-primary">Curator's Choice • October</span>
+          <span class="text-xs bg-surface-container px-2 py-0.5 rounded-full font-semibold text-on-surface">4.8 ★ (12k)</span>
+        </div>
+        <div class="flex gap-3.5">
+          <div class="w-24 h-36 rounded-lg overflow-hidden shadow-md shrink-0 bg-surface-container">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOXHF2uRq8fCB8skdF5Yj2SPFVwiV_S5sXT2WZJUReZng4V-f7auphomFB6Y_s-Tl6bfyEdikJLLPBosHy8doMrdhNQc5YBElvTRvVCls67dU-O3feqtxwbaNQfHP9rxOERDvqrQlRW-uGuzOXAt4rQEgPPqpJd6r_gw97mxZnvjUXkbxDIlUGbpsO4C85eZwm7sfLUDPldsDYdyYa2N_UFfFN8fF3SzLIqUqKXPCo9hxsoih2Q35IhA" alt="The Midnight Library" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="font-serif text-base font-bold text-on-surface leading-tight">The Midnight Library</h4>
+              <p class="text-xs text-on-surface-variant">Matt Haig</p>
+              <p class="text-xs text-on-surface-variant italic mt-1 line-clamp-2">"Between life and death there is a library where the shelves go on forever..."</p>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <span class="text-base font-bold text-primary font-serif">$21.50</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-primary-light text-primary font-bold">Hardbound Cloth</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-2 pt-1 border-t border-surface-container">
+          <button onclick="previewExcerpt('The Midnight Library', 'Matt Haig', 'Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. To see how things would be if you had made other choices... Would you have done anything different, if you had the chance to undo your regrets?')" class="flex-1 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors">
+            <span class="material-symbols-outlined text-[16px]">visibility</span> Read Sample
+          </button>
+          <button onclick="addItemToCart('The Midnight Library', 'Matt Haig', 'Hardbound Collector', 21.50, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOXHF2uRq8fCB8skdF5Yj2SPFVwiV_S5sXT2WZJUReZng4V-f7auphomFB6Y_s-Tl6bfyEdikJLLPBosHy8doMrdhNQc5YBElvTRvVCls67dU-O3feqtxwbaNQfHP9rxOERDvqrQlRW-uGuzOXAt4rQEgPPqpJd6r_gw97mxZnvjUXkbxDIlUGbpsO4C85eZwm7sfLUDPldsDYdyYa2N_UFfFN8fF3SzLIqUqKXPCo9hxsoih2Q35IhA')" class="flex-1 py-2.5 rounded-xl bg-primary text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-primary-dark transition-colors">
+            <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+          </button>
+        </div>
+      </div>
+
+      <!-- Archival Best-Sellers Row -->
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-serif text-base font-bold text-on-surface">Archival Best-Sellers</h3>
+          <button onclick="switchTab('fiction')" class="text-xs font-semibold text-primary flex items-center">
+            View All <span class="material-symbols-outlined text-[15px]">chevron_right</span>
+          </button>
+        </div>
+        <div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+          <!-- Card 1: Atomic Habits -->
+          <div class="w-40 shrink-0 p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="w-full h-40 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy-602xdVTUr_9gBujFB-ne4zapbTGjh3-Wn14b8D70ff8BUzYUnjeg9E1-gpEYgAWUUsp4h-AVLf_sYMe8b498-JgK9_Iw35LOU4206rOqSv97SNBtKAh-lXAzbafdi4kbiMKD4Ebbqpw5IkXCBMM5x36tIpnY0FE-Kj5dkaKKkZmotQOSQBZWxrgAbdT4NFgnWivQwy17aKy51iXX2Zsf2x6YHiT4Cf9nmS4hkAOmQcVFAPcHJ8Lfw" alt="Atomic Habits" class="w-full h-full object-cover"/>
+              </div>
+              <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Atomic Habits</h4>
+              <p class="text-[11px] text-on-surface-variant">James Clear</p>
+            </div>
+            <div class="mt-2.5">
+              <div class="flex items-center justify-between text-xs font-bold text-on-surface mb-2">
+                <span>$18.00</span>
+                <span class="text-[10px] text-secondary font-medium">Hardcover</span>
+              </div>
+              <button onclick="addItemToCart('Atomic Habits', 'James Clear', 'Hardbound Edition', 18.00, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBy-602xdVTUr_9gBujFB-ne4zapbTGjh3-Wn14b8D70ff8BUzYUnjeg9E1-gpEYgAWUUsp4h-AVLf_sYMe8b498-JgK9_Iw35LOU4206rOqSv97SNBtKAh-lXAzbafdi4kbiMKD4Ebbqpw5IkXCBMM5x36tIpnY0FE-Kj5dkaKKkZmotQOSQBZWxrgAbdT4NFgnWivQwy17aKy51iXX2Zsf2x6YHiT4Cf9nmS4hkAOmQcVFAPcHJ8Lfw')" class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-white transition-all text-on-surface text-xs font-bold flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $18
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Before the Coffee Gets Cold -->
+          <div class="w-40 shrink-0 p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="w-full h-40 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZofkGRmcmArZb9e9tv-lHtEtvpx-W1gRZaIzEGazTajWE6CQiuLhaB6OCnBlqTbMQLCQ1ahLELILUWc-dsTdF5RUbsBaG33PvJ1Vz0wmJZR8smfczYScFQUDF8s9H5o8_OetWyMASze7Y9ijfzcckL27hLIvmFtxloZRTDDSxgQEP5mhgtQI-vgzITjEpXXNyPyxyW-4JkhdEjFDLg7L6Bj2tE6dQftvTPZAwUwiXdC-p5emj5W-5BA" alt="Before the Coffee Gets Cold" class="w-full h-full object-cover"/>
+              </div>
+              <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Before Coffee Gets Cold</h4>
+              <p class="text-[11px] text-on-surface-variant">Toshikazu Kawaguchi</p>
+            </div>
+            <div class="mt-2.5">
+              <div class="flex items-center justify-between text-xs font-bold text-on-surface mb-2">
+                <span>$16.50</span>
+                <span class="text-[10px] text-secondary font-medium">Paperback</span>
+              </div>
+              <button onclick="addItemToCart('Before the Coffee Gets Cold', 'Toshikazu Kawaguchi', 'Paperback Archival', 16.50, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCZofkGRmcmArZb9e9tv-lHtEtvpx-W1gRZaIzEGazTajWE6CQiuLhaB6OCnBlqTbMQLCQ1ahLELILUWc-dsTdF5RUbsBaG33PvJ1Vz0wmJZR8smfczYScFQUDF8s9H5o8_OetWyMASze7Y9ijfzcckL27hLIvmFtxloZRTDDSxgQEP5mhgtQI-vgzITjEpXXNyPyxyW-4JkhdEjFDLg7L6Bj2tE6dQftvTPZAwUwiXdC-p5emj5W-5BA')" class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-white transition-all text-on-surface text-xs font-bold flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $16.50
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: The Courage to Be Disliked -->
+          <div class="w-40 shrink-0 p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="w-full h-40 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuCzShy12SlI8yT9svfGMXqXdJ3B6NbLRQVjvM9vMqMiuksCLhjda6kg0rM0vkEmqPNgcfgFmax3Dztbysm6u9TTf_9koPXd0_em7bJIMIwwFqv9vLCFFjjTFwWk8f_KxacrDE4maRfg0ziiWXX9MqS-sK3jvD-o0MUc02-gdAFwmQ0Gnzo_ZdsnfhTgkOX3NFzzU-i49BJkTDSuXERxnR7RvMSWZ3vd6dHE3tPIc8gttLJZNwP4v2RA" alt="The Courage to Be Disliked" class="w-full h-full object-cover"/>
+              </div>
+              <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Courage to Be Disliked</h4>
+              <p class="text-[11px] text-on-surface-variant">Ichiro Kishimi</p>
+            </div>
+            <div class="mt-2.5">
+              <div class="flex items-center justify-between text-xs font-bold text-on-surface mb-2">
+                <span>$19.95</span>
+                <span class="text-[10px] text-secondary font-medium">Hardcover</span>
+              </div>
+              <button onclick="addItemToCart('The Courage to Be Disliked', 'Ichiro Kishimi', 'Hardbound Folio', 19.95, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAuCzShy12SlI8yT9svfGMXqXdJ3B6NbLRQVjvM9vMqMiuksCLhjda6kg0rM0vkEmqPNgcfgFmax3Dztbysm6u9TTf_9koPXd0_em7bJIMIwwFqv9vLCFFjjTFwWk8f_KxacrDE4maRfg0ziiWXX9MqS-sK3jvD-o0MUc02-gdAFwmQ0Gnzo_ZdsnfhTgkOX3NFzzU-i49BJkTDSuXERxnR7RvMSWZ3vd6dHE3tPIc8gttLJZNwP4v2RA')" class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-white transition-all text-on-surface text-xs font-bold flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $19.95
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: FICTION & MANGA ==================== -->
+    <section id="tab-fiction" class="hidden flex-col gap-5 px-4 pt-3">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="px-2 py-0.5 rounded bg-primary-light text-primary text-[10px] font-bold uppercase">Fiction & Shonen</span>
+          <span class="text-xs text-on-surface-variant">Archival Volumes</span>
+        </div>
+        <h2 class="font-serif text-xl font-bold text-on-surface">Literary Fiction & Japanese Manga</h2>
+        <p class="text-xs text-on-surface-variant mt-0.5">Collect authentic Japanese tankōbon prints and modern international masterpieces.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Item 1: Frieren -->
+        <div class="p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAJFrcl_C9FLkywfWFRQhajO6FNSmK7vJxkNvcdlJyrh4uXstKYJo_oHuqki1uCfnX9Val3kyVx9Tsdt5a-DGSsQKsrCkIRc3F83z0xfm0M-OyrzbQwmwF6GpscrPl4NvQlLvQWYLyKCPpvzgHrbXi2SkqOp-u_H_nocfziYzUmKjoChEbM2-iPFe1Dca3_M_0zhQWFEWBz8_nFmb7Y1RSLkzbNEU1O-ns7n5mJG93vfGvdeYp7ASbPg" alt="Frieren" class="w-full h-full object-cover"/>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Frieren: Journey's End</h4>
+            <p class="text-[11px] text-on-surface-variant">Kanehito Yamada</p>
+          </div>
+          <div class="mt-2.5">
+            <div class="flex items-center justify-between text-xs font-bold mb-2">
+              <span class="text-on-surface">$12.99</span>
+              <span class="text-[10px] text-primary">Tankōbon</span>
+            </div>
+            <button onclick="addItemToCart('Frieren: Journey\'s End Vol 12', 'Kanehito Yamada', 'Tankōbon Print', 12.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAJFrcl_C9FLkywfWFRQhajO6FNSmK7vJxkNvcdlJyrh4uXstKYJo_oHuqki1uCfnX9Val3kyVx9Tsdt5a-DGSsQKsrCkIRc3F83z0xfm0M-OyrzbQwmwF6GpscrPl4NvQlLvQWYLyKCPpvzgHrbXi2SkqOp-u_H_nocfziYzUmKjoChEbM2-iPFe1Dca3_M_0zhQWFEWBz8_nFmb7Y1RSLkzbNEU1O-ns7n5mJG93vfGvdeYp7ASbPg')" class="w-full py-2 rounded-lg bg-primary text-white text-xs font-bold flex items-center justify-center gap-1 shadow-xs hover:bg-primary-dark transition-colors">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $12.99
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 2: Chainsaw Man -->
+        <div class="p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Z1UyHifHflVwmX0CyF81AmZ-pi6tNtBmyblbJgkPRugCaebLQLWCW9GNQw3_zmF395Uayl1glVa3vLoou3qTI1qS1vCBqE3nsU4Ztk5XjA6YAIpA-ywoA88_P-OjFhANIW67sMLPuumzPxZNbKd7ZO2X6WhHrLBH5SkDmkxncZpKpxsgn7fKybd8uuwvATIDfEzfM-iOODmPLCFSTB7V9jGnWOrZsh6eGZx7da0vyyFYzVzXcjuzaQ" alt="Chainsaw Man" class="w-full h-full object-cover"/>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Chainsaw Man Vol 13</h4>
+            <p class="text-[11px] text-on-surface-variant">Tatsuki Fujimoto</p>
+          </div>
+          <div class="mt-2.5">
+            <div class="flex items-center justify-between text-xs font-bold mb-2">
+              <span class="text-on-surface">$11.50</span>
+              <span class="text-[10px] text-primary">Tankōbon</span>
+            </div>
+            <button onclick="addItemToCart('Chainsaw Man Vol 13', 'Tatsuki Fujimoto', 'Tankōbon Print', 11.50, 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6Z1UyHifHflVwmX0CyF81AmZ-pi6tNtBmyblbJgkPRugCaebLQLWCW9GNQw3_zmF395Uayl1glVa3vLoou3qTI1qS1vCBqE3nsU4Ztk5XjA6YAIpA-ywoA88_P-OjFhANIW67sMLPuumzPxZNbKd7ZO2X6WhHrLBH5SkDmkxncZpKpxsgn7fKybd8uuwvATIDfEzfM-iOODmPLCFSTB7V9jGnWOrZsh6eGZx7da0vyyFYzVzXcjuzaQ')" class="w-full py-2 rounded-lg bg-primary text-white text-xs font-bold flex items-center justify-center gap-1 shadow-xs hover:bg-primary-dark transition-colors">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $11.50
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 3: One Piece -->
+        <div class="p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvJqmbPaGyE65IODmF8M2lFaYTytZk9g6A12hz8sbopkr9-NTQZRuQbm7gZyuZDfhYfF0JD0G_IZ2LQAl1EreJ3Q_Spx85Th-MJHN7jxcDbQobS_txlZc0BoN3BqhzTVXuIm_EXhvWq_2dishYfzYYULC9nbP65yHQaBXt8EAAH2uJwJQnlVxs1SHsMhhRA4cFgw1a0L2Vpj1teNbKC1k1EFAA_2N7BseTPNNsmuI69cuf3ffQybL8xw" alt="One Piece" class="w-full h-full object-cover"/>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">One Piece: Wano Climax</h4>
+            <p class="text-[11px] text-on-surface-variant">Eiichiro Oda</p>
+          </div>
+          <div class="mt-2.5">
+            <div class="flex items-center justify-between text-xs font-bold mb-2">
+              <span class="text-on-surface">$14.00</span>
+              <span class="text-[10px] text-primary">Collector</span>
+            </div>
+            <button onclick="addItemToCart('One Piece: Wano Climax', 'Eiichiro Oda', 'Collector Hardbound', 14.00, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAvJqmbPaGyE65IODmF8M2lFaYTytZk9g6A12hz8sbopkr9-NTQZRuQbm7gZyuZDfhYfF0JD0G_IZ2LQAl1EreJ3Q_Spx85Th-MJHN7jxcDbQobS_txlZc0BoN3BqhzTVXuIm_EXhvWq_2dishYfzYYULC9nbP65yHQaBXt8EAAH2uJwJQnlVxs1SHsMhhRA4cFgw1a0L2Vpj1teNbKC1k1EFAA_2N7BseTPNNsmuI69cuf3ffQybL8xw')" class="w-full py-2 rounded-lg bg-primary text-white text-xs font-bold flex items-center justify-center gap-1 shadow-xs hover:bg-primary-dark transition-colors">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $14.00
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 4: Attack on Titan -->
+        <div class="p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2YdFt93DnWfTQjmmEZGoi2ZQJAX_kdFT7VD5-Q__RwblaV9h9xWGupsS34sxpXepq9O_BZFSeOCGScWHdxU3ZZOtViwmc2T9Eb7kKaJw_BnYjgMi3nJgLiuqx9sqiV7OmiahyhDQMCPG-s2vriiM7gHAjYxvUqyvTYAhPA0NMkf7SGpx8xG3oypP8-BqgNUptT9jf7QZB4HkNB4JR3Gxh14V2dscnfvYe1_pMKgI5TmfQRi5soSWALw" alt="Attack on Titan" class="w-full h-full object-cover"/>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Attack on Titan Omnibus</h4>
+            <p class="text-[11px] text-on-surface-variant">Hajime Isayama</p>
+          </div>
+          <div class="mt-2.5">
+            <div class="flex items-center justify-between text-xs font-bold mb-2">
+              <span class="text-on-surface">$24.99</span>
+              <span class="text-[10px] text-primary">Deluxe</span>
+            </div>
+            <button onclick="addItemToCart('Attack on Titan Omnibus', 'Hajime Isayama', 'Deluxe Hardbound', 24.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2YdFt93DnWfTQjmmEZGoi2ZQJAX_kdFT7VD5-Q__RwblaV9h9xWGupsS34sxpXepq9O_BZFSeOCGScWHdxU3ZZOtViwmc2T9Eb7kKaJw_BnYjgMi3nJgLiuqx9sqiV7OmiahyhDQMCPG-s2vriiM7gHAjYxvUqyvTYAhPA0NMkf7SGpx8xG3oypP8-BqgNUptT9jf7QZB4HkNB4JR3Gxh14V2dscnfvYe1_pMKgI5TmfQRi5soSWALw')" class="w-full py-2 rounded-lg bg-primary text-white text-xs font-bold flex items-center justify-center gap-1 shadow-xs hover:bg-primary-dark transition-colors">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $24.99
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: MAGAZINES ==================== -->
+    <section id="tab-magazines" class="hidden flex-col gap-5 px-4 pt-3">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="px-2 py-0.5 rounded bg-secondary-light text-secondary text-[10px] font-bold uppercase">Periodical Lounge</span>
+          <span class="text-xs text-on-surface-variant">Bi-Weekly Folios</span>
+        </div>
+        <h2 class="font-serif text-xl font-bold text-on-surface">Curated Magazines & Periodicals</h2>
+        <p class="text-xs text-on-surface-variant mt-0.5">High-gloss lifestyle, architecture, automotive, and global business folios.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Mag 1: Solace & Living -->
+        <div class="p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcCtt8-04nN_W9gyBLHadQtOTW5LNtB6palnVtuGp1b6cOdCXxV1-8Mud2iI_hnYwPELO8feQuRVISYHz3sxhuKCPb_8a-f77j-5NpYKCjOxBGA05Qla1deMLicpKUZLcdk-Z5LxSGemx75Sic5TwucGQEFi_QU2JATqmRATWw7SY7X9Pg4cq7-IeaOl04iG2Mwcjz7WLSQ0GKKNu1EXXuuAdbe3HJCkkMBKLKUy9ZMF_Deqb-3qIc5g" alt="Solace & Living" class="w-full h-full object-cover"/>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Solace & Living (Issue 48)</h4>
+            <p class="text-[11px] text-on-surface-variant">Scandinavian Living</p>
+          </div>
+          <div class="mt-2.5">
+            <div class="flex items-center justify-between text-xs font-bold mb-2">
+              <span class="text-on-surface">$9.50</span>
+              <span class="text-[10px] text-secondary">Print Issue</span>
+            </div>
+            <button onclick="addItemToCart('Solace & Living (Issue 48)', 'Scandinavian Living', 'Glossy Print', 9.50, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcCtt8-04nN_W9gyBLHadQtOTW5LNtB6palnVtuGp1b6cOdCXxV1-8Mud2iI_hnYwPELO8feQuRVISYHz3sxhuKCPb_8a-f77j-5NpYKCjOxBGA05Qla1deMLicpKUZLcdk-Z5LxSGemx75Sic5TwucGQEFi_QU2JATqmRATWw7SY7X9Pg4cq7-IeaOl04iG2Mwcjz7WLSQ0GKKNu1EXXuuAdbe3HJCkkMBKLKUy9ZMF_Deqb-3qIc5g')" class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-white transition-all text-on-surface text-xs font-bold flex items-center justify-center gap-1">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $9.50
+            </button>
+          </div>
+        </div>
+
+        <!-- Mag 2: Forbes Global -->
+        <div class="p-3 rounded-2xl bg-surface-card border border-surface-container-high/80 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-full h-44 rounded-lg overflow-hidden bg-surface-container shadow-xs mb-2">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ky2VAcEYjmIGjvB8l4WmN56I3HjA8WJmlkAL71hFAkDBFE64xl0Rh6ifsj8aci9Q3GmHJ-OENnm0AFbfi_w-IuvI0iLU1oBFh3kzlvqJtvfVoXNiWgVtl0wmfoAJOFNBve1wtbkp0IxPvlilr9Hnfrw4IwO1VoSq4Qr8LUiC8JosPKeUWup8M-WbrnFLdR53f4CraOBCHbswWi3YuDc53ihqd07ipA_RVM680iL3jhCjBLIU6lw1IQ" alt="Forbes Global" class="w-full h-full object-cover"/>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface line-clamp-1">Forbes Global Leaders</h4>
+            <p class="text-[11px] text-on-surface-variant">Forbes Editorial</p>
+          </div>
+          <div class="mt-2.5">
+            <div class="flex items-center justify-between text-xs font-bold mb-2">
+              <span class="text-on-surface">$10.00</span>
+              <span class="text-[10px] text-secondary">Print Issue</span>
+            </div>
+            <button onclick="addItemToCart('Forbes Global Leaders', 'Forbes Editorial', 'Print Dossier', 10.00, 'https://lh3.googleusercontent.com/aida-public/AB6AXuB0ky2VAcEYjmIGjvB8l4WmN56I3HjA8WJmlkAL71hFAkDBFE64xl0Rh6ifsj8aci9Q3GmHJ-OENnm0AFbfi_w-IuvI0iLU1oBFh3kzlvqJtvfVoXNiWgVtl0wmfoAJOFNBve1wtbkp0IxPvlilr9Hnfrw4IwO1VoSq4Qr8LUiC8JosPKeUWup8M-WbrnFLdR53f4CraOBCHbswWi3YuDc53ihqd07ipA_RVM680iL3jhCjBLIU6lw1IQ')" class="w-full py-2 rounded-lg bg-surface-container hover:bg-primary hover:text-white transition-all text-on-surface text-xs font-bold flex items-center justify-center gap-1">
+              <span class="material-symbols-outlined text-[15px]">add_shopping_cart</span> Add $10.00
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: HELP CENTER & CUSTOMER CARE ==================== -->
+    <section id="tab-care" class="hidden flex-col gap-5 px-4 pt-3">
+      <!-- Care Header Sanctuary -->
+      <div class="rounded-2xl bg-gradient-to-br from-primary-light via-white to-surface-container p-4 border border-primary/20 shadow-sm flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 rounded-full bg-primary text-white text-[10px] font-bold uppercase">Care Sanctuary</span>
+          <span class="text-xs text-on-surface-variant">24/7 Concierge Support</span>
+        </div>
+        <h2 class="font-serif text-lg font-bold text-on-surface leading-snug">How may our librarians assist your reading journey?</h2>
+        <p class="text-xs text-on-surface-variant">Hassle-free doorstep returns, real-time tracking, damaged parcel replacements, and reading suggestions.</p>
+        
+        <div class="grid grid-cols-2 gap-2 mt-1">
+          <a href="tel:18007243428" class="p-2.5 rounded-xl bg-white flex items-center gap-2 border border-surface-container-high shadow-2xs hover:border-primary/40 transition-colors">
+            <span class="material-symbols-outlined text-primary text-[20px]">call</span>
+            <div class="min-w-0">
+              <span class="text-[9px] uppercase font-bold text-on-surface-variant block">Toll-Free</span>
+              <span class="text-xs font-bold text-on-surface truncate block">1-800-PAGEHAVEN</span>
+            </div>
+          </a>
+          <button onclick="showToast('Connecting to WhatsApp Concierge: +1 (800) 724-3428...')" class="p-2.5 rounded-xl bg-white flex items-center gap-2 border border-surface-container-high shadow-2xs hover:border-primary/40 transition-colors text-left">
+            <span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
+            <div class="min-w-0">
+              <span class="text-[9px] uppercase font-bold text-on-surface-variant block">WhatsApp Desk</span>
+              <span class="text-xs font-bold text-on-surface truncate block">Live Chat</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6 Service Options Grid -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- 1. Returns & Exchange -->
+        <div onclick="openCareModal('modal-return')" class="p-3.5 rounded-2xl bg-surface-card border border-surface-container-high shadow-xs hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mb-2">
+              <span class="material-symbols-outlined text-[22px]">swap_horizontal_circle</span>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface leading-tight">Return & Exchange</h4>
+            <p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">14-day zero-cost doorstep pickup for hardcovers & paperbacks.</p>
+          </div>
+          <span class="text-primary text-xs font-bold flex items-center gap-1 mt-3">
+            Request Return <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <!-- 2. Live Order Tracking -->
+        <div onclick="openCareModal('modal-track')" class="p-3.5 rounded-2xl bg-surface-card border border-surface-container-high shadow-xs hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-secondary-light text-secondary flex items-center justify-center mb-2">
+              <span class="material-symbols-outlined text-[22px]">local_shipping</span>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface leading-tight">Live Tracking</h4>
+            <p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">GPS parcel milestones and courier delivery estimate.</p>
+          </div>
+          <span class="text-secondary text-xs font-bold flex items-center gap-1 mt-3">
+            Track Parcel <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <!-- 3. Damaged Book / Misprint Report -->
+        <div onclick="openCareModal('modal-damage')" class="p-3.5 rounded-2xl bg-surface-card border border-surface-container-high shadow-xs hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-tertiary-light text-tertiary flex items-center justify-center mb-2">
+              <span class="material-symbols-outlined text-[22px]">broken_image</span>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface leading-tight">Damaged Book</h4>
+            <p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">Upload photo proof of torn spine or misprints for instant reship.</p>
+          </div>
+          <span class="text-tertiary text-xs font-bold flex items-center gap-1 mt-3">
+            Report Defect <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <!-- 4. Refund & Wallet Status -->
+        <div onclick="openCareModal('modal-refund')" class="p-3.5 rounded-2xl bg-surface-card border border-surface-container-high shadow-xs hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mb-2">
+              <span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface leading-tight">Refund Tracker</h4>
+            <p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">Check settlement to original card or instant Haven Credit.</p>
+          </div>
+          <span class="text-primary text-xs font-bold flex items-center gap-1 mt-3">
+            Check Status <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <!-- 5. Product Feedback & Review -->
+        <div onclick="openCareModal('modal-feedback')" class="p-3.5 rounded-2xl bg-surface-card border border-surface-container-high shadow-xs hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-secondary-light text-secondary flex items-center justify-center mb-2">
+              <span class="material-symbols-outlined text-[22px]">rate_review</span>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface leading-tight">Product Review</h4>
+            <p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">Rate paper stock, Smyth-sewn binding, and font readability.</p>
+          </div>
+          <span class="text-secondary text-xs font-bold flex items-center gap-1 mt-3">
+            Submit Review <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <!-- 6. 24/7 AI Concierge Assistance -->
+        <div onclick="openAiChat()" class="p-3.5 rounded-2xl bg-surface-card border border-surface-container-high shadow-xs hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mb-2">
+              <span class="material-symbols-outlined text-[22px]">psychology</span>
+            </div>
+            <h4 class="font-serif text-sm font-bold text-on-surface leading-tight">ReadGenius AI</h4>
+            <p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">Instant answers on book plots, syllabus prep, or order inquiries.</p>
+          </div>
+          <span class="text-primary text-xs font-bold flex items-center gap-1 mt-3">
+            Ask Librarian <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Accordion FAQs -->
+      <div class="flex flex-col gap-2 mt-1">
+        <h3 class="font-serif text-base font-bold text-on-surface">Frequently Asked Questions</h3>
+        <div class="divide-y divide-surface-container-high rounded-2xl bg-surface-card border border-surface-container-high shadow-xs overflow-hidden">
+          <details class="group p-3.5 cursor-pointer">
+            <summary class="flex items-center justify-between text-xs font-bold text-on-surface list-none">
+              <span>What is the 14-day doorstep return policy?</span>
+              <span class="material-symbols-outlined text-[18px] text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+            </summary>
+            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">Any physical book or magazine can be returned within 14 days of delivery. We arrange a doorstep courier pickup at zero charge. Books should remain unmarked with dust jackets intact.</p>
+          </details>
+          <details class="group p-3.5 cursor-pointer">
+            <summary class="flex items-center justify-between text-xs font-bold text-on-surface list-none">
+              <span>How do instant e-book and digital folios work?</span>
+              <span class="material-symbols-outlined text-[18px] text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+            </summary>
+            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">Purchased e-books and periodicals sync instantly to your cloud sanctuary library. You can also download DRM-free EPUB/MOBI files to your Kindle, Kobo, or tablet.</p>
+          </details>
+          <details class="group p-3.5 cursor-pointer">
+            <summary class="flex items-center justify-between text-xs font-bold text-on-surface list-none">
+              <span>What if my book arrives with bumped corners or misprints?</span>
+              <span class="material-symbols-outlined text-[18px] text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+            </summary>
+            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">Tap "Damaged Book" above and upload a snapshot. Our Care sanctuary will dispatch a brand-new replacement immediately without waiting for the damaged return.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: NEW USER / GUEST SIGN UP & LOGIN ==================== -->
+    <section id="tab-account" class="hidden flex flex-col gap-5 px-4 pt-3">
+      <!-- Welcome New Reader Banner -->
+      <div class="p-5 rounded-2xl bg-gradient-to-br from-primary-light via-white to-surface-container border border-primary/20 shadow-sm flex flex-col items-center text-center">
+        <div class="w-14 h-14 rounded-full bg-white shadow-xs border border-primary/20 flex items-center justify-center text-primary mb-2.5">
+          <span class="material-symbols-outlined text-[28px]">menu_book</span>
+        </div>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Welcome to PageHaven</span>
+        <h2 class="font-serif text-lg font-bold text-on-surface mt-1">A Sanctuary for Every Reader</h2>
+        <p class="text-xs text-on-surface-variant mt-1 max-w-xs">Create your reader account to sync reading bookmarks across devices, track parcels, and claim member privileges.</p>
+        <div class="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-white text-[11px] font-bold shadow-xs">
+          <span class="material-symbols-outlined text-[14px]">celebration</span>
+          <span>New Reader Perk: 25% Off First Order</span>
+        </div>
+      </div>
+
+      <!-- Sign Up / Sign In Toggle Pills -->
+      <div class="flex rounded-xl bg-surface-container p-1 shadow-inner">
+        <button id="auth-btn-signup" onclick="setAuthMode('signup')" class="flex-1 py-2 rounded-lg text-xs font-bold bg-white text-on-surface shadow-xs transition-all">
+          Create Account
+        </button>
+        <button id="auth-btn-login" onclick="setAuthMode('login')" class="flex-1 py-2 rounded-lg text-xs font-bold text-on-surface-variant hover:text-on-surface transition-all">
+          Sign In
+        </button>
+      </div>
+
+      <!-- Auth Form Card -->
+      <div class="p-4 rounded-2xl bg-surface-card border border-surface-container-high shadow-sm flex flex-col gap-3.5">
+        <!-- Sign Up Fields -->
+        <div id="auth-form-signup" class="flex flex-col gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-on-surface-variant block mb-1">Full Legal Name</label>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">person</span>
+              <input id="su-name" type="text" placeholder="e.g. Eleanor Vance" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-surface-container text-on-surface text-xs outline-none focus:ring-2 focus:ring-primary/30 border border-transparent focus:border-primary"/>
+            </div>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-on-surface-variant block mb-1">Email Address</label>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">mail</span>
+              <input id="su-email" type="email" placeholder="reader@haven.com" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-surface-container text-on-surface text-xs outline-none focus:ring-2 focus:ring-primary/30 border border-transparent focus:border-primary"/>
+            </div>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-on-surface-variant block mb-1">Password</label>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">lock</span>
+              <input id="su-pass" type="password" placeholder="At least 8 characters" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-surface-container text-on-surface text-xs outline-none focus:ring-2 focus:ring-primary/30 border border-transparent focus:border-primary"/>
+            </div>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-on-surface-variant block mb-1">Reading Preference</label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="flex flex-col items-center p-2 rounded-xl bg-surface-container border border-transparent hover:border-primary/40 cursor-pointer text-center text-xs font-semibold">
+                <input type="radio" name="format-pref" value="hardcover" checked class="accent-primary mb-1"/>
+                <span>Hardcovers</span>
+              </label>
+              <label class="flex flex-col items-center p-2 rounded-xl bg-surface-container border border-transparent hover:border-primary/40 cursor-pointer text-center text-xs font-semibold">
+                <input type="radio" name="format-pref" value="ebook" class="accent-primary mb-1"/>
+                <span>E-Reader</span>
+              </label>
+              <label class="flex flex-col items-center p-2 rounded-xl bg-surface-container border border-transparent hover:border-primary/40 cursor-pointer text-center text-xs font-semibold">
+                <input type="radio" name="format-pref" value="both" class="accent-primary mb-1"/>
+                <span>Both</span>
+              </label>
+            </div>
+          </div>
+          <button onclick="handleAuthSubmit('signup')" class="w-full mt-1 py-3 rounded-xl bg-primary text-white text-xs font-bold shadow-md hover:bg-primary-dark transition-colors">
+            Join PageHaven & Claim 25% Off
+          </button>
+        </div>
+
+        <!-- Sign In Fields -->
+        <div id="auth-form-login" class="hidden flex-col gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-on-surface-variant block mb-1">Email Address</label>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">mail</span>
+              <input id="li-email" type="email" placeholder="reader@haven.com" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-surface-container text-on-surface text-xs outline-none focus:ring-2 focus:ring-primary/30 border border-transparent focus:border-primary"/>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="text-[11px] font-bold text-on-surface-variant">Password</label>
+              <button onclick="showToast('Password reset link dispatched to your email')" class="text-[10px] font-semibold text-primary hover:underline">Forgot?</button>
+            </div>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">lock</span>
+              <input id="li-pass" type="password" placeholder="••••••••" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-surface-container text-on-surface text-xs outline-none focus:ring-2 focus:ring-primary/30 border border-transparent focus:border-primary"/>
+            </div>
+          </div>
+          <button onclick="handleAuthSubmit('login')" class="w-full mt-1 py-3 rounded-xl bg-primary text-white text-xs font-bold shadow-md hover:bg-primary-dark transition-colors">
+            Sign In to Sanctuary
+          </button>
+        </div>
+
+        <div class="relative flex items-center justify-center my-0.5">
+          <div class="border-t border-surface-container-high w-full"></div>
+          <span class="bg-surface-card px-2 text-[10px] text-on-surface-variant uppercase font-bold">Or browse as guest</span>
+        </div>
+
+        <button onclick="switchTab('home')" class="w-full py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">explore</span> Continue Browsing Anonymously
+        </button>
+      </div>
+
+      <div class="flex items-center justify-center gap-1.5 text-center text-on-surface-variant text-[11px] pb-4">
+        <span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span>
+        <span>Your literary profile and reading records are encrypted & private.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FIXED BOTTOM TAB NAVIGATION ==================== -->
+  <nav class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-surface-container-high shadow-lg pb-safe">
+    <div class="flex items-stretch justify-around h-16">
+      <button onclick="switchTab('home')" id="nav-home" class="flex-1 flex flex-col items-center justify-center text-primary font-bold transition-colors">
+        <span class="material-symbols-outlined text-[22px]">cottage</span>
+        <span class="text-[10px] mt-0.5">Home</span>
+      </button>
+      <button onclick="switchTab('fiction')" id="nav-fiction" class="flex-1 flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface font-medium transition-colors">
+        <span class="material-symbols-outlined text-[22px]">auto_stories</span>
+        <span class="text-[10px] mt-0.5">Browse</span>
+      </button>
+      <button onclick="switchTab('magazines')" id="nav-magazines" class="flex-1 flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface font-medium transition-colors">
+        <span class="material-symbols-outlined text-[22px]">newspaper</span>
+        <span class="text-[10px] mt-0.5">Magazines</span>
+      </button>
+      <button onclick="switchTab('care')" id="nav-care" class="flex-1 flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface font-medium transition-colors">
+        <span class="material-symbols-outlined text-[22px]">support_agent</span>
+        <span class="text-[10px] mt-0.5">Care Help</span>
+      </button>
+      <button onclick="switchTab('account')" id="nav-account" class="flex-1 flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface font-medium transition-colors">
+        <span class="material-symbols-outlined text-[22px]">person_outline</span>
+        <span class="text-[10px] mt-0.5">Account</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== SHOPPING BAG SLIDE-OVER DRAWER ==================== -->
+  <!-- Backdrop -->
+  <div id="cart-backdrop" onclick="closeCart()" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- Panel -->
+  <div id="cart-panel" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Header -->
+    <div class="p-4 border-b border-surface-container-high flex items-center justify-between bg-surface">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[20px]">local_mall</span>
+        </div>
+        <div>
+          <h3 class="font-serif text-base font-bold text-on-surface leading-none">Your Reading Bag</h3>
+          <span id="cart-subtitle" class="text-[11px] text-on-surface-variant">3 volumes selected</span>
+        </div>
+      </div>
+      <button onclick="closeCart()" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container" aria-label="Close cart">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="px-4 py-2 bg-secondary-light/60 border-b border-secondary/10 flex items-center justify-between text-xs">
+      <span class="text-secondary font-semibold flex items-center gap-1">
+        <span class="material-symbols-outlined text-[15px]">local_shipping</span> Archival Courier
+      </span>
+      <span class="text-secondary font-bold">Complimentary Unlocked</span>
+    </div>
+
+    <!-- Items Scroll Area -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
+      <!-- Rendered dynamically by JavaScript -->
+    </div>
+
+    <!-- Footer with Calculations & Checkout -->
+    <div class="p-4 bg-surface border-t border-surface-container-high flex flex-col gap-3">
+      <!-- Promo Code Field -->
+      <div class="flex gap-2">
+        <input id="cart-promo-input" type="text" placeholder="Promo (e.g. PAGE25)" class="flex-1 px-3 py-2 rounded-xl bg-white border border-surface-container-high text-xs font-mono uppercase outline-none focus:border-primary"/>
+        <button onclick="applyVoucher()" class="px-3.5 py-2 rounded-xl bg-primary text-white text-xs font-bold hover:bg-primary-dark transition-colors">
+          Apply
+        </button>
+      </div>
+      <div id="voucher-msg" class="hidden text-[11px] font-semibold px-1"></div>
+
+      <!-- Pricing Summary -->
+      <div class="flex flex-col gap-1.5 text-xs">
+        <div class="flex justify-between text-on-surface-variant">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" class="font-semibold text-on-surface">$49.00</span>
+        </div>
+        <div id="cart-discount-row" class="hidden justify-between text-tertiary font-semibold">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">sell</span> Discount Applied</span>
+          <span id="cart-discount">-$0.00</span>
+        </div>
+        <div class="flex justify-between text-on-surface-variant">
+          <span>Doorstep Archival Packaging</span>
+          <span class="text-secondary font-semibold">Free</span>
+        </div>
+        <div class="border-t border-surface-container-high my-1"></div>
+        <div class="flex justify-between text-base">
+          <span class="font-serif font-bold text-on-surface">Total</span>
+          <span id="cart-total" class="font-serif font-bold text-primary">$49.00</span>
+        </div>
+      </div>
+
+      <!-- Checkout Button -->
+      <button onclick="openCheckout()" class="w-full py-3.5 rounded-xl bg-primary text-white text-xs font-bold shadow-md flex items-center justify-center gap-2 hover:bg-primary-dark transition-colors">
+        <span class="material-symbols-outlined text-[18px]">lock</span>
+        <span>Proceed to Secure Checkout</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== CHECKOUT MODAL ==================== -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden items-end justify-center p-0">
+    <div class="w-full bg-white rounded-t-3xl max-h-[85vh] flex flex-col p-5 shadow-2xl border-t border-surface-container-high">
+      <div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[22px]">shopping_cart_checkout</span>
+          <h3 class="font-serif text-base font-bold text-on-surface">Secure Literary Checkout</h3>
+        </div>
+        <button onclick="closeCheckout()" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto py-4 flex flex-col gap-4">
+        <!-- Delivery Address -->
+        <div class="flex flex-col gap-2">
+          <span class="text-xs font-bold text-on-surface">1. Delivery Address</span>
+          <input type="text" value="742 Evergreen Book Haven, Apt 4B" class="w-full p-2.5 rounded-xl bg-surface-container text-xs outline-none border border-surface-container-high"/>
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" value="San Francisco, CA" class="p-2.5 rounded-xl bg-surface-container text-xs outline-none border border-surface-container-high"/>
+            <input type="text" value="94107" class="p-2.5 rounded-xl bg-surface-container text-xs outline-none border border-surface-container-high"/>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="flex flex-col gap-2">
+          <span class="text-xs font-bold text-on-surface">2. Payment Method</span>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="p-2.5 rounded-xl border-2 border-primary bg-primary-light/30 flex flex-col items-center justify-center text-center cursor-pointer">
+              <span class="material-symbols-outlined text-primary text-[20px] mb-1">credit_card</span>
+              <span class="text-[11px] font-bold text-on-surface">Card</span>
+            </div>
+            <div onclick="showToast('Apple Pay selected')" class="p-2.5 rounded-xl border border-surface-container-high bg-surface flex flex-col items-center justify-center text-center cursor-pointer">
+              <span class="material-symbols-outlined text-on-surface text-[20px] mb-1">apple</span>
+              <span class="text-[11px] font-bold text-on-surface">Apple Pay</span>
+            </div>
+            <div onclick="showToast('Cash on Doorstep Delivery selected')" class="p-2.5 rounded-xl border border-surface-container-high bg-surface flex flex-col items-center justify-center text-center cursor-pointer">
+              <span class="material-symbols-outlined text-on-surface text-[20px] mb-1">payments</span>
+              <span class="text-[11px] font-bold text-on-surface">Cash on Delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="p-3 rounded-xl bg-surface border border-surface-container-high flex flex-col gap-1 text-xs">
+          <div class="flex justify-between text-on-surface-variant">
+            <span>Amount Payable:</span>
+            <span id="checkout-amount" class="font-serif font-bold text-primary text-base">$49.00</span>
+          </div>
+          <span class="text-[10px] text-secondary font-semibold">✓ 14-day doorstep exchange & refund guarantee</span>
+        </div>
+      </div>
+
+      <button onclick="confirmOrder()" class="w-full py-3.5 rounded-xl bg-primary text-white text-xs font-bold shadow-md flex items-center justify-center gap-1.5 hover:bg-primary-dark transition-colors">
+        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        <span>Confirm & Place Order</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== CARE SERVICE MODALS ==================== -->
+  <!-- 1. Return Modal -->
+  <div id="modal-return" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="w-full max-w-sm bg-white rounded-3xl p-5 shadow-2xl flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h4 class="font-serif text-base font-bold text-on-surface">Doorstep Return Request</h4>
+        <button onclick="closeCareModal('modal-return')"><span class="material-symbols-outlined text-[20px]">close</span></button>
+      </div>
+      <p class="text-xs text-on-surface-variant">Orders within 14 days will be collected by our courier within 24 hours at zero fee.</p>
+      <input type="text" placeholder="Enter Order ID (e.g. PH-88921)" value="PH-88921" class="w-full p-2.5 rounded-xl bg-surface-container text-xs outline-none border border-surface-container-high uppercase font-mono"/>
+      <select class="w-full p-2.5 rounded-xl bg-surface-container text-xs outline-none border border-surface-container-high">
+        <option>Reason: Accidental order duplicate</option>
+        <option>Reason: Changed mind / Want hardbound edition</option>
+        <option>Reason: Binding or paper dissatisfaction</option>
+      </select>
+      <button onclick="submitCareAction('Return pickup scheduled for tomorrow between 10 AM - 2 PM!')" class="w-full py-2.5 rounded-xl bg-primary text-white text-xs font-bold mt-1">Schedule Doorstep Pickup</button>
+    </div>
+  </div>
+
+  <!-- 2. Track Modal -->
+  <div id="modal-track" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="w-full max-w-sm bg-white rounded-3xl p-5 shadow-2xl flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h4 class="font-serif text-base font-bold text-on-surface">Track Parcel</h4>
+        <button onclick="closeCareModal('modal-track')"><span class="material-symbols-outlined text-[20px]">close</span></button>
+      </div>
+      <div class="flex gap-2">
+        <input id="track-input" type="text" value="PH-77291" class="flex-1 p-2.5 rounded-xl bg-surface-container text-xs uppercase font-mono border border-surface-container-high outline-none"/>
+        <button onclick="showToast('Tracking data refreshed for PH-77291')" class="px-3.5 py-2.5 rounded-xl bg-primary text-white text-xs font-bold">Search</button>
+      </div>
+      <div class="p-3 rounded-xl bg-surface-container flex flex-col gap-2 text-xs">
+        <div class="flex items-center gap-2 text-secondary font-bold">
+          <span class="material-symbols-outlined text-[18px]">local_shipping</span>
+          <span>Out for Delivery with DHL Archival</span>
+        </div>
+        <p class="text-on-surface-variant text-[11px]">Estimated arrival: Today by 5:30 PM. Hand-wrapped with acid-free tissue.</p>
+      </div>
+      <button onclick="closeCareModal('modal-track')" class="w-full py-2 rounded-xl bg-surface text-xs font-bold">Close</button>
+    </div>
+  </div>
+
+  <!-- 3. Damaged Book Modal -->
+  <div id="modal-damage" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="w-full max-w-sm bg-white rounded-3xl p-5 shadow-2xl flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h4 class="font-serif text-base font-bold text-on-surface">Report Damaged Copy</h4>
+        <button onclick="closeCareModal('modal-damage')"><span class="material-symbols-outlined text-[20px]">close</span></button>
+      </div>
+      <p class="text-xs text-on-surface-variant">If your volume arrived with bumped corners, torn jacket, or missing pages, upload a photo for instant replacement.</p>
+      <div onclick="showToast('Photo uploaded: spine_damage.jpg')" class="p-4 border-2 border-dashed border-primary/40 rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer bg-primary-light/20 hover:bg-primary-light/40 transition-colors">
+        <span class="material-symbols-outlined text-primary text-[28px] mb-1">add_a_photo</span>
+        <span class="text-xs font-bold text-on-surface">Upload Defect Photo</span>
+        <span class="text-[10px] text-on-surface-variant">JPG, PNG up to 10MB</span>
+      </div>
+      <button onclick="submitCareAction('Replacement copy approved! Dispatched via Express today.')" class="w-full py-2.5 rounded-xl bg-primary text-white text-xs font-bold mt-1">Request Free Replacement Copy</button>
+    </div>
+  </div>
+
+  <!-- 4. Refund Modal -->
+  <div id="modal-refund" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="w-full max-w-sm bg-white rounded-3xl p-5 shadow-2xl flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h4 class="font-serif text-base font-bold text-on-surface">Refund & Wallet Status</h4>
+        <button onclick="closeCareModal('modal-refund')"><span class="material-symbols-outlined text-[20px]">close</span></button>
+      </div>
+      <div class="p-3.5 rounded-2xl bg-primary-light/50 border border-primary/20 flex flex-col gap-1">
+        <span class="text-[10px] uppercase font-bold text-primary tracking-wider">Available Haven Store Credit</span>
+        <span class="font-serif text-2xl font-bold text-primary">$25.00</span>
+        <span class="text-[10px] text-secondary font-semibold">Usable immediately on any physical or digital item</span>
+      </div>
+      <p class="text-xs text-on-surface-variant">Recent return refund of $21.50 credited back to Visa ending in ••82 on Oct 24.</p>
+      <button onclick="closeCareModal('modal-refund')" class="w-full py-2 rounded-xl bg-surface-container text-xs font-bold">Done</button>
+    </div>
+  </div>
+
+  <!-- 5. Feedback Modal -->
+  <div id="modal-feedback" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="w-full max-w-sm bg-white rounded-3xl p-5 shadow-2xl flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h4 class="font-serif text-base font-bold text-on-surface">Product & Print Review</h4>
+        <button onclick="closeCareModal('modal-feedback')"><span class="material-symbols-outlined text-[20px]">close</span></button>
+      </div>
+      <p class="text-xs text-on-surface-variant">Share your experience with paper weight, typography, binding, and literary content.</p>
+      <div class="flex items-center justify-center gap-1 py-1 text-primary">
+        <span class="material-symbols-outlined text-[26px] cursor-pointer">star</span>
+        <span class="material-symbols-outlined text-[26px] cursor-pointer">star</span>
+        <span class="material-symbols-outlined text-[26px] cursor-pointer">star</span>
+        <span class="material-symbols-outlined text-[26px] cursor-pointer">star</span>
+        <span class="material-symbols-outlined text-[26px] cursor-pointer">star</span>
+      </div>
+      <textarea placeholder="Write about paper quality, binding, and readability..." class="w-full p-2.5 rounded-xl bg-surface-container text-xs outline-none h-20 border border-surface-container-high"></textarea>
+      <button onclick="submitCareAction('Review published! 50 Haven Loyalty Points earned.')" class="w-full py-2.5 rounded-xl bg-primary text-white text-xs font-bold">Publish Review</button>
+    </div>
+  </div>
+
+  <!-- SAMPLE EXCERPT MODAL -->
+  <div id="modal-excerpt" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden items-end justify-center p-0">
+    <div class="w-full bg-white rounded-t-3xl max-h-[75vh] flex flex-col p-5 shadow-2xl border-t border-surface-container-high">
+      <div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+        <div>
+          <h4 id="sample-title" class="font-serif text-base font-bold text-on-surface">The Midnight Library</h4>
+          <span id="sample-author" class="text-xs text-on-surface-variant">Matt Haig</span>
+        </div>
+        <button onclick="closeExcerpt()" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto py-3">
+        <p id="sample-text" class="font-serif italic text-sm text-on-surface leading-relaxed p-4 rounded-xl bg-surface border border-surface-container-high"></p>
+      </div>
+      <button onclick="closeExcerpt()" class="w-full py-2.5 rounded-xl bg-primary text-white text-xs font-bold">Close Sample</button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed top-20 inset-x-4 z-50 pointer-events-none transform -translate-y-8 opacity-0 transition-all duration-300 flex items-center justify-center">
+    <div class="px-4 py-2 rounded-full bg-on-surface text-white text-xs font-medium shadow-xl flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+      <span id="toast-text">Notice</span>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC ENGINE -->
+  <script>
+    // Cart State
+    let cart = [
+      {
+        id: 1,
+        title: 'The Midnight Library',
+        author: 'Matt Haig',
+        format: 'Hardbound Collector',
+        price: 21.50,
+        qty: 1,
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOXHF2uRq8fCB8skdF5Yj2SPFVwiV_S5sXT2WZJUReZng4V-f7auphomFB6Y_s-Tl6bfyEdikJLLPBosHy8doMrdhNQc5YBElvTRvVCls67dU-O3feqtxwbaNQfHP9rxOERDvqrQlRW-uGuzOXAt4rQEgPPqpJd6r_gw97mxZnvjUXkbxDIlUGbpsO4C85eZwm7sfLUDPldsDYdyYa2N_UFfFN8fF3SzLIqUqKXPCo9hxsoih2Q35IhA'
+      },
+      {
+        id: 2,
+        title: 'Atomic Habits',
+        author: 'James Clear',
+        format: 'Hardbound Edition',
+        price: 18.00,
+        qty: 1,
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBy-602xdVTUr_9gBujFB-ne4zapbTGjh3-Wn14b8D70ff8BUzYUnjeg9E1-gpEYgAWUUsp4h-AVLf_sYMe8b498-JgK9_Iw35LOU4206rOqSv97SNBtKAh-lXAzbafdi4kbiMKD4Ebbqpw5IkXCBMM5x36tIpnY0FE-Kj5dkaKKkZmotQOSQBZWxrgAbdT4NFgnWivQwy17aKy51iXX2Zsf2x6YHiT4Cf9nmS4hkAOmQcVFAPcHJ8Lfw'
+      },
+      {
+        id: 3,
+        title: 'Solace & Living (Issue 48)',
+        author: 'Scandinavian Living',
+        format: 'Glossy Archival Print',
+        price: 9.50,
+        qty: 1,
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcCtt8-04nN_W9gyBLHadQtOTW5LNtB6palnVtuGp1b6cOdCXxV1-8Mud2iI_hnYwPELO8feQuRVISYHz3sxhuKCPb_8a-f77j-5NpYKCjOxBGA05Qla1deMLicpKUZLcdk-Z5LxSGemx75Sic5TwucGQEFi_QU2JATqmRATWw7SY7X9Pg4cq7-IeaOl04iG2Mwcjz7WLSQ0GKKNu1EXXuuAdbe3HJCkkMBKLKUy9ZMF_Deqb-3qIc5g'
+      }
+    ];
+
+    let discountRate = 0.0;
+
+    // TAB SWITCHING
+    function switchTab(tabId) {
+      const tabs = ['home', 'fiction', 'magazines', 'care', 'account'];
+      tabs.forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        const pill = document.getElementById('pill-' + t);
+        const nav = document.getElementById('nav-' + t);
+        if (el) el.classList.add('hidden');
+        if (pill) {
+          pill.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface transition-all';
+        }
+        if (nav) {
+          nav.className = 'flex-1 flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface font-medium transition-colors';
+        }
+      });
+
+      const activeEl = document.getElementById('tab-' + tabId);
+      const activePill = document.getElementById('pill-' + tabId);
+      const activeNav = document.getElementById('nav-' + tabId);
+
+      if (activeEl) activeEl.classList.remove('hidden');
+      if (activePill) {
+        activePill.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 flex items-center gap-1.5 bg-primary text-white shadow-sm transition-all';
+      }
+      if (activeNav) {
+        activeNav.className = 'flex-1 flex flex-col items-center justify-center text-primary font-bold transition-colors';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // CART DRAWER CONTROLS
+    function openCart() {
+      renderCart();
+      const backdrop = document.getElementById('cart-backdrop');
+      const panel = document.getElementById('cart-panel');
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100', 'pointer-events-auto');
+      panel.classList.remove('translate-x-full');
+      panel.classList.add('translate-x-0');
+    }
+
+    function closeCart() {
+      const backdrop = document.getElementById('cart-backdrop');
+      const panel = document.getElementById('cart-panel');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      panel.classList.add('translate-x-full');
+      panel.classList.remove('translate-x-0');
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const badge = document.getElementById('badge-count');
+      const subtitle = document.getElementById('cart-subtitle');
+      const subtotalEl = document.getElementById('cart-subtotal');
+      const totalEl = document.getElementById('cart-total');
+      const discountRow = document.getElementById('cart-discount-row');
+      const discountEl = document.getElementById('cart-discount');
+      const checkoutAmt = document.getElementById('checkout-amount');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      badge.textContent = totalItems;
+      subtitle.textContent = totalItems + (totalItems === 1 ? ' volume selected' : ' volumes selected');
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="flex-1 flex flex-col items-center justify-center text-center p-6 text-on-surface-variant">
+            <span class="material-symbols-outlined text-4xl text-primary mb-2">shopping_basket</span>
+            <p class="font-serif text-base font-bold text-on-surface">Your bag is empty</p>
+            <p class="text-xs mt-1">Explore our literature archives and add hardcovers or e-books.</p>
+            <button onclick="closeCart(); switchTab('fiction');" class="mt-4 px-4 py-2 rounded-xl bg-primary text-white text-xs font-bold">
+              Browse Books
+            </button>
+          </div>
+        `;
+        subtotalEl.textContent = '$0.00';
+        totalEl.textContent = '$0.00';
+        checkoutAmt.textContent = '$0.00';
+        discountRow.classList.add('hidden');
+        return;
+      }
+
+      let subtotal = 0;
+      container.innerHTML = cart.map(item => {
+        const lineTotal = item.price * item.qty;
+        subtotal += lineTotal;
+        return `
+          <div class="flex gap-3 p-3 rounded-2xl bg-surface border border-surface-container-high items-center">
+            <img src="${item.img}" alt="${item.title}" class="w-14 h-20 rounded-lg object-cover bg-surface-container shrink-0 shadow-xs"/>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-serif text-xs font-bold text-on-surface truncate">${item.title}</h4>
+              <p class="text-[10px] text-on-surface-variant truncate">${item.author}</p>
+              <span class="inline-block text-[9px] px-1.5 py-0.5 rounded bg-primary-light text-primary font-bold mt-1">${item.format}</span>
+              <div class="flex items-center justify-between mt-2">
+                <span class="text-xs font-bold text-primary font-serif">$${lineTotal.toFixed(2)}</span>
+                <div class="flex items-center gap-2 bg-white rounded-lg border border-surface-container-high px-1.5 py-0.5">
+                  <button onclick="updateCartQty(${item.id}, -1)" class="text-on-surface-variant hover:text-primary font-bold text-xs">-</button>
+                  <span class="text-xs font-bold text-on-surface min-w-[14px] text-center">${item.qty}</span>
+                  <button onclick="updateCartQty(${item.id}, 1)" class="text-on-surface-variant hover:text-primary font-bold text-xs">+</button>
+                </div>
+              </div>
+            </div>
+            <button onclick="removeCartItem(${item.id})" class="text-on-surface-variant/70 hover:text-tertiary p-1" title="Remove">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+      if (discountRate > 0) {
+        const disc = subtotal * discountRate;
+        const total = subtotal - disc;
+        discountRow.classList.remove('hidden');
+        discountRow.classList.add('flex');
+        discountEl.textContent = `-$${disc.toFixed(2)}`;
+        totalEl.textContent = `$${total.toFixed(2)}`;
+        checkoutAmt.textContent = `$${total.toFixed(2)}`;
+      } else {
+        discountRow.classList.add('hidden');
+        totalEl.textContent = `$${subtotal.toFixed(2)}`;
+        checkoutAmt.textContent = `$${subtotal.toFixed(2)}`;
+      }
+    }
+
+    function updateCartQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      renderCart();
+    }
+
+    function removeCartItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      renderCart();
+      showToast('Item removed from reading bag');
+    }
+
+    function addItemToCart(title, author, format, price, img) {
+      const existing = cart.find(i => i.title === title && i.format === format);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: Date.now(),
+          title,
+          author,
+          format,
+          price,
+          qty: 1,
+          img
+        });
+      }
+      openCart();
+      showToast(`Added "${title}" to your bag`);
+    }
+
+    function applyVoucher() {
+      const input = document.getElementById('cart-promo-input');
+      const msg = document.getElementById('voucher-msg');
+      const val = (input.value || '').trim().toUpperCase();
+
+      if (val === 'PAGE25') {
+        discountRate = 0.25;
+        msg.className = 'text-[11px] font-bold text-secondary px-1 block';
+        msg.textContent = '✓ 25% Autumn Salon discount activated!';
+      } else if (val === 'SCHOLAR20') {
+        discountRate = 0.20;
+        msg.className = 'text-[11px] font-bold text-secondary px-1 block';
+        msg.textContent = '✓ 20% Academic Scholar discount activated!';
+      } else {
+        discountRate = 0.0;
+        msg.className = 'text-[11px] font-bold text-tertiary px-1 block';
+        msg.textContent = '✕ Invalid voucher code. Try PAGE25';
+      }
+      renderCart();
+    }
+
+    // CHECKOUT FLOW
+    function openCheckout() {
+      if (cart.length === 0) {
+        showToast('Your bag is empty.');
+        return;
+      }
+      document.getElementById('checkout-modal').classList.remove('hidden');
+      document.getElementById('checkout-modal').classList.add('flex');
+    }
+
+    function closeCheckout() {
+      document.getElementById('checkout-modal').classList.add('hidden');
+      document.getElementById('checkout-modal').classList.remove('flex');
+    }
+
+    function confirmOrder() {
+      closeCheckout();
+      closeCart();
+      cart = [];
+      renderCart();
+      showToast('🎉 Order confirmed! Tracking ID #PH-99214 emailed to you.');
+      setTimeout(() => {
+        switchTab('care');
+      }, 1200);
+    }
+
+    // CARE MODALS
+    function openCareModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('flex');
+    }
+
+    function closeCareModal(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.getElementById(id).classList.remove('flex');
+    }
+
+    function submitCareAction(msg) {
+      const modals = ['modal-return', 'modal-track', 'modal-damage', 'modal-refund', 'modal-feedback'];
+      modals.forEach(m => closeCareModal(m));
+      showToast(msg);
+    }
+
+    function openAiChat() {
+      showToast('Librarian AI: Welcome! How may I guide your literary search or order inquiry today?');
+    }
+
+    // SAMPLE EXCERPT
+    function previewExcerpt(title, author, text) {
+      document.getElementById('sample-title').textContent = title;
+      document.getElementById('sample-author').textContent = author;
+      document.getElementById('sample-text').textContent = text;
+      document.getElementById('modal-excerpt').classList.remove('hidden');
+      document.getElementById('modal-excerpt').classList.add('flex');
+    }
+
+    function closeExcerpt() {
+      document.getElementById('modal-excerpt').classList.add('hidden');
+      document.getElementById('modal-excerpt').classList.remove('flex');
+    }
+
+    // AUTH MODE SWITCH
+    function setAuthMode(mode) {
+      const suBtn = document.getElementById('auth-btn-signup');
+      const liBtn = document.getElementById('auth-btn-login');
+      const suForm = document.getElementById('auth-form-signup');
+      const liForm = document.getElementById('auth-form-login');
+
+      if (mode === 'signup') {
+        suBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold bg-white text-on-surface shadow-xs transition-all';
+        liBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold text-on-surface-variant hover:text-on-surface transition-all';
+        suForm.classList.remove('hidden');
+        liForm.classList.add('hidden');
+      } else {
+        liBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold bg-white text-on-surface shadow-xs transition-all';
+        suBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold text-on-surface-variant hover:text-on-surface transition-all';
+        liForm.classList.remove('hidden');
+        suForm.classList.add('hidden');
+      }
+    }
+
+    function handleAuthSubmit(type) {
+      if (type === 'signup') {
+        showToast('Welcome to PageHaven! 25% welcome credit has been applied to your account.');
+      } else {
+        showToast('Signed in successfully. Welcome back to your reading sanctuary.');
+      }
+      setTimeout(() => switchTab('home'), 1000);
+    }
+
+    function copyCode(code) {
+      navigator.clipboard?.writeText(code);
+      showToast(`Copied voucher "${code}" to clipboard!`);
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = text;
+      toast.classList.remove('-translate-y-8', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      clearTimeout(window._toastTimeout);
+      window._toastTimeout = setTimeout(() => {
+        toast.classList.add('-translate-y-8', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3000);
+    }
+
+    // Initial render
+    renderCart();
+  </script>
+</body>
+</html>

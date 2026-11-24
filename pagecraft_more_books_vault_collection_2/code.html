@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#ffffff", "surface-bright": "#faf8ff", "surface-dim": "#d4d9ed", "tertiary-fixed": "#ffdad4", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "secondary-container": "#c3e6e7", "tertiary-container": "#c94a38", "primary-container": "#b15f00", "on-primary-fixed-variant": "#6e3900", "on-tertiary-fixed": "#410100", "surface-variant": "#dde2f6", "surface-container-highest": "#dde2f6", "background": "#faf8ff", "surface-container-low": "#f1f3ff", "on-secondary-fixed-variant": "#2b4c4d", "secondary": "#436465", "secondary-fixed-dim": "#aacdce", "primary": "#8d4b00", "on-primary-fixed": "#2f1500", "surface-container-high": "#e2e8fc", "on-surface": "#151b29", "outline": "#887364", "on-surface-variant": "#554336", "on-tertiary-fixed-variant": "#8a1c10", "on-background": "#151b29", "primary-fixed-dim": "#ffb77d", "surface-container": "#e9edff", "secondary-fixed": "#c6e9ea", "primary-fixed": "#ffdcc3", "tertiary-fixed-dim": "#ffb4a8", "on-secondary-fixed": "#002021", "on-error-container": "#93000a", "on-secondary-container": "#476869", "outline-variant": "#dbc2b0", "on-primary-container": "#fffbff", "inverse-surface": "#2a303f", "on-error": "#ffffff", "error": "#ba1a1a", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fffbff", "surface-tint": "#904d00", "inverse-on-surface": "#edf0ff", "tertiary": "#a83223", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2.5rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "title-editorial": ["Newsreader"], "body-lg": ["Manrope"], "headline-md": ["Newsreader"], "label-lg": ["Manrope"], "body-md": ["Manrope"], "body-sm": ["Manrope"], "headline-lg-mobile": ["Newsreader"], "display": ["Newsreader"], "label-sm": ["Manrope"], "label-md": ["Manrope"], "display-mobile": ["Newsreader"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><img alt="PageCraft Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">PageCraft</span><span class="hidden">Pagecraft Books Vault &amp; Curated Library</span></div><div class="flex items-center gap-1"><a aria-label="Search Catalog" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" data-path="pagecraft---browse--categories" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><button aria-label="Open Shopping Cart" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary text-on-primary font-label-sm text-[10px] flex items-center justify-center shadow-[0_0_8px_rgba(141,75,0,0.4)]">2</span></button><a aria-label="User Account" class="w-11 h-11 flex items-center justify-center" data-path="pagecraft---account--profile" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Archival Hero Section -->
+<section class="relative w-full px-4 pt-3 pb-5 bg-gradient-to-b from-surface-container-low via-surface to-surface overflow-hidden">
+<div class="relative z-10 flex flex-col gap-3">
+<!-- Breadcrumb & Vault Status Badge -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed-variant shadow-sm">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Archival Vault · Live Catalog</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">shelves</span>
+<span>12,480 Stacks Active</span>
+</div>
+</div>
+<!-- Main Heading & Descriptor -->
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-medium leading-tight">
+          The Grand Library Stacks
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Rare hardcover editions, signed archival reprints, and whisper-synced digital e-pubs ready for immediate study.
+        </p>
+</div>
+<!-- Fast Format Mode Switcher -->
+<div class="grid grid-cols-3 gap-1.5 p-1 bg-surface-container rounded-xl shadow-inner">
+<button class="flex items-center justify-center gap-1 py-2 px-1 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm font-label-md text-label-md transition-all" id="format-btn-all" onclick="filterCatalog('all')">
+<span class="material-symbols-outlined text-[16px] text-primary">all_inclusive</span>
+<span>All Stacks</span>
+</button>
+<button class="flex items-center justify-center gap-1 py-2 px-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="format-btn-hard" onclick="filterCatalog('hardcopy')">
+<span class="material-symbols-outlined text-[16px] text-secondary">menu_book</span>
+<span class="truncate">Hardcover</span>
+</button>
+<button class="flex items-center justify-center gap-1 py-2 px-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="format-btn-digital" onclick="filterCatalog('ebook')">
+<span class="material-symbols-outlined text-[16px] text-primary">bolt</span>
+<span class="truncate">Digital E-Pub</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Quick Filter & Genre Pill Rail -->
+<section class="sticky top-16 z-30 bg-surface/95 backdrop-blur-md px-4 py-2.5 shadow-sm space-y-2">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 min-w-0 flex-1">
+<!-- Sort Control Dropdown Button -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex-shrink-0 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px] text-primary">sort</span>
+<span>Most Popular</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<!-- Filter Quick Chip -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex-shrink-0 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>In Stock Hardcopy</span>
+</button>
+<!-- Price Pill -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex-shrink-0 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Price: Any</span>
+</button>
+</div>
+<!-- Shelf View Toggle -->
+<button aria-label="Toggle compact view" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+</div>
+<!-- Category Direct Links -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
+<a class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm whitespace-nowrap shadow-xs" href="#staff-picks">Curated Picks</a>
+<a class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap" href="#comics-stacks">Graphic Novels &amp; Comics</a>
+<a class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap" href="#manga-stacks">Anime &amp; Manga</a>
+<a class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap" href="#psychology-stacks">Psychology &amp; Life</a>
+<a class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap" href="#science-stacks">Science &amp; Periodicals</a>
+<a class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap" href="#tech-stacks">Tech &amp; Academics</a>
+</div>
+</section>
+<!-- 1. Curated Staff Picks & Bestselling Story Books -->
+<section class="px-4 pt-6 pb-4" id="staff-picks">
+<div class="flex items-baseline justify-between mb-3.5">
+<div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Curator Spotlight</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Staff Picks &amp; Fiction Masters</h2>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold">3 Titles</span>
+</div>
+<div class="flex flex-col gap-3.5">
+<!-- Card: Klara and the Sun -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item" data-format="both">
+<!-- Spine Accent Overlay -->
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Warm literary book cover art for Klara and the Sun with gentle solar rays casting on an empathetic humanoid figure, amber, gold, and ivory palette, deep letterpress finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoYSDSzi1cAAvHqZ_Sh4YsP3PXyjZ6SmsaY1gANm79Fs8nojHrB8mYJCXztbyWcjHAtHxKgkySVN-uyogvNibzk1DGvQSilu_2vEbPbmIlxDsBNzNOmTWmkAK9qEi2MUF4n3Kft9YqDY1A0BPMoUrLTPajJsoP5wv3aoMyaORWVHVJy_7Fd4e39nkG5smzgdc-faA1kb2c8FNrGtHSepIsgRgzoH8nAajRBxKDEllBBJWwcl1gfS78DQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-primary/90 text-on-primary rounded font-label-sm text-[9px]">Staff Best</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Kazuo Ishiguro</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-0.5">Klara and the Sun</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">A profound exploration of love, mortal transience, and artificial devotion in a near-future world.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Hardcover $21.50</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">E-Book $9.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Klara and the Sun')">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Add Hardcopy</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card: Tomorrow, and Tomorrow, and Tomorrow -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Book cover reminiscent of Hokusai wave and vibrant pixel game design, Gabrielle Zevin novel Tomorrow and Tomorrow and Tomorrow, rich cerulean teal and warm amber inks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJj_k3DR-W6ZqHjE07vj1zWjQqzFap83LQNwq5zkWv_R044JsDuLf_WoZrTdSn4gcIA7XClCXJNUKja6mIM8XFit6GBTRmkdg85iPnVA1m0ID3UBdYQMll_shtzyUXIHAni7_ONwof5lPHhGAUikA69DHJI5yFjNtkWtu9uLUILyM3uY50UuXABiVcIsmKBuQGxZJWsjQjPv-AnJpGt0FuCvafa6QXqZiC_a5PMsk5v-6p3WlYHNoBsg"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-secondary text-on-secondary rounded font-label-sm text-[9px]">Top Rated</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Gabrielle Zevin</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-0.5">Tomorrow, and Tomorrow, and Tomorrow</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Two childhood friends forge an iconic video game studio, exploring identity, creativity, and unrequited love.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Hardcover $22.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">E-Book $8.49</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Tomorrow, and Tomorrow, and Tomorrow')">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Add Hardcopy</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card: The Song of Achilles -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Minimalist golden Spartan helmet embossed on deep terracotta background, Madeline Miller The Song of Achilles book aesthetic with deckle-edged literary texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCedBAlciuxsFpb2g_OXbtGw4whUheyYasUcGnzdJlq9BlPtOcfy0OEclbm6CteEnLgITMqDWQaW70d7vorGmAuBohHTySSuWgbHzymMFdAePvaqKLBW0c8IUOUB1H1DwFPa-DLkuWSF-tUOrm3ibaihwMYgruhFgciEH-POeb8rMmNOv-5x250qmlmkp30Lbbzh4mlLdqnnpHCZGPNPV34wlStMyCyMA25Wx_TkJNf4sNTrzddeYcRYQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Madeline Miller</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-0.5">The Song of Achilles</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">A breathtaking reimagining of Homer's Iliad through the tender eyes of exiled prince Patroclus.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Paperback $16.00</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">E-Book $7.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('The Song of Achilles')">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Add Paperback</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<!-- EXPANDED: Comics & Graphic Novels Stacks Section -->
+<section class="px-4 py-5" id="comics-stacks">
+<div class="flex items-baseline justify-between mb-2">
+<div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Sequential Art Vault</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Comics &amp; Graphic Novels</h2>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold">15 Curated Editions</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Masterwork sequential storytelling spanning iconic superhero sagas, cyberpunk epics, celebrated memoirs, dark mythology, and European classics.</p>
+
+<!-- Genre Category Filter Pills for Comics -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2 mb-3">
+<button class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm whitespace-nowrap shadow-xs comic-filter-btn" onclick="filterComicsGenre('all', this)">All Comics</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap comic-filter-btn" onclick="filterComicsGenre('superhero', this)">Superhero &amp; DC/Marvel</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap comic-filter-btn" onclick="filterComicsGenre('scifi', this)">Sci-Fi &amp; Cyberpunk</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap comic-filter-btn" onclick="filterComicsGenre('darkfantasy', this)">Dark Fantasy &amp; Myth</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap comic-filter-btn" onclick="filterComicsGenre('memoir', this)">Graphic Memoir &amp; Indie</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap comic-filter-btn" onclick="filterComicsGenre('horror', this)">Horror &amp; Supernatural</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap comic-filter-btn" onclick="filterComicsGenre('european', this)">Classic European BD</button>
+</div>
+
+<div class="space-y-3.5" id="comics-list">
+
+<!-- 1. Superhero: Batman: The Long Halloween -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="superhero" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-zinc-900">
+<img class="w-full h-full object-cover" data-alt="Dark noir comic cover art of Batman overlooking Gotham City under a pumpkin orange full moon by Tim Sale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALGGMBskEZ99BmLYDAtnE6hDnXLzboUTr8W6eD76yVvs7ypJf1xVpXyJ3IBLwon_7DRvLym_JqUDcnXLCO00wAAm1xHGN8LgbBEQuXeAQ74wja-hPkyLqOVsw-jX7HXfXnJZqYPfvxoTUcq-Q7LJDU7P1YPIfkg92ADuY_TsBMSlBLL0e1fyXPdbF4KFD03ur5dr8QDHNWIWKshWzcD_QHr5SIroX0SR4U8mE-2xyyZ-yA7dqtTbNXVQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-zinc-900/90 text-amber-300 rounded font-label-sm text-[9px] font-bold">DC Noir</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold">Superhero</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Batman: The Long Halloween</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Jeph Loeb &amp; Tim Sale</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">A sprawling year-long mob murder mystery set during Bruce Wayne's early crime-fighting days.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Deluxe HC $29.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital CBZ $12.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Batman: The Long Halloween')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('CBZ Preview: The Long Halloween')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 2. Superhero: Spider-Man: Blue -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="superhero" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-blue-950">
+<img class="w-full h-full object-cover" data-alt="Melancholic blue and scarlet watercolor illustration of Spider-Man perched above rainy New York city rooftops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJj_k3DR-W6ZqHjE07vj1zWjQqzFap83LQNwq5zkWv_R044JsDuLf_WoZrTdSn4gcIA7XClCXJNUKja6mIM8XFit6GBTRmkdg85iPnVA1m0ID3UBdYQMll_shtzyUXIHAni7_ONwof5lPHhGAUikA69DHJI5yFjNtkWtu9uLUILyM3uY50UuXABiVcIsmKBuQGxZJWsjQjPv-AnJpGt0FuCvafa6QXqZiC_a5PMsk5v-6p3WlYHNoBsg"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-blue-900/90 text-blue-100 rounded font-label-sm text-[9px] font-bold">Marvel Color</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold">Superhero</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Spider-Man: Blue</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Jeph Loeb &amp; Tim Sale</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">Peter Parker reflects on first love, loss, and Gwen Stacy in this heartfelt Valentine's Day tribute.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Gallery HC $24.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital $9.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Spider-Man: Blue')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Digital Preview: Spider-Man Blue')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 3. Superhero: Daredevil: Born Again -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="superhero" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-stone-900">
+<img class="w-full h-full object-cover" data-alt="Dramatic comic cover with holy cross illumination and deep red crimson shadow over Matt Murdock Daredevil Born Again" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoYSDSzi1cAAvHqZ_Sh4YsP3PXyjZ6SmsaY1gANm79Fs8nojHrB8mYJCXztbyWcjHAtHxKgkySVN-uyogvNibzk1DGvQSilu_2vEbPbmIlxDsBNzNOmTWmkAK9qEi2MUF4n3Kft9YqDY1A0BPMoUrLTPajJsoP5wv3aoMyaORWVHVJy_7Fd4e39nkG5smzgdc-faA1kb2c8FNrGtHSepIsgRgzoH8nAajRBxKDEllBBJWwcl1gfS78DQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-tertiary text-on-tertiary rounded font-label-sm text-[9px] font-bold">Marvel Master</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold">Superhero</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Daredevil: Born Again</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Frank Miller &amp; David Mazzucchelli</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">Kingpin strips Matt Murdock of everything. A definitive masterwork of faith, redemption, and grit.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Artisan HC $32.00</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital $11.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Daredevil: Born Again')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Digital Preview: Born Again')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 4. Sci-Fi & Cyberpunk: Saga: Deluxe Edition Volume 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="scifi" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-amber-950">
+<img class="w-full h-full object-cover" data-alt="Sensational space fantasy comic cover of Alana and Marko with wings and horns holding baby Hazel in Saga Deluxe Edition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJj_k3DR-W6ZqHjE07vj1zWjQqzFap83LQNwq5zkWv_R044JsDuLf_WoZrTdSn4gcIA7XClCXJNUKja6mIM8XFit6GBTRmkdg85iPnVA1m0ID3UBdYQMll_shtzyUXIHAni7_ONwof5lPHhGAUikA69DHJI5yFjNtkWtu9uLUILyM3uY50UuXABiVcIsmKBuQGxZJWsjQjPv-AnJpGt0FuCvafa6QXqZiC_a5PMsk5v-6p3WlYHNoBsg"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-primary text-on-primary rounded font-label-sm text-[9px] font-bold">Image Deluxe</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold">Sci-Fi Epic</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">5.0</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Saga: Deluxe Edition Vol. 1</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Brian K. Vaughan &amp; Fiona Staples</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">An interplanetary space opera following two lovers from warring alien races protecting their daughter.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Oversized HC $49.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital CBZ $14.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Saga: Deluxe Edition Vol. 1')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Preview: Saga Deluxe Vol. 1')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 5. Sci-Fi & Cyberpunk: Monstress: Awakening -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="scifi" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-emerald-950">
+<img class="w-full h-full object-cover" data-alt="Opulent art deco and kaiju inspired graphic novel cover art for Monstress Awakening by Sana Takeda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfHcBiedtI6pMr2yO37xB23nnyGltbsQ8KU67Oz2gRQpJ2saI51YKYrvCgFSuAdBGJafLSsZTal1bfbViz3gCbLfRtBVoH6OKyuOCf3XTovabh68QCaZ3qsoGiyZmJkkU-YMQM4BEuIPgOzBMKBy957qqyUm3cQJIg5yCHRZI94bAIks5NSf6zOy1PJ5FnwKOSbgitN_0MKhlsiaf-CetLM2dbzIcsuhqCrkZO-ZhgJSEhCFFnjPxOhA"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-secondary text-on-secondary rounded font-label-sm text-[9px] font-bold">Hugo Winner</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold">Sci-Fi Epic</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Monstress: Awakening</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Marjorie Liu &amp; Sana Takeda</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">Steampunk 1900s Asia alternate history where teenage war survivor Maika shares a psychic bond with an ancient monster.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Hardcover $34.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital $11.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Monstress: Awakening')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Preview: Monstress Awakening')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 6. Dark Fantasy: Sandman: The Deluxe Edition Book One -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="darkfantasy" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-stone-950">
+<img class="w-full h-full object-cover" data-alt="Dark gothic fantasy cover art for Sandman Preludes and Nocturnes, ethereal helmet of Morpheus with starry cosmic dust and deep violet obsidian textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_hqGvMkT2Gob-Q51lVdFqwlJYOZnLbs3_J5T3ZLahfpDM65cLRke0fKI7t6ixlexc70yR4soC1eS4I9aU1u6g02t_72kEuCUg2015wRBsz0huCyH-XC1_smCq6KETftxl41ryyEQl9U-g6soDmG80qV48NDLrRc7NdOma_o97p5mevxI28tzalAqq85RDAO8rBRuRF2HfJd_npqLs8-078yhZudwIRp1A_5E3ehXEuAuVNmMAd86ag"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-purple-900/90 text-purple-100 rounded font-label-sm text-[9px] font-bold">DC Black Label</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-900 font-label-sm text-[10px] font-bold">Dark Fantasy</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Sandman: Deluxe Edition Book One</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Neil Gaiman, Kieth, Dringenberg</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">The Lord of Dreams breaks free after seventy years of mortal imprisonment to reclaim his lost realm.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Slipcase HC $39.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital CBZ $14.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Sandman: Deluxe Edition Book One')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Preview: Sandman Book One')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 7. Dark Fantasy: Locke & Key: Master Edition -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="darkfantasy" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-stone-900">
+<img class="w-full h-full object-cover" data-alt="Mysterious antique bronze key unlocking an ornate Victorian manor door in Locke and Key Master Edition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0TEd8dnWvDLLNHwBlv2YahQGczm93NavAg3elPnJ545Sm09nx9Q1t1Mx1Nz8LLFQ3FLrnGVKqnMjMzKLHpXMlvdXCjR5ADBCnhUkXXZZthkQUjiDxeSVZ-UTXlq8Z1o_s7xiqXxELdw5VuBiAqOBddtUKFRFPceKbLvlX-6xiJiEvpq4O7Jxgcm1CaY3g5Huk_qsiSuwS-0BO9sEwwSEEk5TaTwy8qlZIR0vrLVvyts901lCja9BbxA"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-black/80 text-amber-300 rounded font-label-sm text-[9px] font-bold">Master Ed.</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-900 font-label-sm text-[10px] font-bold">Dark Fantasy</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Locke &amp; Key: Master Edition</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Joe Hill &amp; Gabriel Rodríguez</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">Keyhouse Estate harbors doorways to impossible powers and malevolent demons craving the Omega Key.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Master HC $42.00</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital $12.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Locke & Key Master Edition')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Preview: Locke & Key')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 8. Indie & Graphic Memoir: Maus: A Survivor's Tale -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="memoir" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-stone-100">
+<img class="w-full h-full object-cover" data-alt="Chilling monochrome graphic novel cover Maus by Art Spiegelman featuring mouse caricatures under a stark emblem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTkdl4LqqoyNrLI514whJ9F-xpYRolw7d99yZmlYSDEZwnE_157-uaujoKhmxJnlcR6rNvD2qJHBCx5VwHuS8ly7eyI5N84cDAPCEtf7JULm_21DIjGkBwpaZu6nzNoV4hil5GcX2DoSswte5AsMnMUV06ZqsUqFWQ2mQCiwNDCyXwG6qb7NybVfvt04W_7pKoRjIBXXlk5Y3Otpex4xBDq2Dy1SD9eMA4ujum1Cr60b_GZajXMxnlXw"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-primary text-on-primary rounded font-label-sm text-[9px] font-bold">Pulitzer Prize</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-[10px] font-bold">Graphic Memoir</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">5.0</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Maus: A Survivor's Tale</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Art Spiegelman · Complete Edition</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">The singular graphic novel to win the Pulitzer Prize: a searing personal account of the Holocaust and intergenerational trauma.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Complete HC $35.00</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital $13.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Maus: Complete Edition')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Preview: Maus')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 9. Indie & Graphic Memoir: Persepolis -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="memoir" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-stone-900">
+<img class="w-full h-full object-cover" data-alt="Striking black and white woodcut style illustration of young Marji in Persepolis by Marjane Satrapi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZb6OBLCOfvP0BVcRplDXOV4W8yl5Ql1nPEqtV98M2v2kWmwQVFDtMeOJh6yfW4SQL66j1CP0JPL-vUQoC7aGJZ86J0tg74RroVxB5Y4nLONfzdaabXxo5wi1TtBkYnpGv9IJwtGzHID9wecUr_LFVnOentpQiBjc8Lra5zPTSG2FuOL2T1Eh7Kbu-YKiGQ0-Lt7QzFxG6Qo9F-5f-DSuuKaUUuHigTqf8Fjam5pnx-7l-YFdvtoeqhw"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/40 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-zinc-800 text-white rounded font-label-sm text-[9px] font-bold">Classic</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-[10px] font-bold">Graphic Memoir</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Persepolis: The Story of a Childhood</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Marjane Satrapi</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">Wise, humorous, and heartbreaking chronicle of growing up in Tehran during the Islamic Revolution.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Hardcover $22.00</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital $8.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Persepolis')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Preview: Persepolis')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 10. Horror & Supernatural: Something is Killing the Children -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="horror" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-red-950">
+<img class="w-full h-full object-cover" data-alt="Menacing horror comic cover art for Something is Killing the Children showing Erica Slaughter with teeth bandana and dual blades" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-QJyIWj46t-IJde6tI6hNfpJt8Ovf65fuhQikTuWih3F9OQyw9_0VrKivYD01-gjZnHDz09f6nVbpV1htTsX-Kbp8-zRerTyxb8vEjBAUjKjfgOYtaJxqeNIUOuX7Nm5FYSTbLHM0BOvvEUoO0FtDldLhgZeAyXCFVQFmA9BOdEL7IkOHA0FaytWbES45aff-EUXlz_kS88NttoxVZbVJVQTLQ42yf2qMV_tBJX-kec3U2DynGrOYtA"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-rose-950 text-rose-200 rounded font-label-sm text-[9px] font-bold">BOOM! Studios</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-900 font-label-sm text-[10px] font-bold">Supernatural Horror</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Something is Killing the Children</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">James Tynion IV &amp; Werther Dell'Edera</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">When the children of Archer's Peak vanish into the woods, monster hunter Erica Slaughter enters the fray.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Slaughter HC $39.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital CBZ $10.99</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 rounded-lg bg-on-surface text-surface-bright font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="toastAdded('Something is Killing the Children')">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+<span>Add to Basket</span>
+</button>
+<button aria-label="Digital Instant Preview" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary" onclick="toastAdded('Preview: Something Killing Children')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- 11. Horror & Supernatural: Hellboy: Seed of Destruction -->
+<article class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex gap-3.5 relative overflow-hidden book-item comic-entry" data-comic-genre="horror" data-format="both">
+<div class="w-24 h-36 flex-shrink-0 relative rounded-lg overflow-hidden shadow-md bg-stone-900">
+<img class="w-full h-full object-cover" data-alt="Mike Mignola signature high contrast chiaroscuro red demon Hellboy holding the Right Hand of Doom against ancient gothic cemetery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCedBAlciuxsFpb2g_OXbtGw4whUheyYasUcGnzdJlq9BlPtOcfy0OEclbm6CteEnLgITMqDWQaW70d7vorGmAuBohHTySSuWgbHzymMFdAePvaqKLBW0c8IUOUB1H1DwFPa-DLkuWSF-tUOrm3ibaihwMYgruhFgciEH-POeb8rMmNOv-5x250qmlmkp30Lbbzh4mlLdqnnpHCZGPNPV34wlStMyCyMA25Wx_TkJNf4sNTrzddeYcRYQ"/>
+<div class="absolute inset-y-0 left-0 w-2.5 bg-gradient-to-r from-black/50 to-transparent"></div>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-red-900 text-red-100 rounded font-label-sm text-[9px] font-bold">Dark Horse</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-900 font-label-sm text-[10px] font-bold">Supernatural Horror</span>
+<div class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold line-clamp-1 mt-1">Hellboy: Seed of Destruction</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Mike Mignola &amp; John Byrne</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2 mt-0.5">The Right Hand of Doom debuts in a world of Nazi occultism, folklore, and Lovecraftian cosmic dread.</p>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/60 rounded-lg p-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm bg-secondary/15 px-2 py-0.5 rounded-full text-secondary">Library HC $34.99</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Digital $9.99</span>

@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+    }
+    .typing-dot {
+      animation: typingBounce 1.2s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(1) { animation-delay: 0s; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    #chat-input-bar {
+      pointer-events: auto !important;
+      z-index: 50;
+    }
+    #chat-input {
+      pointer-events: auto !important;
+    }
+    #send-msg-btn {
+      pointer-events: auto !important;
+      cursor: pointer !important;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb4a8",
+            "surface-variant": "#dde2f6",
+            "on-surface": "#151b29",
+            "tertiary": "#a83223",
+            "secondary-container": "#c3e6e7",
+            "on-tertiary-fixed": "#410100",
+            "primary-fixed-dim": "#ffb77d",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e2e8fc",
+            "on-primary-container": "#fffbff",
+            "primary": "#8d4b00",
+            "surface-bright": "#faf8ff",
+            "on-secondary-fixed": "#002021",
+            "on-tertiary-fixed-variant": "#8a1c10",
+            "primary-container": "#b15f00",
+            "surface-dim": "#d4d9ed",
+            "on-background": "#151b29",
+            "inverse-primary": "#ffb77d",
+            "outline": "#887364",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#554336",
+            "on-primary-fixed-variant": "#6e3900",
+            "on-primary": "#ffffff",
+            "surface-container": "#e9edff",
+            "outline-variant": "#dbc2b0",
+            "secondary": "#436465",
+            "tertiary-container": "#c94a38",
+            "secondary-fixed-dim": "#aacdce",
+            "surface-container-highest": "#dde2f6",
+            "inverse-on-surface": "#edf0ff",
+            "secondary-fixed": "#c6e9ea",
+            "tertiary-fixed": "#ffdad4",
+            "on-secondary-fixed-variant": "#2b4c4d",
+            "surface-tint": "#904d00",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#ffdcc3",
+            "surface": "#faf8ff",
+            "error": "#ba1a1a",
+            "inverse-surface": "#2a303f",
+            "surface-container-low": "#f1f3ff",
+            "on-tertiary-container": "#fffbff",
+            "background": "#faf8ff",
+            "on-primary-fixed": "#2f1500",
+            "on-secondary-container": "#476869"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin": "2.5rem",
+            "gutter-sm": "1rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Newsreader"],
+            "body-lg": ["Manrope"],
+            "label-lg": ["Manrope"],
+            "title-editorial": ["Newsreader"],
+            "label-md": ["Manrope"],
+            "display": ["Newsreader"],
+            "headline-lg-mobile": ["Newsreader"],
+            "body-sm": ["Manrope"],
+            "headline-sm": ["Newsreader"],
+            "body-md": ["Manrope"],
+            "headline-lg": ["Newsreader"],
+            "label-sm": ["Manrope"],
+            "display-mobile": ["Newsreader"]
+          },
+          "fontSize": {
+            "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }],
+            "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen">
+<!-- Top App Bar -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-16 px-4 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<img alt="PageCraft Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">PageCraft</span>
+<span class="font-label-sm text-[10px] text-primary -mt-1 font-semibold uppercase tracking-wider">Help &amp; Concierge</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<a aria-label="Search Catalog" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</a>
+<button aria-label="Open Book Basket" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="cart-nav-btn" onclick="openCartToast()" type="button">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary text-on-primary font-label-sm text-[10px] flex items-center justify-center shadow-[0_0_8px_rgba(141,75,0,0.4)]" id="basket-count">2</span>
+</button>
+<a aria-label="User Account" class="w-11 h-11 flex items-center justify-center" data-path="account" href="#">
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Chat Flow -->
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface">
+<div class="flex flex-col w-full">
+<!-- Interactive Top Support Concierge Subheader -->
+<section class="px-4 pt-3 pb-2.5 flex flex-col gap-2 bg-surface/90 backdrop-blur-sm sticky top-16 z-30 border-b border-surface-container-high/60">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[19px]">support_agent</span>
+<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-surface shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-[16px] text-on-surface truncate font-semibold">PageCraft Support Concierge</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[10px] font-semibold whitespace-nowrap flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                Online
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Omnichannel Help &amp; Order Operations • Typically replies instantly</span>
+</div>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface-variant transition-all font-label-md text-label-md cursor-pointer pointer-events-auto" id="clear-chat-btn" onclick="resetChat()" title="Start fresh session" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+<!-- Concierge Quick Action Bar -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 pt-0.5 no-scrollbar">
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-primary-fixed/50 active:scale-95 text-on-surface font-label-sm text-[11px] whitespace-nowrap border border-outline-variant/30 cursor-pointer pointer-events-auto" onclick="sendPresetQuery('Track my hardcopy order #PC-89412')" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">local_shipping</span>
+<span>Order #PC-89412</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-primary-fixed/50 active:scale-95 text-on-surface font-label-sm text-[11px] whitespace-nowrap border border-outline-variant/30 cursor-pointer pointer-events-auto" onclick="sendPresetQuery('Connect me to live human specialist')" type="button">
+<span class="material-symbols-outlined text-[14px] text-secondary">headset_mic</span>
+<span>Talk to Live Agent</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-primary-fixed/50 active:scale-95 text-on-surface font-label-sm text-[11px] whitespace-nowrap border border-outline-variant/30 cursor-pointer pointer-events-auto" onclick="sendPresetQuery('Return or replacement policy for damaged book')" type="button">
+<span class="material-symbols-outlined text-[14px] text-tertiary">assignment_return</span>
+<span>Returns Policy</span>
+</button>
+</div>
+</section>
+<!-- Message Stream Container -->
+<section class="flex flex-col gap-4 px-4 py-3 min-w-0" id="chat-stream">
+<!-- Ticket / Context Pill -->
+<div class="flex justify-center my-1" id="session-header-pill">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-3 py-1 rounded-full bg-surface-container-low shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span>
+            Support Session Active • Ticket #PC-SUP-4029
+          </span>
+</div>
+<!-- Initial Greeting & Support Routing Hub -->
+<div class="flex items-start gap-2.5 max-w-[95%]" id="welcome-message-block">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+</div>
+<div class="flex flex-col gap-2.5 w-full">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/25">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                Hello Alex! Welcome to <span class="font-semibold text-primary">PageCraft Support &amp; Literary Concierge</span>. How can I help you today with your orders, reading library, replacements, or curated recommendations?
+              </p>
+<div class="mt-2.5 pt-2.5 border-t border-surface-variant flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-emerald-600">lock</span> Verified Account: alex.v@reader.io</span>
+<span class="text-primary font-semibold">1 Active Shipment</span>
+</div>
+</div>
+<!-- Quick Category Issue Buttons -->
+<div class="flex flex-col gap-1.5 pt-0.5" id="suggestion-wrapper">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Select a frequent support topic or type below:</span>
+<div class="flex flex-col gap-1.5" id="suggestion-container">
+<button class="suggestion-btn text-left px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-98 text-on-surface font-label-md text-label-md transition-all cursor-pointer pointer-events-auto border border-outline-variant/20 flex items-center justify-between group" onclick="sendPresetQuery('Track my hardcopy order (#PC-89412)')" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="text-base">📦</span>
+<div class="flex flex-col min-w-0">
+<span class="font-semibold truncate">Track my hardcopy order (#PC-89412)</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Atomic Habits Hardcover • Out for delivery</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-0.5">chevron_right</span>
+</button>
+<button class="suggestion-btn text-left px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-98 text-on-surface font-label-md text-label-md transition-all cursor-pointer pointer-events-auto border border-outline-variant/20 flex items-center justify-between group" onclick="sendPresetQuery('Return / Damaged book replacement')" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="text-base">🔄</span>
+<div class="flex flex-col min-w-0">
+<span class="font-semibold truncate">Return / Damaged book replacement</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">14-day zero-hassle replacement guarantee</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-0.5">chevron_right</span>
+</button>
+<button class="suggestion-btn text-left px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-98 text-on-surface font-label-md text-label-md transition-all cursor-pointer pointer-events-auto border border-outline-variant/20 flex items-center justify-between group" onclick="sendPresetQuery('E-Book download &amp; Kindle sync help')" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="text-base">📱</span>
+<div class="flex flex-col min-w-0">
+<span class="font-semibold truncate">E-Book download &amp; Kindle sync help</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">EPUB, PDF downloads &amp; Send-to-Kindle setup</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-0.5">chevron_right</span>
+</button>
+<button class="suggestion-btn text-left px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-98 text-on-surface font-label-md text-label-md transition-all cursor-pointer pointer-events-auto border border-outline-variant/20 flex items-center justify-between group" onclick="sendPresetQuery('Curate a book recommendation')" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="text-base">💡</span>
+<div class="flex flex-col min-w-0">
+<span class="font-semibold truncate">Curate a book recommendation</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Sci-Fi, Manga, Nonfiction matched to tastes</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-0.5">chevron_right</span>
+</button>
+<button class="suggestion-btn text-left px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-primary/10 hover:text-primary active:scale-98 text-on-surface font-label-md text-label-md transition-all cursor-pointer pointer-events-auto border border-outline-variant/20 flex items-center justify-between group" onclick="sendPresetQuery('Invoice &amp; Billing question')" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="text-base">💳</span>
+<div class="flex flex-col min-w-0">
+<span class="font-semibold truncate">Invoice &amp; Billing question</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Receipt copies, VAT tax invoices, payment refund</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-0.5">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Live Message Flow Area -->
+<div class="flex flex-col gap-4" id="dynamic-conversation-container">
+<!-- User Initial Inquiry -->
+<div class="flex justify-end self-end max-w-[85%] ml-auto mt-2">
+<div class="p-3.5 rounded-2xl rounded-br-sm bg-[#1e293b] text-white shadow-md">
+<p class="font-body-md text-body-md leading-relaxed">
+              Track my hardcopy order (#PC-89412)
+            </p>
+<div class="flex items-center justify-end gap-1 mt-1 text-slate-400 font-label-sm text-label-sm">
+<span>10:42 AM</span>
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+</div>
+</div>
+</div>
+<!-- Bot Response: Order Status Card -->
+<div class="flex items-center gap-2 px-1">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping"></div>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+            Order Fulfillment Live Status • Order #PC-89412
+          </span>
+</div>
+<div class="flex items-start gap-2.5 max-w-full">
+<div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+</div>
+<div class="flex flex-col gap-3 w-full min-w-0">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                I looked up your record. Order <span class="font-semibold text-primary">#PC-89412</span> is in transit with <span class="font-semibold text-on-surface">Royal Courier Express</span> and scheduled for delivery <strong class="text-emerald-700">tomorrow by 2:00 PM</strong>.
+              </p>
+</div>
+<!-- Order Live Tracker Card -->
+<article class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+<div class="flex items-center justify-between pb-2 border-b border-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Royal Courier • AWB: 99420188</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Standard Courier • Signature required</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-semibold">
+                  Out for Delivery
+                </span>
+</div>
+<!-- Timeline Stepper -->
+<div class="space-y-2 py-1">
+<div class="flex items-start gap-2.5 text-xs">
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+<span class="w-0.5 h-6 bg-emerald-600"></span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Departed Regional Fulfillment Hub (Chicago, IL)</p>
+<p class="text-on-surface-variant text-[11px]">Today at 06:30 AM</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5 text-xs">
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="w-0.5 h-6 bg-surface-variant"></span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-primary">At Local Sorting Facility • On Route</p>
+<p class="text-on-surface-variant text-[11px]">Expected: Tomorrow by 2:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5 text-xs">
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+</div>
+<div class="flex-1 text-on-surface-variant">
+<p class="font-medium">Delivered to Front Door / Alex V.</p>
+</div>
+</div>
+</div>
+<!-- Package contents preview -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between text-xs">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">menu_book</span>
+<span class="font-medium text-on-surface truncate">Atomic Habits (Hardcover, Foil Stamped)</span>
+</div>
+<span class="font-bold text-on-surface whitespace-nowrap">$24.00</span>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold active:scale-98 transition-all cursor-pointer pointer-events-auto" onclick="showToast('Courier GPS Tracking: Van is 4.2 miles away')" type="button">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Live Courier Map</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md active:scale-98 transition-all cursor-pointer pointer-events-auto" onclick="openAddressModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_location_alt</span>
+<span>Change Address</span>
+</button>
+</div>
+</article>
+<!-- Satisfaction Widget -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant">
+<span>Was this tracking breakdown helpful?</span>
+<div class="flex items-center gap-1.5">
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-emerald-50 active:scale-95 text-emerald-700 font-medium transition-all" onclick="rateResolution(this, true)" type="button">👍 Yes</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-rose-50 active:scale-95 text-rose-700 font-medium transition-all" onclick="rateResolution(this, false)" type="button">👎 No</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Bottom Input Deck -->
+<div class="fixed bottom-16 inset-x-0 z-50 px-3 py-2.5 bg-surface/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)]" id="chat-input-bar">
+<form class="flex items-center gap-2 w-full" id="chat-input-form" onsubmit="event.preventDefault(); sendMessage(); return false;">
+<button aria-label="Voice inquiry" class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant hover:text-primary active:scale-95 transition-all cursor-pointer pointer-events-auto" id="mic-btn" onclick="toggleMicrophone(this)" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<div class="relative flex-1 min-w-0 flex items-center">
+<input autocomplete="off" class="w-full h-11 pl-4 pr-10 rounded-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/70 font-body-sm text-body-sm shadow-inner border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all pointer-events-auto" id="chat-input" name="chat_query" onkeydown="if(event.key==='Enter'){ event.preventDefault(); sendMessage(); }" placeholder="Type an issue, order number, or book question..." type="text"/>
+<button aria-label="Clear input text" class="hidden absolute right-3 w-5 h-5 rounded-full text-on-surface-variant/60 hover:text-on-surface flex items-center justify-center cursor-pointer pointer-events-auto" id="clear-input-icon" onclick="clearInputField()" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+</button>
+</div>
+<button aria-label="Send message to Support Concierge" class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-primary text-on-primary shadow-[0_2px_8px_rgba(141,75,0,0.35)] hover:bg-primary-container active:scale-95 transition-all cursor-pointer pointer-events-auto" id="send-msg-btn" onclick="sendMessage()" type="submit">
+<span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+</button>
+</form>
+</div>
+</main>
+<!-- Toast Notification System -->
+<div class="fixed top-20 inset-x-4 z-50 pointer-events-none transform -translate-y-8 opacity-0 transition-all duration-300 flex justify-center" id="toast-banner">
+<div class="px-4 py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface shadow-xl flex items-center gap-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">support_agent</span>
+<span id="toast-message">PageCraft Concierge updated</span>
+</div>
+</div>
+<!-- Sample Preview / Action Modal -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" id="preview-modal">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] transform scale-95 transition-transform duration-200" id="preview-modal-box">
+<div class="p-4 border-b border-surface-variant flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px]" id="modal-icon">support_agent</span>
+<h4 class="font-headline-sm text-[17px] text-on-surface truncate" id="modal-title">Support Action</h4>
+</div>
+<button aria-label="Close modal" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-90 transition-all cursor-pointer pointer-events-auto" onclick="closeSamplePreview()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-4 overflow-y-auto space-y-3 font-body-md text-body-md text-on-surface">
+<p class="font-label-sm uppercase tracking-wider text-primary font-bold" id="modal-author">DETAILS</p>
+<div class="font-display italic text-[17px] leading-relaxed text-on-surface bg-surface-container-low/60 p-3.5 rounded-xl border-l-4 border-primary" id="modal-text">
+          Details loading...
+        </div>
+<p class="text-body-sm text-on-surface-variant" id="modal-subtext">All claims and updates are logged in your PageCraft Support account.</p>
+</div>
+<div class="p-3 border-t border-surface-variant bg-surface flex items-center gap-2" id="modal-actions">
+<button class="flex-1 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold cursor-pointer pointer-events-auto active:scale-98 transition-all" onclick="showToast('Request processed successfully'); closeSamplePreview();" type="button">
+          Confirm Action
+        </button>
+<button class="px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md cursor-pointer pointer-events-auto" onclick="closeSamplePreview()" type="button">
+          Close
+        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md font-semibold">
+<div class="flex justify-around items-center h-16 px-2">
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="browse" href="#">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+<span class="font-label-sm text-label-sm">Browse</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 transition-colors text-primary font-label-md font-semibold" data-path="ai-assistant" href="#">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+<span class="font-label-sm text-label-sm">Support Care</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-library" href="#">
+<span class="material-symbols-outlined text-[22px]">local_library</span>
+<span class="font-label-sm text-label-sm">My Library</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="account" href="#">
+<span class="material-symbols-outlined text-[22px]">account_circle</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</div>
+</nav>
+<!-- Interactive Support Concierge Script -->
+<script>
+    let cartCount = 2;
+
+    function updateCartBadge() {
+      const badge = document.getElementById('basket-count') || document.getElementById('cart-badge-count');
+      if (badge) {
+        badge.textContent = cartCount;
+        badge.classList.remove('scale-125');
+        void badge.offsetWidth;
+        badge.classList.add('scale-125');
+        setTimeout(() => badge.classList.remove('scale-125'), 200);
+      }
+    }
+
+    function openCartToast() {
+      showToast(`Book Basket: ${cartCount} items saved in your account`);
+    }
+
+    function addToCart(btn, title, price) {
+      cartCount++;
+      updateCartBadge();
+      const priceTxt = price > 0 ? ` ($${Number(price).toFixed(2)})` : '';
+      showToast(`Added to Book Basket! ${title}${priceTxt}`);
+      if (btn) {
+        btn.classList.add('opacity-75', 'scale-98');
+        setTimeout(() => btn.classList.remove('opacity-75', 'scale-98'), 200);
+      }
+    }
+
+    function showToast(message) {
+      const banner = document.getElementById('toast-banner');
+      const label = document.getElementById('toast-message');
+      if (!banner || !label) return;
+      label.textContent = message;
+      banner.classList.remove('-translate-y-8', 'opacity-0', 'pointer-events-none');
+      banner.classList.add('translate-y-0', 'opacity-100');
+      clearTimeout(banner._timeout);
+      banner._timeout = setTimeout(() => {
+        banner.classList.remove('translate-y-0', 'opacity-100');
+        banner.classList.add('-translate-y-8', 'opacity-0', 'pointer-events-none');
+      }, 2800);
+    }
+
+    function rateResolution(btn, isPositive) {
+      const parent = btn.parentElement;
+      if (parent) {
+        parent.innerHTML = isPositive 
+          ? `<span class="text-emerald-700 font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check</span> Thank you for your feedback!</span>`
+          : `<span class="text-on-surface-variant text-[11px]">We’re paging a concierge to follow up.</span>`;
+      }
+      showToast(isPositive ? 'Thank you! Glad we could resolve your query.' : 'Feedback logged. A specialist will review your ticket.');
+    }
+
+    function openAddressModal() {
+      openSamplePreview(
+        'Modify Delivery Address', 
+        'Order #PC-89412', 
+        'Current: 742 Evergreen Terrace, Springfield, OR. Change window open until package enters regional van (within 3 hours).',
+        'home_pin'
+      );
+    }
+
+    function openSamplePreview(title, author, text, icon = 'support_agent') {
+      const modal = document.getElementById('preview-modal');
+      const box = document.getElementById('preview-modal-box');
+      const titleEl = document.getElementById('modal-title');
+      const authEl = document.getElementById('modal-author');
+      const textEl = document.getElementById('modal-text');
+      const iconEl = document.getElementById('modal-icon');
+
+      if (titleEl) titleEl.textContent = title;
+      if (authEl) authEl.textContent = author;
+      if (textEl) textEl.innerHTML = text;
+      if (iconEl) iconEl.textContent = icon;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      box.classList.remove('scale-95');
+      box.classList.add('scale-100');
+    }
+
+    function closeSamplePreview() {
+      const modal = document.getElementById('preview-modal');
+      const box = document.getElementById('preview-modal-box');
+      if (!modal || !box) return;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      box.classList.add('scale-95');
+      box.classList.remove('scale-100');
+    }
+
+    function sendPresetQuery(queryText) {
+      const cleaned = queryText.replace(/[\u201C\u201D"]/g, '').trim();
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (input) {
+        input.value = cleaned;
+        toggleClearIcon(true);
+      }
+      sendMessage();
+    }
+
+    function clearInputField() {
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (!input) return;
+      input.value = '';
+      input.focus();
+      toggleClearIcon(false);
+    }
+
+    function toggleClearIcon(show) {
+      const btn = document.getElementById('clear-input-icon');
+      if (!btn) return;
+      if (show) btn.classList.remove('hidden');
+      else btn.classList.add('hidden');
+    }
+
+    function getCurrentTime() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      const minStr = minutes < 10 ? '0' + minutes : minutes;
+      return `${hours}:${minStr} ${ampm}`;
+    }
+
+    function scrollChatToBottom() {
+      const container = document.getElementById('chat-stream');
+      if (container && container.scrollHeight > container.clientHeight) {
+        container.scrollTop = container.scrollHeight;
+      }
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (!input) return;
+      const text = input.value ? input.value.trim() : '';
+      if (!text) {
+        input.focus();
+        return;
+      }
+
+      const container = document.getElementById('dynamic-conversation-container');
+      if (!container) return;
+
+      // Append user bubble
+      const userDiv = document.createElement('div');
+      userDiv.className = 'flex justify-end self-end max-w-[85%] ml-auto mt-2 transition-all duration-300';
+      userDiv.innerHTML = `
+        <div class="p-3.5 rounded-2xl rounded-br-sm bg-[#1e293b] text-white shadow-md">
+          <p class="font-body-md text-body-md leading-relaxed">${escapeHtml(text)}</p>
+          <div class="flex items-center justify-end gap-1 mt-1 text-slate-400 font-label-sm text-label-sm">
+            <span>${getCurrentTime()}</span>
+            <span class="material-symbols-outlined text-[14px]">done_all</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(userDiv);
+
+      // Clear input
+      input.value = '';
+      toggleClearIcon(false);
+      input.focus();
+      scrollChatToBottom();
+
+      // Show typing indicator
+      const typingId = 'typing-' + Date.now();
+      const typingDiv = document.createElement('div');
+      typingDiv.id = typingId;
+      typingDiv.className = 'flex items-center gap-2.5 max-w-[92%] mt-1';
+      typingDiv.innerHTML = `
+        <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">support_agent</span>
+        </div>
+        <div class="px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-2 border border-outline-variant/30">
+          <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">PageCraft Concierge is checking systems...</span>
+          <div class="flex items-center gap-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary typing-dot"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-primary typing-dot"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-primary typing-dot"></div>
+          </div>
+        </div>
+      `;
+      container.appendChild(typingDiv);
+      scrollChatToBottom();
+
+      setTimeout(() => {
+        const activeTyping = document.getElementById(typingId);
+        if (activeTyping) activeTyping.remove();
+        renderCustomerCareResponse(text, container);
+      }, 650);
+    }
+
+    function renderCustomerCareResponse(query, container) {
+      const q = query.toLowerCase();
+      let responseHTML = '';
+
+      if (q.includes('track') || q.includes('89412') || q.includes('order') || q.includes('shipping') || q.includes('courier')) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              Courier Dispatch Verified • Order #PC-89412
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">support_agent</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Order <span class="font-bold text-primary">#PC-89412</span> (<strong class="font-semibold">Atomic Habits Hardcover</strong>) is currently in-transit with Royal Courier, out for delivery <strong class="text-emerald-700">tomorrow by 2:00 PM</strong>. Tracking AWB: <strong>99420188</strong>.
+                </p>
+              </div>
+              <article class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">local_shipping</span>
+                    <span class="font-label-md font-bold text-on-surface">Estimated Arrival: Tomorrow, 2:00 PM</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-semibold">In Transit</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-surface-container-low text-body-sm text-on-surface-variant">
+                  Delivery to: <span class="font-semibold text-on-surface">Alex Vance, 742 Evergreen Ter, Springfield</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="showToast('SMS Tracking Enabled for +1 (555) 019-2834')" class="flex-1 py-2 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold cursor-pointer pointer-events-auto active:scale-98 transition-all" type="button">
+                    Enable SMS Alerts
+                  </button>
+                  <button onclick="openAddressModal()" class="py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md cursor-pointer pointer-events-auto active:scale-98 transition-all" type="button">
+                    Change Address
+                  </button>
+                </div>
+              </article>
+              <div class="p-2 rounded-lg bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant">
+                <span>Was this tracking details helpful?</span>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="rateResolution(this, true)" class="px-2 py-1 rounded bg-surface-container-lowest text-emerald-700 font-medium">👍 Yes</button>
+                  <button onclick="rateResolution(this, false)" class="px-2 py-1 rounded bg-surface-container-lowest text-rose-700 font-medium">👎 No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (q.includes('return') || q.includes('damage') || q.includes('replace') || q.includes('broken') || q.includes('defect') || q.includes('refund')) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wide uppercase">
+              14-Day Book Protection Guarantee
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">assignment_return</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  No worries at all! PageCraft provides an <strong class="font-semibold text-primary">unconditional 14-day replacement</strong> for any print defect, ripped pages, or transit damage. We can dispatch a brand new copy right away or credit your original payment method.
+                </p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 border border-outline-variant/30">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md font-bold text-on-surface">Quick Replacement Workflow</span>
+                  <span class="font-label-sm text-emerald-700 font-semibold flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">bolt</span> Instant Approval
+                  </span>
+                </div>
+                <p class="text-body-sm text-on-surface-variant">
+                  No need to mail back the damaged book if you attach a quick photo of the spine/cover.
+                </p>
+                <div class="flex flex-col gap-2 pt-1">
+                  <button onclick="showToast('Replacement Order #PC-REP-9102 dispatched via Priority Express');" class="w-full py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold cursor-pointer pointer-events-auto active:scale-98 transition-all flex items-center justify-center gap-2" type="button">
+                    <span class="material-symbols-outlined text-[18px]">cached</span>
+                    <span>Initiate 1-Click Replacement (Free)</span>
+                  </button>
+                  <button onclick="openSamplePreview('Upload Photo of Defect', 'Claim #PC-CLAIM-104', 'Attach a picture showing bent binding or printing defect to fast-track credit.', 'photo_camera')" class="w-full py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md cursor-pointer pointer-events-auto flex items-center justify-center gap-1.5" type="button">
+                    <span class="material-symbols-outlined text-[16px]">add_a_photo</span>
+                    <span>Upload Book Photo</span>
+                  </button>
+                </div>
+              </div>
+              <div class="p-2 rounded-lg bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant">
+                <span>Did this answer your return inquiry?</span>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="rateResolution(this, true)" class="px-2 py-1 rounded bg-surface-container-lowest text-emerald-700 font-medium">👍 Yes</button>
+                  <button onclick="rateResolution(this, false)" class="px-2 py-1 rounded bg-surface-container-lowest text-rose-700 font-medium">👎 No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (q.includes('kindle') || q.includes('ebook') || q.includes('e-book') || q.includes('sync') || q.includes('epub') || q.includes('pdf') || q.includes('download')) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">
+              Digital Library &amp; Cloud Sync Assistant
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">menu_book</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Your purchased digital titles (including <strong class="font-semibold text-primary">Make Time</strong> and <strong class="font-semibold text-primary">Jujutsu Kaisen Vol 1</strong>) are synced to your Account Cloud Library. PageCraft files are 100% DRM-free!
+                </p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 border border-outline-variant/30">
+                <div class="flex items-center justify-between pb-1.5 border-b border-surface-variant">
+                  <span class="font-label-md font-bold text-on-surface">Make Time (Cloud ePub Edition)</span>
+                  <span class="font-label-sm text-secondary font-semibold">Verified Purchase</span>
+                </div>
+                <div class="space-y-1 text-body-sm text-on-surface-variant">
+                  <p>• <strong>Kindle users:</strong> Click "Send to Kindle" to deliver directly to your @kindle.com email.</p>
+                  <p>• <strong>Apple Books / Kobo:</strong> Download standard EPUB file.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-1">
+                  <button onclick="showToast('EPUB file download started...');" class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold cursor-pointer pointer-events-auto active:scale-98 transition-all" type="button">
+                    <span class="material-symbols-outlined text-[16px]">download</span>
+                    <span>Download EPUB</span>
+                  </button>
+                  <button onclick="showToast('Pushed to your registered Kindle device.');" class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold cursor-pointer pointer-events-auto active:scale-98 transition-all" type="button">
+                    <span class="material-symbols-outlined text-[16px]">send_to_mobile</span>
+                    <span>Send to Kindle</span>
+                  </button>
+                </div>
+              </div>
+              <div class="p-2 rounded-lg bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant">
+                <span>Did this resolve your reading device setup?</span>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="rateResolution(this, true)" class="px-2 py-1 rounded bg-surface-container-lowest text-emerald-700 font-medium">👍 Yes</button>
+                  <button onclick="rateResolution(this, false)" class="px-2 py-1 rounded bg-surface-container-lowest text-rose-700 font-medium">👎 No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (q.includes('human') || q.includes('agent') || q.includes('person') || q.includes('call') || q.includes('specialist') || q.includes('talk')) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              Live Specialist Escalation
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">headset_mic</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Certainly! Connecting you to <strong class="font-semibold text-primary">Senior Concierge Eleanor V.</strong> (PageCraft Care Lead). Estimated wait time is under <strong>2 minutes</strong>.
+                </p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 border border-outline-variant/30">
+                <div class="flex items-center gap-3">
+                  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ" class="w-10 h-10 rounded-full object-cover ring-2 ring-primary/40" alt="Specialist"/>
+                  <div class="min-w-0 flex-1">
+                    <h4 class="font-label-md font-bold text-on-surface">Eleanor Vance</h4>
+                    <p class="font-label-sm text-on-surface-variant">Senior Book Concierge • Portland Office</p>
+                  </div>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[10px] font-bold">Online</span>
+                </div>
+                <div class="flex flex-col gap-2 pt-1">
+                  <button onclick="showToast('Eleanor joined the chat room. Type your message below.');" class="w-full py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold cursor-pointer pointer-events-auto active:scale-98 transition-all flex items-center justify-center gap-2" type="button">
+                    <span class="material-symbols-outlined text-[18px]">chat</span>
+                    <span>Start Live Human Chat (< 2m wait)</span>
+                  </button>
+                  <a href="tel:18007243272" class="w-full py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1.5 hover:text-on-surface text-center">
+                    <span class="material-symbols-outlined text-[16px]">call</span>
+                    <span>Call 1-800-PAGECRAFT (Toll Free)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (q.includes('invoice') || q.includes('billing') || q.includes('receipt') || q.includes('tax') || q.includes('charge')) {
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              Billing &amp; Invoice Retrieval
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">receipt_long</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  Here is the billing statement for your most recent transaction on card ending in <strong class="font-mono font-semibold">4491</strong>:
+                </p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2.5 border border-outline-variant/30">
+                <div class="flex items-center justify-between pb-1.5 border-b border-surface-variant">
+                  <span class="font-label-md font-bold text-on-surface">Invoice #INV-2024-89412</span>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-semibold">Paid in Full</span>
+                </div>
+                <div class="space-y-1 text-body-sm text-on-surface-variant">
+                  <div class="flex justify-between"><span>Subtotal (1 Hardcover Book):</span> <span>$24.00</span></div>
+                  <div class="flex justify-between"><span>Courier Shipping:</span> <span class="text-emerald-700 font-semibold">FREE</span></div>
+                  <div class="flex justify-between font-bold text-on-surface pt-1 border-t border-surface-variant">
+                    <span>Total Charged:</span> <span>$24.00</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 pt-1">
+                  <button onclick="showToast('PDF Invoice generated and emailed to your inbox');" class="flex-1 py-2 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold active:scale-98 transition-all" type="button">
+                    Download Tax PDF
+                  </button>
+                  <button onclick="showToast('Email receipt resent to alex.v@reader.io');" class="py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md active:scale-98 transition-all" type="button">
+                    Resend Email
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        // Literary Recommendation or General Fallback
+        responseHTML = `
+          <div class="flex items-center gap-2 px-1">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+            <span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">
+              PageCraft Concierge Curation
+            </span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-full">
+            <div class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">support_agent</span>
+            </div>
+            <div class="flex flex-col gap-3 w-full min-w-0">
+              <div class="p-3.5 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant/30">
+                <p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                  I reviewed our catalog and support archives for "${escapeHtml(query)}". Here is a top-rated edition paired with fast dispatch:
+                </p>
+              </div>
+              <article class="p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 border border-outline-variant/30">
+                <div class="flex gap-3">
+                  <div class="relative w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container shadow-inner">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&q=80" alt="Book Cover" class="w-full h-full object-cover"/>
+                  </div>
+                  <div class="flex flex-col justify-between flex-1 min-w-0">
+                    <div>
+                      <div class="flex items-center justify-between gap-1 mb-1">
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                          <span class="material-symbols-outlined text-[12px]">menu_book</span> Concierge Pick
+                        </span>
+                        <span class="font-label-sm text-emerald-700 font-semibold flex items-center gap-0.5">
+                          <span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock
+                        </span>
+                      </div>
+                      <h3 class="font-title-editorial text-title-editorial text-on-surface truncate font-semibold">
+                        The Psychology of Clear Thinking
+                      </h3>
+                      <p class="font-label-md text-label-md text-on-surface-variant truncate">by Marcus Vance</p>
+                      <div class="flex items-center gap-1.5 mt-1 text-primary">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-sm text-label-sm font-bold">4.9</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">(3.4k reviews)</span>
+                      </div>
+                    </div>
+                    <div class="flex items-baseline gap-1.5 mt-1">
+                      <span class="font-headline-sm text-headline-sm text-on-surface font-bold">$19.50</span>
+                      <span class="font-label-sm text-label-sm line-through text-outline-variant">$26.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart(this, 'The Psychology of Clear Thinking', 19.50)" class="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold active:scale-98 transition-all cursor-pointer pointer-events-auto" type="button">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add to Cart • $19.50</span>
+                  </button>
+                  <button onclick="sendPresetQuery('Connect me to live human specialist')" class="py-2 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md active:scale-98 transition-all cursor-pointer pointer-events-auto" type="button">
+                    Talk to Agent
+                  </button>
+                </div>
+              </article>
+              <div class="p-2 rounded-lg bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant">
+                <span>Can I assist you with anything else today?</span>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="rateResolution(this, true)" class="px-2 py-1 rounded bg-surface-container-lowest text-emerald-700 font-medium">👍 All set</button>
+                  <button onclick="sendPresetQuery('Connect me to live human specialist')" class="px-2 py-1 rounded bg-surface-container-lowest text-primary font-medium">Need more help</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      const aiDiv = document.createElement('div');
+      aiDiv.className = 'flex flex-col gap-3 transition-opacity duration-300';
+      aiDiv.innerHTML = responseHTML;
+      container.appendChild(aiDiv);
+      scrollChatToBottom();
+    }
+
+    function resetChat() {
+      const container = document.getElementById('dynamic-conversation-container');
+      if (container) {
+        container.innerHTML = `
+          <div class="flex justify-center my-2">
+            <span class="font-label-sm text-label-sm text-on-surface-variant italic px-3 py-1 bg-surface-container rounded-full">
+              New support ticket #PC-SUP-4030 initialized. Select an issue or type below.
+            </span>
+          </div>
+        `;
+      }
+      showToast('Support session reset. Concierge ready.');
+      const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+      if (input) {
+        input.value = '';
+        toggleClearIcon(false);
+        input.focus();
+      }
+    }
+
+    let isListening = false;
+    function toggleMicrophone(btn) {
+      isListening = !isListening;
+      if (isListening) {
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        btn.classList.add('bg-tertiary', 'text-on-tertiary', 'animate-pulse');
+        showToast('Listening... describe your order issue or question');
+        setTimeout(() => {
+          if (isListening) {
+            toggleMicrophone(btn);
+            const sampleSpeech = "Where is my book shipment #PC-89412?";
+            const input = document.getElementById('chat-input') || document.getElementById('chat-user-input');
+            if (input) {
+              input.value = sampleSpeech;
+              sendMessage();
+            }
+          }
+        }, 2500);
+      } else {
+        btn.classList.remove('bg-tertiary', 'text-on-tertiary', 'animate-pulse');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      }
+    }
+
+    function initChatEngine() {
+      const form = document.getElementById('chat-input-form');
+      const input = document.getElementById('chat-input');
+      const sendBtn = document.getElementById('send-msg-btn');
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          sendMessage();
+          return false;
+        });
+      }
+
+      if (input) {
+        input.addEventListener('input', function(e) {
+          toggleClearIcon(e.target.value.length > 0);
+        });
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+      }
+
+      if (sendBtn) {
+        sendBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          sendMessage();
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initChatEngine);
+    } else {
+      initChatEngine();
+    }
+  </script>
+</body></html>

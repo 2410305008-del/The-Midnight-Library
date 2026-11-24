@@ -1,0 +1,24 @@
+{
+  "name": "bookstore-and-e-library",
+  "version": "1.0.0",
+  "description": "PageHaven - Curated Bookstore & Archival E-Library (React Vite + Node/Express + MongoDB)",
+  "scripts": {
+    "dev": "node -e \"console.log('Use separate terminals: cd backend && npm run dev, and cd frontend && npm run dev')\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:backend": "npm --prefix backend start",
+    "start": "npm --prefix backend start"
+  },
+  "keywords": [
+    "bookstore",
+    "e-library",
+    "react",
+    "vite",
+    "express",
+    "mongodb",
+    "tailwind"
+  ],
+  "author": "PageHaven Team",
+  "license": "ISC"
+}

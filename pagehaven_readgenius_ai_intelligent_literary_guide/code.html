@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Manrope:wght@400..700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#887364","on-error-container":"#93000a","inverse-primary":"#ffb77d","primary-fixed-dim":"#ffb77d","outline-variant":"#dbc2b0","tertiary-fixed-dim":"#ffb4a8","on-primary":"#ffffff","secondary-fixed":"#c6e9ea","on-tertiary-container":"#fffbff","on-surface-variant":"#554336","surface-bright":"#faf8ff","background":"#faf8ff","error":"#ba1a1a","primary-fixed":"#ffdcc3","surface":"#faf8ff","on-surface":"#151b29","tertiary-container":"#c94a38","surface-container-low":"#f1f3ff","secondary-fixed-dim":"#aacdce","surface-tint":"#904d00","on-secondary-fixed":"#002021","surface-container-highest":"#dde2f6","on-background":"#151b29","on-primary-fixed":"#2f1500","on-primary-fixed-variant":"#6e3900","surface-container":"#e9edff","secondary-container":"#c3e6e7","primary":"#8d4b00","inverse-surface":"#2a303f","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary":"#ffffff","surface-variant":"#dde2f6","surface-dim":"#d4d9ed","error-container":"#ffdad6","surface-container-high":"#e2e8fc","on-tertiary-fixed":"#410100","on-tertiary-fixed-variant":"#8a1c10","on-primary-container":"#fffbff","on-secondary-container":"#476869","on-error":"#ffffff","on-secondary-fixed-variant":"#2b4c4d","tertiary":"#a83223","inverse-on-surface":"#edf0ff","secondary":"#436465","primary-container":"#b15f00","tertiary-fixed":"#ffdad4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.5rem","margin":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter-sm":"1rem","gutter":"1.5rem","margin-sm":"1rem","space-md":"1rem"},"fontFamily":{"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"display-mobile":["Newsreader"],"headline-md":["Newsreader"],"headline-lg-mobile":["Newsreader"],"body-md":["Manrope"],"display":["Newsreader"],"label-lg":["Manrope"],"label-md":["Manrope"],"body-lg":["Manrope"],"title-editorial":["Newsreader"],"body-sm":["Manrope"],"label-sm":["Manrope"]},"fontSize":{"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-mobile":["40px",{"lineHeight":"46px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["26px",{"lineHeight":"32px","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.025em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-editorial":["18px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-7xl mx-auto px-margin-sm lg:px-margin flex flex-col justify-between pt-3 pb-2"><div class="flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><img alt="A beautiful, elegant logo emblem of an open book held tenderly in the hands of a reader. Warm amber #d97706 and deep navy ink tones, minimalist refined linework, sanctuary and literary craftsmanship aesthetic for PageHaven. Design context: - Primary color: #d97706
+- Font: newsreader
+- Mode: light
+- Roundness: rounded-sm
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-serif">PageHaven</span></div><div class="flex-1 max-w-xl mx-auto hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="w-full pl-10 pr-4 py-space-xs bg-surface-container-low text-on-surface font-title-editorial text-body-sm rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary placeholder:text-on-surface-variant/70 transition-all" placeholder="Search by author, theme, or quote..." type="text"/></div></div><div class="flex items-center gap-space-md"><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" data-path="cart" href="#"><span class="material-symbols-outlined text-[24px]">local_mall</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary font-label-sm text-label-sm rounded-full w-5 h-5 flex items-center justify-center shadow-sm">3</span></a><a class="flex items-center gap-space-xs p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="login" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-label-md text-label-md hidden sm:inline-block">Guest / Sign In</span></a></div></div><nav class="flex items-center gap-gutter overflow-x-auto whitespace-nowrap pt-1 text-body-sm" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="home" href="#">Home</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="story-fiction" href="#">Story &amp; Fiction</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="anime-manga" href="#">Anime &amp; Manga</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="comics-graphic-novels" href="#">Comics &amp; Graphic Novels</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="motivational-wisdom" href="#">Motivational &amp; Wisdom</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="periodicals" href="#">Periodicals</a><a aria-current="page" class="transition-colors pb-1 text-primary font-semibold border-b-2 border-primary" data-path="readgenius-ai-concierge" href="#">ReadGenius AI Concierge</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors pb-1" data-path="help-care" href="#">Help Care</a></nav></div></header><main class="w-full pt-24 bg-surface min-h-[calc(100vh-24rem)]"><div class="flex flex-col w-full">
+<section class="max-w-7xl mx-auto w-full px-margin-sm lg:px-margin py-space-md">
+<!-- Top Contextual Banner -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-sm mb-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-56 h-56 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-space-md z-10">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shadow-md shadow-primary/20 shrink-0">
+<span class="material-symbols-outlined text-on-primary text-[28px]">auto_stories</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">ReadGenius™ Concierge</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Neural Literary Model v4.2
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Archival curator, contextual syllabus builder, and customer care intelligence for PageHaven.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto z-10">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm transition-all" id="reset-thread-btn">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Reset Session</span>
+</button>
+<div class="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-fixed/50 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">library_books</span>
+<span>Archive Synced: 24,190 Titles</span>
+</div>
+</div>
+</div>
+<!-- Main 12-Column Split Console -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Intelligent Guide Panel (5 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-md order-2 lg:order-1">
+<!-- Live Curator Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md shadow-on-surface/5 flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Specialized Modes</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-2 py-1 rounded-full">Zero Latency</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">bookmark_manager</span>
+                Curation
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Nuanced taste profiles</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">school</span>
+                Syllabus
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">University reading lists</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">featured_seasonal_and_gifts</span>
+                Gift Studio
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Deckle-edge packaging</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+                Care Desk
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Order #PH &amp; returns</span>
+</div>
+</div>
+</div>
+<!-- Preset Guided Inquiries -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md shadow-on-surface/5 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">Inquiry Catalysts</span>
+<span class="material-symbols-outlined text-outline text-[18px]">lightbulb</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Click any literary prompt to invoke instant neural synthesis:</p>
+<div class="flex flex-col gap-2 pt-1" id="presets-container">
+<button class="preset-btn text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-primary-fixed/30 hover:text-primary transition-all group flex items-start gap-2" data-prompt="Recommend me 3 gripping Anime &amp; Manga series with deep philosophical themes">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">swords</span>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary leading-snug">Philosophical Anime &amp; Manga series</span>
+</button>
+<button class="preset-btn text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-primary-fixed/30 hover:text-primary transition-all group flex items-start gap-2" data-prompt="I want to build a bulletproof morning habit routine — which motivational books are best?">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">bolt</span>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary leading-snug">Bulletproof morning habits &amp; cognitive discipline</span>
+</button>
+<button class="preset-btn text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-primary-fixed/30 hover:text-primary transition-all group flex items-start gap-2" data-prompt="Find me captivating magical realism and literary fiction like Haruki Murakami">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">nights_stay</span>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary leading-snug">Magical realism &amp; surreal literary fiction</span>
+</button>
+<button class="preset-btn text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-primary-fixed/30 hover:text-primary transition-all group flex items-start gap-2" data-prompt="What are the top Eisner-winning graphic novels on PageHaven?">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">menu_book</span>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary leading-snug">Eisner-winning prestige graphic novels</span>
+</button>
+<button class="preset-btn text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-primary-fixed/30 hover:text-primary transition-all group flex items-start gap-2" data-prompt="Help me track my recent order #PH-89412 or initiate a return">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">package_2</span>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary leading-snug">Track order #PH-89412 &amp; return policy</span>
+</button>
+<button class="preset-btn text-left p-2.5 rounded-lg bg-surface-container-low hover:bg-primary-fixed/30 hover:text-primary transition-all group flex items-start gap-2" data-prompt="What is the voucher code for 25% off hardcovers?">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5 group-hover:scale-110 transition-transform">loyalty</span>
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary leading-snug">Active 25% hardcover archival discount coupon</span>
+</button>
+</div>
+</div>
+<!-- Curated Book of the Day Spotlight -->
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Curator's Nocturne Pick</span>
+<span class="px-2 py-0.5 bg-surface rounded-full text-on-surface font-label-sm text-label-sm shadow-xs">99.4% Match</span>
+</div>
+<div class="flex gap-space-sm items-center">
+<div class="w-16 h-24 rounded-lg overflow-hidden shrink-0 shadow-md relative">
+<img class="w-full h-full object-cover" data-alt="Cover of the book Piranesi by Susanna Clarke in elegant dark oceanic teal and etched marble classical statues aesthetic, deckle-edge hardcover mockup with refined typography in warm amber and gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIwADY5URjTupWZLCzU1Ec5Lqpr9XeitneB74IGJ5NPMu2QKsHfw4OPSNg6MH9J8nL8zPU8JWUwvELgSF6Gbb_fvenwNpPgUDb7_NJPfcS661b5c6XQnWUy7G_jCZ7THs63NuzD7StcfrQF7cuVLSIGMYaqI1tLBzE2PKn_aR6W9T860yVFyP4cvCIBGtWkpuR6pB0PanYc7eHLC-x4GLh6gAM9OWYGUjLspFIr14b39j6YkO9HtwdYg"/>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Piranesi</h4>
+<p class="font-title-editorial text-title-editorial text-on-surface-variant text-[14px]">Susanna Clarke</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-primary font-label-md text-label-md">$28.00 Hardcover</span>
+<span class="text-outline text-label-sm text-label-sm">· Archival</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">"The Beauty of the House is immeasurable; its Kindness infinite." An ethereal study in labyrinthine memory.</p>
+<button class="w-full py-2 px-3 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md shadow-sm transition-all flex items-center justify-center gap-1.5" data-prompt="Analyze why Susanna Clarke's Piranesi resonates so deeply with readers of speculative and architectural mystery." id="ask-curated-btn">
+<span class="material-symbols-outlined text-[16px]">psychology_alt</span>
+<span>Ask ReadGenius About Piranesi</span>
+</button>
+</div>
+</aside>
+<!-- Right Column: Interactive Chat Stream Console (8 cols) -->
+<main class="lg:col-span-8 flex flex-col bg-surface-container-lowest rounded-xl shadow-lg shadow-on-surface/5 overflow-hidden order-1 lg:order-2 h-[780px]">
+<!-- Stream Header Bar -->
+<div class="px-space-md py-3 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Active Sanctuary Session</span>
+<span class="text-outline text-label-sm text-label-sm">| Latency: ~140ms</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">shelves</span>
+<span>Live Inventory Connected</span>
+</div>
+</div>
+<!-- Chat Scroll Area -->
+<div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-md" id="chat-messages-container">
+<!-- Bot Welcome Turn -->
+<div class="flex items-start gap-space-sm max-w-3xl">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">ReadGenius Concierge</span>
+<span class="font-label-sm text-label-sm text-outline">Just now</span>
+</div>
+<div class="bg-surface-container-low text-on-surface rounded-xl p-space-md shadow-xs flex flex-col gap-space-xs">
+<p class="font-body-md text-body-md leading-relaxed">
+                  Greetings, fellow bibliophile. I am your specialized literary intelligence at PageHaven. Whether you seek <span class="font-semibold text-primary">rare serialized manga</span>, profound <span class="font-semibold text-primary">philosophical wisdom</span>, a syllabus companion, or swift resolution for an order dispatch, my catalog memory is at your disposal.
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  How may I illuminate your reading path today? Choose an inquiry catalyst on the left, or compose your request below.
+                </p>
+</div>
+</div>
+</div>
+<!-- Dynamic Injection Container -->
+<div class="flex flex-col gap-space-md" id="dynamic-chat-content">
+<!-- Dynamic exchanges will populate here -->
+</div>
+<!-- Typing Indicator (Hidden by default) -->
+<div class="hidden flex items-start gap-space-sm max-w-md" id="typing-indicator">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="bg-surface-container-low rounded-xl px-4 py-3 flex items-center gap-1.5 shadow-xs">
+<div class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 0ms"></div>
+<div class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 150ms"></div>
+<div class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 300ms"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-2 italic">Consulting literary index...</span>
+</div>
+</div>
+</div>
+<!-- Chat Stream Bottom Controls & Input -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-2">
+<!-- Suggestion Badges -->
+<div class="flex items-center gap-1.5 overflow-x-auto whitespace-nowrap pb-1 no-scrollbar">
+<span class="font-label-sm text-label-sm text-outline mr-1 uppercase">Quick Prompts:</span>
+<button class="quick-pill px-2.5 py-1 rounded-full bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-xs transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">auto_fix_high</span>
+<span>Philosophical Sci-Fi</span>
+</button>
+<button class="quick-pill px-2.5 py-1 rounded-full bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-xs transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">psychology</span>
+<span>Habit Formation</span>
+</button>
+<button class="quick-pill px-2.5 py-1 rounded-full bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-xs transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">flare</span>
+<span>Dark Fantasy Manga</span>
+</button>
+<button class="quick-pill px-2.5 py-1 rounded-full bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-xs transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_shipping</span>
+<span>Track Parcel #PH-89412</span>
+</button>
+<button class="quick-pill px-2.5 py-1 rounded-full bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm shadow-xs transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">percent</span>
+<span>Discount Vouchers</span>
+</button>
+</div>
+<!-- Main Input Field Container -->
+<form class="relative flex items-center bg-surface-container-lowest rounded-xl shadow-inner p-1.5" id="chat-form">
+<button class="p-2 text-outline hover:text-on-surface transition-colors flex items-center justify-center rounded-lg" title="Attach reading list or syllabus excerpt" type="button">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<input autocomplete="off" class="flex-1 bg-transparent px-3 py-2 text-on-surface font-body-md text-body-md placeholder:text-outline/70 focus:outline-none" id="user-query-input" placeholder="Ask ReadGenius about any book, manga, habits, life advice, or store help..." type="text"/>
+<div class="flex items-center gap-1">
+<button class="p-2 text-outline hover:text-primary transition-colors flex items-center justify-center rounded-lg" id="voice-input-btn" title="Voice dictation" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button class="px-4 py-2 bg-on-surface hover:bg-primary text-surface rounded-lg font-label-md text-label-md flex items-center gap-1.5 shadow-md shadow-on-surface/10 transition-all hover:scale-[1.02]" id="send-query-btn" type="submit">
+<span>Consult</span>
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</button>
+</div>
+</form>
+<div class="flex items-center justify-between px-1 text-outline font-label-sm text-label-sm">
+<span>Powered by PageHaven Neural Sanctuary Engine</span>
+<span>Archival Physical &amp; Digital Synchronized</span>
+</div>
+</div>
+</main>
+</div>
+<!-- Supplementary Feature Highlights Bento (Bottom) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-space-xl">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Archival Preservation Care</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Every volume ordered via ReadGenius is wrapped in acid-free Japanese glassine paper with deckle-edge inspection seals.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Instant Cloud Synchrony</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Selecting e-book editions deploys reader links directly to your PageHaven Vault app with AI chapter annotations.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">chevron_left</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">14-Day Sanctuary Guarantee</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Unconditional zero-friction returns on pristine volumes. Simply inform ReadGenius to receive instant courier pickup codes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Logic Script -->
+<script>
+    (function initReadGenius() {
+      const chatForm = document.getElementById('chat-form');
+      const inputField = document.getElementById('user-query-input');
+      const dynamicContainer = document.getElementById('dynamic-chat-content');
+      const chatScroll = document.getElementById('chat-messages-container');
+      const typingIndicator = document.getElementById('typing-indicator');
+      const resetBtn = document.getElementById('reset-thread-btn');
+      const presets = document.querySelectorAll('.preset-btn, .quick-pill, #ask-curated-btn');
+
+      // Scroll to bottom helper
+      function scrollToBottom() {
+        chatScroll.scrollTop = chatScroll.scrollHeight;
+      }
+
+      // Append user bubble
+      function appendUserMessage(text) {
+        const userTurn = document.createElement('div');
+        userTurn.className = 'flex items-start gap-space-sm justify-end max-w-2xl ml-auto';
+        userTurn.innerHTML = `
+          <div class="flex flex-col gap-1 items-end">
+            <div class="flex items-center gap-2">
+              <span class="font-label-sm text-label-sm text-outline">You</span>
+            </div>
+            <div class="bg-on-surface text-surface rounded-xl p-3.5 shadow-sm">
+              <p class="font-body-md text-body-md">${escapeHtml(text)}</p>
+            </div>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 text-[14px] font-bold">
+            PH
+          </div>
+        `;
+        dynamicContainer.appendChild(userTurn);
+        scrollToBottom();
+      }
+
+      // Generate book item HTML for response cards
+      function createBookCard(title, author, genre, price, desc, imgSrc, format) {
+        return `
+          <div class="bg-surface rounded-lg p-3 shadow-sm flex flex-col sm:flex-row gap-3 items-start justify-between">
+            <div class="flex gap-3 items-start">
+              <div class="w-14 h-20 rounded overflow-hidden shrink-0 shadow-sm relative">
+                <img src="${imgSrc}" data-alt="Cover illustration for ${title} by ${author}, aesthetic book jacket style with rich literary palette" class="w-full h-full object-cover">
+              </div>
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <h4 class="font-headline-sm text-headline-sm text-on-surface text-[17px]">${title}</h4>
+                  <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${format === 'E-Book' ? 'bg-secondary-fixed text-on-secondary-fixed' : 'bg-primary-fixed text-on-primary-fixed'}">${format}</span>
+                </div>
+                <span class="font-title-editorial text-title-editorial text-on-surface-variant text-[13px]">${author} · ${genre}</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] line-clamp-2 mt-1">${desc}</p>
+              </div>
+            </div>
+            <div class="flex sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto gap-2 shrink-0 pt-2 sm:pt-0">
+              <span class="font-label-lg text-label-lg font-bold text-primary">${price}</span>
+              <button onclick="handleAddToCart('${title}')" class="px-3 py-1.5 rounded-lg bg-on-surface text-surface hover:bg-primary font-label-md text-label-md shadow-xs transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+                <span>Add to Bag</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      // Append AI response
+      function appendBotMessage(htmlContent) {
+        const botTurn = document.createElement('div');
+        botTurn.className = 'flex items-start gap-space-sm max-w-3xl animate-fadeIn';
+        botTurn.innerHTML = `
+          <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[20px]">auto_stories</span>
+          </div>
+          <div class="flex flex-col gap-space-xs w-full">
+            <div class="flex items-center gap-2">
+              <span class="font-label-md text-label-md text-on-surface font-bold">ReadGenius Concierge</span>
+              <span class="font-label-sm text-label-sm text-outline">Verified Archival Engine</span>
+            </div>
+            <div class="bg-surface-container-low text-on-surface rounded-xl p-space-md shadow-xs flex flex-col gap-space-sm w-full">
+              ${htmlContent}
+            </div>
+          </div>
+        `;
+        dynamicContainer.appendChild(botTurn);
+        scrollToBottom();
+      }
+
+      // Safe string escape
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, function(m) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+        });
+      }
+
+      // Core Intelligence Routing
+      function processUserQuery(query) {
+        const q = query.toLowerCase().trim();
+        typingIndicator.classList.remove('hidden');
+        scrollToBottom();
+
+        setTimeout(() => {
+          typingIndicator.classList.add('hidden');
+
+          // Case A: Greetings / Hello
+          if (q.includes('hello') || q.includes('hi') || q.includes('hey') || q.includes('greetings') || q.includes('who are you')) {
+            appendBotMessage(`
+              <p class="font-body-md text-body-md leading-relaxed">
+                Welcome back into the sanctuary. I am fine-tuned across <span class="font-semibold text-primary">PageHaven's whole rare and modern registry</span>. You can test my intelligence with requests like:
+              </p>
+              <ul class="list-disc list-inside font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1">
+                <li><strong class="text-on-surface">Literary Discovery:</strong> "Recommend me dark psychological mystery novels set in Europe."</li>
+                <li><strong class="text-on-surface">Visual Works:</strong> "What are the most philosophically profound manga works?"</li>
+                <li><strong class="text-on-surface">Personal Mastery:</strong> "Best evidence-based books on sleep and daily focus."</li>
+                <li><strong class="text-on-surface">Store Inquiries:</strong> "How do I use code PAGE25 or track an existing delivery?"</li>
+              </ul>
+              <div class="pt-1">
+                <span class="text-xs text-primary font-label-sm">Prompt: Ask me for any author, trope, or order code to begin.</span>
+              </div>
+            `);
+          }
+          // Case B: Anime & Manga
+          else if (q.includes('manga') || q.includes('anime') || q.includes('frieren') || q.includes('one piece') || q.includes('titan') || q.includes('graphic')) {
+            const b1 = createBookCard(
+              'Frieren: Beyond Journey\'s End (Vol. 1-8 Archival Box)', 
+              'Kanehito Yamada & Tsukasa Abe', 
+              'Philosophical Fantasy', 
+              '$78.50', 
+              'A poignant meditation on mortality, passing eras, and emotional connection after the demon king is slain.',
+              'placeholder',
+              'Collector Hardcover'
+            );
+            const b2 = createBookCard(
+              'One Piece: Water Seven & Enies Lobby Archive', 
+              'Eiichiro Oda', 
+              'Adventure & Justice', 
+              '$64.00', 
+              'The definitive opus of loyalty, government consequence, and the heartrending fight for Robin’s will to live.',
+              'placeholder',
+              'Hardcopy'
+            );
+            const b3 = createBookCard(
+              'Attack on Titan: The Colossal Edition 1', 
+              'Hajime Isayama', 
+              'Dark Existential Mystery', 
+              '$42.00', 
+              'Oversized omnibus examining tribalism, cycle of retribution, and the brutal weight of freedom.',
+              'placeholder',
+              'Oversized Archival'
+            );
+
+            appendBotMessage(`
+              <p class="font-body-md text-body-md leading-relaxed">
+                I have curated three extraordinary illustrated works that transcend conventional narrative tropes, offering profound philosophical depth:
+              </p>
+              <div class="flex flex-col gap-space-xs mt-1">
+                ${b1}
+                ${b2}
+                ${b3}
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant pt-2">
+                All physical copies feature heavyweight opaque stock and Japanese slipcase jackets. Would you like a chapter analysis or comparison?
+              </p>
+            `);
+          }
+          // Case C: Habits, Motivation, Wisdom
+          else if (q.includes('habit') || q.includes('motivat') || q.includes('morning') || q.includes('routine') || q.includes('stoic') || q.includes('wisdom')) {
+            const m1 = createBookCard(
+              'Atomic Habits: Archival Leatherbound Edition',
+              'James Clear',
+              'Behavioral Psychology',
+              '$36.00',
+              'The gold standard on compounding self-identity, environment design, and tiny 1% systemic changes.',
+              'placeholder',
+              'Hardcopy'
+            );
+            const m2 = createBookCard(
+              'The Courage to Be Disliked',
+              'Ichiro Kishimi & Fumitake Koga',
+              'Adlerian Psychology',
+              '$18.50',
+              'A transformative dialogue between philosopher and youth on interpersonal separation of tasks and radical present freedom.',
+              'placeholder',
+              'E-Book & Print'
+            );
+            const m3 = createBookCard(
+              'Man\'s Search for Meaning',
+              'Viktor E. Frankl',
+              'Existential Philosophy',
+              '$22.00',
+              'Frankl\'s enduring thesis that human drive is defined by the quest for meaning through struggle and intentional purpose.',
+              'placeholder',
+              'Deckle-Edge Print'
+            );
+
+            appendBotMessage(`
+              <p class="font-body-md text-body-md leading-relaxed">
+                To construct an unshakeable morning architecture, cognitive alignment must precede sheer willpower. Here is the triumvirate I recommend:
+              </p>
+              <div class="flex flex-col gap-space-xs mt-1">
+                ${m1}
+                ${m2}
+                ${m3}
+              </div>
+              <div class="p-3 bg-surface rounded-lg mt-2">
+                <span class="font-label-md text-label-md text-primary block">ReadGenius Morning Protocol Hint:</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Pair James Clear\'s physical cues with 20 minutes of silent contemplation from Viktor Frankl before checking any electronic screens.</span>
+              </div>
+            `);
+          }
+          // Case D: Murakami, Magical Realism, Fiction
+          else if (q.includes('murakami') || q.includes('fiction') || q.includes('magical realism') || q.includes('piranesi') || q.includes('story')) {
+            const f1 = createBookCard(
+              'Kafka on the Shore (Deluxe Illustrated Edition)',
+              'Haruki Murakami',
+              'Metaphysical Fiction',
+              '$34.00',
+              'Cats that speak, mackerel rains, and a subterranean labyrinths of grief and prophecy.',
+              'placeholder',
+              'Hardcopy'
+            );
+            const f2 = createBookCard(
+              'Piranesi',
+              'Susanna Clarke',
+              'Architectural Speculative',
+              '$28.00',
+              'An endlessly echoing infinite house with ocean tides rising through classical marble halls.',
+              'placeholder',
+              'Hardcopy'
+            );
+
+            appendBotMessage(`
+              <p class="font-body-md text-body-md leading-relaxed">
+                If your soul seeks the liminal space between dreams and quiet urban reality, both Murakami and Clarke are unmatched masters of atmospheric transcendence:
+              </p>
+              <div class="flex flex-col gap-space-xs mt-1">
+                ${f1}
+                ${f2}
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant pt-2">
+                Both titles qualify for complementary archival slipcases during this week's literary salon.
+              </p>
+            `);
+          }
+          // Case E: Customer Care, Tracking, Returns, Voucher
+          else if (q.includes('track') || q.includes('order') || q.includes('return') || q.includes('voucher') || q.includes('code') || q.includes('help') || q.includes('ph-89412')) {
+            appendBotMessage(`
+              <div class="flex flex-col gap-space-sm">
+                <div class="flex items-center gap-2 text-primary font-bold">
+                  <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+                  <span class="font-headline-sm text-headline-sm">Sanctuary Concierge Logistics Report</span>
+                </div>
+                
+                <div class="p-3 bg-surface rounded-lg flex flex-col gap-2">
+                  <div class="flex justify-between items-center">
+                    <span class="font-label-md text-label-md text-on-surface font-semibold">Consignment Record: #PH-89412</span>
+                    <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">In Transit · Expedited</span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Contains: <strong class="text-on-surface">The Complete Book of Disquiet (Archival Leather)</strong>. Shipped via Global Book Express. Expected delivery to your sanctuary on <strong class="text-primary">Thursday, October 24 by 4:00 PM</strong>.
+                  </p>
+                  <div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden mt-1">
+                    <div class="bg-primary h-full w-3/4 rounded-full"></div>
+                  </div>
+                  <span class="text-[11px] text-outline text-right">Depot Passed: Zurich Vault Logistics</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+                  <div class="p-3 bg-surface rounded-lg">
+                    <span class="font-label-md text-label-md text-on-surface block font-semibold mb-1">14-Day Zero-Cost Returns</span>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">If the edition does not satisfy your library tactile standards, tap below to print an instant return airway bill.</p>
+                    <button class="mt-2 text-primary hover:underline font-label-sm text-label-sm flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[14px]">undo</span>
+                      Generate Return Waybill
+                    </button>
+                  </div>
+
+                  <div class="p-3 bg-surface rounded-lg">
+                    <span class="font-label-md text-label-md text-on-surface block font-semibold mb-1">Active Hardcover Voucher</span>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Apply code at checkout for 25% off all archival hardcover bindings:</p>
+                    <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary-fixed text-on-primary-fixed rounded font-mono font-bold text-label-sm">
+                      <span>PAGE25</span>
+                      <span class="material-symbols-outlined text-[14px] cursor-pointer" onclick="navigator.clipboard.writeText('PAGE25'); alert('Voucher code PAGE25 copied to clipboard!')" title="Copy code">content_copy</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `);
+          }
+          // Default: General intelligent synthesis
+          else {
+            appendBotMessage(`
+              <p class="font-body-md text-body-md leading-relaxed">
+                Analyzing inquiry across PageHaven's curated indices for: <em class="text-primary font-serif">"${escapeHtml(query)}"</em>
+              </p>
+              <div class="p-3 bg-surface rounded-lg mt-2 flex flex-col gap-2">
+                <span class="font-label-md text-label-md text-on-surface font-semibold">Thematic Synapses:</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  We have catalog entries spanning rare manuscripts, scholarly translations, and modern collector folios matching these motifs. You can narrow this focus by indicating whether you prefer <strong>physical deckle-edge editions</strong> or <strong>immediate digital sync</strong>.
+                </p>
+              </div>
+              <div class="flex items-center gap-2 pt-2">
+                <span class="text-xs text-outline">Related actions:</span>
+                <button onclick="document.getElementById('user-query-input').value = 'Show me bestsellers in this category'; document.getElementById('chat-form').dispatchEvent(new Event('submit'))" class="text-xs text-primary hover:underline font-semibold">Inspect Top Bestsellers</button>
+                <span class="text-outline">·</span>
+                <button onclick="document.getElementById('user-query-input').value = 'What is the voucher code for 25% off hardcovers?'; document.getElementById('chat-form').dispatchEvent(new Event('submit'))" class="text-xs text-primary hover:underline font-semibold">Check Discounts</button>
+              </div>
+            `);
+          }
+        }, 650);
+      }
+
+      // Submit listener
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const val = inputField.value.trim();
+        if (!val) return;
+        appendUserMessage(val);
+        inputField.value = '';
+        processUserQuery(val);
+      });
+
+      // Quick presets / suggestions click handler
+      presets.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const text = btn.getAttribute('data-prompt') || btn.innerText.trim();
+          inputField.value = text;
+          chatForm.dispatchEvent(new Event('submit'));
+        });
+      });
+
+      // Reset listener
+      resetBtn.addEventListener('click', () => {
+        dynamicContainer.innerHTML = '';
+        inputField.value = '';
+        appendBotMessage(`
+          <p class="font-body-md text-body-md leading-relaxed">
+            Thread refreshed. Literary parameters reset to defaults. How may I assist your collection or reading journey today?
+          </p>
+        `);
+      });
+
+      // Add to bag micro-interaction window function
+      window.handleAddToCart = function(title) {
+        // Find existing shell bag badge counter and bump it
+        const badge = document.querySelector('header a[data-path="cart"] span:last-child');
+        if (badge) {
+          const current = parseInt(badge.textContent || '3', 10);
+          badge.textContent = current + 1;
+          badge.classList.add('scale-125', 'transition-transform');
+          setTimeout(() => badge.classList.remove('scale-125'), 300);
+        }
+
+        // Notification inside chat stream
+        const toastTurn = document.createElement('div');
+        toastTurn.className = 'flex items-center justify-center my-1';
+        toastTurn.innerHTML = `
+          <div class="px-4 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md shadow-sm flex items-center gap-2 animate-bounce">
+            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+            <span>Added "<strong>${title}</strong>" to your sanctuary cart with deckle-edge preservation seal.</span>
+          </div>
+        `;
+        dynamicContainer.appendChild(toastTurn);
+        scrollToBottom();
+      };
+
+      // Voice prompt trigger simulation
+      const voiceBtn = document.getElementById('voice-input-btn');
+      if (voiceBtn) {
+        voiceBtn.addEventListener('click', () => {
+          inputField.value = 'Recommend me captivating magical realism and literary fiction like Haruki Murakami';
+          inputField.focus();
+        });
+      }
+
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/30 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-margin-sm lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="PageHaven Emblem" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRtm26JnVInQz0nHiZ-1m1GJf0W2DwDp13clgaaPmw0Facai8WgD72hH_A9wHezbpG-LAJFIeDPpi-3YnVbwC9nhPUcKC-crmpkkAikWELS69wuYAe_nbEu_ccXHeKyfehTrZNwqVf5FWp4-s_pkgls3C_Axe2nR3az9CB-Xx1CWMRRrIwkhDZwYKd_J54F5G0lbmYqDBjH3wFUgwDbzzq_zvSxo642lXzwA7-vGMVnNpJRNAfbsCtMkI"/><span class="font-headline-sm text-headline-sm text-on-surface">PageHaven</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Sanctuary of rare, acclaimed, and preserved literary craftsmanship. From archival hardcovers to illuminated digital editions.</p></div><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Literary Curations</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="story-fiction" href="#">Story &amp; Fiction Classics</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="anime-manga" href="#">Archival Manga &amp; Graphic Works</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="motivational-wisdom" href="#">Wisdom &amp; Contemplation</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="periodicals" href="#">Rare Press &amp; Periodicals</a></div><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Reader Experience</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="readgenius-ai-concierge" href="#">ReadGenius AI Guide</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-care" href="#">Customer Care &amp; Inquiries</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#">Order Tracking &amp; Archive Delivery</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-care" href="#">Preservation Guarantees</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">Care &amp; Preservation</span><div class="p-space-sm bg-surface rounded-lg border border-outline-variant/30"><div class="flex items-center gap-space-xs text-primary mb-1"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Preservation Guarantee</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">All rare physical volumes shipped in archival protective encasings. Guaranteed pristine arrival.</p></div></div></div><div class="border-t border-outline-variant/20 pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2024 PageHaven Rare &amp; Acclaimed Books Sanctuary. All rights reserved.</p><div class="flex items-center gap-gutter"><span class="font-label-md text-label-md">Deckle-Edge Packaging</span><span class="font-label-md text-label-md">Instant Cloud Sync</span><span class="font-label-md text-label-md">Global Courier</span></div></div></div></footer></body></html>

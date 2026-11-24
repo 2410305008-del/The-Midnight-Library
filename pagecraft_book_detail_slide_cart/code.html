@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#ffffff", "surface-bright": "#faf8ff", "surface-dim": "#d4d9ed", "tertiary-fixed": "#ffdad4", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "secondary-container": "#c3e6e7", "tertiary-container": "#c94a38", "primary-container": "#b15f00", "on-primary-fixed-variant": "#6e3900", "on-tertiary-fixed": "#410100", "surface-variant": "#dde2f6", "surface-container-highest": "#dde2f6", "background": "#faf8ff", "surface-container-low": "#f1f3ff", "on-secondary-fixed-variant": "#2b4c4d", "secondary": "#436465", "secondary-fixed-dim": "#aacdce", "primary": "#8d4b00", "on-primary-fixed": "#2f1500", "surface-container-high": "#e2e8fc", "on-surface": "#151b29", "outline": "#887364", "on-surface-variant": "#554336", "on-tertiary-fixed-variant": "#8a1c10", "on-background": "#151b29", "primary-fixed-dim": "#ffb77d", "surface-container": "#e9edff", "secondary-fixed": "#c6e9ea", "primary-fixed": "#ffdcc3", "tertiary-fixed-dim": "#ffb4a8", "on-secondary-fixed": "#002021", "on-error-container": "#93000a", "on-secondary-container": "#476869", "outline-variant": "#dbc2b0", "on-primary-container": "#fffbff", "inverse-surface": "#2a303f", "on-error": "#ffffff", "error": "#ba1a1a", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fffbff", "surface-tint": "#904d00", "inverse-on-surface": "#edf0ff", "tertiary": "#a83223", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2.5rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "title-editorial": ["Newsreader"], "body-lg": ["Manrope"], "headline-md": ["Newsreader"], "label-lg": ["Manrope"], "body-md": ["Manrope"], "body-sm": ["Manrope"], "headline-lg-mobile": ["Newsreader"], "display": ["Newsreader"], "label-sm": ["Manrope"], "label-md": ["Manrope"], "display-mobile": ["Newsreader"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2 min-w-0"><button aria-label="Go back" class="w-11 h-11 -ml-2 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="PageCraft Logo" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate tracking-tight">Book Details</h1></div><div class="flex items-center gap-1"><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ml-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU7sUiItY3FUfnO7yjrTGFfFc88FcYnABE8i78S_Ma27RXVUTsDc_Ph_HAcONdtHlRjXc1vwK7Jy5nBzCfPQb1y3To9jVX4ghattUsngVvlh8iyhN4hhfghXdnsttJTXcGe84MgfZm66gVzLhLiwDMUOEPZU-3HaKXq0tBu8WiwjWaBNbjl4zqc8rEs9wB7BCtfoiOb4nFEa8VdAMUsvthE9Ja6v1st0d_5nhrpn8vXejEzKZM5dF6ZQ"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Background Book Details Page Content -->
+<div class="flex flex-col w-full px-4 pt-4 pb-28 space-y-6">
+<!-- Breadcrumb & Metadata Pills -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+        Self-Improvement
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">
+        Psychology
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+        Bestseller #1
+      </span>
+</div>
+<!-- Book Hero Presentation -->
+<div class="flex flex-col sm:flex-row gap-5 items-start bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<div class="relative w-36 h-52 mx-auto sm:mx-0 flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Cover of Atomic Habits book by James Clear placed elegantly on warm off-white linen paper, soft ambient side lighting casting gentle shadows, rich editorial tactile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhvpcmE1_i879lDKQEB6hmvnSq345Hd-XgKHHfHSwK73Iqn6TZebwFC_DHXoWCWH7W6Ogyy8Q9qpbs9cdhnlTi9bT6mc19kg8oT-zK9ewwM4UlfsmjPWw6WAwsSsmJtNgCYHs5ilf1_krHoUVwMSjyQceyShDgKk_Ly4Xa3BY_ew1YPyrKf-_c-feEs6r4DkH9dN8UN6HW9dYqtLz2DCICLmeYP8CPFlkx6qGeXYd3cf7uSnymfAOXbQ"/>
+<div class="absolute inset-y-0 left-0 w-3 bg-gradient-to-r from-on-surface/25 to-transparent pointer-events-none"></div>
+<div class="absolute top-2 right-2 bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded shadow">
+          BESTSELLER
+        </div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-tight">Atomic Habits</h2>
+<p class="font-title-editorial text-title-editorial text-on-surface-variant mt-0.5">Tiny Changes, Remarkable Results</p>
+<p class="font-label-lg text-label-lg text-primary mt-1">James Clear</p>
+<!-- Rating & Badges -->
+<div class="flex items-center gap-2 mt-3 flex-wrap">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg text-on-surface ml-1 font-bold">4.9</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(42,850+ reviews)</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Penguin Random House</span>
+</div>
+<!-- Quick Spec Grid -->
+<div class="grid grid-cols-3 gap-2 mt-4 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pages</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">320 pp</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Listen Time</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">5h 35m</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Language</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">English</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Format Selector Section -->
+<div class="flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Choose Edition</h3>
+<span class="font-label-md text-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+          Free delivery available
+        </span>
+</div>
+<!-- Format Option Cards -->
+<div class="flex flex-col space-y-2.5">
+<!-- Option A: Hardcover -->
+<div class="p-3.5 bg-surface-container-lowest rounded-xl shadow-sm flex items-start gap-3 cursor-pointer">
+<div class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Hardcover Clothbound</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$21.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Includes archival dust jacket, ribbon bookmark &amp; free 2-day doorstep priority delivery.
+            </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> Ships today
+              </span>
+<span class="font-body-sm text-body-sm text-outline font-medium line-through">$27.00</span>
+</div>
+</div>
+</div>
+<!-- Option B: E-Book -->
+<div class="p-3.5 bg-surface-container-low rounded-xl flex items-start gap-3 cursor-pointer">
+<div class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Instant E-Book</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">EPUB / PDF</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$8.99</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Instant cloud sync to PageCraft Reader, audio whisper sync &amp; unlimited annotations.
+            </p>
+</div>
+</div>
+<!-- Option C: Bundle -->
+<div class="p-3.5 bg-primary-fixed/30 rounded-xl flex items-start gap-3 cursor-pointer">
+<div class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Collector's Bundle</span>
+<span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">SAVE 22%</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$24.99</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Hardcover heirloom copy shipped to your home + instant digital reading access right now.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Synopsis & AI Companion Trigger -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">About this Work</h3>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md shadow-sm" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">psychology</span>
+          AI Digest
+        </button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        No matter your goals, <em class="font-title-editorial">Atomic Habits</em> offers a proven framework for improving—every day. James Clear, one of the world’s leading experts on habit formation, reveals practical strategies that teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.
+      </p>
+<div class="pt-2 flex items-center gap-2">
+<button class="flex-1 py-2 px-3 rounded bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+          Contents Preview (14 Ch.)
+        </button>
+<button class="py-2 px-3 rounded bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+          Wishlist
+        </button>
+</div>
+</div>
+<!-- Editorial Reader Voices -->
+<div class="space-y-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Critical Praise</h3>
+<div class="bg-surface-container-low p-3.5 rounded-xl space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-sm">
+              MW
+            </div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Mark W. • Verified Literary Reader</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3 days ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+          "A supremely practical book. Clear distills complex behavioral psychology into concrete steps you can apply in ten minutes."
+        </p>
+</div>
+</div>
+</div>
+<!-- Dimmer Backdrop for Slide-Out Cart Overlay -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 transition-opacity duration-300" id="cart-scrim" onclick="toggleCartDrawer()"></div>
+<!-- Slide-Out Add-to-Cart Drawer Overlay -->
+<div class="fixed inset-x-0 bottom-0 max-h-[777px] z-50 bg-surface-container-lowest rounded-t-2xl shadow-2xl flex flex-col overflow-hidden transform transition-transform duration-300 ease-out" id="cart-drawer">
+<!-- Grab handle for mobile gesture affordance -->
+<div class="w-full pt-3 pb-1 flex justify-center cursor-pointer" onclick="toggleCartDrawer()">
+<div class="w-12 h-1.5 rounded-full bg-surface-dim"></div>
+</div>
+<!-- Drawer Header -->
+<div class="px-5 py-3 flex items-center justify-between bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Your Book Basket</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2 items selected for checkout</p>
+</div>
+</div>
+<button aria-label="Close basket drawer" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="toggleCartDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-5 py-2 space-y-4">
+<!-- Shipping status progress bar -->
+<div class="bg-secondary-container/40 p-3 rounded-xl flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-secondary-container font-label-md text-label-md">
+<span class="flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+            Unlocked Free Doorstep Shipping!
+          </span>
+<span class="font-bold">$0.00</span>
+</div>
+<div class="w-full bg-secondary-fixed h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-full"></div>
+</div>
+</div>
+<!-- Cart Item 1: Physical Hardcover -->
+<div class="flex gap-3.5 bg-surface-container-low p-3 rounded-xl">
+<div class="relative w-16 h-22 flex-shrink-0 rounded shadow-sm overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cover of Atomic Habits book miniature showing white cover on table, warm shadows, minimalist editorial styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCd4BLcXxOnsxV0fyU5kOhoGCuCALVS6KGLpKbcYlZrO2QCy0zzDZ4OxywbgkwWbR1-wOjd9-oiGRrfRQzWYCuOD4JuOxwZKBExB7oBIfpv74UnVUMDPta1xz5tamEryM0z6xsfUaqx3Th_V4yh5ypWJ7u1oMTbN7sY8cH2NtSwKeUce9I6SMom9U-1HOJM6rIBBtcmB6Xn2afBnFtewn5yFvfU2Mf1wg04br55APxA8PVlfG4pWuKhA"/>
+<div class="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-r from-on-surface/30 to-transparent"></div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Atomic Habits</h3>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">$21.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Hardcover Edition • James Clear</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">local_shipping</span>
+                Delivers Friday
+              </span>
+<span class="font-label-sm text-label-sm text-outline">Qty: 1</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<button aria-label="Decrease quantity" class="w-6 h-6 rounded bg-surface-container flex items-center justify-center text-on-surface font-bold text-label-md" type="button">-</button>
+<span class="font-label-md text-label-md text-on-surface font-semibold">1</span>
+<button aria-label="Increase quantity" class="w-6 h-6 rounded bg-surface-container flex items-center justify-center text-on-surface font-bold text-label-md" type="button">+</button>
+</div>
+<button class="text-tertiary font-label-sm text-label-sm flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">delete</span>
+              Remove
+            </button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2: Digital E-Book -->
+<div class="flex gap-3.5 bg-surface-container-low p-3 rounded-xl">
+<div class="relative w-16 h-22 flex-shrink-0 rounded shadow-sm overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Stylized manga volume 1 cover featuring energetic dark fantasy anime illustration, vivid accents, crisp modern comic typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuu0_TyWG4xDmcJzXjV4nDe9y-63cfJ5MSzSN6i9A-sLL-YutBbeLxYEJqwK9aFz4aX33zk2VIFhmofpkwqI62k8pS66GWWqU8vUjIUvtRl9Kphco3hE-MAEfJnkJV-8A8U3r4Iyfy4R1dnG--ci0pfjNPtrrK1MEPDtWtb3pCN8LHztrZzjzUFo9x61vVhMCZyimYC41_tme9rg3lPfn3XeLPnseVE-Kqc4uEk57tXf0CJT5JP4JGAg"/>
+<div class="absolute bottom-1 right-1 bg-secondary text-on-secondary px-1 py-0.5 rounded text-[9px] font-bold">
+            E-BOOK
+          </div>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Jujutsu Kaisen, Vol. 1</h3>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">$5.99</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Digital E-Book • Gege Akutami</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">cloud_download</span>
+                Instant Library Sync
+              </span>
+<span class="font-label-sm text-label-sm text-outline">Qty: 1</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Device: Cloud &amp; PageCraft App</span>
+<button class="text-tertiary font-label-sm text-label-sm flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">delete</span>
+              Remove
+            </button>
+</div>
+</div>
+</div>
+<!-- Promo Code Section -->
+<div class="bg-surface-container-low p-3 rounded-xl space-y-2">
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-on-surface-variant text-[18px]">sell</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg bg-surface font-label-md text-label-md text-on-surface uppercase font-semibold focus:outline-none focus:bg-surface-container-lowest" placeholder="Promo or Gift Code" type="text" value="READBOOK15"/>
+</div>
+<button class="px-3.5 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-bold tracking-wider" type="button">
+            APPLIED
+          </button>
+</div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm px-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            15% Reader Delight Discount Applied
+          </span>
+<span class="font-bold">-$4.00</span>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="p-3 bg-surface-container-low rounded-xl space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between items-center">
+<span>Subtotal (2 items)</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">$26.99</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="flex items-center gap-1">
+            Standard Courier Shipping
+            <span class="material-symbols-outlined text-[14px] text-outline">help_outline</span>
+</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">FREE</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Instant Digital Delivery</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">FREE</span>
+</div>
+<div class="flex justify-between items-center text-primary">
+<span>Promotional Voucher (READBOOK15)</span>
+<span class="font-label-md text-label-md font-semibold">-$4.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Estimated Sales Tax</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">$1.89</span>
+</div>
+<div class="h-0.5 bg-surface-dim my-1"></div>
+<div class="flex justify-between items-baseline pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Total Due</span>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-bold leading-none">$24.88</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Includes all taxes &amp; delivery</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Sticky Action Footer -->
+<div class="p-5 bg-surface-container-lowest border-none shadow-[0_-8px_20px_rgba(0,0,0,0.06)] space-y-3 pb-safe">
+<button class="w-full py-3.5 px-4 rounded-xl bg-on-surface text-surface flex items-center justify-between font-label-lg text-label-lg font-bold shadow-lg hover:bg-primary transition-colors" type="button">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">lock</span>
+          Proceed to Secure Checkout
+        </span>
+<span class="font-headline-sm text-headline-sm text-primary-fixed">$24.88</span>
+</button>
+<!-- Security & Payment Badges -->
+<div class="flex items-center justify-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">security</span>
+          256-bit Encryption
+        </span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-on-surface">credit_card</span>
+          Cards • Apple Pay • GPay
+        </span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleCartDrawer() {
+    const drawer = document.getElementById('cart-drawer');
+    const scrim = document.getElementById('cart-scrim');
+    
+    if (drawer.classList.contains('translate-y-full')) {
+      drawer.classList.remove('translate-y-full');
+      scrim.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      drawer.classList.add('translate-y-full');
+      scrim.classList.add('opacity-0', 'pointer-events-none');
+    }
+  }
+</script></main></body></html>

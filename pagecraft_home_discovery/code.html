@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#ffffff", "surface-bright": "#faf8ff", "surface-dim": "#d4d9ed", "tertiary-fixed": "#ffdad4", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "secondary-container": "#c3e6e7", "tertiary-container": "#c94a38", "primary-container": "#b15f00", "on-primary-fixed-variant": "#6e3900", "on-tertiary-fixed": "#410100", "surface-variant": "#dde2f6", "surface-container-highest": "#dde2f6", "background": "#faf8ff", "surface-container-low": "#f1f3ff", "on-secondary-fixed-variant": "#2b4c4d", "secondary": "#436465", "secondary-fixed-dim": "#aacdce", "primary": "#8d4b00", "on-primary-fixed": "#2f1500", "surface-container-high": "#e2e8fc", "on-surface": "#151b29", "outline": "#887364", "on-surface-variant": "#554336", "on-tertiary-fixed-variant": "#8a1c10", "on-background": "#151b29", "primary-fixed-dim": "#ffb77d", "surface-container": "#e9edff", "secondary-fixed": "#c6e9ea", "primary-fixed": "#ffdcc3", "tertiary-fixed-dim": "#ffb4a8", "on-secondary-fixed": "#002021", "on-error-container": "#93000a", "on-secondary-container": "#476869", "outline-variant": "#dbc2b0", "on-primary-container": "#fffbff", "inverse-surface": "#2a303f", "on-error": "#ffffff", "error": "#ba1a1a", "inverse-primary": "#ffb77d", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fffbff", "surface-tint": "#904d00", "inverse-on-surface": "#edf0ff", "tertiary": "#a83223", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xl": "2.5rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2.5rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "title-editorial": ["Newsreader"], "body-lg": ["Manrope"], "headline-md": ["Newsreader"], "label-lg": ["Manrope"], "body-md": ["Manrope"], "body-sm": ["Manrope"], "headline-lg-mobile": ["Newsreader"], "display": ["Newsreader"], "label-sm": ["Manrope"], "label-md": ["Manrope"], "display-mobile": ["Newsreader"] }, "fontSize": { "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-editorial": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }], "display-mobile": ["40px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-4 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><img alt="PageCraft Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W5sIhKjggRFgUWWzx-VWwxUupYoQowoJwXaOLoxrxvK2ggDZY5jkU6JSvvRbfCxMr5VBxSgqamwbxjTfYQCjvOrUWAif3M9lgU2WVEZeNHVQXwzfuS6hlXYlb28ee5pLjxtXvXUn5nS8cJhPAcw6OtzdIFGahN1d5UBXcJiIMJ1Vb7PsbPSUJytnrGZqkuG7Rd5VS1HjfoqxT_CQEcbmNXMNm5TvL7Qvi-ghMfFmP1c6YbUU4dosQyDRc"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">PageCraft</span><span class="hidden">Home</span></div><div class="flex items-center gap-1"><a aria-label="Search Catalog" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><button aria-label="Open Shopping Cart" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary text-on-primary font-label-sm text-[10px] flex items-center justify-center shadow-[0_0_8px_rgba(141,75,0,0.4)]">2</span></button><a aria-label="User Account" class="w-11 h-11 flex items-center justify-center" data-path="account" href="#"><div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">account_circle</span></div></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Format Switcher Segmented Bar -->
+<section class="px-4 pt-3 pb-2">
+<div class="p-1 rounded-full bg-surface-container-high flex items-center shadow-sm">
+<button class="format-pill flex-1 py-1.5 px-2 rounded-full text-center font-label-md text-label-md font-semibold bg-surface-container-lowest text-primary shadow-sm transition-all" data-format="all" type="button">
+        All Formats
+      </button>
+<button class="format-pill flex-1 py-1.5 px-2 rounded-full text-center font-label-md text-label-md text-on-surface-variant transition-all flex items-center justify-center gap-1" data-format="physical" type="button">
+<span class="material-symbols-outlined text-[15px]">menu_book</span>
+<span class="">Hardcopy</span>
+</button>
+<button class="format-pill flex-1 py-1.5 px-2 rounded-full text-center font-label-md text-label-md text-on-surface-variant transition-all flex items-center justify-center gap-1" data-format="digital" type="button">
+<span class="material-symbols-outlined text-[15px]">bolt</span>
+<span class="">E-Books</span>
+</button>
+</div>
+</section>
+<!-- Editorial Hero Banner -->
+<section class="px-4 py-2">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-highest p-5 shadow-md">
+<div class="absolute -right-6 -bottom-6 w-36 h-36 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider">
+            Seasonal Offer
+          </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Free Delivery
+          </span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight leading-tight">
+          Read Without Limits
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+          Get 25% off physical box sets + free instant EPUB copy synced to your cloud library immediately.
+        </p>
+<div class="pt-2 flex items-center gap-3">
+<button class="inline-flex items-center gap-1.5 bg-primary text-on-primary font-label-md text-label-md font-semibold px-4 py-2.5 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all" type="button">
+<span class="">Explore Now</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Code: <span class="font-semibold text-primary">PAGE25</span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filter Carousel -->
+<section class="py-3">
+<div class="px-4 mb-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Explore Categories</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Scroll →</span>
+</div>
+<div class="flex gap-2 overflow-x-auto px-4 no-scrollbar scroll-smooth">
+<button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+<span class="">Story Books</span>
+</button>
+<button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">movie_filter</span>
+<span class="">Anime &amp; Manga</span>
+</button>
+<button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span class="">Comic Books</span>
+</button>
+<button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">newspaper</span>
+<span class="">Magazines</span>
+</button>
+<button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">psychology_alt</span>
+<span class="">Life Lessons</span>
+</button>
+<button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span class="">General Knowledge</span>
+</button>
+<button class="category-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span class="">Study Guides</span>
+</button>
+</div>
+</section>
+<!-- 1. Trending Story & Fiction -->
+<section class="px-4 py-3 flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Trending Story &amp; Fiction</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Bestsellers</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center" href="#">View all <span class="material-symbols-outlined text-[14px]">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Midnight Library -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="true" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Warm literary book cover illustration of The Midnight Library with dark teal shelves filled with luminous glowing books under soft lantern light, deep navy obsidian tones, painted classic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWXhqzrHyBiEM6cyYvYafRCzJHm8nZ2dpoeyicHY147WWZaTY3PtV27r-krxiVNsj-UP3ygb3b0UrVCrKqiRenYVVeaza-MRAL1P4LkCXiXM21pTEkjVtjvVNb2BahuEKVHpuLMZwhCa5MA2BuXdimw4gU_gx1GS0JBS8RWiA4iEkD874ANfQjZcDQ1Gt9wvREGEaiQ7kaw4K8SDW5iVMVYd6y5hRXyGyKtS7YXsA5cyx9-0_1kELV6w">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(42k)</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-0.5">The Midnight Library</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Matt Haig</p>
+</div>
+<!-- Format Toggle & Price Component -->
+<div class="mt-2 pt-2 border-t-0 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<button class="format-option active px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-label="Hardcover" data-price="$18.99" type="button">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> $18.99
+              </button>
+<button class="format-option px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-label="E-Book" data-price="$7.99" type="button">
+<span class="material-symbols-outlined text-[12px]">bolt</span> $7.99
+              </button>
+</div>
+<div class="flex items-center justify-between">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$18.99</span>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-on-surface text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Before the Coffee Gets Cold -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="true" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Artistic cover of Before the Coffee Gets Cold showing a steaming retro cafe cup in Tokyo alley with warm sepia tones, delicate vintage Japanese typography aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYTvgJjZCNmQFSHMe5jPupM2FUbfaePESsVt7aFviVRR_RGKe3XjRencab_l-c5RHn8FRZ8GB0D_B2VN3R2q8GcfRsZkx-S8668jeproP4NJHMxiO1BhgyENLvFNVZr2QYzaM6CCsludf8eyDdntil5-NcIVt44WkDRIMedaO0Y-Bivg9CZHBfO3ub7FIULN4NM_QOyXSsD4GI8k4ISrQ_itMyX0W6mzjz58b9SgCvLj5G-V2k4C377Q">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.7</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(18k)</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-0.5">Before the Coffee Gets Cold</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Toshikazu Kawaguchi</p>
+</div>
+<div class="mt-2 pt-2 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<button class="format-option active px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-label="Paperback" data-price="$15.50" type="button">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> $15.50
+              </button>
+<button class="format-option px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-label="E-Book" data-price="$6.49" type="button">
+<span class="material-symbols-outlined text-[12px]">bolt</span> $6.49
+              </button>
+</div>
+<div class="flex items-center justify-between">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$15.50</span>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-on-surface text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 2. Anime & Manga Specials -->
+<section class="px-4 py-3 flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Anime &amp; Manga Specials</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">Hot Series</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center" href="#">Explore <span class="material-symbols-outlined text-[14px]">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Jujutsu Kaisen -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between book-item" data-has-digital="true" data-has-physical="true">
+<div>
+<div class="relative w-full aspect-[3/4] rounded overflow-hidden shadow-inner bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Dynamic black and red manga cover art for Jujutsu Kaisen featuring bold Japanese kanji typography, intense supernatural action aesthetic, dramatic high contrast ink style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGEpvu3joGusjG2UyKSLjJ6ZiXgIoGt_4mmuWV1GFsvyxnh3bIrl8OgTrgoEeCY1A9kXGFsJ2hj1etaNx9OyCEAFywf7EbHbOWLsiQxFyiQIYmmx_OMb2irZD_an2UZR5E4QIbSuX5a5ZVfYNJHgQAQaHcJLZ9fSOQmtVXWUfSmL_koJ453a03l8mX5bh2QyxMS9kFUtpcebk69UvAwrvqS9olwHtYmH1ZzJ5_Ebl9TcJiLCE2pQLbHA">
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-sm text-on-surface font-label-sm text-[10px] font-bold uppercase tracking-wider">Vol. 1</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate">Jujutsu Kaisen</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Gege Akutami</p>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1">
+<button class="format-option active text-[10px] px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm font-semibold" data-price="$11.99" type="button">Print $11.99</button>
+<button class="format-option text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm font-semibold" data-price="$5.99" type="button">Digital $5.99</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$11.99</span>
+<button class="add-cart-btn p-1.5 rounded bg-on-surface text-on-secondary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Demon Slayer -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between book-item" data-has-digital="false" data-has-physical="true">
+<div>
+<div class="relative w-full aspect-[3/4] rounded overflow-hidden shadow-inner bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Detailed anime manga illustration of Demon Slayer Kimetsu no Yaiba with water breathing katana effects, deep green and black checkerboard motifs, vibrant shonen jump style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnDoFu2Ru4jLyC7XlYBlFHCBrhiIU4gFD-GiVCe2RIZZQcj1srcMz3ZzZIQCA0aBHTN9JjF46JWB8wM9g2IaP_GcJ0bfWfo_zv8IZtfcQQH1a8uXJd1Ql1yDDVUpiVhtEzzQSysll-028hGQyxNp_K1sxgE79wYMA1yDJGK5ORpt4RAaaShJd7sF963Dfz-Qlm9io8-wHXxYyf-lu1_xXEGKN2uq1Pgcivzw5__kaIC6a6OKLnJLXOzw">
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-sm text-on-surface font-label-sm text-[10px] font-bold uppercase tracking-wider">Physical Only</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate">Demon Slayer</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Koyoharu Gotouge</p>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1">
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px]">inventory_2</span> Boxed Hardcopy
+            </span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$12.50</span>
+<button class="add-cart-btn p-1.5 rounded bg-on-surface text-on-secondary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 3. Comics & Graphic Novels -->
+<section class="px-4 py-3 flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Comics &amp; Graphic Novels</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">Collector</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center" href="#">Browse <span class="material-symbols-outlined text-[14px]">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Spider-Man: Blue -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="false" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Atmospheric moody graphic novel cover of Spider-Man Blue perched on rainy New York rooftop under deep blue night sky, retro comic art by Tim Sale style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhJ9yIf2LFrUDwd44V-OoY49FvA3lV4JtjEqfa9MHIVaXXnrRIP6CoFcO22H0L3Epb4PS82YX-SgU3o0SYPgqtddyl-J0TT2XjdtvToUQHEwvUd_68DEpMIp9jiCUqxltoDFQMrhnaMTXKtecK3gfsZpwbeKNIYUnfkTZGoepUAD378L6QFeYPkj4-ZGSgeguZgmMfBgqQcm6NYDr0EvkwA66xVFKJd6uqYywtRBxL9znYtSBTIAddGQ">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold uppercase">Collector's Hardcopy</span>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-1">Spider-Man: Blue</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Jeph Loeb &amp; Tim Sale</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-through">$29.99</span>
+<div class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$24.99</div>
+</div>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Claim</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Saga Deluxe -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="true" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Space fantasy comic artwork cover of Saga Deluxe Edition showcasing winged characters against starry nebula, painted cinematic space opera illustration style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1QMv3EpjKvB4_-ci1y0TlNajtbvyVeoB8mzmA-4Fsj1dwpypZ8JRw2fv3nOPaeG-Ie0C4J10bWQo4fTJheLSo1spakjB4AV2mxozanDuen4fTmUJGjR5wDsHH9OswLBqFWq-pPL2odnd-QFMJ7tjB1t7AdEB7TgM1-PLVQYj9PknbM22QXWcZBFr5k8pS46XQqg375z0eczdYNVprKYs0mrcoOvRouvoCYbRB8wf05WPFzVULwgVAjQ">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Eisner Award Winner</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-0.5">Saga: Deluxe Edition</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Brian K. Vaughan &amp; Fiona Staples</p>
+</div>
+<div class="mt-2 pt-2 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<button class="format-option active px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$29.99" type="button">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> Hardcover $29.99
+              </button>
+<button class="format-option px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$12.99" type="button">
+<span class="material-symbols-outlined text-[12px]">bolt</span> E-Comic $12.99
+              </button>
+</div>
+<div class="flex items-center justify-between">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$29.99</span>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-on-surface text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 4. Magazines & Periodicals -->
+<section class="px-4 py-3 flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Magazines &amp; Periodicals</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Monthly Issues</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center" href="#">Archive <span class="material-symbols-outlined text-[14px]">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- National Geographic -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between book-item" data-has-digital="true" data-has-physical="true">
+<div>
+<div class="relative w-full aspect-[3/4] rounded overflow-hidden shadow-inner bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Iconic yellow border magazine cover of National Geographic featuring bioluminescent deep ocean creatures in dark abyssal waters, ultra sharp nature photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfVqzOIdlPpxTtAxcZd_yAIQHTjFzsSs-jcxRegmLyZn9HPpf4qsA9WEHIk4ZN34446iY63rKuhSY8oCurNXeS0JX_qBgj4aGEnJ1nwoBjbc_7h-QYiUZisx68MhwL1CjOcbjZgUfxbck42Pd0MkH8zC6QXvewD_wJce_ZM6SoZjSLkupDAC9DYTA22R_7kEDH5Ug1pngOKDssBdD_kTXTojBItO_VtPCmwFWKw7820iMlUZEKYeXsBw">
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate">Nat Geo: Deep Oceans</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Issue #842 Special</p>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1">
+<button class="format-option active text-[10px] px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm font-semibold" data-price="$9.99" type="button">Print $9.99</button>
+<button class="format-option text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm font-semibold" data-price="$4.99" type="button">Digital $4.99</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$9.99</span>
+<button class="add-cart-btn p-1.5 rounded bg-on-surface text-on-secondary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Wired Tech Annual -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between book-item" data-has-digital="true" data-has-physical="false">
+<div>
+<div class="relative w-full aspect-[3/4] rounded overflow-hidden shadow-inner bg-surface-container mb-2">
+<img class="w-full h-full object-cover" data-alt="Futuristic cover of Wired Tech Annual with bold neon typography and holographic AI neural network graphics, minimal editorial layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmqXcmKUL4syQjwUuU1DuWWQO7S07qk47Q7LK_hiPjo6R-TMBfxqW116UWrKdhMsFQvWU_TNkNr-xCt-rA5gOczj8ieMyq64sCmfrLhcy4TvcJlZPNm-jwbKAmMzUnINkF4nEBXWgpTgd9dbbeXSakgc_4ux5Uwsnb4buyDit6UdejDEhgGkE1OepJxXgbXo-NXty6w6O6XyG3B9kKYyGQu_16wMKpzjfL6237C6LNB19sRtF2QQdqlg">
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[10px] font-bold">PDF Instant</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate">Wired Tech Annual</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Future of Computing</p>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1">
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px]">download</span> Digital Edition
+            </span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$8.50</span>
+<button class="add-cart-btn p-1.5 rounded bg-on-surface text-on-secondary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 5. Motivational & Life Lessons -->
+<section class="px-4 py-3 flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Motivational &amp; Life Lessons</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Essential Reads</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center" href="#">See all <span class="material-symbols-outlined text-[14px]">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Atomic Habits -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="true" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Iconic minimalist cover design of Atomic Habits by James Clear with clean white background, black bold modern typography, and stippled amber particle pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPj092G3krQmTwXTunn1d31iFdqPs8AgUa0MZlgkJID51T-MxZQubATyMhqSOFP_rNGks1w_WEmImYbQEcimEW60DE_ZINFSIYK7Qb79nk6ZHTcaLHGbt5xSitzwbk7EWfPvC4evpiKAnANu4koECJ2_1UHtVloAnBvU2hTi_k4qz2BDjwQJD_TE-o2CcCHTNEd7kIWH45K_nvdRzrw4i-WpUfmrw2BLKl6jeIpYngZT15UgnGW5UctQ">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(110k reviews)</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-0.5">Atomic Habits</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">James Clear</p>
+</div>
+<div class="mt-2 pt-2 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<button class="format-option active px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$21.00" type="button">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> Hardcover $21.00
+              </button>
+<button class="format-option px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$8.99" type="button">
+<span class="material-symbols-outlined text-[12px]">bolt</span> E-Book $8.99
+              </button>
+</div>
+<div class="flex items-center justify-between">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$21.00</span>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-on-surface text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Psychology of Money -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="true" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cover of The Psychology of Money featuring elegant modern editorial typography, ivory textured paper background, subtle green financial motif accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHazRCABSYQBwHhyr5aFmhirptdSfIjfCU4AbgwI_yCXFVVXIcJfDKkQnqY0wU20QuzGkB4O3IfZiPflUAwFoSf-C2sKA0eGYds7mgHXuLGw59prZXTzdlN2kiJ-Xrqrdjk9XYzaycD2mIFe9AEPZkyFio4e1zHIzd6L31LOtfW5JkvOQ4jNj_3IUzZnXEnA7Puke5oy2imBv-O16AdpXzxegBGeTJSSujMy6xqUoohFL9zcnJtdTJkQ">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(64k reviews)</span>
+</div>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-0.5">The Psychology of Money</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Morgan Housel</p>
+</div>
+<div class="mt-2 pt-2 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<button class="format-option active px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$17.50" type="button">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> Print $17.50
+              </button>
+<button class="format-option px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$7.50" type="button">
+<span class="material-symbols-outlined text-[12px]">bolt</span> E-Book $7.50
+              </button>
+</div>
+<div class="flex items-center justify-between">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$17.50</span>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-on-surface text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 6. GK & Study Related Books & Guides -->
+<section class="px-4 py-3 pb-8 flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">GK &amp; Study Guides</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Academic 2025</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center" href="#">Catalog <span class="material-symbols-outlined text-[14px]">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Ultimate General Knowledge 2025 -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="true" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cover of Ultimate General Knowledge 2025 encyclopedia guidebook with embossed gold emblem, navy leather texture background, professional academic layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-8IRTLvxwjUKGq1r5euFmKP30k0C1eaB0k1DVcoZJP8xOlsmVNahGj8wVY6Fqlmzs3bdHQ5x8by90NPNc_BvC8iIPf8wJLlAe_MSVBukEOUC0RRR8SZBf9mrCrkYeAJSH1e1W72l0O27qEUUNUa8aMqhAfUF4zLeshBYXCqGFDC0r7pmGQ8HZ1OQTJOOI8WiNs11V44QFMLaAaFcY4crWIsWjyV6xztJrgqiaAtcOLNERh4x_lgwbyQ">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold uppercase">Competitive Exam Ready</span>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-1">Ultimate GK 2025</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">PageCraft Editorial Board</p>
+</div>
+<div class="mt-2 pt-2 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<button class="format-option active px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$16.00" type="button">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> Hardcopy $16.00
+              </button>
+<button class="format-option px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$5.00" type="button">
+<span class="material-symbols-outlined text-[12px]">bolt</span> Soft Copy $5.00
+              </button>
+</div>
+<div class="flex items-center justify-between">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$16.00</span>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-on-surface text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Advanced Calculus & Prep Guide -->
+<article class="p-3 rounded-xl bg-surface-container-lowest shadow-md flex gap-3 book-item" data-has-digital="true" data-has-physical="true">
+<div class="relative w-24 h-36 flex-shrink-0 rounded overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cover of Advanced Calculus and Prep Guide showing abstract geometric curves and calculus notations on matte chalk finish background, modern STEM textbook design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCavucNxCb1trxpJDMMWd11Nv6A3G2lh5Gryi7gl9mJai8eQku0Xoryt8DjsykBoYji8huYlA38hUKi8m7Ap2RQPqENTkaEyEsEBWc3dCf_q0FUPqLrr4LL9Gfi0uAV1y0Kz2qY43k_sCm0Tb2gqUNuYRtNHuUqL_LbjPQX7TC_XBEpZdKXHbyX3diXwNrkr3aV47njXigdjgM2SkKbJkfccIlfNvXaq3t9U-ERQONu-V3Bp6_KZyeDMA">
+<div class="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 min-w-0">
+<div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold uppercase">Includes Solution Key</span>
+<h4 class="font-title-editorial text-title-editorial text-on-surface truncate mt-1">Advanced Calculus &amp; Prep</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Dr. Aris Thorne</p>
+</div>
+<div class="mt-2 pt-2 flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<button class="format-option active px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$34.99" type="button">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> Physical $34.99
+              </button>
+<button class="format-option px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-all" data-price="$14.99" type="button">
+<span class="material-symbols-outlined text-[12px]">bolt</span> Interactive E-Book $14.99
+              </button>
+</div>
+<div class="flex items-center justify-between">
+<span class="price-tag font-headline-sm text-headline-sm text-primary font-bold">$34.99</span>
+<button class="add-cart-btn px-3 py-1.5 rounded-lg bg-on-surface text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span class="">Add</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Floating AI Literary Companion Trigger (Bubble) -->
+<div class="fixed bottom-20 right-4 z-40">
+<button class="flex items-center gap-2 pl-3.5 pr-4 py-2.5 rounded-full bg-surface-container-lowest text-on-surface shadow-xl hover:shadow-2xl active:scale-95 transition-all" id="readbot-bubble" type="button">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Need a recommendation? <span class="text-primary font-bold">Ask ReadBot ✨</span></span>
+</button>
+</div>
+<!-- Micro-interaction script for Format Toggle & Filter -->
+<script>
+    document.querySelectorAll('.format-option').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const parentArticle = button.closest('article');
+        const priceTag = parentArticle.querySelector('.price-tag');
+        const siblingButtons = button.parentElement.querySelectorAll('.format-option');
+        
+        siblingButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-secondary-container', 'text-on-secondary-container');
+          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        
+        button.classList.add('active', 'bg-secondary-container', 'text-on-secondary-container');
+        button.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        
+        const newPrice = button.getAttribute('data-price');
+        if (priceTag && newPrice) {
+          priceTag.textContent = newPrice;
+          priceTag.classList.add('scale-105', 'text-secondary');
+          setTimeout(() => {
+            priceTag.classList.remove('scale-105', 'text-secondary');
+          }, 200);
+        }
+      });
+    });
+
+    // Top Format Switcher filter interaction
+    const formatPills = document.querySelectorAll('.format-pill');
+    const bookCards = document.querySelectorAll('.book-item');
+
+    formatPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        formatPills.forEach(p => {
+          p.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          p.classList.add('text-on-surface-variant');
+        });
+        pill.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        pill.classList.remove('text-on-surface-variant');
+
+        const format = pill.getAttribute('data-format');
+        bookCards.forEach(card => {
+          if (format === 'all') {
+            card.style.display = 'flex';
+          } else if (format === 'physical') {
+            card.style.display = card.dataset.hasPhysical === 'true' ? 'flex' : 'none';
+          } else if (format === 'digital') {
+            card.style.display = card.dataset.hasDigital === 'true' ? 'flex' : 'none';
+          }
+        });
+      });
+    });
+
+    // Cart feedback
+    document.querySelectorAll('.add-cart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-on-primary">done</span>';
+        btn.classList.add('bg-primary');
+        setTimeout(() => {
+          btn.innerHTML = originalHtml;
+          btn.classList.remove('bg-primary');
+        }, 1200);
+      });
+    });
+  </script>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md font-semibold"><div class="flex justify-around items-center h-16 px-2"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 transition-colors text-primary font-label-md font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="browse" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm">Browse</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-assistant" href="#"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-sm text-label-sm">AI Assistant</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-library" href="#"><span class="material-symbols-outlined text-[22px]">local_library</span><span class="font-label-sm text-label-sm">My Library</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[60px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="account" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Account</span></a></div></nav>
+
+</body></html>
