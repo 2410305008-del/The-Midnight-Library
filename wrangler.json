@@ -2,7 +2,7 @@
   "name": "the-midnight-library",
   "compatibility_date": "2024-11-01",
   "assets": {
-    "directory": "./frontend/dist",
+    "directory": "./frontend/build",
     "not_found_handling": "single-page-application"
   }
 }
