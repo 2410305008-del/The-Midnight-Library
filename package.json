@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "PageHaven - Curated Bookstore & Archival E-Library (React Vite + Node/Express + MongoDB)",
   "scripts": {
+    "build": "npm --prefix frontend run build",
     "dev": "node -e \"console.log('Use separate terminals: cd backend && npm run dev, and cd frontend && npm run dev')\"",
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:backend": "npm --prefix backend run dev",
